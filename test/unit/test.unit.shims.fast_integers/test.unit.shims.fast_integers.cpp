@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.inserters.integer project.
  *
  * Created:     11th December 2010
- * Updated:     7th February 2012
+ * Updated:     22nd September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2012, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -34,6 +34,9 @@
 
 /* xTests Header Files */
 #include <xtests/xtests.h>
+#if _XTESTS_VER < 0x001203ff
+# error xTests v0.18.3 or later required
+#endif
 
 /* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
@@ -196,7 +199,7 @@ namespace
     {
         using namespace xtests;
         using namespace xtests::c;
-        using namespace xtests::c::cpp;
+        using namespace xtests::cpp;
 
         bool equal = false;
 

@@ -256,6 +256,8 @@ int main(int argc, char **argv)
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
     }
 
+	STLSOFT_SUPPRESS_UNUSED(CORRECT_DEC_PLACES);
+
     return retCode;
 }
 

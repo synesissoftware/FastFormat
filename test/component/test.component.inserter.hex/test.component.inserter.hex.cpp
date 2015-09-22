@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.inserter.hex project.
  *
  * Created:     16th January 2010
- * Updated:     4th February 2010
+ * Updated:     22nd September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -49,19 +49,6 @@
 
 namespace
 {
-
-#if defined(STLSOFT_COMPILER_IS_MSVC)
-    const int   CORRECT_DEC_PLACES  =   511;
-#elif defined(STLSOFT_COMPILER_IS_BORLAND)
-    const int   CORRECT_DEC_PLACES  =   12;
-    const int   MAX_DEC_PLACES      =   35;
-#elif defined(STLSOFT_COMPILER_IS_GCC)
-    const int   CORRECT_DEC_PLACES  =   12;
-#elif defined(STLSOFT_COMPILER_IS_MWERKS)
-    const int   CORRECT_DEC_PLACES  =   12;
-#else
-    const int   CORRECT_DEC_PLACES  =   20;
-#endif
 
 } /* anonymous namespace */
 

@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.api.illformed_handlers project.
  *
  * Created:     27th May 2008
- * Updated:     25th April 2009
+ * Updated:     22nd September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -225,6 +225,7 @@ namespace
     {
         return 0;
     }
+#if 0
     int FASTFORMAT_CALLCONV illformed_handler_1_continue_once(
         void*               /* param */
     ,   ff_parse_code_t     /* code */
@@ -257,6 +258,7 @@ namespace
     {
         return -1;
     }
+#endif
 
 
 static void test_0()
