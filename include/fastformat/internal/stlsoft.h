@@ -4,11 +4,11 @@
  * Purpose:     "Entry point" include into the STLSoft libraries.
  *
  * Created:     18th November 2007
- * Updated:     22nd July 2012
+ * Updated:     23rd September 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,8 +55,8 @@
 # include <stlsoft/stlsoft.h>
 #endif /* !STLSOFT_INCL_STLSOFT_H_STLSOFT */
 #if !defined(_STLSOFT_VER) || \
-    _STLSOFT_VER < 0x010973ff
-# error Requires STLSoft 1.9.115, or later. (www.stlsoft.org)
+    _STLSOFT_VER < 0x010979ff
+# error Requires STLSoft 1.9.121, or later. (www.stlsoft.org)
 #endif /* STLSoft version */
 
 #if _STLSOFT_VER < 0x010a0000 && \
