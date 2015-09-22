@@ -5,7 +5,7 @@
  *              handlers.
  *
  * Created:     26th November 2007
- * Updated:     7th August 2015
+ * Updated:     22nd August 2015
  *
  * Home:        http://www.fastformat.org/
  *
@@ -588,8 +588,12 @@ ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_getIllformedDef
 
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT
     r.handler   =   fastformat_stock_illformedHandler_throw;
+
+    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_illformedHandler_ignore);
 #else /* ? STLSOFT_CF_EXCEPTION_SUPPORT */
     r.handler   =   fastformat_stock_illformedHandler_ignore;
+
+    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_illformedHandler_throw);
 #endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
 
     return r;

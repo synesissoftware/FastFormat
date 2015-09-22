@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for FastFormat core API: replacements.
  *
  * Created:     18th September 2006
- * Updated:     7th August 2015
+ * Updated:     22nd August 2015
  *
  * Home:        http://www.fastformat.org/
  *
@@ -1233,8 +1233,12 @@ ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_getDefaultMism
 
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT
     r.handler = fastformat_stock_mismatchedHandler_throw;
+
+    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_mismatchedHandler_ignore);
 #else /* ? STLSOFT_CF_EXCEPTION_SUPPORT */
     r.handler = fastformat_stock_mismatchedHandler_ignore;
+
+    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_mismatchedHandler_throw);
 #endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
 
   return r;
