@@ -5,7 +5,7 @@
 #           compiler, on UNIX
 #
 # Created:  22nd December 2007
-# Updated:  17th August 2012
+# Updated:  22nd September 2015
 #
 ############################################################################
 
@@ -18,17 +18,23 @@
 
 COMP_TAG            =   sunpro59
 ARCH_TAG            =   
-OS_TAG				=   
+OS_TAG              =   
 PROJ_TAG            =   fastformat
 PROJ_VER_MAJOR      =   0
 PROJ_TAG_VER        =   $(PROJ_TAG).$(PROJ_VER_MAJOR)
-COMP_ARCH_OS_TAG	=	$(COMP_TAG)$(OS_TAG)$(ARCH_TAG)
+COMP_ARCH_OS_TAG    =   $(COMP_TAG)$(OS_TAG)$(ARCH_TAG)
 
-LOKI_SFMT_VER_MAJOR	=	0
-LOKI_SFMT_TAG_VER	=	loki.safefmt.$(LOKI_SFMT_VER_MAJOR)
+LOKI_SFMT_VER_MAJOR =   0
+LOKI_SFMT_TAG_VER   =   loki.safefmt.$(LOKI_SFMT_VER_MAJOR)
 
 SHWILD_VER_MAJOR    =   0
 SHWILD_TAG_VER      =   shwild.$(SHWILD_VER_MAJOR)
+
+XCOVER_VER_MAJOR    =   0
+XCOVER_TAG_VER      =   xtests.$(XCOVER_VER_MAJOR)
+
+XCONTRACT_VER_MAJOR =   0
+XCONTRACT_TAG_VER   =   xtests.$(XCONTRACT_VER_MAJOR)
 
 XTESTS_VER_MAJOR    =   0
 XTESTS_TAG_VER      =   xtests.$(XTESTS_VER_MAJOR)
@@ -38,7 +44,7 @@ PROJ_MAKEFILE_NAME  =   makefile
 ########################################
 # Testing verbosity
 
-TEST_VERBOSITY		=	2
+TEST_VERBOSITY      =   2
 
 ########################################
 # Directories
@@ -62,11 +68,21 @@ BITBUCKET_SRC_DIR			=	$(PROJ_SRC_DIR)/bitbucket
 
 LOKI_SFMT_SRC_DIR			=	$(PROJ_SRC_DIR)/loki.safefmt
 
-SHWILD_INCLUDE_DIR			=	$(PROJ_BASE_DIR)/include
-SHWILD_SRC_DIR				=	$(PROJ_SRC_DIR)/shwild
+SHWILD_PROJ_INCLUDE     =   
+SHWILD_INCLUDE_DIR      =   $(PROJ_BASE_DIR)/include
+SHWILD_SRC_DIR          =   $(PROJ_SRC_DIR)/shwild
 
-XTESTS_INCLUDE_DIR			=	$(PROJ_BASE_DIR)/include
-XTESTS_SRC_DIR				=	$(PROJ_SRC_DIR)/xtests
+XCONTRACT_PROJ_INCLUDE  =   
+XCONTRACT_INCLUDE_DIR   =   $(PROJ_BASE_DIR)/include
+XCONTRACT_SRC_DIR       =   $(PROJ_SRC_DIR)/xcontract
+
+XCOVER_PROJ_INCLUDE     =   
+XCOVER_INCLUDE_DIR      =   $(PROJ_BASE_DIR)/include
+XCOVER_SRC_DIR          =   $(PROJ_SRC_DIR)/XCOVER
+
+XTESTS_PROJ_INCLUDE     =   
+XTESTS_INCLUDE_DIR      =   $(PROJ_BASE_DIR)/include
+XTESTS_SRC_DIR          =   $(PROJ_SRC_DIR)/xtests
 
 ########################################
 # tools
@@ -217,6 +233,10 @@ STLSOFT_1_10_INCLUDE	=
 CPPC_INCLUDES_BASE=\
  \
  -I$(PROJ_INCLUDE_DIR)\
+ $(SHWILD_PROJ_INCLUDE)\
+ $(XCONTRACT_PROJ_INCLUDE)\
+ $(XCOVER_PROJ_INCLUDE)\
+ $(XTESTS_PROJ_INCLUDE)\
  $(STLSOFT_1_10_INCLUDE)\
  -I$(STLSOFT)/include\
  $(COMMON_INCLUDES)\
@@ -489,12 +509,12 @@ CORE_HEADERS=\
  \
 
 SHWILD_HEADERS=\
- $(PROJ_INCLUDE_DIR)/shwild/shwild.h\
- $(PROJ_INCLUDE_DIR)/shwild/shwild.hpp\
+ $(SHWILD_INCLUDE_DIR)/shwild/shwild.h\
+ $(SHWILD_INCLUDE_DIR)/shwild/shwild.hpp\
  \
 
 XTESTS_HEADERS=\
- $(PROJ_INCLUDE_DIR)/xtests/xtests.h\
+ $(XTESTS_INCLUDE_DIR)/xtests/xtests.h\
  \
 
 ############################################################################
@@ -1870,14 +1890,14 @@ FASTFORMAT_PREP_FILE		=	$(PROJ_INCLUDE_DIR)/fastformat/internal/dos2unix.has.bee
 $(STLSOFT_PREP_FILE):	$(STLSOFT_SENTINEL_HEADER)
 	@echo Ensuring all STLSoft C source files are in UNIX format
 	@find $(STLSOFT) -name '*.h' | while read f ; do \
-	  set -e ; sed 's/\r$$//' $$f > $$f.tmp ; mv $$f.tmp $$f ; \
+	  set -e ; LC_ALL=C sed "s/$(printf '\r')$$//" $$f > $$f.tmp ; mv $$f.tmp $$f ; \
 	done
 	@echo dos2unix.has.been.performed > $(STLSOFT_PREP_FILE)
 
 $(FASTFORMAT_PREP_FILE):	$(FASTFORMAT_SENTINEL_HEADER)
 	@echo Ensuring all fastformat - and bundled library - C source files are in UNIX format
 	@find $(PROJ_BASE_DIR) -name '*.[ch]' | while read f ; do \
-	  set -e ; sed 's/\r$$//' $$f > $$f.tmp ; mv $$f.tmp $$f ; \
+	  set -e ; LC_ALL=C sed "s/$(printf '\r')$$//" $$f > $$f.tmp ; mv $$f.tmp $$f ; \
 	done
 	@echo dos2unix.has.been.performed > $(FASTFORMAT_PREP_FILE)
 
