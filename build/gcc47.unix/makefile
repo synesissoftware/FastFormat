@@ -76,16 +76,6 @@ BITBUCKET_SRC_DIR			=	$(PROJ_SRC_DIR)/bitbucket
 
 LOKI_SFMT_SRC_DIR			=	$(PROJ_SRC_DIR)/loki.safefmt
 
-B64_PROJ_INCLUDE		=	
-ifdef PANTHEIOS_B64_BASE_DIR
-B64_INCLUDE_DIR			=   $(PANTHEIOS_B64_BASE_DIR)/include
-B64_SRC_DIR				=   $(PANTHEIOS_B64_BASE_DIR)/src
-B64_PROJ_INCLUDE		=	-I$(B64_INCLUDE_DIR)
-else
-B64_INCLUDE_DIR			=   $(PROJ_BASE_DIR)/include
-B64_SRC_DIR				=   $(PROJ_SRC_DIR)/b64
-endif # !PANTHEIOS_B64_BASE_DIR
-
 SHWILD_PROJ_INCLUDE		=	
 ifdef PANTHEIOS_SHWILD_BASE_DIR
 SHWILD_INCLUDE_DIR		=   $(PANTHEIOS_SHWILD_BASE_DIR)/include
@@ -291,6 +281,10 @@ endif # STLSOFT_1_10
 CPPC_INCLUDES_BASE=\
  \
  -I$(PROJ_INCLUDE_DIR)\
+ $(SHWILD_PROJ_INCLUDE)\
+ $(XCONTRACT_PROJ_INCLUDE)\
+ $(XCOVER_PROJ_INCLUDE)\
+ $(XTESTS_PROJ_INCLUDE)\
  $(STLSOFT_1_10_INCLUDE)\
  -I$(STLSOFT)/include\
  $(COMMON_INCLUDES)\
@@ -571,12 +565,12 @@ CORE_HEADERS=\
  \
 
 SHWILD_HEADERS=\
- $(PROJ_INCLUDE_DIR)/shwild/shwild.h\
- $(PROJ_INCLUDE_DIR)/shwild/shwild.hpp\
+ $(SHWILD_INCLUDE_DIR)/shwild/shwild.h\
+ $(SHWILD_INCLUDE_DIR)/shwild/shwild.hpp\
  \
 
 XTESTS_HEADERS=\
- $(PROJ_INCLUDE_DIR)/xtests/xtests.h\
+ $(XTESTS_INCLUDE_DIR)/xtests/xtests.h\
  \
 
 ############################################################################
