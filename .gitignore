@@ -1,28 +1,72 @@
-# Compiled Object files
-*.slo
-*.lo
+
+# directories (by name)
+
+include/b64/
+include/shwild/
+include/xcontract/
+include/xcover/
+include/xtests/
+
+src/b64/
+src/shwild/
+src/xcontract/
+src/xcover/
+src/xtests/
+
+vc71/
+vc8/
+vc9/
+
+ideas/
+
+Debug/
+Debug Multithreaded/
+Debug Multithreaded DLL/
+Unicode Debug/
+Unicode Debug Multithreaded/
+Unicode Debug Multithreaded DLL/
+Release/
+Release Multithreaded/
+Release Multithreaded DLL/
+Unicode Release/
+Unicode Release Multithreaded/
+Unicode Release Multithreaded DLL/
+
+# directories (by pattern)
+
+# files (by name)
+
+list_changes.cmd
+
+# files (by pattern)
+
+*~
+*.a
+*.app
+*.dll
+*.dylib
+*.exe
+*.gch
+*.ilk
+*.lib
+*.ncb
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
+*.opensdf
 *.out
-*.app
+*.pch
+*.pdb
+*.sdf
+*.sbr
+*.scc
+*.so
+*.suo
+*.swp
+*.vcproj*.user
+*.vcxproj*.user
+
+*.vc71.sln
+*.vc8.sln
+*.vc9.sln
+
+
