@@ -53,6 +53,7 @@ list_changes.cmd
 *.o
 *.obj
 *.opensdf
+*.org
 *.out
 *.pch
 *.pdb
