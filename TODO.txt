@@ -1,0 +1,40 @@
+FastFormat - TODO lists
+=======================
+
+Updated:    17th August 2012
+
+
+FastFormat 0.7+ TODOs:
+---------------------
+
+ + full distribution of makefiles, project files, workspace files, etc.
+
+ ~ decent docs
+
+ ~ decent website
+
+ + GNU Autotools : "./configure; make; make install"
+
+ + Debian package
+
+ + RPM package
+
+ + GitHub repo
+
+ ~ ensure that platform-specific EOL is only emitted in file output
+
+ ~ inserters :
+    + lc_i - these will do "thousands" (or whatever is appropriate to a 
+	  given locale) formatting on integers, e.g. "100,000,000"
+    + storage_size
+    +
+
+ ~ shims :
+    + 
+
+ ~ sinks :
+    + include/fastformat/sinks/WindowsFileHANDLE.hpp
+    ~ synchronisation of ostream sink : spin / thread_mutex
+    + include/fastformat/sinks/to_sink.hpp
+
+=============================== End of file ================================

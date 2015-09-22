@@ -1,0 +1,5636 @@
+FastFormat - Changes
+=====================
+
+Updated:    17th August 2012
+
+
+    ************************************
+    * Change key:                      *
+    *                                  *
+    *  ~  means something has changed  *
+    *  +  means a new addition         *
+    *  -  means removal of something   *
+    *  *  means a general bullet-point *
+    *                                  *
+    ************************************
+
+
+17th August 2012 - 0.7.1 alpha 9
+================================
+
+Summary:
+--------
+
+ * GCC 4.6+ build compatibility changes
+ * NOTE: bundles shwild 0.9.20
+ * NOTE: bundles xTests 0.16.6
+ * NOTE: depends on STLSoft 1.9.115 (not bundled)
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ Inserters:
+
+ Shims:
+
+ Sinks:
+
+Bundles:
+
+Util:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/gcc46.unix/makefile:
+ ~ build/gcc47.unix/makefile:
+    ~ suppression, via  -Wno-array-bounds, of inappropriate warning regarding reading character array via negative index in STLSoft 1.9's integer_to_string() function suite; the integer to string functions have been substantially enhanced, using a (slightly) different mechanism, for STLSoft 1.10 - to be released in Q4 2012 - so the FF makefile(s) will be adjusted to remove this suppression when the new STLSoft 1.10 is available
+
+Examples:
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.115 or later
+   (http://stlsoft.org/)
+
+
+
+7th August 2012 - 0.7.1 alpha 8
+===============================
+
+Summary:
+--------
+
+ * This release mainly contains forward-compatible changes to various inserters and conversion shims in anticipation of (access to) new components in the soon-to-be-released (Q4 2012) STLSoft 1.10; it also contains some functional improvements and new inserter and sink headers.
+ * WindowsMessageBox now attempts to elicit caption from top-level parent window of given window (if not NULL) when the caller specifies no caption
+ * added include/fastformat/sinks/iostream.hpp : a shorthand header that includes the FastFormat sink for IOStreams' std::ostream along with the standard header <iostream> in which std::cout and std::cerr are declared
+ * added include/fastformat/sinks/stlsoft/FILE_stream.hpp, which enables formatting to instances of STLSoft's stlsoft::FILE_stream and platformstl::thread_shareable_FILE_stream types
+ * added include/fastformat/inserters/ch.hpp, which defines the fastformat::ch inserter as an alias for fastformat::character
+ * added fastformat::to_sink() degenerate conversion shim
+ * NOTE: bundles shwild 0.9.20
+ * NOTE: bundles xTests 0.16.6
+ * NOTE: depends on STLSoft 1.9.115 (not bundled)
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/internal/stlsoft.h:
+    ~ now requires STLSoft 1.9.115+
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    + added fastformat::to_sink() degenerate conversion shim
+
+ Inserters:
+
+ + include/fastformat/inserters/ch.hpp:
+    + added include/fastformat/inserters/ch.hpp, which defines the fastformat::ch inserter as an alias for fastformat::character
+
+ ~ include/fastformat/inserters/integer.hpp:
+    ~ now implements hexadecimal representation using new fast STLSoft 1.10 integer_to_hexadecimal_string() function suite, with substantial performance improvements (early, non-comprehensive tests indicate ~50-90% reduction in execution times)
+    ~ compatibility with STLSoft 1.9.115 and STLSoft 1.10
+
+ ~ include/fastformat/inserters/real.hpp:
+    ~ implemented in terms of STLSoft's STLSOFT_LEAD_VER, in order to detect new STLSoft 1.10 features (that will be part of STLSoft 1.10+ proper)
+
+ Shims:
+
+ ~ include/fastformat/shims/conversion/filter_type/fast_integers.hpp:
+    ~ implemented in terms of STLSoft's STLSOFT_LEAD_VER, in order to detect new STLSoft 1.10 features (that will be part of STLSoft 1.10+ proper)
+    ~ compatibility with STLSoft 1.9.115 and STLSoft 1.10
+
+ Sinks:
+
+ ~ include/fastformat/sinks/FILE.hpp:
+    ~ minor correction to documentation
+
+ ~ include/fastformat/sinks/WindowsMessageBox.hpp:
+    ~ WindowsMessageBox now attempts to elicit caption from top-level parent window of given window (if not NULL) when the caller specifies no caption
+
+ + include/fastformat/sinks/iostream.hpp:
+    + added include/fastformat/sinks/iostream.hpp : a shorthand header that includes the FastFormat sink for IOStreams' std::ostream along with the standard header <iostream> in which std::cout and std::cerr are declared
+
+ + include/fastformat/sinks/stlsoft/FILE_stream.hpp:
+    + added include/fastformat/sinks/stlsoft/FILE_stream.hpp, which enables formatting to instances of STLSoft's stlsoft::FILE_stream and platformstl::thread_shareable_FILE_stream types
+
+Bundles:
+
+Util:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ + test/performance/test.performance.decimal_integer/implicit_link.cpp:
+ + test/performance/test.performance.decimal_integer/test.performance.decimal_integer.cpp:
+ + test/performance/test.performance.decimal_integer/vc10/test.performance.decimal_integer.vcxproj:
+ + test/performance/test.performance.decimal_integer/vc10/test.performance.decimal_integer.vcxproj.filters:
+    + added test.performance.decimal_integer, which evaluates performance improvements obtained by using enhanced conversion facilities in (as yet unreleased, but forthcoming in the near future) STLSoft 1.10
+
+ + test/performance/test.performance.hexadecimal_integer/implicit_link.cpp:
+ + test/performance/test.performance.hexadecimal_integer/test.performance.hexadecimal_integer.cpp:
+ + test/performance/test.performance.hexadecimal_integer/vc10/test.performance.hexadecimal_integer.vcxproj:
+ + test/performance/test.performance.hexadecimal_integer/vc10/test.performance.hexadecimal_integer.vcxproj.filters:
+    + added test.performance.hexadecimal_integer, which evaluates performance improvements obtained by using enhanced conversion facilities in (as yet unreleased, but forthcoming in the near future) STLSoft 1.10
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.115 or later
+   (http://stlsoft.org/)
+
+
+
+7th February 2012 - 0.7.1 alpha 7
+=================================
+
+Summary:
+--------
+
+ * changed manner in which integer string forms is evaluated (now in terms of STLSoft's integral_printf_traits<>), to simplify definitions and fix defect (found on I32LP64 systems)
+ * added makefile for GCC 4.7
+ * added fastformat.core.vcxproj (VC++ 10)
+ * changed core source files to include new src/ximpl_core.hpp
+ * added test.unit.inserters.integer
+ * added test.unit.shims.fast_integers
+ * added test.scratch.sink.WindowsConsole
+ * added dialog, to exercise future functionality that reads top-most parent window name, to test.scratch.sink.WindowsMessageBox
+ * widestring-build compatibility in test.scratch.FILE
+ * minor changes to include/fastformat/sinks/WindowsMessageBox.hpp in preparation for future enhancements
+ * NOTE: bundles shwild 0.9.20
+ * NOTE: bundles xTests 0.16.5
+ * NOTE: depends on STLSoft 1.9.112 (not bundled)
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/api.cpp:
+ ~ src/fmt_cache.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/init_code_strings.cpp:
+ ~ src/memory_pool.cpp:
+ ~ src/replacements.cpp:
+ ~ src/snprintf.cpp:
+ + src/ximpl_core.hpp:
+    + added src/ximpl_core.hpp and reimplemented all src files in terms of it: namespace ximpl_core is now a class
+
+Application Layer:
+
+ Inserters:
+
+ Shims:
+
+ ~ include/fastformat/shims/conversion/filter_type/fast_integers.hpp:
+    ~ changed manner in which integer string forms is evaluated (now in terms of STLSoft's integral_printf_traits<>), to simplify definitions and fix defect (found on I32LP64 systems)
+
+ Sinks:
+
+ ~ include/fastformat/sinks/WindowsMessageBox.hpp:
+    ~ minor changes, in preparation for future enhancements
+
+Bundles:
+
+Util:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/gcc45.unix/makefile:
+ ~ build/gcc46.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added test.unit.inserters.integer
+    + added test.unit.shims.fast_integers
+    + added src/ximpl_core.hpp and reimplemented all src files in terms of it: namespace ximpl_core is now a class
+
+ + build/gcc47.unix/makefile:
+    + added makefile for GCC 4.7
+
+ + projects/core/vc10/fastformat.core.vcxproj:
+    + added fastformat.core.vcxproj (VC++ 10)
+
+Examples:
+
+Test:
+
+ Unit:
+
+ ~ test/unit/fastformat.test.unit.vc6.dsw:
+    + added test.unit.inserters.integer
+    + added test.unit.shims.fast_integers
+
+ + test/unit/test.unit.inserters.integer/implicit_link.cpp:
+ + test/unit/test.unit.inserters.integer/test.unit.inserters.integer.cpp:
+ + test/unit/test.unit.inserters.integer/vc6/test.unit.inserters.integer.dsp:
+    + added test.unit.inserters.integer
+
+ Component:
+
+ ~ test/component/fastformat.test.component.vc9.sln:
+ + test/component/test.component.inserter.integer/vc9/test.component.inserter.integer.vcproj:
+    + added test.component.inserter.integer.vcproj
+
+ Performance:
+
+ Scratch:
+
+ ~ test/scratch/test.scratch.FILE/test.scratch.FILE.cpp:
+    ~ widestring-build compatibility
+
+ + test/scratch/test.scratch.FILE/vc9/test.scratch.FILE.vcproj:
+    + added test.scratch.FILE.vcproj (VC++9)
+
+ + test/scratch/test.scratch.sink.WindowsConsole/implicit_link.cpp:
+ + test/scratch/test.scratch.sink.WindowsConsole/test.scratch.sink.WindowsConsole.cpp:
+ + test/scratch/test.scratch.sink.WindowsConsole/vc6/test.scratch.sink.WindowsConsole.dsp:
+    + added test.scratch.sink.WindowsConsole
+
+ ~ test/scratch/test.scratch.sink.WindowsMessageBox/resource.h:
+ ~ test/scratch/test.scratch.sink.WindowsMessageBox/test.scratch.sink.WindowsMessageBox.cpp:
+ ~ test/scratch/test.scratch.sink.WindowsMessageBox/test.scratch.sink.WindowsMessageBox.rc:
+    + added dialog, to exercise future functionality that reads top-most parent window name
+
+Depends on:
+
+ * STLSoft 1.9.112 or later
+   (http://stlsoft.org/)
+
+
+
+2nd December 2011 - 0.7.1 alpha 6
+=================================
+
+Summary:
+--------
+
+ * included workaround (in xTests 0.16.3) for strange behaviour (probably code-generation fault) in GCC 4.2 on Mac OS-X 10.7
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.3
+ * NOTE: depends on STLSoft 1.9.111 (not bundled)
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ Inserters:
+
+ Sinks:
+
+Bundles:
+
+Util:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.111 or later
+   (http://stlsoft.org/)
+
+
+
+2nd December 2011 - 0.7.1 alpha 5
+=================================
+
+Summary:
+--------
+
+ * fixed major defect introduced in 0.7.1 alpha 4 that caused infinite loop in some GCC versions
+ * fix to minor defect for GCC compatibility in example.overload.3.server_log.cpp
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.2
+ * NOTE: depends on STLSoft 1.9.111 (not bundled)
+
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ Inserters:
+
+ Sinks:
+
+Bundles:
+
+Util:
+
+ ~ include/fastformat/util/string/snprintf.h:
+    ~ hides snprintf() and vsnprintf() when FASTFORMAT_NO_NAMESPACE is defined
+
+ ~ src/snprintf.cpp:
+    ~ fixed the infinite-loop defect introduced in 0.7.1 alpha 4 (and seen on GCC)
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+ ~ examples/example.overload.3.server_log/example.overload.3.server_log.cpp:
+    ~ GCC compatibility
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.111 or later
+   (http://stlsoft.org/)
+
+
+
+1st December 2011 - 0.7.1 alpha 4
+=================================
+
+Summary:
+--------
+
+ * added fastformat::util::snprintf()
+ * added fastformat::util::vsnprintf()
+ * added GCC 4.5 makefile
+ * added GCC 4.6 makefile
+ * allows for specific suppression of default inclusion of ostream sink, via definition of FASTFORMAT_NO_IMPLICIT_OSTREAM_ACTION_SHIM
+ * 64-bit compatibility for WindowsConsole inserter
+ * documentation markup improvement
+ * added GCC format(printf) attribute to pantheios_util_snprintf() and pantheios_util_snprintf_a()
+ * fastformat_util_snprintf() and fastformat_util_vsnprintf() moved to fastformat::util namespace
+ * added using declaration for ::fastformat::util::fastformat_util_snprintf_a and ::fastformat::util::fastformat_util_vsnprintf_a to introduce it into the fastformat namespace
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.2
+ * NOTE: depends on STLSoft 1.9.111 (not bundled)
+
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    ~ allows for specific suppression of default inclusion of ostream sink, via definition of FASTFORMAT_NO_IMPLICIT_OSTREAM_ACTION_SHIM
+
+ Inserters:
+
+ ~ include/fastformat/inserters/LARGE_INTEGER.hpp:
+    ~ documentation markup improvements
+
+ ~ include/fastformat/inserters/ULARGE_INTEGER.hpp:
+    ~ documentation markup improvements
+
+ ~ include/fastformat/inserters/character.hpp:
+    ~ documentation markup improvements
+
+ Sinks:
+
+ ~ include/fastformat/sinks/FILE.hpp:
+    ~ documentation markup improvements
+
+ ~ include/fastformat/sinks/WindowsConsole.hpp:
+    ~ 64-bit compatibility
+
+ ~ include/fastformat/sinks/ostream.hpp:
+    ~ documentation markup improvement
+
+Bundles:
+
+Util:
+
+ ~ include/fastformat/util/string/snprintf.h:
+    + added GCC format(printf) attribute to pantheios_util_snprintf()
+    + added GCC format(printf) attribute to pantheios_util_snprintf_a()
+    + added using declaration for ::fastformat::util::fastformat_util_snprintf_a to introduce it into the fastformat namespace
+    + added using declaration for ::fastformat::util::fastformat_util_vsnprintf_a to introduce it into the fastformat namespace
+    ~ fastformat_util_snprintf() and fastformat_util_vsnprintf() moved to fastformat::util namespace
+    + added fastformat::util::snprintf()
+    + added fastformat::util::vsnprintf()
+
+ ~ src/snprintf.cpp:
+    ~ fastformat_util_snprintf() and fastformat_util_vsnprintf() moved to fastformat::util namespace
+
+Distribution:
+
+Makefiles / Project-files:
+
+ + build/gcc45.unix/makefile:
+    + added GCC 4.5 makefile
+
+ + build/gcc46.unix/makefile:
+    + added GCC 4.6 makefile
+
+Examples:
+
+ + examples/example.inserter.integers.WindowsLargeIntegers/vc9/example.inserter.integers.WindowsLargeIntegers.vcproj:
+    + added VC9 project file for example.inserter.integers.WindowsLargeIntegers
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.111 or later
+   (http://stlsoft.org/)
+
+
+
+21st January 2011 - 0.7.1 alpha 3
+=================================
+
+Summary:
+--------
+
+ * added to_sink(FILE*), which allows standard C streams (stdout, stderr) to be passed as sinks to FF fmt/write functions, regardless of how they are defined by the C standard library implementation
+ * fastformat::properties_bundle now compatible with STLSoft 1.10's properties_file class; still defaults to previous, less-flexible, manual properties parsing if STLSoft 1.10 not being used
+ * corrected makefile defect whereby WindowsLargeIntegers example object files go into BIN directory
+ * amended format cache memory allocation to hide MSVCRT memory leak false positives
+ * added test of ignore_missing_arguments_scope (added to 0.3 in 2009, but not forward merged)
+
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/fmt_cache.cpp:
+    ~ hide false positivies given by MSVCRT memory leak reporting, due to FF's caching of parsed format strings
+
+Application Layer:
+
+ Inserters:
+
+ Sinks:
+
+ ~ include/fastformat/sinks/FILE.hpp:
+    + added to_sink(FILE*), which allows standard C streams (stdout, stderr) to be passed as sinks to FF fmt/write functions, regardless of how they are defined by the C standard library implementation
+
+Bundles:
+
+ ~ include/fastformat/bundles/properties_bundle.hpp:
+    ~ now compatible with STLSoft 1.10's properties_file class; still defaults to previous, less-flexible, manual properties parsing if STLSoft 1.10 not being used
+
+Util:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    ~ corrected makefile defect whereby WindowsLargeIntegers example object files go into BIN directory
+
+Examples:
+
+ ~ examples/example.inserter.integers.WindowsLargeIntegers/example.inserter.integers.WindowsLargeIntegers.cpp:
+    ~ used STLSOFT_GEN_S/UINT64_SUFFIX() macros to specify 64-bit integer literals
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+ ~ test/scratch/test.scratch.FILE/test.scratch.FILE.cpp:
+    + added to_sink(FILE*), which allows standard C streams (stdout, stderr) to be passed as sinks to FF fmt/write functions, regardless of how they are defined by the C standard library implementation
+
+ ~ test/scratch/test.scratch.format_defects/test.scratch.format_defects.cpp:
+    ~ including test of ignore_missing_arguments_scope (added to 0.3 in 2009, but not forward merged)
+
+Depends on:
+
+ * STLSoft 1.9.106 or later
+   (http://stlsoft.org/)
+
+
+
+16th January 2011 - 0.7.1 alpha 2
+=================================
+
+Summary:
+--------
+
+ * added WindowsConsole sink
+ * improved initialisation failure diagnostics, logging to Pantheios if detected, otherwise to Windows debug-stream+event-log if detected, otherwise the standard error stream
+ * amended format cache memory allocation to hide MSVCRT memory leak false positives
+ * updated all VS'98 solution files to include all relevant project files
+ * NOTE: depends on STLSoft 1.9.106
+
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/fmt_cache.cpp:
+    ~ hide false positivies given by MSVCRT memory leak reporting, due to FF's caching of parsed format strings
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    ~ updated STLSoft 1.10 nag message
+
+ ~ include/fastformat/internal/initialiser.hpp:
+    ~ now performs diagnostic logging to: (i) Pantheios, if Pantheios detected; (ii) Windows debug-stream and event log, if Windows GUI; or (iii) the standard error stream, if neither (i) nor (ii)
+    ~ changed initialisation failure response in case where Pantheios is in use: now uses pantheios::logprintf() so that records FF failure code string
+
+ Inserters:
+
+ Sinks:
+
+ + include/fastformat/sinks/WindowsConsole.hpp:
+    + added WindowsConsole sink (include/fastformat/sinks/WindowsConsole.hpp)
+
+Util:
+
+ ~ include/fastformat/util/string/snprintf.h:
+    ~ documentation markup correction
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ examples/fastformat.examples.vc6.dsw:
+    ~ updated VS'98 solution file with all projects
+
+ ~ fastformat.vc6.dsw:
+    ~ updated VS'98 top-level solution file with all projects
+
+ ~ test/component/fastformat.test.component.vc6.dsw:
+    ~ updated VS'98 solution file with all projects
+
+ ~ test/performance/fastformat.test.performance.vc6.dsw:
+    ~ updated VS'98 solution file with all projects
+
+ ~ test/unit/fastformat.test.unit.vc6.dsw:
+    ~ updated VS'98 solution file with all projects
+
+Examples:
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.106 or later
+   (http://stlsoft.org/)
+
+
+
+11th December 2010 - 0.7.1 alpha 1
+==================================
+
+Summary:
+--------
+
+ * added fastformat::character inserter
+ * added fastformat::to_i() inserter overloads for LARGE_INTEGER and ULARGE_INTEGER
+ * added HOW_YOU_CAN_HELP.txt to distribution
+ * added example.sink.c_string
+ * rationalisation of internal namespace names
+ * enhanced documentation
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/fastformat.h:
+    ~ enhanced documentation for FF namespaces
+
+Core:
+
+ ~ src/api.cpp:
+ ~ src/fmt_cache.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/memory_pool.cpp:
+ ~ src/replacements.cpp:
+    ~ renamed internal core namespace 'impl' to 'ximpl_core'
+
+Application Layer:
+
+ ~ include/fastformat/iterators/format_iterator.hpp:
+    ~ renamed internal core namespace 'impl' to 'ximpl_format_iterator'
+
+ ~ include/fastformat/shims/conversion/filter_type/bool.hpp:
+    ~ renamed internal core namespace 'impl' to 'ximpl_bool'
+
+ ~ include/fastformat/shims/conversion/filter_type/fast_integers.hpp:
+    ~ renamed internal core namespace 'ximpl_fastformat_filters_fast_integers' to 'ximpl_fast_integers'
+
+ Inserters:
+
+ + include/fastformat/inserters/LARGE_INTEGER.hpp:
+    + added include/fastformat/inserters/LARGE_INTEGER.hpp
+
+ + include/fastformat/inserters/ULARGE_INTEGER.hpp:
+    + added include/fastformat/inserters/ULARGE_INTEGER.hpp
+
+ + include/fastformat/inserters/WindowsLargeIntegers.hpp:
+    + added include/fastformat/inserters/WindowsLargeIntegers.hpp
+
+ + include/fastformat/inserters/character.hpp:
+    + added include/pantheios/inserters/character.hpp
+
+ ~ include/fastformat/inserters/integer.hpp:
+    ~ renamed internal core namespace 'integer_impl' to 'ximpl_integer'
+
+ ~ include/fastformat/inserters/real.hpp:
+ ~ include/fastformat/inserters/to_e.hpp:
+ ~ include/fastformat/inserters/to_f.hpp:
+ ~ include/fastformat/inserters/to_g.hpp:
+    ~ renamed internal core namespace 'real_impl' to 'ximpl_real'
+
+ ~ include/fastformat/inserters/to_i.hpp:
+ ~ include/fastformat/inserters/to_i_null_if_not.hpp:
+ ~ include/fastformat/inserters/to_i_null_if_zero.hpp:
+    ~ renamed internal core namespace 'integer_impl' to 'ximpl_integer'
+
+ ~ include/fastformat/inserters/to_x.hpp:
+    ~ renamed internal core namespace 'real_impl' to 'ximpl_real'
+
+ ~ include/fastformat/internal/inserters/int_typedefs.hpp:
+    ~ renamed internal core namespace 'integer_impl' to 'ximpl_integer'
+
+ Sinks:
+
+Distribution:
+
+ + added HOW_YOU_CAN_HELP.txt file, including:
+    1. Defect reports
+    2. Feature requests
+    3. Submit your own extensions: inserters, back-ends, front-ends
+    4. Sponsor development
+    5. Write articles, blog-posts about your experiences
+    6. Help flesh out the Wikipedia page for FastFormat
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9/makefile:
+    + added test.unit.inserters.character
+    + added example.sink.c_string
+    + added example.inserter.integer.WindowsLargeIntegers
+
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.x64/makefile:
+    + added test.unit.inserters.character
+    ~ better discrimination of facilities in the build environment (via detection of environment variables)
+    + added example.sink.c_string
+    + added example.inserter.integer.WindowsLargeIntegers
+
+ ~ fastformat.vc6.dsw:
+    + added test.unit.inserters.character
+
+Examples:
+
+ + examples/example.inserter.integers.WindowsLargeIntegers/example.inserter.integers.WindowsLargeIntegers.cpp:
+    + added example.inserter.integers.WindowsLargeIntegers
+
+ + examples/example.sink.c_string/example.sink.c_string.cpp:
+ + examples/example.sink.c_string/implicit_link.cpp:
+ + examples/example.sink.c_string/vc6/example.sink.c_string.dsp:
+ + examples/example.sink.c_string/vc71/example.sink.c_string.vcproj:
+ + examples/example.sink.c_string/vc8/example.sink.c_string.vcproj:
+ + examples/example.sink.c_string/vc9/example.sink.c_string.vcproj:
+    + added example.sink.c_string
+
+Test:
+
+ Unit:
+
+ + test/unit/test.unit.inserters.character/implicit_link.cpp:
+ + test/unit/test.unit.inserters.character/test.unit.inserters.character.cpp:
+ + test/unit/test.unit.inserters.character/vc6/test.unit.inserters.character.dsp:
+ + test/unit/test.unit.inserters.character/vc71/test.unit.inserters.character.vcproj:
+ + test/unit/test.unit.inserters.character/vc8/test.unit.inserters.character.vcproj:
+ + test/unit/test.unit.inserters.character/vc9/test.unit.inserters.character.vcproj:
+    + added test.unit.inserters.character
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.104 or later
+   (http://stlsoft.org/)
+
+
+
+29th November 2010 - 0.6.4
+==========================
+
+Summary:
+--------
+
+ * fastformat/fastformat.hpp now includes fastformat/sinks/ostream.hpp by default, unless FASTFORMAT_LEAN_AND_MEAN is specified
+ * added example.pad.hash
+ * headers now require STLSoft 1.9.104, which is needed for improved compatibility with some compilers
+ * NOTE: depends on STLSoft 1.9.104
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/internal/stlsoft.h:
+    ~ now requires STLSoft 1.9.104
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    + fastformat/fastformat.hpp (and, therefore, fastformat/pan.hpp) now includes fastformat/sinks/ostream.hpp by default, unless FASTFORMAT_LEAN_AND_MEAN is specified
+
+ Inserters:
+
+ ~ include/fastformat/inserters/integer.hpp:
+ ~ include/fastformat/inserters/to_i.hpp:
+ ~ include/fastformat/inserters/to_x.hpp:
+    ~ documentation fixes
+
+ Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added build targets for example.flush
+    + added build targets for example.pad.hash
+
+Examples:
+
+ + examples/example.pad.hash/example.pad.hash.cpp:
+    + added example.pad.hash
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.104 or later
+   (http://stlsoft.org/)
+
+
+
+11th November 2010 - 0.6.3
+==========================
+
+Summary:
+--------
+
+ * minor defect fixes
+ * added example.flush
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.1
+ * NOTE: depends on STLSoft 1.9.102
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/fastformat.h:
+    ~ corrected enum typedefs, which previously specified struct XX_t
+
+Core:
+
+ ~ src/api.cpp:
+ ~ src/fmt_cache.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/memory_pool.cpp:
+ ~ src/replacements.cpp:
+    ~ corrected erroneous closing namespace pre-processor control statements
+
+Application Layer:
+
+ Inserters:
+
+ Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+ + examples/example.flush/example.flush.cpp:
+ + examples/example.flush/implicit_link.cpp:
+ + examples/example.flush/vc6/example.flush.dsp:
+ ~ examples/fastformat.examples.vc6.dsw:
+    + example.flush
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.102 or later
+   (http://stlsoft.org/)
+
+
+
+14th October 2010 - 0.6.2
+=========================
+
+Summary:
+--------
+
+ * added fastformat::flush() function
+ * added sink_exception class (abstract) and sink_output_exception exception classes
+ * added to_i_null_if_not(), to_i_null_if_zero(), and to_i_null_if_0() inserter functions
+ * substantially improved documentation markup
+ * sinks for CComBSTR, FILE, ostream, speech, and stringstream now throw sink_output_exception if write/flush fails
+ * fixed defect in inserter for CComBSTR when 0-length written to it
+ * minor optimisation for char_buffer sink
+ * added automatic detection and inclusion of STLSoft 1.10 to makefiles (for compilers whose make tool have preprocessor support)
+ * added test.performance.boost.karma (a performance test involving Boost.Spirit.Karma)
+ * added test.component.sink.CComBSTR
+ * added test.component.sink.ostream
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.1
+ * NOTE: depends on STLSoft 1.9.101
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/bundles/openrj_bundle.hpp:
+ ~ include/fastformat/bundles/properties_bundle.hpp:
+ ~ include/fastformat/bundles/windows_resource_bundle.hpp:
+ ~ include/fastformat/bundles/winini_bundle.hpp:
+ ~ include/fastformat/fastformat.h:
+ ~ include/fastformat/ff.hpp:
+ ~ include/fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp:
+ ~ include/fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp:
+ ~ include/fastformat/format/specification_defect_handling/mismatched_arguments_scope_base.hpp:
+ ~ include/fastformat/init_codes.h:
+ ~ include/fastformat/inserters/real.hpp:
+ ~ include/fastformat/inserters/to_e.hpp:
+ ~ include/fastformat/inserters/to_f.hpp:
+ ~ include/fastformat/inserters/to_g.hpp:
+ ~ include/fastformat/inserters/to_i.hpp:
+ ~ include/fastformat/inserters/to_x.hpp:
+ ~ include/fastformat/internal/format_element.h:
+ ~ include/fastformat/internal/initialiser.hpp:
+ ~ include/fastformat/iterators/format_iterator.hpp:
+ ~ include/fastformat/quality/contract.h:
+ ~ include/fastformat/shims/conversion/filter_type/fast_integers.hpp:
+ ~ include/fastformat/shims/conversion/filter_type/reals.hpp:
+ ~ include/fastformat/sinks/ACE_CString.hpp:
+ ~ include/fastformat/sinks/CString.hpp:
+ ~ include/fastformat/sinks/OutputDebugString.hpp:
+ ~ include/fastformat/sinks/WindowsMessageBox.hpp:
+ ~ include/fastformat/sinks/auto_buffer.hpp:
+ ~ include/fastformat/sinks/c_string.hpp:
+ ~ include/fastformat/sinks/shim_string.hpp:
+ ~ include/fastformat/sinks/vectored_file.hpp:
+ ~ include/fastformat/util/bundle/windows_replacement_translation_functions.hpp:
+ ~ include/fastformat/util/memory/auto_buffer_selector.hpp:
+ ~ include/fastformat/util/sinks/helpers.hpp:
+    ~ substantially improved documentation markup
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/exceptions.hpp:
+    ~ substantially improved documentation markup
+    + added sink_exception class (abstract)
+    + added sink_output_exception class
+
+ ~ include/fastformat/fastformat.hpp:
+    + added fastformat::flush() function
+    ~ substantially improved documentation markup
+
+ Inserters:
+
+ ~ include/fastformat/inserters/integer.hpp:
+ ~ include/fastformat/internal/inserters/int_typedefs.hpp:
+    ~ substantially improved documentation markup
+    + separated integer inserter shim return type typedef into separate common header file
+
+ + include/fastformat/inserters/to_i_null_if_not.hpp:
+    + added to_i_null_if_not()
+
+ + include/fastformat/inserters/to_i_null_if_zero.hpp:
+    + added to_i_null_if_zero()
+    + added to_i_null_if_0()
+
+ Sinks:
+
+ ~ include/fastformat/sinks/CComBSTR.hpp:
+    ~ can now react properly to flush() (and to any other writing of non-empty statements)
+    ~ now throws sink_output_exception
+    ~ substantially improved documentation markup
+
+ ~ include/fastformat/sinks/char_buffer.hpp:
+    ~ minor optimisation: removed redundant second instance of crlf
+    ~ substantially improved documentation markup
+
+ ~ include/fastformat/sinks/FILE.hpp:
+ ~ include/fastformat/sinks/ostream.hpp:
+ ~ include/fastformat/sinks/speech.hpp:
+ ~ include/fastformat/sinks/stringstream.hpp:
+    ~ substantially improved documentation markup
+    ~ now throws sink_output_exception on write/flush failure
+
+ ~ include/fastformat/sinks/null.hpp:
+    ~ can now react properly to flush() (and to any other writing of non-empty statements)
+    ~ substantially improved documentation markup
+
+ ~ include/fastformat/sinks/string_array.hpp:
+    ~ substantially improved documentation markup
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/dm/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc9.unixem/makefile:
+    + added automatic detection and inclusion of STLSoft 1.10 (for compilers whose make tool have preprocessor support)
+
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added automatic detection and inclusion of STLSoft 1.10 (for compilers whose make tool have preprocessor support)
+    + added Boost.Spirit.Karma performance test (from Boost)
+
+Examples:
+
+Test:
+
+ Unit:
+
+ Component:
+
+ ~ test/component/fastformat.test.component.vc6.dsw:
+ + test/component/test.component.sink.CComBSTR/implicit_link.cpp:
+ + test/component/test.component.sink.CComBSTR/test.component.sink.CComBSTR.cpp:
+ + test/component/test.component.sink.CComBSTR/vc6/test.component.sink.CComBSTR.dsp:
+ + test/component/test.component.sink.CComBSTR/vc71/test.component.sink.CComBSTR.vcproj:
+ + test/component/test.component.sink.CComBSTR/vc8/test.component.sink.CComBSTR.vcproj:
+ + test/component/test.component.sink.CComBSTR/vc9/test.component.sink.CComBSTR.vcproj:
+    + added test.component.sink.CComBSTR
+
+ ~ test/component/test.component.sink.auto_buffer/test.component.sink.auto_buffer.cpp:
+ ~ test/component/test.component.sink.auto_buffer/vc6/test.component.sink.auto_buffer.dsp:
+ ~ test/component/test.component.sink.null/test.component.sink.null.cpp:
+ ~ test/component/test.component.sink.string.fmt/test.component.sink.string.fmt.cpp:
+ ~ test/component/test.component.sink.string.write/test.component.sink.string.write.cpp:
+ ~ test/component/test.component.sink.string_array/test.component.sink.string_array.cpp:
+    ~ verifies that can write empty statement onto non-empty instance
+    ~ verifies that flush() is applicable (and benign)
+
+ + test/component/test.component.sink.ostream/implicit_link.cpp:
+ + test/component/test.component.sink.ostream/test.component.sink.ostream.cpp:
+ + test/component/test.component.sink.ostream/vc6/test.component.sink.ostream.dsp:
+ + test/component/test.component.sink.ostream/vc71/test.component.sink.ostream.vcproj:
+ + test/component/test.component.sink.ostream/vc8/test.component.sink.ostream.vcproj:
+ + test/component/test.component.sink.ostream/vc9/test.component.sink.ostream.vcproj:
+    + added test.component.sink.ostream
+    ~ verifies that can write empty statement onto non-empty instance
+    ~ verifies that flush() is applicable (and benign)
+
+ Performance:
+
+ + test/performance/test.performance.boost.karma/test.performance.boost.karma.cpp:
+    + added Boost.Spirit.Karma performance test (from Boost)
+
+ ~ test/performance/test.performance.one_integer/test.performance.one_integer.cpp:
+    + added Boost.Spirit.Karma to the tests
+    + added STLSoft integer_to_string to the tests
+    ~ renamed Boost symbols to more specific BoostFormat, in readiness for adding in Karma
+
+ Scratch:
+
+ ~ test/scratch/test.scratch.FILE/test.scratch.FILE.cpp:
+    ~ flushing experiments
+
+ ~ test/scratch/test.scratch.FILE/vc6/test.scratch.FILE.dsp:
+    + added Debug Multithreaded DLL build
+
+Depends on:
+
+ * STLSoft 1.9.101 or later
+   (http://stlsoft.org/)
+
+
+
+22nd June 2010 - 0.6.1 alpha 1
+==============================
+
+Summary:
+--------
+
+ * optimised the handling of (default-formatted) integers
+ * optimised the helper function templates to reduce runtime call costs
+ * combined optimisation leading of 15-100% increase in performance in tested scenarios; smaller (but significant) increases are expected to be confirmed in forthcoming study encompassing existing scenarios published on website
+ * moved bundle data to ./test/data/bundles
+ * removed '-Werror' from GCC 3.4 makefiles, so can build tests that reference Boost code
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.2
+ * NOTE: depends on STLSoft 1.9.99
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ scripts/make_hdrs.rb:
+    ~ now generates explicit totalling of the slice lengths
+
+Application Layer:
+
+ ~ include/fastformat/internal/generated/helper_functions.hpp:
+    ~ now uses explicit totalling of the slice lengths
+
+ ~ include/fastformat/shims/conversion/filter_type/fast_integers.hpp:
+    ~ enhanced performance of integer-to-string filter conversion shims
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/makefile.tmpl:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    ~ bundle data moved to ./test/data/bundles
+
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+    - removed '-Werror' from GCC 3.4 makefiles, so can build tests that reference Boost code
+    ~ bundle data moved to ./test/data/bundles
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.99 or later
+   (http://stlsoft.org/)
+
+
+
+21st June 2010 - 0.5.9
+======================
+
+Summary:
+--------
+
+ * added non-nag define, FASTFORMAT_NO_VERSION_NAG, to suppress STLSoft 1.10 compile messages
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.2
+ * NOTE: depends on STLSoft 1.9.99
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    + added non-nag define, FASTFORMAT_NO_VERSION_NAG, to suppress STLSoft 1.10 compile messages
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added non-nag define, FASTFORMAT_NO_VERSION_NAG, to suppress STLSoft 1.10 compile messages
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.99 or later
+   (http://stlsoft.org/)
+
+
+
+7th June 2010 - 0.5.8
+=====================
+
+Summary:
+--------
+
+ * correctly truncates field to empty string when maximum width of 0 is specified
+ * corrected and updated FAQ
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.98
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/replacements.cpp:
+    ~ correctly truncates field to empty string when maximum width of 0 is specified
+
+Application Layer:
+
+ ~ include/fastformat/bundles/properties_bundle.hpp:
+    ~ renames internal members, in preparation for future enhancement
+
+Sinks:
+
+Distribution:
+
+ ~ FAQ.txt:
+    - erroneous comment stating that it does not need to be built. It does!
+ + added instructions for building
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ ~ test/component/test.component.sink.string.fmt/test.component.sink.string.fmt.cpp:
+    ~ correctly truncates field to empty string when maximum width of 0 is specified
+
+ ~ test/unit/test.unit.api.fill_replacements/test.unit.api.fill_replacements.cpp:
+    ~ updated for new (internal) interpretation of ff_format_element_t max width
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.98 or later
+   (http://stlsoft.org/)
+
+
+
+16th March 2010 - 0.5.7
+=======================
+
+Summary:
+--------
+
+ * VC 10 compatibility for format_iterator
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.97
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/iterators/format_iterator.hpp:
+    ~ (Unfortunate) adjustment of the implementation to allow for copy assignment (even though, since it's not default constructible, it's hardly an important feature).
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.97 or later
+   (http://stlsoft.org/)
+
+
+
+13th March 2010 - 0.5.6
+=======================
+
+Summary:
+--------
+
+ * now fully supports '#' as fill character (in addition to ' ')
+ * ensures all (format specification defect) exceptions are correctly propagated to the caller 
+ * detects (and rejects) negative width elements
+ * detects (and rejects) extra format specifier elements
+ + added test.component.format_specification_defect_exceptions
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.97
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/fmt_cache.cpp:
+    ~ ensuring all (format specification defect) exceptions are correctly propagated to the caller 
+
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/memory_pool.cpp:
+    ~ normalising error codes
+
+ ~ src/replacements.cpp:
+    ~ now detects and rejects -ve width elements
+    ~ preparation for more fine-grained parsing responses
+    ~ causes extra format specifier elements to result in parsing exception
+    + now fully supports ' ' and '#' as fill characters
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+    + added test.component.format_specification_defect_exceptions
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.api.parse_format/test.unit.api.parse_format.cpp:
+    ~ adjusted to work with '#' fill functionality
+
+Test.Component:
+
+ ~ test/component/fastformat.test.component.vc6.dsw:
+ + test/component/test.component.format_specification_defect_exceptions/implicit_link.cpp:
+ + test/component/test.component.format_specification_defect_exceptions/test.component.format_specification_defect_exceptions.cpp:
+ + test/component/test.component.format_specification_defect_exceptions/vc6/test.component.format_specification_defect_exceptions.dsp:
+    + added test.component.format_specification_defect_exceptions
+
+ ~ test/component/test.component.sink.string.fmt/test.component.sink.string.fmt.cpp:
+    ~ now works with newly added compatibility with ' ' and '#' fill specifications
+
+Test.Performance:
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.format_defects/vc6/test.scratch.format_defects.dsp:
+    ~ adjusted to work with '#' fill functionality
+
+Depends on:
+
+ * STLSoft 1.9.97 or later
+   (http://stlsoft.org/)
+
+
+
+5th April 2010 - 0.5.5
+======================
+
+Summary:
+--------
+
+ * added example and test programs for format_iterator
+ * other minor refactorings
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.97
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/iterators/format_iterator.hpp:
+    ~ minor rearrangement
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc564/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added test.component.iterators.format_iterator
+    + added examples.iterators.format_iterator
+
+Examples:
+
+ + examples/example.iterators.format_iterator/example.iterators.format_iterator.cpp:
+ + examples/example.iterators.format_iterator/implicit_link.cpp:
+ + examples/example.iterators.format_iterator/vc6/example.iterators.format_iterator.dsp:
+ + examples/fastformat.examples.vc6.dsw:
+    + added examples.iterators.format_iterator
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ + test/component/test.component.iterators.format_iterator/implicit_link.cpp:
+ + test/component/test.component.iterators.format_iterator/test.component.iterators.format_iterator.cpp:
+    + added test.component.iterators.format_iterator
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.97 or later
+   (http://stlsoft.org/)
+
+
+
+10th March 2010 - 0.5.4
+=======================
+
+Summary:
+--------
+
+ * Added support for Visual C++ 10 (including makefiles and implicit linking)
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.14.5
+ * NOTE: depends on STLSoft 1.9.96
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/implicit_link.h:
+    + added VC++ 10 support
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/vc10.unixem/makefile:
+ ~ build/vc10.x64/makefile:
+ ~ build/vc10/makefile:
+    + VC++ 10
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ ~ test/component/test.component.inserter.integer/test.component.inserter.integer.cpp:
+    ~ enhanced compatibility (re C limits)
+
+Test.Performance:
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.inserter.integer/test.scratch.inserter.integer.cpp:
+    ~ enhanced compatibility (re C limits)
+
+Depends on:
+
+ * STLSoft 1.9.96 or later
+   (http://stlsoft.org/)
+
+
+
+9th March 2010 - 0.5.3
+======================
+
+Summary:
+--------
+
+ * better compatibility of test program compilation with Fedora
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.14.5
+ * NOTE: depends on STLSoft 1.9.95
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ ~ test/component/test.component.inserter.integer/test.component.inserter.integer.cpp:
+    ~ enhanced compatibility (re C limits)
+
+Test.Performance:
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.inserter.integer/test.scratch.inserter.integer.cpp:
+    ~ enhanced compatibility (re C limits)
+
+Depends on:
+
+ * STLSoft 1.9.95 or later
+   (http://stlsoft.org/)
+
+
+
+7th March 2010 - 0.5.2
+======================
+
+Summary:
+--------
+
+ * fixed missing throw() on ~ignore_missing_arguments_scope()
+ * compatibility with the distinct integer types of VC++ 6/ICL 6/7 for fast integer conversions
+ * NOTE: bundles shwild 0.9.18
+ * NOTE: bundles xTests 0.14.4
+ * NOTE: depends on STLSoft 1.9.95
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp:
+    ~ fixed missing throw() on ~ignore_missing_arguments_scope()
+
+ ~ include/fastformat/shims/conversion/filter_type/fast_integers.hpp:
+    ~ compatibility with the distinct integer types of VC++ 6/ICL 6/7
+    ~ trivial reformatting
+    ~ tidying up
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.95 or later
+   (http://stlsoft.org/)
+
+
+
+5th February 2010 - 0.5.1 alpha 1
+=================================
+
+Summary:
+--------
+
+ * added hex conversion for integers, via fastformat::to_x()/fastformat::to_X()
+ * added example.inserter.hex project
+ * added example.inserter.integers project
+ * added test.component.inserter.hex project
+ * added test.component.inserter.integers project
+ * includes example.inserter.reals project to build
+ * includes example.sink.c_string project to build
+ * NOTE: bundles xTests 0.14.4
+ * NOTE: depends on STLSoft 1.9.91
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/inserters/integer.hpp:
+    ~ handles hex case correctly
+    ~ 64-bit hex integers
+    + now handles hexadecimal
+
+ ~ include/fastformat/inserters/to_x.hpp:
+    + added ff::to_x() & ff::to_X()
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    ~ reordering of targets in lists
+    + added example.inserter.hex project
+    + added example.inserter.integers project
+    + includes example.inserter.reals project to build
+    + includes example.sink.c_string project to build
+    + added test.component.inserter.hex project
+    + added test.component.inserter.integers project
+
+ ~ fastformat.vc6.dsw:
+    + test.component.inserter.hex
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.sink.CString/test.unit.sink.CString.cpp:
+    ~ fix for 64-bit compilation warning
+
+Test.Component:
+
+Test.Performance:
+
+ ~ test/performance/test.performance.one_integer/test.performance.one_integer.cpp:
+    ~ workaround for GCC (Windows) defect
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.91 or later
+   (http://stlsoft.org/)
+
+
+
+21st January 2010 - 0.4.6
+=========================
+
+Summary:
+--------
+
+ * fixed uninitialisation defect
+ * minor correction to makefile targets
+ * NOTE: bundles xTests 0.14.4
+ * NOTE: depends on STLSoft 1.9.90
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/fmt_spec_defect_handlers.cpp:
+    ~ fixed leak, caused by defective refactoring
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ all makefiles:
+    ~ compile.test.unit target now ensures all relevant source files are compiled
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.api.initialisation/test.unit.api.initialisation.cpp:
+    ~ now exercises init-uninit cycle 100,000 times
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.90 or later
+   (http://stlsoft.org/)
+
+
+
+20th January 2010 - 0.4.5
+=========================
+
+Summary:
+--------
+
+ * compatibility fixes for GCC 3.4 (Windows)
+ * compatibility fixes for 64-bit compilation
+ * NOTE: bundles xTests 0.14.3
+ * NOTE: depends on STLSoft 1.9.89
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/gcc34.win32/makefile:
+    ~ GCC 3.4 (MinGW) gives erroneous "???? might be used uninitialized in this function" warning, which breaks the build
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.sink.CString/test.unit.sink.CString.cpp:
+    ~ fix for 64-bit compilation warning
+
+Test.Component:
+
+Test.Performance:
+
+ ~ test/performance/test.performance.one_integer/test.performance.one_integer.cpp:
+    ~ workaround for GCC (Windows) defect
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.89 or later
+   (http://stlsoft.org/)
+
+
+
+10th July 2009 - 0.4.4
+======================
+
+Summary:
+--------
+
+ * fixed defective assert when missing arguments are ignored
+ * added scratch test program test.scratch.ignore_missing_arguments_scope
+ * NOTE: bundles xTests 0.13.3
+ * NOTE: depends on STLSoft 1.9.85
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/replacements.cpp:
+    ~ fixed defective assert when missing arguments are ignored
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ test/scratch/fastformat.test.scratch.vc6.dsw:
+    + added scratch test program test.scratch.ignore_missing_arguments_scope
+
+ + test/scratch/test.scratch.ignore_missing_arguments_scope/test.scratch.ignore_missing_arguments_scope.cpp
+ + test/scratch/test.scratch.ignore_missing_arguments_scope/vc6/test.scratch.ignore_missing_arguments_scope.dsp
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+ + test.scratch.ignore_missing_arguments_exception
+
+Depends on:
+
+ * STLSoft 1.9.85 or later
+   (http://stlsoft.org/)
+
+
+
+8th July 2009 - 0.4.3
+=====================
+
+Summary:
+--------
+
+ * fixed minor defect (fails to compile in widestring build) in several bundle classes
+ * fix for compiler warnng in WindowsMessageBox sink
+ * tidying up makefiles
+ * workaround for compiler warnings in Boost libraries used with VC++ 7.1
+ * fixed defect in OutputDebugString example
+ * NOTE: bundles xTests 0.13.3
+ * NOTE: depends on STLSoft 1.9.85
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/api.cpp:
+ ~ src/fmt_cache.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/init_code_strings.cpp:
+ ~ src/memory_pool.cpp:
+ ~ src/replacements.cpp:
+ ~ src/snprintf.cpp:
+    ~ minor adjustments
+
+Application Layer:
+
+ ~ include/fastformat/bundles/openrj_bundle.hpp:
+ ~ include/fastformat/bundles/properties_bundle.hpp:
+ ~ include/fastformat/bundles/winini_bundle.hpp:
+    ~ fixed inappropriate using declarations of string access shim function
+
+Sinks:
+
+ ~ include/fastformat/sinks/WindowsMessageBox.hpp:
+    ~ explicitly proscribe copy assignment operator, to avoid compiler warning
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/como433.unix/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc40.mac.x64/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+ ~ build/makefile.tmpl:
+ ~ build/sunpro59x.unix/makefile:
+    - removed definition of example.sink.OutputDebugString from UNIX makefiles
+    - commenting out of test.unit.sink.vec_file from makefiles
+
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc9.unixem/makefile:
+    - removed definition of example.sink.OutputDebugString from UNIX makefiles
+    - commenting out of test.unit.sink.vec_file from makefiles
+    + added single-threaded & multithreaded release variants for UNIXem builds
+
+Examples:
+
+ ~ examples/example.overload.3.floatingpoint_columns/example.overload.3.floatingpoint_columns.cpp:
+ ~ examples/example.overload.3.tabulations/example.overload.3.tabulations.cpp:
+    ~ workaround some compiler warnings in the Boost libraries when used with VC++ 7.1
+
+ ~ examples/example.sink.OutputDebugString/example.sink.OutputDebugString.cpp:
+    ~ fixed defect whereby exception instance misused
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.85 or later
+   (http://stlsoft.org/)
+
+
+
+18th June 2009 - 0.4.2
+======================
+
+Summary:
+--------
+
+ * numerous minor adjustments to makefiles (including those not fully merged from 0.3 branch in 0.4.1)
+ * corrected 0.4.1 failure to bundle xTests 0.13.x
+ * NOTE: bundles xTests 0.13.2
+ * NOTE: depends on STLSoft 1.9.85
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ *:
+  + added como 4.3.3 (UNIX & Win32) makefiles; were in 0.3.6, but omitted in 0.4.1
+  + added GCC 4.0 Mac 64-bit makefile back; was in 0.3.6, but omitted in 0.4.1
+  + added Sun Pro 5.9.x makefile back; was in 0.3.6, but omitted in 0.4.1
+
+ Mac:
+  - removed GCC 4.1 & 4.2 Mac OS-X makefiles (as they're unnecessary)
+
+ UNIX
+    + added step to prepare files for OS, and on UNIX this does a removal of all \r from .h and .c files
+    ~ refactored ld arguments specification
+
+ rest:
+    ~ refactored ld arguments specification
+
+ ~ build/cw8.unix/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/gcc44.unix/makefile:
+    + added step to prepare files for OS, and on UNIX this does a removal of all \r from .h and .c files
+    ~ refactored ld arguments specification
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/icl10.win32/makefile:
+ ~ build/icl11.win32/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+    ~ refactored ld arguments specification
+
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    ~ various minor corrections/adjustments to VC++ makefiles
+    ~ refactored ld arguments specification
+
+Examples:
+
+ ~ examples/example.overload.3.record_insert/example.overload.3.record_insert.cpp:
+ ~ examples/example.overload.3.server_log/example.overload.3.server_log.cpp:
+ ~ examples/example.overload.3.tabulations/example.overload.3.tabulations.cpp:
+    ~ minor mods to avoid compiler warnings
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.85 or later
+   (http://stlsoft.org/)
+
+
+
+16th June 2009 - 0.4.1
+======================
+
+Summary:
+--------
+
+ * added bundle: fastformat::windows_resource_bundle
+ * added inserter: fastformat::integer
+ * added inserter: fastformat::to_i
+ * added inserter: fastformat::to_e
+ * added inserter: fastformat::to_f
+ * added inserter: fastformat::to_g
+ * added iterator: fastformat::format_iterator
+ * added sink: fastformat::WindowsMessageBox()
+ * added scoping class: fastformat::ignore_missing_arguments_scope
+ * updated examples and performance tests to correspond to the three-article series in ACCU's Overload
+ * added makefile for GCC 4.4
+ * added example: example.overload.3.floatingpoint_columns
+ * added example: example.overload.3.record_insert
+ * added example: example.overload.3.server_log
+ * added example: example.overload.3.tabulations
+ * added example: example.sink.c_string
+ * removed dependency on fastformat/fastformat.hpp from all Application Layer components for which it was not necessary
+ * expanded maximum-parameter limit from 32 to 48
+ * changed semantics for fastformat::util::concat_slices
+ * improved the performance of the FILE sink
+ * NOTE: bundles xTests 0.13.2
+ * NOTE: depends on STLSoft 1.9.85
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/fastformat.h:
+    + now included fastformat/internal/shim_macros.h, containing shim (& other) macros formerly contained in fastformat/fastformat.hpp
+
+Core:
+
+ ~ src/api.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+    ~ purely syntactic internal function name changes
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    + moved shim (& other) macros formerly out, to fastformat/internal/shim_macros.h (which is included in fastformat/fastformat.h)
+
+ ~ include/fastformat/bundles/openrj_bundle.hpp:
+ ~ include/fastformat/bundles/properties_bundle.hpp:
+ ~ include/fastformat/bundles/winini_bundle.hpp:
+    - removed dependency on fastformat/fastformat.hpp; now requires only fastformat/fastformat.h
+
+ ~ include/fastformat/bundles/windows_resource_bundle.hpp:
+    + initial, incomplete implementation, containing ARV references
+
+ ~ include/fastformat/exceptions.hpp:
+    + bundle_exception
+    ~ changed comments and indenting to correctly denote the exception hierarchy and responsibilities
+
+ ~ include/fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp:
+    ~ handle_default() method
+
+ ~ include/fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp:
+    ~ handle_default() method
+    ~ now implemented in terms of unmatched_arguments_scope_base
+
+ ~ include/fastformat/format/specification_defect_handling/mismatched_arguments_scope_base.hpp:
+    ~ handle_default() method
+    + added unmatched_arguments_scope_base
+
+ ~ include/fastformat/inserters/integer.hpp:
+    + added fastformat::integer() inserter
+
+ ~ include/fastformat/inserters/real.hpp:
+    ~ renamed helpers namespace from impl to real_impl
+    ~ widestring correction
+    ~ now handles -ve widths correctly (rather than interpreting a -ve as to use default)
+
+ ~ include/fastformat/inserters/to_e.hpp:
+    + added fastformat::to_e() inserter functions
+
+ ~ include/fastformat/inserters/to_f.hpp:
+    - removed to_F() as it has no meaning (dufus!)
+    + added fastformat::to_e() inserter functions
+
+ ~ include/fastformat/inserters/to_g.hpp:
+    + added fastformat::to_g() inserter functions
+
+ ~ include/fastformat/inserters/to_i.hpp:
+    + added fastformat::to_i() inserter
+
+ ~ include/fastformat/internal/generated/api_functions.hpp:
+ ~ include/fastformat/internal/generated/helper_functions.hpp:
+    ~ number of parameters 32 => 48
+
+ ~ include/fastformat/internal/initialiser.hpp:
+    - removal of public version information from non-public file
+
+ ~ include/fastformat/internal/shim_macros.h:
+    ~ factored out shim (and other) macros used internally within application layer components
+
+ ~ include/fastformat/iterators/format_iterator.hpp:
+    + added ability to provide up to 8 additional parameters
+    + added fastformat::format_iterator()
+
+ ~ include/fastformat/sinks/CString.hpp:
+    ~ compatibility with changed semantics of concat_slices()
+
+ ~ include/fastformat/sinks/FILE.hpp:
+    ~ improved the performance of the FILE sink (by implementing in terms of fputs(), rather than fprintf())
+
+ ~ include/fastformat/sinks/WindowsMessageBox.hpp:
+    + added fastformat::sinks::WindowsMessageBox_sink sink class
+
+ + include/fastformat/util/bundle/windows_replacement_translation_functions.hpp:
+    + added include/fastformat/util/bundle/windows_replacement_translation_functions.hpp
+
+ ~ include/fastformat/util/sinks/helpers.hpp:
+    ~ concat_slices now returns number of characters written
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ examples/fastformat.examples.vc6.dsw:
+ ~ examples/fastformat.examples.vc71.sln:
+ ~ examples/fastformat.examples.vc8.sln:
+ ~ examples/fastformat.examples.vc9.sln:
+ ~ fastformat.vc6.dsw:
+    + added example.inserter.integers
+    + added example.inserter.reals
+    ~ example.overload.custom_type.string_access_shims => example.overload.2.custom_type.string_access_shims
+    ~ example.overload.custom_type.inserter => example.overload.2.custom_type.inserter
+    ~ example.overload.custom_type.filter_type => example.overload.2.custom_type.filter_type
+
+ + build/gcc44.unix/makefile:
+ + build/icl10.win32/makefile:
+ + build/icl11.win32/makefile:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added dependencies on ws2_32 library (for use with server log example)
+    + added build.examples.overload.3 build target
+    + added example.overload.3.floatingpoint_columns
+    + added example.overload.3.floatingpoint_columns
+    + added example.overload.3.record_insert
+    + added example.overload.3.server_log
+    + added example.overload.3.tabulations
+    + added example.sink.OutputDebugString
+    ~ now properly cleans examples artefacts
+    ~ now properly cleans test.component artefacts
+    ~ now properly cleans test.unit artefacts
+    ~ now properly cleans test.performance artefacts
+    ~ now properly cleans all .manifest files
+    ~ now properly cleans all .pdb files
+    ~ example.overload.custom_type.string_access_shims => example.overload.2.custom_type.string_access_shims
+    ~ example.overload.custom_type.inserter => example.overload.2.custom_type.inserter
+    ~ example.overload.custom_type.filter_type => example.overload.2.custom_type.filter_type
+    - removed include/fastformat/shims/conversion/filter_type/integers.hpp
+    + test.unit.api.illformed_handlers
+    + test.unit.api.mismatched_handlers
+    ~ minor correction of makefiles for Borland, whereby libraries are deleted and objects only added rather than remove + add, which causes warnings on the first creation
+    ~ renamed test.performance.cvu.ex.1 to test.performance.overload.ex.1
+
+Examples:
+
+ ~ examples/example.overload.2.custom_type.filter_type/example.overload.2.custom_type.filter_type.cpp:
+ ~ examples/example.overload.2.custom_type.filter_type/implicit_link.cpp:
+ ~ examples/example.overload.2.custom_type.filter_type/vc6/example.overload.2.custom_type.filter_type.dsp:
+    ~ example.overload.custom_type.filter_type => example.overload.2.custom_type.filter_type
+
+ ~ examples/example.overload.2.custom_type.filter_type/vc71/example.overload.2.custom_type.filter_type.vcproj:
+ ~ examples/example.overload.2.custom_type.filter_type/vc8/example.overload.2.custom_type.filter_type.vcproj:
+ ~ examples/example.overload.2.custom_type.filter_type/vc9/example.overload.2.custom_type.filter_type.vcproj:
+    ~ example.overload.custom_type.filter_type => example.overload.2.custom_type.filter_type
+
+ ~ examples/example.overload.2.custom_type.inserter/example.overload.2.custom_type.inserter.cpp:
+ ~ examples/example.overload.2.custom_type.inserter/implicit_link.cpp:
+ ~ examples/example.overload.2.custom_type.inserter/vc6/example.overload.2.custom_type.inserter.dsp:
+ ~ examples/example.overload.2.custom_type.inserter/vc71/example.overload.2.custom_type.inserter.vcproj:
+ ~ examples/example.overload.2.custom_type.inserter/vc8/example.overload.2.custom_type.inserter.vcproj:
+ ~ examples/example.overload.2.custom_type.inserter/vc9/example.overload.2.custom_type.inserter.vcproj:
+    ~ example.overload.custom_type.inserter => example.overload.2.custom_type.inserter
+
+ ~ examples/example.overload.2.custom_type.string_access_shims/example.overload.2.custom_type.string_access_shims.cpp:
+ ~ examples/example.overload.2.custom_type.string_access_shims/implicit_link.cpp:
+ ~ examples/example.overload.2.custom_type.string_access_shims/vc6/example.overload.2.custom_type.string_access_shims.dsp:
+ ~ examples/example.overload.2.custom_type.string_access_shims/vc71/example.overload.2.custom_type.string_access_shims.vcproj:
+ ~ examples/example.overload.2.custom_type.string_access_shims/vc8/example.overload.2.custom_type.string_access_shims.vcproj:
+ ~ examples/example.overload.2.custom_type.string_access_shims/vc9/example.overload.2.custom_type.string_access_shims.vcproj:
+    ~ example.overload.custom_type.string_access_shims => example.overload.2.custom_type.string_access_shims
+
+ ~ examples/example.overload.3.server_log/example.overload.3.server_log.cpp:
+    ~ UNIX compatibility
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.api.fill_replacements/test.unit.api.fill_replacements.cpp:
+    ~ purely syntactic name changes
+
+ ~ test/unit/test.unit.api.illformed_handlers/implicit_link.cpp:
+    + test.unit.api.illformed_handlers
+
+ ~ test/unit/test.unit.api.illformed_handlers/test.unit.api.illformed_handlers.cpp:
+    ~ dramatic amount of messing around to get the function pointers to compare
+    + test.unit.api.illformed_handlers
+
+ ~ test/unit/test.unit.api.mismatched_handlers/test.unit.api.mismatched_handlers.cpp:
+    ~ dramatic amount of messing around to get the function pointers to compare
+
+Test.Component:
+
+ ~ test/component/fastformat.test.component.vc6.dsw:
+    + added test.component.inserter.integer
+
+ ~ test/component/test.component.FILE/test.component.FILE.cpp:
+    ~ minor improvement to xTests testing
+
+Test.Performance:
+
+ ~ test/performance/test.performance.overload.ex.1/implicit_link.cpp:
+ ~ test/performance/test.performance.overload.ex.1/test.performance.overload.ex.1.cpp:
+ ~ test/performance/test.performance.overload.ex.1/vc6/test.performance.overload.ex.1.dsp:
+    ~ corrected name from test.perforrmance.cvu.ex.1 to test.performance.overload.ex.1
+
+Test.Scratch:
+
+ ~ test/scratch/fastformat.test.scratch.vc6.dsw:
+    + added test.scratch.inserter.integer
+
+ ~ test/scratch/test.scratch.format_iterator/implicit_link.cpp:
+    + [Compile-Driven Development] client code
+
+ ~ test/scratch/test.scratch.format_iterator/test.scratch.format_iterator.cpp:
+    + added fastformat::format_iterator()
+
+ ~ test/scratch/test.scratch.inserter.integer/implicit_link.cpp:
+ ~ test/scratch/test.scratch.inserter.integer/test.scratch.inserter.integer.cpp:
+ ~ test/scratch/test.scratch.inserter.integer/vc6/test.scratch.inserter.integer.dsp:
+    + added test.scratch.inserter.integer
+
+ ~ test/scratch/test.scratch.inserter.real/test.scratch.inserter.real.cpp:
+    + added examples for to_e(), to_f(), to_g()
+
+Depends on:
+
+ * STLSoft 1.9.85 or later
+   (http://stlsoft.org/)
+
+
+
+24th May 2009 - 0.3.6
+=====================
+
+Summary:
+--------
+
+ * added makefiles for Como 4.3.3, GCC 4.0 Mac OS-X 64-bit, and Sun Pro 5.9 (experimental)
+ * all UNIX makefiles now perform dos2unix of all .c and .h files
+ * NOTE: bundles xTests 0.13.1
+ * NOTE: depends on STLSoft 1.9.84
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ + build/como433.unix/makefile
+ + build/como433.win32/makefile
+ + build/gcc40.mac.x64/makefile
+ + build/sunpro59x.unix/makefile
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/como433.unix/makefile:
+ ~ build/como433.win32/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/sunpro59x.unix/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added step to prepare files for OS, and on UNIX this does a removal of all \r from .h and .c files
+    ~ refactored ld arguments specification
+
+ ~ build/gcc40.mac/makefile:
+    ~ fixed library arguments for Mac compilation
+
+ ~ build/vc6.unixem/makefile:
+    + added step to prepare files for OS, and on UNIX this does a removal of all \r from .h and .c files
+    ~ refactored ld arguments specification
+    ~ corrected threading variant in use of syslog emulation library
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.84 or later
+   (http://stlsoft.org/)
+
+
+
+1st May 2009 - 0.3.5
+====================
+
+Summary:
+--------
+
+ * enhanced ff::real() inserter functions to allow -ve widths (for left-alignment)
+ * optimised implementation of ff::real() inserter
+ * corrected defect whereby suppressing FF_REPLACEMENTCODE_MISSING_ARGUMENT would have led to stack corruption. (Lucky no-one uses that functionality, eh!?)
+ * NOTE: bundles xTests 0.12.1
+ * NOTE: depends on STLSoft 1.9.78
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/replacements.cpp:
+    ~ corrected defect whereby suppressing FF_REPLACEMENTCODE_MISSING_ARGUMENT would have led to stack corruption. (Lucky no-one uses that functionality, eh!?)
+
+Application Layer:
+
+ ~ include/fastformat/inserters/real.hpp:
+    ~ now handles -ve widths correctly (rather than interpreting a -ve as to use default)
+    ~ contract enforcements now in terms of abs(minimumWidth)
+    ~ implementation optimised to use STLSoft's fast integer to string operations for formation of intermediate format string
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ ~ test/component/test.component.inserter.real/test.component.inserter.real.cpp:
+    ~ substantially changed, and simplified
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.78 or later
+   (http://stlsoft.org/)
+
+
+
+29th April 2009 - 0.3.4
+=======================
+
+Summary:
+--------
+
+ * reordering of includes to avoid threading ambiguities on Mac OS-X
+ * correction to avoid unlikely, but possible, defect of memset()-ing null pointer
+ * properly reports file+line information for function pointer tests
+ * NOTE: bundles xTests 0.11.5
+ * NOTE: depends on STLSoft 1.9.78
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/api.cpp:
+ ~ src/fmt_cache.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/init_code_strings.cpp:
+ ~ src/replacements.cpp:
+ ~ src/snprintf.cpp:
+    ~ reordered some internal headers in order to avoid threading ambiguities on Mac OS-X (due to definition of threading within .../bits/c++io.h)
+
+ ~ src/memory_pool.cpp:
+    ~ reordered some internal headers in order to avoid threading ambiguities on Mac OS-X (due to definition of threading within .../bits/c++io.h)
+    ~ was doing memset regardless of success of allocation
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.api.illformed_handlers/test.unit.api.illformed_handlers.cpp:
+    ~ now properly reports file+line information for function pointer tests
+
+ ~ test/unit/test.unit.api.mismatched_handlers/test.unit.api.mismatched_handlers.cpp:
+    ~ now properly reports file+line information for function pointer tests
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+ + test.scratch.format_alignment
+
+Depends on:
+
+ * STLSoft 1.9.78 or later
+   (http://stlsoft.org/)
+
+
+
+26th April 2009 - 0.3.3
+=======================
+
+Summary:
+--------
+
+ * changed fastformat_malloc() to guarantee to zero out the allocated block's contents
+ * added test.unit.api.illformed_handlers
+ * added test.unit.api.unmatched_handlers
+ * added test.scratch.format_alignment
+ * corrected compilation defect when mocking Windows' OutputDebugString() with STLport standard library
+ * workaround for dumb old compilers' inability to use filter_type mechanism
+ * tidied up various workspace files and added missing project files
+ * sorted benign build glitch with Borland compilers
+ * NOTE: bundles xTests 0.11.5
+ * NOTE: depends on STLSoft 1.9.77
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/fastformat.h:
+    ~ documented fastformat_malloc()'s requirement to zero out allocated block
+
+ ~ src/memory_pool.cpp:
+    ~ fastformat_malloc() - adjusted to guarantee proper alignment for any type
+    ~ fastformat_malloc() - allocated block is zeroed out
+
+Application Layer:
+
+ ~ include/fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp:
+    ~ now works even where the previously registered handler is NULL
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ + examples/fastformat.examples.vc71.sln
+ + examples/fastformat.examples.vc8.sln
+
+ ~ examples/examples.vc9.sln => examples/fastformat.examples.vc9.sln
+
+ ~ test/scratch/fastformat.test.scratch.vc6.dsw:
+    + test.scratch.format_alignment
+
+ ~ test/unit/fastformat.test.unit.vc6.dsw:
+    + test.unit.api.illformed_handlers
+
+ + test.unit.sink.null.vcproj (for VC++ 7.1, 8, 9)
+ + test.unit.sink.OutputDebugString.vcproj (for VC++ 7.1, 8, 9)
+ + test.unit.sink.stringstream.vcproj (for VC++ 7.1, 8, 9)
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+    ~ minor correction of makefiles for Borland, whereby libraries are deleted and objects only added rather than remove + add, which causes warnings on the first creation
+    + test.unit.api.illformed_handlers
+    + test.unit.api.mismatched_handlers
+
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + test.unit.api.illformed_handlers
+    + test.unit.api.mismatched_handlers
+
+Examples:
+
+ ~ examples/example.overload.custom_type.filter_type/example.overload.custom_type.filter_type.cpp:
+    ~ skipping functionality with Borland, DMC++ and VC++ 6
+ ~ examples/example.overload.custom_type.inserter/example.overload.custom_type.inserter.cpp:
+    ~ skipping functionality with Borland and DMC++
+ ~ examples/example.overload.custom_type.string_access_shims/example.overload.custom_type.string_access_shims.cpp:
+    ~ skipping functionality with Borland and DMC++
+
+Test:
+
+Test.Unit:
+
+ + test.unit.api.illformed_handlers
+ + test.unit.api.mismatched_handlers
+
+ ~ test/unit/test.unit.sink.OutputDebugString/test.unit.sink.OutputDebugString.cpp:
+    ~ workaround for mock when used with STLport
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+ + test.scratch.format_alignment
+
+Depends on:
+
+ * STLSoft 1.9.77 or later
+   (http://stlsoft.org/)
+
+
+
+19th April 2009 - 0.3.2
+=======================
+
+Summary:
+--------
+
+ * added all remaining outstanding VC++ project files, for VC++ 6, 7.1, 8 and 9
+ * expanded all VC++ projects to multibyte string, wide string and pseudo-UNIX configurations
+ * finalised main workspace, and workspaces for examples, test.unit, test.component, test.performance and test.scratch
+ * added example.sink.OutputDebugString example program
+ * updated documentation to include all example programs
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/fastformat.h
+    ~ now non-beta version
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ fastformat.vc6.dsw
+    ~ all project files in workspace
+
+ ~ projects/core/vc6/fastformat.core.dsp
+ ~ projects/core/vc71/fastformat.core.vcproj
+ ~ projects/core/vc8/fastformat.core.vcproj
+ ~ projects/core/vc9/fastformat.core.vcproj
+    ~ full dependencies and targets
+    + all configurations (multibyte, wide string, pseudoUNIX)
+
+Examples:
+
+ + example.sink.OutputDebugString
+
+ ~ examples/fastformat.examples.vc6.dsw
+    ~ all project files in workspace
+
+ + examples/example.arguments.boolean/vc71/example.arguments.boolean.vcproj
+ + examples/example.arguments.boolean/vc8/example.arguments.boolean.vcproj
+ + examples/example.arguments.boolean/vc9/example.arguments.boolean.vcproj
+ + examples/example.arguments.character/vc71/example.arguments.character.vcproj
+ + examples/example.arguments.character/vc8/example.arguments.character.vcproj
+ + examples/example.arguments.character/vc9/example.arguments.character.vcproj
+ + examples/example.arguments.reals/vc71/example.arguments.reals.vcproj
+ + examples/example.arguments.reals/vc8/example.arguments.reals.vcproj
+ + examples/example.arguments.reals/vc9/example.arguments.reals.vcproj
+ + examples/example.arguments.void_pointers/vc71/example.arguments.void_pointers.vcproj
+ + examples/example.arguments.void_pointers/vc8/example.arguments.void_pointers.vcproj
+ + examples/example.arguments.void_pointers/vc9/example.arguments.void_pointers.vcproj
+ + examples/example.ff_101/vc71/example.ff_101.vcproj
+ + examples/example.ff_101/vc8/example.ff_101.vcproj
+ + examples/example.ff_101.no_namespace/vc71/example.ff_101.no_namespace.vcproj
+ + examples/example.ff_101.no_namespace/vc8/example.ff_101.no_namespace.vcproj
+ + examples/example.ff_101.no_namespace/vc9/example.ff_101.no_namespace.vcproj
+ + examples/example.memory.1/vc71/example.memory.1.vcproj
+ + examples/example.memory.1/vc8/example.memory.1.vcproj
+ + examples/example.memory.1/vc9/example.memory.1.vcproj
+ + examples/example.overload.custom_type.filter_type/vc6/example.overload.custom_type.filter_type.dsp
+ + examples/example.overload.custom_type.filter_type/vc71/example.overload.custom_type.filter_type.vcproj
+ + examples/example.overload.custom_type.filter_type/vc8/example.overload.custom_type.filter_type.vcproj
+ + examples/example.overload.custom_type.filter_type/vc9/example.overload.custom_type.filter_type.vcproj
+ + examples/example.overload.custom_type.inserter/vc6/example.overload.custom_type.inserter.dsp
+ + examples/example.overload.custom_type.inserter/vc71/example.overload.custom_type.inserter.vcproj
+ + examples/example.overload.custom_type.inserter/vc8/example.overload.custom_type.inserter.vcproj
+ + examples/example.overload.custom_type.inserter/vc9/example.overload.custom_type.inserter.vcproj
+ + examples/example.overload.custom_type.string_access_shims/vc6/example.overload.custom_type.string_access_shims.dsp
+ + examples/example.overload.custom_type.string_access_shims/vc71/example.overload.custom_type.string_access_shims.vcproj
+ + examples/example.overload.custom_type.string_access_shims/vc8/example.overload.custom_type.string_access_shims.vcproj
+ + examples/example.overload.custom_type.string_access_shims/vc9/example.overload.custom_type.string_access_shims.vcproj
+ + examples/example.sink.OutputDebugString/vc6/example.sink.OutputDebugString.dsp
+ + examples/example.sink.OutputDebugString/vc71/example.sink.OutputDebugString.vcproj
+ + examples/example.sink.OutputDebugString/vc8/example.sink.OutputDebugString.vcproj
+ + examples/example.sink.OutputDebugString/vc9/example.sink.OutputDebugString.vcproj
+    ~ full dependencies and targets
+    + all configurations (multibyte, wide string, pseudoUNIX)
+
+ ~ examples/example.arguments.boolean/vc6/example.arguments.boolean.dsp
+ ~ examples/example.arguments.character/vc6/example.arguments.character.dsp
+ ~ examples/example.arguments.reals/vc6/example.arguments.reals.dsp
+ ~ examples/example.arguments.void_pointers/vc6/example.arguments.void_pointers.dsp
+ ~ examples/example.ff_101/vc6/example.ff_101.dsp
+ ~ examples/example.ff_101/vc9/example.ff_101.vcproj
+ ~ examples/example.ff_101.no_namespace/vc6/example.ff_101.no_namespace.dsp
+ ~ examples/example.memory.1/vc6/example.memory.1.dsp
+    ~ full dependencies and targets
+    + all configurations (multibyte, wide string, pseudoUNIX)
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/fastformat.test.unit.vc6.dsw
+    ~ all project files in workspace
+
+ ~ test/unit/test.unit.api.accum_slice_lens/vc6/test.unit.api.accum_slice_lens.dsp
+ ~ test/unit/test.unit.api.accum_slice_lens/vc71/test.unit.api.accum_slice_lens.vcproj
+ ~ test/unit/test.unit.api.accum_slice_lens/vc8/test.unit.api.accum_slice_lens.vcproj
+ ~ test/unit/test.unit.api.accum_slice_lens/vc9/test.unit.api.accum_slice_lens.vcproj
+ ~ test/unit/test.unit.api.crlf_for_platform/vc6/test.unit.api.crlf_for_platform.dsp
+ ~ test/unit/test.unit.api.crlf_for_platform/vc71/test.unit.api.crlf_for_platform.vcproj
+ ~ test/unit/test.unit.api.crlf_for_platform/vc8/test.unit.api.crlf_for_platform.vcproj
+ ~ test/unit/test.unit.api.crlf_for_platform/vc9/test.unit.api.crlf_for_platform.vcproj
+ ~ test/unit/test.unit.api.fill_replacements/vc6/test.unit.api.fill_replacements.dsp
+ ~ test/unit/test.unit.api.fill_replacements/vc71/test.unit.api.fill_replacements.vcproj
+ ~ test/unit/test.unit.api.fill_replacements/vc8/test.unit.api.fill_replacements.vcproj
+ ~ test/unit/test.unit.api.fill_replacements/vc9/test.unit.api.fill_replacements.vcproj
+ ~ test/unit/test.unit.api.initialisation/vc6/test.unit.api.initialisation.dsp
+ ~ test/unit/test.unit.api.initialisation/vc71/test.unit.api.initialisation.vcproj
+ ~ test/unit/test.unit.api.initialisation/vc8/test.unit.api.initialisation.vcproj
+ ~ test/unit/test.unit.api.initialisation/vc9/test.unit.api.initialisation.vcproj
+ ~ test/unit/test.unit.api.lookup_pattern/vc6/test.unit.api.lookup_pattern.dsp
+ ~ test/unit/test.unit.api.lookup_pattern/vc71/test.unit.api.lookup_pattern.vcproj
+ ~ test/unit/test.unit.api.lookup_pattern/vc8/test.unit.api.lookup_pattern.vcproj
+ ~ test/unit/test.unit.api.lookup_pattern/vc9/test.unit.api.lookup_pattern.vcproj
+ ~ test/unit/test.unit.api.parse_format/vc6/test.unit.api.parse_format.dsp
+ ~ test/unit/test.unit.api.parse_format/vc71/test.unit.api.parse_format.vcproj
+ ~ test/unit/test.unit.api.parse_format/vc8/test.unit.api.parse_format.vcproj
+ ~ test/unit/test.unit.api.parse_format/vc9/test.unit.api.parse_format.vcproj
+ ~ test/unit/test.unit.bundle.winini/vc6/test.unit.bundle.winini.dsp
+ ~ test/unit/test.unit.bundle.winini/vc71/test.unit.bundle.winini.vcproj
+ ~ test/unit/test.unit.bundle.winini/vc8/test.unit.bundle.winini.vcproj
+ ~ test/unit/test.unit.bundle.winini/vc9/test.unit.bundle.winini.vcproj
+ ~ test/unit/test.unit.format.standard_flags/vc6/test.unit.format.standard_flags.dsp
+ ~ test/unit/test.unit.format.standard_flags/vc71/test.unit.format.standard_flags.vcproj
+ ~ test/unit/test.unit.format.standard_flags/vc8/test.unit.format.standard_flags.vcproj
+ ~ test/unit/test.unit.format.standard_flags/vc9/test.unit.format.standard_flags.vcproj
+ ~ test/unit/test.unit.sink.auto_buffer/vc6/test.unit.sink.auto_buffer.dsp
+ ~ test/unit/test.unit.sink.auto_buffer/vc71/test.unit.sink.auto_buffer.vcproj
+ ~ test/unit/test.unit.sink.auto_buffer/vc8/test.unit.sink.auto_buffer.vcproj
+ ~ test/unit/test.unit.sink.auto_buffer/vc9/test.unit.sink.auto_buffer.vcproj
+ ~ test/unit/test.unit.sink.c_string/vc6/test.unit.sink.c_string.dsp
+ ~ test/unit/test.unit.sink.c_string/vc71/test.unit.sink.c_string.vcproj
+ ~ test/unit/test.unit.sink.c_string/vc8/test.unit.sink.c_string.vcproj
+ ~ test/unit/test.unit.sink.c_string/vc9/test.unit.sink.c_string.vcproj
+ ~ test/unit/test.unit.sink.char_buffer/vc6/test.unit.sink.char_buffer.dsp
+ ~ test/unit/test.unit.sink.char_buffer/vc71/test.unit.sink.char_buffer.vcproj
+ ~ test/unit/test.unit.sink.char_buffer/vc8/test.unit.sink.char_buffer.vcproj
+ ~ test/unit/test.unit.sink.char_buffer/vc9/test.unit.sink.char_buffer.vcproj
+ ~ test/unit/test.unit.sink.CString/vc6/test.unit.sink.CString.dsp
+ ~ test/unit/test.unit.sink.CString/vc71/test.unit.sink.CString.vcproj
+ ~ test/unit/test.unit.sink.CString/vc8/test.unit.sink.CString.vcproj
+ ~ test/unit/test.unit.sink.CString/vc9/test.unit.sink.CString.vcproj
+ ~ test/unit/test.unit.sink.null/vc6/test.unit.sink.null.dsp
+ ~ test/unit/test.unit.sink.ostream/vc6/test.unit.sink.ostream.dsp
+ ~ test/unit/test.unit.sink.ostream/vc71/test.unit.sink.ostream.vcproj
+ ~ test/unit/test.unit.sink.ostream/vc8/test.unit.sink.ostream.vcproj
+ ~ test/unit/test.unit.sink.ostream/vc9/test.unit.sink.ostream.vcproj
+ ~ test/unit/test.unit.sink.OutputDebugString/vc6/test.unit.sink.OutputDebugString.dsp
+ ~ test/unit/test.unit.sink.stringstream/vc6/test.unit.sink.stringstream.dsp
+    ~ finalised dependencies
+    + all configurations (multibyte, wide string, pseudoUNIX)
+
+Test.Component:
+
+ ~ test/component/fastformat.test.component.vc6.dsw
+    ~ all project files in workspace
+
+ ~ test/component/test.component.FILE/vc6/test.component.FILE.dsp
+ ~ test/component/test.component.FILE/vc71/test.component.FILE.vcproj
+ ~ test/component/test.component.FILE/vc8/test.component.FILE.vcproj
+ ~ test/component/test.component.FILE/vc9/test.component.FILE.vcproj
+ ~ test/component/test.component.inserter.real/vc6/test.component.inserter.real.dsp
+ ~ test/component/test.component.inserter.real/vc9/test.component.inserter.real.vcproj
+ ~ test/component/test.component.sink.auto_buffer/vc6/test.component.sink.auto_buffer.dsp
+ ~ test/component/test.component.sink.auto_buffer/vc71/test.component.sink.auto_buffer.vcproj
+ ~ test/component/test.component.sink.auto_buffer/vc8/test.component.sink.auto_buffer.vcproj
+ ~ test/component/test.component.sink.auto_buffer/vc9/test.component.sink.auto_buffer.vcproj
+ ~ test/component/test.component.sink.null/vc6/test.component.sink.null.dsp
+ ~ test/component/test.component.sink.null/vc71/test.component.sink.null.vcproj
+ ~ test/component/test.component.sink.null/vc8/test.component.sink.null.vcproj
+ ~ test/component/test.component.sink.null/vc9/test.component.sink.null.vcproj
+ ~ test/component/test.component.sink.string.fmt/vc6/test.component.sink.string.fmt.dsp
+ ~ test/component/test.component.sink.string.fmt/vc71/test.component.sink.string.fmt.vcproj
+ ~ test/component/test.component.sink.string.fmt/vc8/test.component.sink.string.fmt.vcproj
+ ~ test/component/test.component.sink.string.fmt/vc9/test.component.sink.string.fmt.vcproj
+ ~ test/component/test.component.sink.string.write/vc6/test.component.sink.string.write.dsp
+ ~ test/component/test.component.sink.string.write/vc71/test.component.sink.string.write.vcproj
+ ~ test/component/test.component.sink.string.write/vc8/test.component.sink.string.write.vcproj
+ ~ test/component/test.component.sink.string.write/vc9/test.component.sink.string.write.vcproj
+ ~ test/component/test.component.sink.string_array/vc6/test.component.sink.string_array.dsp
+ ~ test/component/test.component.sink.string_array/vc71/test.component.sink.string_array.vcproj
+ ~ test/component/test.component.sink.string_array/vc8/test.component.sink.string_array.vcproj
+ ~ test/component/test.component.sink.string_array/vc9/test.component.sink.string_array.vcproj
+    ~ full dependencies and targets
+    + all configurations (multibyte, wide string, pseudoUNIX)
+
+Test.Performance:
+
+ ~ test/performance/fastformat.test.performance.vc6.dsw
+    ~ all project files in workspace
+
+ ~ test/performance/test.performance.api.parse_format/vc6/test.performance.api.parse_format.dsp
+ ~ test/performance/test.performance.cvu.ex.1/vc6/test.performance.cvu.ex.1.dsp
+ ~ test/performance/test.performance.name_age_height/vc6/test.performance.name_age_height.dsp
+ ~ test/performance/test.performance.one_integer/vc6/test.performance.one_integer.dsp
+ ~ test/performance/test.performance.one_pointer/vc6/test.performance.one_pointer.dsp
+ ~ test/performance/test.performance.scenario1/vc6/test.performance.scenario1.dsp
+ ~ test/performance/test.performance.ten_strings_twice/vc6/test.performance.ten_strings_twice.dsp
+ ~ test/performance/test.performance.three_strings_one_integer/vc6/test.performance.three_strings_one_integer.dsp
+    ~ full dependencies and targets
+    + all configurations (multibyte, wide string, pseudoUNIX)
+
+Test.Scratch:
+
+ ~ test/scratch/fastformat.test.scratch.vc6.dsw
+    ~ all project files in workspace
+
+Depends on:
+
+ * STLSoft 1.9.77 or later
+   (http://stlsoft.org/)
+
+
+
+17th April 2009 - 0.3.2 beta 4
+==============================
+
+Summary:
+--------
+
+ * GCC compatibility adjustments for examples
+ * adjusted real inserter component test for compatibility with the different standard libraries' floating-point-to-string conversion accuracies
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/implicit_link.h:
+    ~ standardisation of the implicit-link structure (to be compatible with other libraries, e.g. Pantheios)
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+ ~ examples/example.overload.custom_type.string_access_shims/example.overload.custom_type.string_access_shims.cpp:
+    ~ reordered includes, for GCC compatibility
+
+ ~ test/component/test.component.inserter.real/test.component.inserter.real.cpp:
+    ~ compatibility with different compilers' standard libraries' floating-point-to-string conversion accuracies
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.77 or later
+   (http://stlsoft.org/)
+
+
+
+16th April 2009 - 0.3.2 beta 3
+==============================
+
+Summary:
+--------
+
+ * GCC compatibility adjustments for examples
+ * distribution corrected to include bundle resource files
+ * minor documentation fixes
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/internal/string_encoding.h:
+    ~ documentation enhancements
+
+Application Layer:
+
+ ~ include/fastformat/sinks/shim_string.hpp:
+    ~ documentation enhancements
+
+Sinks:
+
+Distribution:
+
+ + now includes bundle resource files in distribution
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    ~ changes to defn of exceptions & RTTI, for conformance to other library (e.g. Pantheios) makefile templates
+
+Examples:
+
+ ~ examples/example.overload.custom_type.filter_type/example.overload.custom_type.filter_type.cpp:
+    ~ now works with GCC, despite its stupid non-standard namespace lookup behaviour
+
+ ~ examples/example.overload.custom_type.inserter/example.overload.custom_type.inserter.cpp:
+    ~ reordered includes, for GCC compatibility
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.77 or later
+   (http://stlsoft.org/)
+
+
+
+15th April 2009 - 0.3.2 beta 2
+==============================
+
+Summary:
+--------
+
+ * adjustments to real() inserter function test cases, for wider compiler compatibility
+ * fixed component test segfault, by incorporating latest (fixed) xTests
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ ~ test/component/test.component.inserter.real/test.component.inserter.real.cpp:
+    ~ adjusted floating-point=>string test cases to cater for different compilers' exponential formats
+    ~ skipped very-long-format test cases for Metrowerks (as they fail to format in that case)
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.77 or later
+   (http://stlsoft.org/)
+
+
+
+9th April 2009 - 0.3.2 beta 1
+=============================
+
+Summary:
+--------
+
+ * widestring compatibility assured across core, application layer, examples, tests and makefiles
+ * fixed defect in format cache (found only in widestring builds)
+ * small efficiency enhancement in format cache
+ * minor enhancements to properties_bundle, to report missing properties file
+ * added test.component.sink.null to makefiles
+ * added widestring variants to all VC++ makefiles
+ * revised the speech scratch test to produce more informative output
+ * other minor fixes
+ * NOTE: bundles xTests 0.11.2
+ * NOTE: depends on STLSoft 1.9.77
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/internal/string_encoding.h:
+    + added pragma once specification
+
+ ~ include/fastformat/util/string/snprintf.h:
+    + fastformat_util_snprintf_a
+    + fastformat_util_vsnprintf_a
+
+Core:
+
+ ~ src/fmt_cache.cpp:
+    ~ spacing
+    ~ fixing defective pattern offset calculation in widestring builds, whereby pattern was written beyond end of pattern_record_t
+    ~ now places pattern length in pattern_record_t, so it is not calculated again
+
+ ~ src/init_code_strings.cpp:
+ ~ src/replacements.cpp:
+    - removed now unnecessary fastformat/internal/string_encoding.h
+
+ ~ src/snprintf.cpp:
+    + added fastformat_util_vsnprintf_a
+    + added fastformat_util_snprintf_a
+
+Application Layer:
+
+ ~ include/fastformat/bundles/properties_bundle.hpp:
+    ~ verifies that the properties file exists (and can be read)
+
+ ~ include/fastformat/bundles/winini_bundle.hpp:
+    + widestring compatibility
+
+ ~ include/fastformat/inserters/real.hpp:
+    ~ signed / unsigned fixups
+    ~ widestring compatibility
+    ~ fixed file documentation
+
+Sinks:
+
+ ~ include/fastformat/sinks/FILE.hpp:
+ ~ include/fastformat/sinks/auto_buffer.hpp:
+ ~ include/fastformat/sinks/c_string.hpp:
+ ~ include/fastformat/sinks/char_buffer.hpp:
+ ~ include/fastformat/sinks/ostream.hpp:
+ ~ include/fastformat/sinks/stringstream.hpp:
+    + widestring compatibility
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+    + added test.component.null.sink to build
+
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added test.component.null.sink to build
+    + added widestring variants to builds for VC++
+
+Examples:
+
+ ~ examples/example.arguments.boolean/example.arguments.boolean.cpp:
+    ~ now uses bool inserter conversion shim
+
+ ~ examples/example.arguments.character/example.arguments.character.cpp:
+ ~ examples/example.arguments.reals/example.arguments.reals.cpp:
+ ~ examples/example.arguments.void_pointers/example.arguments.void_pointers.cpp:
+    ~ widestring compatibility
+
+ ~ examples/example.overload.custom_type.filter_type/example.overload.custom_type.filter_type.cpp:
+    ~ removed inappropriate format specifier from write() argument
+
+ ~ examples/example.overload.custom_type.inserter/example.overload.custom_type.inserter.cpp:
+    + allows bundle path to be specified to example
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.api.accum_slice_lens/test.unit.api.accum_slice_lens.cpp:
+ ~ test/unit/test.unit.api.crlf_for_platform/test.unit.api.crlf_for_platform.cpp:
+ ~ test/unit/test.unit.api.fill_replacements/test.unit.api.fill_replacements.cpp:
+ ~ test/unit/test.unit.api.initialisation/test.unit.api.initialisation.cpp:
+ ~ test/unit/test.unit.api.lookup_pattern/test.unit.api.lookup_pattern.cpp:
+ ~ test/unit/test.unit.api.parse_format/test.unit.api.parse_format.cpp:
+ ~ test/unit/test.unit.bundle.winini/implicit_link.cpp:
+ ~ test/unit/test.unit.bundle.winini/test.unit.bundle.winini.cpp:
+ ~ test/unit/test.unit.format.standard_flags/test.unit.format.standard_flags.cpp:
+ ~ test/unit/test.unit.sink.CString/test.unit.sink.CString.cpp:
+ ~ test/unit/test.unit.sink.OutputDebugString/test.unit.sink.OutputDebugString.cpp:
+ ~ test/unit/test.unit.sink.auto_buffer/test.unit.sink.auto_buffer.cpp:
+ ~ test/unit/test.unit.sink.c_string/test.unit.sink.c_string.cpp:
+ ~ test/unit/test.unit.sink.char_buffer/test.unit.sink.char_buffer.cpp:
+ ~ test/unit/test.unit.sink.null/test.unit.sink.null.cpp:
+ ~ test/unit/test.unit.sink.ostream/test.unit.sink.ostream.cpp:
+ ~ test/unit/test.unit.sink.stringstream/test.unit.sink.stringstream.cpp:
+ ~ test/unit/test.unit.sink.stringstream/vc6/test.unit.sink.stringstream.dsp:
+    ~ widestring compatibility
+
+Test.Component:
+
+ ~ test/component/test.component.FILE/test.component.FILE.cpp:
+ ~ test/component/test.component.inserter.real/test.component.inserter.real.cpp:
+ ~ test/component/test.component.sink.auto_buffer/test.component.sink.auto_buffer.cpp:
+ ~ test/component/test.component.sink.null/test.component.sink.null.cpp:
+ ~ test/component/test.component.sink.string.fmt/test.component.sink.string.fmt.cpp:
+ ~ test/component/test.component.sink.string.write/test.component.sink.string.write.cpp:
+    ~ widestring compatibility
+
+Test.Performance:
+
+ ~ test/performance/test.performance.cvu.ex.1/test.performance.cvu.ex.1.cpp:
+ ~ test/performance/test.performance.name_age_height/test.performance.name_age_height.cpp:
+ ~ test/performance/test.performance.one_integer/test.performance.one_integer.cpp:
+ ~ test/performance/test.performance.one_pointer/test.performance.one_pointer.cpp:
+ ~ test/performance/test.performance.scenario1/test.performance.scenario1.cpp:
+ ~ test/performance/test.performance.ten_strings_twice/test.performance.ten_strings_twice.cpp:
+ ~ test/performance/test.performance.three_strings_one_integer/test.performance.three_strings_one_integer.cpp:
+    - removed now unnecessary fastformat/internal/string_encoding.h
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.speech/test.scratch.speech.cpp:
+    ~ made the speech scratch test a little bit more informative
+    + widestring compatibility
+
+ ~ test/scratch/test.scratch.FILE/test.scratch.FILE.cpp:
+    ~ widestring compatibility
+
+Depends on:
+
+ * STLSoft 1.9.77 or later
+   (http://stlsoft.org/)
+
+
+
+9th March 2009 - 0.3.1 beta 5
+=============================
+
+Summary:
+--------
+
+ * corrected type-warning in new fastformat::real() inserters function(s)
+ * corrected 64-bit ambiguities in shim_string sink
+ * corrected inappropriate directory for real component test object files
+ * NOTE: bundles xTests 0.11.2
+ * NOTE: depends on STLSoft 1.9.77
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/inserters/real.hpp:
+    ~ corrected type-warning in contract enforcement
+
+ ~ include/fastformat/sinks/shim_string.hpp:
+    ~ ensures that all methods use the parent class's size_type, to avoid ambiguities
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/makefile.tmpl:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    ~ corrected object directory for test.component.inserter.real
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.77 or later
+   (http://stlsoft.org/)
+
+
+
+9th March 2009 - 0.3.1 beta 4
+=============================
+
+Summary:
+--------
+
+ * added fastformat::real inserter function(s) suite
+ * added fastformat::OutputDebugString_sink sink
+ * added "Super Hero" custom type examples, corresponding to the article to feature in the April issue of Overload, showing inserter function, filter_type conversion shim, and string access shims
+ * added unit test for null sink
+ * added unit test for OutputDebugString sink
+ * added component test for real inserter
+ * added scratch test for real inserter
+ * enhanced the fastformat::properties_bundle class, to trim the name and left-trim the value
+ * corrected defect in generated code when build without support for Format JIT Cache
+ * corrected potential defect in default sink to ensure that NULL-pointer is not passed to string append() (when length is zero)
+ * corrected minor type-incompatibilities in format cache
+ * corrected guard in numerous sinks from general check for exception support to check for bad_alloc support
+ * corrected incompatibilities in shim_string sink, to ensure works with both STLSoft 1.9 and 1.10+
+ * NOTE: bundles xTests 0.11.1
+ * NOTE: depends on STLSoft 1.9.76
+ * NOTE: is now incompatible with versions of STLSoft 1.10.1 alpha 1 - alpha 8. Now use the recently released STLSoft 1.10.1 alpha 9
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/fastformat.h:
+ ~ include/fastformat/implicit_link.h:
+ ~ include/fastformat/init_codes.h:
+ ~ include/fastformat/internal/format_element.h:
+ ~ include/fastformat/internal/string_encoding.h:
+ ~ include/fastformat/internal/threading.h:
+ ~ include/fastformat/quality/cover.h:
+    ~ tidying up
+
+ ~ include/fastformat/internal/stlsoft.h:
+    ~ now prevents use of STLSoft 1.10.1 alpha 1 - 8. Users should use STLSoft 1.10.1 alpha 9+
+    ~ tidying up
+
+ ~ include/fastformat/quality/contract.h:
+    ~ tidying up
+    ~ corrected xContract form of FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION()
+
+ ~ include/fastformat/test/util/compiler_warnings_suppression.first_include.h:
+ ~ include/fastformat/test/util/compiler_warnings_suppression.last_include.h:
+    ~ tidying up
+
+ ~ include/fastformat/util/string/snprintf.h:
+    ~ minor documentation/structure change
+    ~ tidying up
+
+Core:
+
+ ~ scripts/make_hdrs.rb:
+    ~ corrected compilation error when compiling FASTFORMAT_NO_USE_JIT_CACHE - oops!
+
+ ~ src/fmt_cache.cpp:
+    ~ tidying up
+    ~ fixed unsigned <=> size_t inconsistency, evinced with VC++ 8
+
+ ~ src/api.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/init_code_strings.cpp:
+ ~ src/memory_pool.cpp:
+ ~ src/snprintf.cpp:
+    ~ tidying up
+
+ ~ src/replacements.cpp:
+    ~ wide-string compatibility changes
+
+Application Layer:
+
+ ~ include/fastformat/bundles/properties_bundle.hpp:
+    ~ when splitting the name from the value, it left trims both and right trims the name
+
+ ~ include/fastformat/exceptions.hpp:
+    ~ tidying up
+
+ + include/fastformat/inserters/real.hpp:
+    + initial version (as a class)
+    + added (currently unsupported) 4-parameter overload, which may be used to specify different floating-point conversion types (i.e. 'e', 'f', 'g', and their uppercase forms)
+    ~ preparatory work for using stlsoft fast integer operations to prepare the width
+
+ ~ include/fastformat/internal/generated/api_functions.hpp:
+    ~ corrected compilation error when compiling FASTFORMAT_NO_USE_JIT_CACHE - oops!
+
+ ~ include/fastformat/shims/action/fmt_slices/generic_string.hpp:
+    ~ ensures that NULL may never be passed to std::string ctor/append
+    ~ trivial parameter renaming
+
+Sinks:
+
+ ~ include/fastformat/sinks/FILE.hpp:
+ ~ include/fastformat/sinks/ostream.hpp:
+ ~ include/fastformat/sinks/speech.hpp:
+ ~ include/fastformat/sinks/string_array.hpp:
+ ~ include/fastformat/sinks/vectored_file.hpp:
+    ~ corrected test on exception support around auto_buffer from STLSOFT_CF_EXCEPTION_SUPPORT to STLSOFT_CF_THROW_BAD_ALLOC
+
+ ~ include/fastformat/sinks/OutputDebugString.hpp:
+    + initial version
+
+ ~ include/fastformat/sinks/shim_string.hpp:
+    ~ now works correctly with STLSoft 1.9 shim_string, and also provides fwd compatibility with STLSoft 1.10 (although when using STLSoft 1.10 the use of fastformat::shim_string is not necessary)
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/gcc43.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/makefile.tmpl:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + example.overload.custom_type.filter_type
+    + example.overload.custom_type.inserter
+    + example.overload.custom_type.string_access_shims
+    + test.unit.sink.null
+    + test.unit.sink.OutputDebugString
+    + test.component.inserter.real
+
+Examples:
+
+ + added example.overload.custom_type.filter_type
+ + added example.overload.custom_type.inserter
+ + added example.overload.custom_type.string_access_shims
+
+ ~ examples/example.overload.custom_type.filter_type/example.overload.custom_type.filter_type.cpp:
+ ~ examples/example.overload.custom_type.inserter/example.overload.custom_type.inserter.cpp:
+ ~ examples/example.overload.custom_type.string_access_shims/example.overload.custom_type.string_access_shims.cpp:
+    ~ Borland (in)compatibility
+
+ ~ examples/examples.vc9.sln:
+ ~ examples/fastformat.examples.vc6.dsw:
+    + added example.overload.custom_type.filter_type
+    + added example.overload.custom_type.inserter
+    + added example.overload.custom_type.string_access_shims
+
+Test:
+
+Test.Unit:
+
+ + test.unit.sink.null
+ + test.unit.sink.OutputDebugString
+
+Test.Component:
+
+ + test.component.inserter.real
+
+Test.Performance:
+
+ ~ test/performance/test.performance.one_pointer/test.performance.one_pointer.cpp:
+    ~ Borland compatibility
+    ~ Borland compatibility
+
+Test.Scratch:
+
+ + test.scratch.inserter.real
+
+Depends on:
+
+ * STLSoft 1.9.76 or later
+   (http://stlsoft.org/)
+
+
+
+13th February 2009 - 0.3.1 beta 3
+=================================
+
+Summary:
+--------
+
+ * fixed Mac OS-X compilation errors
+ * fixed Mac OS-X runtime failures
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/fmt_cache.cpp:
+    ~ correct fix for Mac OS-X compile issue (after a couple of abortive attempts)
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.sink.vectored_file/test.scratch.sink.vectored_file.cpp:
+    ~ fix for permission-denied runtime failure
+    ~ fix for unused-variable warning
+    ~ fix for possible-use-of-uninitialised-variable warning
+
+Depends on:
+
+ * STLSoft 1.9.74 or later
+   (http://stlsoft.org/)
+
+
+
+13th February 2009 - 0.3.1 beta 2
+=================================
+
+Summary:
+--------
+
+ * added support for Borland 5.9.x and 6.1.x
+ * adjusted discrimination of filter_type mechanism support to allow versions of Borland from 6.1 or later
+ * weakened over-strong pre-condition enforcement in format processing
+ * updated some project and solution files for Visual C++ 9
+ * other minor fixes and enhancements
+ * bundles xTests 0.10.4
+ * NOTE: depends on STLSoft 1.9.74
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/replacements.cpp:
+    ~ corrected too-strict precondition enforcement in fastformat_fillReplacements(), since formatElements may be NULL if numFormatElements is 0
+
+ ~ include/fastformat/implicit_link.h:
+    + support for Borland 5.9.x and 6.1.x
+
+ ~ include/fastformat/internal/stlsoft.h:
+    ~ now requires STLSoft 1.9.74
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    ~ Borland 6.1 compatible with filter_type mechanism
+
+Sinks:
+
+Distribution:
+
+ ~ INSTALL.txt:
+    - removed erroneous comment stating that it does not need to be built. It does!
+
+ ~ README.txt:
+    ~ changed comment from "it's in Alpha release"
+
+Makefiles / Project-files:
+
+ + added build/bc59x/makefile
+ + added build/bc61x/makefile
+ + added build/gcc43.unix/makefile
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/bc59x/makefile:
+ ~ build/bc61x/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/makefile.tmpl:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    ~ redefined test.all to include test.examples as well as test.unit, test.component, test.performance and test.scratch
+    ~ change to use deletion of library and + options, from -+ options
+    ~ removal of unnecessary dependencies, e.g. of xTests and shwild from examples
+
+ ~ projects/core/vc9/fastformat.core.vcproj:
+    ~ updated to latest src files
+
+Examples:
+
+ + examples/examples.vc9.sln
+
+ + examples/example.ff_101/vc9/example.ff_101.vcproj
+
+ ~ examples/example.arguments.boolean/implicit_link.cpp:
+ ~ examples/example.arguments.character/implicit_link.cpp:
+ ~ examples/example.arguments.reals/implicit_link.cpp:
+ ~ examples/example.arguments.void_pointers/implicit_link.cpp:
+ ~ examples/example.ff_101.no_namespace/implicit_link.cpp:
+ ~ examples/example.ff_101/implicit_link.cpp:
+    ~ corrected use of UNIXem in implicit_link.cpp
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ ~ test/component/test.component.FILE/test.component.FILE.cpp:
+    ~ minor Borland compatibility change
+
+Test.Performance:
+
+ ~ test/performance/test.performance.cvu.ex.1/test.performance.cvu.ex.1.cpp:
+ ~ test/performance/test.performance.name_age_height/test.performance.name_age_height.cpp:
+ ~ test/performance/test.performance.one_integer/test.performance.one_integer.cpp:
+ ~ test/performance/test.performance.one_pointer/test.performance.one_pointer.cpp:
+ ~ test/performance/test.performance.scenario1/test.performance.scenario1.cpp:
+ ~ test/performance/test.performance.ten_strings_twice/test.performance.ten_strings_twice.cpp:
+ ~ test/performance/test.performance.three_strings_one_integer/test.performance.three_strings_one_integer.cpp:
+    ~ Borland 6.1 compatible with filter_type mechanism
+    ~ compatibility with older Borland versions
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.74 or later
+   (http://stlsoft.org/)
+
+
+
+1st February 2009 - 0.3.1 beta 1
+================================
+
+Summary:
+--------
+
+ * added GCC 4.3 makefiles
+ * bundles xTests 0.10.3
+ * NOTE: depends on STLSoft 1.9.72
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ + added GCC 4.3 makefiles
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.72 or later
+   (http://stlsoft.org/)
+
+
+
+19th January 2009 - 0.3.1 alpha 1
+=================================
+
+Summary:
+--------
+
+ * support for min-width / max-width / alignment in format specifications
+ * renaming/addition of several nested namespaces
+ * preparation for full localisation via renaming of stock (non-localised) conversion components
+ * added support for shim_string sinks, which facilitate high-speed intermediate conversion in composite statements
+ * NOTE: this includes some potentially BREAKING CHANGES from 0.2, due to namespace name changes. You may have to modify your customisations (sinks and/or filtering) accordingly
+ * NOTE: depends on STLSoft 1.9.68
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/fastformat.h:
+    ~ renamed namespace fastformat::filtering => fastformat::filters
+    + added namespace sinks
+    + added namespace internal
+    + added namespace internal::helpers
+
+    ~ fastformat_parseFormat() / fastformat_lookupPattern() now return composite value representing number of replacement parameters and maximum number of result slices
+    ~ fastformat_fillReplacements() has additional (out) parameter to provide number of actual result elements written
+
+    + added private worker function fastformat_getSpacesSlice()
+    + added private worker function fastformat_getHashesSlice()
+
+
+Application Layer:
+
+ ~ include/fastformat/shims/conversion/filter_type/integers.hpp => include/fastformat/shims/conversion/filter_type/fast_integers.hpp
+
+ ~ include/fastformat/fastformat.hpp:
+
+    ~ renamed fastformat::defs::format_elements_type => fastformat::defs::format_elements_t
+    ~ renamed fastformat::defs::slices_type => fastformat::defs::slices_buffer_t
+
+    + shim_string sink implicit support; note: this requires STLSoft 1.10 alpha (delta)
+
+    + implicit support for void pointers if FASTFORMAT_USE_VOID_POINTERS_CONVERSION_SHIMS defined
+
+Sinks:
+
+ ~ fmt_slices() moved into the nested namespace fastformat::sinks
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ all test files adjusted accordingly
+
+Test.Component:
+
+ ~ all test files adjusted accordingly
+
+Test.Performance:
+
+ ~ all test files adjusted accordingly
+
+Test.Scratch:
+
+ ~ all test files adjusted accordingly
+
+Depends on:
+
+ * STLSoft 1.9.68 or later
+   (http://stlsoft.org/)
+
+
+
+4th January 2009 - 0.2.1 beta 10
+================================
+
+Summary:
+--------
+
+ * corrected defect in ACE_CString sink
+ * added missing newline support in CComBSTR sink
+ * added unit test for CComBSTR sink
+ * enhanced unit test for CString sink
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+ ~ include/fastformat/sinks/ACE_CString.hpp:
+    ~ corrected defect whereby newline is ignored if cchTotal is 0
+
+ ~ include/fastformat/sinks/CComBSTR.hpp:
+    + adds missing support for new line flags
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ + test.unit.sink.CComBStR
+
+ ~ test/unit/test.unit.sink.CString/test.unit.sink.CString.cpp:
+    ~ enhanced test.unit.sink.CString to include tests with newLine
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.65 or later
+   (http://stlsoft.org/)
+
+
+
+2nd January 2009 - 0.2.1 beta 9
+===============================
+
+Summary:
+--------
+
+ * fixed Mac OS-X compilation error
+ * added ACE_CString sink, and a scratch test for it
+ * fixed minor defect in CComBSTR sink
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/fmt_cache.cpp:
+    ~ workaround for as-yet-unresearched defect with specialising std::map
+      on Mac OS-X: fix is to not try to define custom comparator function,
+      which means a tiny drop in perf on that platform
+
+Application Layer:
+
+Sinks:
+
+ + include/fastformat/sinks/ACE_CString.hpp
+    + new sink for ACE_CString
+
+ ~ include/fastformat/sinks/CComBSTR.hpp
+    ~ fixed up bad include guard symbol (a duplicate of fastformat/sinks/CString.hpp)
+
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+ + test/scratch/test.scratch.sink.ace_cstring
+
+Depends on:
+
+ * STLSoft 1.9.65 or later
+   (http://stlsoft.org/)
+
+
+
+1st January 2009 - 0.2.1 beta 8
+===============================
+
+Summary:
+--------
+
+ * fixed unsigned/size_t clash (which manifests on 64-bit Linux)
+ * NOTE: now requires STLSoft 1.9.65
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/replacements.cpp:
+    ~ fixed unsigned/size_t clash (which manifests on 64-bit Linux)
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.65 or later
+   (http://stlsoft.org/)
+
+
+
+30th December 2008 - 0.2.1 beta 7
+=================================
+
+Summary:
+--------
+
+ * a number of minor adjustments to ease merging with forthcoming 0.3 branch
+ * removed deliberate defect that was used in testing
+ * bundles xTests 0.9.3
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ src/api.cpp:
+ ~ src/fmt_cache.cpp:
+    ~ forward compatibility changes to resemble 0.3 branch (for easing merging)
+
+ ~ src/replacements.cpp:
+    ~ forward compatibility changes to resemble 0.3 branch (for easing merging)
+    + added more code coverage constructs
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    ~ doc mods
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+ ~ test/performance/test.performance.cvu.ex.1/test.performance.cvu.ex.1.cpp:
+    - removed deliberate defect that was used in testing
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.64 or later
+   (http://stlsoft.org/)
+
+
+
+28th December 2008 - 0.2.1 beta 6
+=================================
+
+Summary:
+--------
+
+ * added Loki.SafeFormat to other libraries against which performance tests
+   are carried out; the results are just as positive for FastFormat as with
+   the other comparison formatting libraries
+ * enhanced performance tests to output in spreadsheet-ready format at
+   verbosity level 2
+ * enhanced auto-generated application layer components to facilitate use
+   with older compilers that do not support the filter_type mechanism
+ * enhanced no-namespace compatibility for older compilers that have some
+   trouble with ADL
+ * added "void pointers" and "no namespace" examples to makefiles
+ * fixed minor integral type inconsistencies in CComBSTR sink and
+   void pointers conversion shims
+ * NOTE: depends on STLSoft 1.9.64
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/fastformat.h:
+    ~ enhanced no-namespace compatibility for older compilers that have some
+      trouble with ADL
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+ ~ include/fastformat/internal/generated/api_functions.hpp:
+    ~ introduction of macros to allow for compilers that do not support
+      filter_type mechanism
+
+ ~ include/fastformat/shims/conversion/filter_type/void_pointers.hpp:
+    ~ integral type conversion
+
+Sinks:
+
+ ~ include/fastformat/sinks/CComBSTR.hpp:
+    ~ fixed minor integral type inconsistencies
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + added void_pointers example to makefiles
+    + added ff_101.no_namespace example to makefiles
+
+Examples:
+
+ ~ examples/example.arguments.boolean/example.arguments.boolean.cpp:
+ ~ examples/example.arguments.character/example.arguments.character.cpp:
+ ~ examples/example.arguments.reals/example.arguments.reals.cpp:
+ ~ examples/example.arguments.void_pointers/example.arguments.void_pointers.cpp:
+    ~ prevents compilation when FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT defined
+
+ ~ examples/example.ff_101.no_namespace/example.ff_101.no_namespace.cpp:
+ ~ examples/example.ff_101/example.ff_101.cpp:
+    ~ now works with compilers that cause definition of FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+ ~ test/performance/test.performance.cvu.ex.1/test.performance.cvu.ex.1.cpp:
+ ~ test/performance/test.performance.name_age_height/test.performance.name_age_height.cpp:
+ ~ test/performance/test.performance.one_integer/test.performance.one_integer.cpp:
+ ~ test/performance/test.performance.one_pointer/test.performance.one_pointer.cpp:
+ ~ test/performance/test.performance.scenario1/test.performance.scenario1.cpp:
+ ~ test/performance/test.performance.ten_strings_twice/test.performance.ten_strings_twice.cpp:
+ ~ test/performance/test.performance.three_strings_one_integer/test.performance.three_strings_one_integer.cpp:
+    + verbosity 2 output
+    + added Loki.SafeFormat to tests
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.64 or later
+   (http://stlsoft.org/)
+
+
+
+17th December 2008 - 0.2.1 beta 5
+=================================
+
+Summary:
+--------
+
+ * addition of six new performance tests
+ * renaming and removal of various core API functions
+ * renaming of various test programs
+ * various enhancements in preparation for version 0.3
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/fastformat.h:
+ ~ include/fastformat/internal/generated/api_functions.hpp:
+ ~ include/fastformat/internal/generated/helper_functions.hpp:
+    ~ rename of fastformat_parseReplacements() to fastformat_parseFormat()
+    - removal of fastformat::parseReplacements()
+    - removal of fastformat::fillReplacements()
+    - removal of fastformat::accumulateSliceLengths()
+    - removal of fastformat::lookupPattern()
+    ~ rename of fastformat_parseReplacements() to fastformat_parseFormat()
+
+ ~ include/fastformat/internal/string_encoding.h:
+    + FASTFORMAT_LITERAL_CHARACTER()
+
+ ~ src/api.cpp:
+    + added replacements internal API, as preparation for 0.3
+
+ ~ src/fmt_cache.cpp:
+    ~ rename of fastformat_parseReplacements() to fastformat_parseFormat()
+
+ ~ src/replacements.cpp:
+    + added replacements internal API, as preparation for 0.3
+    ~ rename of fastformat_parseReplacements() to fastformat_parseFormat()
+    + various 0.3 comments
+    + adding basis for spaces and hashes to be done in 0.3
+
+Application Layer:
+
+ ~ scripts/make_hdrs.rb:
+    ~ rename of fastformat_parseReplacements() to fastformat_parseFormat()
+    - removal of fastformat::parseReplacements()
+    - removal of fastformat::fillReplacements()
+    - removal of fastformat::accumulateSliceLengths()
+    - removal of fastformat::lookupPattern()
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ build/bc56/makefile:
+ ~ build/bc582/makefile:
+ ~ build/cw8.unix/makefile:
+ ~ build/cw8.win32/makefile:
+ ~ build/dm/makefile:
+ ~ build/gcc34.unix/makefile:
+ ~ build/gcc34.win32/makefile:
+ ~ build/gcc40.mac/makefile:
+ ~ build/gcc40.unix/makefile:
+ ~ build/gcc41.mac/makefile:
+ ~ build/gcc41.unix/makefile:
+ ~ build/gcc42.mac/makefile:
+ ~ build/gcc42.unix/makefile:
+ ~ build/icl8.win32/makefile:
+ ~ build/icl9.win32/makefile:
+ ~ build/makefile.tmpl:
+ ~ build/vc6.unixem/makefile:
+ ~ build/vc6/makefile:
+ ~ build/vc71/makefile:
+ ~ build/vc8.unixem/makefile:
+ ~ build/vc8.x64/makefile:
+ ~ build/vc8/makefile:
+ ~ build/vc9.unixem/makefile:
+ ~ build/vc9.x64/makefile:
+ ~ build/vc9/makefile:
+    + test.performance.cvu.ex.1
+    + test.performance.name_age_height
+    + test.performance.one_integer
+    + test.performance.one_pointer
+    + test.performance.ten_strings_twice
+    + test.performance.three_strings_one_integer
+    ~ renamed test.performance.api.parse_replacements => test.performance.api.parse_format
+    ~ renamed test.unit.api.parse_replacements => test.unit.api.parse_format
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/fastformat.test.unit.vc6.dsw:
+ ~ test/unit/test.unit.api.parse_format/implicit_link.cpp:
+ ~ test/unit/test.unit.api.parse_format/vc6/test.unit.api.parse_format.dsp:
+ ~ test/unit/test.unit.api.parse_format/vc8/test.unit.api.parse_format.vcproj:
+    ~ renamed test.unit.api.parse_replacements => test.unit.api.parse_format
+
+ ~ test/unit/test.unit.api.parse_format/test.unit.api.parse_format.cpp:
+    ~ renamed test.unit.api.parse_replacements => test.unit.api.parse_format
+    ~ rename of fastformat_parseReplacements() to fastformat_parseFormat()
+    - removal of fastformat::parseReplacements()
+    - removal of fastformat::fillReplacements()
+    - removal of fastformat::accumulateSliceLengths()
+    - removal of fastformat::lookupPattern()
+
+ ~ test/unit/test.unit.api.accum_slice_lens/test.unit.api.accum_slice_lens.cpp:
+ ~ test/unit/test.unit.api.fill_replacements/test.unit.api.fill_replacements.cpp:
+ ~ test/unit/test.unit.api.lookup_pattern/test.unit.api.lookup_pattern.cpp:
+ ~ test/unit/test.unit.sink.CString/test.unit.sink.CString.cpp:
+ ~ test/unit/test.unit.sink.auto_buffer/test.unit.sink.auto_buffer.cpp:
+ ~ test/unit/test.unit.sink.c_string/test.unit.sink.c_string.cpp:
+ ~ test/unit/test.unit.sink.char_buffer/test.unit.sink.char_buffer.cpp:
+ ~ test/unit/test.unit.sink.ostream/test.unit.sink.ostream.cpp:
+ ~ test/unit/test.unit.sink.stringstream/test.unit.sink.stringstream.cpp:
+    ~ rename of fastformat_parseReplacements() to fastformat_parseFormat()
+    - removal of fastformat::parseReplacements()
+    - removal of fastformat::fillReplacements()
+    - removal of fastformat::accumulateSliceLengths()
+    - removal of fastformat::lookupPattern()
+
+Test.Component:
+
+Test.Performance:
+
+ + test.performance.cvu.ex.1
+ + test.performance.name_age_height
+ + test.performance.one_integer
+ + test.performance.one_pointer
+ + test.performance.ten_strings_twice
+ + test.performance.three_strings_one_integer
+
+ ~ test/performance/fastformat.test.performance.vc6.dsw:
+ ~ test/performance/test.performance.api.parse_format/implicit_link.cpp:
+ ~ test/performance/test.performance.api.parse_format/test.performance.api.parse_format.cpp:
+ ~ test/performance/test.performance.api.parse_format/vc6/test.performance.api.parse_format.dsp:
+    ~ renamed test.performance.api.parse_replacements => test.performance.api.parse_format
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.63 or later
+   (http://stlsoft.org/)
+
+
+
+14th December 2008 - 0.2.1 beta 4
+=================================
+
+Summary:
+--------
+
+ * added projects to workspaces
+ * added support for Intel 10 & 11
+ * no-namespace compatibility
+ * enhancements to vectored_file sink scratch test
+ * minor documentation fixes
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/implicit_link.h:
+    + support for Intel 10 & 11
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+ ~ include/fastformat/sinks/CComBSTR.hpp:
+ ~ include/fastformat/sinks/CString.hpp:
+ ~ include/fastformat/sinks/FILE.hpp:
+ ~ include/fastformat/sinks/ostream.hpp:
+ ~ include/fastformat/sinks/speech.hpp:
+ ~ include/fastformat/sinks/string_array.hpp:
+ ~ include/fastformat/sinks/vectored_file.hpp:
+    ~ no-namespace compatibility
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+ ~ examples/fastformat.examples.vc6.dsw:
+    + added projects to workspaces
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+ ~ test/component/fastformat.test.component.vc6.dsw:
+    + added projects to workspaces
+
+Test.Performance:
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.sink.vectored_file/test.scratch.sink.vectored_file.cpp:
+    ~ vectored_file sink scratch test now verifies that FF and raw API produce the same results
+
+Depends on:
+
+ * STLSoft 1.9.63 or later
+   (http://stlsoft.org/)
+
+
+
+10th December 2008 - 0.2.1 beta 3
+=================================
+
+Summary:
+--------
+
+ * workaround for VC++ 6 defect when compiling auto_buffer sink
+ * added null sink, for gathering statistics in unit/component tests
+ * various minor fixes for test programs not properly updated to
+   0.2.1 beta features
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+ ~ include/fastformat/sinks/auto_buffer.hpp:
+    ~ now uses simple form (for VC++ 6) unless
+      FASTFORMAT_NO_DEFAULT_ACTION_SHIMS is specified (to avoid the
+      ambiguity)
+
+ + include/fastformat/sinks/null.hpp:
+    + fastformat::null_sink, which gathers statistics for unit/component
+      testing
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ + test.unit.sink.null
+
+Test.Component:
+
+ + test.component.sink.null
+
+ ~ test/component/test.component.sink.auto_buffer/test.component.sink.auto_buffer.cpp:
+    ~ FASTFORMAT_NO_DEFAULT_ACTION_SHIMS => FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS
+
+Test.Performance:
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.sink.auto_buffer/test.scratch.sink.auto_buffer.cpp:
+    ~ FASTFORMAT_NO_DEFAULT_ACTION_SHIMS => FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS
+
+Depends on:
+
+ * STLSoft 1.9.63 or later
+   (http://stlsoft.org/)
+
+
+
+4th December 2008 - 0.2.1 beta 2
+================================
+
+Summary:
+--------
+
+ * fixed minor defects in test programs introduced in 0.2.1 beta 1
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test.unit.api.initialisation.cpp:
+ ~ test.unit.api.lookup_pattern.cpp:
+    ~ corrected use of fastformat::getInitErrorString() to fastformat::getInitCodeString()
+
+Test.Component:
+
+Test.Performance:
+
+ ~ test.performance.scenario2.cpp:
+    ~ architecture-independent argument types to fprintf()
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.62 or later
+   (http://stlsoft.org/)
+
+
+
+1st December 2008 - 0.2.1 beta 1
+================================
+
+Summary:
+--------
+
+ * changed per-handler information (both ill-formed & mismatched) to use
+   paired handler function + opaque parameter, to allow user-level chaining
+   of handlers
+ * added support for parameters of type void* (and all cv-forms)
+ * added ignore_unreferenced_arguments_scope scoping class that causes
+   unreferenced arguments to be ignored in the current thread (or the
+   whole process, in the case of single-threaded operation).
+ * renamed source files and various API functions to be more conventional
+ * adjusted several examples to work around the template/namespace defect in
+   GCC
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ include/fastformat/fastformat.h:
+ ~ src/api.cpp:
+ ~ src/fmt_spec_defect_handlers.cpp:
+ ~ src/replacements.cpp:
+    ~ now handlers register callback and param pairs
+
+ ~ renamed src/error_handlers.cpp => src/fmt_spec_defect_handlers.cpp
+ ~ renamed src/init_error_strings.cpp => src/init_code_strings.cpp
+
+ ~ include/fastformat/fastformat.h:
+ ~ src/init_code_strings.cpp:
+    ~ renamed fastformat_getInitErrorString() => fastformat_getInitCodeString()
+    ~ renamed fastformat_getInitErrorStringLength() => fastformat_getInitCodeStringLength()
+    ~ renamed fastformat::getInitErrorString() => fastformat::getInitCodeString()
+    ~ renamed fastformat::getInitErrorStringLength() => fastformat::getInitCodeStringLength()
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    ~ preparatory work for allowing shim strings as sinks
+
+ + include/fastformat/shims/conversion/filter_type/void_pointers.hpp:
+    + conversion shims for void*, void const*, void volatile* and
+      void const volatile*
+
+ + include/fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp:
+    + ignore_unreferenced_arguments_scope class, which causes unreferenced
+      arguments to be ignored in the current thread (or the whole process,
+      in the case of single-threaded operation).
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ ~ *:
+     ~ renamed src/error_handlers.cpp => src/fmt_spec_defect_handlers.cpp
+     ~ renamed src/init_error_strings.cpp => src/init_code_strings.cpp
+
+Examples:
+
+ + example.arguments.void_pointers
+
+ ~ examples/example.arguments.boolean/example.arguments.boolean.cpp:
+ ~ examples/example.arguments.character/example.arguments.character.cpp:
+ ~ examples/example.arguments.reals/example.arguments.reals.cpp:
+    ~ adjusted to work around the shim-handling defect in GCC
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.62 or later
+   (http://stlsoft.org/)
+
+
+
+27th November 2008 - 0.2.1 alpha 12
+===================================
+
+Summary:
+--------
+
+ * fixed defect in speech sink introduced in 0.2.1 alpha 11
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+ ~ include/fastformat/sinks/speech.hpp:
+    ~ fixed defective use of pan_char_t (rather than ff_char_t)
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.61 or later
+   (http://stlsoft.org/)
+
+
+
+23rd November 2008 - 0.2.1 alpha 11
+===================================
+
+Summary:
+--------
+
+ * added new sink for CComBSTR
+ * fixed widestring compatibility for speech sink
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+Sinks:
+
+ + include/fastformat/sinks/CComBSTR.hpp:
+    + added sink for CComBSTR, which works in both multibyte and widestring
+      modes
+
+ ~ include/fastformat/sinks/speech.hpp:
+    ~ widestring compatibility
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.61 or later
+   (http://stlsoft.org/)
+
+
+
+19th November 2008 - 0.2.1 alpha 10
+===================================
+
+Summary:
+--------
+
+ * added flags parameter to speech_sink ctor
+ * added get() method to retrieve COM interface pointer of speech object
+ * sorting out string access shims (for ff_string_slice_t)
+ * improved documentation markup
+ * warning suppression
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/fastformat.h:
+    ~ sorting out string access shims (for ff_string_slice_t)
+
+Core:
+
+ ~ include/fastformat/internal/format_element.h:
+    ~ improved documentation markup
+
+Application Layer:
+
+ ~ include/fastformat/exceptions.hpp:
+    ~ improved documentation markup
+
+ ~ include/fastformat/shims/conversion/filter_type/reals.hpp:
+    ~ warning suppression
+
+Sinks:
+
+ ~ include/fastformat/sinks/speech.hpp:
+    + added flags parameter to speech_sink ctor
+    + added get() method to retrieve COM interface pointer of speech object
+
+ ~ include/fastformat/sinks/auto_buffer.hpp:
+    ~ minor mods
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+ ~ renamed example.reals => example.arguments.reals
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+ ~ test/scratch/test.scratch.speech/test.scratch.speech.cpp:
+    ~ updated to work with new speech sink interface
+
+Depends on:
+
+ * STLSoft 1.9.60 or later
+   (http://stlsoft.org/)
+
+
+
+11th November 2008 - 0.2.1 alpha 9
+==================================
+
+Summary:
+--------
+
+ * enhanced wide string compatibility for integer and floating-point types
+
+Details:
+--------
+
+General:
+
+Core:
+
+Application Layer:
+
+ ~ wide string compatibility for integer conversion shims
+ ~ wide string compatibility for floating-point conversion shims
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+ ~ renamed example.reals => example.arguments.reals
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.60 or later
+   (http://stlsoft.org/)
+
+
+
+10th November 2008 - 0.2.1 alpha 8
+==================================
+
+Summary:
+--------
+
+ * string slice shims now compatible with wide string encoding
+ * exception classes now compatible with wide string encoding
+ * fixed defect whereby per-thread handler was not used in certain
+   multithreaded builds
+ * worked around compiler warnings wrt VC++'s "safe" string library
+ * added second performance test scenario: comparing performances in
+   converting integer values to string
+ * renamed some examples to avoid ambiguity
+
+Details:
+--------
+
+General:
+
+ ~ string slice shims now compatible with wide string encoding
+ ~ exception classes now compatible with wide string encoding
+
+Core:
+
+ ~ fixed defect whereby per-thread handler was not used in certain
+   multithreaded builds (due to missing inclusion)
+ ~ fixed compile warning(=>error) with Visual C++ 8+ "Safe" string
+   library - it deems std::fill_n() as unsafe, Bob only knows why!
+
+Application Layer:
+
+ ~ ostream sink now compatible with multibyte and wide string forms of
+   std::basic_ostream
+ ~ floating-point conversion shims now "temporarily" compatible with the
+   "safe" string library
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+ + added example.arguments.boolean to build
+ + added example.arguments.character to build
+ + added test.performance.scenario2 to build, available via
+   'test.performance' make target
+
+Examples:
+
+ ~ renamed example.boolean => example.arguments.boolean
+ ~ renamed example.character => example.arguments.character
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+ ~ adjusted test.performance.scenario1 to display less information when
+   verbosity is 1
+ + added test.performance.scenario2, which evaluates the relative
+   performances of Streams, IOStreams, Boost.Format, MFC and Fastformat
+   (Write and Format APIs) in converting a single int value to a string
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.60 or later
+   (http://stlsoft.org/)
+
+
+
+9th November 2008 - 0.2.1 alpha 7
+=================================
+
+Summary:
+--------
+
+ * changed includes to absolute, to placate CodeWarrior
+ * corrected defective length calculation in case where replacement
+   mismatches are ignored
+ * corrected erroneous parse code passed to handler on invalid index
+ * slight modification to replacement algorithm
+ * ff_format_element_t now only fwd-defined in fastformat/fastformat.h
+
+Details:
+--------
+
+General:
+
+Core:
+
+ + include/fastformat/internal/format_helper.h:
+    + defines ff_format_element_t and associated types and constants
+
+ ~ include/fastformat/fastformat.h:
+
+ ~ src/fmt_cache.cpp:
+    ~ now derives definition of ff_format_element_t from fastformat/internal/format_element.h
+
+ ~ src/replacements.cpp:
+    ~ slight modification to replacement algorithm
+    ~ corrected defective length calculation in case where replacement
+      mismatches are ignored
+
+ ~ src/replacements.cpp:
+    ~ ff_format_element_t now only fwd-defined in fastformat/fastformat.h
+    ~ corrected erroneous parse code passed to handler on invalid index
+
+Application Layer:
+
+ ~ include/fastformat/fastformat.hpp:
+    ~ changed includes to absolute, otherwise CodeWarrior doesn't like it
+
+ ~ include/fastformat/fastformat.hpp:
+ ~ include/fastformat/internal/generated/helper_functions.hpp:
+    ~ ff_format_element_t now only fwd-defined in fastformat/fastformat.h
+
+Sinks:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ ~ test/unit/test.unit.api.fill_replacements/test.unit.api.fill_replacements.cpp:
+ ~ test/unit/test.unit.api.lookup_pattern/test.unit.api.lookup_pattern.cpp:
+ ~ test/unit/test.unit.api.parse_replacements/test.unit.api.parse_replacements.cpp:
+    ~ now derives definition of ff_format_element_t from fastformat/internal/format_element.h
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.60 or later
+   (http://stlsoft.org/)
+
+
+
+5th November 2008 - 0.2.1 alpha 6
+=================================
+
+Summary:
+--------
+
+ * now detects and reports on unreferenced arguments by default
+ * added conversion shims for floating-point types
+ * added string access shims for ff_string_slice_t, which facilitates highly-efficient
+   conversion shims
+ * fixes to defects in ostream and stringstream sinks
+
+Details:
+--------
+
+General:
+
+ + added string access shims for ff_string_slice_t, which facilitates highly-efficient
+   conversion shims
+
+Core:
+
+ ~ changed FASTFORMAT_DETECT_UNREFERENCED_ARGUMENTS to
+   FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS, and now detects and
+   reports on unreferenced arguments by default
+
+Application Layer:
+
+ ~ include/fastformat/shims/conversion/filter_type/integers.hpp:
+    - removal of unnecessary include
+ + include/fastformat/shims/conversion/filter_type/reals.hpp
+
+Sinks:
+
+ ~ include/fastformat/sinks/ostream.hpp:
+    ~ changed ostream sink to always pre-concatenate (because the file might
+      be shared between processes, and we've no way of knowing)
+    ~ minor fixes to comments and documentation
+ ~ include/fastformat/sinks/stringstream.hpp:
+    ~ corrected incorrect sink type for stringstream shim (was ostream)
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+ + examples/example.boolean/example.boolean.cpp
+ + examples/example.character/example.character.cpp
+ + examples/example.reals/example.reals.cpp
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.60 or later
+   (http://stlsoft.org/)
+
+
+
+25th October 2008 - 0.2.1 alpha 5
+=================================
+
+Summary:
+--------
+
+ * added exception classes, for reporting illformed formats and mismatched
+   parameter replacements
+ * several types are renamed, to raise consistency
+ * bundles xTests 0.9.1
+
+Details:
+--------
+
+General:
+
+ + added exception classes, for reporting illformed formats and mismatched parameter replacements
+ ~ renamed ff_replacement_t structure to ff_format_element_t
+ + added ff_parse_code_t enumeration, representing format parsing conditions
+ + added ff_replacement_code_t enumeration, representing parameter replacement conditions
+ ~ modified fastformat_illformedHandler_t to take four more parameters, including code (of type ff_parse_code_t)
+ ~ renamed fastformat_unmatchedHandler_t to fastformat_mismatchedHandler_t (and all similarly named typedefs and functions)
+ ~ modified fastformat_mismatchedHandler_t to take one more parameter (of type ff_replacement_code_t)
+
+Core:
+
+ + added fastformat_calculateNumberOfRequiredReplacements(), which calculates the exact number of replacements in a format string
+
+Application Layer:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.59 or later
+   (http://stlsoft.org/)
+
+
+
+14th October 2008 - 0.2.1 alpha 4
+=================================
+
+Summary:
+--------
+
+ * large-scale reworking of the contract enforcements, to put them in line
+   with best-practice (and with recent releases of Pantheios library)
+ * ensures full no-namespace compatibility (both in client code and internal
+   to library)
+ * renamed include/fastformat/error_codes.h =>
+   include/fastformat/init_codes.h
+ * other minor fixes to put the library in a position ready for proper
+   (non-alpha) evolution
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/error_codes.h => include/fastformat/init_codes.h
+ ~ ensures full no-namespace compatibility (both in client code and internal
+   to library)
+ ~ large-scale reworking of the contract enforcements, to put them in line
+   with best-practice (and with recent releases of Pantheios library)
+
+Core:
+
+Application Layer:
+
+ ~ include/fastformat/internal/initialiser.hpp:
+    ~ corrected to not use Pantheios deprecated name (puts() => logputs())
+
+ ~ include/fastformat/sinks/ostream.hpp:
+    ~ using proper char type (ff_char_t rather than char)
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.57 or later
+   (http://stlsoft.org/)
+
+
+
+12th September 2008 - 0.2.1 alpha 3
+===================================
+
+Summary:
+--------
+
+ * initial adjustments to work with wide strings
+ * fix to defect in implicit link header file that manifests in 64-bit
+   compilation
+
+Details:
+--------
+
+General:
+
+ ~ fix to defect in implicit link header file that manifests in 64-bit
+   compilation
+
+Core:
+
+ + added fastformat/internal/string_encoding.h
+ + initial adjustments to work with wide strings
+
+Application Layer:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+Test.Component:
+
+Test.Performance:
+
+ + initial adjustments to work with wide strings
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.52 or later
+   (http://stlsoft.org/)
+
+
+
+8th September 2008 - 0.2.1 alpha 2
+==================================
+
+Summary:
+--------
+
+ * added CString::Format() to the test.performance.scenario1
+ * fixed defects in ostream sink
+ * separated the documentation groups for the interface functions in Write
+   API and Format API
+ * updated fill_replacements and parse_replacements unit tests
+ * NOTE: Now requires STLSoft 1.9.51
+
+Details:
+--------
+
+General:
+
+Core:
+
+ ~ adjusted for non-standard behaviour in Borland C++ 5.82
+
+Application Layer:
+
+ ~ fixed defect in multi-threaded implementation of ostream sink
+ ~ fixed defect where wrong type passed as size to write()
+
+ ~ separated the documentation groups for the interface functions in Write
+   API and Format API
+
+ ~ include/fastformat/sinks/speech.hpp now does #error for non-Windows
+   compilation
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+Test.Unit:
+
+ + added unmatched handler to test.unit.api.fill_replacements
+ + added tests for literal (i.e. escaped) '{' in strings in
+   test.unit.api.parse_replacements
+ ~ workaround for CodeWarrior defect (in test.unit.sink.c_string and
+   test.unit.sink.char_buffer) whereby it thinks there's a long => unsigned
+   int conversion, when there isn't
+
+Test.Component:
+
+Test.Performance:
+
+ + added CString::Format() to the test.performance.scenario1
+
+Test.Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.51 or later
+   (http://stlsoft.org/)
+
+
+
+3rd September 2008 - 0.2.1 alpha 1
+==================================
+
+To all intents and purposes, this is the first public release of
+FastFormat. From here on in, it gets interesting ....
+
+=============================== End of file ================================

@@ -1,0 +1,712 @@
+FastFormat - History
+====================
+
+Updated:    17th August 2012
+
+
+17th August 2012 - 0.7.1 alpha 9
+--------------------------------
+
+ * GCC 4.6+ build compatibility changes
+ * NOTE: bundles shwild 0.9.20
+ * NOTE: bundles xTests 0.16.6
+ * NOTE: depends on STLSoft 1.9.115 (not bundled)
+
+
+7th August 2012 - 0.7.1 alpha 8
+-------------------------------
+
+ * This release mainly contains forward-compatible changes to various inserters and conversion shims in anticipation of (access to) new components in the soon-to-be-released (Q4 2012) STLSoft 1.10; it also contains some functional improvements and new inserter and sink headers.
+ * WindowsMessageBox now attempts to elicit caption from top-level parent window of given window (if not NULL) when the caller specifies no caption
+ * added include/fastformat/sinks/iostream.hpp : a shorthand header that includes the FastFormat sink for IOStreams' std::ostream along with the standard header <iostream> in which std::cout and std::cerr are declared
+ * added include/fastformat/sinks/stlsoft/FILE_stream.hpp, which enables formatting to instances of STLSoft's stlsoft::FILE_stream and platformstl::thread_shareable_FILE_stream types
+ * added include/fastformat/inserters/ch.hpp, which defines the fastformat::ch inserter as an alias for fastformat::character
+ * added fastformat::to_sink() degenerate conversion shim
+ * NOTE: bundles shwild 0.9.20
+ * NOTE: bundles xTests 0.16.6
+ * NOTE: depends on STLSoft 1.9.115 (not bundled)
+
+
+7th February 2012 - 0.7.1 alpha 7
+---------------------------------
+
+ * changed manner in which integer string forms is evaluated (now in terms of STLSoft's integral_printf_traits<>), to simplify definitions and fix defect (found on I32LP64 systems)
+ * added makefile for GCC 4.7
+ * added fastformat.core.vcxproj (VC++ 10)
+ * changed core source files to include new src/ximpl_core.hpp
+ * added test.unit.inserters.integer
+ * added test.unit.shims.fast_integers
+ * added test.scratch.sink.WindowsConsole
+ * added dialog, to exercise future functionality that reads top-most parent window name, to test.scratch.sink.WindowsMessageBox
+ * widestring-build compatibility in test.scratch.FILE
+ * minor changes to include/fastformat/sinks/WindowsMessageBox.hpp in preparation for future enhancements
+ * NOTE: bundles shwild 0.9.20
+ * NOTE: bundles xTests 0.16.5
+ * NOTE: depends on STLSoft 1.9.112 (not bundled)
+
+
+2nd December 2011 - 0.7.1 alpha 6
+---------------------------------
+
+ * included workaround (in xTests 0.16.3) for strange behaviour (probably code-generation fault) in GCC 4.2 on Mac OS-X 10.7
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.3
+ * NOTE: depends on STLSoft 1.9.111 (not bundled)
+
+
+2nd December 2011 - 0.7.1 alpha 5
+---------------------------------
+
+ * fixed major defect introduced in 0.7.1 alpha 4 that caused infinite loop in some GCC versions
+ * fix to minor defect for GCC compatibility in example.overload.3.server_log.cpp
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.2
+ * NOTE: depends on STLSoft 1.9.111 (not bundled)
+
+
+1st December 2011 - 0.7.1 alpha 4
+---------------------------------
+
+ * added fastformat::util::snprintf()
+ * added fastformat::util::vsnprintf()
+ * added GCC 4.5 makefile
+ * added GCC 4.6 makefile
+ * allows for specific suppression of default inclusion of ostream sink, via definition of FASTFORMAT_NO_IMPLICIT_OSTREAM_ACTION_SHIM
+ * 64-bit compatibility for WindowsConsole inserter
+ * documentation markup improvement
+ * added GCC format(printf) attribute to pantheios_util_snprintf() and pantheios_util_snprintf_a()
+ * fastformat_util_snprintf() and fastformat_util_vsnprintf() moved to fastformat::util namespace
+ * added using declaration for ::fastformat::util::fastformat_util_snprintf_a and ::fastformat::util::fastformat_util_vsnprintf_a to introduce it into the fastformat namespace
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.2
+ * NOTE: depends on STLSoft 1.9.111 (not bundled)
+
+
+21st January 2011 - 0.7.1 alpha 3
+---------------------------------
+
+ * added to_sink(FILE*), which allows standard C streams (stdout, stderr) to be passed as sinks to FF fmt/write functions, regardless of how they are defined by the C standard library implementation
+ * fastformat::properties_bundle now compatible with STLSoft 1.10's properties_file class; still defaults to previous, less-flexible, manual properties parsing if STLSoft 1.10 not being used
+ * corrected makefile defect whereby WindowsLargeIntegers example object files go into BIN directory
+ * amended format cache memory allocation to hide MSVCRT memory leak false positives
+ * added test of ignore_missing_arguments_scope (added to 0.3 in 2009, but not forward merged)
+
+
+16th January 2011 - 0.7.1 alpha 2
+---------------------------------
+
+ * added WindowsConsole sink
+ * improved initialisation failure diagnostics, logging to Pantheios if detected, otherwise to Windows debug-stream+event-log if detected, otherwise the standard error stream
+ * amended format cache memory allocation to hide MSVCRT memory leak false positives
+ * updated all VS'98 solution files to include all relevant project files
+ * NOTE: depends on STLSoft 1.9.106
+
+
+11th December 2010 - 0.7.1 alpha 1
+----------------------------------
+
+ * added fastformat::character inserter
+ * added fastformat::to_i() inserter overloads for LARGE_INTEGER and ULARGE_INTEGER
+ * added HOW_YOU_CAN_HELP.txt to distribution
+ * added example.sink.c_string
+ * rationalisation of internal namespace names
+ * enhanced documentation
+
+
+29th November 2010 - 0.6.4
+--------------------------
+
+ * pantheios/pantheios.hpp now includes pantheios/sinks/ostream.hpp by default, unless FASTFORMAT_LEAN_AND_MEAN is specified
+ * added example.pad.hash
+ * headers now require STLSoft 1.9.104, which is needed for improved compatibility with some compilers
+ * NOTE: depends on STLSoft 1.9.104
+
+
+11th November 2010 - 0.6.3
+--------------------------
+
+ * minor defect fixes
+ * added example.flush
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.1
+ * NOTE: depends on STLSoft 1.9.102
+
+
+14th October 2010 - 0.6.2
+-------------------------
+
+ * added fastformat::flush() function
+ * added sink_exception class (abstract) and sink_output_exception exception classes
+ * added to_i_null_if_not(), to_i_null_if_zero(), and to_i_null_if_0() inserter functions
+ * substantially improved documentation markup
+ * sinks for CComBSTR, FILE, ostream, speech, and stringstream now throw sink_output_exception if write/flush fails
+ * fixed defect in inserter for CComBSTR when 0-length written to it
+ * minor optimisation for char_buffer sink
+ * added automatic detection and inclusion of STLSoft 1.10 to makefiles (for compilers whose make tool have preprocessor support)
+ * added test.performance.boost.karma (a performance test involving Boost.Spirit.Karma)
+ * added test.component.sink.CComBSTR
+ * added test.component.sink.ostream
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.16.1
+ * NOTE: depends on STLSoft 1.9.101
+
+
+22nd June 2010 - 0.6.1 alpha 1
+------------------------------
+
+ * optimised the handling of (default-formatted) integers
+ * optimised the helper function templates to reduce runtime call costs
+ * combined optimisation leading of 15-100% increase in performance in tested scenarios; smaller (but significant) increases are expected to be confirmed in forthcoming study encompassing existing scenarios published on website
+ * moved bundle data to ./test/data/bundles
+ * removed '-Werror' from GCC 3.4 makefiles, so can build tests that reference Boost code
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.2
+ * NOTE: depends on STLSoft 1.9.99
+
+
+21st June 2010 - 0.5.9
+----------------------
+
+ * added non-nag define, FASTFORMAT_NO_VERSION_NAG, to suppress STLSoft 1.10 compile messages
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.2
+ * NOTE: depends on STLSoft 1.9.99
+
+
+7th June 2010 - 0.5.8
+---------------------
+
+ * correctly truncates field to empty string when maximum width of 0 is specified
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.98
+
+
+16th April 2010 - 0.5.7
+-----------------------
+
+ * VC 10 compatibility for format_iterator
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.97
+
+
+13th April 2010 - 0.5.6
+-----------------------
+
+ * now fully supports '#' as fill character (in addition to ' ')
+ * ensures all (format specification defect) exceptions are correctly propagated to the caller 
+ * detects (and rejects) negative width elements
+ * detects (and rejects) extra format specifier elements
+ + added test.component.format_specification_defect_exceptions
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.97
+
+
+5th April 2010 - 0.5.5
+----------------------
+
+ * added example and test programs for format_iterator
+ * other minor refactorings
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.15.1
+ * NOTE: depends on STLSoft 1.9.97
+
+
+10th March 2010 - 0.5.4
+-----------------------
+
+ * Added support for Visual C++ 10 (including makefiles and implicit linking)
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.14.5
+ * NOTE: depends on STLSoft 1.9.96
+
+
+9th March 2010 - 0.5.3
+----------------------
+
+ * better compatibility of test program compilation with Fedora
+ * NOTE: bundles shwild 0.9.19
+ * NOTE: bundles xTests 0.14.5
+ * NOTE: depends on STLSoft 1.9.95
+
+
+7th March 2010 - 0.5.2
+----------------------
+
+ * fixed missing throw() on ~ignore_missing_arguments_scope()
+ * compatibility with the distinct integer types of VC++ 6/ICL 6/7 for fast integer conversions
+ * NOTE: bundles shwild 0.9.18
+ * NOTE: bundles xTests 0.14.5
+ * NOTE: depends on STLSoft 1.9.95
+
+
+5th February 2010 - 0.5.1 alpha 1
+---------------------------------
+
+ * added hex conversion for integers, via fastformat::to_x()/fastformat::to_X()
+ * added example.inserter.hex project
+ * added example.inserter.integers project
+ * added test.component.inserter.hex project
+ * added test.component.inserter.integers project
+ * includes example.inserter.reals project to build
+ * includes example.sink.c_string project to build
+ * NOTE: bundles xTests 0.14.4
+ * NOTE: depends on STLSoft 1.9.91
+
+
+21st January 2010 - 0.4.6
+-------------------------
+
+ * fixed uninitialisation defect
+ * minor correction to makefile targets
+ * NOTE: bundles xTests 0.14.4
+ * NOTE: depends on STLSoft 1.9.90
+ 
+ 
+20th January 2010 - 0.4.5
+-------------------------
+
+ * compatibility fixes for GCC 3.4 (Windows)
+ * compatibility fixes for 64-bit compilation
+ * NOTE: bundles xTests 0.14.3
+ * NOTE: depends on STLSoft 1.9.89
+ 
+ 
+10th July 2009 - 0.4.4
+----------------------
+
+ * fixed defective assert when missing arguments are ignored
+ * added scratch test program test.scratch.ignore_missing_arguments_scope
+ * NOTE: bundles xTests 0.13.3
+ * NOTE: depends on STLSoft 1.9.85
+
+
+8th July 2009 - 0.4.3
+---------------------
+
+ * fixed minor defect (fails to compile in widestring build) in several bundle classes
+ * fix for compiler warnng in WindowsMessageBox sink
+ * tidying up makefiles
+ * workaround for compiler warnings in Boost libraries used with VC++ 7.1
+ * fixed defect in OutputDebugString example
+ * NOTE: bundles xTests 0.13.3
+ * NOTE: depends on STLSoft 1.9.85
+
+
+19th June 2009 - 0.4.2
+----------------------
+
+ * numerous minor adjustments to makefiles (including those not fully merged from 0.3 branch in 0.4.1)
+ * corrected 0.4.1 failure to bundle xTests 0.13.x
+ * NOTE: bundles xTests 0.13.2
+ * NOTE: depends on STLSoft 1.9.85
+
+
+16th June 2009 - 0.4.1
+----------------------
+
+ * added bundle: fastformat::windows_resource_bundle
+ * added inserter: fastformat::integer
+ * added inserter: fastformat::to_i
+ * added inserter: fastformat::to_e
+ * added inserter: fastformat::to_f
+ * added inserter: fastformat::to_g
+ * added iterator: fastformat::format_iterator
+ * added sink: fastformat::WindowsMessageBox()
+ * added scoping class: fastformat::ignore_missing_arguments_scope
+ * updated examples and performance tests to correspond to the three-article series in ACCU's Overload
+ * added makefile for GCC 4.4
+ * added example: example.overload.3.floatingpoint_columns
+ * added example: example.overload.3.record_insert
+ * added example: example.overload.3.server_log
+ * added example: example.overload.3.tabulations
+ * added example: example.sink.c_string
+ * removed dependency on fastformat/fastformat.hpp from all Application Layer components for which it was not necessary
+ * expanded maximum-parameter limit from 32 to 48
+ * changed semantics for fastformat::util::concat_slices
+ * improved the performance of the FILE sink
+ * NOTE: bundles xTests 0.13.2
+ * NOTE: depends on STLSoft 1.9.85
+
+
+24th May 2009 - 0.3.6
+---------------------
+
+ * added makefiles for Como 4.3.3, GCC 4.0 Mac OS-X 64-bit, and Sun Pro 5.9 (experimental)
+ * all UNIX makefiles now perform dos2unix of all .c and .h files
+ * NOTE: bundles xTests 0.13.1
+ * NOTE: depends on STLSoft 1.9.84
+
+
+1st May 2009 - 0.3.5
+--------------------
+
+ * enhanced ff::real() inserter functions to allow -ve widths (for left-alignment)
+ * optimised implementation of ff::real() inserter
+ * corrected defect whereby suppressing FF_REPLACEMENTCODE_MISSING_ARGUMENT would have led to stack corruption. (Lucky no-one uses that functionality, eh!?)
+ * NOTE: bundles xTests 0.12.1
+ * NOTE: depends on STLSoft 1.9.78
+
+
+29th April 2009 - 0.3.4
+-----------------------
+
+ * reordering of includes to avoid threading ambiguities on Mac OS-X
+ * correction to avoid unlikely, but possible, defect of memset()-ing null pointer
+ * properly reports file+line information for function pointer tests
+ * NOTE: bundles xTests 0.11.5
+ * NOTE: depends on STLSoft 1.9.78
+
+
+26th April 2009 - 0.3.3
+-----------------------
+
+ * changed fastformat_malloc() to guarantee to zero out the allocated block's contents
+ * added test.unit.api.illformed_handlers
+ * added test.unit.api.unmatched_handlers
+ * added test.scratch.format_alignment
+ * corrected compilation defect when mocking Windows' OutputDebugString() with STLport standard library
+ * workaround for dumb old compilers' inability to use filter_type mechanism
+ * tidied up various workspace files and added missing project files
+ * sorted benign build glitch with Borland compilers
+ * NOTE: bundles xTests 0.11.5
+ * NOTE: depends on STLSoft 1.9.77
+
+
+19th April 2009 - 0.3.2
+-----------------------
+
+ * added all remaining outstanding VC++ project files, for VC++ 6, 7.1, 8 and 9
+ * expanded all VC++ projects to multibyte string, wide string and pseudo-UNIX configurations
+ * finalised main workspace, and workspaces for examples, test.unit, test.component, test.performance and test.scratch
+ * added example.sink.OutputDebugString example program
+ * updated documentation to include all example programs
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+
+17th April 2009 - 0.3.2 beta 4
+------------------------------
+
+ * GCC compatibility adjustments for examples
+ * adjusted real inserter component test for compatibility with the different standard libraries' floating-point-to-string conversion accuracies
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+
+16th April 2009 - 0.3.2 beta 3
+------------------------------
+
+ * GCC compatibility adjustments for examples
+ * distribution corrected to include bundle resource files
+ * minor documentation fixes
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+
+15th April 2009 - 0.3.2 beta 2
+------------------------------
+
+ * adjustments to real() inserter function test cases, for wider compiler compatibility
+ * fixed component test segfault, by incorporating latest (fixed) xTests
+ * NOTE: bundles xTests 0.11.3
+ * NOTE: depends on STLSoft 1.9.77
+
+
+9th April 2009 - 0.3.2 beta 1
+-----------------------------
+
+ * widestring compatibility assured across core, application layer, examples, tests and makefiles
+ * fixed defect in format cache (found only in widestring builds)
+ * small efficiency enhancement in format cache
+ * minor enhancements to properties_bundle, to report missing properties file
+ * added test.component.sink.null to makefiles
+ * added widestring variants to all VC++ makefiles
+ * revised the speech scratch test to produce more informative output
+ * other minor fixes
+ * NOTE: bundles xTests 0.11.2
+ * NOTE: depends on STLSoft 1.9.77
+
+
+9th March 2009 - 0.3.1 beta 5
+-----------------------------
+
+ * corrected type-warning in new fastformat::real() inserters function(s)
+ * corrected 64-bit ambiguities in shim_string sink
+ * corrected inappropriate directory for real component test object files
+ * NOTE: bundles xTests 0.11.2
+ * NOTE: depends on STLSoft 1.9.77
+
+
+9th March 2009 - 0.3.1 beta 4
+-----------------------------
+
+ * added fastformat::real inserter function(s) suite
+ * added fastformat::OutputDebugString_sink sink
+ * added "Super Hero" custom type examples, corresponding to the article to feature in the April issue of Overload, showing inserter function, filter_type conversion shim, and string access shims
+ * added unit test for null sink
+ * added unit test for OutputDebugString sink
+ * added component test for real inserter
+ * added scratch test for real inserter
+ * enhanced the fastformat::properties_bundle class, to trim the name and left-trim the value
+ * corrected defect in generated code when build without support for Format JIT Cache
+ * corrected potential defect in default sink to ensure that NULL-pointer is not passed to string append() (when length is zero)
+ * corrected minor type-incompatibilities in format cache
+ * corrected guard in numerous sinks from general check for exception support to check for bad_alloc support
+ * corrected incompatibilities in shim_string sink, to ensure works with both STLSoft 1.9 and 1.10+
+ * NOTE: bundles xTests 0.11.1
+ * NOTE: depends on STLSoft 1.9.76
+ * NOTE: is now incompatible with versions of STLSoft 1.10.1 alpha 1 - alpha 8. Now use the recently released STLSoft 1.10.1 alpha 9
+
+
+13th February 2009 - 0.3.1 beta 3
+---------------------------------
+
+ * fixed Mac OS-X compilation errors
+ * fixed Mac OS-X runtime failures
+
+
+13th February 2009 - 0.3.1 beta 2
+---------------------------------
+
+ * added support for Borland 5.9.x and 6.1.x
+ * adjusted discrimination of filter_type mechanism support to allow versions of Borland from 6.1 or later
+ * weakened over-strong pre-condition enforcement in format processing
+ * updated some project and solution files for Visual C++ 9
+ * other minor fixes and enhancements
+ * bundles xTests 0.10.4
+ * NOTE: depends on STLSoft 1.9.74
+
+
+1st February 2009 - 0.3.1 beta 1
+--------------------------------
+
+ * added GCC 4.3 makefiles
+ * bundles xTests 0.10.3
+ * NOTE: depends on STLSoft 1.9.72
+
+
+19th January 2009 - 0.3.1 alpha 1
+---------------------------------
+
+ * support for min-width / max-width / alignment in format specifications
+ * renaming/addition of several nested namespaces
+ * preparation for full localisation via renaming of stock (non-localised) conversion components
+ * added support for shim_string sinks, which facilitate high-speed intermediate conversion in composite statements
+ * NOTE: this includes some potentially BREAKING CHANGES from 0.2, due to namespace name changes. You may have to modify your customisations (sinks and/or filtering) accordingly 
+ * NOTE: depends on STLSoft 1.9.68
+
+
+4th January 2009 - 0.2.1 beta 10
+--------------------------------
+
+ * corrected defect in ACE_CString sink
+ * added missing newline support in CComBSTR sink
+ * added unit test for CComBSTR sink
+ * enhanced unit test for CString sink
+
+
+2nd January 2009 - 0.2.1 beta 9
+-------------------------------
+
+ * fixed Mac OS-X compilation error
+ * added ACE_CString sink, and a scratch test for it
+ * fixed minor defect in CComBSTR sink
+
+
+1st January 2009 - 0.2.1 beta 8
+-------------------------------
+
+ * fixed unsigned/size_t clash (which manifests on 64-bit Linux)
+ * NOTE: now requires STLSoft 1.9.65
+
+
+30th December 2008 - 0.2.1 beta 7
+---------------------------------
+
+ * a number of minor adjustments to ease merging with forthcoming 0.3 branch
+ * removed deliberate defect that was used in testing
+ * bundles xTests 0.9.3
+
+
+28th December 2008 - 0.2.1 beta 6
+---------------------------------
+
+ * added Loki.SafeFormat to other libraries against which performance tests
+   are carried out; the results are just as positive for FastFormat as with
+   the other comparison formatting libraries
+ * enhanced performance tests to output in spreadsheet-ready format at
+   verbosity level 2
+ * enhanced auto-generated application layer components to facilitate use
+   with older compilers that do not support the filter_type mechanism
+ * enhanced no-namespace compatibility for older compilers that have some
+   trouble with ADL
+ * added "void pointers" and "no namespace" examples to makefiles
+ * fixed minor integral type inconsistencies in CComBSTR sink and
+   void pointers conversion shims
+ * NOTE: depends on STLSoft 1.9.64
+
+
+17th December 2008 - 0.2.1 beta 5
+---------------------------------
+
+ * addition of six new performance tests
+ * renaming and removal of various core API functions
+ * renaming of various test programs
+ * various enhancements in preparation for version 0.3
+
+
+14th December 2008 - 0.2.1 beta 4
+---------------------------------
+
+ * added projects to workspaces
+ * added support for Intel 10 & 11
+ * no-namespace compatibility
+ * enhancements to vectored_file sink scratch test
+ * minor documentation fixes
+
+
+10th December 2008 - 0.2.1 beta 3
+---------------------------------
+
+ * workaround for VC++ 6 defect when compiling auto_buffer sink
+ * added null sink, for gathering statistics in unit/component tests
+ * various minor fixes for test programs not properly updated to
+   0.2.1 beta features
+
+
+4th December 2008 - 0.2.1 beta 1
+--------------------------------
+
+ * fixed minor defects in test programs introduced in 0.2.1 beta 1
+
+
+1st December 2008 - 0.2.1 beta 1
+--------------------------------
+
+ * changed per-handler information (both ill-formed & mismatched) to use
+   paired handler function + opaque parameter, to allow user-level chaining
+   of handlers
+ * added support for parameters of type void* (and all cv-forms)   
+ * added ignore_unreferenced_arguments_scope scoping class that causes
+   unreferenced arguments to be ignored in the current thread (or the
+   whole process, in the case of single-threaded operation).
+ * renamed source files and various API functions to be more conventional
+ * adjusted several examples to work around the template/namespace defect in
+   GCC
+
+
+27th November 2008 - 0.2.1 alpha 12
+-----------------------------------
+
+ * fixed defect in speech sink introduced in 0.2.1 alpha 11
+
+
+23rd November 2008 - 0.2.1 alpha 11
+-----------------------------------
+
+ * added new sink for CComBSTR
+ * fixed widestring compatibility for speech sink 
+
+
+19th November 2008 - 0.2.1 alpha 10
+-----------------------------------
+
+ * added flags parameter to speech_sink ctor
+ * added get() method to retrieve COM interface pointer of speech object
+ * sorting out string access shims (for ff_string_slice_t)
+ * improved documentation markup
+ * warning suppression
+
+
+11th November 2008 - 0.2.1 alpha 9
+----------------------------------
+
+ * enhanced wide string compatibility for integer and floating-point types
+
+
+10th November 2008 - 0.2.1 alpha 8
+----------------------------------
+
+ * string slice shims now compatible with widestring encoding
+ * exception classes now compatible with widestring encoding
+ * fixed defect whereby per-thread handler was not used in certain
+   multithreaded builds
+ * worked around compiler warnings wrt VC++'s "safe" string library
+ * added second performance test scenario: comparing performances in
+   converting integer values to string
+ * renamed some examples to avoid ambiguity
+
+
+9th November 2008 - 0.2.1 alpha 7
+---------------------------------
+
+ * changed includes to absolute, to placate CodeWarrior
+ * corrected defective length calculation in case where replacement
+   mismatches are ignored
+ * corrected erroneous parse code passed to handler on invalid index
+ * slight modification to replacement algorithm
+ * ff_format_element_t now only fwd-defined in fastformat/fastformat.h
+
+
+5th November 2008 - 0.2.1 alpha 6
+---------------------------------
+
+ * now detects and reports on unreferenced arguments by default
+ * added conversion shims for floating-point types
+ * added string access shims for ff_string_slice_t, which facilitates highly-efficient
+   conversion shims
+ * fixes to defects in ostream and stringstream sinks
+
+
+25th October 2008 - 0.2.1 alpha 5
+---------------------------------
+
+ * added exception classes, for reporting illformed formats and mismatched
+   parameter replacements
+ * several types are renamed, to raise consistency
+ * bundles xTests 0.9.1
+
+
+14th October 2008 - 0.2.1 alpha 4
+---------------------------------
+
+ * large-scale reworking of the contract enforcements, to put them in line
+   with best-practice (and with recent releases of Pantheios library)
+ * ensures full no-namespace compatibility (both in client code and internal
+   to library)
+ * renamed include/fastformat/error_codes.h =>
+   include/fastformat/init_codes.h
+ * other minor fixes to put the library in a position ready for proper
+   (non-alpha) evolution
+
+
+12th September 2008 - 0.2.1 alpha 3
+-----------------------------------
+
+ * initial adjustments to work with wide strings
+ * fix to defect in implicit link header file that manifests in 64-bit
+   compilation
+
+
+8th September 2008 - 0.2.1 alpha 2
+----------------------------------
+
+ * added CString::Format() to the test.performance.scenario1
+ * fixed defects in ostream sink
+ * separated the documentation groups for the interface functions in Write
+   API and Format API
+ * updated fill_replacements and parse_replacements unit tests
+ * NOTE: Now requires STLSoft 1.9.51
+
+
+3rd September 2008 - 0.2.1 alpha 1
+----------------------------------
+
+ This is the first publicly released version.
+
+ All history before this day is moot!
+
+=============================== End of file ================================

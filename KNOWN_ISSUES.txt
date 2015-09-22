@@ -1,0 +1,30 @@
+FastFormat - Known Issues
+=========================
+
+Updated:    1st December 2011
+
+
+
+FastFormat 0.7 Known Issues:
+----------------------------
+
+ * docs are incomplete
+
+ * website is incomplete (actually it's rubbish - but not for long, hopefully!)
+
+ * there's an apparent defect in the template interpretation mechanisms of
+   Borland (pre 6.0/6.1) and
+   Digital Mars' C++ compilers, which basically prohibits their
+   being used with type filtering (the filter_type action shims). To handle
+   this the symbol FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT is
+   defined in fastformat/fastformat.hpp for these compilers (and for Watcom,
+   which is not yet supported), and used in the application layer function
+   templates (and certain example and test programs in the distro).
+
+
+FastFormat 0.7 Suspected Issues:
+--------------------------------
+
+ <none>
+
+=============================== End of file ================================
