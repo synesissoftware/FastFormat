@@ -38,6 +38,8 @@ Unicode Release Multithreaded DLL/
 
 list_changes.cmd
 
+include/fastformat/internal/dos2unix.has.been.performed
+
 # files (by pattern)
 
 *~
