@@ -4,11 +4,11 @@
  * Purpose:     Automatic initialisation of FastFormat library
  *
  * Created:     21st June 2005
- * Updated:     2nd August 2010
+ * Updated:     29th March 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2005-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2005-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -210,11 +210,15 @@ private:
     {
 #ifdef FASTFORMAT_INIT_FAILURE_REPORT_VIA_PANTHEIOS
         {
+# ifndef PANTHEIOS_NO_NAMESPACE
+            using pantheios::pantheios_logprintf;
+# endif /* !PANTHEIOS_NO_NAMESPACE */
+
             // Record initialisation failure to Pantheios logging API
             //
             // Assumes that FastFormat and Pantheios both use multi-byte
             // string build, or both use wide-string build
-            ::pantheios::logprintf(PANTHEIOS_SEV_ALERT, PANTHEIOS_LITERAL_STRING("could not initialise the FastFormat library: %s"), fastformat_getInitCodeString(r));
+            pantheios_logprintf(PANTHEIOS_SEV_ALERT, PANTHEIOS_LITERAL_STRING("could not initialise the FastFormat library: %s"), fastformat_getInitCodeString(r));
         }
 #endif
 #ifdef FASTFORMAT_INIT_FAILURE_REPORT_VIA_WINDOWS_LOGGING

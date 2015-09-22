@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for integral types
  *
  * Created:     26th May 2009
- * Updated:     31st July 2012
+ * Updated:     7th August 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       18
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   6
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       21
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -109,6 +109,13 @@ namespace inserters
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 namespace ximpl_integer
 {
+
+enum ff_i2s_case_selection_t
+{
+        FF_ximpl_REQUIRE_LOWERCASE  =   0
+    ,   FF_ximpl_REQUIRE_UPPERCASE  =   1
+};
+
 
 inline int default_width_sentinel_()
 {
@@ -366,8 +373,8 @@ inline ff_to_i_r_t_ integer_helper_2(
 
 #ifndef STLSOFT_VER_STLSOFT_CONVERSION_INTEGER_TO_STRING_HPP_INTEGER_TO_HEXADECIMAL_STRING_MAJOR
 inline ff_to_i_r_t_ hex_integer_helper(
-    stlsoft::uint64_t   value
-,   int                 uppercaseAlpha
+    stlsoft::uint64_t       value
+,   ff_i2s_case_selection_t uppercaseAlpha
 )
 {
 #if STLSOFT_LEAD_VER >= 0x010a0000
@@ -387,7 +394,7 @@ inline ff_to_i_r_t_ hex_integer_helper(
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
                     ,   value);
 
-    if(uppercaseAlpha)
+    if(FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha)
     {
         typedef stlsoft::ctype_traits<ff_char_t> ctype_traits_t;
 
@@ -398,8 +405,8 @@ inline ff_to_i_r_t_ hex_integer_helper(
 }
 
 inline ff_to_i_r_t_ hex_integer_helper(
-    stlsoft::sint64_t   value
-,   int                 uppercaseAlpha
+    stlsoft::sint64_t       value
+,   ff_i2s_case_selection_t uppercaseAlpha
 )
 {
     return hex_integer_helper(static_cast<stlsoft::uint64_t>(value), uppercaseAlpha);
@@ -407,11 +414,11 @@ inline ff_to_i_r_t_ hex_integer_helper(
 
 template <typename I>
 inline ff_to_i_r_t_ hex_integer_helper(
-    I const&    value
-,   int         uppercaseAlpha
+    I const&                value
+,   ff_i2s_case_selection_t uppercaseAlpha
 )
 {
-    ff_char_t   fmt[3] = { '%', uppercaseAlpha ? 'X' : 'x', '\0' };
+    ff_char_t   fmt[3] = { '%', (FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha) ? 'X' : 'x', '\0' };
     ff_char_t   result[17];
     int         n = fastformat_util_snprintf(&result[0], STLSOFT_NUM_ELEMENTS(result), fmt, value);
 
@@ -421,11 +428,11 @@ inline ff_to_i_r_t_ hex_integer_helper(
 
 template <typename I>
 inline ff_to_i_r_t_ integer_helper_5(
-    I const&    value
-,   int         minimumWidth
-,   int         precision
-,   int         base
-,   int         uppercaseAlpha
+    I const&                value
+,   int                     minimumWidth
+,   int                     precision
+,   int                     base
+,   ff_i2s_case_selection_t uppercaseAlpha
 )
 {
 #if STLSOFT_LEAD_VER >= 0x010a0000
@@ -460,7 +467,7 @@ inline ff_to_i_r_t_ integer_helper_5(
             size_t              n;
             ff_char_t const*    s = stlsoft::integer_to_hexadecimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
 
-            if(uppercaseAlpha)
+            if(FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha)
             {
                 typedef stlsoft::ctype_traits<ff_char_t> ctype_traits_t;
 
@@ -538,7 +545,7 @@ inline ff_to_i_r_t_ integer_helper_5(
 
         // 5. type
         ::memcpy(end - (typeLen + 1), type, sizeof(ff_char_t) * typeLen);
-        if(uppercaseAlpha)
+        if(FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha)
         {
             // Make only the first (should be only) 'x' uppercase
             make_x_upper_(end - (typeLen + 1), end - (typeLen + 1) + typeLen);
@@ -573,15 +580,15 @@ inline ff_to_i_r_t_ integer_helper_3(
 ,   int         precision
 )
 {
-    return integer_helper_5(value, minimumWidth, precision, 10, false);
+    return integer_helper_5(value, minimumWidth, precision, 10, FF_ximpl_REQUIRE_LOWERCASE);
 }
 
 template <typename I>
 inline ff_to_i_r_t_ integer_helper_hex_3(
-    I const&    value
-,   int         minimumWidth
-,   int         precision
-,   int         uppercaseX
+    I const&                value
+,   int                     minimumWidth
+,   int                     precision
+,   ff_i2s_case_selection_t uppercaseX
 )
 {
     return integer_helper_5(value, minimumWidth, precision, 16, uppercaseX);

@@ -5,11 +5,11 @@
  *              unreferenced arguments.
  *
  * Created:     25th April 2009
- * Updated:     13th September 2010
+ * Updated:     28th October 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,9 +55,9 @@
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MAJOR    1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     6
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MINOR    2
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_REVISION 2
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -73,6 +73,7 @@
  */
 
 #include <fastformat/fastformat.h>
+#include <fastformat/exceptions.hpp>
 #ifndef FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE
 # include <fastformat/format/specification_defect_handling/mismatched_arguments_scope_base.hpp>
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE */
@@ -112,7 +113,6 @@ public: // Construction
      * passes all others to the previously-registered handler
      */
     ignore_missing_arguments_scope()
-        : parent_class_type(class_type::handler, get_this_())
     {}
     /** Restores the thread/process mismatched handler to the function
      * registered prior to the construction of this instance
@@ -126,15 +126,9 @@ private:
     ignore_missing_arguments_scope(class_type const&);
     class_type& operator =(class_type const&);
 
-private: // Implementation
-    void* get_this_() throw()
-    {
-        return this;
-    }
-
-    static int FASTFORMAT_CALLCONV handler(
-        void*                   param
-    ,   ff_replacement_code_t   code
+private: // Overrides
+    virtual int handle(
+        ff_replacement_code_t   code
     ,   size_t                  numParameters
     ,   int                     parameterIndex
     ,   ff_string_slice_t*      slice
@@ -143,16 +137,22 @@ private: // Implementation
     ,   void*                   reserved2
     )
     {
-        class_type* pThis = static_cast<class_type*>(param);
-
         if(FF_REPLACEMENTCODE_MISSING_ARGUMENT == code)
         {
             return +1; // Ignore unreferenced arguments
         }
-        else
+
+        if(NULL != m_previous.handler)
         {
-            return pThis->parent_class_type::handle_default(param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
+            return (*m_previous.handler)(m_previous.param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
         }
+
+        if(FF_REPLACEMENTCODE_MISSING_ARGUMENT == code)
+        {
+            throw missing_argument_exception("a required argument is missing from the argument list", code, int(numParameters), parameterIndex);
+        }
+
+        return 0;
     }
 };
 

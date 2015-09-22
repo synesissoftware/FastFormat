@@ -5,11 +5,11 @@
  *              in response to mismatched arguments.
  *
  * Created:     1st December 2008
- * Updated:     13th September 2010
+ * Updated:     28th October 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,9 +55,9 @@
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MAJOR       1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MINOR       0
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        6
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MINOR       1
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_REVISION    2
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -105,8 +105,8 @@ protected: // Construction
      * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code and
      * passes all others to the previously-registered handler
      */
-    explicit mismatched_arguments_scope_base(fastformat_mismatchedHandler_t handler, void* param)
-        : m_previous(fastformat_setThreadMismatchedHandler(handler, param))
+    mismatched_arguments_scope_base()
+        : m_previous(fastformat_setThreadMismatchedHandler(&class_type::handler, get_this_()))
     {}
 public:
     /** Restores the thread/process mismatched handler to the function
@@ -120,11 +120,41 @@ public:
         fastformat_setThreadMismatchedHandler(m_previous.handler, m_previous.param);
     }
 
-protected: // Operations
-    /** Invokes 
+private:
+    mismatched_arguments_scope_base(class_type const&);
+    class_type& operator =(class_type const&);
+
+protected: // Overrides
+
+    /** Override, to be implemented by derived class, that will be invoked
+     * when mismatched are encountered when processing a formatting
+     * statement.
+     *
+     * \param code The type of mismatch
+     * \param numParameters The number of arguments provided to the format
+     *   statement
+     * \param parameterIndex The index of the parameter that is associated
+     *   with the mismatch
+     * \param slice A slice that may be modified in handling the mismatch.
      */
-    int handle_default(
-        void*                   /* param */
+    virtual int handle(
+        ff_replacement_code_t   code
+    ,   size_t                  numParameters
+    ,   int                     parameterIndex
+    ,   ff_string_slice_t*      slice
+    ,   void*                   reserved0
+    ,   size_t                  reserved1
+    ,   void*                   reserved2
+    ) = 0;
+
+private: // Implementation
+    void* get_this_() throw()
+    {
+        return this;
+    }
+
+    static int FASTFORMAT_CALLCONV handler(
+        void*                   param
     ,   ff_replacement_code_t   code
     ,   size_t                  numParameters
     ,   int                     parameterIndex
@@ -134,22 +164,14 @@ protected: // Operations
     ,   void*                   reserved2
     )
     {
-        if(NULL == m_previous.handler)
-        {
-            return +1; // Ignore unreferenced argument
-        }
-        else
-        {
-            return (m_previous.handler)(m_previous.param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
-        }
+        class_type* pThis = static_cast<class_type*>(param);
+
+        return pThis->handle(code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
     }
 
-private:
-    mismatched_arguments_scope_base(class_type const&);
-    class_type& operator =(class_type const&);
-
-protected:  // A (very) rare use case for protected member data, when using (private) implementation inheritance
-    mismatched_handler_info_t   m_previous; //!< Previous handler, for chaining
+protected: // Fields
+    // A (very) rare use case for protected member data, when using (private) implementation inheritance
+    mismatched_handler_info_t const m_previous; //!< Previous handler, for chaining
 };
 
 /* /////////////////////////////////////////////////////////////////////////

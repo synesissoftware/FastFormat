@@ -1,7 +1,7 @@
 FastFormat - Authors
 ====================
 
-Updated:    17th August 2012
+Updated:    7th August 2015
 
 
 Authors:
@@ -13,6 +13,8 @@ Authors:
 Bug reports, fixes, questions, requests and suggestions (for which we are
 very grateful):
 
+  Cláudio Albuquerque
+                  - for assisting with VC++ 12 & 14 support
   Gerald Dalley   - floating-pointer insertion (realised in real() inserter
                     functions, in 0.3.1 beta 4)
   Jerzy Adamowski - Widestring problems

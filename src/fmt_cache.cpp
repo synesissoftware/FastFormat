@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for FastFormat core API: format cache.
  *
  * Created:     18th September 2006
- * Updated:     3rd February 2012
+ * Updated:     7th August 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -473,13 +473,13 @@ unsigned format_cache::lookup_pattern_1phase(
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    record_ptr_type_ ptr    =   (*it).second;
+    record_ptr_type_ recptr =   (*it).second;
 
-    *elements               =   ptr->elements;
+    *elements               =   recptr->elements;
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    return (ptr->numFormatElements & 0xffff) | ((ptr->numResultElements & 0xffff) << 16);
+    return (recptr->numFormatElements & 0xffff) | ((recptr->numResultElements & 0xffff) << 16);
 }
 
 unsigned format_cache::lookup_pattern_2phase(
@@ -576,13 +576,13 @@ unsigned format_cache::lookup_pattern_2phase(
             it = m_map.insert(std::make_pair(ptr->pattern(), ptr)).first;
         }
 
-        record_ptr_type_ ptr    =   (*it).second;
+        record_ptr_type_ recptr =   (*it).second;
 
-        *elements               =   ptr->elements;
+        *elements               =   recptr->elements;
 
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        return (ptr->numFormatElements & 0xffff) | ((ptr->numResultElements & 0xffff) << 16);
+        return (recptr->numFormatElements & 0xffff) | ((recptr->numResultElements & 0xffff) << 16);
     }
 #endif /* FASTFORMAT_MT */
 }

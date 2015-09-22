@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for integral types in hex format
  *
  * Created:     19th December 2009
- * Updated:     7th December 2010
+ * Updated:     5th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_MINOR     0
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_EDIT      6
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_REVISION  4
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_EDIT      7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -102,7 +102,12 @@ inline ximpl_integer::ff_to_i_r_t_ to_x(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
-        ximpl_integer::integer_helper_hex_3(value, ximpl_integer::default_width_sentinel_(), ximpl_integer::default_precision_sentinel_(), false);
+        ximpl_integer::integer_helper_hex_3(
+                value
+            ,   ximpl_integer::default_width_sentinel_()
+            ,   ximpl_integer::default_precision_sentinel_()
+            ,   ximpl_integer::FF_ximpl_REQUIRE_LOWERCASE
+            );
 }
 
 /** Inserts the hexadecimal string form of an integral value
@@ -128,7 +133,12 @@ inline ximpl_integer::ff_to_i_r_t_ to_X(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
-        ximpl_integer::integer_helper_hex_3(value, ximpl_integer::default_width_sentinel_(), ximpl_integer::default_precision_sentinel_(), true);
+        ximpl_integer::integer_helper_hex_3(
+                value
+            ,   ximpl_integer::default_width_sentinel_()
+            ,   ximpl_integer::default_precision_sentinel_()
+            ,   ximpl_integer::FF_ximpl_REQUIRE_UPPERCASE
+            );
 }
 
 /** Inserts the hexadecimal string form of an integral value
@@ -158,7 +168,12 @@ inline ximpl_integer::ff_to_i_r_t_ to_x(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
-        ximpl_integer::integer_helper_hex_3(value, minimumWidth, ximpl_integer::default_precision_sentinel_(), false);
+        ximpl_integer::integer_helper_hex_3(
+                value
+            ,   minimumWidth
+            ,   ximpl_integer::default_precision_sentinel_()
+            ,   ximpl_integer::FF_ximpl_REQUIRE_LOWERCASE
+            );
 }
 
 /** Inserts the hexadecimal string form of an integral value
@@ -188,7 +203,12 @@ inline ximpl_integer::ff_to_i_r_t_ to_X(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
-        ximpl_integer::integer_helper_hex_3(value, minimumWidth, ximpl_integer::default_precision_sentinel_(), true);
+        ximpl_integer::integer_helper_hex_3(
+                value
+            ,   minimumWidth
+            ,   ximpl_integer::default_precision_sentinel_()
+            ,   ximpl_integer::FF_ximpl_REQUIRE_UPPERCASE
+            );
 }
 
 /** Inserts the hexadecimal string form of an integral value
@@ -222,7 +242,12 @@ inline ximpl_integer::ff_to_i_r_t_ to_x(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
-        ximpl_integer::integer_helper_hex_3(value, minimumWidth, precision, false);
+        ximpl_integer::integer_helper_hex_3(
+                value
+            ,   minimumWidth
+            ,   precision
+            ,   ximpl_integer::FF_ximpl_REQUIRE_LOWERCASE
+            );
 }
 
 /** Inserts the hexadecimal string form of an integral value
@@ -256,7 +281,12 @@ inline ximpl_integer::ff_to_i_r_t_ to_X(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
-        ximpl_integer::integer_helper_hex_3(value, minimumWidth, precision, true);
+        ximpl_integer::integer_helper_hex_3(
+                value
+            ,   minimumWidth
+            ,   precision
+            ,   ximpl_integer::FF_ximpl_REQUIRE_UPPERCASE
+            );
 }
 
 /* /////////////////////////////////////////////////////////////////////////

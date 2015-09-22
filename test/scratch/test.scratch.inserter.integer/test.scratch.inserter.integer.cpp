@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.inserter.integer project.
  *
  * Created:     1st March 2009
- * Updated:     8th March 2010
+ * Updated:     22nd September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009-2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,22 +18,22 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/inserters/integer.hpp>
 #include <fastformat/inserters/to_i.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* UNIXEm Header Files */
+/* UNIXem header files */
 #if defined(_WIN32) || \
     defined(_WIN64)
 # include <unixem/unixem.h>
 #endif /* Win32 || Win64 */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #if 0
@@ -44,7 +44,7 @@
 #include <vector>
 #endif /* 0 */
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>

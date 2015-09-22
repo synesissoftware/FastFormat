@@ -4,11 +4,11 @@
  * Purpose:     FastFormat API exception classes.
  *
  * Created:     23rd October 2008
- * Updated:     7th February 2012
+ * Updated:     28th October 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      10
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      12
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -97,29 +97,32 @@ namespace fastformat
 
 #if 0
 
+    /* Taxonomy: */
+
     [std::runtime_error]
-        fastformat_exception
-            |
-            + - bundle_exception
-            |
-            + - format_parsing_exception
-            |       |
-            |       + - illformed_format_exception
-            |
-            + - mismatched_replacements_exception
-            |       |
-            |       + - missing_argument_exception
-            |       |
-            |       + - unreferenced_argument_exception
-            |
-            + - sink_exception
-                    |
-                    + - sink_output_exception
-                            |
-                            .
-                            .
-                            .
-                            . . . sink-specific exception classes
+        |
+        + - fastformat_exception
+                |
+                + - bundle_exception
+                |
+                + - format_parsing_exception
+                |       |
+                |       + - illformed_format_exception
+                |
+                + - mismatched_replacements_exception
+                |       |
+                |       + - missing_argument_exception
+                |       |
+                |       + - unreferenced_argument_exception
+                |
+                + - sink_exception
+                        |
+                        + - sink_output_exception
+                                |
+                                .
+                                .
+                                .
+                                . . . sink-specific exception classes
 #endif
 
 

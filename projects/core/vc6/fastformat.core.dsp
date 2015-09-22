@@ -7,16 +7,16 @@
 CFG=fastformat.core - Win32 Release
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE
+!MESSAGE 
 !MESSAGE NMAKE /f "fastformat.core.mak".
-!MESSAGE
+!MESSAGE 
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE
+!MESSAGE 
 !MESSAGE NMAKE /f "fastformat.core.mak" CFG="fastformat.core - Win32 Release"
-!MESSAGE
+!MESSAGE 
 !MESSAGE Possible choices for configuration are:
-!MESSAGE
+!MESSAGE 
 !MESSAGE "fastformat.core - Win32 Release" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Release Multithreaded" (based on "Win32 (x86) Static Library")
@@ -35,7 +35,7 @@ CFG=fastformat.core - Win32 Release
 !MESSAGE "fastformat.core - Win32 Debug Multithreaded pseudoUNIX" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Release Multithreaded DLL pseudoUNIX" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Debug Multithreaded DLL pseudoUNIX" (based on "Win32 (x86) Static Library")
-!MESSAGE
+!MESSAGE 
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
@@ -83,8 +83,8 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FR /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /FD /GZ /c
+# SUBTRACT CPP /Fr /YX
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -494,7 +494,7 @@ LIB32=link.exe -lib
 # ADD BASE LIB32 /nologo /out:"../../../lib/fastformat.0.core.vc6.unix.dll.debug.lib"
 # ADD LIB32 /nologo /out:"../../../lib/fastformat.0.core.vc6.unix.dll.debug.lib"
 
-!ENDIF
+!ENDIF 
 
 # Begin Target
 
@@ -615,6 +615,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
 # End Source File
 # Begin Source File
@@ -627,11 +631,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\is_signed_type.hpp"
 # End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -755,6 +771,10 @@ SOURCE="$(STLSOFT)\include\platformstl\synch\atomic_functions.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\platformstl\synch\atomic_types.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\platformstl\synch\util\features.h"
 # End Source File
 # Begin Source File
@@ -778,24 +798,16 @@ SOURCE="$(STLSOFT)\include\platformstl\synch\thread_mutex.hpp"
 SOURCE="$(STLSOFT)\include\platformstl\synch\tss_index.hpp"
 # End Source File
 # End Group
-# Begin Group "UNIXSTL"
-
-# PROP Default_Filter ""
-# Begin Source File
-
-SOURCE="$(STLSOFT)\include\unixstl\synch\util\features.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(STLSOFT)\include\unixstl\unixstl.h"
-# End Source File
-# End Group
 # Begin Group "WinSTL"
 
 # PROP Default_Filter ""
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\winstl\synch\atomic_functions.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\synch\atomic_types.h"
 # End Source File
 # Begin Source File
 
@@ -879,14 +891,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\threading.h"
 # End Source File
 # End Group
-# Begin Group "UNIXem Header Files"
-
-# PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="$(UNIXEM)\include\unistd.h"
+SOURCE="$(FASTFORMAT_ROOT)\src\ximpl_core.hpp"
 # End Source File
-# End Group
 # End Group
 # Begin Group "Script Files"
 
