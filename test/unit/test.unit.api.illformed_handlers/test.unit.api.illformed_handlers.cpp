@@ -287,17 +287,8 @@ static void test_3()
 {
     ff_illformed_handler_info_t info = fastformat_getThreadIllformedHandler();
 
-#ifdef FASTFORMAT_MT
-
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, info.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
-
-#else /* ? FASTFORMAT_MT */
-
-    XTESTS_TEST_FN_POINTER_NOT_EQUAL(NULL, info.handler);
-    XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
-
-#endif /* FASTFORMAT_MT */
 }
 
 static void test_4()
@@ -326,17 +317,8 @@ static void test_5()
 
     ff_illformed_handler_info_t original = fastformat_getThreadIllformedHandler();
 
-#ifdef FASTFORMAT_MT
-
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, original.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
-
-#else /* ? FASTFORMAT_MT */
-
-    XTESTS_TEST_FN_POINTER_NOT_EQUAL(NULL, original.handler);
-    XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
-
-#endif /* FASTFORMAT_MT */
 
     ff_illformed_handler_info_t previous = fastformat_setThreadIllformedHandler(illformed_handler_1_cancel, param);
 
