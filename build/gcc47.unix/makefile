@@ -5,7 +5,7 @@
 #           compiler, on UNIX
 #
 # Created:  22nd December 2007
-# Updated:  22nd September 2015
+# Updated:  26th September 2015
 #
 ############################################################################
 
@@ -52,7 +52,9 @@ PROJ_MAKEFILE_NAME  =   makefile
 ########################################
 # Testing verbosity
 
+ifndef TEST_VERBOSITY
 TEST_VERBOSITY      =   2
+endif
 
 ########################################
 # Directories
