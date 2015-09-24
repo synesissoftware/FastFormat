@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.performance.one_integer project.
  *
  * Created:     9th September 2006
- * Updated:     22nd September 2015
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
@@ -766,7 +766,7 @@ static std::string with_STLSoftI2S(int value)
 {
     size_t      n;
     char        sz[21];
-    char const* s = stlsoft::integer_to_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, n);
+    char const* s = stlsoft::integer_to_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
 
     return std::string(s, n);
 }
