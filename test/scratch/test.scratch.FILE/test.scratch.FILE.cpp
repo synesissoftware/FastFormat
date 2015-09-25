@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.FILE project.
  *
  * Created:     24th September 2006
- * Updated:     12th February 2012
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2006-2012, Synesis Software Pty Ltd.
+ *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -35,7 +35,7 @@
 #endif
 
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/FILE.hpp>
 #include <fastformat/ff.hpp>
 
@@ -57,15 +57,15 @@
 # endif
 #endif
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <platformstl/platformstl.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -7,20 +7,20 @@
 CFG=test.scratch.format_defects - Win32 Debug pseudoUNIX
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE
+!MESSAGE 
 !MESSAGE NMAKE /f "test.scratch.format_defects.mak".
-!MESSAGE
+!MESSAGE 
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE
+!MESSAGE 
 !MESSAGE NMAKE /f "test.scratch.format_defects.mak" CFG="test.scratch.format_defects - Win32 Debug pseudoUNIX"
-!MESSAGE
+!MESSAGE 
 !MESSAGE Possible choices for configuration are:
-!MESSAGE
+!MESSAGE 
 !MESSAGE "test.scratch.format_defects - Win32 Release" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.format_defects - Win32 Debug" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.format_defects - Win32 Debug pseudoUNIX" (based on "Win32 (x86) Application")
-!MESSAGE
+!MESSAGE 
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
@@ -109,7 +109,7 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib advapi32.lib /nologo /version:1.0 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.format_defects.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT LINK32 /pdb:none
 
-!ENDIF
+!ENDIF 
 
 # Begin Target
 
@@ -255,6 +255,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\safestr.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\shim_string.hpp"
 # End Source File
 # Begin Source File
@@ -300,10 +304,6 @@ SOURCE="$(STLSOFT)\include\stlsoft\error\throw_policies.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\meta\yesno.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
 # End Source File
 # End Group
 # Begin Group "PlatformSTL"

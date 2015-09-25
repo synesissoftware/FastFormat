@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.overload.3.record_insert project.
  *
  * Created:     20th September 2008
- * Updated:     22nd June 2010
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,14 +18,14 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 
 #include <platformstl/performance/performance_counter.hpp>
@@ -33,12 +33,12 @@
 platformstl_ns_using(performance_counter)
 
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <sstream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \

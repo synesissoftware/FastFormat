@@ -4,11 +4,11 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     17th August 2012
+ * Updated:     25th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -53,9 +53,9 @@
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       20
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    11
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        95
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       21
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    2
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        99
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -88,13 +88,14 @@
 # define FASTFORMAT_VER_0_7_1_ALPHA_7       0x00070107
 # define FASTFORMAT_VER_0_7_1_ALPHA_8       0x00070108
 # define FASTFORMAT_VER_0_7_1_ALPHA_9       0x00070109
+# define FASTFORMAT_VER_0_7_1_ALPHA_10      0x0007010a
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           7
 #define FASTFORMAT_VER_REVISION        1
 
-#define FASTFORMAT_VER                 FASTFORMAT_VER_0_7_1_ALPHA_9
+#define FASTFORMAT_VER                 FASTFORMAT_VER_0_7_1_ALPHA_10
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes - 1
@@ -282,7 +283,7 @@ typedef ff_format_element_t         format_element_t;
  */
 enum ff_parse_code_t
 {
-        FF_PARSECODE_SUCCESS                =   0   /*!< The parsing is . */
+        FF_PARSECODE_SUCCESS                =   0   /*!< The parsing detects no format errors. */
     ,   FF_PARSECODE_INCOMPLETEREPLACEMENT  =   1   /*!< The replacement is not complete; the terminating '}' is missing. */
     ,   FF_PARSECODE_INVALIDINDEX           =   2   /*!< The replacement is empty, or contains invalid symbols. */
 };
@@ -327,6 +328,7 @@ typedef ff_replacement_code_t           replacement_code_t;
  *
  * \param param The parameter specified, along with the function pointer, to
  *   fastformat_parseFormat()
+ * \param code One of the enumerators of ff_parse_code_t
  * \param format Pointer to the format string being parsed. It may not be
  *   <code>NULL</code>, but the string it points to does not have to be
  *   nul-terminated.
@@ -373,9 +375,9 @@ typedef int (FASTFORMAT_CALLCONV* fastformat_illformedHandler_t)(
 typedef fastformat_illformedHandler_t  illformedHandler_t;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/** Structure returned from fastformat_getProcessIllformedHandler(), 
+/** Structure returned from fastformat_getProcessIllformedHandler(),
  * fastformat_setProcessIllformedHandler(),
- * fastformat_getThreadIllformedHandler(), and 
+ * fastformat_getThreadIllformedHandler(), and
  * fastformat_setThreadIllformedHandler().
  *
  * \ingroup group__format_specification_defect_handling
@@ -406,8 +408,8 @@ typedef ff_illformed_handler_info_t     illformed_handler_info_t;
  *    the replacement form - the return value is >0
  * 4. It can request that the current and all subsequent invalid replacement
  *    parameters be replaced with the value contained in
- *    <code>*slice</code>, to which it will write the replacement form - 
- *    the return value is <0 
+ *    <code>*slice</code>, to which it will write the replacement form -
+ *    the return value is <0
  *
  * In cases 3 and 4, the function implementation is responsible for ensuring
  * that the contents of <code>*slice</code> remain valid until it is next
@@ -423,6 +425,8 @@ typedef ff_illformed_handler_info_t     illformed_handler_info_t;
  * freed.
  *
  * \param param The caller-supplied parameter passed to fastformat_fillReplacements()
+ * \param code One of the enumerators of ff_replacement_code_t. May be
+ *   FF_REPLACEMENTCODE_SUCCESS (0), which ; may be 0 (success)
  * \param numParameters The number of parameters
  * \param parameterIndex The mismatched parameter index
  * \param slice A pointer to a slice to receive any replacement string for
@@ -456,9 +460,9 @@ typedef int (FASTFORMAT_CALLCONV* fastformat_mismatchedHandler_t)(
 typedef fastformat_mismatchedHandler_t  mismatchedHandler_t;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/** Structure returned from fastformat_getProcessMismatchedHandler(), 
+/** Structure returned from fastformat_getProcessMismatchedHandler(),
  * fastformat_setProcessMismatchedHandler(),
- * fastformat_getThreadMismatchedHandler(), and 
+ * fastformat_getThreadMismatchedHandler(), and
  * fastformat_setThreadMismatchedHandler().
  *
  * \ingroup group__format_specification_defect_handling
@@ -501,7 +505,8 @@ typedef ff_mismatched_handler_info_t    mismatched_handler_info_t;
  *   <code>FASTFORMAT_NO_AUTO_INIT</code> by the definition of the symbol
  *   <code>FASTFORMAT_FORCE_AUTO_INIT</code>.
  */
-FASTFORMAT_CALL(int) fastformat_init(void);
+FASTFORMAT_CALL(int)
+fastformat_init(void);
 
 /** Uninitialises the FastFormat library.
  *
@@ -522,10 +527,12 @@ FASTFORMAT_CALL(int) fastformat_init(void);
  *   <code>FASTFORMAT_NO_AUTO_INIT</code> by the definition of the symbol
  *   <code>FASTFORMAT_FORCE_AUTO_INIT</code>.
  */
-FASTFORMAT_CALL(void) fastformat_uninit(void);
+FASTFORMAT_CALL(void)
+fastformat_uninit(void);
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
-FASTFORMAT_CALL(void) fastformat_exitProcess(int code);
+FASTFORMAT_CALL(void)
+fastformat_exitProcess(int code);
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** Returns a constant pointer to a non-NULL non-modifiable nul-terminated string
@@ -534,10 +541,11 @@ FASTFORMAT_CALL(void) fastformat_exitProcess(int code);
  * \ingroup group__init
  *
  * \param code The initialisation code whose string explanation is to be
- *   returned. If the code is not recognised, the empty 
+ *   returned. If the code is not recognised, the empty
  *   string (<code>""</code>) will be returned.
  */
-FASTFORMAT_CALL(ff_char_t const*) fastformat_getInitCodeString(int code);
+FASTFORMAT_CALL(ff_char_t const*)
+fastformat_getInitCodeString(int code);
 
 /** Returns the length of the string returned by fastformat_getInitCodeString().
  *
@@ -546,14 +554,17 @@ FASTFORMAT_CALL(ff_char_t const*) fastformat_getInitCodeString(int code);
  * \param code The initialisation code whose string equivalent is to be
  *   returned. If the code is not recognised, 0 will be returned.
  */
-FASTFORMAT_CALL(size_t) fastformat_getInitCodeStringLength(int code);
+FASTFORMAT_CALL(size_t)
+fastformat_getInitCodeStringLength(int code);
 
 #ifndef FASTFORMAT_NO_NAMESPACE
 /** Equivalent to \ref fastformat::fastformat_init "fastformat_init()".
  *
  * \ingroup group__init
  */
-inline int init()
+inline
+int
+init()
 {
     return fastformat_init();
 }
@@ -562,7 +573,9 @@ inline int init()
  *
  * \ingroup group__init
  */
-inline void uninit()
+inline
+void
+uninit()
 {
     fastformat_uninit();
 }
@@ -571,7 +584,9 @@ inline void uninit()
  *
  * \ingroup group__init
  */
-inline ff_char_t const* getInitCodeString(int code)
+inline
+ff_char_t const*
+getInitCodeString(int code)
 {
     return fastformat_getInitCodeString(code);
 }
@@ -580,23 +595,26 @@ inline ff_char_t const* getInitCodeString(int code)
  *
  * \ingroup group__init
  */
-inline size_t getInitCodeStringLength(int code)
+inline
+size_t
+getInitCodeStringLength(int code)
 {
     return fastformat_getInitCodeStringLength(code);
 }
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Configuration Functions
+ * Failure-handling Functions
  */
 
 /** Gets the ill-formed format handler for the calling process
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \return The previous handler for the process
+ * \return The handler for the process
  */
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getProcessIllformedHandler(void);
+FASTFORMAT_CALL(ff_illformed_handler_info_t)
+fastformat_getProcessIllformedHandler(void);
 
 /** Sets the ill-formed format handler for the calling process
  *
@@ -607,15 +625,17 @@ FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getProcessIllformedHandl
  *
  * \return The previous handler for the process
  */
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_setProcessIllformedHandler(fastformat_illformedHandler_t handler, void* param);
+FASTFORMAT_CALL(ff_illformed_handler_info_t)
+fastformat_setProcessIllformedHandler(fastformat_illformedHandler_t handler, void* param);
 
 /** Gets the ill-formed format handler for the calling thread
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \return The previous handler for the thread
+ * \return The handler for the thread
  */
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getThreadIllformedHandler(void);
+FASTFORMAT_CALL(ff_illformed_handler_info_t)
+fastformat_getThreadIllformedHandler(void);
 
 /** Sets the ill-formed format handler for the calling thread
  *
@@ -626,16 +646,27 @@ FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getThreadIllformedHandle
  *
  * \return The previous handler for the thread
  */
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_setThreadIllformedHandler(fastformat_illformedHandler_t handler, void* param);
+FASTFORMAT_CALL(ff_illformed_handler_info_t)
+fastformat_setThreadIllformedHandler(fastformat_illformedHandler_t handler, void* param);
+
+/** Gets the default ill-formed format handler
+ *
+ * \ingroup group__format_specification_defect_handling
+ *
+ * \return The default handler
+ */
+FASTFORMAT_CALL(ff_illformed_handler_info_t)
+fastformat_getDefaultIllformedHandler(void);
 
 
 /** Gets the mismatched parameter handler for the calling process
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \return The previous handler for the process
+ * \return The handler for the process
  */
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getProcessMismatchedHandler(void);
+FASTFORMAT_CALL(ff_mismatched_handler_info_t)
+fastformat_getProcessMismatchedHandler(void);
 
 /** Sets the mismatched parameter handler for the calling process
  *
@@ -646,15 +677,17 @@ FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getProcessMismatchedHan
  *
  * \return The previous handler for the process
  */
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_setProcessMismatchedHandler(fastformat_mismatchedHandler_t handler, void* param);
+FASTFORMAT_CALL(ff_mismatched_handler_info_t)
+fastformat_setProcessMismatchedHandler(fastformat_mismatchedHandler_t handler, void* param);
 
 /** Gets the mismatched parameter handler for the calling thread
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \return The previous handler for the thread
+ * \return The handler for the thread
  */
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getThreadMismatchedHandler(void);
+FASTFORMAT_CALL(ff_mismatched_handler_info_t)
+fastformat_getThreadMismatchedHandler(void);
 
 /** Sets the mismatched parameter handler for the calling thread
  *
@@ -665,7 +698,17 @@ FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getThreadMismatchedHand
  *
  * \return The previous handler for the thread
  */
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_setThreadMismatchedHandler(fastformat_mismatchedHandler_t handler, void* param);
+FASTFORMAT_CALL(ff_mismatched_handler_info_t)
+fastformat_setThreadMismatchedHandler(fastformat_mismatchedHandler_t handler, void* param);
+
+/** Gets the default mismatched parameter handler
+ *
+ * \ingroup group__format_specification_defect_handling
+ *
+ * \return The default handler
+ */
+FASTFORMAT_CALL(ff_mismatched_handler_info_t)
+fastformat_getDefaultMismatchedHandler(void);
 
 /* /////////////////////////////////////////////////////////////////////////
  * API Parsing Functions
@@ -683,7 +726,8 @@ FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_setThreadMismatchedHand
  *
  * \pre (0 == cchFormat || NULL != format)
  */
-FASTFORMAT_CALL(size_t) fastformat_calculateNumberOfRequiredReplacements(
+FASTFORMAT_CALL(size_t)
+fastformat_calculateNumberOfRequiredReplacements(
     ff_char_t const*    format
 ,   size_t              cchFormat
 );
@@ -713,7 +757,8 @@ FASTFORMAT_CALL(size_t) fastformat_calculateNumberOfRequiredReplacements(
  * \return Information describing the number of elements written/required
  */
 
-FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
+FASTFORMAT_CALL(unsigned)
+fastformat_parseFormat(
     ff_char_t const*                format
 ,   size_t                          cchFormat
 ,   ff_format_element_t*            formatElements
@@ -723,28 +768,39 @@ FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
 );
 
 /** Takes a number of pattern and replacement elements and populates an
- *   array of result elements
+ *   array of result elements.
  *
  * \ingroup group__core_library
  *
- * \return The total number of characters required in the resultant string
+ * \param resultElements        Pointer to an array of result elements. This must have at least the number of elements indicated for the pattern elements.
+ * \param formatElements        Pointer to an array of pattern elements.
+ * \param numElements           Number of pattern elements.
+ * \param arguments             Pointer to an array of replacement parameters.
+ * \param numArguments          The number of replacement parameters.
+ * \param handler               A handler to be invoked in the event of a mismatch between the format elements and the arguments.
+ * \param param                 A parameter to be passed through to the handler.
+ * \param pnumResultElements    Pointer to variable to receive the number of result elements. This may be greater than the number of pattern elements in the case where formatting (width) is applied
+ *
+ * \return The total number of characters required in the resultant string.
  */
-FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
-    ff_string_slice_t*              resultElements      /*<! Pointer to an array of result elements. This must have at least the number of elements indicated for the pattern elements. */
-,   ff_format_element_t const*      formatElements      /*<! Pointer to an array of pattern elements. */
-,   size_t                          numElements         /*<! Number of pattern elements. */
-,   ff_string_slice_t const*        arguments           /*<! Pointer to an array of replacement parameters. */
-,   size_t                          numArguments        /*<! The number of replacement parameters. */
+FASTFORMAT_CALL(size_t)
+fastformat_fillReplacements(
+    ff_string_slice_t*              resultElements
+,   ff_format_element_t const*      formatElements
+,   size_t                          numElements
+,   ff_string_slice_t const*        arguments
+,   size_t                          numArguments
 ,   fastformat_mismatchedHandler_t  handler
 ,   void*                           param
-,   size_t*                         pnumResultElements  /*!< Pointer to variable to receive the number of result elements. This may be greater than the number of pattern elements in the case where formatting (width) is applied */
+,   size_t*                         pnumResultElements
 );
 
 /** Calculates the total length of an array of string slices
  *
  * \ingroup group__core_library
  */
-FASTFORMAT_CALL(size_t) fastformat_accumulateSliceLengths(
+FASTFORMAT_CALL(size_t)
+fastformat_accumulateSliceLengths(
     size_t                      numSlices
 ,   ff_string_slice_t const*    slices
 );
@@ -766,7 +822,8 @@ FASTFORMAT_CALL(size_t) fastformat_accumulateSliceLengths(
  *
  * \return The number of replacement element descriptors.
  */
-FASTFORMAT_CALL(unsigned) fastformat_lookupPattern(
+FASTFORMAT_CALL(unsigned)
+fastformat_lookupPattern(
     ff_char_t const*            pattern
 ,   size_t                      cchPattern
 ,   ff_format_element_t const** elements
@@ -784,7 +841,8 @@ FASTFORMAT_CALL(ff_char_t const*) fastformat_getHashesSlice(size_t len);
 /** Returns a slice representing the CR/LF combination for the current
  *   platform
  */
-FASTFORMAT_CALL(ff_string_slice_t) fastformat_getNewlineForPlatform(void);
+FASTFORMAT_CALL(ff_string_slice_t)
+fastformat_getNewlineForPlatform(void);
 
 /* /////////////////////////////////////////////////////////////////////////
  * C++ API Functions
@@ -796,7 +854,9 @@ FASTFORMAT_CALL(ff_string_slice_t) fastformat_getNewlineForPlatform(void);
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_illformed_handler_info_t getProcessIllformedHandler()
+inline
+ff_illformed_handler_info_t
+getProcessIllformedHandler()
 {
     return fastformat_getProcessIllformedHandler();
 }
@@ -805,7 +865,9 @@ inline ff_illformed_handler_info_t getProcessIllformedHandler()
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_illformed_handler_info_t setProcessIllformedHandler(illformedHandler_t handler, void* param)
+inline
+ff_illformed_handler_info_t
+setProcessIllformedHandler(illformedHandler_t handler, void* param)
 {
     return fastformat_setProcessIllformedHandler(handler, param);
 }
@@ -814,7 +876,9 @@ inline ff_illformed_handler_info_t setProcessIllformedHandler(illformedHandler_t
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_illformed_handler_info_t getThreadIllformedHandler()
+inline
+ff_illformed_handler_info_t
+getThreadIllformedHandler()
 {
     return fastformat_getThreadIllformedHandler();
 }
@@ -823,7 +887,9 @@ inline ff_illformed_handler_info_t getThreadIllformedHandler()
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_illformed_handler_info_t setThreadIllformedHandler(illformedHandler_t handler, void* param)
+inline
+ff_illformed_handler_info_t
+setThreadIllformedHandler(illformedHandler_t handler, void* param)
 {
     return fastformat_setThreadIllformedHandler(handler, param);
 }
@@ -832,7 +898,9 @@ inline ff_illformed_handler_info_t setThreadIllformedHandler(illformedHandler_t 
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_mismatched_handler_info_t getProcessMismatchedHandler()
+inline
+ff_mismatched_handler_info_t
+getProcessMismatchedHandler()
 {
     return fastformat_getProcessMismatchedHandler();
 }
@@ -841,7 +909,9 @@ inline ff_mismatched_handler_info_t getProcessMismatchedHandler()
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_mismatched_handler_info_t setProcessMismatchedHandler(mismatchedHandler_t handler, void* param)
+inline
+ff_mismatched_handler_info_t
+setProcessMismatchedHandler(mismatchedHandler_t handler, void* param)
 {
     return fastformat_setProcessMismatchedHandler(handler, param);
 }
@@ -850,7 +920,9 @@ inline ff_mismatched_handler_info_t setProcessMismatchedHandler(mismatchedHandle
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_mismatched_handler_info_t getThreadMismatchedHandler()
+inline
+ff_mismatched_handler_info_t
+getThreadMismatchedHandler()
 {
     return fastformat_getThreadMismatchedHandler();
 }
@@ -859,7 +931,9 @@ inline ff_mismatched_handler_info_t getThreadMismatchedHandler()
  *
  * \ingroup group__format_specification_defect_handling
  */
-inline ff_mismatched_handler_info_t setThreadMismatchedHandler(mismatchedHandler_t handler, void* param)
+inline
+ff_mismatched_handler_info_t
+setThreadMismatchedHandler(mismatchedHandler_t handler, void* param)
 {
     return fastformat_setThreadMismatchedHandler(handler, param);
 }
@@ -868,7 +942,9 @@ inline ff_mismatched_handler_info_t setThreadMismatchedHandler(mismatchedHandler
  *
  * \ingroup group__core_library
  */
-inline string_slice_t getNewlineForPlatform()
+inline
+string_slice_t
+getNewlineForPlatform()
 {
     return fastformat_getNewlineForPlatform();
 }
@@ -896,20 +972,25 @@ FASTFORMAT_CALL(void*) fastformat_malloc(size_t cb);
  */
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the slice */
+inline
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_data_w(
+wchar_t const*
+c_str_data_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_data_a(
+char const* c_str_data_a(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
-    ff_string_slice_t const& slice
+    ff_string_slice_t const&
+    slice
 )
 {
     return slice.ptr;
 }
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the slice */
-inline ff_char_t const* c_str_data(
-    ff_string_slice_t const& slice
+inline
+ff_char_t const* c_str_data(
+    ff_string_slice_t const&
+    slice
 )
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -920,20 +1001,25 @@ inline ff_char_t const* c_str_data(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the slice */
+inline
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline size_t c_str_len_w(
+size_t
+c_str_len_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline size_t c_str_len_a(
+size_t c_str_len_a(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
-    ff_string_slice_t const& slice
+    ff_string_slice_t const&
+    slice
 )
 {
     return slice.len;
 }
 
 /** Returns the number of characters in the length of the C-style string representing the slice */
-inline size_t c_str_len(
-    ff_string_slice_t const& slice
+inline
+size_t c_str_len(
+    ff_string_slice_t const&
+    slice
 )
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -1047,37 +1133,47 @@ namespace stlsoft
 namespace stlsoft
 {
 
+inline
 #  ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_data_w(
+wchar_t const*
+c_str_data_w(
 #  else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_data_a(
+char const* c_str_data_a(
 #  endif /* !FASTFORMAT_USE_WIDE_STRINGS */
-    ff_string_slice_t const& slice
+    ff_string_slice_t const&
+    slice
 )
 {
     return slice.ptr;
 }
 
-inline ff_char_t const* c_str_data(
-    ff_string_slice_t const& slice
+inline
+ff_char_t const* c_str_data(
+    ff_string_slice_t const&
+    slice
 )
 {
     return slice.ptr;
 }
 
+inline
 #  ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline size_t c_str_len_w(
+size_t
+c_str_len_w(
 #  else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline size_t c_str_len_a(
+size_t c_str_len_a(
 #  endif /* !FASTFORMAT_USE_WIDE_STRINGS */
-    ff_string_slice_t const& slice
+    ff_string_slice_t const&
+    slice
 )
 {
     return slice.len;
 }
 
-inline size_t c_str_len(
-    ff_string_slice_t const& slice
+inline
+size_t c_str_len(
+    ff_string_slice_t const&
+    slice
 )
 {
     return slice.len;

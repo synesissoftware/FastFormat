@@ -5,7 +5,7 @@
 #           compiler, on Win32
 #
 # Created:  22nd December 2007
-# Updated:  17th August 2012
+# Updated:  25th September 2015
 #
 ############################################################################
 
@@ -26,17 +26,20 @@ endif # !STLSOFT
 
 COMP_TAG            =   gcc34
 ARCH_TAG            =   
-OS_TAG				=   
+OS_TAG              =   
 PROJ_TAG            =   fastformat
 PROJ_VER_MAJOR      =   0
 PROJ_TAG_VER        =   $(PROJ_TAG).$(PROJ_VER_MAJOR)
-COMP_ARCH_OS_TAG	=	$(COMP_TAG)$(OS_TAG)$(ARCH_TAG)
+COMP_ARCH_OS_TAG    =   $(COMP_TAG)$(OS_TAG)$(ARCH_TAG)
 
-LOKI_SFMT_VER_MAJOR	=	0
-LOKI_SFMT_TAG_VER	=	loki.safefmt.$(LOKI_SFMT_VER_MAJOR)
+LOKI_SFMT_VER_MAJOR =   0
+LOKI_SFMT_TAG_VER   =   loki.safefmt.$(LOKI_SFMT_VER_MAJOR)
 
 SHWILD_VER_MAJOR    =   0
 SHWILD_TAG_VER      =   shwild.$(SHWILD_VER_MAJOR)
+
+XCONTRACT_VER_MAJOR =   0
+XCONTRACT_TAG_VER   =   xtests.$(XCONTRACT_VER_MAJOR)
 
 XTESTS_VER_MAJOR    =   0
 XTESTS_TAG_VER      =   xtests.$(XTESTS_VER_MAJOR)
@@ -46,7 +49,9 @@ PROJ_MAKEFILE_NAME  =   makefile
 ########################################
 # Testing verbosity
 
-TEST_VERBOSITY		=	2
+ifndef TEST_VERBOSITY
+TEST_VERBOSITY      =   2
+endif # !TEST_VERBOSITY
 
 ########################################
 # Directories
@@ -70,11 +75,35 @@ BITBUCKET_SRC_DIR			=	$(PROJ_SRC_DIR)\bitbucket
 
 LOKI_SFMT_SRC_DIR			=	$(PROJ_SRC_DIR)\loki.safefmt
 
-SHWILD_INCLUDE_DIR			=	$(PROJ_BASE_DIR)\include
-SHWILD_SRC_DIR				=	$(PROJ_SRC_DIR)\shwild
+SHWILD_PROJ_INCLUDE     =   
+ifdef PANTHEIOS_SHWILD_BASE_DIR
+SHWILD_INCLUDE_DIR      =   $(PANTHEIOS_SHWILD_BASE_DIR)\include
+SHWILD_SRC_DIR          =   $(PANTHEIOS_SHWILD_BASE_DIR)\src
+SHWILD_PROJ_INCLUDE     =   -I$(SHWILD_INCLUDE_DIR)
+else
+SHWILD_INCLUDE_DIR      =   $(PROJ_BASE_DIR)\include
+SHWILD_SRC_DIR          =   $(PROJ_SRC_DIR)\shwild
+endif # !PANTHEIOS_SHWILD_BASE_DIR
 
-XTESTS_INCLUDE_DIR			=	$(PROJ_BASE_DIR)\include
-XTESTS_SRC_DIR				=	$(PROJ_SRC_DIR)\xtests
+XCONTRACT_PROJ_INCLUDE  =   
+ifdef PANTHEIOS_XCONTRACT_BASE_DIR
+XCONTRACT_INCLUDE_DIR   =   $(PANTHEIOS_XCONTRACT_BASE_DIR)\include
+XCONTRACT_SRC_DIR       =   $(PANTHEIOS_XCONTRACT_BASE_DIR)\src
+XCONTRACT_PROJ_INCLUDE  =   -I$(XCONTRACT_INCLUDE_DIR)
+else
+XCONTRACT_INCLUDE_DIR   =   $(PROJ_BASE_DIR)\include
+XCONTRACT_SRC_DIR       =   $(PROJ_SRC_DIR)\xcontract
+endif # !PANTHEIOS_XCONTRACT_BASE_DIR
+
+XTESTS_PROJ_INCLUDE     =   
+ifdef PANTHEIOS_XTESTS_BASE_DIR
+XTESTS_INCLUDE_DIR      =   $(PANTHEIOS_XTESTS_BASE_DIR)\include
+XTESTS_SRC_DIR          =   $(PANTHEIOS_XTESTS_BASE_DIR)\src
+XTESTS_PROJ_INCLUDE     =   -I$(XTESTS_INCLUDE_DIR)
+else
+XTESTS_INCLUDE_DIR      =   $(PROJ_BASE_DIR)\include
+XTESTS_SRC_DIR          =   $(PROJ_SRC_DIR)\xtests
+endif # !PANTHEIOS_XTESTS_BASE_DIR
 
 ########################################
 # tools
@@ -237,6 +266,9 @@ endif # STLSOFT_1_10
 CPPC_INCLUDES_BASE=\
  \
  -I$(PROJ_INCLUDE_DIR)\
+ $(SHWILD_PROJ_INCLUDE)\
+ $(XCONTRACT_PROJ_INCLUDE)\
+ $(XTESTS_PROJ_INCLUDE)\
  $(STLSOFT_1_10_INCLUDE)\
  -I$(STLSOFT)\include\
  $(COMMON_INCLUDES)\
@@ -513,12 +545,16 @@ CORE_HEADERS=\
  \
 
 SHWILD_HEADERS=\
- $(PROJ_INCLUDE_DIR)\shwild\shwild.h\
- $(PROJ_INCLUDE_DIR)\shwild\shwild.hpp\
+ $(SHWILD_INCLUDE_DIR)\shwild\shwild.h\
+ $(SHWILD_INCLUDE_DIR)\shwild\shwild.hpp\
+ \
+
+XCONTRACT_HEADERS=\
+ $(XCONTRACT_INCLUDE_DIR)\xcontract\xcontract.h\
  \
 
 XTESTS_HEADERS=\
- $(PROJ_INCLUDE_DIR)\xtests\xtests.h\
+ $(XTESTS_INCLUDE_DIR)\xtests\xtests.h\
  \
 
 ############################################################################

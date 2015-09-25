@@ -1,0 +1,359 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "example.arguments.boolean"=.\example.arguments.boolean\vc6\example.arguments.boolean.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.arguments.character"=.\example.arguments.character\vc6\example.arguments.character.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.arguments.reals"=.\example.arguments.reals\vc6\example.arguments.reals.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.arguments.void_pointers"=.\example.arguments.void_pointers\vc6\example.arguments.void_pointers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.ff_101"=.\example.ff_101\vc6\example.ff_101.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.ff_101.no_namespace"=.\example.ff_101.no_namespace\vc6\example.ff_101.no_namespace.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.flush"=.\example.flush\vc6\example.flush.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.inserter.hex"=.\example.inserter.hex\vc6\example.inserter.hex.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.inserter.integers"=.\example.inserter.integers\vc6\example.inserter.integers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.inserter.integers.WindowsLargeIntegers"=.\example.inserter.integers.WindowsLargeIntegers\vc6\example.inserter.integers.WindowsLargeIntegers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.inserter.reals"=.\example.inserter.reals\vc6\example.inserter.reals.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.iterators.format_iterator"=.\example.iterators.format_iterator\vc6\example.iterators.format_iterator.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.memory.1"=.\example.memory.1\vc6\example.memory.1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.overload.2.custom_type.filter_type"=.\example.overload.2.custom_type.filter_type\vc6\example.overload.2.custom_type.filter_type.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.overload.2.custom_type.inserter"=.\example.overload.2.custom_type.inserter\vc6\example.overload.2.custom_type.inserter.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.overload.2.custom_type.string_access_shims"=.\example.overload.2.custom_type.string_access_shims\vc6\example.overload.2.custom_type.string_access_shims.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.overload.3.floatingpoint_columns"=.\example.overload.3.floatingpoint_columns\vc6\example.overload.3.floatingpoint_columns.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.overload.3.record_insert"=.\example.overload.3.record_insert\vc6\example.overload.3.record_insert.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.overload.3.server_log"=.\example.overload.3.server_log\vc6\example.overload.3.server_log.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.overload.3.tabulations"=.\example.overload.3.tabulations\vc6\example.overload.3.tabulations.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.sink.OutputDebugString"=.\example.sink.OutputDebugString\vc6\example.sink.OutputDebugString.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "example.sink.c_string"=.\example.sink.c_string\vc6\example.sink.c_string.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "fastformat.core"=..\projects\core\vc6\fastformat.core.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

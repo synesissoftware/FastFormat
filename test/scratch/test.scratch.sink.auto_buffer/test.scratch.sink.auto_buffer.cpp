@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.sink.auto_buffer project.
  *
  * Created:     21st April 2008
- * Updated:     11th August 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,25 +18,25 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #define FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS // VC++ 6 can't distinguish the auto_buffer action shim from the generic string one
 #include <fastformat/sinks/auto_buffer.hpp>
 #include <fastformat/ff.hpp>
 
-/* shwild Header Files */
+/* shwild header files */
 #include <shwild/shwild.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #if 0
 #include <algorithm>
@@ -57,7 +57,7 @@ namespace std
 }
 #endif /* __WATCOMC__ */
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 

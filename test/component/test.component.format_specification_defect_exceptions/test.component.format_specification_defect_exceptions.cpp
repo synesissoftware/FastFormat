@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.format_specification_defect_exceptions project.
  *
  * Created:     13th April 2010
- * Updated:     13th April 2010
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -25,20 +25,20 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <iostream>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -262,12 +262,6 @@ namespace
 
 #define FF_STR                                  FASTFORMAT_LITERAL_STRING
 
-
-
-    char const* x_(std::exception const& x)
-    {
-        return typeid(x).name();
-    }
 
 
 static void test_1_0()

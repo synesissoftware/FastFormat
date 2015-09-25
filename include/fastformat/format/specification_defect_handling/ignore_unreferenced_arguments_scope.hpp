@@ -5,11 +5,11 @@
  *              unreferenced arguments.
  *
  * Created:     1st December 2008
- * Updated:     13th September 2010
+ * Updated:     7th August 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,9 +55,9 @@
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_MAJOR       1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_MINOR       1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_EDIT        4
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_MINOR       2
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_REVISION    3
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_EDIT        8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -73,6 +73,7 @@
  */
 
 #include <fastformat/fastformat.h>
+#include <fastformat/exceptions.hpp>
 #ifndef FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE
 # include <fastformat/format/specification_defect_handling/mismatched_arguments_scope_base.hpp>
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE */
@@ -108,16 +109,29 @@ public: // Member Types
 public: // Construction
     /** Causes the thread/process mismatched handler to be set to a function
      * that ignores the
-     * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code and
+     * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code
+     * for all parameter indexes and
      * passes all others to the previously-registered handler
      */
     ignore_unreferenced_arguments_scope()
-        : parent_class_type(class_type::handler, get_this_())
+        : m_lowestIndexToIgnore(0)
+    {}
+    /** Causes the thread/process mismatched handler to be set to a function
+     * that ignores the
+     * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code
+     * for all parameter indexes equal or subsequent to the given index and
+     * passes all others to the previously-registered handler.
+     *
+     * \param lowestIndexToIgnore The index at/above which all unreferenced
+     *   argument indexes are ignored.
+     */
+    explicit ignore_unreferenced_arguments_scope(unsigned lowestIndexToIgnore)
+        : m_lowestIndexToIgnore(lowestIndexToIgnore)
     {}
     /** Restores the thread/process mismatched handler to the function
      * registered prior to the construction of this instance
      *
-     * \warning The system behaviour is undefined if the thread/process 
+     * \warning The system behaviour is undefined if the thread/process
      *   mismatch handler is modified during the lifetime of this instance
      */
     ~ignore_unreferenced_arguments_scope() throw()
@@ -126,15 +140,9 @@ private:
     ignore_unreferenced_arguments_scope(class_type const&);
     class_type& operator =(class_type const&);
 
-private: // Implementation
-    void* get_this_() throw()
-    {
-        return this;
-    }
-
-    static int FASTFORMAT_CALLCONV handler(
-        void*                   param
-    ,   ff_replacement_code_t   code
+private: // Overrides
+    virtual int handle(
+        ff_replacement_code_t   code
     ,   size_t                  numParameters
     ,   int                     parameterIndex
     ,   ff_string_slice_t*      slice
@@ -143,17 +151,29 @@ private: // Implementation
     ,   void*                   reserved2
     )
     {
-        class_type* pThis = static_cast<class_type*>(param);
+        if(FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT == code)
+        {
+            if(int(m_lowestIndexToIgnore) <= parameterIndex)
+            {
+                return +1; // Ignore unreferenced argument
+            }
+        }
+
+        if(NULL != m_previous.handler)
+        {
+            return (*m_previous.handler)(m_previous.param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
+        }
 
         if(FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT == code)
         {
-            return +1; // Ignore unreferenced argument
+            throw unreferenced_argument_exception("an argument was unreferenced in the format", code, int(numParameters), parameterIndex);
         }
-        else
-        {
-            return pThis->parent_class_type::handle_default(param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
-        }
+
+        return 0;
     }
+
+private: // Fields
+    unsigned const  m_lowestIndexToIgnore;
 };
 
 /* /////////////////////////////////////////////////////////////////////////

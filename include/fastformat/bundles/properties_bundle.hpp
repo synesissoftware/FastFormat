@@ -70,11 +70,11 @@
  * Includes - 1
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 //#include <fastformat/exceptions.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -91,7 +91,7 @@
  * Includes - 2
  */
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #ifdef FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE
 # include <platformstl/filesystem/properties_file.hpp>
 #endif /* FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE */
@@ -100,7 +100,7 @@
 #include <stlsoft/string/split_functions.hpp>
 #include <stlsoft/string/trim_functions.hpp>
 
-/* C++ Standard Header Files */
+/* C++ Standard header files */
 #include <fstream>
 #include <map>
 #include <stdexcept>

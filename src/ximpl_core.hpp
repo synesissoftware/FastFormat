@@ -4,11 +4,11 @@
  * Purpose:     Declarations of internal shared core functions.
  *
  * Created:     3rd February 2012
- * Updated:     6th August 2012
+ * Updated:     28th October 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2012-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -96,10 +96,12 @@ public:
     static ff_illformed_handler_info_t fastformat_impl_handlers_setIllformedProcessHandler(void* token, fastformat_illformedHandler_t handler, void* param);
     static ff_illformed_handler_info_t fastformat_impl_handlers_getIllformedThreadHandler(void* token);
     static ff_illformed_handler_info_t fastformat_impl_handlers_setIllformedThreadHandler(void* token, fastformat_illformedHandler_t handler, void* param);
+    static ff_illformed_handler_info_t fastformat_impl_handlers_getIllformedDefaultHandler(void* token);
     static ff_mismatched_handler_info_t fastformat_impl_handlers_getMismatchedProcessHandler(void* token);
     static ff_mismatched_handler_info_t fastformat_impl_handlers_setMismatchedProcessHandler(void* token, fastformat_mismatchedHandler_t handler, void* param);
     static ff_mismatched_handler_info_t fastformat_impl_handlers_getMismatchedThreadHandler(void* token);
     static ff_mismatched_handler_info_t fastformat_impl_handlers_setMismatchedThreadHandler(void* token, fastformat_mismatchedHandler_t handler, void* param);
+    static ff_mismatched_handler_info_t fastformat_impl_handlers_getDefaultMismatchedHandler(void* token);
 
 }; /* class ximpl_core */
 

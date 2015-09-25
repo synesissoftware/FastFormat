@@ -1,0 +1,281 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "fastformat.core"=..\..\projects\core\vc6\fastformat.core.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test.scratch.FILE"=.\test.scratch.FILE\vc6\test.scratch.FILE.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.bundle.properties"=.\test.scratch.bundle.properties\vc6\test.scratch.bundle.properties.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.ff_test_1"=.\test.scratch.ff_test_1\vc6\test.scratch.ff_test_1.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.format_alignment"=.\test.scratch.format_alignment\vc6\test.scratch.format_alignment.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.format_defects"=.\test.scratch.format_defects\vc6\test.scratch.format_defects.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.format_iterator"=.\test.scratch.format_iterator\vc6\test.scratch.format_iterator.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.format_on_callback"=.\test.scratch.format_on_callback\vc6\test.scratch.format_on_callback.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test.scratch.ignore_missing_arguments_scope"=.\test.scratch.ignore_missing_arguments_scope\vc6\test.scratch.ignore_missing_arguments_scope.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.implicit_integer"=.\test.scratch.implicit_integer\vc6\test.scratch.implicit_integer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.inserter.integer"=.\test.scratch.inserter.integer\vc6\test.scratch.inserter.integer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.inserter.real"=.\test.scratch.inserter.real\vc6\test.scratch.inserter.real.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.overload.3.BSTR_out_parameter"=.\test.scratch.overload.3.BSTR_out_parameter\vc6\test.scratch.overload.3.BSTR_out_parameter.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.sink.WindowsMessageBox"=.\test.scratch.sink.WindowsMessageBox\vc6\test.scratch.sink.WindowsMessageBox.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.sink.auto_buffer"=.\test.scratch.sink.auto_buffer\vc6\test.scratch.sink.auto_buffer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.sink.vectored_file"=.\test.scratch.sink.vectored_file\vc6\test.scratch.sink.vectored_file.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.sinks.shim_string"=.\test.scratch.sinks.shim_string\vc6\test.scratch.sinks.shim_string.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.speech"=.\test.scratch.speech\vc6\test.scratch.speech.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

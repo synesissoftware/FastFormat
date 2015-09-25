@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.performance.api.parse_format project.
  *
  * Created:     17th November 2008
- * Updated:     11th August 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,23 +20,23 @@
 //#define FF_PRSFMT_USE_SV_PARAM
 
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/string/split_functions.hpp>
 #include <stlsoft/string/string_view.hpp>
 #include <stlsoft/string/tokeniser_functions.hpp> // for find_next_token
 #include <platformstl/platformstl.hpp>
 #include <platformstl/performance/performance_counter.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \

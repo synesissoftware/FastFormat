@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.inserters.integer project.
  *
  * Created:     11th December 2010
- * Updated:     7th February 2012
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2012, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -32,22 +32,25 @@
  * Includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
+#if _XTESTS_VER < 0x001203ff
+# error xTests v0.18.3 or later required
+#endif
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/conversion/char_conversions.hpp>
 #include <stlsoft/conversion/integer_to_string.hpp>
 #include <stlsoft/util/limit_traits.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <numeric>
 #include <string>
 
 #   include <typeinfo>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -196,7 +199,7 @@ namespace
     {
         using namespace xtests;
         using namespace xtests::c;
-        using namespace xtests::c::cpp;
+        using namespace xtests::cpp;
 
         bool equal = false;
 

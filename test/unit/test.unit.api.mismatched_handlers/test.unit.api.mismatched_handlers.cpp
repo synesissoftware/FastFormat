@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.api.mismatched_handlers project.
  *
  * Created:     27th May 2008
- * Updated:     25th April 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -31,14 +31,14 @@
  * Includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -219,6 +219,7 @@ namespace
     {
         return 0;
     }
+#if 0
     int FASTFORMAT_CALLCONV mismatched_handler_1_continue_once(
         void*                   /* param */
     ,   ff_replacement_code_t   /* code */
@@ -245,6 +246,7 @@ namespace
     {
         return -1;
     }
+#endif
 
 
 static void test_0()

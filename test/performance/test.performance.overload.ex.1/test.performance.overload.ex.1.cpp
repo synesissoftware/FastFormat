@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.performance.overload.ex.1 project.
  *
  * Created:     19th October 2008
- * Updated:     11th August 2009
+ * Updated:     22nd September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,7 +20,13 @@
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
-/* FastFormat Header Files */
+/* STLSoft header files */
+#if defined(_WIN32) && \
+    defined(_AFXDLL)
+# include <mfcstl/mfcstl.hpp>
+#endif /* OS */
+
+/* FastFormat header files */
 #include <fastformat/internal/stlsoft.h>
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
     _MSC_VER >= 1400
@@ -87,7 +93,7 @@
 # include <platformstl/performance/performance_counter.hpp>
 #endif
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #if defined(_WIN32) && \
     defined(_AFXDLL)
 # include <mfcstl/mfcstl.hpp>
@@ -106,26 +112,26 @@
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* Boost Header Files */
+/* Boost header files */
 #ifdef FASTFORMAT_PERFTEST_USE_BOOST
 # include <boost/format.hpp>
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-/* Loki Header Files */
+/* Loki header files */
 #ifdef FASTFORMAT_PERFTEST_USE_LOKI
 # include <loki/SafeFormat.h>
 #endif /* FASTFORMAT_PERFTEST_USE_LOKI */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
 #include <sstream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>

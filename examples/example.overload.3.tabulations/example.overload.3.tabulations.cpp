@@ -5,13 +5,13 @@
  *              project.
  *
  * Created:     29th April 2009
- * Updated:     8th July 2009
+ * Updated:     23rd September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -30,7 +30,7 @@
 
 char const* forenames[] =
 {
-        "Marc-François Michel"
+        "Marc-Francois Michel"
     ,   "Jean"
 };
 

@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.sinks.shim_string project.
  *
  * Created:     12th November 2008
- * Updated:     22nd June 2010
+ * Updated:     22nd September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,23 +18,23 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/shim_string.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 
-/* UNIXEm Header Files */
+/* UNIXem header files */
 #if defined(_WIN32) || \
     defined(_WIN64)
 # include <unixem/unixem.h>
 #endif /* Win32 || Win64 */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #if 0
@@ -45,7 +45,7 @@
 #include <vector>
 #endif /* 0 */
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 

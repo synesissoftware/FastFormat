@@ -70,22 +70,22 @@
  * Includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 #include <fastformat/exceptions.hpp>
 #include <fastformat/util/bundle/windows_replacement_translation_functions.hpp>
 
-/* WinSTL Header Files */
+/* WinSTL header files */
 #include <winstl/winstl.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/conversion/integer_to_string.hpp>
 #include <stlsoft/shims/access/string.hpp>
 #include <stlsoft/util/minmax.hpp>
 #include <winstl/error/error_desc.hpp>
 #include <winstl/string/resource_string.hpp>
 
-/* C++ Standard Header Files */
+/* C++ Standard header files */
 #include <stdexcept>
 #include <string>
 

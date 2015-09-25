@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.inserter.integer project.
  *
  * Created:     26th April 2008
- * Updated:     8th March 2010
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -25,20 +25,20 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/integer.hpp>
 #include <fastformat/inserters/to_i.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/string/trim_functions.hpp>
 #include <stlsoft/util/minmax.hpp>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <limits.h>
 #include <math.h>
 #include <stdlib.h>
@@ -255,6 +255,8 @@ int main(int argc, char **argv)
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
     }
+
+    STLSOFT_SUPPRESS_UNUSED(CORRECT_DEC_PLACES);
 
     return retCode;
 }

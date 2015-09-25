@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.sink.ostream project.
  *
  * Created:     14th September 2010
- * Updated:     14th September 2010
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,24 +20,24 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #define FASTFORMAT_NO_IMPLICIT_GENERIC_STRING_ACTION_SHIM
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <platformstl/error/exceptions.hpp>
 #include <platformstl/filesystem/file_lines.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <fstream>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \

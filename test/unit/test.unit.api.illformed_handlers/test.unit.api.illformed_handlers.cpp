@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.api.illformed_handlers project.
  *
  * Created:     27th May 2008
- * Updated:     25th April 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -31,14 +31,14 @@
  * Includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -225,6 +225,7 @@ namespace
     {
         return 0;
     }
+#if 0
     int FASTFORMAT_CALLCONV illformed_handler_1_continue_once(
         void*               /* param */
     ,   ff_parse_code_t     /* code */
@@ -257,6 +258,7 @@ namespace
     {
         return -1;
     }
+#endif
 
 
 static void test_0()
@@ -285,17 +287,8 @@ static void test_3()
 {
     ff_illformed_handler_info_t info = fastformat_getThreadIllformedHandler();
 
-#ifdef FASTFORMAT_MT
-
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, info.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
-
-#else /* ? FASTFORMAT_MT */
-
-    XTESTS_TEST_FN_POINTER_NOT_EQUAL(NULL, info.handler);
-    XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
-
-#endif /* FASTFORMAT_MT */
 }
 
 static void test_4()
@@ -324,17 +317,8 @@ static void test_5()
 
     ff_illformed_handler_info_t original = fastformat_getThreadIllformedHandler();
 
-#ifdef FASTFORMAT_MT
-
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, original.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
-
-#else /* ? FASTFORMAT_MT */
-
-    XTESTS_TEST_FN_POINTER_NOT_EQUAL(NULL, original.handler);
-    XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
-
-#endif /* FASTFORMAT_MT */
 
     ff_illformed_handler_info_t previous = fastformat_setThreadIllformedHandler(illformed_handler_1_cancel, param);
 
