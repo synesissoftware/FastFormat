@@ -4,7 +4,7 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     7th August 2015
+ * Updated:     25th September 2015
  *
  * Home:        http://www.fastformat.org/
  *

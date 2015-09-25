@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.ff_101 project.
  *
  * Created:     2nd June 2008
- * Updated:     11th August 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -22,14 +22,14 @@
 # include <afx.h>
 #endif /* _AFXDLL */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #ifdef __AFX_H__
 # include <fastformat/sinks/CString.hpp>
 #endif /* __AFX_H__ */
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/string/simple_string.hpp>
 #include <platformstl/platformstl.hpp>
 #ifdef __AFX_H__
@@ -41,7 +41,7 @@
 # include <comstl/util/variant.hpp>
 #endif /* OS */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -51,7 +51,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 

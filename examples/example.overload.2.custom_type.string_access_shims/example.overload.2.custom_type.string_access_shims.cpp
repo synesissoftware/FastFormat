@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.overload.2.custom_type.string_access_shims project.
  *
  * Created:     2nd March 2009
- * Updated:     11th August 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -73,11 +73,11 @@ namespace stlsoft
  * Includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/string/shim_string.hpp>
 
 #if _STLSOFT_VER < 0x010a0000 && \
@@ -85,12 +85,12 @@ namespace stlsoft
 # include <fastformat/sinks/shim_string.hpp>
 #endif
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 /* /////////////////////////////////////////////////////////////////////////

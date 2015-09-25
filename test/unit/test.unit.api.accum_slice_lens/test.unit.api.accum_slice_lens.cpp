@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.api.accum_slice_lens project.
  *
  * Created:     27th May 2008
- * Updated:     9th April 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -30,13 +30,13 @@
  * Includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <platformstl/platformstl.h>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>

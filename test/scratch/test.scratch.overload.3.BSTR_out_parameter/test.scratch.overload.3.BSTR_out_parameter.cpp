@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.overload.3.BSTR_out_parameter project.
  *
  * Created:     4th January 2009
- * Updated:     1st May 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -19,24 +19,24 @@
 
 #include <afx.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/CComBSTR.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <winstl/conversion/char_conversions.hpp>
 #include <winstl/error/error_desc.hpp>
 #include <winstl/string/resource_string.hpp>
 
-/* Windows Header Files */
+/* Windows header files */
 #include <windows.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -25,18 +25,18 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/real.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/util/minmax.hpp>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <math.h>
 #include <stdlib.h>
 

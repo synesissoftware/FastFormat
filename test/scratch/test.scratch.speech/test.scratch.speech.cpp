@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.speech project.
  *
  * Created:     27th November 2007
- * Updated:     11th August 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2007-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2007-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -21,24 +21,24 @@
 //#include <sapi.h>
 //#define COMSTL_SPEECH_SAPI_UTIL_USE_MS_SAPI_HEADERS
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/speech.hpp>
 #include <fastformat/ff.hpp>
 
 
-/* VOLE Header Files */
+/* VOLE header files */
 #ifdef FASTFORMAT_USE_VOLE
 # include <vole/vole.hpp>
 #endif /* FASTFORMAT_USE_VOLE */
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <comstl/conversion/interface_cast.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 

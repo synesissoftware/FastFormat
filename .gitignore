@@ -23,6 +23,12 @@ lib/
 
 ideas/
 
+bin/
+
+lib/
+
+ideas/
+
 Debug/
 Debug Multithreaded/
 Debug Multithreaded DLL/

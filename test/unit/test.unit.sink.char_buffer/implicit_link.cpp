@@ -4,7 +4,7 @@
  * Purpose:     Implicit link file for the test.unit.sink.char_buffer project.
  *
  * Created:     14th April 2008
- * Updated:     22nd September 2015
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *

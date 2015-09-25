@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.iterators.format_iterator project.
  *
  * Created:     26th March 2010
- * Updated:     4th April 2010
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,7 +18,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
 #if ( defined(STLSOFT_COMPILER_IS_INTEL) || \
@@ -27,23 +27,23 @@
 # pragma warning(disable : 4996)
 #endif
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/iterators/format_iterator.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/algorithms/debug.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <algorithm>
 #include <exception>
 #include <iostream>
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 /* /////////////////////////////////////////////////////////////////////////

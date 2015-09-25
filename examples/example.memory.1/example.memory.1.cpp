@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.memory.1 project.
  *
  * Created:     20th September 2008
- * Updated:     11th August 2009
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2009, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,26 +20,26 @@
 
 #define FASTFORMAT_NO_USE_JIT_CACHE
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/c_string.hpp>
 #include <fastformat/sinks/char_buffer.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <platformstl/synch/atomic_functions.h>
 
-/* Boost Header Files */
+/* Boost header files */
 #include <boost/format.hpp>
 
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <sstream>
 #include <new>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -70,17 +70,17 @@
  * Includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 
-/* WinSTL Header Files */
+/* WinSTL header files */
 #include <winstl/winstl.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/shims/access/string.hpp>
 #include <stlsoft/util/minmax.hpp>
 
-/* C++ Standard Header Files */
+/* C++ Standard header files */
 #include <stdexcept>
 #include <string>
 

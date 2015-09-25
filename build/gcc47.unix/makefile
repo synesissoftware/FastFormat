@@ -5,7 +5,7 @@
 #           compiler, on UNIX
 #
 # Created:  22nd December 2007
-# Updated:  26th September 2015
+# Updated:  25th September 2015
 #
 ############################################################################
 
@@ -38,11 +38,11 @@ LOKI_SFMT_TAG_VER   =   loki.safefmt.$(LOKI_SFMT_VER_MAJOR)
 SHWILD_VER_MAJOR    =   0
 SHWILD_TAG_VER      =   shwild.$(SHWILD_VER_MAJOR)
 
-XCOVER_VER_MAJOR    =   0
-XCOVER_TAG_VER      =   xtests.$(XCOVER_VER_MAJOR)
-
 XCONTRACT_VER_MAJOR =   0
 XCONTRACT_TAG_VER   =   xtests.$(XCONTRACT_VER_MAJOR)
+
+XCOVER_VER_MAJOR    =   0
+XCOVER_TAG_VER      =   xtests.$(XCOVER_VER_MAJOR)
 
 XTESTS_VER_MAJOR    =   0
 XTESTS_TAG_VER      =   xtests.$(XTESTS_VER_MAJOR)
@@ -54,7 +54,7 @@ PROJ_MAKEFILE_NAME  =   makefile
 
 ifndef TEST_VERBOSITY
 TEST_VERBOSITY      =   2
-endif
+endif # !TEST_VERBOSITY
 
 ########################################
 # Directories
@@ -569,6 +569,15 @@ CORE_HEADERS=\
 SHWILD_HEADERS=\
  $(SHWILD_INCLUDE_DIR)/shwild/shwild.h\
  $(SHWILD_INCLUDE_DIR)/shwild/shwild.hpp\
+ \
+
+XCONTRACT_HEADERS=\
+ $(XCONTRACT_INCLUDE_DIR)/xcontract/xcontract.h\
+ \
+
+XCOVER_HEADERS=\
+ $(PROJ_INCLUDE_DIR)/xcover/xcover.h\
+ $(PROJ_INCLUDE_DIR)/xcover/internal/reporter.h\
  \
 
 XTESTS_HEADERS=\

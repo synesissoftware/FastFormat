@@ -4,7 +4,7 @@
  * Purpose:     Implicit link file for the test.unit.sink.stringstream project.
  *
  * Created:     31st August 2008
- * Updated:     22nd September 2015
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *

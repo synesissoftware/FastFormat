@@ -5,7 +5,7 @@
 #           compiler, on UNIX
 #
 # Created:  22nd December 2007
-# Updated:  22nd September 2015
+# Updated:  25th September 2015
 #
 ############################################################################
 
@@ -29,9 +29,6 @@ LOKI_SFMT_TAG_VER   =   loki.safefmt.$(LOKI_SFMT_VER_MAJOR)
 
 SHWILD_VER_MAJOR    =   0
 SHWILD_TAG_VER      =   shwild.$(SHWILD_VER_MAJOR)
-
-XCOVER_VER_MAJOR    =   0
-XCOVER_TAG_VER      =   xtests.$(XCOVER_VER_MAJOR)
 
 XCONTRACT_VER_MAJOR =   0
 XCONTRACT_TAG_VER   =   xtests.$(XCONTRACT_VER_MAJOR)
@@ -75,10 +72,6 @@ SHWILD_SRC_DIR          =   $(PROJ_SRC_DIR)/shwild
 XCONTRACT_PROJ_INCLUDE  =   
 XCONTRACT_INCLUDE_DIR   =   $(PROJ_BASE_DIR)/include
 XCONTRACT_SRC_DIR       =   $(PROJ_SRC_DIR)/xcontract
-
-XCOVER_PROJ_INCLUDE     =   
-XCOVER_INCLUDE_DIR      =   $(PROJ_BASE_DIR)/include
-XCOVER_SRC_DIR          =   $(PROJ_SRC_DIR)/XCOVER
 
 XTESTS_PROJ_INCLUDE     =   
 XTESTS_INCLUDE_DIR      =   $(PROJ_BASE_DIR)/include
@@ -235,7 +228,6 @@ CPPC_INCLUDES_BASE=\
  -I$(PROJ_INCLUDE_DIR)\
  $(SHWILD_PROJ_INCLUDE)\
  $(XCONTRACT_PROJ_INCLUDE)\
- $(XCOVER_PROJ_INCLUDE)\
  $(XTESTS_PROJ_INCLUDE)\
  $(STLSOFT_1_10_INCLUDE)\
  -I$(STLSOFT)/include\
@@ -511,6 +503,10 @@ CORE_HEADERS=\
 SHWILD_HEADERS=\
  $(SHWILD_INCLUDE_DIR)/shwild/shwild.h\
  $(SHWILD_INCLUDE_DIR)/shwild/shwild.hpp\
+ \
+
+XCONTRACT_HEADERS=\
+ $(XCONTRACT_INCLUDE_DIR)/xcontract/xcontract.h\
  \
 
 XTESTS_HEADERS=\

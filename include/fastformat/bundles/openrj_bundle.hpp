@@ -70,18 +70,18 @@
  * Includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 //#include <fastformat/bundles/common.hpp>
 
-/* Open-RJ Header Files */
+/* Open-RJ header files */
 #include <openrj/openrj.h>          // Open-RJ C API
 #include <openrj/cpp/openrj.hpp>    // Open-RJ C++ API
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/shims/access/string.hpp>
 
-/* C++ Standard Header Files */
+/* C++ Standard header files */
 #include <stdexcept>
 
 /* /////////////////////////////////////////////////////////////////////////

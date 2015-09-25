@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.unit.api.mismatched_handlers project.
  *
  * Created:     27th May 2008
- * Updated:     22nd September 2015
+ * Updated:     25th September 2015
  *
  * Status:      Wizard-generated
  *
@@ -31,14 +31,14 @@
  * Includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
