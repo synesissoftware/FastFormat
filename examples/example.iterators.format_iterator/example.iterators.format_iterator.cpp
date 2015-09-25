@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the example.iterators.format_iterator project.
  *
  * Created:     26th March 2010
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

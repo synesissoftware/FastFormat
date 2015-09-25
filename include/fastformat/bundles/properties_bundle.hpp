@@ -4,11 +4,11 @@
  * Purpose:     .properties file bundle.
  *
  * Created:     19th September 2006
- * Updated:     19th January 2011
+ * Updated:     26th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2011, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.performance.scenario1 project.
  *
  * Created:     19th September 2006
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

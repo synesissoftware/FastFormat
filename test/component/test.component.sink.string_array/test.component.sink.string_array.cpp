@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.component.string_array project.
  *
  * Created:     24th December 2007
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

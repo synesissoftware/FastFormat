@@ -1,7 +1,7 @@
 FastFormat - Changes
 =====================
 
-Updated:    17th August 2012
+Updated:    26th September 2015
 
 
     ************************************
@@ -13,6 +13,100 @@ Updated:    17th August 2012
     *  *  means a general bullet-point *
     *                                  *
     ************************************
+
+
+26th September 2015 - 0.7.1
+===========================
+
+Summary:
+--------
+
+ * Clang-compatibility
+ * VC++ 11/12/14 compatibility
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/fastformat.h:
+    + added fastformat_getDefaultIllformedHandler
+    + added fastformat_getDefaultMismatchedHandler
+
+ ~ include/fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp:
+    ~ base scope class now handles interception of callback and translation into (pure virtual) instance method, implemented on derived classes
+    ~ now throws an exception (instance of missing_argument_exception) when the code is not FF_REPLACEMENTCODE_MISSING_ARGUMENT and no previous handler is registered.
+
+ ~ include/fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp:
+    ~ base scope class now handles interception of callback and translation into (pure virtual) instance method, implemented on derived classes
+    ~ now throws an exception (instance of unrefereced_argument_exception) when the code is not FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT and no previous handler is registered.
+    + now takes a constructor parameter indicating the lowest index to be ignored
+
+Core:
+
+ ~ src/api.cpp:
+    + added fastformat_getDefaultIllformedHandler
+    + added fastformat_getDefaultMismatchedHandler
+
+ ~ src/fmt_cache.cpp:
+    ~ VC++ 12/14 compatibility fix
+
+ ~ src/fmt_spec_defect_handlers.cpp:
+    + added fastformat_getDefaultIllformedHandler
+    + added fastformat_getDefaultMismatchedHandler
+    ~ now has a separate thread handler, separate to the process handler, even when single-threaded
+
+ ~ src/replacements.cpp:
+    + added fastformat_getDefaultIllformedHandler
+    + added fastformat_getDefaultMismatchedHandler
+    ~ corrected contract enforcement messages
+
+ ~ src/ximpl_core.hpp;
+    + added fastformat_getDefaultIllformedHandler
+    + added fastformat_getDefaultMismatchedHandler
+
+Application Layer:
+
+ Inserters:
+
+ ~ include/fastformat/inserters/integer.hpp:
+ ~ include/fastformat/inserters/to_x.hpp:
+    ~ eliminating bool(ean) parameters
+
+ Shims:
+
+ Sinks:
+
+Bundles:
+
+Util:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.121 or later
+   (http://stlsoft.org/)
+
+
+
+
+
+
 
 
 17th August 2012 - 0.7.1 alpha 9

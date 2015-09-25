@@ -4,7 +4,7 @@
  * Purpose:     Implicit link file for the test.unit.sink.c_string project.
  *
  * Created:     14th April 2008
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

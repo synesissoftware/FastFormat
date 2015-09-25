@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.format_iterator project.
  *
  * Created:     20th May 2009
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

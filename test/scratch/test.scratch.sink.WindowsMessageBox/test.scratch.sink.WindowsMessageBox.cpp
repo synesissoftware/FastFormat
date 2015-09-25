@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.sink.WindowsMessageBox project.
  *
  * Created:     4th January 2009
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *
@@ -93,8 +93,8 @@ BOOL CALLBACK ParentProc(HWND hwnd, UINT code, WPARAM wParam, LPARAM lParam)
 {
     if(WM_INITDIALOG == code)
     {
-        LPCTSTR         argv0   =   (char const*)lParam;
-        const HINSTANCE hinst   =   ::GetModuleHandleA(argv0);
+        LPCTSTR         argv0   =   (LPCTSTR)lParam;
+        const HINSTANCE hinst   =   ::GetModuleHandle(argv0);
 
         Display32bitFileSize_(hinst, hwnd, argv0);
 

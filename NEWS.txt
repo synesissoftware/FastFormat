@@ -1,11 +1,13 @@
 FastFormat - News
 =================
 
-Updated:    17th August 2012
+Updated:    26th September 2015
 
 
 
 News:
+
+  26th September 2015   -   FastFormat 0.7.1
 
   17th August 2012      -   FastFormat 0.7.1 alpha 9
 

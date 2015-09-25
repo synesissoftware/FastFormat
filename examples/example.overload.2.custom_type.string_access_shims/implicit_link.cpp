@@ -4,7 +4,7 @@
  * Purpose:     Implicit link file for the example.overload.2.custom_type.string_access_shims project.
  *
  * Created:     2nd March 2009
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

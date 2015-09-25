@@ -4,11 +4,11 @@
  * Purpose:     Windows resource bundle.
  *
  * Created:     24th April 2009
- * Updated:     13th September 2010
+ * Updated:     26th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

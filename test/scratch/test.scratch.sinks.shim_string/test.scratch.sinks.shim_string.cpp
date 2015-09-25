@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.sinks.shim_string project.
  *
  * Created:     12th November 2008
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

@@ -1,7 +1,14 @@
 FastFormat - History
 ====================
 
-Updated:    17th August 2012
+Updated:    26th September 2015
+
+
+26th September 2015 - 0.7.1
+---------------------------
+
+ * Clang-compatibility
+ * VC++ 11/12/14 compatibility
 
 
 17th August 2012 - 0.7.1 alpha 9
