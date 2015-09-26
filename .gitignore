@@ -61,6 +61,7 @@ include/fastformat/internal/dos2unix.has.been.performed
 *.o
 *.obj
 *.opensdf
+*.opt
 *.org
 *.out
 *.pch
