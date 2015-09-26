@@ -165,6 +165,21 @@ Package=<4>
 
 ###############################################################################
 
+Project: "test.unit.fill_by_ordinal"=.\test.unit.fill_by_ordinal\vc6\test.unit.fill_by_ordinal.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
 Project: "test.unit.format.standard_flags"=.\test.unit.format.standard_flags\vc6\test.unit.format.standard_flags.dsp - Package Owner=<4>
 
 Package=<5>
@@ -210,6 +225,21 @@ Package=<4>
 
 ###############################################################################
 
+Project: "test.unit.inserters.storage_size"=.\test.unit.inserters.storage_size\vc6\test.unit.inserters.storage_size.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
 Project: "test.unit.shims.fast_integers"=.\test.unit.shims.fast_integers\vc6\test.unit.shims.fast_integers.dsp - Package Owner=<4>
 
 Package=<5>
@@ -218,6 +248,21 @@ Package=<5>
 
 Package=<4>
 {{{
+}}}
+
+###############################################################################
+
+Project: "test.unit.shims_and_namespaces"=.\test.unit.shims_and_namespaces\vc6\test.unit.shims_and_namespaces.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
 }}}
 
 ###############################################################################

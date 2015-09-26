@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for floating-point types
  *
  * Created:     1st March 2009
- * Updated:     31st July 2012
+ * Updated:     18th August 2014
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2014, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MINOR     1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  6
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      10
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  8
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -118,7 +118,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_2(
 {
     typedef stlsoft::basic_shim_string<ff_char_t, 64>   result_t;
 
-    enum { maxRepeats = 4 };
+    int const maxRepeats = 4;
 
 #if _STLSOFT_VER < 0x010a0000 && \
     defined(_STLSOFT_1_10_VER) && \
@@ -332,10 +332,18 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_4(
         size_t          n1;
         size_t          n2;
 
+#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+        stlsoft::integer_to_decimal_string(end - 21, 21, precision, &n1);
+#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
         stlsoft::integer_to_string(end - 21, 21, precision, &n1);
+#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
         *--end = type;
         end -= n1;
+#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+        stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
+#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
+#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
         *--end = '.';
         end -= n2;
         *--end = '%';
@@ -436,7 +444,7 @@ using ::fastformat::inserters::real;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

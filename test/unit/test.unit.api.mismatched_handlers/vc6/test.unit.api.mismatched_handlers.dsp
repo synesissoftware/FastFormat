@@ -86,7 +86,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FR /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -140,7 +140,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FR /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -518,7 +518,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FR /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -742,6 +742,10 @@ SOURCE="$(STLSOFT)\include\unixstl\unixstl.h"
 # Begin Group "WinSTL"
 
 # PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\winstl.h"
+# End Source File
 # End Group
 # End Group
 # Begin Group "FastFormat Header Files"
@@ -757,11 +761,23 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\test\util\compiler_warnings_suppre
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
 # End Source File
 # Begin Source File
 
@@ -773,6 +789,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\threading.h"
 # End Source File
 # End Group
@@ -781,7 +801,19 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\threading.h"
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE="$(UNIXEM)\include\unixem\implicit_link.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(UNIXEM)\include\unistd.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(UNIXEM)\include\unixem\unistd.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(UNIXEM)\include\unixem\unixem.h"
 # End Source File
 # End Group
 # Begin Group "xTests Header Files"

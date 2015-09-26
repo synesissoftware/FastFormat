@@ -7,19 +7,19 @@
 CFG=test.scratch.format_iterator - Win32 Debug
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.scratch.format_iterator.mak".
-!MESSAGE 
+!MESSAGE
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.scratch.format_iterator.mak" CFG="test.scratch.format_iterator - Win32 Debug"
-!MESSAGE 
+!MESSAGE
 !MESSAGE Possible choices for configuration are:
-!MESSAGE 
+!MESSAGE
 !MESSAGE "test.scratch.format_iterator - Win32 Release" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.format_iterator - Win32 Debug" (based on "Win32 (x86) Application")
-!MESSAGE 
+!MESSAGE
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
@@ -68,7 +68,7 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Debug"
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -81,7 +81,7 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib advapi32.lib /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.format_iterator.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT LINK32 /pdb:none
 
-!ENDIF 
+!ENDIF
 
 # Begin Target
 
@@ -134,6 +134,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\c_string.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\capabilities.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\char_traits.hpp"
 # End Source File
 # Begin Source File
@@ -143,6 +147,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\collections\util\collections.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
 # End Source File
 # Begin Source File
 
@@ -162,7 +170,27 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\util\integral_printf_traits.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
 # End Source File
 # Begin Source File
 
@@ -170,11 +198,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\library_discriminator.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\util\meta_.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
 # End Source File
 # Begin Source File
 
@@ -198,6 +238,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\safestr.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\shim_string.hpp"
 # End Source File
 # Begin Source File
@@ -215,10 +259,6 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\size_traits.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std_swap.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
 # End Source File
 # Begin Source File
 
@@ -307,6 +347,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -351,6 +395,14 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\shim_macros.h"
 # End Source File
 # Begin Source File
@@ -359,10 +411,18 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\standard_flags.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 # End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
 # End Group
-# Begin Group "UNIXEm Header Files"
+# Begin Group "UNIXem Header Files"
 
 # PROP Default_Filter ""
 # Begin Source File

@@ -609,6 +609,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\conversion\char_conversions.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\string\char_traits.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\collections\util\collections.hpp"
 # End Source File
 # Begin Source File
@@ -629,7 +633,15 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
 # End Source File
 # Begin Source File
 
@@ -638,6 +650,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -650,6 +666,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\util\meta_.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
 # End Source File
 # Begin Source File
 
@@ -669,7 +689,19 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\select_first_type_if.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\string\shim_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\util\sign_traits.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\size_of.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\util\size_traits.hpp"
 # End Source File
 # Begin Source File
 
@@ -738,6 +770,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\test\util\compiler_warnings_suppre
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -751,6 +787,14 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
 # End Source File
 # Begin Source File
 
@@ -772,6 +816,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 # End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
 # End Group
 # Begin Group "UNIXem Header Files"
 
@@ -783,6 +831,10 @@ SOURCE="$(UNIXEM)\include\unixem\implicit_link.h"
 # Begin Source File
 
 SOURCE="$(UNIXEM)\include\unistd.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(UNIXEM)\include\unixem\unistd.h"
 # End Source File
 # Begin Source File
 

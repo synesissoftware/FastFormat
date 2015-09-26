@@ -7,16 +7,16 @@
 CFG=test.component.sink.null - Win32 Release
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.component.sink.null.mak".
-!MESSAGE 
+!MESSAGE
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.component.sink.null.mak" CFG="test.component.sink.null - Win32 Release"
-!MESSAGE 
+!MESSAGE
 !MESSAGE Possible choices for configuration are:
-!MESSAGE 
+!MESSAGE
 !MESSAGE "test.component.sink.null - Win32 Release" (based on "Win32 (x86) Application")
 !MESSAGE "test.component.sink.null - Win32 Debug" (based on "Win32 (x86) Application")
 !MESSAGE "test.component.sink.null - Win32 Release Multithreaded" (based on "Win32 (x86) Application")
@@ -35,7 +35,7 @@ CFG=test.component.sink.null - Win32 Release
 !MESSAGE "test.component.sink.null - Win32 Debug Multithreaded pseudoUNIX" (based on "Win32 (x86) Application")
 !MESSAGE "test.component.sink.null - Win32 Release Multithreaded DLL pseudoUNIX" (based on "Win32 (x86) Application")
 !MESSAGE "test.component.sink.null - Win32 Debug Multithreaded DLL pseudoUNIX" (based on "Win32 (x86) Application")
-!MESSAGE 
+!MESSAGE
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
@@ -86,7 +86,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FR /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -531,7 +531,7 @@ LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib advapi32.lib ole32.lib oleaut32.lib /nologo /subsystem:console /debug /machine:I386 /out:"../../../../bin/test.component.sink.null.vc6.unix.dll.debug.exe" /pdbtype:sept /libpath:"$(XTESTS_C_ROOT)/lib" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(SHWILD_ROOT)/lib"
 # ADD LINK32 kernel32.lib advapi32.lib ole32.lib oleaut32.lib /nologo /subsystem:console /debug /machine:I386 /out:"../../../../bin/test.component.sink.null.vc6.unix.dll.debug.exe" /pdbtype:sept /libpath:"$(XTESTS_C_ROOT)/lib" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(SHWILD_ROOT)/lib"
 
-!ENDIF 
+!ENDIF
 
 # Begin Target
 
@@ -616,7 +616,19 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\exception.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\util\exception_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\error\exceptions.hpp"
 # End Source File
 # Begin Source File
 
@@ -624,7 +636,15 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\util\integral_printf_traits.hpp"
 # End Source File
 # Begin Source File
 
@@ -641,6 +661,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -664,11 +688,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\obsolete.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\os_exception.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\algorithms\pod.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\project_exception.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\internal\safestr.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
 # End Source File
 # Begin Source File
 
@@ -716,6 +752,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\string\string_view.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\throw_policies.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\yesno.hpp"
 # End Source File
 # End Group
@@ -724,7 +764,15 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\yesno.hpp"
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\platformstl\error\exceptions.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\platformstl\platformstl.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\platformstl.hpp"
 # End Source File
 # End Group
 # Begin Group "UNIXSTL"
@@ -742,6 +790,14 @@ SOURCE="$(STLSOFT)\include\unixstl\unixstl.h"
 # Begin Group "WinSTL"
 
 # PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\error\error_functions.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\error\exceptions.hpp"
+# End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\winstl\winstl.h"
@@ -781,6 +837,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -801,6 +861,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\generated\helper_function
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\util\sinks\helpers.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
 # End Source File
 # Begin Source File
@@ -810,6 +874,18 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\initialiser.hpp"
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\null.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
 # End Source File
 # Begin Source File
 
@@ -827,13 +903,9 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 # End Source File
-# End Group
-# Begin Group "UNIXem Header Files"
-
-# PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="$(UNIXEM)\include\unistd.h"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
 # End Source File
 # End Group
 # Begin Group "xTests Header Files"
@@ -848,6 +920,10 @@ SOURCE="$(XTESTS_C_ROOT)\include\xtests\implicit_link.h"
 SOURCE="$(XTESTS_C_ROOT)\include\xtests\xtests.h"
 # End Source File
 # End Group
+# Begin Source File
+
+SOURCE="$(UNIXEM)\include\unistd.h"
+# End Source File
 # End Group
 # End Target
 # End Project

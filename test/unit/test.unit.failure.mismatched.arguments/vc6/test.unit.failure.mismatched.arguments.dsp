@@ -96,8 +96,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugMt"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MTd /W3 /WX /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT_PLUS)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_AFXDLL" /D "_MBCS" /D "_CONSOLE" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /WX /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT_PLUS)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_AFXDLL" /D "_MBCS" /D "_CONSOLE" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /MTd /W3 /WX /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT_PLUS)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_AFXDLL" /D "_MBCS" /D "_CONSOLE" /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /WX /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT_PLUS)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_AFXDLL" /D "_MBCS" /D "_CONSOLE" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG" /d "_AFXDLL"
@@ -380,6 +380,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -408,6 +412,14 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\specification_defect_handli
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\specification_defect_handling\ignore_missing_arguments_scope.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\specification_defect_handling\ignore_unreferenced_arguments_scope.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\specification_defect_handling\ignore_unreferenced_arguments_scope.hpp"
 # End Source File
 # Begin Source File
@@ -428,6 +440,14 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\shim_macros.h"
 # End Source File
 # Begin Source File
@@ -442,6 +462,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 # End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
 # End Group
 # Begin Group "xTests Header Files"
 
@@ -455,14 +479,6 @@ SOURCE="$(XTESTS_C_ROOT)\include\xtests\implicit_link.h"
 SOURCE="$(XTESTS_C_ROOT)\include\xtests\xtests.h"
 # End Source File
 # End Group
-# Begin Source File
-
-SOURCE=..\..\..\..\include\fastformat\format\specification_defect_handling\ignore_missing_arguments_scope.hpp
-# End Source File
-# Begin Source File
-
-SOURCE=..\..\..\..\include\fastformat\format\specification_defect_handling\ignore_unreferenced_arguments_scope.hpp
-# End Source File
 # End Group
 # Begin Group "Resource Files"
 

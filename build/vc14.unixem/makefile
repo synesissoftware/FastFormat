@@ -408,6 +408,7 @@ CORE_HEADERS=\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\bundles\openrj_bundle.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\bundles\properties_bundle.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\bundles\windows_resource_bundle.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\bundles\winini_bundle.hpp\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\format\standard_flags.hpp\
@@ -415,28 +416,46 @@ CORE_HEADERS=\
  $(PROJ_INCLUDE_DIR)\fastformat\format\specification_defect_handling\ignore_unreferenced_arguments_scope.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\format\specification_defect_handling\mismatched_arguments_scope_base.hpp\
  \
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\ch.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\character.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\integer.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\real.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\storage_size.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_e.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_f.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_g.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_i.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_i_null_if_not.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_i_null_if_zero.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_x.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\ULARGE_INTEGER.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\WindowsLargeIntegers.hpp\
  \
+ $(PROJ_INCLUDE_DIR)\fastformat\internal\fastformat.c++.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\format_element.h\
+ $(PROJ_INCLUDE_DIR)\fastformat\internal\shim_macros.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\stlsoft.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\string_encoding.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\threading.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\initialiser.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\generated\api_functions.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\generated\helper_functions.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\internal\inserters\int_typedefs.hpp\
+ \
+ $(PROJ_INCLUDE_DIR)\fastformat\iterators\format_iterator.hpp\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\quality\contract.h\
  $(PROJ_INCLUDE_DIR)\fastformat\quality\cover.h\
  \
+ $(PROJ_INCLUDE_DIR)\fastformat\shims\access\string\parse_code.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\shims\access\string\replacement_code.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\shims\access\string\string_slice.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\shims\action\fmt_slices\generic_string.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\bool.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\fast_integers.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\reals.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\void_pointers.hpp\
+ \
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\ACE_CString.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\auto_buffer.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\CComBSTR.hpp\
@@ -444,6 +463,7 @@ CORE_HEADERS=\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\CString.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\c_string.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\FILE.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\iostream.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\null.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\ostream.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\OutputDebugString.hpp\
@@ -452,10 +472,14 @@ CORE_HEADERS=\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\stringstream.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\string_array.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\vectored_file.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\WindowsConsole.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\WindowsMessageBox.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\stlsoft\FILE_stream.hpp\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\test\util\compiler_warnings_suppression.first_include.h\
  $(PROJ_INCLUDE_DIR)\fastformat\test\util\compiler_warnings_suppression.last_include.h\
  \
+ $(PROJ_INCLUDE_DIR)\fastformat\util\bundle\windows_replacement_translation_functions.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\util\memory\auto_buffer_selector.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\util\sinks\helpers.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\util\string\snprintf.h\
@@ -617,7 +641,9 @@ TARG_TEST_UNIT_api_prsrpl_MT_UX	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.ap
 TARG_TEST_UNIT_fmt_stdfl_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_ins_ch_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_ins_i_MT_UX			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG).mt.exe
+TARG_TEST_UNIT_ins_ss_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.storage_size.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_shim_fi_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.shims.fast_integers.$(COMP_ARCH_OS_TAG).mt.exe
+TARG_TEST_UNIT_shim_ns_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.shims_and_namespaces.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_snk_a_b_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.sink.auto_buffer.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_snk_c_str_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.sink.c_string.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_snk_chbuf_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.sink.char_buffer.$(COMP_ARCH_OS_TAG).mt.exe
@@ -636,7 +662,9 @@ TARG_TEST_UNIT_api_prsrpl_MT_UX_DEBUG	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.u
 TARG_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_ins_ch_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_ins_i_MT_UX_DEBUG			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG).mt.debug.exe
+TARG_TEST_UNIT_ins_ss_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.storage_size.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.shims.fast_integers.$(COMP_ARCH_OS_TAG).mt.debug.exe
+TARG_TEST_UNIT_shim_ns_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.shims_and_namespaces.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_snk_a_b_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.sink.auto_buffer.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_snk_c_str_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.sink.c_string.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_snk_chbuf_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.sink.char_buffer.$(COMP_ARCH_OS_TAG).mt.debug.exe
@@ -654,6 +682,7 @@ TARG_TEST_UNIT_snk_sstm_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.un
 # fastformat
 
 OBJ_cr_api_MT_UX           = $(PROJ_OBJ_DIR)\core.api.mt.obj
+OBJ_cr_enumstr_MT_UX       = $(PROJ_OBJ_DIR)\core.enum_strings.mt.obj
 OBJ_cr_fsdhndlrs_MT_UX     = $(PROJ_OBJ_DIR)\core.fmt_spec_defect_handlers.mt.obj
 OBJ_cr_fmtcache_MT_UX      = $(PROJ_OBJ_DIR)\core.fmt_cache.mt.obj
 OBJ_cr_initstr_MT_UX       = $(PROJ_OBJ_DIR)\core.init_code_strings.mt.obj
@@ -663,6 +692,7 @@ OBJ_cr_snprintf_MT_UX      = $(PROJ_OBJ_DIR)\core.snprintf.mt.obj
 
 OBJ_CORE_MT_UX = \
  $(OBJ_cr_api_MT_UX)\
+ $(OBJ_cr_enumstr_MT_UX)\
  $(OBJ_cr_fsdhndlrs_MT_UX)\
  $(OBJ_cr_fmtcache_MT_UX)\
  $(OBJ_cr_initstr_MT_UX)\
@@ -672,6 +702,7 @@ OBJ_CORE_MT_UX = \
  \
 
 OBJ_cr_api_MT_UX_DEBUG           = $(PROJ_OBJ_DIR)\core.api.mt.debug.obj
+OBJ_cr_enumstr_MT_UX_DEBUG       = $(PROJ_OBJ_DIR)\core.enum_strings.mt.debug.obj
 OBJ_cr_fsdhndlrs_MT_UX_DEBUG     = $(PROJ_OBJ_DIR)\core.fmt_spec_defect_handlers.mt.debug.obj
 OBJ_cr_fmtcache_MT_UX_DEBUG      = $(PROJ_OBJ_DIR)\core.fmt_cache.mt.debug.obj
 OBJ_cr_initstr_MT_UX_DEBUG       = $(PROJ_OBJ_DIR)\core.init_code_strings.mt.debug.obj
@@ -688,6 +719,7 @@ PDB_cr_snprintf_MT_UX_DEBUG      = $(PROJ_OBJ_DIR)\core.snprintf.mt.debug.pdb
 
 OBJ_CORE_MT_UX_DEBUG = \
  $(OBJ_cr_api_MT_UX_DEBUG)\
+ $(OBJ_cr_enumstr_MT_UX_DEBUG)\
  $(OBJ_cr_fsdhndlrs_MT_UX_DEBUG)\
  $(OBJ_cr_fmtcache_MT_UX_DEBUG)\
  $(OBJ_cr_initstr_MT_UX_DEBUG)\
@@ -889,7 +921,13 @@ OBJ_TEST_UNIT_api_prsrpl_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.m
 OBJ_TEST_UNIT_fmt_stdfl_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.mt.obj
 OBJ_TEST_UNIT_ins_ch_MT_UX			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.mt.obj
 OBJ_TEST_UNIT_ins_i_MT_UX			=   $(PROJ_OBJ_DIR)\test.unit.inserters.integer.mt.obj
+OBJ_TEST_UNIT_ins_ss_MT_UX			=   $(PROJ_OBJ_DIR)\test.unit.inserters.storage_size.mt.obj
 OBJ_TEST_UNIT_shim_fi_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.shims.fast_integers.mt.obj
+OBJ_TEST_UNIT_shim_ns_1_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.main.mt.obj
+OBJ_TEST_UNIT_shim_ns_2_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.with.mt.obj
+OBJ_TEST_UNIT_shim_ns_3_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.no_ff.mt.obj
+OBJ_TEST_UNIT_shim_ns_4_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.no_ss.mt.obj
+OBJ_TEST_UNIT_shim_ns_5_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.none.mt.obj
 OBJ_TEST_UNIT_snk_a_b_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.sink.auto_buffer.mt.obj
 OBJ_TEST_UNIT_snk_c_str_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.sink.c_string.mt.obj
 OBJ_TEST_UNIT_snk_chbuf_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.sink.char_buffer.mt.obj
@@ -909,7 +947,13 @@ OBJ_TEST_UNIT_api_prsrpl_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_fo
 OBJ_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.mt.debug.obj
 OBJ_TEST_UNIT_ins_ch_MT_UX_DEBUG			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.mt.debug.obj
 OBJ_TEST_UNIT_ins_i_MT_UX_DEBUG			=   $(PROJ_OBJ_DIR)\test.unit.inserters.integer.mt.debug.obj
+OBJ_TEST_UNIT_ins_ss_MT_UX_DEBUG			=   $(PROJ_OBJ_DIR)\test.unit.inserters.storage_size.mt.debug.obj
 OBJ_TEST_UNIT_shim_fi_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.shims.fast_integers.mt.debug.obj
+OBJ_TEST_UNIT_shim_ns_1_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.main.mt.debug.obj
+OBJ_TEST_UNIT_shim_ns_2_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.with.mt.debug.obj
+OBJ_TEST_UNIT_shim_ns_3_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.no_ff.mt.debug.obj
+OBJ_TEST_UNIT_shim_ns_4_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.no_ss.mt.debug.obj
+OBJ_TEST_UNIT_shim_ns_5_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.shims_and_namespaces.none.mt.debug.obj
 OBJ_TEST_UNIT_snk_a_b_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.sink.auto_buffer.mt.debug.obj
 OBJ_TEST_UNIT_snk_c_str_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.sink.c_string.mt.debug.obj
 OBJ_TEST_UNIT_snk_chbuf_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.sink.char_buffer.mt.debug.obj
@@ -1061,7 +1105,13 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_UX)\
  $(OBJ_TEST_UNIT_ins_ch_MT_UX)\
  $(OBJ_TEST_UNIT_ins_i_MT_UX)\
+ $(OBJ_TEST_UNIT_ins_ss_MT_UX)\
  $(OBJ_TEST_UNIT_shim_fi_MT_UX)\
+ $(OBJ_TEST_UNIT_shim_ns_1_MT_UX)\
+ $(OBJ_TEST_UNIT_shim_ns_2_MT_UX)\
+ $(OBJ_TEST_UNIT_shim_ns_3_MT_UX)\
+ $(OBJ_TEST_UNIT_shim_ns_4_MT_UX)\
+ $(OBJ_TEST_UNIT_shim_ns_5_MT_UX)\
  $(OBJ_TEST_UNIT_snk_a_b_MT_UX)\
  $(OBJ_TEST_UNIT_snk_c_str_MT_UX)\
  $(OBJ_TEST_UNIT_snk_chbuf_MT_UX)\
@@ -1079,7 +1129,13 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_ins_ch_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_ins_i_MT_UX_DEBUG)\
+ $(OBJ_TEST_UNIT_ins_ss_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_shim_fi_MT_UX_DEBUG)\
+ $(OBJ_TEST_UNIT_shim_ns_1_MT_UX_DEBUG)\
+ $(OBJ_TEST_UNIT_shim_ns_2_MT_UX_DEBUG)\
+ $(OBJ_TEST_UNIT_shim_ns_3_MT_UX_DEBUG)\
+ $(OBJ_TEST_UNIT_shim_ns_4_MT_UX_DEBUG)\
+ $(OBJ_TEST_UNIT_shim_ns_5_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_snk_a_b_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_snk_c_str_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_snk_chbuf_MT_UX_DEBUG)\
@@ -1233,7 +1289,9 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_UX)\
  $(TARG_TEST_UNIT_ins_ch_MT_UX)\
  $(TARG_TEST_UNIT_ins_i_MT_UX)\
+ $(TARG_TEST_UNIT_ins_ss_MT_UX)\
  $(TARG_TEST_UNIT_shim_fi_MT_UX)\
+ $(TARG_TEST_UNIT_shim_ns_MT_UX)\
  $(TARG_TEST_UNIT_snk_a_b_MT_UX)\
  $(TARG_TEST_UNIT_snk_c_str_MT_UX)\
  $(TARG_TEST_UNIT_snk_chbuf_MT_UX)\
@@ -1251,7 +1309,9 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_ins_ch_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_ins_i_MT_UX_DEBUG)\
+ $(TARG_TEST_UNIT_ins_ss_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG)\
+ $(TARG_TEST_UNIT_shim_ns_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_snk_a_b_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_snk_c_str_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_snk_chbuf_MT_UX_DEBUG)\
@@ -1429,8 +1489,14 @@ test.unit_:
 	$(TARG_TEST_UNIT_ins_ch_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_ins_i_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_ins_i_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_ins_ss_MT_UX) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_ins_ss_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_shim_fi_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_shim_fi_MT_UX) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_shim_ns_MT_UX) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_shim_ns_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_snk_a_b_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_snk_a_b_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_snk_c_str_MT_UX) --verbosity=$(TEST_VERBOSITY)
@@ -1755,8 +1821,16 @@ clean.test.unit:
 	@-$(RM) $(OBJ_TEST_UNIT_ins_ch_MT_UX)
 	@-$(RM) $(TARG_TEST_UNIT_ins_i_MT_UX)
 	@-$(RM) $(OBJ_TEST_UNIT_ins_i_MT_UX)
+	@-$(RM) $(TARG_TEST_UNIT_ins_ss_MT_UX)
+	@-$(RM) $(OBJ_TEST_UNIT_ins_ss_MT_UX)
 	@-$(RM) $(TARG_TEST_UNIT_shim_fi_MT_UX)
 	@-$(RM) $(OBJ_TEST_UNIT_shim_fi_MT_UX)
+	@-$(RM) $(TARG_TEST_UNIT_shim_ns_MT_UX)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_1_MT_UX)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_2_MT_UX)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_3_MT_UX)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_4_MT_UX)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_5_MT_UX)
 	@-$(RM) $(TARG_TEST_UNIT_snk_a_b_MT_UX)
 	@-$(RM) $(OBJ_TEST_UNIT_snk_a_b_MT_UX)
 	@-$(RM) $(TARG_TEST_UNIT_snk_c_str_MT_UX)
@@ -1793,8 +1867,16 @@ clean.test.unit:
 	@-$(RM) $(OBJ_TEST_UNIT_ins_ch_MT_UX_DEBUG)
 	@-$(RM) $(TARG_TEST_UNIT_ins_i_MT_UX_DEBUG)
 	@-$(RM) $(OBJ_TEST_UNIT_ins_i_MT_UX_DEBUG)
+	@-$(RM) $(TARG_TEST_UNIT_ins_ss_MT_UX_DEBUG)
+	@-$(RM) $(OBJ_TEST_UNIT_ins_ss_MT_UX_DEBUG)
 	@-$(RM) $(TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG)
 	@-$(RM) $(OBJ_TEST_UNIT_shim_fi_MT_UX_DEBUG)
+	@-$(RM) $(TARG_TEST_UNIT_shim_ns_MT_UX_DEBUG)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_1_MT_UX_DEBUG)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_2_MT_UX_DEBUG)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_3_MT_UX_DEBUG)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_4_MT_UX_DEBUG)
+	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_5_MT_UX_DEBUG)
 	@-$(RM) $(TARG_TEST_UNIT_snk_a_b_MT_UX_DEBUG)
 	@-$(RM) $(OBJ_TEST_UNIT_snk_a_b_MT_UX_DEBUG)
 	@-$(RM) $(TARG_TEST_UNIT_snk_c_str_MT_UX_DEBUG)
@@ -1832,6 +1914,8 @@ $(LIB_CORE_MT_UX): $(OBJ_CORE_MT_UX) $(PROJ_MAKEFILE_NAME)
 
 $(OBJ_cr_api_MT_UX): $(PROJ_SRC_DIR)\api.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_CORE_ARGS_MT_UX) -Fo$@ $(PROJ_SRC_DIR)\api.cpp
+$(OBJ_cr_enumstr_MT_UX): $(PROJ_SRC_DIR)\enum_strings.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_CORE_ARGS_MT_UX) -Fo$@ $(PROJ_SRC_DIR)\enum_strings.cpp
 $(OBJ_cr_fsdhndlrs_MT_UX): $(PROJ_SRC_DIR)\fmt_spec_defect_handlers.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_CORE_ARGS_MT_UX) -Fo$@ $(PROJ_SRC_DIR)\fmt_spec_defect_handlers.cpp
 $(OBJ_cr_fmtcache_MT_UX): $(PROJ_SRC_DIR)\fmt_cache.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
@@ -1851,6 +1935,8 @@ $(LIB_CORE_MT_UX_DEBUG): $(OBJ_CORE_MT_UX_DEBUG) $(PROJ_MAKEFILE_NAME)
 
 $(OBJ_cr_api_MT_UX_DEBUG): $(PROJ_SRC_DIR)\api.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_CORE_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_SRC_DIR)\api.cpp
+$(OBJ_cr_enumstr_MT_UX_DEBUG): $(PROJ_SRC_DIR)\enum_strings.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_CORE_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_SRC_DIR)\enum_strings.cpp
 $(OBJ_cr_fsdhndlrs_MT_UX_DEBUG): $(PROJ_SRC_DIR)\fmt_spec_defect_handlers.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_CORE_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_SRC_DIR)\fmt_spec_defect_handlers.cpp
 $(OBJ_cr_fmtcache_MT_UX_DEBUG): $(PROJ_SRC_DIR)\fmt_cache.cpp $(CORE_HEADERS) $(PROJ_MAKEFILE_NAME)
@@ -3472,6 +3558,38 @@ $(TARG_TEST_UNIT_ins_i_MT_UX_DEBUG):    \
 $(OBJ_TEST_UNIT_ins_i_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.inserters.integer\test.unit.inserters.integer.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.inserters.integer\test.unit.inserters.integer.cpp
 
+$(TARG_TEST_UNIT_ins_ss_MT_UX):    \
+		$(OBJ_TEST_UNIT_ins_ss_MT_UX)\
+		$(LIB_CORE_MT_UX)\
+		$(LIB_SHWILD_MT_UX)\
+		$(LIB_XTESTS_MT_UX)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_UX) -out:$@ \
+		$(OBJ_TEST_UNIT_ins_ss_MT_UX)\
+		$(LIB_CORE_MT_UX)\
+		$(LIB_SHWILD_MT_UX)\
+		$(LIB_XTESTS_MT_UX)\
+		$(TARGET_LIB_MT_UX)
+
+$(OBJ_TEST_UNIT_ins_ss_MT_UX): $(PROJ_TEST_UNIT_DIR)\test.unit.inserters.storage_size\test.unit.inserters.storage_size.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.inserters.storage_size\test.unit.inserters.storage_size.cpp
+
+$(TARG_TEST_UNIT_ins_ss_MT_UX_DEBUG):    \
+		$(OBJ_TEST_UNIT_ins_ss_MT_UX_DEBUG)\
+		$(LIB_CORE_MT_UX_DEBUG)\
+		$(LIB_SHWILD_MT_UX_DEBUG)\
+		$(LIB_XTESTS_MT_UX_DEBUG)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_UX_DEBUG) -out:$@ \
+		$(OBJ_TEST_UNIT_ins_ss_MT_UX_DEBUG)\
+		$(LIB_CORE_MT_UX_DEBUG)\
+		$(LIB_SHWILD_MT_UX_DEBUG)\
+		$(LIB_XTESTS_MT_UX_DEBUG)\
+		$(TARGET_LIB_MT_UX_DEBUG)
+
+$(OBJ_TEST_UNIT_ins_ss_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.inserters.storage_size\test.unit.inserters.storage_size.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.inserters.storage_size\test.unit.inserters.storage_size.cpp
+
 $(TARG_TEST_UNIT_shim_fi_MT_UX):    \
 		$(OBJ_TEST_UNIT_shim_fi_MT_UX)\
 		$(LIB_CORE_MT_UX)\
@@ -3503,6 +3621,70 @@ $(TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG):    \
 
 $(OBJ_TEST_UNIT_shim_fi_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.shims.fast_integers\test.unit.shims.fast_integers.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims.fast_integers\test.unit.shims.fast_integers.cpp
+
+$(TARG_TEST_UNIT_shim_ns_MT_UX):    \
+		$(OBJ_TEST_UNIT_shim_ns_1_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_2_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_3_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_4_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_5_MT_UX)\
+		$(LIB_CORE_MT_UX)\
+		$(LIB_SHWILD_MT_UX)\
+		$(LIB_XTESTS_MT_UX)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_UX) -out:$@ \
+		$(OBJ_TEST_UNIT_shim_ns_1_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_2_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_3_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_4_MT_UX)\
+		$(OBJ_TEST_UNIT_shim_ns_5_MT_UX)\
+		$(LIB_CORE_MT_UX)\
+		$(LIB_SHWILD_MT_UX)\
+		$(LIB_XTESTS_MT_UX)\
+		$(TARGET_LIB_MT_UX)
+
+$(OBJ_TEST_UNIT_shim_ns_1_MT_UX): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.main.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.main.cpp
+$(OBJ_TEST_UNIT_shim_ns_2_MT_UX): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.with_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.with_namespace.cpp
+$(OBJ_TEST_UNIT_shim_ns_3_MT_UX): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_fastformat_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_fastformat_namespace.cpp
+$(OBJ_TEST_UNIT_shim_ns_4_MT_UX): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
+$(OBJ_TEST_UNIT_shim_ns_5_MT_UX): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_either_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_either_namespace.cpp
+
+$(TARG_TEST_UNIT_shim_ns_MT_UX_DEBUG):    \
+		$(OBJ_TEST_UNIT_shim_ns_1_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_2_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_3_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_4_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_5_MT_UX_DEBUG)\
+		$(LIB_CORE_MT_UX_DEBUG)\
+		$(LIB_SHWILD_MT_UX_DEBUG)\
+		$(LIB_XTESTS_MT_UX_DEBUG)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_UX_DEBUG) -out:$@ \
+		$(OBJ_TEST_UNIT_shim_ns_1_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_2_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_3_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_4_MT_UX_DEBUG)\
+		$(OBJ_TEST_UNIT_shim_ns_5_MT_UX_DEBUG)\
+		$(LIB_CORE_MT_UX_DEBUG)\
+		$(LIB_SHWILD_MT_UX_DEBUG)\
+		$(LIB_XTESTS_MT_UX_DEBUG)\
+		$(TARGET_LIB_MT_UX_DEBUG)
+
+$(OBJ_TEST_UNIT_shim_ns_1_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.main.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.main.cpp
+$(OBJ_TEST_UNIT_shim_ns_2_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.with_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.with_namespace.cpp
+$(OBJ_TEST_UNIT_shim_ns_3_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_fastformat_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_fastformat_namespace.cpp
+$(OBJ_TEST_UNIT_shim_ns_4_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
+$(OBJ_TEST_UNIT_shim_ns_5_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_either_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.shims_and_namespaces\test.unit.shims_and_namespaces.without_either_namespace.cpp
 
 $(TARG_TEST_UNIT_snk_a_b_MT_UX):    \
 		$(OBJ_TEST_UNIT_snk_a_b_MT_UX)\

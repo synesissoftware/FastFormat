@@ -43,7 +43,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /W3 /GX /O2 /I "$(MSSAPI)/include" /I "$(VOLE_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /c
+# ADD CPP /nologo /W3 /GX /O2 /I "$(MSSAPI)/include" /I "$(VOLE_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
@@ -70,7 +70,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(MSSAPI)/include" /I "$(VOLE_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(MSSAPI)/include" /I "$(VOLE_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -204,11 +204,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\attribute\get_ptr.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\util\integral_printf_traits.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
 # End Source File
 # Begin Source File
 
@@ -225,6 +237,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_generators.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -249,6 +265,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\minmax.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
 # End Source File
 # Begin Source File
 
@@ -313,10 +333,6 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\size_traits.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std_swap.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
 # End Source File
 # Begin Source File
 
@@ -480,15 +496,15 @@ SOURCE="$(STLSOFT)\include\platformstl\error\exceptions.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\platformstl\synch\util\features.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\platformstl\platformstl.h"
 # End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\platformstl\platformstl.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(STLSOFT)\include\platformstl\synch\util\features.h"
 # End Source File
 # End Group
 # Begin Group "WinSTL"
@@ -637,6 +653,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -669,6 +689,18 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\initialiser.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\shim_macros.h"
 # End Source File
 # Begin Source File
@@ -681,7 +713,15 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\standard_flags.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
 # End Source File
 # Begin Source File
 
@@ -697,11 +737,11 @@ SOURCE="$(SHWILD_ROOT)\include\shwild\implicit_link.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(SHWILD_ROOT)\include\shwild\shwild.h"
+SOURCE="$(VOLE_ROOT)\include\shwild\implicit_link.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(VOLE_ROOT)\include\shwild\implicit_link.h"
+SOURCE="$(SHWILD_ROOT)\include\shwild\shwild.h"
 # End Source File
 # Begin Source File
 
@@ -775,21 +815,21 @@ SOURCE="$(VOLE_ROOT)\include\vole\object\generated\void_methods.hpp"
 
 SOURCE="$(VOLE_ROOT)\include\vole\vole.hpp"
 # End Source File
-# Begin Source File
-
-SOURCE="$(VOLE_ROOT)\include\xtests\implicit_link.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(VOLE_ROOT)\include\xtests\xtests.h"
-# End Source File
 # End Group
 # Begin Group "xTests Header Files"
 
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE="$(VOLE_ROOT)\include\xtests\implicit_link.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(XTESTS_C_ROOT)\include\xtests\implicit_link.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(VOLE_ROOT)\include\xtests\xtests.h"
 # End Source File
 # Begin Source File
 

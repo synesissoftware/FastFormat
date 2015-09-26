@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for FILE*.
  *
  * Created:     3rd January 2008
- * Updated:     12th February 2012
+ * Updated:     25th August 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MINOR      3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       26
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   5
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       29
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -75,7 +75,11 @@
 #include <fastformat/util/sinks/helpers.hpp>
 #include <fastformat/format/standard_flags.hpp>
 
-#include <platformstl/error/exceptions.hpp>
+#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+//# include <platformstl/error/exceptions.hpp>
+#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+# include <platformstl/error/exceptions.hpp>
+#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <stdio.h>
@@ -174,6 +178,11 @@ fmt_slices(
 ,   ff_string_slice_t const*    results
 )
 {
+    if(NULL == sink)
+    {
+        return sink;
+    }
+
 #ifndef FASTFORMAT_FILE_SINK_OLD_IMPLEMENTATION
     stlsoft::auto_buffer<ff_char_t> buff(cchTotal + 1 + 1); // 1 for \0, 1 for newline (if needed)
 #else /* ? !FASTFORMAT_FILE_SINK_OLD_IMPLEMENTATION */
@@ -277,7 +286,7 @@ using sinks::to_sink;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

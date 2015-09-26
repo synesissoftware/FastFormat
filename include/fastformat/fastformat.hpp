@@ -4,11 +4,11 @@
  * Purpose:     FastFormat C++ primary include.
  *
  * Created:     19th September 2006
- * Updated:     17th June 2012
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MINOR     4
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      46
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      47
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -478,7 +478,7 @@ inline S& flush(
 #endif /* !FASTFORMAT_LEAN_AND_MEAN */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

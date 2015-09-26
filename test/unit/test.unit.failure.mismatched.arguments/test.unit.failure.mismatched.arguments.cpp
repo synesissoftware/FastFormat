@@ -93,7 +93,7 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_8);
         XTESTS_RUN_CASE(test_1_9);
         XTESTS_RUN_CASE_THAT_THROWS(test_that_single_missing_argument_fails, ff::missing_argument_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_missing_argument_fails_when_told_to_ignore_unreferenced_arguments, ff::unreferenced_argument_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_missing_argument_fails_when_told_to_ignore_unreferenced_arguments, ff::missing_argument_exception);
         XTESTS_RUN_CASE(test_that_single_missing_argument_succeeds_with_scoper);
         XTESTS_RUN_CASE(test_1_13);
         XTESTS_RUN_CASE(test_1_14);

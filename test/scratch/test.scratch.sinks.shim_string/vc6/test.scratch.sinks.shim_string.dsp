@@ -134,6 +134,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\c_string.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\capabilities.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\char_traits.hpp"
 # End Source File
 # Begin Source File
@@ -150,11 +154,23 @@ SOURCE="$(STLSOFT_1_10)\include\stlsoft\quality\contract.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\quality\cover.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\exception.hpp"
 # End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\exception_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\util\exception_string.hpp"
 # End Source File
 # Begin Source File
 
@@ -166,7 +182,59 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_decimal_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_hexadecimal_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_octal_string.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE=..\..\..\..\..\..\..\STLSoft\Releases\1.10\STLSoft\include\stlsoft\conversion\integer_to_string\integer_to_string.hpp
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_format_width_limits.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_limits.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_limits.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_signed_type.hpp"
 # End Source File
 # Begin Source File
 
@@ -174,11 +242,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\internal\lead_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\library_discriminator.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\util\meta_.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
 # End Source File
 # Begin Source File
 
@@ -202,6 +282,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\safestr.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\shim_string.hpp"
 # End Source File
 # Begin Source File
@@ -222,10 +306,6 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std_swap.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
-# End Source File
-# Begin Source File
-
 SOURCE="$(STLSOFT)\include\stlsoft\stlsoft.h"
 # End Source File
 # Begin Source File
@@ -238,6 +318,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_slice.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\string_traits.hpp"
 # End Source File
 # Begin Source File
@@ -247,6 +331,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\string\string_traits_fwd.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\string\string_view.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_view.hpp"
 # End Source File
 # Begin Source File
 
@@ -311,6 +399,14 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\exceptions.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_integers.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -343,14 +439,42 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\integ
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\shim_macros.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\shim_string.hpp"
 # End Source File
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\standard_flags.hpp"
 # End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
 # End Group
-# Begin Group "UNIXEm Header Files"
+# Begin Group "UNIXem Header Files"
 
 # PROP Default_Filter ""
 # Begin Source File

@@ -36,7 +36,12 @@
 
 /* STLSoft header files */
 #include <stlsoft/stlsoft.h>
-#include <stlsoft/iterators/member_selector_iterator.hpp>
+#if defined(STLSOFT_VER) && \
+    STLSOFT_VER >= 0x010c0000
+# include <stlsoft/iterator/member_selector_iterator.hpp>
+#else
+# include <stlsoft/iterators/member_selector_iterator.hpp>
+#endif
 
 /* Standard C++ header files */
 #include <numeric>

@@ -86,7 +86,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FR /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -613,6 +613,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\capabilities.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\string\case_functions.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\char_traits.hpp"
 # End Source File
 # Begin Source File
@@ -625,11 +629,31 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\string\ctype_traits.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\exception.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\util\exception_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\error\exceptions.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
 # End Source File
 # Begin Source File
 
@@ -645,6 +669,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
 # End Source File
 # Begin Source File
@@ -654,6 +682,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_generators.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -677,11 +709,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\obsolete.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\os_exception.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\algorithms\pod.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\error\project_exception.hpp"
 # End Source File
 # Begin Source File
 
@@ -690,6 +734,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\safestr.h"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\sap_cast.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
 # End Source File
 # Begin Source File
 
@@ -721,10 +769,6 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std_swap.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
-# End Source File
-# Begin Source File
-
 SOURCE="$(STLSOFT)\include\stlsoft\stlsoft.h"
 # End Source File
 # Begin Source File
@@ -745,6 +789,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\string\string_view.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\throw_policies.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\trim_functions.hpp"
 # End Source File
 # Begin Source File
@@ -757,12 +805,24 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\yesno.hpp"
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\platformstl\error\exceptions.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\platformstl\platformstl.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\platformstl.hpp"
 # End Source File
 # End Group
 # Begin Group "UNIXSTL"
 
 # PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\unixstl\error\exceptions.hpp"
+# End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\unixstl\synch\util\features.h"
@@ -775,6 +835,14 @@ SOURCE="$(STLSOFT)\include\unixstl\unixstl.h"
 # Begin Group "WinSTL"
 
 # PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\error\error_functions.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\error\exceptions.hpp"
+# End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\winstl\winstl.h"
@@ -814,6 +882,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -834,11 +906,35 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\generated\helper_function
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\util\sinks\helpers.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
 # End Source File
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\initialiser.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\inserters\int_typedefs.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\inserters\integer.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
 # End Source File
 # Begin Source File
 
@@ -854,15 +950,19 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\standard_flags.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\inserters\to_x.hpp"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\inserters\integer.hpp"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\inserters\to_x.hpp"
 # End Source File
 # End Group
 # Begin Group "UNIXem Header Files"
@@ -875,6 +975,10 @@ SOURCE="$(UNIXEM)\include\unixem\implicit_link.h"
 # Begin Source File
 
 SOURCE="$(UNIXEM)\include\unistd.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(UNIXEM)\include\unixem\unistd.h"
 # End Source File
 # Begin Source File
 

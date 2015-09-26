@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for FastFormat core API: replacements.
  *
  * Created:     18th September 2006
- * Updated:     22nd August 2015
+ * Updated:     26th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
@@ -59,7 +59,11 @@
 
 #include <stlsoft/conversion/integer_to_string.hpp>
 #include <stlsoft/conversion/truncation_test.hpp>
-#include <stlsoft/iterators/member_selector_iterator.hpp>
+#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+# include <stlsoft/iterator/member_selector_iterator.hpp>
+#else /* ? STLSoft 1.12+ */
+# include <stlsoft/iterators/member_selector_iterator.hpp>
+#endif /* STLSoft 1.12+ */
 #include <stlsoft/memory/auto_buffer.hpp>
 #include <stlsoft/shims/access/string/std/c_string.h>
 #include <stlsoft/string/tokeniser_functions.hpp> // for find_next_token
@@ -91,17 +95,39 @@ namespace
 {
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     using fastformat::ff_char_t;
-    using fastformat::ff_parse_code_t;
-    using fastformat::format_element_t;
+    using fastformat::ff_format_element_t;
     using fastformat::ff_format_element_alignment_t_;
+        using fastformat::FASTFORMAT_ALIGNMENT_NONE;
+        using fastformat::FASTFORMAT_ALIGNMENT_LEFT;
+        using fastformat::FASTFORMAT_ALIGNMENT_RIGHT;
+        using fastformat::FASTFORMAT_ALIGNMENT_CENTRE;
     using fastformat::ff_format_element_width_t_;
-    using fastformat::FASTFORMAT_ALIGNMENT_NONE;
-    using fastformat::FASTFORMAT_ALIGNMENT_LEFT;
-    using fastformat::FASTFORMAT_ALIGNMENT_RIGHT;
-    using fastformat::FASTFORMAT_ALIGNMENT_CENTRE;
-    using fastformat::FF_PARSECODE_SUCCESS;
-    using fastformat::FF_PARSECODE_INCOMPLETEREPLACEMENT;
-    using fastformat::FF_PARSECODE_INVALIDINDEX;
+    using fastformat::ff_handler_response_t;
+        using fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
+        using fastformat::FF_HANDLERRESPONSE_NEXT_HANDLER;
+    using fastformat::ff_parse_action_t;
+        using fastformat::FF_PARSEACTION_REPLACE_FORMAT_WITH_BLANK;
+        using fastformat::FF_PARSEACTION_TREAT_FORMAT_AS_LITERAL;
+    using fastformat::ff_parse_code_t;
+        using fastformat::FF_PARSECODE_SUCCESS;
+        using fastformat::FF_PARSECODE_INCOMPLETEREPLACEMENT;
+        using fastformat::FF_PARSECODE_INVALIDINDEX;
+    using fastformat::ff_replacement_action_t;
+    using fastformat::ff_replacement_code_t;
+        using fastformat::FF_REPLACEMENTCODE_SUCCESS;
+        using fastformat::FF_REPLACEMENTCODE_MISSING_ARGUMENT;
+        using fastformat::FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT;
+    using fastformat::ff_string_slice_t;
+# ifdef STLSOFT_CF_EXCEPTION_SUPPORT
+    using fastformat::illformed_format_exception;
+    using fastformat::missing_argument_exception;
+    using fastformat::unreferenced_argument_exception;
+# endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
+#else
+    typedef fastformat_illformedHandler_t   illformedHandler_t;
+    typedef ff_mismatchedHandler_info_t     mismatchedHandler_info_t;
+    typedef ff_parse_action_t               parse_action_t;
+    typedef ff_string_slice_t               string_slice_t;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
     typedef int unreferenced_argument_flag_t;   // TODO: establish whether using bool is faster; (unlikely)
@@ -141,7 +167,7 @@ namespace
 } // anonymous namespace
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Functions
+ * Helper functions
  */
 
 namespace
@@ -160,14 +186,37 @@ namespace
     // {0,10-20,<}  =>  index = 0, min-width = 10, max-width=20, left-aligned
     // {0,-20,<}    =>  index = 0, max-width=20, left-aligned
 
+    inline
+    unsigned
+    derive_parse_result_(
+        unsigned    num
+    ,   unsigned    numRes
+    )
+    {
+        return (num & 0xffff) | ((numRes & 0xffff) << 16);
+    }
+
     // TODO: replace with STLSoft 1.10+'s stlsoft::string_to_integer
     // function template
-    inline long strtol_dec(ff_char_t const* s, ff_char_t** endptr)
+    inline
+    long
+    strtol_dec_(
+        ff_char_t const*    s
+    ,   ff_char_t**         endptr
+    )
     {
+        // Note: this cannot go off the end of the string (or of
+        // allocated memory) because this function is only invoked
+        // on a (section of) string identified as closed (by a '}')
+
         return fastformat_strtol_(s, endptr, 10);
     }
 
-    inline ff_parse_code_t code_from_index_(int index)
+    inline
+    ff_parse_code_t
+    code_from_index_(
+        int  index
+    )
     {
         FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL(index < 0, "must be negative (i.e. in error)");
 
@@ -201,10 +250,12 @@ namespace
     // This function writes the (defectively-specified) parameter into the
     // format element as a literal, and updates the counters. It does NOT
     // update the pointer(s)
-    inline void record_parameter_as_literal_(
+    inline
+    void 
+    record_parameter_as_literal_(
         ff_char_t const*        p0
     ,   ff_char_t const* const  p1
-    ,   format_element_t*       formatElements
+    ,   ff_format_element_t*    formatElements
     ,   unsigned&               num
     ,   unsigned&               numRes
     )
@@ -226,10 +277,12 @@ namespace
         ++numRes;
     }
 
-    inline int parse_replacement_find_next_token(
+    inline
+    int 
+    parse_replacement_find_next_token_(
         ff_char_t const*        start
     ,   ff_char_t const* const  end
-    ,   format_element_t*       formatElement
+    ,   ff_format_element_t*    formatElement
     )
     {
         FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL(NULL != start, "start may not be null");
@@ -252,7 +305,7 @@ namespace
         else
         {
             ff_char_t*  endptr;
-            long        result = strtol_dec(p0, &endptr);
+            long        result = strtol_dec_(p0, &endptr);
 
             if(p1 != endptr)
             {
@@ -276,7 +329,7 @@ namespace
             if(p1 != p0)
             {
                 ff_char_t*  endptr;
-                long        result = strtol_dec(p0, &endptr);
+                long        result = strtol_dec_(p0, &endptr);
 
                 if(p1 != endptr)
                 {
@@ -298,7 +351,7 @@ namespace
             if(p1 != p0)
             {
                 ff_char_t*  endptr;
-                long        result = strtol_dec(p0, &endptr);
+                long        result = strtol_dec_(p0, &endptr);
 
                 if(p1 != endptr)
                 {
@@ -371,10 +424,12 @@ namespace
     // This function parses and writes the (correctly-specified) parameter
     // into the format element as a literal, and updates the counters. It
     // does NOT update the pointer(s)
-    inline int parse_parameter_(
+    inline
+    int 
+    parse_parameter_(
         ff_char_t const*        p0
     ,   ff_char_t const* const  p1
-    ,   format_element_t*       formatElements
+    ,   ff_format_element_t*    formatElements
     ,   unsigned&               num
     ,   unsigned&               numRes
     )
@@ -388,9 +443,9 @@ namespace
         FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL('}' == *p1, "p1 must point to closing character");
         FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL(NULL != formatElements, "format elements pointer may not be null");
 
-        format_element_t& element = formatElements[num];
+        ff_format_element_t& element = formatElements[num];
 
-        int res = parse_replacement_find_next_token(p0, p1, &element);
+        int res = parse_replacement_find_next_token_(p0, p1, &element);
 
         if(res < 0)
         {
@@ -451,32 +506,102 @@ namespace
         }
     }
 
+    /* inline */
+    unsigned
+    process_illformed_action_(
+        ff_char_t const*        fmt
+    ,   size_t                  cchFmt
+    ,   ff_format_element_t*    formatElements
+    ,   size_t                  numFormatElements
+    ,   ff_parse_action_t       illformedAction
+    )
+    {
+        FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL(0 != numFormatElements, "must have at least one element in which to write");
+        STLSOFT_SUPPRESS_UNUSED(numFormatElements);
+
+        formatElements[0].ptr   =   fmt;
+        formatElements[0].index =   FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_LITERAL_;
+
+        FASTFORMAT_COVER_MARK_ENTRY();
+
+        switch(illformedAction)
+        {
+            default:
+                FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("invalid value for illformed format action");
+                // fall through
+            case    FF_PARSEACTION_REPLACE_FORMAT_WITH_BLANK:
+                FASTFORMAT_COVER_MARK_ENTRY();
+
+                formatElements[0].len   =   0;
+                break;
+
+            case    FF_PARSEACTION_TREAT_FORMAT_AS_LITERAL:
+                FASTFORMAT_COVER_MARK_ENTRY();
+
+                formatElements[0].len   =   cchFmt;
+                break;
+        }
+
+        return derive_parse_result_(1, 1);
+    }
+
 } // anonymous namespace
+
+/* /////////////////////////////////////////////////////////////////////////
+ * Stock handler functions
+ */
 
 namespace
 {
-
-#if !defined(FASTFORMAT_NO_NAMESPACE)
-    using fastformat::ff_string_slice_t;
-    using fastformat::ff_replacement_code_t;
-    using fastformat::FF_REPLACEMENTCODE_SUCCESS;
-    using fastformat::FF_REPLACEMENTCODE_MISSING_ARGUMENT;
-    using fastformat::FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT;
-    using fastformat::missing_argument_exception;
-    using fastformat::unreferenced_argument_exception;
-#endif /* !FASTFORMAT_NO_NAMESPACE */
-
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT
-    int FASTFORMAT_CALLCONV fastformat_stock_mismatchedHandler_throw(
-        void*                   /* param */
-    ,   ff_replacement_code_t   code
-    ,   size_t                  numParameters
-    ,   int                     parameterIndex
-    ,   ff_string_slice_t*      /* slice */
-    ,   void*                   /* reserved0 */
-    ,   size_t                  /* reserved1 */
-    ,   void*                   /* reserved2 */
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV fastformat_stock_illformedHandler_throw(
+        void*               /* param */
+    ,   ff_parse_code_t     code
+    ,   ff_string_slice_t   format
+    ,   ff_string_slice_t   /* defect */
+    ,   ff_parse_action_t*  /* illformedAction */
+    ,   void*               /* reserved0 */
+    ,   size_t              /* reserved1 */
+    ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
     )
+    {
+        // Simplistic factory for exceptions
+
+        FASTFORMAT_COVER_MARK_ENTRY();
+
+        switch(code)
+        {
+            default:
+                FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("unknown parse code");
+                break;
+            case    FF_PARSECODE_SUCCESS:
+                FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("handler invoked with success parse code");
+                break;
+            case    FF_PARSECODE_INCOMPLETEREPLACEMENT:
+                throw illformed_format_exception("ill-formed format: incomplete replacement", code, format.ptr, format.len);
+            case    FF_PARSECODE_INVALIDINDEX:
+                throw illformed_format_exception("ill-formed format: invalid index", code, format.ptr, format.len);
+        }
+
+        // Moot return
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
+    }
+
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV fastformat_stock_mismatchedHandler_throw(
+        void*                       /* param */
+    ,   ff_replacement_code_t       code
+    ,   size_t                      numArguments
+    ,   int                         mismatchedParameterIndex
+    ,   ff_replacement_action_t*    /* missingArgumentAction */
+    ,   ff_string_slice_t*          /* slice */
+    ,   void*                       /* reserved0 */
+    ,   size_t                      /* reserved1 */
+    ,   void*                       /* reserved2 */
+    ,   int                         /* reserved3 */
+    )                               
     {
         // Simplistic factory for exceptions
 
@@ -489,29 +614,53 @@ namespace
                 // This is ignored. This code is passed to indicate completion of the statement
                 break;
             case    FF_REPLACEMENTCODE_MISSING_ARGUMENT:
-                throw missing_argument_exception("a required argument is missing from the argument list", code, int(numParameters), parameterIndex);
+                throw missing_argument_exception("a required argument is missing from the argument list", code, int(numArguments), mismatchedParameterIndex);
             case    FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT:
-                throw unreferenced_argument_exception("an argument was unreferenced in the format", code, int(numParameters), parameterIndex);
+                throw unreferenced_argument_exception("an argument was unreferenced in the format", code, int(numArguments), mismatchedParameterIndex);
         }
 
-        return 0;
+        // Moot return
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
 #endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
 
-    int FASTFORMAT_CALLCONV fastformat_stock_mismatchedHandler_ignore(
-        void*                   /* param */
-    ,   ff_replacement_code_t   /* code */
-    ,   size_t                  /* numParameters */
-    ,   int                     /* parameterIndex */
-    ,   ff_string_slice_t*      /* slice */
-    ,   void*                   /* reserved0 */
-    ,   size_t                  /* reserved1 */
-    ,   void*                   /* reserved2 */
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV fastformat_stock_illformedHandler_ignore(
+        void*               /* param */
+    ,   ff_parse_code_t     /* code */
+    ,   ff_string_slice_t   /* format */
+    ,   ff_string_slice_t   /* defect */
+    ,   ff_parse_action_t*  /* illformedAction */
+    ,   void*               /* reserved0 */
+    ,   size_t              /* reserved1 */
+    ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
     )
     {
         // No-op
 
-        return 0; // Return 0 to indicate
+        // Return to indicate that we're ignoring
+        return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
+    }
+
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV fastformat_stock_mismatchedHandler_ignore(
+        void*                       /* param */
+    ,   ff_replacement_code_t       /* code */
+    ,   size_t                      /* numArguments */
+    ,   int                         /* mismatchedParameterIndex */
+    ,   ff_replacement_action_t*    /* missingArgumentAction */
+    ,   ff_string_slice_t*          /* slice */
+    ,   void*                       /* reserved0 */
+    ,   size_t                      /* reserved1 */
+    ,   void*                       /* reserved2 */
+    ,   int                         /* reserved3 */
+    )
+    {
+        // No-op
+
+        // Return to indicate that we're ignoring
+        return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
     }
 
 } // anonymous namespace
@@ -526,7 +675,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Types & Non-local variables
+ * Helper classes
  */
 
 namespace
@@ -541,6 +690,232 @@ namespace
             std::fill(&spaces[0], &spaces[0] + STLSOFT_NUM_ELEMENTS(spaces), FASTFORMAT_LITERAL_CHARACTER(' '));
             std::fill(&hashes[0], &hashes[0] + STLSOFT_NUM_ELEMENTS(hashes), FASTFORMAT_LITERAL_CHARACTER('#'));
         }
+    };
+
+    struct illformedHandlers_t
+    {
+    public: // Construction
+        illformedHandlers_t(
+            fastformat_illformedHandler_t   handler
+        ,   void*                           param
+        )
+            : numHandlers(0)
+        {
+            handlers[0].handler = handler;
+            handlers[0].param   = param;
+        }
+
+    public: // Operations
+        ff_handler_response_t invoke(
+            ff_parse_code_t     code
+        ,   ff_string_slice_t   format
+        ,   ff_string_slice_t   defect
+        ,   ff_parse_action_t*  illformedAction
+        )
+        {
+            prepare_();
+
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(0 != numHandlers);
+
+            void* const     reserved0   =   NULL;
+            size_t const    reserved1   =   0u;
+            void* const     reserved2   =   NULL;
+            int const       reserved3   =   0;
+
+            ff_illformedHandler_info_t const* const end     =   &handlers[0] + STLSOFT_NUM_ELEMENTS(handlers);
+            ff_illformedHandler_info_t const* const begin   =   end - numHandlers;
+            { for(ff_illformedHandler_info_t const* it = begin; it != end; ++it)
+            {
+                ff_handler_response_t const hr = (*(*it).handler)(
+                                                        (*it).param
+                                                    ,   code
+                                                    ,   format
+                                                    ,   defect
+                                                    ,   illformedAction
+                                                    ,   reserved0
+                                                    ,   reserved1
+                                                    ,   reserved2
+                                                    ,   reserved3
+                                                    );
+
+                if(FF_HANDLERRESPONSE_CONTINUE_PROCESSING == hr)
+                {
+                    return hr;
+                }
+            }}
+
+            FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("cannot get here");
+
+            return ff_handler_response_t(-1);
+        }
+
+    private: // Implementation
+        void prepare_()
+        {
+            if(0 == numHandlers)
+            {
+                // first invocation, so initialise with all available handlers
+
+                size_t stockHandlerIndex = 3;
+
+                handlers[stockHandlerIndex] = fastformat_getDefaultIllformedHandler();
+                --stockHandlerIndex;
+                ++numHandlers;
+
+                handlers[stockHandlerIndex] = fastformat_getProcessIllformedHandler();
+                if(NULL != handlers[stockHandlerIndex].handler)
+                {
+                    --stockHandlerIndex;
+                    ++numHandlers;
+                }
+
+                handlers[stockHandlerIndex] = fastformat_getThreadIllformedHandler();
+                if(NULL != handlers[stockHandlerIndex].handler)
+                {
+                    --stockHandlerIndex;
+                    ++numHandlers;
+                }
+
+                if(0 != stockHandlerIndex)
+                {
+                    handlers[stockHandlerIndex] = handlers[0];
+                }
+                if(NULL != handlers[stockHandlerIndex].handler)
+                {
+                    --stockHandlerIndex;
+                    ++numHandlers;
+                }
+            }
+
+            FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_STATE_INTERNAL(0 != numHandlers, "Must have at least one handler");
+            FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_STATE_INTERNAL(numHandlers <= 4, "Must have no more than four handlers");
+
+#ifdef _DEBUG
+            {
+                ff_illformedHandler_info_t const* const end     =   &handlers[0] + STLSOFT_NUM_ELEMENTS(handlers);
+                ff_illformedHandler_info_t const* const begin   =   end - numHandlers;
+                for(ff_illformedHandler_info_t const* it = begin; it != end; ++it)
+            {
+                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL != (*it).handler);
+            }}
+#endif /* _DEBUG */
+        }
+
+    private: // Fields
+        ff_illformedHandler_info_t  handlers[4];
+        size_t                      numHandlers; // 0 value is sentinel (denoting uninitialised array)
+    };
+
+    struct mismatchedHandlers_t
+    {
+    public: // Construction
+        mismatchedHandlers_t(
+            fastformat_mismatchedHandler_t   handler
+        ,   void*                           param
+        )
+            : numHandlers(0)
+        {
+            handlers[0].handler = handler;
+            handlers[0].param   = param;
+        }
+
+    public: // Operations
+        ff_handler_response_t invoke(
+            ff_replacement_code_t       code
+        ,   size_t                      numArguments
+        ,   int                         mismatchedParameterIndex
+        ,   ff_replacement_action_t*    missingArgumentAction
+        ,   ff_string_slice_t*          slice
+        )
+        {
+            prepare_();
+
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(0 != numHandlers);
+
+            void* const                 reserved0           =   NULL;
+            size_t const                reserved1           =   0u;
+            void* const                 reserved2           =   NULL;
+            int const                   reserved3           =   0;
+
+            ff_mismatchedHandler_info_t const* const end     =   &handlers[0] + STLSOFT_NUM_ELEMENTS(handlers);
+            ff_mismatchedHandler_info_t const* const begin   =   end - numHandlers;
+            { for(ff_mismatchedHandler_info_t const* it = begin; it != end; ++it)
+            {
+                ff_handler_response_t const hr = (*(*it).handler)((*it).param, code, numArguments, mismatchedParameterIndex, missingArgumentAction, slice, reserved0, reserved1, reserved2, reserved3);
+
+                if(FF_HANDLERRESPONSE_CONTINUE_PROCESSING == hr)
+                {
+                    return hr;
+                }
+            }}
+
+            if(FF_REPLACEMENTCODE_SUCCESS == code)
+            {
+                return FF_HANDLERRESPONSE_NEXT_HANDLER;
+            }
+            else
+            {
+                FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("cannot get here");
+
+                return ff_handler_response_t(-1);
+            }
+        }
+
+    private: // Implementation
+        void prepare_()
+        {
+            if(0 == numHandlers)
+            {
+                // first invocation, so initialise with all available handlers
+
+                size_t stockHandlerIndex = 3;
+
+                handlers[stockHandlerIndex] = fastformat_getDefaultMismatchedHandler();
+                --stockHandlerIndex;
+                ++numHandlers;
+
+                handlers[stockHandlerIndex] = fastformat_getProcessMismatchedHandler();
+                if(NULL != handlers[stockHandlerIndex].handler)
+                {
+                    --stockHandlerIndex;
+                    ++numHandlers;
+                }
+
+                handlers[stockHandlerIndex] = fastformat_getThreadMismatchedHandler();
+                if(NULL != handlers[stockHandlerIndex].handler)
+                {
+                    --stockHandlerIndex;
+                    ++numHandlers;
+                }
+
+                if(0 != stockHandlerIndex)
+                {
+                    handlers[stockHandlerIndex] = handlers[0];
+                }
+                if(NULL != handlers[stockHandlerIndex].handler)
+                {
+                    --stockHandlerIndex;
+                    ++numHandlers;
+                }
+            }
+
+            FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_STATE_INTERNAL(0 != numHandlers, "Must have at least one handler");
+            FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_STATE_INTERNAL(numHandlers <= 4, "Must have no more than four handlers");
+
+#ifdef _DEBUG
+            {
+                ff_mismatchedHandler_info_t const* const end     =   &handlers[0] + STLSOFT_NUM_ELEMENTS(handlers);
+                ff_mismatchedHandler_info_t const* const begin   =   end - numHandlers;
+                for(ff_mismatchedHandler_info_t const* it = begin; it != end; ++it)
+            {
+                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL != (*it).handler);
+            }}
+#endif /* _DEBUG */
+        }
+
+    private: // Fields
+        ff_mismatchedHandler_info_t handlers[4];
+        size_t                      numHandlers; // 0 value is sentinel (denoting uninitialised array)
     };
 
 } // anonymous namespace
@@ -580,12 +955,12 @@ FASTFORMAT_CALL(size_t) fastformat_calculateNumberOfRequiredReplacements(
  */
 
 FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
-    ff_char_t const*    fmt
-,   size_t              cchFmt
-,   format_element_t*   formatElements
-,   size_t              numFormatElements
-,   illformedHandler_t  handler
-,   void*               param
+    ff_char_t const*        fmt
+,   size_t                  cchFmt
+,   ff_format_element_t*    formatElements
+,   size_t                  numFormatElements
+,   illformedHandler_t      handler
+,   void*                   param
 )
 {
     FASTFORMAT_COVER_MARK_ENTRY();
@@ -604,31 +979,10 @@ FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_API(NULL != formatElements || 0 == numFormatElements, "format elements pointer can only be null when the number of pattern elements is 0, and vice versa");
     STLSOFT_SUPPRESS_UNUSED(numFormatElements);
 
-    illformed_handler_info_t    handler_info = { handler, param };
+    illformedHandlers_t     handlers(handler, param);
 
-    if(NULL == handler_info.handler)
-    {
-        FASTFORMAT_COVER_MARK_ENTRY();
-
-        handler_info = fastformat_getThreadIllformedHandler();
-    }
-
-    if(NULL == handler_info.handler)
-    {
-        FASTFORMAT_COVER_MARK_ENTRY();
-
-        handler_info = fastformat_getProcessIllformedHandler();
-    }
-
-    if(NULL == handler_info.handler)
-    {
-        FASTFORMAT_COVER_MARK_ENTRY();
-
-    handler_info = fastformat_getDefaultIllformedHandler();
-    }
-
-    unsigned                num     =   0;              // number of replacement elements written
-    unsigned                numRes  =   0;
+    unsigned                num     =   0;              // number of format elements identified
+    unsigned                numRes  =   0;              // number of result elements required
     ff_char_t const*        p0      =   fmt;
     ff_char_t const*        p1      =   p0;
     ff_char_t const* const  end     =   p0 + cchFmt;
@@ -638,12 +992,11 @@ FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        int parameterIndex;
-
         switch(state)
         {
             default:
                 FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("Invalid parse state");
+                // fall through
             case    literal:
                 FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -735,41 +1088,33 @@ FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
 
                         FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_API(num < numFormatElements, "insufficient replacement storage provided to fastformat_parseFormat(); recode using fastformat_calculateNumberOfRequiredReplacements()");
 
-                        parameterIndex = parse_parameter_(p0, p1, formatElements, num, numRes);
+                        {
+                        int const parameterIndex = parse_parameter_(p0, p1, formatElements, num, numRes);
 
                         if(parameterIndex < 0)
                         {
                             FASTFORMAT_COVER_MARK_ENTRY();
 
-                            if(NULL != handler_info.handler)
-                            {
-                                FASTFORMAT_COVER_MARK_ENTRY();
+                            ff_parse_code_t const       code            =   code_from_index_(parameterIndex);
+                            ff_string_slice_t const     format          =   { cchFmt, fmt };
+                            size_t const                defectLen       =   static_cast<size_t>((p1 + 1) - p0);
+                            ff_string_slice_t const     defect          =   { defectLen, p0 };
+                            ff_parse_action_t           illformedAction =   ff_parse_action_t();
 
-                                ff_parse_code_t xc  =   code_from_index_(parameterIndex);
-                                int             r   =   (*handler_info.handler)(handler_info.param, xc, fmt, cchFmt, num, p0, static_cast<size_t>((p1 + 1) - p0), -1, NULL, 0, NULL);
-
-                                if(0 == r)
-                                {
-                                    FASTFORMAT_COVER_MARK_ENTRY();
-
-                                    return (num & 0xffff) | ((numRes & 0xffff) << 16);
-                                }
-                                else if(r < 0)
-                                {
-                                    FASTFORMAT_COVER_MARK_ENTRY();
-
-                                    handler_info.handler = NULL;
-                                }
-
-                                FASTFORMAT_COVER_MARK_ENTRY();
-                            }
-
-                            // Here we have been instructed to accept it as a literal, so
+                            ff_handler_response_t const hr              =   handlers.invoke(
+                                                                                    code
+                                                                                ,   format
+                                                                                ,   defect
+                                                                                ,   &illformedAction
+                                                                                );
 
                             FASTFORMAT_COVER_MARK_ENTRY();
 
-                            record_parameter_as_literal_(p0, p1, formatElements, num, numRes);
-                        }
+                            FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_RETURN_API(FF_HANDLERRESPONSE_CONTINUE_PROCESSING == hr, "cannot reach her with FF_HANDLERRESPONSE_NEXT_HANDLER because the default handler will throw an exception");
+                            STLSOFT_SUPPRESS_UNUSED(hr);
+
+                            return process_illformed_action_(fmt, cchFmt, formatElements, numFormatElements, illformedAction);
+                        }}
 
                         FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -782,46 +1127,42 @@ FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
                         FASTFORMAT_COVER_MARK_ENTRY();
 
                         // Handle "malformed"
-                        if(NULL != handler_info.handler)
+                        
+                        size_t  len = 2; // TODO: find '}' in [p1, end), and use that distance; assume '{'
+
+                        { for(ff_char_t const* p2 = p1; end != p2; ++p2)
                         {
                             FASTFORMAT_COVER_MARK_ENTRY();
 
-                            size_t  len = 2; // TODO: find '}' in [p1, end), and use that distance; assume '{'
-                            int     res;
-
-                            { for(ff_char_t const* p2 = p1; end != p2; ++p2)
+                            if('}' == *p2) // '{'
                             {
                                 FASTFORMAT_COVER_MARK_ENTRY();
 
-                                if('}' == *p2) // '{'
-                                {
-                                    FASTFORMAT_COVER_MARK_ENTRY();
-
-                                    len = size_t(p2 - p0) + 2;
-                                    break;
-                                }
-                            }}
-
-                            res = (*handler_info.handler)(handler_info.param, FF_PARSECODE_INVALIDINDEX, fmt, cchFmt, num, p0, len, -1, NULL, 0, NULL);
-
-                            if(0 == res)
-                            {
-                                FASTFORMAT_COVER_MARK_ENTRY();
-
-                                return (num & 0xffff) | ((numRes & 0xffff) << 16);
+                                len = size_t(p2 - p0) + 2;
+                                break;
                             }
-                            else if(res < 0)
-                            {
-                                FASTFORMAT_COVER_MARK_ENTRY();
-
-                                handler_info.handler = NULL;
-                            }
-                        }
+                        }}
 
                         FASTFORMAT_COVER_MARK_ENTRY();
 
-                        state = literal; // Ignored
-                        break;
+                        ff_parse_code_t const       code            =   FF_PARSECODE_INVALIDINDEX;
+                        ff_string_slice_t const     format          =   { cchFmt, fmt };
+                        ff_string_slice_t const     defect          =   { len, p0 };
+                        ff_parse_action_t           illformedAction =   ff_parse_action_t();
+
+                        ff_handler_response_t const hr              =   handlers.invoke(
+                                                                                code
+                                                                            ,   format
+                                                                            ,   defect
+                                                                            ,   &illformedAction
+                                                                            );
+
+                        FASTFORMAT_COVER_MARK_ENTRY();
+
+                        FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_RETURN_API(FF_HANDLERRESPONSE_CONTINUE_PROCESSING == hr, "cannot reach her with FF_HANDLERRESPONSE_NEXT_HANDLER because the default handler will throw an exception");
+                        STLSOFT_SUPPRESS_UNUSED(hr);
+
+                        return process_illformed_action_(fmt, cchFmt, formatElements, numFormatElements, illformedAction);
                 }
                 break;
         }
@@ -836,47 +1177,48 @@ FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
             FASTFORMAT_COVER_MARK_ENTRY();
 
             // Handle "malformed"
-            if(NULL != handler_info.handler)
-            {
-                FASTFORMAT_COVER_MARK_ENTRY();
+            FASTFORMAT_COVER_MARK_ENTRY();
 
-                int res = (*handler_info.handler)(handler_info.param, FF_PARSECODE_INCOMPLETEREPLACEMENT, fmt, cchFmt, num, p0, 0, -1, NULL, 0, NULL);
+            ff_parse_code_t const       code            =   FF_PARSECODE_INCOMPLETEREPLACEMENT;
+            ff_string_slice_t const     format          =   { cchFmt, fmt };
+            ff_string_slice_t const     defect          =   { size_t(p1 - p0), p0 };
+            ff_parse_action_t           illformedAction =   ff_parse_action_t();
 
-                if(0 == res)
-                {
-                    FASTFORMAT_COVER_MARK_ENTRY();
-
-                    return (num & 0xffff) | ((numRes & 0xffff) << 16);
-                }
-                else if(res < 0)
-                {
-                    FASTFORMAT_COVER_MARK_ENTRY();
-
-                    handler_info.handler = NULL;
-                }
-            }
+            ff_handler_response_t const hr              =   handlers.invoke(
+                                                                    code
+                                                                ,   format
+                                                                ,   defect
+                                                                ,   &illformedAction
+                                                                );
 
             FASTFORMAT_COVER_MARK_ENTRY();
+
+            FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_RETURN_API(FF_HANDLERRESPONSE_CONTINUE_PROCESSING == hr, "cannot reach her with FF_HANDLERRESPONSE_NEXT_HANDLER because the default handler will throw an exception");
+            STLSOFT_SUPPRESS_UNUSED(hr);
+
+            return process_illformed_action_(fmt, cchFmt, formatElements, numFormatElements, illformedAction);
         }
+        else
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
 
-        FASTFORMAT_COVER_MARK_ENTRY();
+            FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_API(num < numFormatElements, "insufficient replacement storage provided to fastformat_parseFormat(); recode using fastformat_calculateNumberOfRequiredReplacements()");
 
-        FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_API(num < numFormatElements, "insufficient replacement storage provided to fastformat_parseFormat(); recode using fastformat_calculateNumberOfRequiredReplacements()");
+            formatElements[num].ptr   =   p0;
+            formatElements[num].len   =   static_cast<size_t>(p1 - p0);
+            formatElements[num].index =   FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_LITERAL_;
 
-        formatElements[num].ptr   =   p0;
-        formatElements[num].len   =   static_cast<size_t>(p1 - p0);
-        formatElements[num].index =   FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_LITERAL_;
-
-        ++num;
-        ++numRes;
+            ++num;
+            ++numRes;
+        }
     }
 
-    return (num & 0xffff) | ((numRes & 0xffff) << 16);
+    return derive_parse_result_(num, numRes);
 }
 
 FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
     string_slice_t*                 resultElements      // Pointer to receiver of result slices
-,   format_element_t const*         formatElements      // Pointer to format elements
+,   ff_format_element_t const*      formatElements      // Pointer to format elements
 ,   size_t                          numFormatElements
 ,   string_slice_t const*           arguments           // Pointer to arguments
 ,   size_t                          numArguments
@@ -892,10 +1234,11 @@ FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_API((NULL != formatElements || 0 == numFormatElements), "pattern elements may not be null, unless numFormatElements is 0");
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_API((0 != numArguments) == (NULL != arguments), "arguments can only be null when there are 0 arguments, and vice versa");
 
-    mismatched_handler_info_t   handler_info        =   { handler, param };
+    mismatchedHandlers_t        handlers(handler, param);
+    bool                        successCallRequired =   false;
+
     size_t                      cchTotal            =   0;
     string_slice_t              defaultSlice        =   {   0,  NULL    };
-    int                         handlerReturned     =   0;
     string_slice_t* const       resultElementsBase  =   resultElements;
 
 #ifndef FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS
@@ -904,26 +1247,6 @@ FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
     std::fill(argumentReferenceFlags.begin(), argumentReferenceFlags.end(), 0);
 #endif /* !FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS */
 
-    if(NULL == handler_info.handler)
-    {
-        FASTFORMAT_COVER_MARK_ENTRY();
-
-        handler_info = fastformat_getThreadMismatchedHandler();
-    }
-
-    if(NULL == handler_info.handler)
-    {
-        FASTFORMAT_COVER_MARK_ENTRY();
-
-        handler_info = fastformat_getProcessMismatchedHandler();
-    }
-
-    if(NULL == handler_info.handler)
-    {
-        FASTFORMAT_COVER_MARK_ENTRY();
-
-    handler_info = fastformat_getDefaultMismatchedHandler();
-    }
 
     // Process every format element:
     //
@@ -934,7 +1257,7 @@ FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        format_element_t const& pattern_element = formatElements[i];
+        ff_format_element_t const& pattern_element = formatElements[i];
 
         if(FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_LITERAL_ == pattern_element.index)
         {
@@ -973,39 +1296,52 @@ FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
 
                 FASTFORMAT_COVER_MARK_ENTRY();
 
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL != handler_info.handler);
+                ff_replacement_code_t const code                        =   FF_REPLACEMENTCODE_MISSING_ARGUMENT;
+                int const                   mismatchedParameterIndex    =   pattern_element.index;
+                ff_replacement_action_t     missingArgumentAction       =   FF_REPLACEMENTACTION_USE_BLANK;
+                ff_string_slice_t* const    slice                       =   &defaultSlice;
 
-                if(handlerReturned >= 0)
-                {
-                    handlerReturned = (*handler_info.handler)(handler_info.param, FF_REPLACEMENTCODE_MISSING_ARGUMENT, numArguments, pattern_element.index, &defaultSlice, NULL, 0, NULL);
-                }
+                ff_handler_response_t const hr                          =   handlers.invoke(
+                                                                                    code
+                                                                                ,   numArguments
+                                                                                ,   mismatchedParameterIndex
+                                                                                ,   &missingArgumentAction
+                                                                                ,   slice
+                                                                                );
+
+                STLSOFT_SUPPRESS_UNUSED(hr);
+
+                FASTFORMAT_COVER_MARK_ENTRY();
 
                 // Handler has returned, so no exception has been thrown
-                //
-                // If 0, insert the pattern_element, otherwise insert the
-                // default slice.
 
-                if(handlerReturned != 0)
+                switch(missingArgumentAction)
                 {
-                    FASTFORMAT_COVER_MARK_ENTRY();
+                    case    FF_REPLACEMENTACTION_USE_SLICE_VALUE:
 
-#if 0
-                    // We cannot take the default slice, because the application has
-                    // not provided any space for us to write it, so ...
-                    resultElements->len  =   defaultSlice.len;
-                    resultElements->ptr  =   defaultSlice.ptr;
-#else /* ? 0 */
-                    // ... we skip it (by decrementing in anticipation of the increment
-                    // as we loop round again).
-                    --resultElements;
-#endif /* 0 */
-                }
-                else
-                {
-                    FASTFORMAT_COVER_MARK_ENTRY();
+                        resultElements->len =   defaultSlice.len;
+                        resultElements->ptr =   defaultSlice.ptr;
 
-                    resultElements->len  =   pattern_element.len;
-                    resultElements->ptr  =   pattern_element.ptr;
+                        successCallRequired =   true;
+
+                        FASTFORMAT_COVER_MARK_ENTRY();
+                        break;
+
+                    default:
+                        FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("invalid value for missing argument action");
+                        // fall through
+                    case    FF_REPLACEMENTACTION_USE_BLANK:
+                        --resultElements;
+
+                        FASTFORMAT_COVER_MARK_ENTRY();
+                        break;
+
+                    case    FF_REPLACEMENTACTION_RETAIN_PARAMETER_LITERAL:
+                        resultElements->len =   pattern_element.len;
+                        resultElements->ptr =   pattern_element.ptr;
+
+                        FASTFORMAT_COVER_MARK_ENTRY();
+                        break;
                 }
             }
             else
@@ -1024,6 +1360,7 @@ FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
                     {
                         default:
                             FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("invalid enumerator");
+                            // fall through
                         case    FASTFORMAT_ALIGNMENT_NONE:
                         case    FASTFORMAT_ALIGNMENT_RIGHT:
                             resultElements->ptr = src_slice.ptr + (src_slice.len - pattern_element.maxWidth);
@@ -1045,6 +1382,7 @@ FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
                     {
                         default:
                             FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("invalid enumerator");
+                            // fall through
                         case    FASTFORMAT_ALIGNMENT_NONE:
                         case    FASTFORMAT_ALIGNMENT_RIGHT:
                             // insert a spaces slice before the source slice
@@ -1115,19 +1453,37 @@ FASTFORMAT_CALL(size_t) fastformat_fillReplacements(
     {
         int firstMismatchedReplacementIndex = static_cast<int>(it - argumentReferenceFlags.begin());
 
-        FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL != handler_info.handler);
+        ff_replacement_code_t const code                        =   FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT;
+        int const                   mismatchedParameterIndex    =   firstMismatchedReplacementIndex;
+        ff_replacement_action_t     dummyMissingArgumentAction  =   ff_replacement_action_t();
+        ff_string_slice_t* const    slice                       =   NULL;
 
-        (*handler_info.handler)(handler_info.param, FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT, numArguments, firstMismatchedReplacementIndex, NULL, NULL, 0, NULL);
+        handlers.invoke(
+                code
+            ,   numArguments
+            ,   mismatchedParameterIndex
+            ,   &dummyMissingArgumentAction
+            ,   slice
+            );
     }
 #endif /* !FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS */
 
-    if(0 != handlerReturned)
+    if(successCallRequired)
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL != handler_info.handler);
+        ff_replacement_code_t const code                        =   FF_REPLACEMENTCODE_SUCCESS;
+        int const                   mismatchedParameterIndex    =   -1;
+        ff_replacement_action_t     dummyMissingArgumentAction  =   ff_replacement_action_t();
+        ff_string_slice_t* const    slice                       =   NULL;
 
-        (*handler_info.handler)(handler_info.param, FF_REPLACEMENTCODE_SUCCESS, numArguments, -1, NULL, NULL, 0, NULL);
+        handlers.invoke(
+                code
+            ,   numArguments
+            ,   mismatchedParameterIndex
+            ,   &dummyMissingArgumentAction
+            ,   slice
+            );
     }
 
     *pnumResultElements = static_cast<size_t>(resultElements - resultElementsBase);
@@ -1162,7 +1518,6 @@ FASTFORMAT_CALL(size_t) fastformat_accumulateSliceLengths(
     return total;
 #endif /* compiler */
 }
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Implementation Functions
@@ -1217,31 +1572,57 @@ void ximpl_core::fastformat_impl_replacements_uninit(void* token)
 
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != token, "token must not be null");
 
-    delete static_cast<replacements_context_t_*>(token);
+    replacements_context_t_* const ctxt = static_cast<replacements_context_t_*>(token);
+
+    delete ctxt;
 }
 
-ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_getDefaultMismatchedHandler(void* token)
+ff_illformedHandler_info_t ximpl_core::fastformat_impl_handlers_getDefaultIllformedHandler(void* token)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL(NULL != token, "token must not be null");
     STLSOFT_SUPPRESS_UNUSED(token);
 
-    ff_mismatched_handler_info_t r;
+    ff_illformedHandler_info_t r;
 
-    r.param   = NULL;
+    r.param     =   NULL;
 
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT
-    r.handler = fastformat_stock_mismatchedHandler_throw;
+    r.handler   =   fastformat_stock_illformedHandler_throw;
+
+    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_illformedHandler_ignore);
+#else /* ? STLSOFT_CF_EXCEPTION_SUPPORT */
+    r.handler   =   fastformat_stock_illformedHandler_ignore;
+
+    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_illformedHandler_throw);
+#endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
+
+    return r;
+}
+
+ff_mismatchedHandler_info_t ximpl_core::fastformat_impl_handlers_getDefaultMismatchedHandler(void* token)
+{
+    FASTFORMAT_COVER_MARK_ENTRY();
+
+    FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL(NULL != token, "token must not be null");
+    STLSOFT_SUPPRESS_UNUSED(token);
+
+    ff_mismatchedHandler_info_t r;
+
+    r.param     =   NULL;
+
+#ifdef STLSOFT_CF_EXCEPTION_SUPPORT
+    r.handler   =   fastformat_stock_mismatchedHandler_throw;
 
     STLSOFT_SUPPRESS_UNUSED(fastformat_stock_mismatchedHandler_ignore);
 #else /* ? STLSOFT_CF_EXCEPTION_SUPPORT */
-    r.handler = fastformat_stock_mismatchedHandler_ignore;
+    r.handler   =   fastformat_stock_mismatchedHandler_ignore;
 
     STLSOFT_SUPPRESS_UNUSED(fastformat_stock_mismatchedHandler_throw);
 #endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
 
-  return r;
+    return r;
 }
 
 ff_char_t const* ximpl_core::fastformat_impl_replacements_getSpaces(void* token, size_t len)

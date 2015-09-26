@@ -7,22 +7,22 @@
 CFG=test.scratch.ff_test_1 - Win32 Debug pseudoUNIX
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.scratch.ff_test_1.mak".
-!MESSAGE 
+!MESSAGE
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.scratch.ff_test_1.mak" CFG="test.scratch.ff_test_1 - Win32 Debug pseudoUNIX"
-!MESSAGE 
+!MESSAGE
 !MESSAGE Possible choices for configuration are:
-!MESSAGE 
+!MESSAGE
 !MESSAGE "test.scratch.ff_test_1 - Win32 Release" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.ff_test_1 - Win32 Debug" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.ff_test_1 - Win32 Debug Multithreaded" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.ff_test_1 - Win32 Debug Multithreaded DLL" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.ff_test_1 - Win32 Debug pseudoUNIX" (based on "Win32 (x86) Application")
-!MESSAGE 
+!MESSAGE
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
@@ -73,7 +73,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -100,8 +100,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugMT"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -129,8 +129,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugDLL"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_AFXDLL" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_AFXDLL" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -158,8 +158,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugUNIX"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "UNIX" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(OPENRJ_ROOT)/include" /D "UNIX" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -173,7 +173,7 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /version:1.0 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.ff_test_1.debug.exe" /pdbtype:sept /libpath:"$(UNIXEM)/lib" /libpath:"../../../../lib" /libpath:"$(OPENRJ_ROOT)/lib"
 # SUBTRACT LINK32 /pdb:none
 
-!ENDIF 
+!ENDIF
 
 # Begin Target
 
@@ -241,6 +241,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\c_string.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\capabilities.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\char_traits.hpp"
 # End Source File
 # Begin Source File
@@ -250,6 +254,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\collections\util\collections.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
 # End Source File
 # Begin Source File
 
@@ -273,11 +281,27 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\util\integral_printf_traits.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
 # End Source File
 # Begin Source File
 
@@ -289,7 +313,15 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\library_discriminator.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\util\meta_.hpp"
 # End Source File
 # Begin Source File
 
@@ -370,10 +402,6 @@ SOURCE="$(STLSOFT)\include\stlsoft\containers\static_array.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std_swap.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
 # End Source File
 # Begin Source File
 
@@ -545,30 +573,6 @@ SOURCE="$(STLSOFT)\include\winstl\winstl.h"
 # End Source File
 # End Group
 # End Group
-# Begin Group "Open-RJ Header Files"
-
-# PROP Default_Filter ""
-# Begin Group "Open-RJ/C++"
-
-# PROP Default_Filter ""
-# Begin Source File
-
-SOURCE="$(OPENRJ_ROOT)\include\openrj\cpp\openrj.hpp"
-# End Source File
-# End Group
-# Begin Source File
-
-SOURCE="$(OPENRJ_ROOT)\include\openrj\implicit_link.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(OPENRJ_ROOT)\include\openrj\openrj.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(OPENRJ_ROOT)\include\openrj\openrj_assert.h"
-# End Source File
-# End Group
 # Begin Group "FastFormat Header Files"
 
 # PROP Default_Filter ""
@@ -582,7 +586,23 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\quality\contract.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\quality\cover.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\CString.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\exceptions.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_integers.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
 # End Source File
 # Begin Source File
 
@@ -622,7 +642,23 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\bundles\openrj_bundle.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\bundles\properties_bundle.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\shim_macros.h"
 # End Source File
 # Begin Source File
 
@@ -630,10 +666,46 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\standard_flags.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\bundles\winini_bundle.hpp"
 # End Source File
 # End Group
-# Begin Group "UNIXEm Header Files"
+# Begin Group "Open-RJ Header Files"
+
+# PROP Default_Filter ""
+# Begin Group "Open-RJ/C++"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="$(OPENRJ_ROOT)\include\openrj\cpp\openrj.hpp"
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE="$(OPENRJ_ROOT)\include\openrj\implicit_link.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(OPENRJ_ROOT)\include\openrj\openrj.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(OPENRJ_ROOT)\include\openrj\openrj_assert.h"
+# End Source File
+# End Group
+# Begin Group "UNIXem Header Files"
 
 # PROP Default_Filter ""
 # Begin Source File

@@ -4,11 +4,11 @@
  * Purpose:     Common typedefs for integral inserters
  *
  * Created:     26th May 2009
- * Updated:     7th December 2010
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -109,7 +109,7 @@ typedef stlsoft::basic_shim_string<ff_char_t, 20>       ff_to_i_r_t_;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

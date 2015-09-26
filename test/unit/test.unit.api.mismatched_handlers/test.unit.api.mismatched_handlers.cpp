@@ -64,33 +64,20 @@
 
 #ifndef XTESTS_TEST_FN_POINTER_EQUAL
 
-    typedef int (*mismatched_pfn_t_)(
-        void*                   /* param */
-    ,   fastformat::ff_replacement_code_t   /* code */
-    ,   size_t                  /* numParameters */
-    ,   int                     /* parameterIndex */
-    ,   fastformat::ff_string_slice_t*      /* slice */
-    ,   void*                   /* reserved0 */
-    ,   size_t                  /* reserved1 */
-    ,   void*                   /* reserved2 */
-    );
-
 union param
 {
-    param(mismatched_pfn_t_ f)
+#if !defined(FASTFORMAT_NO_NAMESPACE)
+private:
+    typedef fastformat::fastformat_mismatchedHandler_t      fastformat_mismatchedHandler_t;
+public:
+#endif /* !FASTFORMAT_NO_NAMESPACE */
+
+    param(fastformat_mismatchedHandler_t f)
         : f(f)
     {}
-#if 0
-    param(void const*)
-        : f(0)
-    {}
-    param(int)
-        : f(0)
-    {}
-#endif /* 0 */
 
-    mismatched_pfn_t_   f;
-    void const*         p;
+    fastformat_mismatchedHandler_t  f;
+    void const*                     p;
 };
 
 inline int compare_function_pointers(param p1, param p2, XTESTS_NS_C_QUAL(xtests_comparison_t) comparison, char const* file, int line)
@@ -198,55 +185,51 @@ namespace
 {
     using   fastformat::ff_char_t;
     using   fastformat::ff_string_slice_t;
+    using   fastformat::ff_replacement_action_t;
     using   fastformat::ff_replacement_code_t;
-    using   fastformat::ff_mismatched_handler_info_t;
+    using   fastformat::ff_handler_response_t;
+    using   fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
+    using   fastformat::FF_HANDLERRESPONSE_NEXT_HANDLER;
+    using   fastformat::ff_mismatchedHandler_info_t;
     using   fastformat::fastformat_getProcessMismatchedHandler;
     using   fastformat::fastformat_getThreadMismatchedHandler;
     using   fastformat::fastformat_setProcessMismatchedHandler;
     using   fastformat::fastformat_setThreadMismatchedHandler;
 
 
-    int FASTFORMAT_CALLCONV mismatched_handler_1_cancel(
-        void*                   /* param */
-    ,   ff_replacement_code_t   /* code */
-    ,   size_t                  /* numParameters */
-    ,   int                     /* parameterIndex */
-    ,   ff_string_slice_t*      /* slice */
-    ,   void*                   /* reserved0 */
-    ,   size_t                  /* reserved1 */
-    ,   void*                   /* reserved2 */
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV mismatched_handler_1_cancel(
+        void*                       /* param */
+    ,   ff_replacement_code_t       /* code */
+    ,   size_t                      /* numArguments */
+    ,   int                         /* mismatchedParameterIndex */
+    ,   ff_replacement_action_t*    /* missingArgumentAction */
+    ,   ff_string_slice_t*          /* slice */
+    ,   void*                       /* reserved0 */
+    ,   size_t                      /* reserved1 */
+    ,   void*                       /* reserved2 */
+    ,   int                         /* reserved3 */
     )
     {
-        return 0;
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
-#if 0
-    int FASTFORMAT_CALLCONV mismatched_handler_1_continue_once(
-        void*                   /* param */
-    ,   ff_replacement_code_t   /* code */
-    ,   size_t                  /* numParameters */
-    ,   int                     /* parameterIndex */
-    ,   ff_string_slice_t*      /* slice */
-    ,   void*                   /* reserved0 */
-    ,   size_t                  /* reserved1 */
-    ,   void*                   /* reserved2 */
+
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV mismatched_handler_1_continue(
+        void*                       /* param */
+    ,   ff_replacement_code_t       /* code */
+    ,   size_t                      /* numArguments */
+    ,   int                         /* mismatchedParameterIndex */
+    ,   ff_replacement_action_t*    /* missingArgumentAction */
+    ,   ff_string_slice_t*          /* slice */
+    ,   void*                       /* reserved0 */
+    ,   size_t                      /* reserved1 */
+    ,   void*                       /* reserved2 */
+    ,   int                         /* reserved3 */
     )
     {
-        return +1;
+        return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
     }
-    int FASTFORMAT_CALLCONV mismatched_handler_1_continue_always(
-        void*                   /* param */
-    ,   ff_replacement_code_t   /* code */
-    ,   size_t                  /* numParameters */
-    ,   int                     /* parameterIndex */
-    ,   ff_string_slice_t*      /* slice */
-    ,   void*                   /* reserved0 */
-    ,   size_t                  /* reserved1 */
-    ,   void*                   /* reserved2 */
-    )
-    {
-        return -1;
-    }
-#endif /* 0 */
 
 
 static void test_call_to_getProcessMismatchedHandler()
@@ -265,7 +248,7 @@ static void test_call_to_getThreadMismatchedHandler()
 
 static void test_return_from_getProcessMismatchedHandler()
 {
-    ff_mismatched_handler_info_t    info = fastformat_getProcessMismatchedHandler();
+    ff_mismatchedHandler_info_t    info = fastformat_getProcessMismatchedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, info.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
@@ -273,37 +256,28 @@ static void test_return_from_getProcessMismatchedHandler()
 
 static void test_return_from_getThreadMismatchedHandler()
 {
-    ff_mismatched_handler_info_t    info = fastformat_getThreadMismatchedHandler();
-
-#ifdef FASTFORMAT_MT
+    ff_mismatchedHandler_info_t    info = fastformat_getThreadMismatchedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, info.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
-
-#else /* ? FASTFORMAT_MT */
-
-    XTESTS_TEST_FN_POINTER_EQUAL(NULL, info.handler);
-    XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
-
-#endif /* FASTFORMAT_MT */
 }
 
 static void test_setProcessMismatchedHandler()
 {
-	int i;
+    int i;
     void* const param = &i;
 
-    ff_mismatched_handler_info_t    original = fastformat_getProcessMismatchedHandler();
+    ff_mismatchedHandler_info_t    original = fastformat_getProcessMismatchedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, original.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
 
-    ff_mismatched_handler_info_t    previous = fastformat_setProcessMismatchedHandler(mismatched_handler_1_cancel, param);
+    ff_mismatchedHandler_info_t    previous = fastformat_setProcessMismatchedHandler(ff_mismatchedHandler_info_t::make(mismatched_handler_1_cancel, param));
 
     XTESTS_TEST_FN_POINTER_EQUAL(original.handler, previous.handler);
     XTESTS_TEST_POINTER_EQUAL(original.param, previous.param);
 
-    ff_mismatched_handler_info_t    replaced = fastformat_getProcessMismatchedHandler();
+    ff_mismatchedHandler_info_t    replaced = fastformat_getProcessMismatchedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(mismatched_handler_1_cancel, replaced.handler);
     XTESTS_TEST_POINTER_EQUAL(param, replaced.param);
@@ -311,29 +285,20 @@ static void test_setProcessMismatchedHandler()
 
 static void test_setThreadMismatchedHandler()
 {
-	int i;
+    int i;
     void* const param = &i;
 
-    ff_mismatched_handler_info_t    original = fastformat_getThreadMismatchedHandler();
-
-#ifdef FASTFORMAT_MT
+    ff_mismatchedHandler_info_t    original = fastformat_getThreadMismatchedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, original.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
 
-#else /* ? FASTFORMAT_MT */
-
-    XTESTS_TEST_FN_POINTER_EQUAL(NULL, original.handler);
-    XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
-
-#endif /* FASTFORMAT_MT */
-
-    ff_mismatched_handler_info_t    previous = fastformat_setThreadMismatchedHandler(mismatched_handler_1_cancel, param);
+    ff_mismatchedHandler_info_t    previous = fastformat_setThreadMismatchedHandler(ff_mismatchedHandler_info_t::make(mismatched_handler_1_cancel, param));
 
     XTESTS_TEST_FN_POINTER_EQUAL(original.handler, previous.handler);
     XTESTS_TEST_POINTER_EQUAL(original.param, previous.param);
 
-    ff_mismatched_handler_info_t    replaced = fastformat_getThreadMismatchedHandler();
+    ff_mismatchedHandler_info_t    replaced = fastformat_getThreadMismatchedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(mismatched_handler_1_cancel, replaced.handler);
     XTESTS_TEST_POINTER_EQUAL(param, replaced.param);

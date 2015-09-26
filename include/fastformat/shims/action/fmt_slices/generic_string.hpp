@@ -4,7 +4,7 @@
  * Purpose:     FastFormat formatting action shim for generic string types.
  *
  * Created:     19th September 2006
- * Updated:     7th March 2010
+ * Updated:     11th November 2013
  *
  * Thanks:      To Ric Parkin for pointing out the ramifications of 
  *              21.3.5.2/6 and 21.3.1/6 before I change the definition of
@@ -12,7 +12,7 @@
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -59,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MAJOR     3
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      21
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -147,7 +147,7 @@ inline S& fmt_slices(
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

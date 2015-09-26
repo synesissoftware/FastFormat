@@ -4,7 +4,7 @@
  * Purpose:     Implicit linking for the FastFormat API
  *
  * Created:     30th January 2007
- * Updated:     26th September 2015
+ * Updated:     21st August 2015
  *
  * Home:        http://fastformat.org/
  *

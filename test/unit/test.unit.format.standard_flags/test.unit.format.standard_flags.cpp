@@ -36,7 +36,12 @@
 
 /* STLSoft header files */
 #include <stlsoft/stlsoft.h>
-#include <stlsoft/containers/frequency_map.hpp>
+#if defined(STLSOFT_VER) && \
+    STLSOFT_VER >= 0x010c0000
+# include <stlsoft/container/frequency_map.hpp>
+#else
+# include <stlsoft/containers/frequency_map.hpp>
+#endif
 
 /* Standard C header files */
 #include <stdio.h>

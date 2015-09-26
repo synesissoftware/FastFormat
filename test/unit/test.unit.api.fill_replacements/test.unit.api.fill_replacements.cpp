@@ -73,6 +73,25 @@ namespace
 } // anonymous namespace
 
 /* /////////////////////////////////////////////////////////////////////////
+ * Helper functions
+ */
+
+int ff_setup(void*);
+int ff_teardown(void*);
+
+int ff_setup(void*)
+{
+    return fastformat::fastformat_init();
+}
+
+int ff_teardown(void*)
+{
+    fastformat::fastformat_uninit();
+
+    return 0;
+}
+
+/* /////////////////////////////////////////////////////////////////////////
  * Main
  */
 
@@ -83,7 +102,15 @@ int main(int argc, char **argv)
 
     XTESTS_COMMANDLINE_PARSEVERBOSITY(argc, argv, &verbosity);
 
-    if(XTESTS_START_RUNNER("test.unit.api.fill_replacements", verbosity))
+    if( XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM_AND_FLAGS_AND_SETUP_FNS(
+            "test.unit.api.fill_replacements"
+        ,   verbosity
+        ,   NULL, NULL
+        ,   NULL
+        ,   xtests::c::xtestsReportOnlyNonEmptyCases
+        ,   ff_setup, ff_teardown, NULL
+        )
+    )
     {
         XTESTS_RUN_CASE(test_1_0);
         XTESTS_RUN_CASE(test_1_1);
@@ -120,22 +147,27 @@ int main(int argc, char **argv)
 
 namespace
 {
+    using fastformat::ff_handler_response_t;
     using fastformat::ff_string_slice_t;
+    using fastformat::ff_replacement_action_t;
     using fastformat::ff_replacement_code_t;
     using fastformat::fastformat_fillReplacements;
 
-    int FASTFORMAT_CALLCONV ignore_mismatched_handler(
-        void*                   /* param */
-    ,   ff_replacement_code_t   /* code */
-    ,   size_t                  /* numParameters */
-    ,   int                     /* parameterIndex */
-    ,   ff_string_slice_t*      /* slice */
-    ,   void*                   /* reserved0 */
-    ,   size_t                  /* reserved1 */
-    ,   void*                   /* reserved2 */
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV ignore_mismatched_handler(
+        void*                       /* param */
+    ,   ff_replacement_code_t       /* code */
+    ,   size_t                      /* numArguments */
+    ,   int                         /* mismatchedParameterIndex */
+    ,   ff_replacement_action_t*    /* missingArgumentAction */
+    ,   ff_string_slice_t*          /* slice */
+    ,   void*                       /* reserved0 */
+    ,   size_t                      /* reserved1 */
+    ,   void*                       /* reserved2 */
+    ,   int                         /* reserved3 */
     )
     {
-        return 0;
+        return fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
     }
 
     using   fastformat::ff_char_t;

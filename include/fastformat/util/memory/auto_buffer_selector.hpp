@@ -5,11 +5,11 @@
  *              specialisations.
  *
  * Created:     22nd April 2008
- * Updated:     13th September 2010
+ * Updated:     18th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -57,8 +57,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MINOR     0
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      14
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  3
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -79,9 +79,15 @@
 #endif /* compiler */
 
 #ifndef FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED
-# ifndef STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR
-#  include <stlsoft/memory/allocator_selector.hpp>
-# endif /* !STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR */
+# ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#  ifndef STLSOFT_INCL_STLSOFT_MEMORY_UTIL_HPP_ALLOCATOR_SELECTOR
+#   include <stlsoft/memory/util/allocator_selector.hpp>
+#  endif /* !STLSOFT_INCL_STLSOFT_MEMORY_UTIL_HPP_ALLOCATOR_SELECTOR */
+# else /* ? STLSoft 1.12+ */
+#  ifndef STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR
+#   include <stlsoft/memory/allocator_selector.hpp>
+#  endif /* !STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR */
+# endif /* STLSoft 1.12+ */
 #endif /* !FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED */
 #ifndef STLSOFT_INCL_STLSOFT_MEMORY_HPP_AUTO_BUFFER
 # include <stlsoft/memory/auto_buffer.hpp>
@@ -152,7 +158,7 @@ struct auto_buffer_selector
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

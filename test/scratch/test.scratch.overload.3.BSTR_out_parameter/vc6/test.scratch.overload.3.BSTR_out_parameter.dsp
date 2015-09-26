@@ -17,9 +17,9 @@ CFG=test.scratch.overload.3.BSTR_out_parameter - Win32 Debug Multithreaded DLL
 !MESSAGE 
 !MESSAGE Possible choices for configuration are:
 !MESSAGE 
-!MESSAGE "test.scratch.overload.3.BSTR_out_parameter - Win32 Release" (based on "Win32 (x86) Application")
+!MESSAGE "test.scratch.overload.3.BSTR_out_parameter - Win32 Release Multithreaded DLL" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug" (based on "Win32 (x86) Application")
-!MESSAGE "test.scratch.overload.3.BSTR_out_parameter - Win32 Unicode Debug" (based on "Win32 (x86) Application")
+!MESSAGE "test.scratch.overload.3.BSTR_out_parameter - Win32 Unicode Debug Multithreaded" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug Multithreaded" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug Multithreaded DLL" (based on "Win32 (x86) Application")
 !MESSAGE 
@@ -32,9 +32,9 @@ CPP=cl.exe
 MTL=midl.exe
 RSC=rc.exe
 
-!IF  "$(CFG)" == "test.scratch.overload.3.BSTR_out_parameter - Win32 Release"
+!IF  "$(CFG)" == "test.scratch.overload.3.BSTR_out_parameter - Win32 Release Multithreaded DLL"
 
-# PROP BASE Use_MFC 1
+# PROP BASE Use_MFC 2
 # PROP BASE Use_Debug_Libraries 0
 # PROP BASE Output_Dir "Release"
 # PROP BASE Intermediate_Dir "Release"
@@ -45,8 +45,8 @@ RSC=rc.exe
 # PROP Intermediate_Dir "Release"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /YX /FD /c
-# ADD CPP /nologo /MT /W3 /GX /O2 /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "NDEBUG" /D "STRICT" /D "_CONSOLE" /D "_MBCS" /YX /FD /c
+# ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "WIN32" /D "_AFXDLL" /D "NDEBUG" /D "STRICT" /D "_CONSOLE" /D "_MBCS" /YX /FD /c
+# ADD CPP /nologo /MD /W3 /GX /O2 /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_AFXDLL" /D "NDEBUG" /D "STRICT" /D "_CONSOLE" /D "_MBCS" /YX /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
@@ -56,7 +56,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
-# ADD LINK32 kernel32.lib advapi32.lib user32.lib /nologo /version:0.1 /subsystem:console /map /machine:I386 /out:"Release/test.scratch.overload.3.BSTR_out_parameter.vc6.exe" /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
+# ADD LINK32 kernel32.lib advapi32.lib user32.lib /nologo /version:0.1 /subsystem:console /map /machine:I386 /out:"Release/test.scratch.overload.3.BSTR_out_parameter.vc6.exe" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT LINK32 /pdb:none
 
 !ELSEIF  "$(CFG)" == "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug"
@@ -73,7 +73,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_AFXDLL" /FR /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_AFXDLL" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -83,10 +83,10 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.debug.exe" /pdbtype:sept /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
+# ADD LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT LINK32 /pdb:none
 
-!ELSEIF  "$(CFG)" == "test.scratch.overload.3.BSTR_out_parameter - Win32 Unicode Debug"
+!ELSEIF  "$(CFG)" == "test.scratch.overload.3.BSTR_out_parameter - Win32 Unicode Debug Multithreaded"
 
 # PROP BASE Use_MFC 1
 # PROP BASE Use_Debug_Libraries 1
@@ -100,8 +100,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "UDebug"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_UNICODE" /D "UNICODE" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_UNICODE" /D "UNICODE" /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_UNICODE" /D "UNICODE" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -110,14 +110,14 @@ BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
-# ADD BASE LINK32 kernel32.lib advapi32.lib user32.lib /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.debug.exe" /pdbtype:sept /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
+# ADD BASE LINK32 kernel32.lib advapi32.lib user32.lib /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT BASE LINK32 /pdb:none
-# ADD LINK32 kernel32.lib advapi32.lib user32.lib /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.widestring.debug.exe" /pdbtype:sept /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
+# ADD LINK32 kernel32.lib advapi32.lib user32.lib /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.widestring.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT LINK32 /pdb:none
 
 !ELSEIF  "$(CFG)" == "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug Multithreaded"
 
-# PROP BASE Use_MFC 2
+# PROP BASE Use_MFC 1
 # PROP BASE Use_Debug_Libraries 1
 # PROP BASE Output_Dir "DebugMT"
 # PROP BASE Intermediate_Dir "DebugMT"
@@ -129,8 +129,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugMT"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_AFXDLL" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_AFXDLL" /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG" /d "_AFXDLL"
@@ -139,14 +139,14 @@ BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
-# ADD BASE LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.debug.exe" /pdbtype:sept /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
+# ADD BASE LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT BASE LINK32 /pdb:none
-# ADD LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.dll.debug.exe" /pdbtype:sept /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib" /FORCE:MULTIPLE
+# ADD LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.dll.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib" /FORCE:MULTIPLE
 # SUBTRACT LINK32 /pdb:none
 
 !ELSEIF  "$(CFG)" == "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug Multithreaded DLL"
 
-# PROP BASE Use_MFC 1
+# PROP BASE Use_MFC 2
 # PROP BASE Use_Debug_Libraries 1
 # PROP BASE Output_Dir "DebugDLL"
 # PROP BASE Intermediate_Dir "DebugDLL"
@@ -158,8 +158,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugDLL"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(ACE)" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_AFXDLL" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(STLSOFT)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_AFXDLL" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_MBCS" /YX /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "WIN32" /D "_AFXDLL" /D "_DEBUG" /D "STRICT" /D "_CONSOLE" /D "_MBCS" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -168,18 +168,18 @@ BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
-# ADD BASE LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.mt.debug.exe" /pdbtype:sept /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib" /FORCE:MULTIPLE
+# ADD BASE LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.mt.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT BASE LINK32 /pdb:none
-# ADD LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.mt.debug.exe" /pdbtype:sept /libpath:"$(ACE)/ace" /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib" /FORCE:MULTIPLE
+# ADD LINK32 /nologo /version:0.1 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.overload.3.BSTR_out_parameter.vc6.mt.debug.exe" /pdbtype:sept /libpath:"$(FASTFORMAT_ROOT)/lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT LINK32 /pdb:none
 
 !ENDIF 
 
 # Begin Target
 
-# Name "test.scratch.overload.3.BSTR_out_parameter - Win32 Release"
+# Name "test.scratch.overload.3.BSTR_out_parameter - Win32 Release Multithreaded DLL"
 # Name "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug"
-# Name "test.scratch.overload.3.BSTR_out_parameter - Win32 Unicode Debug"
+# Name "test.scratch.overload.3.BSTR_out_parameter - Win32 Unicode Debug Multithreaded"
 # Name "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug Multithreaded"
 # Name "test.scratch.overload.3.BSTR_out_parameter - Win32 Debug Multithreaded DLL"
 # Begin Group "Source Files"
@@ -237,6 +237,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\c_string.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\capabilities.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\char_alt_traits.hpp"
 # End Source File
 # Begin Source File
@@ -277,7 +281,35 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\util\integral_printf_traits.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_character_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_signed_type.hpp"
 # End Source File
 # Begin Source File
 
@@ -289,7 +321,15 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\library_discriminator.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\util\meta_.hpp"
 # End Source File
 # Begin Source File
 
@@ -298,6 +338,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\minmax.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
 # End Source File
 # Begin Source File
 
@@ -322,6 +366,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\safestr.h"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\sap_cast.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
 # End Source File
 # Begin Source File
 
@@ -510,6 +558,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
 # End Source File
 # Begin Source File
@@ -534,11 +586,31 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\util\sinks\helpers.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\specification_defect_handling\ignore_missing_arguments_scope.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
 # End Source File
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\initialiser.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\specification_defect_handling\mismatched_arguments_scope_base.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
 # End Source File
 # Begin Source File
 
@@ -559,6 +631,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
 # End Source File
 # End Group
 # End Group

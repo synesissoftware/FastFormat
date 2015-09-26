@@ -4,7 +4,7 @@
  * Purpose:     FastFormat API exception classes.
  *
  * Created:     23rd October 2008
- * Updated:     28th October 2013
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      12
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -99,30 +99,30 @@ namespace fastformat
 
     /* Taxonomy: */
 
-    [std::runtime_error]
+  [std::runtime_error]
+    |
+    + - fastformat_exception
         |
-        + - fastformat_exception
+        + - bundle_exception
+        |
+        + - format_parsing_exception
+        |   |
+        |   + - illformed_format_exception
+        |
+        + - mismatched_replacements_exception
+        |   |
+        |   + - missing_argument_exception
+        |   |
+        |   + - unreferenced_argument_exception
+        |
+        + - sink_exception
+            |
+            + - sink_output_exception
                 |
-                + - bundle_exception
-                |
-                + - format_parsing_exception
-                |       |
-                |       + - illformed_format_exception
-                |
-                + - mismatched_replacements_exception
-                |       |
-                |       + - missing_argument_exception
-                |       |
-                |       + - unreferenced_argument_exception
-                |
-                + - sink_exception
-                        |
-                        + - sink_output_exception
-                                |
-                                .
-                                .
-                                .
-                                . . . sink-specific exception classes
+                .
+                .
+                .
+                . . . sink-specific exception classes
 #endif
 
 
@@ -342,13 +342,13 @@ protected: // Implementation
          *
          * \param message The message. May not be NULL
          * \param code The code associated with the condition
-         * \param numberOfReplacements The number of replacement elements
+         * \param numArguments The number of replacement elements
          * \param firstMismatchedReplacementIndex The index of the first mismatched replacement element
          */
-        explicit mismatched_replacements_exception(char const* message, ff_replacement_code_t code, int numberOfReplacements, int firstMismatchedReplacementIndex)
+        explicit mismatched_replacements_exception(char const* message, ff_replacement_code_t code, int numArguments, int firstMismatchedReplacementIndex)
             : parent_class_type(validate_message_(message))
             , code(code)
-            , numberOfReplacements(numberOfReplacements)
+            , numArguments(numArguments)
             , firstMismatchedReplacementIndex(firstMismatchedReplacementIndex)
         {
             FASTFORMAT_COVER_MARK_ENTRY();
@@ -361,8 +361,8 @@ protected: // Implementation
     public: // Attributes
         /// The code indicating the cause of the problem
         const ff_replacement_code_t     code;
-        /// The number of replacement parameters in the format
-        const int                       numberOfReplacements;
+        /// The number of arguments specified in the statement
+        const int                       numArguments;
         /// The index of the first mismatched replacement parameter
         const int                       firstMismatchedReplacementIndex;
     };
@@ -389,11 +389,11 @@ protected: // Implementation
              *
              * \param message The message. May not be NULL
              * \param code The code associated with the condition
-             * \param numberOfReplacements The number of replacement elements
+             * \param numArguments The number of replacement elements
              * \param firstMismatchedReplacementIndex The index of the first mismatched replacement element
              */
-            missing_argument_exception(char const* message, ff_replacement_code_t code, int numberOfReplacements, int firstMismatchedReplacementIndex)
-                : parent_class_type(validate_message_(message), code, numberOfReplacements, firstMismatchedReplacementIndex)
+            missing_argument_exception(char const* message, ff_replacement_code_t code, int numArguments, int firstMismatchedReplacementIndex)
+                : parent_class_type(validate_message_(message), code, numArguments, firstMismatchedReplacementIndex)
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
@@ -427,11 +427,11 @@ protected: // Implementation
              *
              * \param message The message. May not be NULL
              * \param code The code associated with the condition
-             * \param numberOfReplacements The number of replacement elements
+             * \param numArguments The number of replacement elements
              * \param firstMismatchedReplacementIndex The index of the first mismatched replacement element
              */
-            unreferenced_argument_exception(char const* message, ff_replacement_code_t code, int numberOfReplacements, int firstMismatchedReplacementIndex)
-                : parent_class_type(validate_message_(message), code, numberOfReplacements, firstMismatchedReplacementIndex)
+            unreferenced_argument_exception(char const* message, ff_replacement_code_t code, int numArguments, int firstMismatchedReplacementIndex)
+                : parent_class_type(validate_message_(message), code, numArguments, firstMismatchedReplacementIndex)
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
@@ -575,7 +575,7 @@ inline /* virtual */ sink_exception::~sink_exception() stlsoft_throw_0() /* = 0 
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for character types.
  *
  * Created:     25th November 2010
- * Updated:     1st December 2011
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010-2011, Matthew Wilson and Synesis Software
+ * Copyright (c) 2010-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_EDIT     4
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_EDIT     5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -315,7 +315,7 @@ inline size_t c_str_len(
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

@@ -64,18 +64,16 @@
 
 #ifndef XTESTS_TEST_FN_POINTER_EQUAL
 
-    typedef int (*illformed_pfn_t_)(
-        void*               /* param */
-    ,   fastformat::ff_parse_code_t     /* code */
-    ,   fastformat::ff_char_t const*    /* format */
-    ,   size_t              /* formatLen */
-    ,   size_t              /* replacementIndex */
-    ,   fastformat::ff_char_t const*    /* defect */
-    ,   size_t              /* defectLen */
-    ,   int                 /* parameterIndex */
-    ,   void*               /* reserved0 */
-    ,   size_t              /* reserved1 */
-    ,   void*               /* reserved2 */
+    typedef fastformat::ff_handler_response_t (FASTFORMAT_CALLCONV *illformed_pfn_t_)(
+        void*                           param
+    ,   fastformat::ff_parse_code_t     code
+    ,   fastformat::ff_string_slice_t   format
+    ,   fastformat::ff_string_slice_t   defect
+    ,   fastformat::ff_parse_action_t*  illformedAction
+    ,   void*                           reserved0
+    ,   size_t                          reserved1
+    ,   void*                           reserved2
+    ,   int                             reserved3
     );
 
 union param
@@ -91,6 +89,12 @@ union param
         : f(0)
     {}
 #endif /* 0 */
+    ~param()
+    {
+        fastformat::illformedHandler_t pfn = f;
+
+        STLSOFT_SUPPRESS_UNUSED(pfn);
+    }
 
     illformed_pfn_t_    f;
     void const*         p;
@@ -201,64 +205,50 @@ int main(int argc, char **argv)
 namespace
 {
     using   fastformat::ff_char_t;
+    using   fastformat::ff_handler_response_t;
+        using   fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
+        using   fastformat::FF_HANDLERRESPONSE_NEXT_HANDLER;
+    using   fastformat::ff_illformedHandler_info_t;
+    using   fastformat::ff_parse_action_t;
     using   fastformat::ff_parse_code_t;
-    using   fastformat::ff_illformed_handler_info_t;
+    using   fastformat::ff_string_slice_t;
     using   fastformat::fastformat_getProcessIllformedHandler;
     using   fastformat::fastformat_getThreadIllformedHandler;
     using   fastformat::fastformat_setProcessIllformedHandler;
     using   fastformat::fastformat_setThreadIllformedHandler;
 
 
-    int FASTFORMAT_CALLCONV illformed_handler_1_cancel(
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV illformedHandler_1_cancel(
         void*               /* param */
     ,   ff_parse_code_t     /* code */
-    ,   ff_char_t const*    /* format */
-    ,   size_t              /* formatLen */
-    ,   size_t              /* replacementIndex */
-    ,   ff_char_t const*    /* defect */
-    ,   size_t              /* defectLen */
-    ,   int                 /* parameterIndex */
+    ,   ff_string_slice_t   /* format */
+    ,   ff_string_slice_t   /* defect */
+    ,   ff_parse_action_t*  /* illformedAction */
     ,   void*               /* reserved0 */
     ,   size_t              /* reserved1 */
     ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
     )
     {
-        return 0;
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
-#if 0
-    int FASTFORMAT_CALLCONV illformed_handler_1_continue_once(
+
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV illformedHandler_1_continue(
         void*               /* param */
     ,   ff_parse_code_t     /* code */
-    ,   ff_char_t const*    /* format */
-    ,   size_t              /* formatLen */
-    ,   size_t              /* replacementIndex */
-    ,   ff_char_t const*    /* defect */
-    ,   size_t              /* defectLen */
-    ,   int                 /* parameterIndex */
+    ,   ff_string_slice_t   /* format */
+    ,   ff_string_slice_t   /* defect */
+    ,   ff_parse_action_t*  /* illformedAction */
     ,   void*               /* reserved0 */
     ,   size_t              /* reserved1 */
     ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
     )
     {
-        return +1;
+        return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
     }
-    int FASTFORMAT_CALLCONV illformed_handler_1_continue_always(
-        void*               /* param */
-    ,   ff_parse_code_t     /* code */
-    ,   ff_char_t const*    /* format */
-    ,   size_t              /* formatLen */
-    ,   size_t              /* replacementIndex */
-    ,   ff_char_t const*    /* defect */
-    ,   size_t              /* defectLen */
-    ,   int                 /* parameterIndex */
-    ,   void*               /* reserved0 */
-    ,   size_t              /* reserved1 */
-    ,   void*               /* reserved2 */
-    )
-    {
-        return -1;
-    }
-#endif /* 0 */
 
 
 static void test_0()
@@ -277,15 +267,15 @@ static void test_1()
 
 static void test_2()
 {
-    ff_illformed_handler_info_t info = fastformat_getProcessIllformedHandler();
+    ff_illformedHandler_info_t info = fastformat_getProcessIllformedHandler();
 
-    XTESTS_TEST_FN_POINTER_NOT_EQUAL(NULL, info.handler);
+    XTESTS_TEST_FN_POINTER_EQUAL(NULL, info.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
 }
 
 static void test_3()
 {
-    ff_illformed_handler_info_t info = fastformat_getThreadIllformedHandler();
+    ff_illformedHandler_info_t info = fastformat_getThreadIllformedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, info.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
@@ -295,19 +285,19 @@ static void test_4()
 {
     void*   param = &param;
 
-    ff_illformed_handler_info_t original = fastformat_getProcessIllformedHandler();
+    ff_illformedHandler_info_t original = fastformat_getProcessIllformedHandler();
 
-    XTESTS_TEST_FN_POINTER_NOT_EQUAL(NULL, original.handler);
+    XTESTS_TEST_FN_POINTER_EQUAL(NULL, original.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
 
-    ff_illformed_handler_info_t previous = fastformat_setProcessIllformedHandler(illformed_handler_1_cancel, param);
+    ff_illformedHandler_info_t previous = fastformat_setProcessIllformedHandler(ff_illformedHandler_info_t::make(illformedHandler_1_cancel, param));
 
     XTESTS_TEST_FN_POINTER_EQUAL(original.handler, previous.handler);
     XTESTS_TEST_POINTER_EQUAL(original.param, previous.param);
 
-    ff_illformed_handler_info_t replaced = fastformat_getProcessIllformedHandler();
+    ff_illformedHandler_info_t replaced = fastformat_getProcessIllformedHandler();
 
-    XTESTS_TEST_FN_POINTER_EQUAL(illformed_handler_1_cancel, replaced.handler);
+    XTESTS_TEST_FN_POINTER_EQUAL(illformedHandler_1_cancel, replaced.handler);
     XTESTS_TEST_POINTER_EQUAL(param, replaced.param);
 }
 
@@ -315,19 +305,19 @@ static void test_5()
 {
     void*   param = &param;
 
-    ff_illformed_handler_info_t original = fastformat_getThreadIllformedHandler();
+    ff_illformedHandler_info_t original = fastformat_getThreadIllformedHandler();
 
     XTESTS_TEST_FN_POINTER_EQUAL(NULL, original.handler);
     XTESTS_TEST_POINTER_EQUAL(NULL, original.param);
 
-    ff_illformed_handler_info_t previous = fastformat_setThreadIllformedHandler(illformed_handler_1_cancel, param);
+    ff_illformedHandler_info_t previous = fastformat_setThreadIllformedHandler(ff_illformedHandler_info_t::make(illformedHandler_1_cancel, param));
 
     XTESTS_TEST_FN_POINTER_EQUAL(original.handler, previous.handler);
     XTESTS_TEST_POINTER_EQUAL(original.param, previous.param);
 
-    ff_illformed_handler_info_t replaced = fastformat_getThreadIllformedHandler();
+    ff_illformedHandler_info_t replaced = fastformat_getThreadIllformedHandler();
 
-    XTESTS_TEST_FN_POINTER_EQUAL(illformed_handler_1_cancel, replaced.handler);
+    XTESTS_TEST_FN_POINTER_EQUAL(illformedHandler_1_cancel, replaced.handler);
     XTESTS_TEST_POINTER_EQUAL(param, replaced.param);
 }
 

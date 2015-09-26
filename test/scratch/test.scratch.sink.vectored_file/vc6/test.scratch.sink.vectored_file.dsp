@@ -7,21 +7,21 @@
 CFG=test.scratch.sink.vectored_file - Win32 Debug Multithreaded
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.scratch.sink.vectored_file.mak".
-!MESSAGE 
+!MESSAGE
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "test.scratch.sink.vectored_file.mak" CFG="test.scratch.sink.vectored_file - Win32 Debug Multithreaded"
-!MESSAGE 
+!MESSAGE
 !MESSAGE Possible choices for configuration are:
-!MESSAGE 
+!MESSAGE
 !MESSAGE "test.scratch.sink.vectored_file - Win32 Release" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.sink.vectored_file - Win32 Debug" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.sink.vectored_file - Win32 Debug pseudoUNIX" (based on "Win32 (x86) Application")
 !MESSAGE "test.scratch.sink.vectored_file - Win32 Debug Multithreaded" (based on "Win32 (x86) Application")
-!MESSAGE 
+!MESSAGE
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
@@ -72,7 +72,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /FR /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -99,8 +99,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugUNIX"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "UNIX" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "UNIX" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -128,8 +128,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugMT"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /FR /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /FR /YX /FD /GZ /c
+# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -143,7 +143,7 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /version:1.0 /subsystem:console /map /debug /machine:I386 /out:"Debug/test.scratch.sink.vectored_file.debug.exe" /pdbtype:sept /libpath:"../../../lib" /libpath:"$(UNIXEM)/lib"
 # SUBTRACT LINK32 /pdb:none
 
-!ENDIF 
+!ENDIF
 
 # Begin Target
 
@@ -222,6 +222,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\copy_functions.hpp"
 # End Source File
 # Begin Source File
@@ -242,11 +246,27 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\util\integral_printf_traits.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
 # End Source File
 # Begin Source File
 
@@ -259,6 +279,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_generators.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -279,6 +303,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\minmax.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
 # End Source File
 # Begin Source File
 
@@ -334,10 +362,6 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std_swap.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
-# End Source File
-# Begin Source File
-
 SOURCE="$(STLSOFT)\include\stlsoft\stlsoft.h"
 # End Source File
 # Begin Source File
@@ -377,9 +401,33 @@ SOURCE="$(STLSOFT)\include\stlsoft\conversion\truncation_test.hpp"
 SOURCE="$(STLSOFT)\include\stlsoft\meta\yesno.hpp"
 # End Source File
 # End Group
-# Begin Group "COMSTL"
+# Begin Group "PlatformSTL"
 
 # PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\error\exceptions.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\filesystem\file_lines.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\filesystem\file_path_buffer.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\filesystem\memory_mapped_file.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\platformstl.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\platformstl\platformstl.hpp"
+# End Source File
 # End Group
 # Begin Group "UNIXSTL"
 
@@ -445,36 +493,104 @@ SOURCE="$(STLSOFT)\include\winstl\memory\processheap_allocator.hpp"
 SOURCE="$(STLSOFT)\include\winstl\winstl.h"
 # End Source File
 # End Group
-# Begin Group "PlatformSTL"
+# End Group
+# Begin Group "FastFormat Header Files"
 
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\error\exceptions.hpp"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\generated\api_functions.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\filesystem\file_lines.hpp"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\quality\contract.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\filesystem\file_path_buffer.hpp"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\quality\cover.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\filesystem\memory_mapped_file.hpp"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\exceptions.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\platformstl.h"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_integers.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\platformstl.hpp"
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\action\fmt_slices\generic_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\generated\helper_functions.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\util\sinks\helpers.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\initialiser.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\integers.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\shim_macros.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\standard_flags.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\stlsoft.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\vectored_file.hpp"
 # End Source File
 # End Group
-# End Group
-# Begin Group "UNIXEm Header Files"
+# Begin Group "UNIXem Header Files"
 
 # PROP Default_Filter ""
 # Begin Source File
@@ -499,67 +615,19 @@ SOURCE="$(UNIXEM)\include\sys\uio.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(UNIXEM)\include\unixem\sys\uio.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(UNIXEM)\include\unistd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(UNIXEM)\include\unixem\unistd.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(UNIXEM)\include\unixem\unixem.h"
-# End Source File
-# End Group
-# Begin Group "FastFormat Header Files"
-
-# PROP Default_Filter ""
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\generated\api_functions.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\quality\contract.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\quality\cover.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\exceptions.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\fastformat.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\action\fmt_slices\generic_string.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\generated\helper_functions.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\implicit_link.h"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\initialiser.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\integers.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\format\standard_flags.hpp"
-# End Source File
-# Begin Source File
-
-SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\vectored_file.hpp"
 # End Source File
 # End Group
 # End Group

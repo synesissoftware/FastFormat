@@ -4,11 +4,11 @@
  * Purpose:     Nullable inserter functions for integral types
  *
  * Created:     20th February 2010
- * Updated:     7th December 2010
+ * Updated:     26th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2010-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_EDIT     4
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_REVISION 3
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_EDIT     6
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -89,7 +89,8 @@ namespace inserters
  *
  * \ingroup group__inserters
  *
- * \param i The integral value to be converted to string form
+ * \param i The integral value to be converted to string form.
+ * \param sentinel The value to which \c i will be compared for exclusion.
  *
  * \return An instance of an insertable type containing the string form of the integer
  *
@@ -98,9 +99,10 @@ namespace inserters
 template <typename I>
 fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
     I const& i
+,   I const& sentinel
 )
 {
-    if(i == 0)
+    if(i == sentinel)
     {
         return fastformat::inserters::ximpl_integer::ff_to_i_r_t_(static_cast<ff_char_t const*>(NULL), 0);
     }
@@ -116,8 +118,9 @@ fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
  *
  * \ingroup group__inserters
  *
- * \param i The integral value to be converted to string form
- * \param nullIfZero Causes a <code>"0"</code> to be replaced by the empty string
+ * \param i The integral value to be converted to string form.
+ * \param sentinel The value to which \c i will be compared for exclusion.
+ * \param nullIfSame Causes a <code>"0"</code> to be replaced by the empty string
  *
  * \return An instance of an insertable type containing the string form of the integer
  *
@@ -126,11 +129,12 @@ fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
 template <typename I>
 fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
     I const&    i
-,   int         nullIfZero
+,   I const&    sentinel
+,   int         nullIfSame
 )
 {
     if( nullIfZero &&
-        i == 0)
+        i == sentinel)
     {
         return fastformat::inserters::ximpl_integer::ff_to_i_r_t_(static_cast<ff_char_t const*>(NULL), 0);
     }
@@ -177,7 +181,7 @@ using ::fastformat::inserters::to_i_null_if_0;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

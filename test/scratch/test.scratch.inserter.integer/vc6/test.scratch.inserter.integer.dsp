@@ -162,6 +162,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\string\ctype_traits.hpp"
 # End Source File
 # Begin Source File
@@ -182,6 +186,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\fwd.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
 # End Source File
 # Begin Source File
@@ -194,11 +202,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\is_integral_type.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_pointer_type.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\is_same_type.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_generators.hpp"
 # End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -219,6 +239,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\minmax.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\msvc.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\meta\n_types.hpp"
 # End Source File
 # Begin Source File
 
@@ -306,11 +330,11 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\yesno.hpp"
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\platformstl.h"
+SOURCE="$(STLSOFT)\include\platformstl\error\exceptions.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\platformstl\error\exceptions.hpp"
+SOURCE="$(STLSOFT)\include\platformstl\platformstl.h"
 # End Source File
 # Begin Source File
 
@@ -322,15 +346,15 @@ SOURCE="$(STLSOFT)\include\platformstl\platformstl.hpp"
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\winstl\winstl.h"
-# End Source File
-# Begin Source File
-
 SOURCE="$(STLSOFT)\include\winstl\error\error_functions.h"
 # End Source File
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\winstl\error\exceptions.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\winstl.h"
 # End Source File
 # End Group
 # End Group
@@ -356,6 +380,10 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\exceptions.hpp"
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\conversion\filter_type\fast_integers.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\fastformat.c++.h"
 # End Source File
 # Begin Source File
 
@@ -391,11 +419,23 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\initialiser.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\inserters\int_typedefs.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\inserters\integer.hpp"
 # End Source File
 # Begin Source File
 
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\sinks\ostream.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\parse_code.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\replacement_code.hpp"
 # End Source File
 # Begin Source File
 
@@ -419,10 +459,14 @@ SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\internal\string_encoding.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\shims\access\string\string_slice.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(FASTFORMAT_ROOT)\include\fastformat\inserters\to_i.hpp"
 # End Source File
 # End Group
-# Begin Group "UNIXEm Header Files"
+# Begin Group "UNIXem Header Files"
 
 # PROP Default_Filter ""
 # Begin Source File

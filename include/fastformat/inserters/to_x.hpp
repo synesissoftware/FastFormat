@@ -4,7 +4,7 @@
  * Purpose:     Inserter functions for integral types in hex format
  *
  * Created:     19th December 2009
- * Updated:     5th November 2013
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_EDIT      7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_EDIT      8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -301,7 +301,7 @@ using ::fastformat::inserters::to_X;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

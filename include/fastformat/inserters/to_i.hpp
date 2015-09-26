@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for integral types
  *
  * Created:     26th May 2009
- * Updated:     7th December 2010
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_EDIT      6
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_EDIT      7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -177,7 +177,7 @@ using ::fastformat::inserters::to_i;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

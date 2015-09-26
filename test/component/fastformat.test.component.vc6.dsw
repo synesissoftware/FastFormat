@@ -45,6 +45,18 @@ Package=<4>
 
 ###############################################################################
 
+Project: "test.component.illformed_handlers"=.\test.component.illformed_handlers\vc6\test.component.illformed_handlers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
 Project: "test.component.inserter.hex"=.\test.component.inserter.hex\vc6\test.component.inserter.hex.dsp - Package Owner=<4>
 
 Package=<5>
@@ -86,6 +98,18 @@ Package=<4>
     Begin Project Dependency
     Project_Dep_Name fastformat.core
     End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.component.mismatched_handlers"=.\test.component.mismatched_handlers\vc6\test.component.mismatched_handlers.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
 }}}
 
 ###############################################################################

@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for coloured output via Windows' console.
  *
  * Created:     6th January 2011
- * Updated:     2nd March 2011
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2011, Matthew Wilson and Synesis Software
+ * Copyright (c) 2011-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_EDIT     2
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_EDIT     3
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -230,7 +230,7 @@ inline WindowsConsole_sink& fmt_slices(WindowsConsole_sink& sink, int flags, siz
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

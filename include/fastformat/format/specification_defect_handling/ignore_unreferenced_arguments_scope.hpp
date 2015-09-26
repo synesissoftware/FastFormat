@@ -98,7 +98,7 @@ namespace fastformat
  * \ingroup group__format_specification_defect_handling
  */
 class ignore_unreferenced_arguments_scope
-    : private mismatched_arguments_scope_base // ISA is not important
+    : protected mismatched_arguments_scope_base // ISA is not important
 {
 public: // Member Types
     /// The parent type
@@ -109,29 +109,31 @@ public: // Member Types
 public: // Construction
     /** Causes the thread/process mismatched handler to be set to a function
      * that ignores the
-     * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code
+     * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code 
      * for all parameter indexes and
      * passes all others to the previously-registered handler
      */
-    ignore_unreferenced_arguments_scope()
-        : m_lowestIndexToIgnore(0)
+    explicit ignore_unreferenced_arguments_scope(ff_handler_domain_t domain = fastformat::FF_HANDLERDOMAIN_THREAD)
+        : parent_class_type(domain)
+        , m_lowestIndexToIgnore(0)
     {}
     /** Causes the thread/process mismatched handler to be set to a function
      * that ignores the
-     * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code
+     * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code 
      * for all parameter indexes equal or subsequent to the given index and
      * passes all others to the previously-registered handler.
      *
      * \param lowestIndexToIgnore The index at/above which all unreferenced
      *   argument indexes are ignored.
      */
-    explicit ignore_unreferenced_arguments_scope(unsigned lowestIndexToIgnore)
-        : m_lowestIndexToIgnore(lowestIndexToIgnore)
+    explicit ignore_unreferenced_arguments_scope(unsigned lowestIndexToIgnore, ff_handler_domain_t domain = fastformat::FF_HANDLERDOMAIN_THREAD)
+        : parent_class_type(domain)
+        , m_lowestIndexToIgnore(lowestIndexToIgnore)
     {}
     /** Restores the thread/process mismatched handler to the function
      * registered prior to the construction of this instance
      *
-     * \warning The system behaviour is undefined if the thread/process
+     * \warning The system behaviour is undefined if the thread/process 
      *   mismatch handler is modified during the lifetime of this instance
      */
     ~ignore_unreferenced_arguments_scope() throw()
@@ -141,35 +143,26 @@ private:
     class_type& operator =(class_type const&);
 
 private: // Overrides
-    virtual int handle(
-        ff_replacement_code_t   code
-    ,   size_t                  numParameters
-    ,   int                     parameterIndex
-    ,   ff_string_slice_t*      slice
-    ,   void*                   reserved0
-    ,   size_t                  reserved1
-    ,   void*                   reserved2
+    virtual ff_handler_response_t handle(
+        ff_replacement_code_t       code
+    ,   size_t                      numArguments
+    ,   int                         mismatchedParameterIndex
+    ,   ff_replacement_action_t*    /* action */
+    ,   ff_string_slice_t*          /* slice */
     )
     {
         if(FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT == code)
         {
-            if(int(m_lowestIndexToIgnore) <= parameterIndex)
+            if(int(m_lowestIndexToIgnore) <= mismatchedParameterIndex)
             {
-                return +1; // Ignore unreferenced argument
+                // Ignore unreferenced argument
+                return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
             }
+
+            throw unreferenced_argument_exception("an argument was unreferenced in the format", code, int(numArguments), mismatchedParameterIndex);
         }
 
-        if(NULL != m_previous.handler)
-        {
-            return (*m_previous.handler)(m_previous.param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
-        }
-
-        if(FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT == code)
-        {
-            throw unreferenced_argument_exception("an argument was unreferenced in the format", code, int(numParameters), parameterIndex);
-        }
-
-        return 0;
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
 
 private: // Fields

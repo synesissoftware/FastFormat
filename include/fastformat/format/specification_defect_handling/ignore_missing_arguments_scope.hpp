@@ -5,11 +5,11 @@
  *              unreferenced arguments.
  *
  * Created:     25th April 2009
- * Updated:     28th October 2013
+ * Updated:     19th July 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -56,8 +56,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MINOR    2
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     9
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_REVISION 3
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -98,7 +98,7 @@ namespace fastformat
  * \ingroup group__format_specification_defect_handling
  */
 class ignore_missing_arguments_scope
-    : private mismatched_arguments_scope_base // ISA is not important
+    : protected mismatched_arguments_scope_base // ISA is not important
 {
 public: // Member Types
     /// The parent type
@@ -112,7 +112,8 @@ public: // Construction
      * <code>FF_REPLACEMENTCODE_MISSING_ARGUMENT</code> code and
      * passes all others to the previously-registered handler
      */
-    ignore_missing_arguments_scope()
+    explicit ignore_missing_arguments_scope(ff_handler_domain_t domain = fastformat::FF_HANDLERDOMAIN_THREAD)
+        : parent_class_type(domain)
     {}
     /** Restores the thread/process mismatched handler to the function
      * registered prior to the construction of this instance
@@ -127,32 +128,21 @@ private:
     class_type& operator =(class_type const&);
 
 private: // Overrides
-    virtual int handle(
-        ff_replacement_code_t   code
-    ,   size_t                  numParameters
-    ,   int                     parameterIndex
-    ,   ff_string_slice_t*      slice
-    ,   void*                   reserved0
-    ,   size_t                  reserved1
-    ,   void*                   reserved2
+    virtual ff_handler_response_t handle(
+        ff_replacement_code_t       code
+    ,   size_t                      /* numArguments */
+    ,   int                         /* mismatchedParameterIndex */
+    ,   ff_replacement_action_t*    /* action */
+    ,   ff_string_slice_t*          /* slice */
     )
     {
         if(FF_REPLACEMENTCODE_MISSING_ARGUMENT == code)
         {
-            return +1; // Ignore unreferenced arguments
+            // Ignore missing argument
+            return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
         }
 
-        if(NULL != m_previous.handler)
-        {
-            return (*m_previous.handler)(m_previous.param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
-        }
-
-        if(FF_REPLACEMENTCODE_MISSING_ARGUMENT == code)
-        {
-            throw missing_argument_exception("a required argument is missing from the argument list", code, int(numParameters), parameterIndex);
-        }
-
-        return 0;
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
 };
 

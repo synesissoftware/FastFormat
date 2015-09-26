@@ -4,11 +4,11 @@
  * Purpose:     Nullable inserter functions for integral types
  *
  * Created:     20th February 2010
- * Updated:     7th December 2010
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2010-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_EDIT      5
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_EDIT      6
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -155,7 +155,7 @@ using ::fastformat::inserters::to_i_null_if_not;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

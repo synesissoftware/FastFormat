@@ -3,19 +3,7 @@ Microsoft Developer Studio Workspace File, Format Version 6.00
 
 ###############################################################################
 
-Project: "fastformat.core"=..\..\projects\core\vc6\fastformat.core.dsp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-}}}
-
-###############################################################################
-
-Project: "test.scratch.FILE"=.\test.scratch.FILE\vc6\test.scratch.FILE.dsp - Package Owner=<4>
+Project: "FastFormatMissingArgumentCallback"=.\FastFormatMissingArgumentCallback\vc6\FastFormatMissingArgumentCallback.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -30,7 +18,19 @@ Package=<4>
 
 ###############################################################################
 
-Project: "test.scratch.bundle.properties"=.\test.scratch.bundle.properties\vc6\test.scratch.bundle.properties.dsp - Package Owner=<4>
+Project: "fastformat.core"=..\..\projects\core\vc6\fastformat.core.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test.scratch.FILE"=.\test.scratch.FILE\vc6\test.scratch.FILE.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -105,33 +105,6 @@ Package=<4>
 
 ###############################################################################
 
-Project: "test.scratch.format_on_callback"=.\test.scratch.format_on_callback\vc6\test.scratch.format_on_callback.dsp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-}}}
-
-###############################################################################
-
-Project: "test.scratch.ignore_missing_arguments_scope"=.\test.scratch.ignore_missing_arguments_scope\vc6\test.scratch.ignore_missing_arguments_scope.dsp - Package Owner=<4>
-
-Package=<5>
-{{{
-}}}
-
-Package=<4>
-{{{
-    Begin Project Dependency
-    Project_Dep_Name fastformat.core
-    End Project Dependency
-}}}
-
-###############################################################################
-
 Project: "test.scratch.implicit_integer"=.\test.scratch.implicit_integer\vc6\test.scratch.implicit_integer.dsp - Package Owner=<4>
 
 Package=<5>
@@ -192,6 +165,30 @@ Package=<4>
 
 ###############################################################################
 
+Project: "test.scratch.ribbon"=.\test.scratch.ribbon\vc6\test.scratch.ribbon.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test.scratch.sink.WindowsConsole"=.\test.scratch.sink.WindowsConsole\vc6\test.scratch.sink.WindowsConsole.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
 Project: "test.scratch.sink.WindowsMessageBox"=.\test.scratch.sink.WindowsMessageBox\vc6\test.scratch.sink.WindowsMessageBox.dsp - Package Owner=<4>
 
 Package=<5>
@@ -218,6 +215,18 @@ Package=<4>
     Begin Project Dependency
     Project_Dep_Name fastformat.core
     End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "test.scratch.sink.exceptions"=.\test.scratch.sink.exceptions\vc6\test.scratch.sink.exceptions.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
 }}}
 
 ###############################################################################

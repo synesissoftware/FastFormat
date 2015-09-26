@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for FastFormat core API: memory pool.
  *
  * Created:     1st September 2008
- * Updated:     3rd February 2012
+ * Updated:     5th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -206,7 +206,7 @@ void ximpl_core::fastformat_impl_memoryPool_uninit(void* token)
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    memory_pool_t* ctxt = static_cast<memory_pool_t*>(token);
+    memory_pool_t* const ctxt = static_cast<memory_pool_t*>(token);
 
     delete ctxt;
 }

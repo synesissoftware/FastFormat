@@ -32,6 +32,9 @@
 
 /* xTests header files */
 #include <xtests/xtests.h>
+#if _XTESTS_VER < 0x001203ff
+# error xTests v0.18.3 or later required
+#endif
 
 /* STLSoft header files */
 #include <stlsoft/stlsoft.h>

@@ -30,6 +30,30 @@ Package=<4>
 
 ###############################################################################
 
+Project: "test.performance.decimal_integer"=.\test.performance.decimal_integer\vc6\test.performance.decimal_integer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "test.performance.hexadecimal_integer"=.\test.performance.hexadecimal_integer\vc6\test.performance.hexadecimal_integer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
 Project: "test.performance.name_age_height"=.\test.performance.name_age_height\vc6\test.performance.name_age_height.dsp - Package Owner=<4>
 
 Package=<5>

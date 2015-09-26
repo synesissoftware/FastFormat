@@ -26,6 +26,7 @@
 
 #include <fastformat/fastformat.h>
 #include <fastformat/internal/format_element.h>
+#include <fastformat/exceptions.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes
@@ -107,40 +108,59 @@ namespace
     static void test_good_with_qualifiers_18(void);
     static void test_good_with_qualifiers_19(void);
 
-    static void test_illformed_cancelling_0(void);
-    static void test_illformed_cancelling_1(void);
-    static void test_illformed_cancelling_2(void);
-    static void test_illformed_cancelling_3(void);
-    static void test_illformed_cancelling_4(void);
-    static void test_illformed_cancelling_5(void);
-    static void test_illformed_cancelling_6(void);
-    static void test_illformed_cancelling_7(void);
-    static void test_illformed_cancelling_8(void);
-    static void test_illformed_cancelling_9(void);
+    static void test_illformed_defaulting_to_next_0(void);
+    static void test_illformed_defaulting_to_next_1(void);
+    static void test_illformed_defaulting_to_next_2(void);
+    static void test_illformed_defaulting_to_next_3(void);
+    static void test_illformed_defaulting_to_next_4(void);
+    static void test_illformed_defaulting_to_next_5(void);
+    static void test_illformed_defaulting_to_next_6(void);
+    static void test_illformed_defaulting_to_next_7(void);
+    static void test_illformed_defaulting_to_next_8(void);
+    static void test_illformed_defaulting_to_next_9(void);
 
-    static void test_illformed_continuing_0(void);
-    static void test_illformed_continuing_1(void);
-    static void test_illformed_continuing_2(void);
-    static void test_illformed_continuing_3(void);
-    static void test_illformed_continuing_4(void);
-    static void test_illformed_continuing_5(void);
-    static void test_illformed_continuing_6(void);
-    static void test_illformed_continuing_7(void);
-    static void test_illformed_continuing_8(void);
-    static void test_illformed_continuing_9(void);
+    static void test_illformed_continue_with_blank_0(void);
+    static void test_illformed_continue_with_blank_1(void);
+    static void test_illformed_continue_with_blank_2(void);
+    static void test_illformed_continue_with_blank_3(void);
+    static void test_illformed_continue_with_blank_4(void);
+    static void test_illformed_continue_with_blank_5(void);
+    static void test_illformed_continue_with_blank_6(void);
+    static void test_illformed_continue_with_blank_7(void);
+    static void test_illformed_continue_with_blank_8(void);
+    static void test_illformed_continue_with_blank_9(void);
 
-    static void test_illformed_continue_once_0(void);
-    static void test_illformed_continue_once_1(void);
-    static void test_illformed_continue_once_2(void);
-    static void test_illformed_continue_once_3(void);
-    static void test_illformed_continue_once_4(void);
-    static void test_illformed_continue_once_5(void);
-    static void test_illformed_continue_once_6(void);
-    static void test_illformed_continue_once_7(void);
-    static void test_illformed_continue_once_8(void);
-    static void test_illformed_continue_once_9(void);
+    static void test_illformed_continue_with_format_as_literal_0(void);
+    static void test_illformed_continue_with_format_as_literal_1(void);
+    static void test_illformed_continue_with_format_as_literal_2(void);
+    static void test_illformed_continue_with_format_as_literal_3(void);
+    static void test_illformed_continue_with_format_as_literal_4(void);
+    static void test_illformed_continue_with_format_as_literal_5(void);
+    static void test_illformed_continue_with_format_as_literal_6(void);
+    static void test_illformed_continue_with_format_as_literal_7(void);
+    static void test_illformed_continue_with_format_as_literal_8(void);
+    static void test_illformed_continue_with_format_as_literal_9(void);
 
 } // anonymous namespace
+
+/* /////////////////////////////////////////////////////////////////////////
+ * Helper functions
+ */
+
+int ff_setup(void*);
+int ff_teardown(void*);
+
+int ff_setup(void*)
+{
+    return fastformat::fastformat_init();
+}
+
+int ff_teardown(void*)
+{
+    fastformat::fastformat_uninit();
+
+    return 0;
+}
 
 /* /////////////////////////////////////////////////////////////////////////
  * Main
@@ -153,7 +173,15 @@ int main(int argc, char **argv)
 
     XTESTS_COMMANDLINE_PARSEVERBOSITY(argc, argv, &verbosity);
 
-    if(XTESTS_START_RUNNER("test.unit.api.parse_format", verbosity))
+    if( XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM_AND_FLAGS_AND_SETUP_FNS(
+            "test.unit.api.parse_format"
+        ,   verbosity
+        ,   NULL, NULL
+        ,   NULL
+        ,   xtests::c::xtestsReportOnlyNonEmptyCases
+        ,   ff_setup, ff_teardown, NULL
+        )
+    )
     {
         XTESTS_RUN_CASE(test_good_0);
         XTESTS_RUN_CASE(test_good_1);
@@ -189,40 +217,38 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_good_with_qualifiers_18);
         XTESTS_RUN_CASE(test_good_with_qualifiers_19);
 
-#if 1
-        XTESTS_RUN_CASE(test_illformed_cancelling_0);
-        XTESTS_RUN_CASE(test_illformed_cancelling_1);
-        XTESTS_RUN_CASE(test_illformed_cancelling_2);
-        XTESTS_RUN_CASE(test_illformed_cancelling_3);
-        XTESTS_RUN_CASE(test_illformed_cancelling_4);
-        XTESTS_RUN_CASE(test_illformed_cancelling_5);
-        XTESTS_RUN_CASE(test_illformed_cancelling_6);
-        XTESTS_RUN_CASE(test_illformed_cancelling_7);
-        XTESTS_RUN_CASE(test_illformed_cancelling_8);
-        XTESTS_RUN_CASE(test_illformed_cancelling_9);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_0, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_1, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_2, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_3, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_4, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_5, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_6, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_7, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_8, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_9, fastformat::illformed_format_exception);
 
-        XTESTS_RUN_CASE(test_illformed_continuing_0);
-        XTESTS_RUN_CASE(test_illformed_continuing_1);
-        XTESTS_RUN_CASE(test_illformed_continuing_2);
-        XTESTS_RUN_CASE(test_illformed_continuing_3);
-        XTESTS_RUN_CASE(test_illformed_continuing_4);
-        XTESTS_RUN_CASE(test_illformed_continuing_5);
-        XTESTS_RUN_CASE(test_illformed_continuing_6);
-        XTESTS_RUN_CASE(test_illformed_continuing_7);
-        XTESTS_RUN_CASE(test_illformed_continuing_8);
-        XTESTS_RUN_CASE(test_illformed_continuing_9);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_0);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_1);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_2);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_3);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_4);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_5);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_6);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_7);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_8);
+        XTESTS_RUN_CASE(test_illformed_continue_with_blank_9);
 
-        XTESTS_RUN_CASE(test_illformed_continue_once_0);
-        XTESTS_RUN_CASE(test_illformed_continue_once_1);
-        XTESTS_RUN_CASE(test_illformed_continue_once_2);
-        XTESTS_RUN_CASE(test_illformed_continue_once_3);
-        XTESTS_RUN_CASE(test_illformed_continue_once_4);
-        XTESTS_RUN_CASE(test_illformed_continue_once_5);
-        XTESTS_RUN_CASE(test_illformed_continue_once_6);
-        XTESTS_RUN_CASE(test_illformed_continue_once_7);
-        XTESTS_RUN_CASE(test_illformed_continue_once_8);
-        XTESTS_RUN_CASE(test_illformed_continue_once_9);
-#endif /* 0 */
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_0);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_1);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_2);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_3);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_4);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_5);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_6);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_7);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_8);
+        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_9);
 
         XTESTS_PRINT_RESULTS();
 
@@ -244,7 +270,14 @@ namespace
     typedef std::vector<string_t>           strings_t;
 
     using fastformat::ff_char_t;
+    using fastformat::ff_handler_response_t;
+        using fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
+        using fastformat::FF_HANDLERRESPONSE_NEXT_HANDLER;
+    using fastformat::ff_parse_action_t;
+        using fastformat::FF_PARSEACTION_REPLACE_FORMAT_WITH_BLANK;
+        using fastformat::FF_PARSEACTION_TREAT_FORMAT_AS_LITERAL;
     using fastformat::ff_parse_code_t;
+    using fastformat::ff_string_slice_t;
     using fastformat::fastformat_parseFormat;
     using fastformat::FASTFORMAT_ALIGNMENT_NONE;
     using fastformat::FASTFORMAT_ALIGNMENT_LEFT;
@@ -254,9 +287,7 @@ namespace
     struct parse_error_t
     {
         string_t    format;
-        size_t      replacementIndex;
         string_t    defect;
-        int         parameterIndex;
     };
 
     // NOTE: we must use error handlers here, otherwise we'll have to
@@ -264,132 +295,114 @@ namespace
 
 
     // This parse error handler reports the error and cancels processing.
-    int FASTFORMAT_CALLCONV reporting_illformed_handler(
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV test_failing_if_called_illformed_handler(
         void*               /* param */
     ,   ff_parse_code_t     /* code */
-    ,   ff_char_t const*    format
-    ,   size_t              formatLen
-    ,   size_t              /* replacementIndex */
-    ,   ff_char_t const*    /* defect */
-    ,   size_t              /* defectLen */
-    ,   int                 parameterIndex
+    ,   ff_string_slice_t   format
+    ,   ff_string_slice_t   /* defect */
+    ,   ff_parse_action_t*  /* illformedAction */
     ,   void*               /* reserved0 */
     ,   size_t              /* reserved1 */
     ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
     )
     {
-        ff_char_t   num[21];
-        string_t    details;
+        string_t details;
 
         details += FF_STR("format: ");
-        details.append(format, formatLen);
-        details += FF_STR("; index: ");
-        details += stlsoft::integer_to_string(&num[0], STLSOFT_NUM_ELEMENTS(num), parameterIndex);
+        details.append(format.ptr, format.len);
 
         XTESTS_TEST_FAIL_WITH_QUALIFIER("parsing error", t2m(details));
 
-        return 0; // Cancel processing
+        // Cancel processing
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
 
     // Mock used to test the parse errors
-    int FASTFORMAT_CALLCONV cancelling_mock_illformed_handler(
-        void*               param
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV defaulting_to_next_illformed_handler(
+        void*               /* param */
     ,   ff_parse_code_t     /* code */
-    ,   ff_char_t const*    format
-    ,   size_t              formatLen
-    ,   size_t              replacementIndex
-    ,   ff_char_t const*    defect
-    ,   size_t              defectLen
-    ,   int                 parameterIndex
+    ,   ff_string_slice_t   /* format */
+    ,   ff_string_slice_t   /* defect */
+    ,   ff_parse_action_t*  /* illformedAction */
     ,   void*               /* reserved0 */
     ,   size_t              /* reserved1 */
     ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
+    )
+    {
+        return FF_HANDLERRESPONSE_NEXT_HANDLER;
+    }
+
+    // Mock used to test the parse errors
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV continue_with_blank_illformed_handler(
+        void*               param
+    ,   ff_parse_code_t     /* code */
+    ,   ff_string_slice_t   format
+    ,   ff_string_slice_t   defect
+    ,   ff_parse_action_t*  illformedAction
+    ,   void*               /* reserved0 */
+    ,   size_t              /* reserved1 */
+    ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
     )
     {
         if(NULL == param)
         {
             XTESTS_TEST_FAIL("NULL param passed to handler");
 
-            return 0; // Cancel processing
+            // Cancel processing
+            return FF_HANDLERRESPONSE_NEXT_HANDLER;
         }
         else
         {
-            parse_error_t&  pe = *static_cast<parse_error_t*>(param);
+            parse_error_t& pe = *static_cast<parse_error_t*>(param);
 
-            pe.format.assign(format, formatLen);
-            pe.replacementIndex = replacementIndex;
-            pe.defect.assign(defect, defectLen);
-            pe.parameterIndex = parameterIndex;
+            pe.format.assign(format.ptr, format.len);
+            pe.defect.assign(defect.ptr, defect.len);
 
-            return 0; // Cancel processing
+            *illformedAction = FF_PARSEACTION_REPLACE_FORMAT_WITH_BLANK;
+
+            // Continue processing, and don't invoke this again
+            return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
         }
     }
 
     // Mock used to test the parse errors
-    int FASTFORMAT_CALLCONV continuing_mock_illformed_handler(
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV continue_with_format_as_literal_illformed_handler(
         void*               param
     ,   ff_parse_code_t     /* code */
-    ,   ff_char_t const*    format
-    ,   size_t              formatLen
-    ,   size_t              replacementIndex
-    ,   ff_char_t const*    defect
-    ,   size_t              defectLen
-    ,   int                 parameterIndex
+    ,   ff_string_slice_t   format
+    ,   ff_string_slice_t   defect
+    ,   ff_parse_action_t*  illformedAction
     ,   void*               /* reserved0 */
     ,   size_t              /* reserved1 */
     ,   void*               /* reserved2 */
+    ,   int                 /* reserved3 */
     )
     {
         if(NULL == param)
         {
             XTESTS_TEST_FAIL("NULL param passed to handler");
 
-            return 0; // Cancel processing
+            // Cancel processing
+            return FF_HANDLERRESPONSE_NEXT_HANDLER;
         }
         else
         {
-            parse_error_t&  pe = *static_cast<parse_error_t*>(param);
+            parse_error_t& pe = *static_cast<parse_error_t*>(param);
 
-            pe.format.assign(format, formatLen);
-            pe.replacementIndex = replacementIndex;
-            pe.defect.assign(defect, defectLen);
-            pe.parameterIndex = parameterIndex;
+            pe.format.assign(format.ptr, format.len);
+            pe.defect.assign(defect.ptr, defect.len);
 
-            return +1; // Continue processing, and don't invoke this again
-        }
-    }
+            *illformedAction = FF_PARSEACTION_TREAT_FORMAT_AS_LITERAL;
 
-    // Mock used to test the parse errors
-    int FASTFORMAT_CALLCONV continue_once_mock_illformed_handler(
-        void*               param
-    ,   ff_parse_code_t     /* code */
-    ,   ff_char_t const*    format
-    ,   size_t              formatLen
-    ,   size_t              replacementIndex
-    ,   ff_char_t const*    defect
-    ,   size_t              defectLen
-    ,   int                 parameterIndex
-    ,   void*               /* reserved0 */
-    ,   size_t              /* reserved1 */
-    ,   void*               /* reserved2 */
-    )
-    {
-        if(NULL == param)
-        {
-            XTESTS_TEST_FAIL("NULL param passed to handler");
-
-            return 0; // Cancel processing
-        }
-        else
-        {
-            parse_error_t&  pe = *static_cast<parse_error_t*>(param);
-
-            pe.format.assign(format, formatLen);
-            pe.replacementIndex = replacementIndex;
-            pe.defect.assign(defect, defectLen);
-            pe.parameterIndex = parameterIndex;
-
-            return -1; // Continue processing, and don't invoke this again
+            // Continue processing, and don't invoke this again
+            return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
         }
     }
 
@@ -401,7 +414,7 @@ static void test_good_0()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -417,7 +430,7 @@ static void test_good_1()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -435,7 +448,7 @@ static void test_good_2()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -453,7 +466,7 @@ static void test_good_3()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -473,7 +486,7 @@ static void test_good_4()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -495,7 +508,7 @@ static void test_good_5()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -519,7 +532,7 @@ static void test_good_6()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -545,7 +558,7 @@ static void test_good_7()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -574,7 +587,7 @@ static void test_good_8()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -610,7 +623,7 @@ static void test_good_9()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -630,7 +643,7 @@ static void test_good_10()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -650,7 +663,7 @@ static void test_good_11()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -672,7 +685,7 @@ static void test_good_with_qualifiers_0()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -690,7 +703,7 @@ static void test_good_with_qualifiers_1()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -710,7 +723,7 @@ static void test_good_with_qualifiers_2()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -730,7 +743,7 @@ static void test_good_with_qualifiers_3()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -750,7 +763,7 @@ static void test_good_with_qualifiers_4()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -770,7 +783,7 @@ static void test_good_with_qualifiers_5()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -790,7 +803,7 @@ static void test_good_with_qualifiers_6()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -810,7 +823,7 @@ static void test_good_with_qualifiers_7()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -830,7 +843,7 @@ static void test_good_with_qualifiers_8()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -854,7 +867,7 @@ static void test_good_with_qualifiers_10()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -874,7 +887,7 @@ static void test_good_with_qualifiers_11()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -894,7 +907,7 @@ static void test_good_with_qualifiers_12()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -914,7 +927,7 @@ static void test_good_with_qualifiers_13()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -934,7 +947,7 @@ static void test_good_with_qualifiers_14()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -956,7 +969,7 @@ static void test_good_with_qualifiers_15()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -978,7 +991,7 @@ static void test_good_with_qualifiers_16()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -1000,7 +1013,7 @@ static void test_good_with_qualifiers_17()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -1022,7 +1035,7 @@ static void test_good_with_qualifiers_18()
     size_t                          numFormatElements;
     size_t                          numResultElements;
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), reporting_illformed_handler, NULL);
+    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), test_failing_if_called_illformed_handler, NULL);
 
     numFormatElements = n & 0xffff;
     numResultElements = ((n >> 16) & 0xffff);
@@ -1043,639 +1056,395 @@ static void test_good_with_qualifiers_19()
 
 
 
-static void test_illformed_cancelling_0()
+static void test_illformed_defaulting_to_next_0()
+{
+    const ff_char_t                 fmt[] = FF_STR("{"); // Missing }
+    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
+
+    fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), defaulting_to_next_illformed_handler, NULL);
+
+    XTESTS_TEST_FAIL("should not get here");
+}
+
+static void test_illformed_defaulting_to_next_1()
+{
+    const ff_char_t                 fmt[] = FF_STR("{0"); // Missing }
+    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
+
+    fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), defaulting_to_next_illformed_handler, NULL);
+
+    XTESTS_TEST_FAIL("should not get here");
+}
+
+static void test_illformed_defaulting_to_next_2()
+{
+    const ff_char_t                 fmt[] = FF_STR("a{0"); // Missing }
+    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
+
+    fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), defaulting_to_next_illformed_handler, NULL);
+
+    XTESTS_TEST_FAIL("should not get here");
+}
+
+static void test_illformed_defaulting_to_next_3()
+{
+    const ff_char_t                 fmt[] = FF_STR("a{a}");
+    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
+
+    fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), defaulting_to_next_illformed_handler, NULL);
+
+    XTESTS_TEST_FAIL("should not get here");
+}
+
+static void test_illformed_defaulting_to_next_4()
+{
+    const ff_char_t                 fmt[] = FF_STR("a{0}{"); // Missing }
+    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
+
+    fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), defaulting_to_next_illformed_handler, NULL);
+
+    XTESTS_TEST_FAIL("should not get here");
+}
+
+static void test_illformed_defaulting_to_next_5()
+{
+    const ff_char_t                 fmt[] = FF_STR("a{0}b{"); // Missing }
+    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
+
+    fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), defaulting_to_next_illformed_handler, NULL);
+
+    XTESTS_TEST_FAIL("should not get here");
+}
+
+static void test_illformed_defaulting_to_next_6()
+{
+    // Stub to satisfy test invocation
+    throw fastformat::illformed_format_exception("blah", ff_parse_code_t(), FF_STR(""));
+}
+
+static void test_illformed_defaulting_to_next_7()
+{
+    // Stub to satisfy test invocation
+    throw fastformat::illformed_format_exception("blah", ff_parse_code_t(), FF_STR(""));
+}
+
+static void test_illformed_defaulting_to_next_8()
+{
+    // Stub to satisfy test invocation
+    throw fastformat::illformed_format_exception("blah", ff_parse_code_t(), FF_STR(""));
+}
+
+static void test_illformed_defaulting_to_next_9()
+{
+    // Stub to satisfy test invocation
+    throw fastformat::illformed_format_exception("blah", ff_parse_code_t(), FF_STR(""));
+}
+
+
+
+static void test_illformed_continue_with_blank_0()
 {
     const ff_char_t                 fmt[] = FF_STR("{"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), cancelling_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(0u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(0u, numResultElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
+    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(0u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), pe.defect);
 }
 
-static void test_illformed_cancelling_1()
+static void test_illformed_continue_with_blank_1()
 {
     const ff_char_t                 fmt[] = FF_STR("{0"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), cancelling_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(0u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(0u, numResultElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
+    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(0u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), pe.defect);
 }
 
-static void test_illformed_cancelling_2()
+static void test_illformed_continue_with_blank_2()
 {
     const ff_char_t                 fmt[] = FF_STR("a{0"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), cancelling_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
     XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), pe.defect);
 }
 
-static void test_illformed_cancelling_3()
+static void test_illformed_continue_with_blank_3()
 {
     const ff_char_t                 fmt[] = FF_STR("a{a}");
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), cancelling_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
     XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
     XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
 }
 
-static void test_illformed_cancelling_4()
+static void test_illformed_continue_with_blank_4()
 {
     const ff_char_t                 fmt[] = FF_STR("a{0}{"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), cancelling_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(2u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(0, replacements[1].index);
-
-    XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(2u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
-}
-
-static void test_illformed_cancelling_5()
-{
-    const ff_char_t                 fmt[] = FF_STR("a{0}b{"); // Missing }
-    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
-    parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), cancelling_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(2u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(0, replacements[1].index);
-
-    XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(2u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
-}
-
-static void test_illformed_cancelling_6()
-{
-}
-
-static void test_illformed_cancelling_7()
-{
-}
-
-static void test_illformed_cancelling_8()
-{
-}
-
-static void test_illformed_cancelling_9()
-{
-}
-
-
-static void test_illformed_continuing_0()
-{
-    const ff_char_t                 fmt[] = FF_STR("{"); // Missing }
-    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
-    parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
     XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), string_t(replacements[0].ptr, replacements[0].len));
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(0u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), pe.defect);
 }
 
-static void test_illformed_continuing_1()
-{
-    const ff_char_t                 fmt[] = FF_STR("{0"); // Missing }
-    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
-    parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, replacements[0].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), string_t(replacements[0].ptr, replacements[0].len));
-
-    XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(0u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
-}
-
-static void test_illformed_continuing_2()
-{
-    const ff_char_t                 fmt[] = FF_STR("a{0"); // Missing }
-    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
-    parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(2u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
-    XTESTS_TEST_INTEGER_EQUAL(2u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), string_t(replacements[1].ptr, replacements[1].len));
-
-    XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
-}
-
-static void test_illformed_continuing_3()
-{
-    const ff_char_t                 fmt[] = FF_STR("a{a}");
-    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
-    parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(2u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[1].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), string_t(replacements[1].ptr, replacements[1].len));
-
-    XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
-}
-
-static void test_illformed_continuing_4()
-{
-    const ff_char_t                 fmt[] = FF_STR("a{0}{"); // Missing }
-    fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
-    parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(3u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(3u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(0,  replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[2].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), string_t(replacements[2].ptr, replacements[2].len));
-
-    XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(2u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
-}
-
-static void test_illformed_continuing_5()
+static void test_illformed_continue_with_blank_5()
 {
     const ff_char_t                 fmt[] = FF_STR("a{0}b{"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(3u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(3u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(0, replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(2u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[2].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("b{"), string_t(replacements[2].ptr, replacements[2].len));
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(2u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("b{"), pe.defect);
 }
 
-static void test_illformed_continuing_6()
+static void test_illformed_continue_with_blank_6()
 {
     const ff_char_t                 fmt[] = FF_STR("a{a}{55}");
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(3u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(3u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(4u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(55, replacements[2].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), string_t(replacements[1].ptr, replacements[1].len));
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
     XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
 }
 
-static void test_illformed_continuing_7()
+static void test_illformed_continue_with_blank_7()
 {
     const ff_char_t                 fmt[] = FF_STR("a{a}{55}{bb}");
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_blank_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continuing_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(4u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(4u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(4u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(55, replacements[2].index);
-    XTESTS_TEST_INTEGER_EQUAL(4u, replacements[3].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[3].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), string_t(replacements[1].ptr, replacements[1].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{bb}"), string_t(replacements[3].ptr, replacements[3].len));
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(3u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{bb}"), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
 }
 
-static void test_illformed_continuing_8()
+static void test_illformed_continue_with_blank_8()
 {
 }
 
-static void test_illformed_continuing_9()
+static void test_illformed_continue_with_blank_9()
 {
 }
 
 
-static void test_illformed_continue_once_0()
+
+static void test_illformed_continue_with_format_as_literal_0()
 {
     const ff_char_t                 fmt[] = FF_STR("{"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
     XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), string_t(replacements[0].ptr, replacements[0].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(0u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), pe.defect);
 }
 
-static void test_illformed_continue_once_1()
+static void test_illformed_continue_with_format_as_literal_1()
 {
     const ff_char_t                 fmt[] = FF_STR("{0"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
-
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
     XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, replacements[0].len);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), string_t(replacements[0].ptr, replacements[0].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(0u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), pe.defect);
 }
 
-static void test_illformed_continue_once_2()
+static void test_illformed_continue_with_format_as_literal_2()
 {
     const ff_char_t                 fmt[] = FF_STR("a{0"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(2u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
-    XTESTS_TEST_INTEGER_EQUAL(2u, replacements[1].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), string_t(replacements[1].ptr, replacements[1].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{0"), pe.defect);
 }
 
-static void test_illformed_continue_once_3()
+static void test_illformed_continue_with_format_as_literal_3()
 {
     const ff_char_t                 fmt[] = FF_STR("a{a}");
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(2u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(2u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[1].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), string_t(replacements[1].ptr, replacements[1].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
     XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
 }
 
-static void test_illformed_continue_once_4()
+static void test_illformed_continue_with_format_as_literal_4()
 {
     const ff_char_t                 fmt[] = FF_STR("a{0}{"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(3u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(3u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(0,  replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[2].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), string_t(replacements[2].ptr, replacements[2].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(2u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{"), pe.defect);
 }
 
-static void test_illformed_continue_once_5()
+static void test_illformed_continue_with_format_as_literal_5()
 {
     const ff_char_t                 fmt[] = FF_STR("a{0}b{"); // Missing }
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(3u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(3u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(0, replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(2u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[2].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("b{"), string_t(replacements[2].ptr, replacements[2].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(2u, pe.replacementIndex);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(""), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
+    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("b{"), pe.defect);
 }
 
-static void test_illformed_continue_once_6()
+static void test_illformed_continue_with_format_as_literal_6()
 {
     const ff_char_t                 fmt[] = FF_STR("a{a}{55}");
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(3u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(3u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(4u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(55, replacements[2].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), string_t(replacements[1].ptr, replacements[1].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
     XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
 }
 
-static void test_illformed_continue_once_7()
+static void test_illformed_continue_with_format_as_literal_7()
 {
     const ff_char_t                 fmt[] = FF_STR("a{a}{55}{bb}");
     fastformat::format_element_t    replacements[1 + STLSOFT_NUM_ELEMENTS(fmt) / 2];
     parse_error_t                   pe;
-    size_t                          numFormatElements;
-    size_t                          numResultElements;
+    unsigned const                  n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_with_format_as_literal_illformed_handler, &pe);
+    size_t const                    numFormatElements = n & 0xffff;
+    size_t const                    numResultElements = ((n >> 16) & 0xffff);
 
-    unsigned n = fastformat_parseFormat(fmt, stlsoft::c_str_len(fmt), &replacements[0], STLSOFT_NUM_ELEMENTS(replacements), continue_once_mock_illformed_handler, &pe);
-
-    numFormatElements = n & 0xffff;
-    numResultElements = ((n >> 16) & 0xffff);
-
-    XTESTS_TEST_INTEGER_EQUAL(4u, numFormatElements);
-    XTESTS_TEST_INTEGER_EQUAL(4u, numResultElements);
-    XTESTS_TEST_INTEGER_EQUAL(1u, replacements[0].len);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numFormatElements);
+    XTESTS_TEST_INTEGER_EQUAL(1u, numResultElements);
     XTESTS_TEST_INTEGER_EQUAL(-1, replacements[0].index);
-    XTESTS_TEST_INTEGER_EQUAL(3u, replacements[1].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[1].index);
-    XTESTS_TEST_INTEGER_EQUAL(4u, replacements[2].len);
-    XTESTS_TEST_INTEGER_EQUAL(55, replacements[2].index);
-    XTESTS_TEST_INTEGER_EQUAL(4u, replacements[3].len);
-    XTESTS_TEST_INTEGER_EQUAL(-1, replacements[3].index);
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("a"), string_t(replacements[0].ptr, replacements[0].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), string_t(replacements[1].ptr, replacements[1].len));
-    XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{bb}"), string_t(replacements[3].ptr, replacements[3].len));
+    XTESTS_TEST_STRING_EQUAL(fmt, string_t(replacements[0].ptr, replacements[0].len));
 
     XTESTS_TEST_STRING_EQUAL(fmt, pe.format);
-    XTESTS_TEST_INTEGER_EQUAL(1u, pe.replacementIndex);
     XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
-    XTESTS_TEST_INTEGER_EQUAL(-1, pe.parameterIndex);
 }
 
-static void test_illformed_continue_once_8()
+static void test_illformed_continue_with_format_as_literal_8()
 {
 }
 
-static void test_illformed_continue_once_9()
+static void test_illformed_continue_with_format_as_literal_9()
 {
 }
 

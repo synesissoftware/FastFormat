@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for FastFormat core API: API init.
  *
  * Created:     20th November 2007
- * Updated:     28th October 2013
+ * Updated:     11th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
@@ -274,6 +274,17 @@ namespace
 /* /////////////////////////////////////////////////////////////////////////
  * API Functions
  */
+
+FASTFORMAT_CALL(size_t) fastformat_getVersion(void)
+{
+    STLSOFT_STATIC_ASSERT(sizeof(size_t) >= 4);
+
+    STLSOFT_STATIC_ASSERT(FASTFORMAT_VER_MAJOR      ==  ((FASTFORMAT_VER >> 24) & 0x000000ff));
+    STLSOFT_STATIC_ASSERT(FASTFORMAT_VER_MINOR      ==  ((FASTFORMAT_VER >> 16) & 0x000000ff));
+    STLSOFT_STATIC_ASSERT(FASTFORMAT_VER_REVISION   ==  ((FASTFORMAT_VER >>  8) & 0x000000ff));
+
+    return FASTFORMAT_VER;
+}
 
 /* *************************************
  * API Initialisation
@@ -568,7 +579,7 @@ FASTFORMAT_CALL(unsigned) fastformat_lookupPattern(
  * Ill-formed handler
  */
 
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getProcessIllformedHandler(void)
+FASTFORMAT_CALL(ff_illformedHandler_info_t) fastformat_getProcessIllformedHandler(void)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
@@ -577,16 +588,16 @@ FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getProcessIllformedHandl
     return ximpl_core::fastformat_impl_handlers_getIllformedProcessHandler(s_stateDefectHandlers);
 }
 
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_setProcessIllformedHandler(fastformat_illformedHandler_t handler, void* param)
+FASTFORMAT_CALL(ff_illformedHandler_info_t) fastformat_setProcessIllformedHandler(ff_illformedHandler_info_t handler_info)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    return ximpl_core::fastformat_impl_handlers_setIllformedProcessHandler(s_stateDefectHandlers, handler, param);
+    return ximpl_core::fastformat_impl_handlers_setIllformedProcessHandler(s_stateDefectHandlers, handler_info);
 }
 
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getThreadIllformedHandler(void)
+FASTFORMAT_CALL(ff_illformedHandler_info_t) fastformat_getThreadIllformedHandler(void)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
@@ -595,22 +606,22 @@ FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getThreadIllformedHandle
     return ximpl_core::fastformat_impl_handlers_getIllformedThreadHandler(s_stateDefectHandlers);
 }
 
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_setThreadIllformedHandler(fastformat_illformedHandler_t handler, void* param)
+FASTFORMAT_CALL(ff_illformedHandler_info_t) fastformat_setThreadIllformedHandler(ff_illformedHandler_info_t handler_info)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    return ximpl_core::fastformat_impl_handlers_setIllformedThreadHandler(s_stateDefectHandlers, handler, param);
+    return ximpl_core::fastformat_impl_handlers_setIllformedThreadHandler(s_stateDefectHandlers, handler_info);
 }
 
-FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getDefaultIllformedHandler(void)
+FASTFORMAT_CALL(ff_illformedHandler_info_t) fastformat_getDefaultIllformedHandler(void)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    return ximpl_core::fastformat_impl_handlers_getIllformedDefaultHandler(s_stateDefectHandlers);
+    return ximpl_core::fastformat_impl_handlers_getDefaultIllformedHandler(s_stateDefectHandlers);
 }
 
 
@@ -618,7 +629,7 @@ FASTFORMAT_CALL(ff_illformed_handler_info_t) fastformat_getDefaultIllformedHandl
  * Mismatched handler
  */
 
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getProcessMismatchedHandler(void)
+FASTFORMAT_CALL(ff_mismatchedHandler_info_t) fastformat_getProcessMismatchedHandler(void)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
@@ -627,16 +638,16 @@ FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getProcessMismatchedHan
     return ximpl_core::fastformat_impl_handlers_getMismatchedProcessHandler(s_stateDefectHandlers);
 }
 
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_setProcessMismatchedHandler(fastformat_mismatchedHandler_t handler, void* param)
+FASTFORMAT_CALL(ff_mismatchedHandler_info_t) fastformat_setProcessMismatchedHandler(ff_mismatchedHandler_info_t handler_info)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    return ximpl_core::fastformat_impl_handlers_setMismatchedProcessHandler(s_stateDefectHandlers, handler, param);
+    return ximpl_core::fastformat_impl_handlers_setMismatchedProcessHandler(s_stateDefectHandlers, handler_info);
 }
 
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getThreadMismatchedHandler(void)
+FASTFORMAT_CALL(ff_mismatchedHandler_info_t) fastformat_getThreadMismatchedHandler(void)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
@@ -645,16 +656,16 @@ FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getThreadMismatchedHand
     return ximpl_core::fastformat_impl_handlers_getMismatchedThreadHandler(s_stateDefectHandlers);
 }
 
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_setThreadMismatchedHandler(fastformat_mismatchedHandler_t handler, void* param)
+FASTFORMAT_CALL(ff_mismatchedHandler_info_t) fastformat_setThreadMismatchedHandler(ff_mismatchedHandler_info_t handler_info)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    return ximpl_core::fastformat_impl_handlers_setMismatchedThreadHandler(s_stateDefectHandlers, handler, param);
+    return ximpl_core::fastformat_impl_handlers_setMismatchedThreadHandler(s_stateDefectHandlers, handler_info);
 }
 
-FASTFORMAT_CALL(ff_mismatched_handler_info_t) fastformat_getDefaultMismatchedHandler(void)
+FASTFORMAT_CALL(ff_mismatchedHandler_info_t) fastformat_getDefaultMismatchedHandler(void)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != s_stateDefectHandlers, "defect handlers state must not be null");
 

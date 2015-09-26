@@ -5,11 +5,11 @@
  *              library.
  *
  * Created:     19th December 2007
- * Updated:     4th September 2010
+ * Updated:     17th November 2013
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2013, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -76,7 +76,7 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
-#include <platformstl/error/exceptions.hpp>
+//#include <platformstl/error/exceptions.hpp>
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <string>

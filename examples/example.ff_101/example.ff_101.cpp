@@ -314,7 +314,7 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::missing_argument_exception& x)
     {
-        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numberOfReplacements);
+        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numArguments);
     }
     catch(std::exception&)
     {
@@ -332,7 +332,7 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::unreferenced_argument_exception& x)
     {
-        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numberOfReplacements);
+        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numArguments);
     }
     catch(std::exception&)
     {

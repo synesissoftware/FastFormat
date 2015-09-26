@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   6
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       21
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       24
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -157,7 +157,7 @@ inline ff_to_i_r_t_ integer_helper_2(
 
     typedef ff_to_i_r_t_   result_t;
 
-    enum { maxRepeats = 3 };
+    int const maxRepeats = 3;
 
 #ifdef FASTFORMAT_INSERTER_INTEGER_NO_USE_SHIM_STRING_
 
@@ -454,7 +454,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         {
             ff_char_t           sz[21];
             size_t              n;
+#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+            ff_char_t const*    s = stlsoft::integer_to_decimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
+#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
             ff_char_t const*    s = stlsoft::integer_to_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
+#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
 
             return ff_to_i_r_t_(s, n);
         }
@@ -541,7 +545,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         // a nul terminator, we need to do this is a strange order
 
         // 4. precision
+#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+        stlsoft::integer_to_decimal_string(end - (21 + typeLen), 21, precision, &n1);
+#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
         stlsoft::integer_to_string(end - (21 + typeLen), 21, precision, &n1);
+#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
 
         // 5. type
         ::memcpy(end - (typeLen + 1), type, sizeof(ff_char_t) * typeLen);
@@ -558,7 +566,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         end -= n1;
 
         // 2. width
+#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+        stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
+#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
+#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
 
         // 3. .
         *--end = '.';
@@ -643,7 +655,7 @@ using ::fastformat::inserters::integer;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * Inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

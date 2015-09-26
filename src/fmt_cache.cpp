@@ -327,7 +327,9 @@ void ximpl_core::fastformat_impl_formatCache_uninit(void* token)
 
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != token, "token must not be null");
 
-    delete static_cast<format_cache*>(token);
+    format_cache* const ctxt = static_cast<format_cache*>(token);
+
+    delete ctxt;
 }
 
 unsigned ximpl_core::fastformat_impl_formatCache_lookupPattern(
@@ -626,6 +628,8 @@ void pattern_record_t::operator delete(void* pv)
 
 inline ff_char_t* pattern_record_t::get_pattern_memory_() const
 {
+    FASTFORMAT_COVER_MARK_ENTRY();
+
     const size_t    elementsSize    =   offsetElement0
                                     +   ((numFormatElements < 2) ? 2 : numFormatElements) * sizeofElement;
 
@@ -683,6 +687,8 @@ pattern_record_t::pattern_record_t(
 
 pattern_t pattern_record_t::pattern() const
 {
+    FASTFORMAT_COVER_MARK_ENTRY();
+
     /// TODO: place a length record into the memory, between the elements and
     /// the pattern, and then this invocation will not have to do a strlen.
     return pattern_t(get_pattern_memory_(), cchPattern);

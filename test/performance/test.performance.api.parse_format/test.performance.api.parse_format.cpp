@@ -145,8 +145,8 @@ int parse_replacement_std_string(
 int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
     void*                           param
 ,   fastformat::replacement_code_t  code
-,   size_t                          numParameters
-,   int                             parameterIndex
+,   size_t                          numArguments
+,   int                             mismatchedParameterIndex
 ,   fastformat::string_slice_t*     slice
 ,   void*                           reserved0
 ,   size_t                          reserved1
@@ -477,23 +477,25 @@ int main(int argc, char** argv)
  */
 
 int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
-    void*                           param
-,   fastformat::replacement_code_t  code
-,   size_t                          numParameters
-,   int                             parameterIndex
-,   fastformat::string_slice_t*     slice
-,   void*                           reserved0
-,   size_t                          reserved1
-,   void*                           reserved2
+    void*                                   param
+,   fastformat::replacement_code_t          code
+,   size_t                                  numArguments
+,   int                                     mismatchedParameterIndex
+,   fastformat::ff_replacement_action_t*    missingArgumentAction
+,   fastformat::string_slice_t*             slice
+,   void*                                   reserved0
+,   size_t                                  reserved1
+,   void*                                   reserved2
+,   int                                     reserved3
 )
 {
     switch(code)
     {
-        case    fastformat::FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT:
+        case    fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING:
             return 0;
     }
 
-    return prev(param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
+    return prev(param, code, numArguments, mismatchedParameterIndex, missingArgumentAction, slice, reserved0, reserved1, reserved2, reserved3);
 }
 
 
