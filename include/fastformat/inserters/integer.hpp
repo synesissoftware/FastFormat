@@ -4,7 +4,7 @@
  * Purpose:     Inserter functions for integral types
  *
  * Created:     26th May 2009
- * Updated:     7th August 2015
+ * Updated:     28th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   6
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       21
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -418,7 +418,7 @@ inline ff_to_i_r_t_ hex_integer_helper(
 ,   ff_i2s_case_selection_t uppercaseAlpha
 )
 {
-    ff_char_t   fmt[3] = { '%', (FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha) ? 'X' : 'x', '\0' };
+    ff_char_t   fmt[3] = { FASTFORMAT_LITERAL_CHARACTER('%'), (FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha) ? FASTFORMAT_LITERAL_CHARACTER('X') : FASTFORMAT_LITERAL_CHARACTER('x'), FASTFORMAT_LITERAL_CHARACTER('\0') };
     ff_char_t   result[17];
     int         n = fastformat_util_snprintf(&result[0], STLSOFT_NUM_ELEMENTS(result), fmt, value);
 
