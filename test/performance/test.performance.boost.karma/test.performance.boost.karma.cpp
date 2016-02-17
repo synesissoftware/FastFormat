@@ -22,6 +22,7 @@
 #include <boost/format.hpp>
 
 #include <iostream>
+#include <iomanip>
 
 namespace util
 {
