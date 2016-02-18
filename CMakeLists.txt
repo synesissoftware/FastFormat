@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 2.8)
 project (FastFormat C CXX)
 enable_testing()
 set(FastFormat_VERSION 0.7.1)
@@ -14,7 +14,6 @@ if(NOT xTests_FOUND)
 endif()
 
 find_package( STLSoft 1.9.125 REQUIRED )
-find_package( xTests QUIET )
 find_package( shwild QUIET )
 
 add_subdirectory(src)
@@ -38,7 +37,6 @@ add_library(FastFormat
    src/replacements.cpp
    src/snprintf.cpp
 )
-add_dependencies (FastFormat STLSoft)
 generate_export_header(FastFormat)
 set_property(TARGET FastFormat PROPERTY VERSION ${FastFormat_VERSION})
 set_property(TARGET FastFormat PROPERTY SOVERSION 3)
