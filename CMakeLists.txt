@@ -22,7 +22,6 @@ if( xTests_FOUND )
 endif( xTests_FOUND )
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_INCLUDE_CURRENT_DIR_IN_INTERFACE ON)
 
 include(GenerateExportHeader)
 include(CMakePackageConfigHelpers)
