@@ -1,3 +1,8 @@
+include_directories(
+  ${STLSoft_INCLUDE_DIRS}
+  ${xTests_INCLUDE_DIRS}
+)
+
 cmake_policy(SET CMP0002 OLD) # to allow several times the non global target tests
 add_subdirectory (component)
 add_subdirectory (performance)

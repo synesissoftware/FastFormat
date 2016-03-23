@@ -1,42 +1,41 @@
-cmake_minimum_required (VERSION 2.8)
-project (FastFormat C CXX)
+cmake_minimum_required( VERSION 2.8 )
+project( FastFormat C CXX )
 enable_testing()
-set(FastFormat_VERSION 0.7.1)
+set( FastFormat_VERSION 0.7.1 )
 
-set (BUILD_SHARED_LIBS FALSE)
+set( BUILD_SHARED_LIBS FALSE )
 
 # Project include directory
-include_directories ("${CMAKE_CURRENT_SOURCE_DIR}/include")
+include_directories( "${CMAKE_CURRENT_SOURCE_DIR}/include" )
 
-find_package (xTests 0.18 CONFIG QUIET)
-if(NOT xTests_FOUND)
-   message(AUTHOR_WARNING "The xTests framework not found. Cannot build tests.")
-endif()
+find_package( xTests 0.18 CONFIG QUIET )
 
-find_package( STLSoft 1.9.125 REQUIRED )
+find_package( STLSoft 1.9.125 CONFIG REQUIRED )
 find_package( shwild QUIET )
 
-add_subdirectory(src)
+add_subdirectory( src )
 if( xTests_FOUND )
-   add_subdirectory(test EXCLUDE_FROM_ALL)
+  add_subdirectory( test EXCLUDE_FROM_ALL )
+else( xTests_FOUND )
+  message( AUTHOR_WARNING "The xTests framework not found. Cannot build tests." )
 endif( xTests_FOUND )
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set( CMAKE_INCLUDE_CURRENT_DIR ON )
 
-include(GenerateExportHeader)
-include(CMakePackageConfigHelpers)
+include( GenerateExportHeader )
+include( CMakePackageConfigHelpers )
 
-include_directories (${STLSoft_INCLUDE_DIRS})
-add_library(FastFormat
-   src/api.cpp
-   src/fmt_cache.cpp
-   src/fmt_spec_defect_handlers.cpp
-   src/init_code_strings.cpp
-   src/memory_pool.cpp
-   src/replacements.cpp
-   src/snprintf.cpp
+include_directories( ${STLSoft_INCLUDE_DIRS} )
+add_library( FastFormat
+  src/api.cpp
+  src/fmt_cache.cpp
+  src/fmt_spec_defect_handlers.cpp
+  src/init_code_strings.cpp
+  src/memory_pool.cpp
+  src/replacements.cpp
+  src/snprintf.cpp
 )
-generate_export_header(FastFormat)
+generate_export_header( FastFormat )
 set_property(TARGET FastFormat PROPERTY VERSION ${FastFormat_VERSION})
 set_property(TARGET FastFormat PROPERTY SOVERSION 3)
 set_property(TARGET FastFormat PROPERTY

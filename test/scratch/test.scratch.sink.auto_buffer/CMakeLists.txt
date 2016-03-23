@@ -1,6 +1,7 @@
 include_directories(
-    ${STLSoft_INCLUDE_DIRS}
-    ${xTests_INCLUDE_DIRS}
+  ${STLSoft_INCLUDE_DIRS}
+  ${xTests_INCLUDE_DIRS}
+  ${shwild_INCLUDE_DIRS}
 )
 
 if( shwild_FOUND )
@@ -13,9 +14,12 @@ if( shwild_FOUND )
       memory_pool
       replacements
       snprintf
+      shwild::shwild
       xTests::xTests
   )
   add_test( test.scratch.sink.auto_buffer test.scratch.sink.auto_buffer )
   add_custom_target( tests DEPENDS test.scratch.sink.auto_buffer )
+else( shwild_FOUND )
+  message(AUTHOR_WARNING "The shwild library not found. Cannot build test test.scratch.sink.auto.")
 endif( shwild_FOUND )
 
