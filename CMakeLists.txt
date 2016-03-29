@@ -13,19 +13,20 @@ find_package( xTests 0.18 CONFIG QUIET )
 find_package( STLSoft 1.9.125 CONFIG REQUIRED )
 find_package( shwild QUIET )
 
+include_directories( ${STLSoft_INCLUDE_DIRS} )
 add_subdirectory( src )
 if( xTests_FOUND )
   add_subdirectory( test EXCLUDE_FROM_ALL )
 else( xTests_FOUND )
   message( AUTHOR_WARNING "The xTests framework not found. Cannot build tests." )
 endif( xTests_FOUND )
+add_subdirectory( examples EXCLUDE_FROM_ALL )
 
 set( CMAKE_INCLUDE_CURRENT_DIR ON )
 
 include( GenerateExportHeader )
 include( CMakePackageConfigHelpers )
 
-include_directories( ${STLSoft_INCLUDE_DIRS} )
 add_library( FastFormat
   src/api.cpp
   src/fmt_cache.cpp
