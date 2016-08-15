@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.sink.vectored_file project.
  *
  * Created:     28th October 2006
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.performance.three_strings_one_integer project.
  *
  * Created:     19th September 2006
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

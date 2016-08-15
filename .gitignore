@@ -50,6 +50,8 @@ list_changes.cmd
 
 include/fastformat/internal/dos2unix.has.been.performed
 
+test/tests-plan.txt
+
 # files (by pattern)
 
 *~
@@ -65,6 +67,7 @@ include/fastformat/internal/dos2unix.has.been.performed
 *.o
 *.obj
 *.opensdf
+*.opt
 *.org
 *.out
 *.pch

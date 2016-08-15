@@ -4,11 +4,11 @@
  * Purpose:     Windows INI file bundle.
  *
  * Created:     19th September 2006
- * Updated:     13th September 2010
+ * Updated:     26th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

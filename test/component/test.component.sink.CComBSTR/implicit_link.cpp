@@ -4,7 +4,7 @@
  * Purpose:     Implicit link file for the test.component.sink.CComBSTR project.
  *
  * Created:     14th September 2010
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

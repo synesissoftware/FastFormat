@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.component.FILE project.
  *
  * Created:     3rd January 2008
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

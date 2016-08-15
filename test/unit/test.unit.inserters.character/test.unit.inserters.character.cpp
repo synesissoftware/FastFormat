@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.unit.inserters.character project.
  *
  * Created:     11th December 2010
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

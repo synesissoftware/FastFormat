@@ -4,7 +4,7 @@
  * Purpose:     "Entry point" include into the STLSoft libraries.
  *
  * Created:     18th November 2007
- * Updated:     23rd September 2015
+ * Updated:     26th September 2015
  *
  * Home:        http://www.fastformat.org/
  *

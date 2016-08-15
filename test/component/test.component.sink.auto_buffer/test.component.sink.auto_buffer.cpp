@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.component.sink.auto_buffer project.
  *
  * Created:     26th April 2008
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

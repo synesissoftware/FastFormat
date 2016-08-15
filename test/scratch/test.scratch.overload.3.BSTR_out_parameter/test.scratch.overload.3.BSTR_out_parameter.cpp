@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.overload.3.BSTR_out_parameter project.
  *
  * Created:     4th January 2009
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

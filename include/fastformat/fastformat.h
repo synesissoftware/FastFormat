@@ -4,7 +4,7 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     25th September 2015
+ * Updated:     28th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
@@ -53,9 +53,9 @@
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       21
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       22
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    2
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        99
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        101
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -89,13 +89,16 @@
 # define FASTFORMAT_VER_0_7_1_ALPHA_8       0x00070108
 # define FASTFORMAT_VER_0_7_1_ALPHA_9       0x00070109
 # define FASTFORMAT_VER_0_7_1_ALPHA_10      0x0007010a
+# define FASTFORMAT_VER_0_7_1               0x000701ff
+# define FASTFORMAT_VER_0_7_2               0x000702ff
+# define FASTFORMAT_VER_0_7_3               0x000703ff
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           7
-#define FASTFORMAT_VER_REVISION        1
+#define FASTFORMAT_VER_REVISION        3
 
-#define FASTFORMAT_VER                 FASTFORMAT_VER_0_7_1_ALPHA_10
+#define FASTFORMAT_VER                 FASTFORMAT_VER_0_7_3
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes - 1

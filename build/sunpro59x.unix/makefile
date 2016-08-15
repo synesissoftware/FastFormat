@@ -5,7 +5,7 @@
 #           compiler, on UNIX
 #
 # Created:  22nd December 2007
-# Updated:  25th September 2015
+# Updated:  26th September 2015
 #
 ############################################################################
 
@@ -186,6 +186,8 @@ CPPC_DEFS_BASE =\
  $(COMMON_DEFS)\
  $(CUSTOM_DEFS)\
  $(NO_NAG_DEFS)\
+ \
+ -DSHWILD_QUALITY_NO_USE_XCOVER\
  \
 
 DEFINE_BOOST_FOR_PERFTEST	=

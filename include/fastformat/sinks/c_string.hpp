@@ -5,11 +5,11 @@
  *              filled as C-style strings.
  *
  * Created:     14th April 2008
- * Updated:     13th September 2010
+ * Updated:     28th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -56,8 +56,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_EDIT       13
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_REVISION   2
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_EDIT       14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -171,8 +171,6 @@ public: // Operations
 
             if(flags::ff_newLine & flags)
             {
-                const ff_string_slice_t crlf = fastformat_getNewlineForPlatform();
-
                 ::memcpy(p, crlf.ptr, crlf.len * sizeof(char_type));
                 p += crlf.len;
             }

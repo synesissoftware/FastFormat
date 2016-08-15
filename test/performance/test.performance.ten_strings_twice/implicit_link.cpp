@@ -4,7 +4,7 @@
  * Purpose:     Implicit link file for the test.performance.ten_strings_twice project.
  *
  * Created:     11th November 2008
- * Updated:     22nd September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

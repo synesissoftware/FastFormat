@@ -1,7 +1,7 @@
 FastFormat - Install
 ====================
 
-Updated:    7th August 2012
+Updated:    26th September 2015
 
 
 The following steps are required to install FastFormat:
@@ -17,10 +17,10 @@ The following steps are required to install FastFormat:
 
     4. Download the latest distribution of STLSoft, from http://stlsoft.org/
 
-    5. Unzip it to a directory of your choice, e.g c:\3pty\stlsoft-1.9.115
+    5. Unzip it to a directory of your choice, e.g c:\3pty\stlsoft-1.9.121
 
     6. Define an environment variable STLSOFT, whose value is the directory
-       in which you unzipped it, e.g. STLSOFT=c:\3pty\stlsoft-1.9.115
+       in which you unzipped it, e.g. STLSOFT=c:\3pty\stlsoft-1.9.121
 
     7. Open a command shell in the appropriate directory that matches your
        compiler:
@@ -42,6 +42,6 @@ The following steps are required to install FastFormat:
           "make -e test.performance"
 
 NOTE: FastFormat depends on the (header-only) STLSoft libraries - version
-  1.9.115 or later - available from http://www.stlsoft.org/.
+  1.9.121 or later - available from http://www.stlsoft.org/.
 
 =============================== End of file ================================

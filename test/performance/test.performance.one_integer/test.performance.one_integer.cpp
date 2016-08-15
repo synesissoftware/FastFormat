@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.performance.one_integer project.
  *
  * Created:     9th September 2006
- * Updated:     25th September 2015
+ * Updated:     26th September 2015
  *
  * Status:      Wizard-generated
  *

@@ -4,11 +4,11 @@
  * Purpose:     Implicit linking for the FastFormat API
  *
  * Created:     30th January 2007
- * Updated:     9th March 2010
+ * Updated:     26th September 2015
  *
  * Home:        http://fastformat.org/
  *
- * Copyright (c) 2007-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2015, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -51,9 +51,9 @@
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_MAJOR    1
-# define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_MINOR    5
+# define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_MINOR    6
 # define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_EDIT     19
+# define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_EDIT     20
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -179,6 +179,12 @@
 #    define FASTFORMAT_IMPL_LINK_COMPILER_NAME          "vc9"
 #   elif _MSC_VER == 1600
 #    define FASTFORMAT_IMPL_LINK_COMPILER_NAME          "vc10"
+#   elif _MSC_VER == 1700
+#    define FASTFORMAT_IMPL_LINK_COMPILER_NAME          "vc11"
+#   elif _MSC_VER == 1800
+#    define FASTFORMAT_IMPL_LINK_COMPILER_NAME          "vc12"
+#   elif _MSC_VER == 1900
+#    define FASTFORMAT_IMPL_LINK_COMPILER_NAME          "vc14"
 #   else /* ? _MSC_VER */
 #    error Visual C++ version not supported
 #   endif /* _MSC_VER */
