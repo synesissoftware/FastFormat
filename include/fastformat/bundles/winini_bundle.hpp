@@ -4,11 +4,11 @@
  * Purpose:     Windows INI file bundle.
  *
  * Created:     19th September 2006
- * Updated:     26th September 2015
+ * Updated:     15th August 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_MINOR      1
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_EDIT       15
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_REVISION   4
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_EDIT       16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -122,15 +122,15 @@ public:
         , m_iniSection(::stlsoft::c_str_data(section), ::stlsoft::c_str_len(section))
     {}
 
-    ~winini_bundle() throw();
+    ~winini_bundle() ss_noexcept_k;
 /// @}
 
 /// \name Accessors
 /// @{
 public:
-    string_type operator [](char_type const *name) const throw(std::out_of_range);
+    string_type operator [](char_type const *name) const /* throw(std::out_of_range) */;
     template <typename S>
-    string_type operator [](S const& name) const throw(std::out_of_range)
+    string_type operator [](S const& name) const /* throw(std::out_of_range) */
     {
         FASTFORMAT_DECLARE_c_str_ptr_();
 
@@ -169,10 +169,10 @@ inline winini_bundle::winini_bundle(char_type const *source, char_type const *se
     , m_iniSection(section)
 {}
 
-inline winini_bundle::~winini_bundle() throw()
+inline winini_bundle::~winini_bundle() ss_noexcept_k
 {}
 
-inline winini_bundle::string_type winini_bundle::operator [](char_type const *name) const throw(std::out_of_range)
+inline winini_bundle::string_type winini_bundle::operator [](char_type const *name) const /* throw(std::out_of_range) */
 {
     static const char_type sentinel[] = FASTFORMAT_LITERAL_STRING("{5DDAADE5-5134-4734-ACB8-A6D0FA3BD0EA}-{D875F19B-8279-4c44-9517-F16366BC13E3}");
 

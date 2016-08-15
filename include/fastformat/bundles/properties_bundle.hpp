@@ -4,11 +4,11 @@
  * Purpose:     .properties file bundle.
  *
  * Created:     19th September 2006
- * Updated:     26th September 2015
+ * Updated:     15th August 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       19
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_REVISION   2
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       20
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -163,15 +163,15 @@ public:
         : m_properties(open_ns_(source))
     {}
 
-    ~properties_bundle() throw();
+    ~properties_bundle() ss_noexcept_k;
 /// @}
 
 /// \name Accessors
 /// @{
 public:
-    string_type operator [](char const* name) const throw(std::out_of_range);
+    string_type operator [](char const* name) const /* throw(std::out_of_range) */;
     template <typename S>
-    string_type operator [](S const& name) const throw(std::out_of_range)
+    string_type operator [](S const& name) const /* throw(std::out_of_range) */
     {
         FASTFORMAT_DECLARE_c_str_ptr_();
 
@@ -259,10 +259,10 @@ inline properties_bundle::properties_bundle(char const *source)
     : m_properties(open_(source))
 {}
 
-inline properties_bundle::~properties_bundle() throw()
+inline properties_bundle::~properties_bundle() ss_noexcept_k
 {}
 
-inline properties_bundle::string_type properties_bundle::operator [](char const *name) const throw(std::out_of_range)
+inline properties_bundle::string_type properties_bundle::operator [](char const *name) const /* throw(std::out_of_range) */
 {
 # ifdef FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE
 

@@ -4,11 +4,11 @@
  * Purpose:     Windows resource bundle.
  *
  * Created:     24th April 2009
- * Updated:     26th September 2015
+ * Updated:     15th August 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     6
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 3
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -231,7 +231,7 @@ private:
 /// @{
 public:
     explicit windows_resource_bundle(HINSTANCE hinst);
-    ~windows_resource_bundle() throw();
+    ~windows_resource_bundle() ss_noexcept_k;
 private:
     windows_resource_bundle(class_type const&);
     class_type& operator =(class_type const&);
@@ -240,7 +240,7 @@ private:
 /// \name Accessors
 /// @{
 public:
-    string_type operator [](int id) const throw(missing_resource_id_exception);
+    string_type operator [](int id) const /* throw(missing_resource_id_exception) */;
 /// @}
 
 /// \name Implementation
@@ -265,12 +265,12 @@ inline /* explicit */ windows_resource_bundle::windows_resource_bundle(HINSTANCE
     : m_instance(hinst)
 {}
 
-inline windows_resource_bundle::~windows_resource_bundle() throw()
+inline windows_resource_bundle::~windows_resource_bundle() ss_noexcept_k
 {
     ::FreeLibrary(m_instance);
 }
 
-inline windows_resource_bundle::string_type windows_resource_bundle::operator [](int id) const throw(windows_resource_bundle::missing_resource_id_exception)
+inline windows_resource_bundle::string_type windows_resource_bundle::operator [](int id) const /* throw(windows_resource_bundle::missing_resource_id_exception) */
 {
     resource_string_type_   str(m_instance, id);
     string_type             s2 = str;

@@ -5,11 +5,11 @@
  *              unreferenced arguments.
  *
  * Created:     25th April 2009
- * Updated:     28th October 2013
+ * Updated:     15th August 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -56,8 +56,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MINOR    2
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     9
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_REVISION 3
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -120,7 +120,7 @@ public: // Construction
      * \warning The system behaviour is undefined if the thread/process 
      *   mismatch handler is modified during the lifetime of this instance
      */
-    ~ignore_missing_arguments_scope() throw()
+    ~ignore_missing_arguments_scope() ss_noexcept_k
     {}
 private:
     ignore_missing_arguments_scope(class_type const&);

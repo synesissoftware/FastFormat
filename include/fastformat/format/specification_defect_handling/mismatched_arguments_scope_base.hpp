@@ -5,11 +5,11 @@
  *              in response to mismatched arguments.
  *
  * Created:     1st December 2008
- * Updated:     28th October 2013
+ * Updated:     15th August 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -56,8 +56,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MINOR       1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_REVISION    2
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        8
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_REVISION    3
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -115,7 +115,7 @@ public:
      * \warning The system behaviour is undefined if the thread/process 
      *   mismatch handler is modified during the lifetime of this instance
      */
-    virtual ~mismatched_arguments_scope_base() throw()
+    virtual ~mismatched_arguments_scope_base() ss_noexcept_k
     {
         fastformat_setThreadMismatchedHandler(m_previous.handler, m_previous.param);
     }
@@ -148,7 +148,7 @@ protected: // Overrides
     ) = 0;
 
 private: // Implementation
-    void* get_this_() throw()
+    void* get_this_() ss_noexcept_k
     {
         return this;
     }
