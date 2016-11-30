@@ -5,7 +5,7 @@
  *              FastFormat replacement parameters.
  *
  * Created:     24th April 2009
- * Updated:     4th September 2010
+ * Updated:     30h November 2010
  *
  * Home:        http://www.fastformat.org/
  *
@@ -56,8 +56,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MINOR      0
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       4
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_REVISION   2
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -289,6 +289,14 @@ inline S change_windows_replacement_parameters_to_fastformat(S const& str)
         }
     }}
 
+    if(number == state)
+	{
+        ff_char_t   parameter[32];
+        int         cch = fastformat_util_snprintf(&parameter[0], STLSOFT_NUM_ELEMENTS(parameter), FASTFORMAT_LITERAL_STRING("{%d}"), index - 1);
+
+        str2.append(parameter, size_t(cch));
+    }
+
     return str2;
 }
 
@@ -310,6 +318,7 @@ inline S escape_fastformat_replacement_parameters(S const& str)
         {
             case    '{':
                 str2.append(1, '{');
+                // fall through
             default:
                 str2.append(1, *begin);
                 break;
