@@ -72,7 +72,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;STLSOFT_ALLOW_OBSOLETE_1_9_IN_1_10;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../../../include;$(STLSOFT_1_10)/include;$(STLSOFT)/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../include;$(STLSOFT)/include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -90,7 +90,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;STLSOFT_ALLOW_OBSOLETE_1_9_IN_1_10;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../../../include;$(STLSOFT_1_10)/include;$(STLSOFT)/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../include;$(STLSOFT)/include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>

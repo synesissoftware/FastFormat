@@ -5,7 +5,7 @@
 #           compiler, on Mac OS-X
 #
 # Created:  22nd December 2007
-# Updated:  16th August 2016
+# Updated:  21st January 2017
 #
 ############################################################################
 
@@ -716,6 +716,7 @@ TARG_EX_sink_cstr_ST_R	=	$(PROJ_BIN_DIR)/$(PROJ_TAG_VER).example.sink.c_string.$
 # Component Tests
 
 TARG_TEST_COMP_file_MT_D			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).mt.debug
+TARG_TEST_COMP_file_stm_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_COMP_fmt_sink_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_COMP_ins_hex_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_COMP_ins_int_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).mt.debug
@@ -727,6 +728,7 @@ TARG_TEST_COMP_write_sink_MT_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.componen
 TARG_TEST_COMP_x_1_MT_D			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_COMP_snk_ostm_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_COMP_file_MT_R			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).mt
+TARG_TEST_COMP_file_stm_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_COMP_fmt_sink_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_COMP_ins_hex_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_COMP_ins_int_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).mt
@@ -738,6 +740,7 @@ TARG_TEST_COMP_write_sink_MT_R	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.componen
 TARG_TEST_COMP_x_1_MT_R			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_COMP_snk_ostm_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_COMP_file_ST_D			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).debug
+TARG_TEST_COMP_file_stm_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_COMP_fmt_sink_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_COMP_ins_hex_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_COMP_ins_int_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).debug
@@ -749,6 +752,7 @@ TARG_TEST_COMP_write_sink_ST_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.componen
 TARG_TEST_COMP_x_1_ST_D			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_COMP_snk_ostm_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_COMP_file_ST_R			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG)
+TARG_TEST_COMP_file_stm_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG)
 TARG_TEST_COMP_fmt_sink_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG)
 TARG_TEST_COMP_ins_hex_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG)
 TARG_TEST_COMP_ins_int_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG)
@@ -827,12 +831,12 @@ TARG_TEST_UNIT_api_init_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.
 TARG_TEST_UNIT_api_lkptrn_MT_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_api_msmtchh_MT_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_api_prsrpl_MT_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).mt.debug
+TARG_TEST_UNIT_bndl_util_MT_D	    =   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_fmt_stdfl_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_ins_ch_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_ins_i_MT_D			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_ins_ss_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.storage_size.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_shim_fi_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims.fast_integers.$(COMP_ARCH_OS_TAG).mt.debug
-TARG_TEST_UNIT_shim_ns_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims_and_namespaces.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_snk_a_b_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.auto_buffer.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_snk_c_str_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.c_string.$(COMP_ARCH_OS_TAG).mt.debug
 TARG_TEST_UNIT_snk_chbuf_MT_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.char_buffer.$(COMP_ARCH_OS_TAG).mt.debug
@@ -848,12 +852,12 @@ TARG_TEST_UNIT_api_init_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.
 TARG_TEST_UNIT_api_lkptrn_MT_R	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_api_msmtchh_MT_R	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_api_prsrpl_MT_R	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).mt
+TARG_TEST_UNIT_bndl_util_MT_R	    =   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_fmt_stdfl_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_ins_ch_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_ins_i_MT_R			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_ins_ss_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.storage_size.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_shim_fi_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims.fast_integers.$(COMP_ARCH_OS_TAG).mt
-TARG_TEST_UNIT_shim_ns_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims_and_namespaces.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_snk_a_b_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.auto_buffer.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_snk_c_str_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.c_string.$(COMP_ARCH_OS_TAG).mt
 TARG_TEST_UNIT_snk_chbuf_MT_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.char_buffer.$(COMP_ARCH_OS_TAG).mt
@@ -869,12 +873,12 @@ TARG_TEST_UNIT_api_init_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.
 TARG_TEST_UNIT_api_lkptrn_ST_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_api_msmtchh_ST_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_api_prsrpl_ST_D	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).debug
+TARG_TEST_UNIT_bndl_util_ST_D	    =   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_fmt_stdfl_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_ins_ch_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_ins_i_ST_D			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_ins_ss_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.storage_size.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_shim_fi_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims.fast_integers.$(COMP_ARCH_OS_TAG).debug
-TARG_TEST_UNIT_shim_ns_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims_and_namespaces.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_snk_a_b_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.auto_buffer.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_snk_c_str_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.c_string.$(COMP_ARCH_OS_TAG).debug
 TARG_TEST_UNIT_snk_chbuf_ST_D		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.char_buffer.$(COMP_ARCH_OS_TAG).debug
@@ -890,12 +894,12 @@ TARG_TEST_UNIT_api_init_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.
 TARG_TEST_UNIT_api_lkptrn_ST_R	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_api_msmtchh_ST_R	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_api_prsrpl_ST_R	=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG)
+TARG_TEST_UNIT_bndl_util_ST_R	    =   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_fmt_stdfl_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_ins_ch_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_ins_i_ST_R			=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_ins_ss_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.inserters.storage_size.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_shim_fi_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims.fast_integers.$(COMP_ARCH_OS_TAG)
-TARG_TEST_UNIT_shim_ns_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.shims_and_namespaces.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_snk_a_b_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.auto_buffer.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_snk_c_str_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.c_string.$(COMP_ARCH_OS_TAG)
 TARG_TEST_UNIT_snk_chbuf_ST_R		=   $(PROJ_BIN_DIR)/$(PROJ_TAG_VER).test.unit.sink.char_buffer.$(COMP_ARCH_OS_TAG)
@@ -1182,6 +1186,7 @@ OBJ_EX_sink_cstr_ST_R		=	$(PROJ_OBJ_DIR)/example.sink.c_string.o
 # Component Tests
 
 OBJ_TEST_COMP_file_MT_D			=   $(PROJ_OBJ_DIR)/test.component.FILE.mt.debug.o
+OBJ_TEST_COMP_file_stm_MT_D		=   $(PROJ_OBJ_DIR)/test.component.FILE_stream.mt.debug.o
 OBJ_TEST_COMP_fmt_sink_MT_D		=   $(PROJ_OBJ_DIR)/test.component.sink.string.fmt.mt.debug.o
 OBJ_TEST_COMP_ins_hex_MT_D		=   $(PROJ_OBJ_DIR)/test.component.inserter.hex.mt.debug.o
 OBJ_TEST_COMP_ins_int_MT_D		=   $(PROJ_OBJ_DIR)/test.component.inserter.integer.mt.debug.o
@@ -1193,6 +1198,7 @@ OBJ_TEST_COMP_write_sink_MT_D		=   $(PROJ_OBJ_DIR)/test.component.sink.string.wr
 OBJ_TEST_COMP_x_1_MT_D			=   $(PROJ_OBJ_DIR)/test.component.fsde.mt.debug.o
 OBJ_TEST_COMP_snk_ostm_MT_D		=   $(PROJ_OBJ_DIR)/test.component.sink.ostream.mt.debug.o
 OBJ_TEST_COMP_file_MT_R			=   $(PROJ_OBJ_DIR)/test.component.FILE.mt.o
+OBJ_TEST_COMP_file_stm_MT_R		=   $(PROJ_OBJ_DIR)/test.component.FILE_stream.mt.o
 OBJ_TEST_COMP_fmt_sink_MT_R		=   $(PROJ_OBJ_DIR)/test.component.sink.string.fmt.mt.o
 OBJ_TEST_COMP_ins_hex_MT_R		=   $(PROJ_OBJ_DIR)/test.component.inserter.hex.mt.o
 OBJ_TEST_COMP_ins_int_MT_R		=   $(PROJ_OBJ_DIR)/test.component.inserter.integer.mt.o
@@ -1204,6 +1210,7 @@ OBJ_TEST_COMP_write_sink_MT_R		=   $(PROJ_OBJ_DIR)/test.component.sink.string.wr
 OBJ_TEST_COMP_x_1_MT_R			=   $(PROJ_OBJ_DIR)/test.component.fsde.mt.o
 OBJ_TEST_COMP_snk_ostm_MT_R		=   $(PROJ_OBJ_DIR)/test.component.sink.ostream.mt.o
 OBJ_TEST_COMP_file_ST_D			=   $(PROJ_OBJ_DIR)/test.component.FILE.debug.o
+OBJ_TEST_COMP_file_stm_ST_D		=   $(PROJ_OBJ_DIR)/test.component.FILE_stream.debug.o
 OBJ_TEST_COMP_fmt_sink_ST_D		=   $(PROJ_OBJ_DIR)/test.component.sink.string.fmt.debug.o
 OBJ_TEST_COMP_ins_hex_ST_D		=   $(PROJ_OBJ_DIR)/test.component.inserter.hex.debug.o
 OBJ_TEST_COMP_ins_int_ST_D		=   $(PROJ_OBJ_DIR)/test.component.inserter.integer.debug.o
@@ -1215,6 +1222,7 @@ OBJ_TEST_COMP_write_sink_ST_D		=   $(PROJ_OBJ_DIR)/test.component.sink.string.wr
 OBJ_TEST_COMP_x_1_ST_D			=   $(PROJ_OBJ_DIR)/test.component.fsde.debug.o
 OBJ_TEST_COMP_snk_ostm_ST_D		=   $(PROJ_OBJ_DIR)/test.component.sink.ostream.debug.o
 OBJ_TEST_COMP_file_ST_R			=   $(PROJ_OBJ_DIR)/test.component.FILE.o
+OBJ_TEST_COMP_file_stm_ST_R		=   $(PROJ_OBJ_DIR)/test.component.FILE_stream.o
 OBJ_TEST_COMP_fmt_sink_ST_R		=   $(PROJ_OBJ_DIR)/test.component.sink.string.fmt.o
 OBJ_TEST_COMP_ins_hex_ST_R		=   $(PROJ_OBJ_DIR)/test.component.inserter.hex.o
 OBJ_TEST_COMP_ins_int_ST_R		=   $(PROJ_OBJ_DIR)/test.component.inserter.integer.o
@@ -1294,16 +1302,12 @@ OBJ_TEST_UNIT_api_init_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.api.initialisation.mt
 OBJ_TEST_UNIT_api_lkptrn_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.api.lookup_pattern.mt.debug.o
 OBJ_TEST_UNIT_api_msmtchh_MT_D	=   $(PROJ_OBJ_DIR)/test.unit.api.mismatched_handlers.mt.debug.o
 OBJ_TEST_UNIT_api_prsrpl_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.api.parse_format.mt.debug.o
+OBJ_TEST_UNIT_bndl_util_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.bundle.util.mt.debug.o
 OBJ_TEST_UNIT_fmt_stdfl_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.format.standard_flags.mt.debug.o
 OBJ_TEST_UNIT_ins_ch_MT_D			=   $(PROJ_OBJ_DIR)/test.unit.inserters.character.mt.debug.o
 OBJ_TEST_UNIT_ins_i_MT_D			=   $(PROJ_OBJ_DIR)/test.unit.inserters.integer.mt.debug.o
 OBJ_TEST_UNIT_ins_ss_MT_D			=   $(PROJ_OBJ_DIR)/test.unit.inserters.storage_size.mt.debug.o
 OBJ_TEST_UNIT_shim_fi_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.shims.fast_integers.mt.debug.o
-OBJ_TEST_UNIT_shim_ns_1_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.main.mt.debug.o
-OBJ_TEST_UNIT_shim_ns_2_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.with.mt.debug.o
-OBJ_TEST_UNIT_shim_ns_3_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ff.mt.debug.o
-OBJ_TEST_UNIT_shim_ns_4_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ss.mt.debug.o
-OBJ_TEST_UNIT_shim_ns_5_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.none.mt.debug.o
 OBJ_TEST_UNIT_snk_a_b_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.sink.auto_buffer.mt.debug.o
 OBJ_TEST_UNIT_snk_c_str_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.sink.c_string.mt.debug.o
 OBJ_TEST_UNIT_snk_chbuf_MT_D		=   $(PROJ_OBJ_DIR)/test.unit.sink.char_buffer.mt.debug.o
@@ -1320,16 +1324,12 @@ OBJ_TEST_UNIT_api_init_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.api.initialisation.mt
 OBJ_TEST_UNIT_api_lkptrn_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.api.lookup_pattern.mt.o
 OBJ_TEST_UNIT_api_msmtchh_MT_R	=   $(PROJ_OBJ_DIR)/test.unit.api.mismatched_handlers.mt.o
 OBJ_TEST_UNIT_api_prsrpl_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.api.parse_format.mt.o
+OBJ_TEST_UNIT_bndl_util_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.bundle.util.mt.o
 OBJ_TEST_UNIT_fmt_stdfl_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.format.standard_flags.mt.o
 OBJ_TEST_UNIT_ins_ch_MT_R			=   $(PROJ_OBJ_DIR)/test.unit.inserters.character.mt.o
 OBJ_TEST_UNIT_ins_i_MT_R			=   $(PROJ_OBJ_DIR)/test.unit.inserters.integer.mt.o
 OBJ_TEST_UNIT_ins_ss_MT_R			=   $(PROJ_OBJ_DIR)/test.unit.inserters.storage_size.mt.o
 OBJ_TEST_UNIT_shim_fi_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.shims.fast_integers.mt.o
-OBJ_TEST_UNIT_shim_ns_1_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.main.mt.o
-OBJ_TEST_UNIT_shim_ns_2_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.with.mt.o
-OBJ_TEST_UNIT_shim_ns_3_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ff.mt.o
-OBJ_TEST_UNIT_shim_ns_4_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ss.mt.o
-OBJ_TEST_UNIT_shim_ns_5_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.none.mt.o
 OBJ_TEST_UNIT_snk_a_b_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.sink.auto_buffer.mt.o
 OBJ_TEST_UNIT_snk_c_str_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.sink.c_string.mt.o
 OBJ_TEST_UNIT_snk_chbuf_MT_R		=   $(PROJ_OBJ_DIR)/test.unit.sink.char_buffer.mt.o
@@ -1346,16 +1346,12 @@ OBJ_TEST_UNIT_api_init_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.api.initialisation.de
 OBJ_TEST_UNIT_api_lkptrn_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.api.lookup_pattern.debug.o
 OBJ_TEST_UNIT_api_msmtchh_ST_D	=   $(PROJ_OBJ_DIR)/test.unit.api.mismatched_handlers.debug.o
 OBJ_TEST_UNIT_api_prsrpl_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.api.parse_format.debug.o
+OBJ_TEST_UNIT_bndl_util_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.bundle.util.debug.o
 OBJ_TEST_UNIT_fmt_stdfl_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.format.standard_flags.debug.o
 OBJ_TEST_UNIT_ins_ch_ST_D			=   $(PROJ_OBJ_DIR)/test.unit.inserters.character.debug.o
 OBJ_TEST_UNIT_ins_i_ST_D			=   $(PROJ_OBJ_DIR)/test.unit.inserters.integer.debug.o
 OBJ_TEST_UNIT_ins_ss_ST_D			=   $(PROJ_OBJ_DIR)/test.unit.inserters.storage_size.debug.o
 OBJ_TEST_UNIT_shim_fi_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.shims.fast_integers.debug.o
-OBJ_TEST_UNIT_shim_ns_1_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.main.debug.o
-OBJ_TEST_UNIT_shim_ns_2_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.with.debug.o
-OBJ_TEST_UNIT_shim_ns_3_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ff.debug.o
-OBJ_TEST_UNIT_shim_ns_4_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ss.debug.o
-OBJ_TEST_UNIT_shim_ns_5_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.none.debug.o
 OBJ_TEST_UNIT_snk_a_b_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.sink.auto_buffer.debug.o
 OBJ_TEST_UNIT_snk_c_str_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.sink.c_string.debug.o
 OBJ_TEST_UNIT_snk_chbuf_ST_D		=   $(PROJ_OBJ_DIR)/test.unit.sink.char_buffer.debug.o
@@ -1372,16 +1368,12 @@ OBJ_TEST_UNIT_api_init_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.api.initialisation.o
 OBJ_TEST_UNIT_api_lkptrn_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.api.lookup_pattern.o
 OBJ_TEST_UNIT_api_msmtchh_ST_R	=   $(PROJ_OBJ_DIR)/test.unit.api.mismatched_handlers.o
 OBJ_TEST_UNIT_api_prsrpl_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.api.parse_format.o
+OBJ_TEST_UNIT_bndl_util_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.bundle.util.o
 OBJ_TEST_UNIT_fmt_stdfl_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.format.standard_flags.o
 OBJ_TEST_UNIT_ins_ch_ST_R			=   $(PROJ_OBJ_DIR)/test.unit.inserters.character.o
 OBJ_TEST_UNIT_ins_i_ST_R			=   $(PROJ_OBJ_DIR)/test.unit.inserters.integer.o
 OBJ_TEST_UNIT_ins_ss_ST_R			=   $(PROJ_OBJ_DIR)/test.unit.inserters.storage_size.o
 OBJ_TEST_UNIT_shim_fi_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.shims.fast_integers.o
-OBJ_TEST_UNIT_shim_ns_1_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.main.o
-OBJ_TEST_UNIT_shim_ns_2_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.with.o
-OBJ_TEST_UNIT_shim_ns_3_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ff.o
-OBJ_TEST_UNIT_shim_ns_4_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.no_ss.o
-OBJ_TEST_UNIT_shim_ns_5_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.shims_and_namespaces.none.o
 OBJ_TEST_UNIT_snk_a_b_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.sink.auto_buffer.o
 OBJ_TEST_UNIT_snk_c_str_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.sink.c_string.o
 OBJ_TEST_UNIT_snk_chbuf_ST_R		=   $(PROJ_OBJ_DIR)/test.unit.sink.char_buffer.o
@@ -1515,6 +1507,7 @@ OBJS_EXAMPLE=\
 # Component Tests
 OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_file_MT_D)\
+ $(OBJ_TEST_COMP_file_stm_MT_D)\
  $(OBJ_TEST_COMP_fmt_sink_MT_D)\
  $(OBJ_TEST_COMP_ins_hex_MT_D)\
  $(OBJ_TEST_COMP_ins_int_MT_D)\
@@ -1526,6 +1519,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_MT_D)\
  $(OBJ_TEST_COMP_snk_ostm_MT_D)\
  $(OBJ_TEST_COMP_file_MT_R)\
+ $(OBJ_TEST_COMP_file_stm_MT_R)\
  $(OBJ_TEST_COMP_fmt_sink_MT_R)\
  $(OBJ_TEST_COMP_ins_hex_MT_R)\
  $(OBJ_TEST_COMP_ins_int_MT_R)\
@@ -1537,6 +1531,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_MT_R)\
  $(OBJ_TEST_COMP_snk_ostm_MT_R)\
  $(OBJ_TEST_COMP_file_ST_D)\
+ $(OBJ_TEST_COMP_file_stm_ST_D)\
  $(OBJ_TEST_COMP_fmt_sink_ST_D)\
  $(OBJ_TEST_COMP_ins_hex_ST_D)\
  $(OBJ_TEST_COMP_ins_int_ST_D)\
@@ -1548,6 +1543,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_ST_D)\
  $(OBJ_TEST_COMP_snk_ostm_ST_D)\
  $(OBJ_TEST_COMP_file_ST_R)\
+ $(OBJ_TEST_COMP_file_stm_ST_R)\
  $(OBJ_TEST_COMP_fmt_sink_ST_R)\
  $(OBJ_TEST_COMP_ins_hex_ST_R)\
  $(OBJ_TEST_COMP_ins_int_ST_R)\
@@ -1627,16 +1623,12 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_D)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_D)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_D)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_D)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_D)\
  $(OBJ_TEST_UNIT_ins_ch_MT_D)\
  $(OBJ_TEST_UNIT_ins_i_MT_D)\
  $(OBJ_TEST_UNIT_ins_ss_MT_D)\
  $(OBJ_TEST_UNIT_shim_fi_MT_D)\
- $(OBJ_TEST_UNIT_shim_ns_1_MT_D)\
- $(OBJ_TEST_UNIT_shim_ns_2_MT_D)\
- $(OBJ_TEST_UNIT_shim_ns_3_MT_D)\
- $(OBJ_TEST_UNIT_shim_ns_4_MT_D)\
- $(OBJ_TEST_UNIT_shim_ns_5_MT_D)\
  $(OBJ_TEST_UNIT_snk_a_b_MT_D)\
  $(OBJ_TEST_UNIT_snk_c_str_MT_D)\
  $(OBJ_TEST_UNIT_snk_chbuf_MT_D)\
@@ -1651,16 +1643,12 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_R)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_R)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_R)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_R)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_R)\
  $(OBJ_TEST_UNIT_ins_ch_MT_R)\
  $(OBJ_TEST_UNIT_ins_i_MT_R)\
  $(OBJ_TEST_UNIT_ins_ss_MT_R)\
  $(OBJ_TEST_UNIT_shim_fi_MT_R)\
- $(OBJ_TEST_UNIT_shim_ns_1_MT_R)\
- $(OBJ_TEST_UNIT_shim_ns_2_MT_R)\
- $(OBJ_TEST_UNIT_shim_ns_3_MT_R)\
- $(OBJ_TEST_UNIT_shim_ns_4_MT_R)\
- $(OBJ_TEST_UNIT_shim_ns_5_MT_R)\
  $(OBJ_TEST_UNIT_snk_a_b_MT_R)\
  $(OBJ_TEST_UNIT_snk_c_str_MT_R)\
  $(OBJ_TEST_UNIT_snk_chbuf_MT_R)\
@@ -1675,16 +1663,12 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_ST_D)\
  $(OBJ_TEST_UNIT_api_msmtchh_ST_D)\
  $(OBJ_TEST_UNIT_api_prsrpl_ST_D)\
+ $(OBJ_TEST_UNIT_bndl_util_ST_D)\
  $(OBJ_TEST_UNIT_fmt_stdfl_ST_D)\
  $(OBJ_TEST_UNIT_ins_ch_ST_D)\
  $(OBJ_TEST_UNIT_ins_i_ST_D)\
  $(OBJ_TEST_UNIT_ins_ss_ST_D)\
  $(OBJ_TEST_UNIT_shim_fi_ST_D)\
- $(OBJ_TEST_UNIT_shim_ns_1_ST_D)\
- $(OBJ_TEST_UNIT_shim_ns_2_ST_D)\
- $(OBJ_TEST_UNIT_shim_ns_3_ST_D)\
- $(OBJ_TEST_UNIT_shim_ns_4_ST_D)\
- $(OBJ_TEST_UNIT_shim_ns_5_ST_D)\
  $(OBJ_TEST_UNIT_snk_a_b_ST_D)\
  $(OBJ_TEST_UNIT_snk_c_str_ST_D)\
  $(OBJ_TEST_UNIT_snk_chbuf_ST_D)\
@@ -1699,16 +1683,12 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_ST_R)\
  $(OBJ_TEST_UNIT_api_msmtchh_ST_R)\
  $(OBJ_TEST_UNIT_api_prsrpl_ST_R)\
+ $(OBJ_TEST_UNIT_bndl_util_ST_R)\
  $(OBJ_TEST_UNIT_fmt_stdfl_ST_R)\
  $(OBJ_TEST_UNIT_ins_ch_ST_R)\
  $(OBJ_TEST_UNIT_ins_i_ST_R)\
  $(OBJ_TEST_UNIT_ins_ss_ST_R)\
  $(OBJ_TEST_UNIT_shim_fi_ST_R)\
- $(OBJ_TEST_UNIT_shim_ns_1_ST_R)\
- $(OBJ_TEST_UNIT_shim_ns_2_ST_R)\
- $(OBJ_TEST_UNIT_shim_ns_3_ST_R)\
- $(OBJ_TEST_UNIT_shim_ns_4_ST_R)\
- $(OBJ_TEST_UNIT_shim_ns_5_ST_R)\
  $(OBJ_TEST_UNIT_snk_a_b_ST_R)\
  $(OBJ_TEST_UNIT_snk_c_str_ST_R)\
  $(OBJ_TEST_UNIT_snk_chbuf_ST_R)\
@@ -1857,6 +1837,7 @@ TARGETS_SAMPLE=\
 
 TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_file_MT_D)\
+ $(TARG_TEST_COMP_file_stm_MT_D)\
  $(TARG_TEST_COMP_fmt_sink_MT_D)\
  $(TARG_TEST_COMP_ins_hex_MT_D)\
  $(TARG_TEST_COMP_ins_int_MT_D)\
@@ -1868,6 +1849,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_MT_D)\
  $(TARG_TEST_COMP_snk_ostm_MT_D)\
  $(TARG_TEST_COMP_file_MT_R)\
+ $(TARG_TEST_COMP_file_stm_MT_R)\
  $(TARG_TEST_COMP_fmt_sink_MT_R)\
  $(TARG_TEST_COMP_ins_hex_MT_R)\
  $(TARG_TEST_COMP_ins_int_MT_R)\
@@ -1879,6 +1861,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_MT_R)\
  $(TARG_TEST_COMP_snk_ostm_MT_R)\
  $(TARG_TEST_COMP_file_ST_D)\
+ $(TARG_TEST_COMP_file_stm_ST_D)\
  $(TARG_TEST_COMP_fmt_sink_ST_D)\
  $(TARG_TEST_COMP_ins_hex_ST_D)\
  $(TARG_TEST_COMP_ins_int_ST_D)\
@@ -1890,6 +1873,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_ST_D)\
  $(TARG_TEST_COMP_snk_ostm_ST_D)\
  $(TARG_TEST_COMP_file_ST_R)\
+ $(TARG_TEST_COMP_file_stm_ST_R)\
  $(TARG_TEST_COMP_fmt_sink_ST_R)\
  $(TARG_TEST_COMP_ins_hex_ST_R)\
  $(TARG_TEST_COMP_ins_int_ST_R)\
@@ -1966,12 +1950,12 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_D)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_D)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_D)\
+ $(TARG_TEST_UNIT_bndl_util_MT_D)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_D)\
  $(TARG_TEST_UNIT_ins_ch_MT_D)\
  $(TARG_TEST_UNIT_ins_i_MT_D)\
  $(TARG_TEST_UNIT_ins_ss_MT_D)\
  $(TARG_TEST_UNIT_shim_fi_MT_D)\
- $(TARG_TEST_UNIT_shim_ns_MT_D)\
  $(TARG_TEST_UNIT_snk_a_b_MT_D)\
  $(TARG_TEST_UNIT_snk_c_str_MT_D)\
  $(TARG_TEST_UNIT_snk_chbuf_MT_D)\
@@ -1986,12 +1970,12 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_R)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_R)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_R)\
+ $(TARG_TEST_UNIT_bndl_util_MT_R)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_R)\
  $(TARG_TEST_UNIT_ins_ch_MT_R)\
  $(TARG_TEST_UNIT_ins_i_MT_R)\
  $(TARG_TEST_UNIT_ins_ss_MT_R)\
  $(TARG_TEST_UNIT_shim_fi_MT_R)\
- $(TARG_TEST_UNIT_shim_ns_MT_R)\
  $(TARG_TEST_UNIT_snk_a_b_MT_R)\
  $(TARG_TEST_UNIT_snk_c_str_MT_R)\
  $(TARG_TEST_UNIT_snk_chbuf_MT_R)\
@@ -2006,12 +1990,12 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_ST_D)\
  $(TARG_TEST_UNIT_api_msmtchh_ST_D)\
  $(TARG_TEST_UNIT_api_prsrpl_ST_D)\
+ $(TARG_TEST_UNIT_bndl_util_ST_D)\
  $(TARG_TEST_UNIT_fmt_stdfl_ST_D)\
  $(TARG_TEST_UNIT_ins_ch_ST_D)\
  $(TARG_TEST_UNIT_ins_i_ST_D)\
  $(TARG_TEST_UNIT_ins_ss_ST_D)\
  $(TARG_TEST_UNIT_shim_fi_ST_D)\
- $(TARG_TEST_UNIT_shim_ns_ST_D)\
  $(TARG_TEST_UNIT_snk_a_b_ST_D)\
  $(TARG_TEST_UNIT_snk_c_str_ST_D)\
  $(TARG_TEST_UNIT_snk_chbuf_ST_D)\
@@ -2026,12 +2010,12 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_ST_R)\
  $(TARG_TEST_UNIT_api_msmtchh_ST_R)\
  $(TARG_TEST_UNIT_api_prsrpl_ST_R)\
+ $(TARG_TEST_UNIT_bndl_util_ST_R)\
  $(TARG_TEST_UNIT_fmt_stdfl_ST_R)\
  $(TARG_TEST_UNIT_ins_ch_ST_R)\
  $(TARG_TEST_UNIT_ins_i_ST_R)\
  $(TARG_TEST_UNIT_ins_ss_ST_R)\
  $(TARG_TEST_UNIT_shim_fi_ST_R)\
- $(TARG_TEST_UNIT_shim_ns_ST_R)\
  $(TARG_TEST_UNIT_snk_a_b_ST_R)\
  $(TARG_TEST_UNIT_snk_c_str_ST_R)\
  $(TARG_TEST_UNIT_snk_chbuf_ST_R)\
@@ -2183,6 +2167,10 @@ test.component_:
 	$(TARG_TEST_COMP_file_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_file_ST_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_file_ST_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_MT_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_MT_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_ST_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_ST_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_fmt_sink_MT_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_fmt_sink_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_fmt_sink_ST_D) --verbosity=$(TEST_VERBOSITY)
@@ -2292,6 +2280,10 @@ test.unit_:
 	$(TARG_TEST_UNIT_api_prsrpl_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_api_prsrpl_ST_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_api_prsrpl_ST_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_ST_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_ST_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_fmt_stdfl_MT_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_fmt_stdfl_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_fmt_stdfl_ST_D) --verbosity=$(TEST_VERBOSITY)
@@ -2316,10 +2308,6 @@ test.unit_:
 	$(TARG_TEST_UNIT_shim_fi_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_shim_fi_ST_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_shim_fi_ST_R) --verbosity=$(TEST_VERBOSITY)
-	$(TARG_TEST_UNIT_shim_ns_MT_D) --verbosity=$(TEST_VERBOSITY)
-	$(TARG_TEST_UNIT_shim_ns_MT_R) --verbosity=$(TEST_VERBOSITY)
-	$(TARG_TEST_UNIT_shim_ns_ST_D) --verbosity=$(TEST_VERBOSITY)
-	$(TARG_TEST_UNIT_shim_ns_ST_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_snk_a_b_MT_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_snk_a_b_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_snk_a_b_ST_D) --verbosity=$(TEST_VERBOSITY)
@@ -2689,6 +2677,8 @@ clean.test.component:
 	@echo cleaning Test::Component files ...
 	@-$(RM) $(TARG_TEST_COMP_file_MT_D)
 	@-$(RM) $(OBJ_TEST_COMP_file_MT_D)
+	@-$(RM) $(TARG_TEST_COMP_file_stm_MT_D)
+	@-$(RM) $(OBJ_TEST_COMP_file_stm_MT_D)
 	@-$(RM) $(TARG_TEST_COMP_fmt_sink_MT_D)
 	@-$(RM) $(OBJ_TEST_COMP_fmt_sink_MT_D)
 	@-$(RM) $(TARG_TEST_COMP_ins_hex_MT_D)
@@ -2711,6 +2701,8 @@ clean.test.component:
 	@-$(RM) $(OBJ_TEST_COMP_snk_ostm_MT_D)
 	@-$(RM) $(TARG_TEST_COMP_file_MT_R)
 	@-$(RM) $(OBJ_TEST_COMP_file_MT_R)
+	@-$(RM) $(TARG_TEST_COMP_file_stm_MT_R)
+	@-$(RM) $(OBJ_TEST_COMP_file_stm_MT_R)
 	@-$(RM) $(TARG_TEST_COMP_fmt_sink_MT_R)
 	@-$(RM) $(OBJ_TEST_COMP_fmt_sink_MT_R)
 	@-$(RM) $(TARG_TEST_COMP_ins_hex_MT_R)
@@ -2733,6 +2725,8 @@ clean.test.component:
 	@-$(RM) $(OBJ_TEST_COMP_snk_ostm_MT_R)
 	@-$(RM) $(TARG_TEST_COMP_file_ST_D)
 	@-$(RM) $(OBJ_TEST_COMP_file_ST_D)
+	@-$(RM) $(TARG_TEST_COMP_file_stm_ST_D)
+	@-$(RM) $(OBJ_TEST_COMP_file_stm_ST_D)
 	@-$(RM) $(TARG_TEST_COMP_fmt_sink_ST_D)
 	@-$(RM) $(OBJ_TEST_COMP_fmt_sink_ST_D)
 	@-$(RM) $(TARG_TEST_COMP_ins_hex_ST_D)
@@ -2755,6 +2749,8 @@ clean.test.component:
 	@-$(RM) $(OBJ_TEST_COMP_snk_ostm_ST_D)
 	@-$(RM) $(TARG_TEST_COMP_file_ST_R)
 	@-$(RM) $(OBJ_TEST_COMP_file_ST_R)
+	@-$(RM) $(TARG_TEST_COMP_file_stm_ST_R)
+	@-$(RM) $(OBJ_TEST_COMP_file_stm_ST_R)
 	@-$(RM) $(TARG_TEST_COMP_fmt_sink_ST_R)
 	@-$(RM) $(OBJ_TEST_COMP_fmt_sink_ST_R)
 	@-$(RM) $(TARG_TEST_COMP_ins_hex_ST_R)
@@ -2898,12 +2894,6 @@ clean.test.unit:
 	@-$(RM) $(OBJ_TEST_UNIT_ins_ss_MT_D)
 	@-$(RM) $(TARG_TEST_UNIT_shim_fi_MT_D)
 	@-$(RM) $(OBJ_TEST_UNIT_shim_fi_MT_D)
-	@-$(RM) $(TARG_TEST_UNIT_shim_ns_MT_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_1_MT_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_2_MT_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_3_MT_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_4_MT_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_5_MT_D)
 	@-$(RM) $(TARG_TEST_UNIT_snk_a_b_MT_D)
 	@-$(RM) $(OBJ_TEST_UNIT_snk_a_b_MT_D)
 	@-$(RM) $(TARG_TEST_UNIT_snk_c_str_MT_D)
@@ -2944,12 +2934,6 @@ clean.test.unit:
 	@-$(RM) $(OBJ_TEST_UNIT_ins_ss_MT_R)
 	@-$(RM) $(TARG_TEST_UNIT_shim_fi_MT_R)
 	@-$(RM) $(OBJ_TEST_UNIT_shim_fi_MT_R)
-	@-$(RM) $(TARG_TEST_UNIT_shim_ns_MT_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_1_MT_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_2_MT_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_3_MT_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_4_MT_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_5_MT_R)
 	@-$(RM) $(TARG_TEST_UNIT_snk_a_b_MT_R)
 	@-$(RM) $(OBJ_TEST_UNIT_snk_a_b_MT_R)
 	@-$(RM) $(TARG_TEST_UNIT_snk_c_str_MT_R)
@@ -2990,12 +2974,6 @@ clean.test.unit:
 	@-$(RM) $(OBJ_TEST_UNIT_ins_ss_ST_D)
 	@-$(RM) $(TARG_TEST_UNIT_shim_fi_ST_D)
 	@-$(RM) $(OBJ_TEST_UNIT_shim_fi_ST_D)
-	@-$(RM) $(TARG_TEST_UNIT_shim_ns_ST_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_1_ST_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_2_ST_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_3_ST_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_4_ST_D)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_5_ST_D)
 	@-$(RM) $(TARG_TEST_UNIT_snk_a_b_ST_D)
 	@-$(RM) $(OBJ_TEST_UNIT_snk_a_b_ST_D)
 	@-$(RM) $(TARG_TEST_UNIT_snk_c_str_ST_D)
@@ -3036,12 +3014,6 @@ clean.test.unit:
 	@-$(RM) $(OBJ_TEST_UNIT_ins_ss_ST_R)
 	@-$(RM) $(TARG_TEST_UNIT_shim_fi_ST_R)
 	@-$(RM) $(OBJ_TEST_UNIT_shim_fi_ST_R)
-	@-$(RM) $(TARG_TEST_UNIT_shim_ns_ST_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_1_ST_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_2_ST_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_3_ST_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_4_ST_R)
-	@-$(RM) $(OBJ_TEST_UNIT_shim_ns_5_ST_R)
 	@-$(RM) $(TARG_TEST_UNIT_snk_a_b_ST_R)
 	@-$(RM) $(OBJ_TEST_UNIT_snk_a_b_ST_R)
 	@-$(RM) $(TARG_TEST_UNIT_snk_c_str_ST_R)
@@ -4410,6 +4382,70 @@ $(TARG_TEST_COMP_file_ST_R):    \
 
 $(OBJ_TEST_COMP_file_ST_R): $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE/test.component.FILE.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE/test.component.FILE.cpp
+
+$(TARG_TEST_COMP_file_stm_MT_D):    \
+		$(OBJ_TEST_COMP_file_stm_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_D) -o $@ \
+		$(OBJ_TEST_COMP_file_stm_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(TARGET_LIB_MT_D)
+
+$(OBJ_TEST_COMP_file_stm_MT_D): $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_D) -o $@ $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_MT_R):    \
+		$(OBJ_TEST_COMP_file_stm_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_R) -o $@ \
+		$(OBJ_TEST_COMP_file_stm_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(TARGET_LIB_MT_R)
+
+$(OBJ_TEST_COMP_file_stm_MT_R): $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_R) -o $@ $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_ST_D):    \
+		$(OBJ_TEST_COMP_file_stm_ST_D)\
+		$(LIB_CORE_ST_D)\
+		$(LIB_SHWILD_ST_D)\
+		$(LIB_XTESTS_ST_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_ST_D) -o $@ \
+		$(OBJ_TEST_COMP_file_stm_ST_D)\
+		$(LIB_CORE_ST_D)\
+		$(LIB_SHWILD_ST_D)\
+		$(LIB_XTESTS_ST_D)\
+		$(TARGET_LIB_ST_D)
+
+$(OBJ_TEST_COMP_file_stm_ST_D): $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_ST_D) -o $@ $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_ST_R):    \
+		$(OBJ_TEST_COMP_file_stm_ST_R)\
+		$(LIB_CORE_ST_R)\
+		$(LIB_SHWILD_ST_R)\
+		$(LIB_XTESTS_ST_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_ST_R) -o $@ \
+		$(OBJ_TEST_COMP_file_stm_ST_R)\
+		$(LIB_CORE_ST_R)\
+		$(LIB_SHWILD_ST_R)\
+		$(LIB_XTESTS_ST_R)\
+		$(TARGET_LIB_ST_R)
+
+$(OBJ_TEST_COMP_file_stm_ST_R): $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_COMPONENT_DIR)/test.component.FILE_stream/test.component.FILE_stream.cpp
 
 $(TARG_TEST_COMP_fmt_sink_MT_D):    \
 		$(OBJ_TEST_COMP_fmt_sink_MT_D)\
@@ -6215,6 +6251,70 @@ $(TARG_TEST_UNIT_api_msmtchh_ST_R):    \
 $(OBJ_TEST_UNIT_api_msmtchh_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.api.mismatched_handlers/test.unit.api.mismatched_handlers.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.api.mismatched_handlers/test.unit.api.mismatched_handlers.cpp
 
+$(TARG_TEST_UNIT_bndl_util_MT_D):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_D) -o $@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(TARGET_LIB_MT_D)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_D): $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_MT_R):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_R) -o $@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(TARGET_LIB_MT_R)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_R): $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_ST_D):    \
+		$(OBJ_TEST_UNIT_bndl_util_ST_D)\
+		$(LIB_CORE_ST_D)\
+		$(LIB_SHWILD_ST_D)\
+		$(LIB_XTESTS_ST_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_ST_D) -o $@ \
+		$(OBJ_TEST_UNIT_bndl_util_ST_D)\
+		$(LIB_CORE_ST_D)\
+		$(LIB_SHWILD_ST_D)\
+		$(LIB_XTESTS_ST_D)\
+		$(TARGET_LIB_ST_D)
+
+$(OBJ_TEST_UNIT_bndl_util_ST_D): $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_ST_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_ST_R):    \
+		$(OBJ_TEST_UNIT_bndl_util_ST_R)\
+		$(LIB_CORE_ST_R)\
+		$(LIB_SHWILD_ST_R)\
+		$(LIB_XTESTS_ST_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_ST_R) -o $@ \
+		$(OBJ_TEST_UNIT_bndl_util_ST_R)\
+		$(LIB_CORE_ST_R)\
+		$(LIB_SHWILD_ST_R)\
+		$(LIB_XTESTS_ST_R)\
+		$(TARGET_LIB_ST_R)
+
+$(OBJ_TEST_UNIT_bndl_util_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.bundle.util/test.unit.bundle.util.cpp
+
 $(TARG_TEST_UNIT_fmt_stdfl_MT_D):    \
 		$(OBJ_TEST_UNIT_fmt_stdfl_MT_D)\
 		$(LIB_CORE_MT_D)\
@@ -6534,134 +6634,6 @@ $(TARG_TEST_UNIT_shim_fi_ST_R):    \
 
 $(OBJ_TEST_UNIT_shim_fi_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims.fast_integers/test.unit.shims.fast_integers.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims.fast_integers/test.unit.shims.fast_integers.cpp
-
-$(TARG_TEST_UNIT_shim_ns_MT_D):    \
-		$(OBJ_TEST_UNIT_shim_ns_1_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_2_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_3_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_4_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_5_MT_D)\
-		$(LIB_CORE_MT_D)\
-		$(LIB_SHWILD_MT_D)\
-		$(LIB_XTESTS_MT_D)\
-		$(PROJ_MAKEFILE_NAME)
-	$(LD) $(LD_ARGS_MT_D) -o $@ \
-		$(OBJ_TEST_UNIT_shim_ns_1_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_2_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_3_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_4_MT_D)\
-		$(OBJ_TEST_UNIT_shim_ns_5_MT_D)\
-		$(LIB_CORE_MT_D)\
-		$(LIB_SHWILD_MT_D)\
-		$(LIB_XTESTS_MT_D)\
-		$(TARGET_LIB_MT_D)
-
-$(OBJ_TEST_UNIT_shim_ns_1_MT_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp
-$(OBJ_TEST_UNIT_shim_ns_2_MT_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_3_MT_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_4_MT_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_5_MT_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp
-
-$(TARG_TEST_UNIT_shim_ns_MT_R):    \
-		$(OBJ_TEST_UNIT_shim_ns_1_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_2_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_3_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_4_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_5_MT_R)\
-		$(LIB_CORE_MT_R)\
-		$(LIB_SHWILD_MT_R)\
-		$(LIB_XTESTS_MT_R)\
-		$(PROJ_MAKEFILE_NAME)
-	$(LD) $(LD_ARGS_MT_R) -o $@ \
-		$(OBJ_TEST_UNIT_shim_ns_1_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_2_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_3_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_4_MT_R)\
-		$(OBJ_TEST_UNIT_shim_ns_5_MT_R)\
-		$(LIB_CORE_MT_R)\
-		$(LIB_SHWILD_MT_R)\
-		$(LIB_XTESTS_MT_R)\
-		$(TARGET_LIB_MT_R)
-
-$(OBJ_TEST_UNIT_shim_ns_1_MT_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp
-$(OBJ_TEST_UNIT_shim_ns_2_MT_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_3_MT_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_4_MT_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_5_MT_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_MT_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp
-
-$(TARG_TEST_UNIT_shim_ns_ST_D):    \
-		$(OBJ_TEST_UNIT_shim_ns_1_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_2_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_3_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_4_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_5_ST_D)\
-		$(LIB_CORE_ST_D)\
-		$(LIB_SHWILD_ST_D)\
-		$(LIB_XTESTS_ST_D)\
-		$(PROJ_MAKEFILE_NAME)
-	$(LD) $(LD_ARGS_ST_D) -o $@ \
-		$(OBJ_TEST_UNIT_shim_ns_1_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_2_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_3_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_4_ST_D)\
-		$(OBJ_TEST_UNIT_shim_ns_5_ST_D)\
-		$(LIB_CORE_ST_D)\
-		$(LIB_SHWILD_ST_D)\
-		$(LIB_XTESTS_ST_D)\
-		$(TARGET_LIB_ST_D)
-
-$(OBJ_TEST_UNIT_shim_ns_1_ST_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp
-$(OBJ_TEST_UNIT_shim_ns_2_ST_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_3_ST_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_4_ST_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_5_ST_D): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_D) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp
-
-$(TARG_TEST_UNIT_shim_ns_ST_R):    \
-		$(OBJ_TEST_UNIT_shim_ns_1_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_2_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_3_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_4_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_5_ST_R)\
-		$(LIB_CORE_ST_R)\
-		$(LIB_SHWILD_ST_R)\
-		$(LIB_XTESTS_ST_R)\
-		$(PROJ_MAKEFILE_NAME)
-	$(LD) $(LD_ARGS_ST_R) -o $@ \
-		$(OBJ_TEST_UNIT_shim_ns_1_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_2_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_3_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_4_ST_R)\
-		$(OBJ_TEST_UNIT_shim_ns_5_ST_R)\
-		$(LIB_CORE_ST_R)\
-		$(LIB_SHWILD_ST_R)\
-		$(LIB_XTESTS_ST_R)\
-		$(TARGET_LIB_ST_R)
-
-$(OBJ_TEST_UNIT_shim_ns_1_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.main.cpp
-$(OBJ_TEST_UNIT_shim_ns_2_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.with_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_3_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_fastformat_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_4_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
-$(OBJ_TEST_UNIT_shim_ns_5_ST_R): $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
-	$(CPPC) $(CPPC_ARGS_ST_R) -o $@ $(PROJ_TEST_UNIT_DIR)/test.unit.shims_and_namespaces/test.unit.shims_and_namespaces.without_either_namespace.cpp
 
 $(TARG_TEST_UNIT_snk_a_b_MT_D):    \
 		$(OBJ_TEST_UNIT_snk_a_b_MT_D)\

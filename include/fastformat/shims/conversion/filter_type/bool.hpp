@@ -4,11 +4,11 @@
  * Purpose:     FastFormat argument conversion shim for bool type.
  *
  * Created:     2nd June 2008
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_EDIT       6
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_EDIT       8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -75,7 +75,7 @@
 #include <fastformat/quality/contract.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -86,7 +86,7 @@ namespace filters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helpers
+ * helpers
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -134,7 +134,7 @@ namespace ximpl_bool
 #endif /* 0 */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -143,7 +143,7 @@ namespace ximpl_bool
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

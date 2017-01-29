@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.string_array project.
  *
  * Created:     24th December 2007
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2007-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,21 +18,25 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/sinks/string_array.hpp>
 #include <fastformat/ff.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -42,7 +46,7 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 static void test_1_1();

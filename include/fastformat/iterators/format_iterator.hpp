@@ -5,11 +5,11 @@
  *              iterator.
  *
  * Created:     20th May 2009
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -49,18 +49,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_REVISION   6
-# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       11
+# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -68,7 +68,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.hpp>
@@ -79,7 +79,7 @@
 #include <stlsoft/util/std/iterator_helper.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,7 +90,7 @@ namespace iterators
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helpers
+ * helpers
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -126,7 +126,7 @@ namespace ximpl_format_iterator
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** This class template defines an output iterator that writes to
@@ -530,7 +530,7 @@ inline format_output_iterator<S, F, A1, A2, A3, A4, A5, A6, A7, A8> format_itera
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -540,7 +540,7 @@ using ::fastformat::iterators::format_iterator;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

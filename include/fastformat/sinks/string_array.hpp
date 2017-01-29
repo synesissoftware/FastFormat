@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for string sequences.
  *
  * Created:     24th December 2007
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -51,18 +51,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRING_ARRAY
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MAJOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       5
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -70,7 +70,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -78,13 +78,17 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
-#include <platformstl/error/exceptions.hpp>
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+# include <platformstl/exception/s.hpp>
+#else /* ? STLSoft version */
+# include <platformstl/error/exceptions.hpp>
+#endif /* STLSoft version */
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <string>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -95,7 +99,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into an entry in an array of strings
@@ -183,7 +187,7 @@ private:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a string array sink.
@@ -197,7 +201,7 @@ inline string_array_sink& fmt_slices(string_array_sink& sink, int flags, size_t 
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

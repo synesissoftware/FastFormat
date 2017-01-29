@@ -5,11 +5,11 @@
  *              conversion of integral types.
  *
  * Created:     1st June 2008
- * Updated:     31st August 2014
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2014, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MAJOR     2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_REVISION  5
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      23
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MINOR     3
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_REVISION  1
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      26
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -69,7 +69,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -86,7 +86,7 @@
 #endif /* STLSOFT_LEAD_VER */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -97,7 +97,7 @@ namespace filters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -206,11 +206,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<ximpl_fast_integers::ff_fi_sint64_t> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -231,11 +231,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<ximpl_fast_integers::ff_fi_uint64_t> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -257,11 +257,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed long> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -281,11 +281,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned long> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -305,11 +305,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed int> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -329,11 +329,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned int> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -353,11 +353,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed short> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -377,11 +377,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned short> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -401,11 +401,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::sint16_t> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -422,11 +422,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::uint16_t> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -443,11 +443,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::sint32_t> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
@@ -464,18 +464,18 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::uint32_t> r;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
     return r;
 }
 #endif /* STLSOFT_CF_INT_DISTINCT_INT_TYPE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Shims
+ * shims
  */
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the structure */
@@ -563,7 +563,7 @@ c_str_len(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -685,7 +685,7 @@ c_str_len(
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

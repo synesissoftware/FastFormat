@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.overload.2.custom_type.inserter project.
  *
  * Created:     2nd March 2009
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -21,7 +21,7 @@
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Custom types
+ * custom types
  *
  * We put this at the start of the file, to emulate the circumstances where
  * the application specific types are in a header, which, of course, would
@@ -55,27 +55,27 @@ public: /// Member Variables
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/bundles/properties_bundle.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
@@ -88,7 +88,7 @@ public: /// Member Variables
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 std::string edna_1(superhero const& hero);
@@ -101,7 +101,7 @@ std::string edna_5(superhero const& hero);
 #endif /* compiler */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 std::string edna_1(superhero const& hero)

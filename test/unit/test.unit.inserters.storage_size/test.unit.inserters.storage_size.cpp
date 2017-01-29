@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.inserters.storage_size project.
  *
  * Created:     23rd July 2015
- * Updated:     26th September 2015
+ * Updated:     21st January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2015-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -27,27 +27,27 @@
 #include <fastformat/inserters/storage_size.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/conversion/integer_to_string.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <numeric>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -61,7 +61,7 @@
 #define FF_STR                              FASTFORMAT_LITERAL_STRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -75,7 +75,6 @@ namespace
     static void text_TB(void);
     static void text_PB(void);
     static void text_ZB(void);
-    static void test_1_8(void);
     static void test_1_9(void);
     static void test_1_10(void);
     static void test_1_11(void);
@@ -88,10 +87,10 @@ namespace
     static void test_1_18(void);
     static void test_1_19(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -111,7 +110,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(text_TB);
         XTESTS_RUN_CASE(text_PB);
         XTESTS_RUN_CASE(text_ZB);
-        XTESTS_RUN_CASE(test_1_8);
         XTESTS_RUN_CASE(test_1_9);
         XTESTS_RUN_CASE(test_1_10);
         XTESTS_RUN_CASE(test_1_11);
@@ -133,7 +131,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -144,6 +142,8 @@ namespace
 
     typedef std::basic_string<ff_char_t>    string_t;
 
+    using   stlsoft::uint8_t;
+    using   stlsoft::uint16_t;
     using   stlsoft::uint32_t;
     using   stlsoft::uint64_t;
 
@@ -171,7 +171,22 @@ static void test_zero()
 
 static void text_B()
 {
+    { for(unsigned i = 0; i <= 255; ++i)
+    {
+        XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i, FASTFORMAT_LITERAL_STRING("B")), fastformat::storage_size(static_cast<uint8_t>(i))));
+    }}
+
+    { for(uint16_t i = 0; i != 1000; ++i)
+    {
+        XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i, FASTFORMAT_LITERAL_STRING("B")), fastformat::storage_size(i)));
+    }}
+
     { for(uint32_t i = 0; i != 1000; ++i)
+    {
+        XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i, FASTFORMAT_LITERAL_STRING("B")), fastformat::storage_size(i)));
+    }}
+
+    { for(uint64_t i = 0; i != 1000; ++i)
     {
         XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i, FASTFORMAT_LITERAL_STRING("B")), fastformat::storage_size(i)));
     }}
@@ -183,11 +198,21 @@ static void text_KB()
     {
         XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i / 1000, FASTFORMAT_LITERAL_STRING("kB")), fastformat::storage_size(i)));
     }}
+
+    { for(uint64_t i = 1000; i != 1000000; ++i)
+    {
+        XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i / 1000, FASTFORMAT_LITERAL_STRING("kB")), fastformat::storage_size(i)));
+    }}
 }
 
 static void text_MB()
 {
     { for(uint32_t i = 1000000; i != 1000000000; i += 1000)
+    {
+        XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i / 1000000, FASTFORMAT_LITERAL_STRING("MB")), fastformat::storage_size(i)));
+    }}
+
+    { for(uint64_t i = 1000000; i != 1000000000; i += 1000)
     {
         XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i / 1000000, FASTFORMAT_LITERAL_STRING("MB")), fastformat::storage_size(i)));
     }}
@@ -223,10 +248,6 @@ static void text_ZB()
     {
         XTESTS_REQUIRE(XTESTS_TEST_STRING_EQUAL_(itos_suf(i / STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000), FASTFORMAT_LITERAL_STRING("EB")), fastformat::storage_size(i)));
     }}
-}
-
-static void test_1_8()
-{
 }
 
 static void test_1_9()
@@ -274,6 +295,6 @@ static void test_1_19()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

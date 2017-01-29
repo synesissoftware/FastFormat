@@ -5,11 +5,11 @@
  *              handlers.
  *
  * Created:     26th November 2007
- * Updated:     7th August 2015
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -42,13 +42,10 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/exceptions.hpp>
 #include <fastformat/init_codes.h>
@@ -69,7 +66,7 @@
 #include <stdexcept>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -78,14 +75,14 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Types & Non-local variables
+ * types & non-local variables
  */
 
 namespace
 {
 
     /* /////////////////////////////////////////////////////////////////////
-     * Constants
+     * constants
      */
 
     ff_illformedHandler_info_t const s_emptyIllformedHandler    =   { NULL, NULL };
@@ -93,7 +90,7 @@ namespace
 
 
     /* /////////////////////////////////////////////////////////////////////
-     * Helper functions
+     * helper functions
      */
 
     void
@@ -174,10 +171,10 @@ namespace
 #endif /* !FASTFORMAT_MT */
     };
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 int ximpl_core::fastformat_impl_handlers_init(void** ptoken)
@@ -530,10 +527,10 @@ namespace
         return oldHandler;
     }
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

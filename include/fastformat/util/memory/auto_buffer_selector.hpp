@@ -5,11 +5,11 @@
  *              specialisations.
  *
  * Created:     22nd April 2008
- * Updated:     18th November 2013
+ * Updated:     22nd January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -51,18 +51,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MINOR     0
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      16
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  4
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
@@ -79,15 +79,15 @@
 #endif /* compiler */
 
 #ifndef FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED
-# ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+# ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
 #  ifndef STLSOFT_INCL_STLSOFT_MEMORY_UTIL_HPP_ALLOCATOR_SELECTOR
 #   include <stlsoft/memory/util/allocator_selector.hpp>
 #  endif /* !STLSOFT_INCL_STLSOFT_MEMORY_UTIL_HPP_ALLOCATOR_SELECTOR */
-# else /* ? STLSoft 1.12+ */
+# else /* ? STLSoft 1.10 b1+ */
 #  ifndef STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR
 #   include <stlsoft/memory/allocator_selector.hpp>
 #  endif /* !STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR */
-# endif /* STLSoft 1.12+ */
+# endif /* STLSoft 1.10 b1+ */
 #endif /* !FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED */
 #ifndef STLSOFT_INCL_STLSOFT_MEMORY_HPP_AUTO_BUFFER
 # include <stlsoft/memory/auto_buffer.hpp>
@@ -99,7 +99,7 @@
 #endif /* FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -110,7 +110,7 @@ namespace util
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A <a href = "http://extendedstl.com/glossary.html#type-generator-template">Type Generator</a>
@@ -149,7 +149,7 @@ struct auto_buffer_selector
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -158,7 +158,7 @@ struct auto_buffer_selector
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

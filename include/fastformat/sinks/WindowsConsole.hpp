@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for coloured output via Windows' console.
  *
  * Created:     6th January 2011
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2011-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2011-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_EDIT     3
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_EDIT     5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -84,7 +84,7 @@
 #include <windows.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -95,7 +95,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for coloured output via Windows' console.
@@ -184,7 +184,7 @@ private:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Creator Functions
+ * creator functions
  */
 
 /** Creator function for the WindowsConsole_sink class
@@ -206,7 +206,7 @@ inline WindowsConsole_sink WindowsConsole(WORD textAttributes)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a
@@ -221,7 +221,7 @@ inline WindowsConsole_sink& fmt_slices(WindowsConsole_sink& sink, int flags, siz
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -230,7 +230,7 @@ inline WindowsConsole_sink& fmt_slices(WindowsConsole_sink& sink, int flags, siz
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

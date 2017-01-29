@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for fixed length character buffers.
  *
  * Created:     14th April 2008
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CHAR_BUFFER
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_MINOR       2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_REVISION    3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_EDIT        15
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_REVISION    4
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_EDIT        18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -78,7 +78,7 @@
 #include <stdexcept>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -89,7 +89,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into char_buffer instructions
@@ -116,6 +116,7 @@ public:
 #ifdef STLSOFT_CF_STATIC_ARRAY_SIZE_DETERMINATION_SUPPORT
     /// Constructs from a character array
     template <size_t N>
+    explicit
     char_buffer_sink(char_type (&ar)[N])
         : m_capacity(N)
         , m_len(0)
@@ -193,7 +194,7 @@ private: // Not to be implemented
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Formats into a char_buffer
@@ -207,7 +208,7 @@ inline char_buffer_sink& fmt_slices(char_buffer_sink& sink, int flags, size_t cc
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

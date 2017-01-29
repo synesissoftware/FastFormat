@@ -4,11 +4,11 @@
  * Purpose:     snprintf() utility functions.
  *
  * Created:     1st June 2008
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_UTIL_STRING_H_SNPRINTF
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MINOR     3
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      13
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
@@ -72,7 +72,7 @@
 #endif /* !FASTFORMAT_INCL_H_STDARG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -194,7 +194,7 @@ snprintf(
 #endif /* __cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -208,7 +208,7 @@ using ::fastformat::util::fastformat_util_vsnprintf_a;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

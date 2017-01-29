@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.performance.name_age_height project.
  *
  * Created:     19th September 2006
- * Updated:     26th September 2015
+ * Updated:     22nd January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2006-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,13 +20,17 @@
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
-/* STLSoft header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #if defined(_WIN32) && \
     defined(_AFXDLL)
 # include <mfcstl/mfcstl.hpp>
-#endif /* OS */
+#endif
 
-/* FastFormat header files */
+
+/* FastFormat Header Files */
 #include <fastformat/internal/stlsoft.h>
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
     _MSC_VER >= 1400
@@ -93,7 +97,7 @@
 # include <platformstl/performance/performance_counter.hpp>
 #endif
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #if defined(_WIN32) && \
     defined(_AFXDLL)
 # include <mfcstl/mfcstl.hpp>
@@ -112,26 +116,26 @@
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* Boost header files */
+/* Boost Header Files */
 #ifdef FASTFORMAT_PERFTEST_USE_BOOST
 # include <boost/format.hpp>
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-/* Loki header files */
+/* Loki Header Files */
 #ifdef FASTFORMAT_PERFTEST_USE_LOKI
 # include <loki/SafeFormat.h>
 #endif /* FASTFORMAT_PERFTEST_USE_LOKI */
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <string>
 #include <sstream>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -143,19 +147,19 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #define TX(x)       FASTFORMAT_LITERAL_STRING(x)
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Globals
+ * globals
  */
 
 extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.name_age_height";
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 struct person_t

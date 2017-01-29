@@ -72,7 +72,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER"  /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -99,8 +99,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugUNIX"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "UNIX" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
+# ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER"  /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "UNIX" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER"  /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
@@ -128,8 +128,8 @@ LINK32=link.exe
 # PROP Intermediate_Dir "DebugMT"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
-# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER" /YX /FD /GZ /c
+# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "..\..\..\include" /I "$(UNIXEM)/include" /I "$(STLSOFT)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER"  /YX /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(SHWILD_ROOT)/include" /I "$(XTESTS_C_ROOT)/include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "_DEBUG" /D "WIN32" /D "STRICT" /D "_CONSOLE" /D "_STLSOFT_FORCE_ANY_COMPILER"  /YX /FD /GZ /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"

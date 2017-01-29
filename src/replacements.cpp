@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for FastFormat core API: replacements.
  *
  * Created:     18th September 2006
- * Updated:     26th September 2015
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,15 +41,12 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 // #define FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS // This is not defined by default, but unreferenced arguments are not always a defect
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/format_element.h>
 #include <fastformat/internal/threading.h>
 #include <fastformat/exceptions.hpp>
@@ -76,7 +73,7 @@
 #include <ctype.h>
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -88,7 +85,7 @@
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 namespace
@@ -164,10 +161,10 @@ namespace
 
     static const ff_char_t ValidFillCharacters[] = FASTFORMAT_LITERAL_STRING("# ");
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 namespace
@@ -247,6 +244,7 @@ namespace
         return FF_PARSECODE_INVALIDINDEX;
     }
 
+#if 0
     // This function writes the (defectively-specified) parameter into the
     // format element as a literal, and updates the counters. It does NOT
     // update the pointer(s)
@@ -276,6 +274,7 @@ namespace
         ++num;
         ++numRes;
     }
+#endif
 
     inline
     int 
@@ -545,10 +544,10 @@ namespace
         return derive_parse_result_(1, 1);
     }
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Stock handler functions
+ * stock handler functions
  */
 
 namespace
@@ -663,10 +662,10 @@ namespace
         return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
     }
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -675,7 +674,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper classes
+ * helper classes
  */
 
 namespace
@@ -918,7 +917,7 @@ namespace
         size_t                      numHandlers; // 0 value is sentinel (denoting uninitialised array)
     };
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
  * API functions
@@ -1520,7 +1519,7 @@ FASTFORMAT_CALL(size_t) fastformat_accumulateSliceLengths(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 int ximpl_core::fastformat_impl_replacements_init(void** ptoken)
@@ -1656,7 +1655,7 @@ ff_char_t const* ximpl_core::fastformat_impl_replacements_getHashes(void* token,
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

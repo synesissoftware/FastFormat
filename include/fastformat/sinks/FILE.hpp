@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for FILE*.
  *
  * Created:     3rd January 2008
- * Updated:     25th August 2015
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_FILE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MINOR      3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   5
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       29
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   6
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       33
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -75,17 +75,12 @@
 #include <fastformat/util/sinks/helpers.hpp>
 #include <fastformat/format/standard_flags.hpp>
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
-//# include <platformstl/error/exceptions.hpp>
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
-# include <platformstl/error/exceptions.hpp>
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <stdio.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -96,7 +91,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Utility class that allows a standard C stream - \c stdout, \c stderr -
@@ -115,7 +110,7 @@ public: // Construction
     )
         : stream(stm)
     {}
-    ~ff_FILE_sink() stlsoft_throw_0()
+    ~ff_FILE_sink() STLSOFT_NOEXCEPT
     {}
 private:
     ff_FILE_sink& operator =(ff_FILE_sink const&);
@@ -126,7 +121,7 @@ public: // Fields
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Creator functions
+ * creator functions
  */
 
 /** Conversion shim that allows a standard C stream - \c stdout, \c stderr -
@@ -146,7 +141,7 @@ to_sink(FILE* stm)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>FILE*</code> sink.
@@ -276,7 +271,7 @@ fmt_slices(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -286,7 +281,7 @@ using sinks::to_sink;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

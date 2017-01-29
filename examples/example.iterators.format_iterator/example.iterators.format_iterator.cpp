@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.iterators.format_iterator project.
  *
  * Created:     26th March 2010
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,7 +18,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
 #if ( defined(STLSOFT_COMPILER_IS_INTEL) || \
@@ -27,27 +27,31 @@
 # pragma warning(disable : 4996)
 #endif
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/fastformat.h>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/iterators/format_iterator.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/algorithms/debug.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <algorithm>
 #include <exception>
 #include <iostream>
 #include <string>
 #include <vector>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #ifdef FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT

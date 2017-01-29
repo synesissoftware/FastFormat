@@ -4,11 +4,11 @@
  * Purpose:     "Entry point" include into the STLSoft libraries.
  *
  * Created:     18th November 2007
- * Updated:     15th August 2016
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,17 +48,21 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef STLSOFT_INCL_STLSOFT_H_STLSOFT
 # include <stlsoft/stlsoft.h>
 #endif /* !STLSOFT_INCL_STLSOFT_H_STLSOFT */
 
-#if defined(STLSOFT_VER) && \
-    STLSOFT_VER >= 0x010c0000
+#if 0
+#elif defined(STLSOFT_VER) && \
+      STLSOFT_VER >= 0x010c0000
 # define FASTFORMAT_STLSOFT_1_12_OR_LATER
-#else /* ? STLSoft 1.12+ */
+#elif defined(_STLSOFT_VER) && \
+      _STLSOFT_VER >= 0x010a0181
+# define FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+#else /* ? STLSoft 1.10+/1.12+ */
 # if !defined(_STLSOFT_VER) || \
      _STLSOFT_VER < 0x010981ff
 #  error Requires STLSoft 1.9.129, or later. (www.stlsoft.org)
@@ -75,7 +79,7 @@
 #endif /* _STLSOFT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

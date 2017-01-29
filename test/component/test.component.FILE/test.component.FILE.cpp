@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.FILE project.
  *
  * Created:     3rd January 2008
- * Updated:     26th September 2015
+ * Updated:     22nd January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2007-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,25 +18,30 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/sinks/FILE.hpp>
 #include <fastformat/ff.hpp>
+#include <fastformat/util/filesystem/FILE_functions.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
-#include <platformstl/error/exceptions.hpp>
+/* STLSoft Header Files */
 #include <platformstl/filesystem/file_lines.hpp>
 #include <platformstl/system/system_traits.hpp>
+#include <stlsoft/smartptr/scoped_handle.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,7 +54,7 @@
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 static void test_1_1();
@@ -60,22 +65,6 @@ static void test_1_5();
 static void test_1_6();
 static void test_1_7();
 static void test_1_8();
-
-static FILE* fopen_or_throw(char const* fileName, char const* mode = "w");
-#if defined(__BORLANDC__) && \
-    __BORLANDC__ < 0x0610
-static int   fclose_(FILE* stm)
-{
-    int r;
-
-    r = ::fclose(stm);
-
-//  fprintf(stderr, "fclose_(%p): %d\n", stm, r);
-
-    return r;
-}
-# define fclose     fclose_
-#endif /* __BORLANDC__ */
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -111,7 +100,9 @@ static void test_1_1()
 {
     using   fastformat::ff_char_t;
 
+#if 0
     typedef std::basic_string<ff_char_t>    string_t;
+#endif
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
 # define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_WIDE_STRING_EQUAL
@@ -127,7 +118,7 @@ static void test_1_1()
     try
     {
         {
-            FILE*                           f = ::fopen_or_throw(FILE_NAME);
+            FILE*                           f = ff::util::fopen_or_throw(FILE_NAME, "w");
             stlsoft::scoped_handle<FILE*>   f_(f, ::fclose);
 
             ff::fmt(f, FF_STR("{0}"), FF_STR("abc"));
@@ -155,7 +146,7 @@ static void test_1_2()
     try
     {
         {
-            FILE*                           f = ::fopen_or_throw(FILE_NAME);
+            FILE*                           f = ff::util::fopen_or_throw(FILE_NAME, "w");
             stlsoft::scoped_handle<FILE*>   f_(f, ::fclose);
 
             ff::fmtln(f, FF_STR("{0}"), FF_STR("abc"));
@@ -183,7 +174,7 @@ static void test_1_3()
     try
     {
         {
-            FILE*                           f = ::fopen_or_throw(FILE_NAME);
+            FILE*                           f = ff::util::fopen_or_throw(FILE_NAME, "w");
             stlsoft::scoped_handle<FILE*>   f_(f, ::fclose);
 
             ff::fmt(f, FF_STR("{0}"), FF_STR("abc"));
@@ -212,7 +203,7 @@ static void test_1_4()
     try
     {
         {
-            FILE*                           f = ::fopen_or_throw(FILE_NAME);
+            FILE*                           f = ff::util::fopen_or_throw(FILE_NAME, "w");
             stlsoft::scoped_handle<FILE*>   f_(f, ::fclose);
 
             ff::fmtln(f, FF_STR("{0}"), FF_STR("abc"));
@@ -246,17 +237,5 @@ static void test_1_7()
 
 static void test_1_8()
 {}
-
-static FILE* fopen_or_throw(char const* fileName, char const* mode /* = "r" */)
-{
-    FILE*   f = ::fopen(fileName, mode);
-
-    if(NULL == f)
-    {
-        throw platformstl::platform_exception((std::string("Could not open file '") + fileName + "'").c_str(), platformstl::system_traits<char>::get_last_error());
-    }
-
-    return f;
-}
 
 /* ///////////////////////////// end of file //////////////////////////// */

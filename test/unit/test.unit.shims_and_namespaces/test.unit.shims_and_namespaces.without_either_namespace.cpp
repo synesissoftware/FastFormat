@@ -4,13 +4,13 @@
  * Purpose:     Without-namespace implementation file for the test.unit.shims_and_namespaces project.
  *
  * Created:     11th November 2013
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2013-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2013-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,27 +20,27 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Preprocessor feature control
+ * preprocessor feature control
  */
 
 #define _STLSOFT_NO_NAMESPACE
 #define FASTFORMAT_NO_NAMESPACE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 extern "C++"
@@ -65,7 +65,7 @@ extern "C++"
 } // extern "C++"
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 extern "C++"

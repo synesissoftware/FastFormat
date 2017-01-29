@@ -135,6 +135,21 @@ Package=<4>
 
 ###############################################################################
 
+Project: "test.unit.bundle.util"=.\test.unit.bundle.util\vc6\test.unit.bundle.util.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name fastformat.core
+    End Project Dependency
+}}}
+
+###############################################################################
+
 Project: "test.unit.bundle.winini"=.\test.unit.bundle.winini\vc6\test.unit.bundle.winini.dsp - Package Owner=<4>
 
 Package=<5>

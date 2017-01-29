@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.memory.1 project.
  *
  * Created:     20th September 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,26 +20,30 @@
 
 #define FASTFORMAT_NO_USE_JIT_CACHE
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/sinks/c_string.hpp>
 #include <fastformat/sinks/char_buffer.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <platformstl/synch/atomic_functions.h>
 
-/* Boost header files */
+/* Boost Header Files */
 #include <boost/format.hpp>
 
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <sstream>
 #include <new>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -49,7 +53,7 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Memory functions
+ * memory functions
  */
 
 platformstl::atomic_int_t   scalar_count;
@@ -80,7 +84,7 @@ void operator delete[](void* pv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test functions
+ * test functions
  */
 
 static void test_1()

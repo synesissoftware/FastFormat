@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for IOStreams' std::stringstream.
  *
  * Created:     19th January 2008
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRINGSTREAM
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_EDIT       11
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_EDIT       13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,7 +79,7 @@
 #include <sstream>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,7 +90,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>std::stringstream</code> sink.
@@ -146,7 +146,7 @@ fmt_slices(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

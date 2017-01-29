@@ -5,13 +5,13 @@
  *              project.
  *
  * Created:     29th April 2009
- * Updated:     1st December 2011
+ * Updated:     20th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009-2011, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -22,7 +22,11 @@
 #include <fastformat/fastformat.h>
 
 #include <inetstl/inetstl.h>
-#include <inetstl/includes/std/in_addr.h>
+#if _STLSOFT_VER >= 0x010a0181
+# include <inetstl/shims/access/string/std/in_addr.hpp>
+#else
+# include <inetstl/includes/std/in_addr.h>
+#endif
 
 #include <platformstl/performance/performance_counter.hpp>
 

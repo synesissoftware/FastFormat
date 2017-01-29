@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for storage sizes.
  *
  * Created:     16th August 2010
- * Updated:     25th July 2015
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2010-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_MINOR     0
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_REVISION  6
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_EDIT      9
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_REVISION  7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_EDIT      11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -67,6 +67,7 @@
 #include <fastformat/util/string/snprintf.h>
 #include <fastformat/internal/inserters/int_typedefs.hpp>
 
+#include <platformstl/platformstl.h>
 #include <stlsoft/conversion/integer_to_string.hpp>
 #include <stlsoft/meta/is_integral_type.hpp>
 #include <stlsoft/meta/is_signed_type.hpp>
@@ -79,7 +80,7 @@
 #endif /* STLSOFT_LEAD_VER */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,7 +91,7 @@ namespace inserters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -103,289 +104,196 @@ typedef stlsoft::basic_simple_string<ff_char_t>         ff_stg_size_r_t_;
 typedef stlsoft::basic_shim_string<ff_char_t, 20 + 3>   ff_stg_size_r_t_;
 # endif /* FASTFORMAT_INSERTER_INTEGER_NO_USE_SHIM_STRING_ */
 
-    struct storage_size_constants
+struct storage_size_constants
+{
+    typedef stlsoft::ss_uint16_t        uint16_type;
+    typedef stlsoft::ss_uint32_t        uint32_type;
+    typedef stlsoft::ss_uint64_t        uint64_type;
+
+    /*
+     * 
+     * 1000    -   KiloByte
+     * 1024    -   KibiByte
+     * 
+     * kilobyte  (kB)  10^3     2^10     0.9766  kibibyte (KiB)  2^10   int16
+     * megabyte (MB)   10^6     2^20     0.9537  mebibyte (MiB)  2^20   int32
+     * gigabyte (GB)   10^9     2^30     0.9313  gibibyte (GiB)  2^30   int32
+     * terabyte (TB)   10^12    2^40     0.9095  tebibyte (TiB)  2^40   int64
+     * petabyte (PB)   10^15    2^50     0.8882  pebibyte (PiB)  2^50   int64
+     * exabyte (EB)    10^18    2^60     0.8674  exbibyte (EiB)  2^60   int64
+     * zettabyte (ZB)  10^21    2^70     0.8470  zebibyte (ZiB)  2^70   
+     * yottabyte (YB)  10^24    2^80     0.8272  yobibyte (YiB)  2^80   
+     *
+     *
+     * Max OOMs:
+     *
+     *  uint8   1
+     *  uint16  3
+     *  uint32  8
+     *  uint64  18
+     */
+
+#if 0
+    /* Standard SI
+     */
+    static uint16_type one_kilobyte()
     {
-        typedef stlsoft::ss_uint16_t        uint16_type;
-        typedef stlsoft::ss_uint32_t        uint32_type;
-        typedef stlsoft::ss_uint64_t        uint64_type;
-
-        /* Standard SI
-         */
-        static uint16_type one_kilobyte()
-        {
-            return STLSOFT_GEN_UINT16_SUFFIX(1000);
-        }
-        static uint32_type one_megabyte()
-        {
-            return STLSOFT_GEN_UINT32_SUFFIX(1000000);
-        }
-        static uint32_type one_gigabyte()
-        {
-            return STLSOFT_GEN_UINT32_SUFFIX(1000000000);
-        }
-        static uint64_type one_terabyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1000000000000);
-        }
-        static uint64_type one_petabyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000);
-        }
-        static uint64_type one_exabyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000);
-        }
+        return STLSOFT_GEN_UINT16_SUFFIX(1000);
+    }
+    static uint32_type one_megabyte()
+    {
+        return STLSOFT_GEN_UINT32_SUFFIX(1000000);
+    }
+    static uint32_type one_gigabyte()
+    {
+        return STLSOFT_GEN_UINT32_SUFFIX(1000000000);
+    }
+    static uint64_type one_terabyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1000000000000);
+    }
+    static uint64_type one_petabyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000);
+    }
+    static uint64_type one_exabyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000);
+    }
 #if 0
-        static uint128_type one_zettabyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000000);
-        }
-        static uint128_type one_yottabyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000000000);
-        }
+    static uint128_type one_zettabyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000000);
+    }
+    static uint128_type one_yottabyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000000000);
+    }
 #endif /* 0 */
 
-        /* Binary SI
-         */
-        static uint16_type one_kibibyte()
-        {
-            return STLSOFT_GEN_UINT16_SUFFIX(1024);
-        }
-        static uint32_type one_mebibyte()
-        {
-            return STLSOFT_GEN_UINT32_SUFFIX(1048576);
-        }
-        static uint32_type one_gibibyte()
-        {
-            return STLSOFT_GEN_UINT32_SUFFIX(1073741824);
-        }
-        static uint64_type one_tebibyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1099511627776);
-        }
-        static uint64_type one_pebibyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1125899906842624);
-        }
-        static uint64_type one_exbibyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1152921504606846976);
-        }
+    /* Binary SI
+     */
+    static uint16_type one_kibibyte()
+    {
+        return STLSOFT_GEN_UINT16_SUFFIX(1024);
+    }
+    static uint32_type one_mebibyte()
+    {
+        return STLSOFT_GEN_UINT32_SUFFIX(1048576);
+    }
+    static uint32_type one_gibibyte()
+    {
+        return STLSOFT_GEN_UINT32_SUFFIX(1073741824);
+    }
+    static uint64_type one_tebibyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1099511627776);
+    }
+    static uint64_type one_pebibyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1125899906842624);
+    }
+    static uint64_type one_exbibyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1152921504606846976);
+    }
 #if 0
-        static uint128_type one_zebibyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1180591620717411303424);
-        }
-        static uint128_type one_yobibyte()
-        {
-            return STLSOFT_GEN_UINT64_SUFFIX(1208925819614629174706176);
-        }
+    static uint128_type one_zebibyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1180591620717411303424);
+    }
+    static uint128_type one_yobibyte()
+    {
+        return STLSOFT_GEN_UINT64_SUFFIX(1208925819614629174706176);
+    }
 #endif /* 0 */
 
-        template <typename I>
-        static
-        bool
-        is_definitely_giga_or_more(
-            I const& i
-        )
-        {
-            stlsoft::uint64_t const& i2 = i;
+#endif
+};
 
-            return 0 != (i2 >> 32);
-        }
 
-        static
-        bool
-        is_definitely_giga_or_more(
-            stlsoft::uint8_t const&
-        )
-        {
-            return false;
-        }
+static
+size_t
+lookup_suffix_(
+    size_t              oom
+,   ff_char_t const**   pps 
+)
+{
+    // Do x [4] in case want to change/borrow for Kibbi, etc.
+    static ff_char_t const symbols[27][4] =
+    {
+        FASTFORMAT_LITERAL_STRING("B"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
 
-        static
-        bool
-        is_definitely_giga_or_more(
-            stlsoft::uint16_t const&
-        )
-        {
-            return false;
-        }
+        FASTFORMAT_LITERAL_STRING("kB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
+
+        FASTFORMAT_LITERAL_STRING("MB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
+
+        FASTFORMAT_LITERAL_STRING("GB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
+
+        FASTFORMAT_LITERAL_STRING("TB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
+
+        FASTFORMAT_LITERAL_STRING("PB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
+
+        FASTFORMAT_LITERAL_STRING("EB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
+
+        FASTFORMAT_LITERAL_STRING("ZB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
+
+        FASTFORMAT_LITERAL_STRING("YB"),
+        FASTFORMAT_LITERAL_STRING("??"),
+        FASTFORMAT_LITERAL_STRING("??"),
 
     };
 
+    switch(oom)
+    {
+        case  0:
+            *pps = symbols[0];
+            return 1;
+        case     3:
+        case     6:
+        case     9:
+        case    12:
+        case    15:
+        case    18:
+        case    21:
+        case    24:
+            *pps = symbols[oom];
+            return 2;
+        default:
+            STLSOFT_ASSERT(false);
+            *pps = NULL;
+            return 0;
+    }
+}
+
 template <typename I>
-inline
 ximpl_storage_size::ff_stg_size_r_t_
-storage_size_(
-    I /* const& */ i
+storage_size_with_suffix_(
+    I /* const& */      i
+,   ff_char_t const*    suffix
+,   size_t              cchSuffix
 )
 {
-
-    ff_char_t   buffer[21 + 2];
-    size_t      cch2    =   2u;
-    char const* suffix;
-
-    /*
-         * 
-         * 1000    -   KiloByte
-         * 1024    -   KibiByte
-         * 
-         * kilobyte  (kB)  10^3     2^10     0.9766  kibibyte (KiB)  2^10
-         * megabyte (MB)   10^6     2^20     0.9537  mebibyte (MiB)  2^20
-         * gigabyte (GB)   10^9     2^30     0.9313  gibibyte (GiB)  2^30
-         * terabyte (TB)   10^12    2^40     0.9095  tebibyte (TiB)  2^40
-         * petabyte (PB)   10^15    2^50     0.8882  pebibyte (PiB)  2^50
-         * exabyte (EB)    10^18    2^60     0.8674  exbibyte (EiB)  2^60
-         * zettabyte (ZB)  10^21    2^70     0.8470  zebibyte (ZiB)  2^70
-         * yottabyte (YB)  10^24    2^80     0.8272  yobibyte (YiB)  2^80
-         * 
-         */
-
-#if 0
-# if 0
-    if(i >= ximpl_storage_size::storage_size_constants::one_yottabyte())
-    {
-        suffix = "YB";
-        i /= ximpl_storage_size::storage_size_constants::one_yottabyte();
-    }
-    else
-    if(i >= ximpl_storage_size::storage_size_constants::one_zettabyte())
-    {
-        suffix = "ZB";
-        i /= ximpl_storage_size::storage_size_constants::one_zettabyte();
-    }
-    else
-# endif /* 0 */
-    if(i >= ximpl_storage_size::storage_size_constants::one_exabyte())
-    {
-        suffix = "EB";
-        i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_exabyte());
-    }
-    else
-    if(i >= ximpl_storage_size::storage_size_constants::one_petabyte())
-    {
-        suffix = "PB";
-        i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_petabyte());
-    }
-    else
-    if(i >= ximpl_storage_size::storage_size_constants::one_terabyte())
-    {
-        suffix = "TB";
-        i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_terabyte());
-    }
-    else
-    if(i >= ximpl_storage_size::storage_size_constants::one_gigabyte())
-    {
-        suffix = "GB";
-        i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_gigabyte());
-    }
-    else
-    if(i >= ximpl_storage_size::storage_size_constants::one_megabyte())
-    {
-        suffix = "MB";
-        i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_megabyte());
-    }
-    else
-    if(i >= ximpl_storage_size::storage_size_constants::one_kilobyte())
-    {
-        suffix = "kB";
-        i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_kilobyte());
-    }
-    else
-    {
-        suffix  =   "B";
-        cch2    =   1u;
-    }
-#else /* ? 0 */
-
-    // Slight optimisation, looking for definitely large numbers
-    if(ximpl_storage_size::storage_size_constants::is_definitely_giga_or_more(i))
-    {
-        goto is_giga_or_more;
-    }
-
-    if(i >= ximpl_storage_size::storage_size_constants::one_kilobyte())
-    {
-        if(i >= ximpl_storage_size::storage_size_constants::one_megabyte())
-        {
-            if(i >= ximpl_storage_size::storage_size_constants::one_gigabyte())
-            {
-is_giga_or_more:
-                if(i >= ximpl_storage_size::storage_size_constants::one_terabyte())
-                {
-                    if(i >= ximpl_storage_size::storage_size_constants::one_petabyte())
-                    {
-                        if(i >= ximpl_storage_size::storage_size_constants::one_exabyte())
-                        {
-                            suffix = "EB";
-                            i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_exabyte());
-                        }
-                        else
-                        {
-# if 0
-                            if(i >= ximpl_storage_size::storage_size_constants::one_zettabyte())
-                            {
-                                if(i >= ximpl_storage_size::storage_size_constants::one_yottabyte())
-                                {
-                                    suffix = "YB";
-                                    i /= ximpl_storage_size::storage_size_constants::one_yottabyte();
-                                }
-                                else
-                                {
-                                    suffix = "ZB";
-                                    i /= ximpl_storage_size::storage_size_constants::one_zettabyte();
-                                }
-                            }
-                            else
-
-# endif /* 0 */
-                            {
-                                suffix = "PB";
-                                i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_petabyte());
-                            }
-                        }
-                    }
-                    else
-                    {
-                        suffix = "TB";
-                        i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_terabyte());
-                    }
-                }
-                else
-                {
-                    suffix = "GB";
-                    i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_gigabyte());
-                }
-            }
-            else
-            {
-                suffix = "MB";
-                i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_megabyte());
-            }
-        }
-        else
-        {
-            suffix = "kB";
-            i /= static_cast<I>(ximpl_storage_size::storage_size_constants::one_kilobyte());
-        }
-    }
-    else
-    {
-        suffix  =   "B";
-        cch2    =   1u;
-    }
-#endif /* 0 */
-
-    STLSOFT_ASSERT(cch2 <= 2u);
-
+    ff_char_t           buffer[20 + 3 + 1];
+    size_t const        cch2    =   cchSuffix;
     size_t              cch1;
-#if STLSOFT_LEAD_VER >= 0x010a0000
-    ff_char_t const*    s = stlsoft::integer_to_string(&buffer[0], STLSOFT_NUM_ELEMENTS(buffer) - 2u, i, &cch1);
-#else /* ? STLSOFT_LEAD_VER */
-    ff_char_t const*    s = stlsoft::integer_to_string(&buffer[0], STLSOFT_NUM_ELEMENTS(buffer) - 2u, i, cch1);
-#endif /* STLSOFT_LEAD_VER */
+    ff_char_t const*    s       =   stlsoft::integer_to_string(&buffer[0], STLSOFT_NUM_ELEMENTS(buffer) - 2u, i, &cch1);
 
     ff_char_t* t = &buffer[0] + STLSOFT_NUM_ELEMENTS(buffer) - (1u + 2u);
     for(; '\0' != *suffix; ++t, ++suffix)
@@ -397,12 +305,113 @@ is_giga_or_more:
     return ximpl_storage_size::ff_stg_size_r_t_(s, cch1 + cch2);
 }
 
+ximpl_storage_size::ff_stg_size_r_t_
+storage_size_(
+    stlsoft::uint8_t    i
+)
+{
+    ff_char_t const*    suffix;
+    size_t const        cchSuffix   =   lookup_suffix_(0, &suffix);
+
+    return storage_size_with_suffix_(i, suffix, cchSuffix);
+}
+
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER < 1600
+
+template <typename I>
+ximpl_storage_size::ff_stg_size_r_t_
+storage_size_(
+    I /* const& */      i
+)
+{
+    size_t              oom         =   0;
+
+    for(; i >= 1000; )
+    {
+        i   /=  1000;
+        oom +=   3;
+    }
+
+    ff_char_t const*    suffix;
+    size_t const        cchSuffix   =   lookup_suffix_(oom, &suffix);
+
+    return storage_size_with_suffix_(i, suffix, cchSuffix);
+}
+
+#else
+ximpl_storage_size::ff_stg_size_r_t_
+storage_size_(
+    stlsoft::uint16_t   i
+)
+{
+    size_t              oom         =   0;
+
+    if(i >= 1000)
+    {
+        i   /=  1000;
+        oom +=  3;
+    }
+
+    ff_char_t const*    suffix;
+    size_t const        cchSuffix   =   lookup_suffix_(oom, &suffix);
+
+    return storage_size_with_suffix_(i, suffix, cchSuffix);
+}
+
+ximpl_storage_size::ff_stg_size_r_t_
+storage_size_(
+    stlsoft::uint32_t   i
+)
+{
+    size_t              oom         =   0;
+
+    for(; i >= 1000; )
+    {
+        i   /=  1000;
+        oom +=   3;
+    }
+
+    ff_char_t const*    suffix;
+    size_t const        cchSuffix   =   lookup_suffix_(oom, &suffix);
+
+    return storage_size_with_suffix_(i, suffix, cchSuffix);
+}
+#endif
+
+ximpl_storage_size::ff_stg_size_r_t_
+storage_size_(
+    stlsoft::uint64_t   i
+)
+{
+#if 0 ||\
+    defined(PLATFORMSTL_ARCH_IS_X86) ||\
+    0
+    if(0 == (STLSOFT_GEN_UINT64_SUFFIX(0xFFFFFFFF00000000) & i))
+    {
+        return storage_size_(static_cast<stlsoft::uint32_t>(i));
+    }
+#endif
+
+    size_t              oom         =   0;
+
+    for(; i >= 1000; )
+    {
+        i   /=  1000;
+        oom +=   3;
+    }
+
+    ff_char_t const*    suffix;
+    size_t const        cchSuffix   =   lookup_suffix_(oom, &suffix);
+
+    return storage_size_with_suffix_(i, suffix, cchSuffix);
+}
 
 } /* namespace ximpl_storage_size */
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts an integer in size-qualified form.
@@ -429,7 +438,7 @@ ximpl_storage_size::ff_stg_size_r_t_
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -439,7 +448,7 @@ using ::fastformat::inserters::storage_size;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

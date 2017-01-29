@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for Windows message boxes.
  *
  * Created:     4th January 2009
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      10
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      12
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -80,7 +80,7 @@
 #include <windows.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -91,7 +91,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for sending a statement to Windows' <code>MessageBox()</code>.
@@ -197,7 +197,7 @@ private:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Creator Functions
+ * creator functions
  */
 
 /** Creator function for the WindowsMessageBox_sink class
@@ -219,7 +219,7 @@ inline WindowsMessageBox_sink MessageBox(LPCTSTR caption, UINT type)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a
@@ -234,7 +234,7 @@ inline WindowsMessageBox_sink& fmt_slices(WindowsMessageBox_sink& sink, int flag
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -243,7 +243,7 @@ inline WindowsMessageBox_sink& fmt_slices(WindowsMessageBox_sink& sink, int flag
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

@@ -5,11 +5,11 @@
  *              FastFormat core and API.
  *
  * Created:     12th April 2008
- * Updated:     4th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_CONTRACT
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_MINOR     3
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_EDIT      14
+# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_EDIT      16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
@@ -79,7 +79,7 @@
 #endif /* contract */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper macros
+ * helper macros
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -142,7 +142,7 @@ inline void FASTFORMAT_TYPECHECK_MSG_(...)
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Enforcements
+ * enforcements
  */
 
 #if defined(FASTFORMAT_QA_USE_CUSTOM_CONTRACT)

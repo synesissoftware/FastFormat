@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.overload.3.record_insert project.
  *
  * Created:     20th September 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,14 +18,18 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL header files */
+/* PlatformSTL Header Files */
 #include <platformstl/platformstl.hpp>
 
 #include <platformstl/performance/performance_counter.hpp>
@@ -33,12 +37,12 @@
 platformstl_ns_using(performance_counter)
 
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <sstream>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \
@@ -47,17 +51,17 @@ platformstl_ns_using(performance_counter)
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Globals
+ * globals
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #if 0
@@ -65,7 +69,7 @@ typedef std::string     string_t;
 #endif /* 0 */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Record insertion functions
+ * record insertion functions
  */
 
 const int   intNaN = 0x7fffffff;

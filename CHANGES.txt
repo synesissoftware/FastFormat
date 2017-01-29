@@ -15,6 +15,63 @@ Updated:    26th September 2015
     ************************************
 
 
+28th September 2015 - 0.8.1 alpha 3
+===================================
+
+Summary:
+--------
+
+ *
+
+Details:
+--------
+
+General:
+
+ ~ include/fastformat/exceptions.hpp:
+   ~ missing_argument_exception.numberOfReplacements replaced by missing_argument_exception.numArguments
+   ~ mismatched_replacements_exception.numberOfReplacements replaced by mismatched_replacements_exception.numArguments
+   ~ unreferenced_argument_exception.numberOfReplacements replaced by unreferenced_argument_exception.numArguments
+
+
+
+Core:
+
+Application Layer:
+
+ Inserters:
+
+ Shims:
+
+ Sinks:
+
+Bundles:
+
+Util:
+
+Distribution:
+
+Makefiles / Project-files:
+
+Examples:
+
+Test:
+
+ Unit:
+
+ Component:
+
+ Performance:
+
+ Scratch:
+
+Depends on:
+
+ * STLSoft 1.9.121 or later
+   (http://stlsoft.org/)
+
+
+
 26th September 2015 - 0.7.1
 ===========================
 

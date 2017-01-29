@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.format_defects project.
  *
  * Created:     1st June 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -19,22 +19,26 @@
 
 
 
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <platformstl/platformstl.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 

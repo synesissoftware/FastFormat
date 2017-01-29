@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.sink.auto_buffer project.
  *
  * Created:     21st April 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,25 +18,29 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #define FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS // VC++ 6 can't distinguish the auto_buffer action shim from the generic string one
 #include <fastformat/sinks/auto_buffer.hpp>
 #include <fastformat/ff.hpp>
 
-/* shwild header files */
+/* shwild Header Files */
 #include <shwild/shwild.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL header files */
+/* PlatformSTL Header Files */
 #include <platformstl/platformstl.hpp>
 
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #if 0
 #include <algorithm>
@@ -57,7 +61,7 @@ namespace std
 }
 #endif /* __WATCOMC__ */
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -67,17 +71,17 @@ namespace std
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Globals
+ * globals
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #if 0
@@ -85,7 +89,7 @@ typedef std::string     string_t;
 #endif /* 0 */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 /* ////////////////////////////////////////////////////////////////////// */

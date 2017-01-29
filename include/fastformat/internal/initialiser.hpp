@@ -4,11 +4,11 @@
  * Purpose:     Automatic initialisation of FastFormat library
  *
  * Created:     21st June 2005
- * Updated:     29th March 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2005-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2005-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,7 +52,7 @@
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_INITIALISER
 
 /* /////////////////////////////////////////////////////////////////////////
- * Feature discrimination
+ * feature discrimination
  */
 
 /* Which diagnostic output to use if initialisation fails */
@@ -77,7 +77,7 @@
 #endif
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT
@@ -107,7 +107,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /**  Schwarz Counter initialiser for the FastFormat library

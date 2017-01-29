@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for writing width-limited output.
  *
  * Created:     21st February 2012
- * Updated:     6th September 2014
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2012-2014, Matthew Wilson and Synesis Software
+ * Copyright (c) 2012-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,25 +48,25 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINKS_HPP_RIBBON
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_MINOR       0
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_EDIT        1
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_EDIT        3
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 #include <fastformat/quality/contract.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -77,7 +77,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 enum ribbon_flags_t
@@ -87,7 +87,7 @@ enum ribbon_flags_t
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 template <typename S>
@@ -207,7 +207,7 @@ private: // Fields
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Functions
+ * functions
  */
 
 template <typename S>
@@ -234,7 +234,7 @@ ribbon(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

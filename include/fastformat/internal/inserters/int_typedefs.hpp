@@ -4,11 +4,11 @@
  * Purpose:     Common typedefs for integral inserters
  *
  * Created:     26th May 2009
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,7 +48,7 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_INSERTERS_HPP_INT_TYPEDEFS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -58,7 +58,7 @@
 #include <stlsoft/string/shim_string.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
@@ -72,7 +72,7 @@
 #endif
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -83,7 +83,7 @@ namespace inserters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -100,7 +100,7 @@ typedef stlsoft::basic_shim_string<ff_char_t, 20>       ff_to_i_r_t_;
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -109,7 +109,7 @@ typedef stlsoft::basic_shim_string<ff_char_t, 20>       ff_to_i_r_t_;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

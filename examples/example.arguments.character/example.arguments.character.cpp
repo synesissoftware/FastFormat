@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.arguments.character project.
  *
  * Created:     2nd June 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,13 +18,17 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/fastformat.h>
 #include <fastformat/sinks/ostream.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -34,11 +38,11 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for FastFormat core API: format cache.
  *
  * Created:     18th September 2006
- * Updated:     7th August 2015
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,13 +41,10 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/format_element.h>
 #include <fastformat/internal/threading.h>
 #include <fastformat/init_codes.h>
@@ -87,7 +84,7 @@
 #endif
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation selection
+ * implementation selection
  */
 
 //#define _FASTFORMAT_USE_TSS_CACHE
@@ -95,7 +92,7 @@
 #define _FASTFORMAT_USE_2PHASE_CACHE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -104,7 +101,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Types & Non-local variables
+ * types & non-local variables
  */
 
 namespace
@@ -270,10 +267,10 @@ namespace
         map_type_       m_map;
     };
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 // class ximpl_core
@@ -596,7 +593,7 @@ namespace
     const size_t    offsetElement1  =   STLSOFT_RAW_OFFSETOF(pattern_record_base_t, elements_[1]);
     const size_t    sizeofElement   =   offsetElement1 - offsetElement0;
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 void* pattern_record_t::operator new(size_t /* cb */, size_t numFormatElements, size_t cchPattern)
 {
@@ -695,10 +692,10 @@ pattern_t pattern_record_t::pattern() const
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

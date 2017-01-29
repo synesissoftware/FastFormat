@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.sink.vectored_file project.
  *
  * Created:     28th October 2006
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2006-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,26 +18,30 @@
  * ////////////////////////////////////////////////////////////////////////// */
 
 
-/* UNIXem header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* UNIXem Header Files */
 #include <platformstl/platformstl.h>
 #if defined(PLATFORMSTL_OS_IS_WINDOWS)
 # include <unixem/implicit_link.h>
 #endif /* PLATFORMSTL_OS_IS_WINDOWS */
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/sinks/vectored_file.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/smartptr/scoped_handle.hpp>
 #include <platformstl/filesystem/file_path_buffer.hpp>
 #include <platformstl/filesystem/file_lines.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>

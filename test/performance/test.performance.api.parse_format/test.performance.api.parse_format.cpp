@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.performance.api.parse_format project.
  *
  * Created:     17th November 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,23 +20,27 @@
 //#define FF_PRSFMT_USE_SV_PARAM
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/string/split_functions.hpp>
 #include <stlsoft/string/string_view.hpp>
 #include <stlsoft/string/tokeniser_functions.hpp> // for find_next_token
 #include <platformstl/platformstl.hpp>
 #include <platformstl/performance/performance_counter.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \
@@ -45,7 +49,7 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Constants and definitions
+ * constants and definitions
  */
 
 #ifdef _DEBUG
@@ -62,12 +66,12 @@ platformstl::performance_counter::interval_type (platformstl::performance_counte
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Globals
+ * globals
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 typedef stlsoft::string_view    string_view_t;
@@ -90,7 +94,7 @@ enum
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 int parse_replacement_raw(
@@ -473,7 +477,7 @@ int main(int argc, char** argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Function definitions 
+ * function definitions 
  */
 
 int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(

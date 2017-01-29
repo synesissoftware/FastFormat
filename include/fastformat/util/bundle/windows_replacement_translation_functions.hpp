@@ -5,11 +5,11 @@
  *              FastFormat replacement parameters.
  *
  * Created:     24th April 2009
- * Updated:     30h November 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MINOR      0
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       5
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_REVISION   3
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -69,7 +69,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -77,7 +77,7 @@
 #include <fastformat/util/string/snprintf.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -88,7 +88,7 @@ namespace util
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Functions
+ * functions
  */
 
 /** Calculates the number of replacement parameters in a Windows format
@@ -99,7 +99,12 @@ namespace util
  *
  * \return The number of replacement parameters
  */
-inline size_t calculate_number_of_windows_replacement_parameters(ff_char_t const* str, size_t len)
+inline
+size_t
+calculate_number_of_windows_replacement_parameters(
+    ff_char_t const*    str
+,   size_t              len
+)
 {
     enum state_t
     {
@@ -148,7 +153,12 @@ inline size_t calculate_number_of_windows_replacement_parameters(ff_char_t const
  *
  * \return The number of replacement parameters
  */
-inline size_t calculate_number_of_fastformat_replacement_parameters(ff_char_t const* str, size_t len)
+inline
+size_t
+calculate_number_of_fastformat_replacement_parameters(
+    ff_char_t const*    str
+,   size_t              len
+)
 {
     enum state_t
     {
@@ -193,7 +203,11 @@ inline size_t calculate_number_of_fastformat_replacement_parameters(ff_char_t co
 /** Converts a Windows format string to a FastFormat.Format format string
  */
 template <typename S>
-inline S change_windows_replacement_parameters_to_fastformat(S const& str)
+inline
+S
+change_windows_replacement_parameters_to_fastformat(
+    S const& str
+)
 {
     typedef ss_typename_type_k S::const_iterator    iter_t;
 
@@ -232,15 +246,22 @@ inline S change_windows_replacement_parameters_to_fastformat(S const& str)
             int         cch = fastformat_util_snprintf(&parameter[0], STLSOFT_NUM_ELEMENTS(parameter), FASTFORMAT_LITERAL_STRING("{%d}"), index - 1);
 
             str2.append(parameter, size_t(cch));
-            str2.append(1u, *begin);
 
             state = normal;
+
+            if('%' == *begin)
+            {
+                goto found_percent;
+            }
+
+            str2.append(1u, *begin);
         }
         else
         {
             switch(*begin)
             {
                 case    '%':
+found_percent:
                     switch(state)
                     {
                         default:
@@ -304,7 +325,11 @@ inline S change_windows_replacement_parameters_to_fastformat(S const& str)
  * string by replacing any '{' characters with a sequence of "{{"
  */
 template <typename S>
-inline S escape_fastformat_replacement_parameters(S const& str)
+inline
+S
+escape_fastformat_replacement_parameters(
+    S const& str
+)
 {
     typedef ss_typename_type_k S::const_iterator    iter_t;
 
@@ -329,7 +354,7 @@ inline S escape_fastformat_replacement_parameters(S const& str)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

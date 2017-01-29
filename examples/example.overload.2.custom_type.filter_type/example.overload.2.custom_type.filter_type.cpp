@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.overload.2.custom_type.filter_type project.
  *
  * Created:     2nd March 2009
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -19,7 +19,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Custom types
+ * custom types
  */
 
 #include <string>
@@ -57,7 +57,7 @@ public:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 // Borland, Digital Mars and Visual C++ (pre 7.1) do not support the filter
@@ -103,21 +103,21 @@ namespace filters
 #endif /* FF_COMPILER_SUPPORTS_FILTER_TYPE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 /* ////////////////////////////////////////////////////////////////////// */

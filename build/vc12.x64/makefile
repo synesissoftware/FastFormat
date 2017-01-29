@@ -5,7 +5,7 @@
 #           compiler, on Win64
 #
 # Created:  22nd December 2007
-# Updated:  16th August 2016
+# Updated:  21st January 2017
 #
 ############################################################################
 
@@ -1006,6 +1006,7 @@ TARG_EX_sink_ODS_MT_R_W		=	$(PROJ_BIN_DIR)\$(PROJ_TAG_VER).example.sink.OutputDe
 # Component Tests
 
 TARG_TEST_COMP_file_MT_D			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).mt.debug.exe
+TARG_TEST_COMP_file_stm_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_COMP_fmt_sink_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_COMP_ins_hex_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_COMP_ins_int_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).mt.debug.exe
@@ -1017,6 +1018,7 @@ TARG_TEST_COMP_write_sink_MT_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.componen
 TARG_TEST_COMP_x_1_MT_D			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_COMP_snk_ostm_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_COMP_file_MT_D_W			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
+TARG_TEST_COMP_file_stm_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_COMP_fmt_sink_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_COMP_ins_hex_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_COMP_ins_int_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
@@ -1028,6 +1030,7 @@ TARG_TEST_COMP_write_sink_MT_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.compon
 TARG_TEST_COMP_x_1_MT_D_W			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_COMP_snk_ostm_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_COMP_file_DLL_D			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).dll.debug.exe
+TARG_TEST_COMP_file_stm_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_COMP_fmt_sink_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_COMP_ins_hex_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_COMP_ins_int_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).dll.debug.exe
@@ -1039,6 +1042,7 @@ TARG_TEST_COMP_write_sink_DLL_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.compone
 TARG_TEST_COMP_x_1_DLL_D			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_COMP_snk_ostm_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_COMP_file_DLL_D_W			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
+TARG_TEST_COMP_file_stm_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_COMP_fmt_sink_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_COMP_ins_hex_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_COMP_ins_int_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
@@ -1050,6 +1054,7 @@ TARG_TEST_COMP_write_sink_DLL_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.compo
 TARG_TEST_COMP_x_1_DLL_D_W			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_COMP_snk_ostm_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_COMP_file_DLL_R			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).dll.exe
+TARG_TEST_COMP_file_stm_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_COMP_fmt_sink_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_COMP_ins_hex_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_COMP_ins_int_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).dll.exe
@@ -1061,6 +1066,7 @@ TARG_TEST_COMP_write_sink_DLL_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.compone
 TARG_TEST_COMP_x_1_DLL_R			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_COMP_snk_ostm_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_COMP_file_DLL_R_W			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).widestring.dll.exe
+TARG_TEST_COMP_file_stm_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_COMP_fmt_sink_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_COMP_ins_hex_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_COMP_ins_int_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).widestring.dll.exe
@@ -1072,6 +1078,7 @@ TARG_TEST_COMP_write_sink_DLL_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.compo
 TARG_TEST_COMP_x_1_DLL_R_W			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_COMP_snk_ostm_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_COMP_file_MT_R			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).mt.exe
+TARG_TEST_COMP_file_stm_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_COMP_fmt_sink_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_COMP_ins_hex_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_COMP_ins_int_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).mt.exe
@@ -1083,6 +1090,7 @@ TARG_TEST_COMP_write_sink_MT_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.componen
 TARG_TEST_COMP_x_1_MT_R			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.fsde.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_COMP_snk_ostm_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.ostream.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_COMP_file_MT_R_W			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE.$(COMP_ARCH_OS_TAG).widestring.mt.exe
+TARG_TEST_COMP_file_stm_MT_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.FILE_stream.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_COMP_fmt_sink_MT_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.sink.string.fmt.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_COMP_ins_hex_MT_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.hex.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_COMP_ins_int_MT_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.inserter.integer.$(COMP_ARCH_OS_TAG).widestring.mt.exe
@@ -1209,6 +1217,7 @@ TARG_TEST_UNIT_api_init_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.
 TARG_TEST_UNIT_api_lkptrn_MT_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_api_msmtchh_MT_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_api_prsrpl_MT_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).mt.debug.exe
+TARG_TEST_UNIT_bndl_util_MT_D	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_bndl_winini_MT_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_fmt_stdfl_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_ins_ch_MT_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt.debug.exe
@@ -1231,6 +1240,7 @@ TARG_TEST_UNIT_api_init_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.ap
 TARG_TEST_UNIT_api_lkptrn_MT_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_UNIT_api_msmtchh_MT_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_UNIT_api_prsrpl_MT_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
+TARG_TEST_UNIT_bndl_util_MT_D_W	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_UNIT_bndl_winini_MT_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_UNIT_fmt_stdfl_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
 TARG_TEST_UNIT_ins_ch_MT_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).widestring.mt.debug.exe
@@ -1253,6 +1263,7 @@ TARG_TEST_UNIT_api_init_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api
 TARG_TEST_UNIT_api_lkptrn_DLL_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_UNIT_api_msmtchh_DLL_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_UNIT_api_prsrpl_DLL_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).dll.debug.exe
+TARG_TEST_UNIT_bndl_util_DLL_D	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_UNIT_bndl_winini_DLL_D	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_UNIT_fmt_stdfl_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).dll.debug.exe
 TARG_TEST_UNIT_ins_ch_DLL_D		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).dll.debug.exe
@@ -1276,6 +1287,7 @@ TARG_TEST_UNIT_api_init_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.a
 TARG_TEST_UNIT_api_lkptrn_DLL_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_UNIT_api_msmtchh_DLL_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_UNIT_api_prsrpl_DLL_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
+TARG_TEST_UNIT_bndl_util_DLL_D_W	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_UNIT_bndl_winini_DLL_D_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_UNIT_fmt_stdfl_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
 TARG_TEST_UNIT_ins_ch_DLL_D_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).widestring.dll.debug.exe
@@ -1299,6 +1311,7 @@ TARG_TEST_UNIT_api_init_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api
 TARG_TEST_UNIT_api_lkptrn_DLL_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_UNIT_api_msmtchh_DLL_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_UNIT_api_prsrpl_DLL_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).dll.exe
+TARG_TEST_UNIT_bndl_util_DLL_R	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_UNIT_bndl_winini_DLL_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_UNIT_fmt_stdfl_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).dll.exe
 TARG_TEST_UNIT_ins_ch_DLL_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).dll.exe
@@ -1322,6 +1335,7 @@ TARG_TEST_UNIT_api_init_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.a
 TARG_TEST_UNIT_api_lkptrn_DLL_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_UNIT_api_msmtchh_DLL_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_UNIT_api_prsrpl_DLL_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).widestring.dll.exe
+TARG_TEST_UNIT_bndl_util_DLL_R_W	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_UNIT_bndl_winini_DLL_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_UNIT_fmt_stdfl_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).widestring.dll.exe
 TARG_TEST_UNIT_ins_ch_DLL_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).widestring.dll.exe
@@ -1345,6 +1359,7 @@ TARG_TEST_UNIT_api_init_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.
 TARG_TEST_UNIT_api_lkptrn_MT_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_api_msmtchh_MT_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_api_prsrpl_MT_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).mt.exe
+TARG_TEST_UNIT_bndl_util_MT_R	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_bndl_winini_MT_R	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_fmt_stdfl_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_ins_ch_MT_R		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt.exe
@@ -1367,6 +1382,7 @@ TARG_TEST_UNIT_api_init_MT_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.ap
 TARG_TEST_UNIT_api_lkptrn_MT_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_UNIT_api_msmtchh_MT_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_UNIT_api_prsrpl_MT_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).widestring.mt.exe
+TARG_TEST_UNIT_bndl_util_MT_R_W	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_UNIT_bndl_winini_MT_R_W	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.winini.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_UNIT_fmt_stdfl_MT_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).widestring.mt.exe
 TARG_TEST_UNIT_ins_ch_MT_R_W		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).widestring.mt.exe
@@ -2055,6 +2071,7 @@ OBJ_EX_sink_ODS_MT_R_W		=   $(PROJ_OBJ_DIR)\example.sink.OutputDebugString.wides
 # Component Tests
 
 OBJ_TEST_COMP_file_MT_D			=   $(PROJ_OBJ_DIR)\test.component.FILE.mt.debug.obj
+OBJ_TEST_COMP_file_stm_MT_D		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.mt.debug.obj
 OBJ_TEST_COMP_fmt_sink_MT_D		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.mt.debug.obj
 OBJ_TEST_COMP_ins_hex_MT_D		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.mt.debug.obj
 OBJ_TEST_COMP_ins_int_MT_D		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.mt.debug.obj
@@ -2066,6 +2083,7 @@ OBJ_TEST_COMP_write_sink_MT_D		=   $(PROJ_OBJ_DIR)\test.component.sink.string.wr
 OBJ_TEST_COMP_x_1_MT_D			=   $(PROJ_OBJ_DIR)\test.component.fsde.mt.debug.obj
 OBJ_TEST_COMP_snk_ostm_MT_D		=   $(PROJ_OBJ_DIR)\test.component.sink.ostream.mt.debug.obj
 OBJ_TEST_COMP_file_MT_D_W			=   $(PROJ_OBJ_DIR)\test.component.FILE.widestring.mt.debug.obj
+OBJ_TEST_COMP_file_stm_MT_D_W		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.widestring.mt.debug.obj
 OBJ_TEST_COMP_fmt_sink_MT_D_W		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.widestring.mt.debug.obj
 OBJ_TEST_COMP_ins_hex_MT_D_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.widestring.mt.debug.obj
 OBJ_TEST_COMP_ins_int_MT_D_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.widestring.mt.debug.obj
@@ -2077,6 +2095,7 @@ OBJ_TEST_COMP_write_sink_MT_D_W		=   $(PROJ_OBJ_DIR)\test.component.sink.string.
 OBJ_TEST_COMP_x_1_MT_D_W			=   $(PROJ_OBJ_DIR)\test.component.fsde.widestring.mt.debug.obj
 OBJ_TEST_COMP_snk_ostm_MT_D_W		=   $(PROJ_OBJ_DIR)\test.component.sink.ostream.widestring.mt.debug.obj
 OBJ_TEST_COMP_file_DLL_D			=   $(PROJ_OBJ_DIR)\test.component.FILE.dll.debug.obj
+OBJ_TEST_COMP_file_stm_DLL_D		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.dll.debug.obj
 OBJ_TEST_COMP_fmt_sink_DLL_D		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.dll.debug.obj
 OBJ_TEST_COMP_ins_hex_DLL_D		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.dll.debug.obj
 OBJ_TEST_COMP_ins_int_DLL_D		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.dll.debug.obj
@@ -2088,6 +2107,7 @@ OBJ_TEST_COMP_write_sink_DLL_D		=   $(PROJ_OBJ_DIR)\test.component.sink.string.w
 OBJ_TEST_COMP_x_1_DLL_D			=   $(PROJ_OBJ_DIR)\test.component.fsde.dll.debug.obj
 OBJ_TEST_COMP_snk_ostm_DLL_D		=   $(PROJ_OBJ_DIR)\test.component.sink.ostream.dll.debug.obj
 OBJ_TEST_COMP_file_DLL_D_W			=   $(PROJ_OBJ_DIR)\test.component.FILE.widestring.dll.debug.obj
+OBJ_TEST_COMP_file_stm_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.widestring.dll.debug.obj
 OBJ_TEST_COMP_fmt_sink_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.widestring.dll.debug.obj
 OBJ_TEST_COMP_ins_hex_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.widestring.dll.debug.obj
 OBJ_TEST_COMP_ins_int_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.widestring.dll.debug.obj
@@ -2099,6 +2119,7 @@ OBJ_TEST_COMP_write_sink_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.component.sink.string
 OBJ_TEST_COMP_x_1_DLL_D_W			=   $(PROJ_OBJ_DIR)\test.component.fsde.widestring.dll.debug.obj
 OBJ_TEST_COMP_snk_ostm_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.component.sink.ostream.widestring.dll.debug.obj
 OBJ_TEST_COMP_file_DLL_R			=   $(PROJ_OBJ_DIR)\test.component.FILE.dll.obj
+OBJ_TEST_COMP_file_stm_DLL_R		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.dll.obj
 OBJ_TEST_COMP_fmt_sink_DLL_R		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.dll.obj
 OBJ_TEST_COMP_ins_hex_DLL_R		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.dll.obj
 OBJ_TEST_COMP_ins_int_DLL_R		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.dll.obj
@@ -2110,6 +2131,7 @@ OBJ_TEST_COMP_write_sink_DLL_R		=   $(PROJ_OBJ_DIR)\test.component.sink.string.w
 OBJ_TEST_COMP_x_1_DLL_R			=   $(PROJ_OBJ_DIR)\test.component.fsde.dll.obj
 OBJ_TEST_COMP_snk_ostm_DLL_R		=   $(PROJ_OBJ_DIR)\test.component.sink.ostream.dll.obj
 OBJ_TEST_COMP_file_DLL_R_W			=   $(PROJ_OBJ_DIR)\test.component.FILE.widestring.dll.obj
+OBJ_TEST_COMP_file_stm_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.widestring.dll.obj
 OBJ_TEST_COMP_fmt_sink_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.widestring.dll.obj
 OBJ_TEST_COMP_ins_hex_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.widestring.dll.obj
 OBJ_TEST_COMP_ins_int_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.widestring.dll.obj
@@ -2121,6 +2143,7 @@ OBJ_TEST_COMP_write_sink_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.component.sink.string
 OBJ_TEST_COMP_x_1_DLL_R_W			=   $(PROJ_OBJ_DIR)\test.component.fsde.widestring.dll.obj
 OBJ_TEST_COMP_snk_ostm_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.component.sink.ostream.widestring.dll.obj
 OBJ_TEST_COMP_file_MT_R			=   $(PROJ_OBJ_DIR)\test.component.FILE.mt.obj
+OBJ_TEST_COMP_file_stm_MT_R		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.mt.obj
 OBJ_TEST_COMP_fmt_sink_MT_R		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.mt.obj
 OBJ_TEST_COMP_ins_hex_MT_R		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.mt.obj
 OBJ_TEST_COMP_ins_int_MT_R		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.mt.obj
@@ -2132,6 +2155,7 @@ OBJ_TEST_COMP_write_sink_MT_R		=   $(PROJ_OBJ_DIR)\test.component.sink.string.wr
 OBJ_TEST_COMP_x_1_MT_R			=   $(PROJ_OBJ_DIR)\test.component.fsde.mt.obj
 OBJ_TEST_COMP_snk_ostm_MT_R		=   $(PROJ_OBJ_DIR)\test.component.sink.ostream.mt.obj
 OBJ_TEST_COMP_file_MT_R_W			=   $(PROJ_OBJ_DIR)\test.component.FILE.widestring.mt.obj
+OBJ_TEST_COMP_file_stm_MT_R_W		=   $(PROJ_OBJ_DIR)\test.component.FILE_stream.widestring.mt.obj
 OBJ_TEST_COMP_fmt_sink_MT_R_W		=   $(PROJ_OBJ_DIR)\test.component.sink.string.fmt.widestring.mt.obj
 OBJ_TEST_COMP_ins_hex_MT_R_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.hex.widestring.mt.obj
 OBJ_TEST_COMP_ins_int_MT_R_W		=   $(PROJ_OBJ_DIR)\test.component.inserter.integer.widestring.mt.obj
@@ -2259,6 +2283,7 @@ OBJ_TEST_UNIT_api_init_MT_D		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation.mt
 OBJ_TEST_UNIT_api_lkptrn_MT_D		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.mt.debug.obj
 OBJ_TEST_UNIT_api_msmtchh_MT_D	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.mt.debug.obj
 OBJ_TEST_UNIT_api_prsrpl_MT_D		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.mt.debug.obj
+OBJ_TEST_UNIT_bndl_util_MT_D		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.mt.debug.obj
 OBJ_TEST_UNIT_bndl_winini_MT_D	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.mt.debug.obj
 OBJ_TEST_UNIT_fmt_stdfl_MT_D		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.mt.debug.obj
 OBJ_TEST_UNIT_ins_ch_MT_D			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.mt.debug.obj
@@ -2286,6 +2311,7 @@ OBJ_TEST_UNIT_api_init_MT_D_W		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation.
 OBJ_TEST_UNIT_api_lkptrn_MT_D_W		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.widestring.mt.debug.obj
 OBJ_TEST_UNIT_api_msmtchh_MT_D_W	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.widestring.mt.debug.obj
 OBJ_TEST_UNIT_api_prsrpl_MT_D_W		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.widestring.mt.debug.obj
+OBJ_TEST_UNIT_bndl_util_MT_D_W		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.widestring.mt.debug.obj
 OBJ_TEST_UNIT_bndl_winini_MT_D_W	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.widestring.mt.debug.obj
 OBJ_TEST_UNIT_fmt_stdfl_MT_D_W		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.widestring.mt.debug.obj
 OBJ_TEST_UNIT_ins_ch_MT_D_W			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.widestring.mt.debug.obj
@@ -2313,6 +2339,7 @@ OBJ_TEST_UNIT_api_init_DLL_D		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation.d
 OBJ_TEST_UNIT_api_lkptrn_DLL_D		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.dll.debug.obj
 OBJ_TEST_UNIT_api_msmtchh_DLL_D	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.dll.debug.obj
 OBJ_TEST_UNIT_api_prsrpl_DLL_D		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.dll.debug.obj
+OBJ_TEST_UNIT_bndl_util_DLL_D		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.dll.debug.obj
 OBJ_TEST_UNIT_bndl_winini_DLL_D	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.dll.debug.obj
 OBJ_TEST_UNIT_fmt_stdfl_DLL_D		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.dll.debug.obj
 OBJ_TEST_UNIT_ins_ch_DLL_D			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.dll.debug.obj
@@ -2341,6 +2368,7 @@ OBJ_TEST_UNIT_api_init_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation
 OBJ_TEST_UNIT_api_lkptrn_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.widestring.dll.debug.obj
 OBJ_TEST_UNIT_api_msmtchh_DLL_D_W	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.widestring.dll.debug.obj
 OBJ_TEST_UNIT_api_prsrpl_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.widestring.dll.debug.obj
+OBJ_TEST_UNIT_bndl_util_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.widestring.dll.debug.obj
 OBJ_TEST_UNIT_bndl_winini_DLL_D_W	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.widestring.dll.debug.obj
 OBJ_TEST_UNIT_fmt_stdfl_DLL_D_W		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.widestring.dll.debug.obj
 OBJ_TEST_UNIT_ins_ch_DLL_D_W			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.widestring.dll.debug.obj
@@ -2369,6 +2397,7 @@ OBJ_TEST_UNIT_api_init_DLL_R		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation.d
 OBJ_TEST_UNIT_api_lkptrn_DLL_R		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.dll.obj
 OBJ_TEST_UNIT_api_msmtchh_DLL_R	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.dll.obj
 OBJ_TEST_UNIT_api_prsrpl_DLL_R		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.dll.obj
+OBJ_TEST_UNIT_bndl_util_DLL_R		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.dll.obj
 OBJ_TEST_UNIT_bndl_winini_DLL_R	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.dll.obj
 OBJ_TEST_UNIT_fmt_stdfl_DLL_R		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.dll.obj
 OBJ_TEST_UNIT_ins_ch_DLL_R			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.dll.obj
@@ -2397,6 +2426,7 @@ OBJ_TEST_UNIT_api_init_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation
 OBJ_TEST_UNIT_api_lkptrn_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.widestring.dll.obj
 OBJ_TEST_UNIT_api_msmtchh_DLL_R_W	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.widestring.dll.obj
 OBJ_TEST_UNIT_api_prsrpl_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.widestring.dll.obj
+OBJ_TEST_UNIT_bndl_util_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.widestring.dll.obj
 OBJ_TEST_UNIT_bndl_winini_DLL_R_W	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.widestring.dll.obj
 OBJ_TEST_UNIT_fmt_stdfl_DLL_R_W		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.widestring.dll.obj
 OBJ_TEST_UNIT_ins_ch_DLL_R_W			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.widestring.dll.obj
@@ -2425,6 +2455,7 @@ OBJ_TEST_UNIT_api_init_MT_R		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation.mt
 OBJ_TEST_UNIT_api_lkptrn_MT_R		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.mt.obj
 OBJ_TEST_UNIT_api_msmtchh_MT_R	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.mt.obj
 OBJ_TEST_UNIT_api_prsrpl_MT_R		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.mt.obj
+OBJ_TEST_UNIT_bndl_util_MT_R		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.mt.obj
 OBJ_TEST_UNIT_bndl_winini_MT_R	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.mt.obj
 OBJ_TEST_UNIT_fmt_stdfl_MT_R		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.mt.obj
 OBJ_TEST_UNIT_ins_ch_MT_R			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.mt.obj
@@ -2452,6 +2483,7 @@ OBJ_TEST_UNIT_api_init_MT_R_W		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation.
 OBJ_TEST_UNIT_api_lkptrn_MT_R_W		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.widestring.mt.obj
 OBJ_TEST_UNIT_api_msmtchh_MT_R_W	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.widestring.mt.obj
 OBJ_TEST_UNIT_api_prsrpl_MT_R_W		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.widestring.mt.obj
+OBJ_TEST_UNIT_bndl_util_MT_R_W		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.widestring.mt.obj
 OBJ_TEST_UNIT_bndl_winini_MT_R_W	=   $(PROJ_OBJ_DIR)\test.unit.bundle.winini.widestring.mt.obj
 OBJ_TEST_UNIT_fmt_stdfl_MT_R_W		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.widestring.mt.obj
 OBJ_TEST_UNIT_ins_ch_MT_R_W			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.widestring.mt.obj
@@ -2644,6 +2676,7 @@ OBJS_EXAMPLE=\
 # Component Tests
 OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_file_MT_D)\
+ $(OBJ_TEST_COMP_file_stm_MT_D)\
  $(OBJ_TEST_COMP_fmt_sink_MT_D)\
  $(OBJ_TEST_COMP_ins_hex_MT_D)\
  $(OBJ_TEST_COMP_ins_int_MT_D)\
@@ -2655,6 +2688,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_MT_D)\
  $(OBJ_TEST_COMP_snk_ostm_MT_D)\
  $(OBJ_TEST_COMP_file_MT_D_W)\
+ $(OBJ_TEST_COMP_file_stm_MT_D_W)\
  $(OBJ_TEST_COMP_fmt_sink_MT_D_W)\
  $(OBJ_TEST_COMP_ins_hex_MT_D_W)\
  $(OBJ_TEST_COMP_ins_int_MT_D_W)\
@@ -2666,6 +2700,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_MT_D_W)\
  $(OBJ_TEST_COMP_snk_ostm_MT_D_W)\
  $(OBJ_TEST_COMP_file_DLL_D)\
+ $(OBJ_TEST_COMP_file_stm_DLL_D)\
  $(OBJ_TEST_COMP_fmt_sink_DLL_D)\
  $(OBJ_TEST_COMP_ins_hex_DLL_D)\
  $(OBJ_TEST_COMP_ins_int_DLL_D)\
@@ -2677,6 +2712,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_DLL_D)\
  $(OBJ_TEST_COMP_snk_ostm_DLL_D)\
  $(OBJ_TEST_COMP_file_DLL_D_W)\
+ $(OBJ_TEST_COMP_file_stm_DLL_D_W)\
  $(OBJ_TEST_COMP_fmt_sink_DLL_D_W)\
  $(OBJ_TEST_COMP_ins_hex_DLL_D_W)\
  $(OBJ_TEST_COMP_ins_int_DLL_D_W)\
@@ -2688,6 +2724,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_DLL_D_W)\
  $(OBJ_TEST_COMP_snk_ostm_DLL_D_W)\
  $(OBJ_TEST_COMP_file_DLL_R)\
+ $(OBJ_TEST_COMP_file_stm_DLL_R)\
  $(OBJ_TEST_COMP_fmt_sink_DLL_R)\
  $(OBJ_TEST_COMP_ins_hex_DLL_R)\
  $(OBJ_TEST_COMP_ins_int_DLL_R)\
@@ -2699,6 +2736,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_DLL_R)\
  $(OBJ_TEST_COMP_snk_ostm_DLL_R)\
  $(OBJ_TEST_COMP_file_DLL_R_W)\
+ $(OBJ_TEST_COMP_file_stm_DLL_R_W)\
  $(OBJ_TEST_COMP_fmt_sink_DLL_R_W)\
  $(OBJ_TEST_COMP_ins_hex_DLL_R_W)\
  $(OBJ_TEST_COMP_ins_int_DLL_R_W)\
@@ -2710,6 +2748,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_DLL_R_W)\
  $(OBJ_TEST_COMP_snk_ostm_DLL_R_W)\
  $(OBJ_TEST_COMP_file_MT_R)\
+ $(OBJ_TEST_COMP_file_stm_MT_R)\
  $(OBJ_TEST_COMP_fmt_sink_MT_R)\
  $(OBJ_TEST_COMP_ins_hex_MT_R)\
  $(OBJ_TEST_COMP_ins_int_MT_R)\
@@ -2721,6 +2760,7 @@ OBJS_TEST_COMPONENT=\
  $(OBJ_TEST_COMP_x_1_MT_R)\
  $(OBJ_TEST_COMP_snk_ostm_MT_R)\
  $(OBJ_TEST_COMP_file_MT_R_W)\
+ $(OBJ_TEST_COMP_file_stm_MT_R_W)\
  $(OBJ_TEST_COMP_fmt_sink_MT_R_W)\
  $(OBJ_TEST_COMP_ins_hex_MT_R_W)\
  $(OBJ_TEST_COMP_ins_int_MT_R_W)\
@@ -2808,6 +2848,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_D)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_D)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_D)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_D)\
  $(OBJ_TEST_UNIT_bndl_winini_MT_D)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_D)\
  $(OBJ_TEST_UNIT_ins_ch_MT_D)\
@@ -2834,6 +2875,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_D_W)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_D_W)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_D_W)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_D_W)\
  $(OBJ_TEST_UNIT_bndl_winini_MT_D_W)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_D_W)\
  $(OBJ_TEST_UNIT_ins_ch_MT_D_W)\
@@ -2860,6 +2902,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_DLL_D)\
  $(OBJ_TEST_UNIT_api_msmtchh_DLL_D)\
  $(OBJ_TEST_UNIT_api_prsrpl_DLL_D)\
+ $(OBJ_TEST_UNIT_bndl_util_DLL_D)\
  $(OBJ_TEST_UNIT_bndl_winini_DLL_D)\
  $(OBJ_TEST_UNIT_fmt_stdfl_DLL_D)\
  $(OBJ_TEST_UNIT_ins_ch_DLL_D)\
@@ -2886,6 +2929,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_DLL_D_W)\
  $(OBJ_TEST_UNIT_api_msmtchh_DLL_D_W)\
  $(OBJ_TEST_UNIT_api_prsrpl_DLL_D_W)\
+ $(OBJ_TEST_UNIT_bndl_util_DLL_D_W)\
  $(OBJ_TEST_UNIT_bndl_winini_DLL_D_W)\
  $(OBJ_TEST_UNIT_fmt_stdfl_DLL_D_W)\
  $(OBJ_TEST_UNIT_ins_ch_DLL_D_W)\
@@ -2912,6 +2956,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_DLL_R)\
  $(OBJ_TEST_UNIT_api_msmtchh_DLL_R)\
  $(OBJ_TEST_UNIT_api_prsrpl_DLL_R)\
+ $(OBJ_TEST_UNIT_bndl_util_DLL_R)\
  $(OBJ_TEST_UNIT_bndl_winini_DLL_R)\
  $(OBJ_TEST_UNIT_fmt_stdfl_DLL_R)\
  $(OBJ_TEST_UNIT_ins_ch_DLL_R)\
@@ -2938,6 +2983,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_DLL_R_W)\
  $(OBJ_TEST_UNIT_api_msmtchh_DLL_R_W)\
  $(OBJ_TEST_UNIT_api_prsrpl_DLL_R_W)\
+ $(OBJ_TEST_UNIT_bndl_util_DLL_R_W)\
  $(OBJ_TEST_UNIT_bndl_winini_DLL_R_W)\
  $(OBJ_TEST_UNIT_fmt_stdfl_DLL_R_W)\
  $(OBJ_TEST_UNIT_ins_ch_DLL_R_W)\
@@ -2964,6 +3010,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_R)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_R)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_R)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_R)\
  $(OBJ_TEST_UNIT_bndl_winini_MT_R)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_R)\
  $(OBJ_TEST_UNIT_ins_ch_MT_R)\
@@ -2990,6 +3037,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_R_W)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_R_W)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_R_W)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_R_W)\
  $(OBJ_TEST_UNIT_bndl_winini_MT_R_W)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_R_W)\
  $(OBJ_TEST_UNIT_ins_ch_MT_R_W)\
@@ -3202,6 +3250,7 @@ TARGETS_SAMPLE=\
 
 TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_file_MT_D)\
+ $(TARG_TEST_COMP_file_stm_MT_D)\
  $(TARG_TEST_COMP_fmt_sink_MT_D)\
  $(TARG_TEST_COMP_ins_hex_MT_D)\
  $(TARG_TEST_COMP_ins_int_MT_D)\
@@ -3213,6 +3262,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_MT_D)\
  $(TARG_TEST_COMP_snk_ostm_MT_D)\
  $(TARG_TEST_COMP_file_MT_D_W)\
+ $(TARG_TEST_COMP_file_stm_MT_D_W)\
  $(TARG_TEST_COMP_fmt_sink_MT_D_W)\
  $(TARG_TEST_COMP_ins_hex_MT_D_W)\
  $(TARG_TEST_COMP_ins_int_MT_D_W)\
@@ -3224,6 +3274,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_MT_D_W)\
  $(TARG_TEST_COMP_snk_ostm_MT_D_W)\
  $(TARG_TEST_COMP_file_DLL_D)\
+ $(TARG_TEST_COMP_file_stm_DLL_D)\
  $(TARG_TEST_COMP_fmt_sink_DLL_D)\
  $(TARG_TEST_COMP_ins_hex_DLL_D)\
  $(TARG_TEST_COMP_ins_int_DLL_D)\
@@ -3235,6 +3286,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_DLL_D)\
  $(TARG_TEST_COMP_snk_ostm_DLL_D)\
  $(TARG_TEST_COMP_file_DLL_D_W)\
+ $(TARG_TEST_COMP_file_stm_DLL_D_W)\
  $(TARG_TEST_COMP_fmt_sink_DLL_D_W)\
  $(TARG_TEST_COMP_ins_hex_DLL_D_W)\
  $(TARG_TEST_COMP_ins_int_DLL_D_W)\
@@ -3246,6 +3298,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_DLL_D_W)\
  $(TARG_TEST_COMP_snk_ostm_DLL_D_W)\
  $(TARG_TEST_COMP_file_DLL_R)\
+ $(TARG_TEST_COMP_file_stm_DLL_R)\
  $(TARG_TEST_COMP_fmt_sink_DLL_R)\
  $(TARG_TEST_COMP_ins_hex_DLL_R)\
  $(TARG_TEST_COMP_ins_int_DLL_R)\
@@ -3257,6 +3310,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_DLL_R)\
  $(TARG_TEST_COMP_snk_ostm_DLL_R)\
  $(TARG_TEST_COMP_file_DLL_R_W)\
+ $(TARG_TEST_COMP_file_stm_DLL_R_W)\
  $(TARG_TEST_COMP_fmt_sink_DLL_R_W)\
  $(TARG_TEST_COMP_ins_hex_DLL_R_W)\
  $(TARG_TEST_COMP_ins_int_DLL_R_W)\
@@ -3268,6 +3322,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_DLL_R_W)\
  $(TARG_TEST_COMP_snk_ostm_DLL_R_W)\
  $(TARG_TEST_COMP_file_MT_R)\
+ $(TARG_TEST_COMP_file_stm_MT_R)\
  $(TARG_TEST_COMP_fmt_sink_MT_R)\
  $(TARG_TEST_COMP_ins_hex_MT_R)\
  $(TARG_TEST_COMP_ins_int_MT_R)\
@@ -3279,6 +3334,7 @@ TARGETS_TEST_COMPONENT=\
  $(TARG_TEST_COMP_x_1_MT_R)\
  $(TARG_TEST_COMP_snk_ostm_MT_R)\
  $(TARG_TEST_COMP_file_MT_R_W)\
+ $(TARG_TEST_COMP_file_stm_MT_R_W)\
  $(TARG_TEST_COMP_fmt_sink_MT_R_W)\
  $(TARG_TEST_COMP_ins_hex_MT_R_W)\
  $(TARG_TEST_COMP_ins_int_MT_R_W)\
@@ -3363,6 +3419,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_D)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_D)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_D)\
+ $(TARG_TEST_UNIT_bndl_util_MT_D)\
  $(TARG_TEST_UNIT_bndl_winini_MT_D)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_D)\
  $(TARG_TEST_UNIT_ins_ch_MT_D)\
@@ -3385,6 +3442,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_D_W)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_D_W)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_D_W)\
+ $(TARG_TEST_UNIT_bndl_util_MT_D_W)\
  $(TARG_TEST_UNIT_bndl_winini_MT_D_W)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_D_W)\
  $(TARG_TEST_UNIT_ins_ch_MT_D_W)\
@@ -3407,6 +3465,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_DLL_D)\
  $(TARG_TEST_UNIT_api_msmtchh_DLL_D)\
  $(TARG_TEST_UNIT_api_prsrpl_DLL_D)\
+ $(TARG_TEST_UNIT_bndl_util_DLL_D)\
  $(TARG_TEST_UNIT_bndl_winini_DLL_D)\
  $(TARG_TEST_UNIT_fmt_stdfl_DLL_D)\
  $(TARG_TEST_UNIT_ins_ch_DLL_D)\
@@ -3430,6 +3489,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_DLL_D_W)\
  $(TARG_TEST_UNIT_api_msmtchh_DLL_D_W)\
  $(TARG_TEST_UNIT_api_prsrpl_DLL_D_W)\
+ $(TARG_TEST_UNIT_bndl_util_DLL_D_W)\
  $(TARG_TEST_UNIT_bndl_winini_DLL_D_W)\
  $(TARG_TEST_UNIT_fmt_stdfl_DLL_D_W)\
  $(TARG_TEST_UNIT_ins_ch_DLL_D_W)\
@@ -3453,6 +3513,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_DLL_R)\
  $(TARG_TEST_UNIT_api_msmtchh_DLL_R)\
  $(TARG_TEST_UNIT_api_prsrpl_DLL_R)\
+ $(TARG_TEST_UNIT_bndl_util_DLL_R)\
  $(TARG_TEST_UNIT_bndl_winini_DLL_R)\
  $(TARG_TEST_UNIT_fmt_stdfl_DLL_R)\
  $(TARG_TEST_UNIT_ins_ch_DLL_R)\
@@ -3476,6 +3537,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_DLL_R_W)\
  $(TARG_TEST_UNIT_api_msmtchh_DLL_R_W)\
  $(TARG_TEST_UNIT_api_prsrpl_DLL_R_W)\
+ $(TARG_TEST_UNIT_bndl_util_DLL_R_W)\
  $(TARG_TEST_UNIT_bndl_winini_DLL_R_W)\
  $(TARG_TEST_UNIT_fmt_stdfl_DLL_R_W)\
  $(TARG_TEST_UNIT_ins_ch_DLL_R_W)\
@@ -3499,6 +3561,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_R)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_R)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_R)\
+ $(TARG_TEST_UNIT_bndl_util_MT_R)\
  $(TARG_TEST_UNIT_bndl_winini_MT_R)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_R)\
  $(TARG_TEST_UNIT_ins_ch_MT_R)\
@@ -3521,6 +3584,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_R_W)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_R_W)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_R_W)\
+ $(TARG_TEST_UNIT_bndl_util_MT_R_W)\
  $(TARG_TEST_UNIT_bndl_winini_MT_R_W)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_R_W)\
  $(TARG_TEST_UNIT_ins_ch_MT_R_W)\
@@ -3663,6 +3727,14 @@ test.component_:
 	$(TARG_TEST_COMP_file_DLL_R_W) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_file_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_file_MT_R_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_MT_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_MT_D_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_DLL_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_DLL_D_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_DLL_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_DLL_R_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_MT_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_COMP_file_stm_MT_R_W) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_fmt_sink_MT_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_fmt_sink_MT_D_W) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_COMP_fmt_sink_DLL_D) --verbosity=$(TEST_VERBOSITY)
@@ -3852,6 +3924,14 @@ test.unit_:
 	$(TARG_TEST_UNIT_api_prsrpl_DLL_R_W) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_api_prsrpl_MT_R) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_api_prsrpl_MT_R_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_D_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_DLL_D) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_DLL_D_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_DLL_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_DLL_R_W) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_R) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_R_W) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_bndl_winini_MT_D) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_bndl_winini_MT_D_W) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_bndl_winini_DLL_D) --verbosity=$(TEST_VERBOSITY)
@@ -4569,6 +4649,8 @@ clean.test.component:
 	@echo cleaning Test::Component files ...
 	@-if exist $(TARG_TEST_COMP_file_MT_D) $(RM) $(TARG_TEST_COMP_file_MT_D)
 	@-if exist $(OBJ_TEST_COMP_file_MT_D) $(RM) $(OBJ_TEST_COMP_file_MT_D)
+	@-if exist $(TARG_TEST_COMP_file_stm_MT_D) $(RM) $(TARG_TEST_COMP_file_stm_MT_D)
+	@-if exist $(OBJ_TEST_COMP_file_stm_MT_D) $(RM) $(OBJ_TEST_COMP_file_stm_MT_D)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_MT_D) $(RM) $(TARG_TEST_COMP_fmt_sink_MT_D)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_MT_D) $(RM) $(OBJ_TEST_COMP_fmt_sink_MT_D)
 	@-if exist $(TARG_TEST_COMP_ins_hex_MT_D) $(RM) $(TARG_TEST_COMP_ins_hex_MT_D)
@@ -4593,6 +4675,8 @@ clean.test.component:
 	@-if exist $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest $(RM) $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest
 	@-if exist $(TARG_TEST_COMP_file_MT_D_W) $(RM) $(TARG_TEST_COMP_file_MT_D_W)
 	@-if exist $(OBJ_TEST_COMP_file_MT_D_W) $(RM) $(OBJ_TEST_COMP_file_MT_D_W)
+	@-if exist $(TARG_TEST_COMP_file_stm_MT_D_W) $(RM) $(TARG_TEST_COMP_file_stm_MT_D_W)
+	@-if exist $(OBJ_TEST_COMP_file_stm_MT_D_W) $(RM) $(OBJ_TEST_COMP_file_stm_MT_D_W)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_MT_D_W) $(RM) $(TARG_TEST_COMP_fmt_sink_MT_D_W)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_MT_D_W) $(RM) $(OBJ_TEST_COMP_fmt_sink_MT_D_W)
 	@-if exist $(TARG_TEST_COMP_ins_hex_MT_D_W) $(RM) $(TARG_TEST_COMP_ins_hex_MT_D_W)
@@ -4617,6 +4701,8 @@ clean.test.component:
 	@-if exist $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest $(RM) $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest
 	@-if exist $(TARG_TEST_COMP_file_DLL_D) $(RM) $(TARG_TEST_COMP_file_DLL_D)
 	@-if exist $(OBJ_TEST_COMP_file_DLL_D) $(RM) $(OBJ_TEST_COMP_file_DLL_D)
+	@-if exist $(TARG_TEST_COMP_file_stm_DLL_D) $(RM) $(TARG_TEST_COMP_file_stm_DLL_D)
+	@-if exist $(OBJ_TEST_COMP_file_stm_DLL_D) $(RM) $(OBJ_TEST_COMP_file_stm_DLL_D)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_DLL_D) $(RM) $(TARG_TEST_COMP_fmt_sink_DLL_D)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_DLL_D) $(RM) $(OBJ_TEST_COMP_fmt_sink_DLL_D)
 	@-if exist $(TARG_TEST_COMP_ins_hex_DLL_D) $(RM) $(TARG_TEST_COMP_ins_hex_DLL_D)
@@ -4641,6 +4727,8 @@ clean.test.component:
 	@-if exist $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest $(RM) $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest
 	@-if exist $(TARG_TEST_COMP_file_DLL_D_W) $(RM) $(TARG_TEST_COMP_file_DLL_D_W)
 	@-if exist $(OBJ_TEST_COMP_file_DLL_D_W) $(RM) $(OBJ_TEST_COMP_file_DLL_D_W)
+	@-if exist $(TARG_TEST_COMP_file_stm_DLL_D_W) $(RM) $(TARG_TEST_COMP_file_stm_DLL_D_W)
+	@-if exist $(OBJ_TEST_COMP_file_stm_DLL_D_W) $(RM) $(OBJ_TEST_COMP_file_stm_DLL_D_W)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_DLL_D_W) $(RM) $(TARG_TEST_COMP_fmt_sink_DLL_D_W)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_DLL_D_W) $(RM) $(OBJ_TEST_COMP_fmt_sink_DLL_D_W)
 	@-if exist $(TARG_TEST_COMP_ins_hex_DLL_D_W) $(RM) $(TARG_TEST_COMP_ins_hex_DLL_D_W)
@@ -4665,6 +4753,8 @@ clean.test.component:
 	@-if exist $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest $(RM) $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest
 	@-if exist $(TARG_TEST_COMP_file_DLL_R) $(RM) $(TARG_TEST_COMP_file_DLL_R)
 	@-if exist $(OBJ_TEST_COMP_file_DLL_R) $(RM) $(OBJ_TEST_COMP_file_DLL_R)
+	@-if exist $(TARG_TEST_COMP_file_stm_DLL_R) $(RM) $(TARG_TEST_COMP_file_stm_DLL_R)
+	@-if exist $(OBJ_TEST_COMP_file_stm_DLL_R) $(RM) $(OBJ_TEST_COMP_file_stm_DLL_R)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_DLL_R) $(RM) $(TARG_TEST_COMP_fmt_sink_DLL_R)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_DLL_R) $(RM) $(OBJ_TEST_COMP_fmt_sink_DLL_R)
 	@-if exist $(TARG_TEST_COMP_ins_hex_DLL_R) $(RM) $(TARG_TEST_COMP_ins_hex_DLL_R)
@@ -4689,6 +4779,8 @@ clean.test.component:
 	@-if exist $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest $(RM) $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest
 	@-if exist $(TARG_TEST_COMP_file_DLL_R_W) $(RM) $(TARG_TEST_COMP_file_DLL_R_W)
 	@-if exist $(OBJ_TEST_COMP_file_DLL_R_W) $(RM) $(OBJ_TEST_COMP_file_DLL_R_W)
+	@-if exist $(TARG_TEST_COMP_file_stm_DLL_R_W) $(RM) $(TARG_TEST_COMP_file_stm_DLL_R_W)
+	@-if exist $(OBJ_TEST_COMP_file_stm_DLL_R_W) $(RM) $(OBJ_TEST_COMP_file_stm_DLL_R_W)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_DLL_R_W) $(RM) $(TARG_TEST_COMP_fmt_sink_DLL_R_W)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_DLL_R_W) $(RM) $(OBJ_TEST_COMP_fmt_sink_DLL_R_W)
 	@-if exist $(TARG_TEST_COMP_ins_hex_DLL_R_W) $(RM) $(TARG_TEST_COMP_ins_hex_DLL_R_W)
@@ -4713,6 +4805,8 @@ clean.test.component:
 	@-if exist $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest $(RM) $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest
 	@-if exist $(TARG_TEST_COMP_file_MT_R) $(RM) $(TARG_TEST_COMP_file_MT_R)
 	@-if exist $(OBJ_TEST_COMP_file_MT_R) $(RM) $(OBJ_TEST_COMP_file_MT_R)
+	@-if exist $(TARG_TEST_COMP_file_stm_MT_R) $(RM) $(TARG_TEST_COMP_file_stm_MT_R)
+	@-if exist $(OBJ_TEST_COMP_file_stm_MT_R) $(RM) $(OBJ_TEST_COMP_file_stm_MT_R)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_MT_R) $(RM) $(TARG_TEST_COMP_fmt_sink_MT_R)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_MT_R) $(RM) $(OBJ_TEST_COMP_fmt_sink_MT_R)
 	@-if exist $(TARG_TEST_COMP_ins_hex_MT_R) $(RM) $(TARG_TEST_COMP_ins_hex_MT_R)
@@ -4737,6 +4831,8 @@ clean.test.component:
 	@-if exist $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest $(RM) $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.component.*.manifest
 	@-if exist $(TARG_TEST_COMP_file_MT_R_W) $(RM) $(TARG_TEST_COMP_file_MT_R_W)
 	@-if exist $(OBJ_TEST_COMP_file_MT_R_W) $(RM) $(OBJ_TEST_COMP_file_MT_R_W)
+	@-if exist $(TARG_TEST_COMP_file_stm_MT_R_W) $(RM) $(TARG_TEST_COMP_file_stm_MT_R_W)
+	@-if exist $(OBJ_TEST_COMP_file_stm_MT_R_W) $(RM) $(OBJ_TEST_COMP_file_stm_MT_R_W)
 	@-if exist $(TARG_TEST_COMP_fmt_sink_MT_R_W) $(RM) $(TARG_TEST_COMP_fmt_sink_MT_R_W)
 	@-if exist $(OBJ_TEST_COMP_fmt_sink_MT_R_W) $(RM) $(OBJ_TEST_COMP_fmt_sink_MT_R_W)
 	@-if exist $(TARG_TEST_COMP_ins_hex_MT_R_W) $(RM) $(TARG_TEST_COMP_ins_hex_MT_R_W)
@@ -4984,6 +5080,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_MT_D) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_MT_D)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_MT_D) $(RM) $(TARG_TEST_UNIT_api_prsrpl_MT_D)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_MT_D) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_MT_D)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_MT_D) $(RM) $(TARG_TEST_UNIT_bndl_util_MT_D)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_MT_D) $(RM) $(OBJ_TEST_UNIT_bndl_util_MT_D)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_MT_D) $(RM) $(TARG_TEST_UNIT_bndl_winini_MT_D)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_MT_D) $(RM) $(OBJ_TEST_UNIT_bndl_winini_MT_D)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_MT_D) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_MT_D)
@@ -5034,6 +5132,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_MT_D_W) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_MT_D_W)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_MT_D_W) $(RM) $(TARG_TEST_UNIT_api_prsrpl_MT_D_W)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_MT_D_W) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_MT_D_W)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_MT_D_W) $(RM) $(TARG_TEST_UNIT_bndl_util_MT_D_W)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_MT_D_W) $(RM) $(OBJ_TEST_UNIT_bndl_util_MT_D_W)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_MT_D_W) $(RM) $(TARG_TEST_UNIT_bndl_winini_MT_D_W)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_MT_D_W) $(RM) $(OBJ_TEST_UNIT_bndl_winini_MT_D_W)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_MT_D_W) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_MT_D_W)
@@ -5084,6 +5184,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_DLL_D) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_DLL_D)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_DLL_D) $(RM) $(TARG_TEST_UNIT_api_prsrpl_DLL_D)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_DLL_D) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_DLL_D)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_DLL_D) $(RM) $(TARG_TEST_UNIT_bndl_util_DLL_D)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_DLL_D) $(RM) $(OBJ_TEST_UNIT_bndl_util_DLL_D)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_DLL_D) $(RM) $(TARG_TEST_UNIT_bndl_winini_DLL_D)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_DLL_D) $(RM) $(OBJ_TEST_UNIT_bndl_winini_DLL_D)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_DLL_D) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_DLL_D)
@@ -5136,6 +5238,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_DLL_D_W) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_DLL_D_W)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_DLL_D_W) $(RM) $(TARG_TEST_UNIT_api_prsrpl_DLL_D_W)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_DLL_D_W) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_DLL_D_W)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_DLL_D_W) $(RM) $(TARG_TEST_UNIT_bndl_util_DLL_D_W)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_DLL_D_W) $(RM) $(OBJ_TEST_UNIT_bndl_util_DLL_D_W)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_DLL_D_W) $(RM) $(TARG_TEST_UNIT_bndl_winini_DLL_D_W)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_DLL_D_W) $(RM) $(OBJ_TEST_UNIT_bndl_winini_DLL_D_W)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_DLL_D_W) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_DLL_D_W)
@@ -5188,6 +5292,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_DLL_R) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_DLL_R)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_DLL_R) $(RM) $(TARG_TEST_UNIT_api_prsrpl_DLL_R)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_DLL_R) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_DLL_R)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_DLL_R) $(RM) $(TARG_TEST_UNIT_bndl_util_DLL_R)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_DLL_R) $(RM) $(OBJ_TEST_UNIT_bndl_util_DLL_R)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_DLL_R) $(RM) $(TARG_TEST_UNIT_bndl_winini_DLL_R)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_DLL_R) $(RM) $(OBJ_TEST_UNIT_bndl_winini_DLL_R)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_DLL_R) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_DLL_R)
@@ -5240,6 +5346,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_DLL_R_W) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_DLL_R_W)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_DLL_R_W) $(RM) $(TARG_TEST_UNIT_api_prsrpl_DLL_R_W)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_DLL_R_W) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_DLL_R_W)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_DLL_R_W) $(RM) $(TARG_TEST_UNIT_bndl_util_DLL_R_W)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_DLL_R_W) $(RM) $(OBJ_TEST_UNIT_bndl_util_DLL_R_W)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_DLL_R_W) $(RM) $(TARG_TEST_UNIT_bndl_winini_DLL_R_W)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_DLL_R_W) $(RM) $(OBJ_TEST_UNIT_bndl_winini_DLL_R_W)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_DLL_R_W) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_DLL_R_W)
@@ -5292,6 +5400,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_MT_R) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_MT_R)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_MT_R) $(RM) $(TARG_TEST_UNIT_api_prsrpl_MT_R)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_MT_R) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_MT_R)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_MT_R) $(RM) $(TARG_TEST_UNIT_bndl_util_MT_R)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_MT_R) $(RM) $(OBJ_TEST_UNIT_bndl_util_MT_R)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_MT_R) $(RM) $(TARG_TEST_UNIT_bndl_winini_MT_R)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_MT_R) $(RM) $(OBJ_TEST_UNIT_bndl_winini_MT_R)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_MT_R) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_MT_R)
@@ -5342,6 +5452,8 @@ clean.test.unit:
 	@-if exist $(OBJ_TEST_UNIT_api_msmtchh_MT_R_W) $(RM) $(OBJ_TEST_UNIT_api_msmtchh_MT_R_W)
 	@-if exist $(TARG_TEST_UNIT_api_prsrpl_MT_R_W) $(RM) $(TARG_TEST_UNIT_api_prsrpl_MT_R_W)
 	@-if exist $(OBJ_TEST_UNIT_api_prsrpl_MT_R_W) $(RM) $(OBJ_TEST_UNIT_api_prsrpl_MT_R_W)
+	@-if exist $(TARG_TEST_UNIT_bndl_util_MT_R_W) $(RM) $(TARG_TEST_UNIT_bndl_util_MT_R_W)
+	@-if exist $(OBJ_TEST_UNIT_bndl_util_MT_R_W) $(RM) $(OBJ_TEST_UNIT_bndl_util_MT_R_W)
 	@-if exist $(TARG_TEST_UNIT_bndl_winini_MT_R_W) $(RM) $(TARG_TEST_UNIT_bndl_winini_MT_R_W)
 	@-if exist $(OBJ_TEST_UNIT_bndl_winini_MT_R_W) $(RM) $(OBJ_TEST_UNIT_bndl_winini_MT_R_W)
 	@-if exist $(TARG_TEST_UNIT_fmt_stdfl_MT_R_W) $(RM) $(TARG_TEST_UNIT_fmt_stdfl_MT_R_W)
@@ -7497,6 +7609,134 @@ $(TARG_TEST_COMP_file_MT_R_W):    \
 
 $(OBJ_TEST_COMP_file_MT_R_W): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE\test.component.FILE.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_MT_R_W) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE\test.component.FILE.cpp
+
+$(TARG_TEST_COMP_file_stm_MT_D):    \
+		$(OBJ_TEST_COMP_file_stm_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_D) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(TARGET_LIB_MT_D)
+
+$(OBJ_TEST_COMP_file_stm_MT_D): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_D) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_MT_D_W):    \
+		$(OBJ_TEST_COMP_file_stm_MT_D_W)\
+		$(LIB_CORE_MT_D_W)\
+		$(LIB_SHWILD_MT_D_W)\
+		$(LIB_XTESTS_MT_D_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_D_W) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_MT_D_W)\
+		$(LIB_CORE_MT_D_W)\
+		$(LIB_SHWILD_MT_D_W)\
+		$(LIB_XTESTS_MT_D_W)\
+		$(TARGET_LIB_MT_D_W)
+
+$(OBJ_TEST_COMP_file_stm_MT_D_W): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_D_W) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_DLL_D):    \
+		$(OBJ_TEST_COMP_file_stm_DLL_D)\
+		$(LIB_CORE_DLL_D)\
+		$(LIB_SHWILD_DLL_D)\
+		$(LIB_XTESTS_DLL_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_D) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_DLL_D)\
+		$(LIB_CORE_DLL_D)\
+		$(LIB_SHWILD_DLL_D)\
+		$(LIB_XTESTS_DLL_D)\
+		$(TARGET_LIB_DLL_D)
+
+$(OBJ_TEST_COMP_file_stm_DLL_D): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_D) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_DLL_D_W):    \
+		$(OBJ_TEST_COMP_file_stm_DLL_D_W)\
+		$(LIB_CORE_DLL_D_W)\
+		$(LIB_SHWILD_DLL_D_W)\
+		$(LIB_XTESTS_DLL_D_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_D_W) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_DLL_D_W)\
+		$(LIB_CORE_DLL_D_W)\
+		$(LIB_SHWILD_DLL_D_W)\
+		$(LIB_XTESTS_DLL_D_W)\
+		$(TARGET_LIB_DLL_D_W)
+
+$(OBJ_TEST_COMP_file_stm_DLL_D_W): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_D_W) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_DLL_R):    \
+		$(OBJ_TEST_COMP_file_stm_DLL_R)\
+		$(LIB_CORE_DLL_R)\
+		$(LIB_SHWILD_DLL_R)\
+		$(LIB_XTESTS_DLL_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_R) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_DLL_R)\
+		$(LIB_CORE_DLL_R)\
+		$(LIB_SHWILD_DLL_R)\
+		$(LIB_XTESTS_DLL_R)\
+		$(TARGET_LIB_DLL_R)
+
+$(OBJ_TEST_COMP_file_stm_DLL_R): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_R) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_DLL_R_W):    \
+		$(OBJ_TEST_COMP_file_stm_DLL_R_W)\
+		$(LIB_CORE_DLL_R_W)\
+		$(LIB_SHWILD_DLL_R_W)\
+		$(LIB_XTESTS_DLL_R_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_R_W) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_DLL_R_W)\
+		$(LIB_CORE_DLL_R_W)\
+		$(LIB_SHWILD_DLL_R_W)\
+		$(LIB_XTESTS_DLL_R_W)\
+		$(TARGET_LIB_DLL_R_W)
+
+$(OBJ_TEST_COMP_file_stm_DLL_R_W): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_R_W) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_MT_R):    \
+		$(OBJ_TEST_COMP_file_stm_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_R) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(TARGET_LIB_MT_R)
+
+$(OBJ_TEST_COMP_file_stm_MT_R): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_R) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
+
+$(TARG_TEST_COMP_file_stm_MT_R_W):    \
+		$(OBJ_TEST_COMP_file_stm_MT_R_W)\
+		$(LIB_CORE_MT_R_W)\
+		$(LIB_SHWILD_MT_R_W)\
+		$(LIB_XTESTS_MT_R_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_R_W) -out:$@ \
+		$(OBJ_TEST_COMP_file_stm_MT_R_W)\
+		$(LIB_CORE_MT_R_W)\
+		$(LIB_SHWILD_MT_R_W)\
+		$(LIB_XTESTS_MT_R_W)\
+		$(TARGET_LIB_MT_R_W)
+
+$(OBJ_TEST_COMP_file_stm_MT_R_W): $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_R_W) -Fo$@ $(PROJ_TEST_COMPONENT_DIR)\test.component.FILE_stream\test.component.FILE_stream.cpp
 
 $(TARG_TEST_COMP_fmt_sink_MT_D):    \
 		$(OBJ_TEST_COMP_fmt_sink_MT_D)\
@@ -11093,6 +11333,134 @@ $(TARG_TEST_UNIT_api_msmtchh_MT_R_W):    \
 
 $(OBJ_TEST_UNIT_api_msmtchh_MT_R_W): $(PROJ_TEST_UNIT_DIR)\test.unit.api.mismatched_handlers\test.unit.api.mismatched_handlers.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_MT_R_W) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.api.mismatched_handlers\test.unit.api.mismatched_handlers.cpp
+
+$(TARG_TEST_UNIT_bndl_util_MT_D):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_D) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_D)\
+		$(LIB_CORE_MT_D)\
+		$(LIB_SHWILD_MT_D)\
+		$(LIB_XTESTS_MT_D)\
+		$(TARGET_LIB_MT_D)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_D): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_D) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_MT_D_W):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_D_W)\
+		$(LIB_CORE_MT_D_W)\
+		$(LIB_SHWILD_MT_D_W)\
+		$(LIB_XTESTS_MT_D_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_D_W) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_D_W)\
+		$(LIB_CORE_MT_D_W)\
+		$(LIB_SHWILD_MT_D_W)\
+		$(LIB_XTESTS_MT_D_W)\
+		$(TARGET_LIB_MT_D_W)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_D_W): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_D_W) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_DLL_D):    \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_D)\
+		$(LIB_CORE_DLL_D)\
+		$(LIB_SHWILD_DLL_D)\
+		$(LIB_XTESTS_DLL_D)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_D) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_D)\
+		$(LIB_CORE_DLL_D)\
+		$(LIB_SHWILD_DLL_D)\
+		$(LIB_XTESTS_DLL_D)\
+		$(TARGET_LIB_DLL_D)
+
+$(OBJ_TEST_UNIT_bndl_util_DLL_D): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_D) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_DLL_D_W):    \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_D_W)\
+		$(LIB_CORE_DLL_D_W)\
+		$(LIB_SHWILD_DLL_D_W)\
+		$(LIB_XTESTS_DLL_D_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_D_W) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_D_W)\
+		$(LIB_CORE_DLL_D_W)\
+		$(LIB_SHWILD_DLL_D_W)\
+		$(LIB_XTESTS_DLL_D_W)\
+		$(TARGET_LIB_DLL_D_W)
+
+$(OBJ_TEST_UNIT_bndl_util_DLL_D_W): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_D_W) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_DLL_R):    \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_R)\
+		$(LIB_CORE_DLL_R)\
+		$(LIB_SHWILD_DLL_R)\
+		$(LIB_XTESTS_DLL_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_R) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_R)\
+		$(LIB_CORE_DLL_R)\
+		$(LIB_SHWILD_DLL_R)\
+		$(LIB_XTESTS_DLL_R)\
+		$(TARGET_LIB_DLL_R)
+
+$(OBJ_TEST_UNIT_bndl_util_DLL_R): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_R) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_DLL_R_W):    \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_R_W)\
+		$(LIB_CORE_DLL_R_W)\
+		$(LIB_SHWILD_DLL_R_W)\
+		$(LIB_XTESTS_DLL_R_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_DLL_R_W) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_DLL_R_W)\
+		$(LIB_CORE_DLL_R_W)\
+		$(LIB_SHWILD_DLL_R_W)\
+		$(LIB_XTESTS_DLL_R_W)\
+		$(TARGET_LIB_DLL_R_W)
+
+$(OBJ_TEST_UNIT_bndl_util_DLL_R_W): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_DLL_R_W) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_MT_R):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_R) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_R)\
+		$(LIB_CORE_MT_R)\
+		$(LIB_SHWILD_MT_R)\
+		$(LIB_XTESTS_MT_R)\
+		$(TARGET_LIB_MT_R)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_R): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_R) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_MT_R_W):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_R_W)\
+		$(LIB_CORE_MT_R_W)\
+		$(LIB_SHWILD_MT_R_W)\
+		$(LIB_XTESTS_MT_R_W)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_R_W) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_R_W)\
+		$(LIB_CORE_MT_R_W)\
+		$(LIB_SHWILD_MT_R_W)\
+		$(LIB_XTESTS_MT_R_W)\
+		$(TARGET_LIB_MT_R_W)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_R_W): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_R_W) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
 
 $(TARG_TEST_UNIT_bndl_winini_MT_D):    \
 		$(OBJ_TEST_UNIT_bndl_winini_MT_D)\

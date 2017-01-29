@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.inserter.hex project.
  *
  * Created:     16th January 2010
- * Updated:     26th September 2015
+ * Updated:     21st January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,40 +20,31 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/to_x.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/string/trim_functions.hpp>
 #include <stlsoft/util/minmax.hpp>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <math.h>
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Decimal places expected as correct, per compiler
- */
-
-namespace
-{
-
-} /* anonymous namespace */
-
-/* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -103,10 +94,10 @@ namespace
     static void test_2_19(void);
     static void test_2_20(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -171,7 +162,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -534,6 +525,6 @@ static void test_2_20()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

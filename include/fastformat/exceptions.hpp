@@ -4,11 +4,11 @@
  * Purpose:     FastFormat API exception classes.
  *
  * Created:     23rd October 2008
- * Updated:     11th November 2013
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      14
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  3
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -83,7 +83,7 @@
 #include <string>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -92,7 +92,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * documenation
  */
 
 #if 0
@@ -125,28 +125,9 @@ namespace fastformat
                 . . . sink-specific exception classes
 #endif
 
-
-
-#if 0
-/** Helper class for handling numeric status codes.
- *
- * \ingroup group__contingent
- *
+/* /////////////////////////////////////////////////////////////////////////
+ * classes
  */
-class status_code
-{
-public:
-    typedef status_code     class_type;
-    typedef int             standard_status_code_type;
-#if defined(PLATFORMSTL_OS_IS_UNIX)
-    typedef int             os_status_code_type;
-#elif defined(PLATFORMSTL_OS_IS_WINDOWS)
-    typedef DWORD           os_status_code_type;
-#else /* ? OS */
-# error Operating system not discriminated
-#endif /* OS */
-};
-#endif /* 0 */
 
 /** Root class for all FastFormat exception.
  *
@@ -177,7 +158,7 @@ public: // Construction
     {
         FASTFORMAT_COVER_MARK_ENTRY();
     }
-    virtual ~fastformat_exception() stlsoft_throw_0() = 0;
+    virtual ~fastformat_exception() STLSOFT_NOEXCEPT = 0;
 
 private:
     /// Not assignment-copyable
@@ -260,7 +241,7 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~format_parsing_exception() stlsoft_throw_0() = 0;
+        virtual ~format_parsing_exception() STLSOFT_NOEXCEPT = 0;
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
@@ -353,7 +334,7 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~mismatched_replacements_exception() stlsoft_throw_0() = 0;
+        virtual ~mismatched_replacements_exception() STLSOFT_NOEXCEPT = 0;
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
@@ -471,7 +452,7 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~bundle_exception() stlsoft_throw_0() = 0;
+        virtual ~bundle_exception() STLSOFT_NOEXCEPT = 0;
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
@@ -504,7 +485,7 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~sink_exception() stlsoft_throw_0() = 0;
+        virtual ~sink_exception() STLSOFT_NOEXCEPT = 0;
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
@@ -544,30 +525,30 @@ protected: // Implementation
         };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline /* virtual */ fastformat_exception::~fastformat_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ fastformat_exception::~fastformat_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ format_parsing_exception::~format_parsing_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ format_parsing_exception::~format_parsing_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ mismatched_replacements_exception::~mismatched_replacements_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ mismatched_replacements_exception::~mismatched_replacements_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ bundle_exception::~bundle_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ bundle_exception::~bundle_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ sink_exception::~sink_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ sink_exception::~sink_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -575,7 +556,7 @@ inline /* virtual */ sink_exception::~sink_exception() stlsoft_throw_0() /* = 0 
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

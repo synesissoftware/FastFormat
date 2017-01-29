@@ -60,7 +60,7 @@ RSC=rc.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -88,7 +88,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -116,7 +116,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -144,7 +144,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -172,7 +172,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -200,7 +200,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -228,7 +228,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -256,7 +256,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -284,7 +284,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -312,7 +312,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -340,7 +340,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -368,7 +368,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -396,7 +396,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -424,7 +424,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -452,7 +452,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -480,7 +480,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -508,7 +508,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
+# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_CONSOLE" /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -536,7 +536,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(XTESTS_C_ROOT)/include" /I "../../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /I "$(XTESTS_C_ROOT)/include" /I "../../../../../include"  /I "$(STLSOFT)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_CONSOLE" /FD /GZ /c
 # SUBTRACT CPP /YX
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
@@ -594,19 +594,19 @@ SOURCE=..\test.unit.sink.ribbon.cpp
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\allocator_features.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\allocator_features.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\util\allocator_features.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\util\allocator_features.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\allocator_selector.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\allocator_selector.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\util\allocator_selector.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\util\allocator_selector.hpp"
 # End Source File
 # Begin Source File
 
@@ -642,7 +642,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\quality\contract.h"
+SOURCE="$(STLSOFT)\include\stlsoft\quality\contract.h"
 # End Source File
 # Begin Source File
 
@@ -650,7 +650,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\quality\cover.h"
+SOURCE="$(STLSOFT)\include\stlsoft\quality\cover.h"
 # End Source File
 # Begin Source File
 
@@ -658,19 +658,19 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\exception.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\util\exception_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\util\exception_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\exception\exceptions.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\exception\exceptions.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\filesystem\FILE_stream.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\filesystem\FILE_stream.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\filesystem\handles\FILE_stream_handle.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\filesystem\handles\FILE_stream_handle.hpp"
 # End Source File
 # Begin Source File
 
@@ -690,35 +690,35 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_decimal_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_decimal_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_hexadecimal_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_hexadecimal_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_octal_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_octal_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_format_width_limits.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_format_width_limits.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_limits.h"
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_limits.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_limits.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_limits.hpp"
 # End Source File
 # Begin Source File
 
@@ -742,7 +742,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\internal\lead_version.h"
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -774,7 +774,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\smartptr\ref_ptr.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\synch\refcount_policies\refcount_policy_single_threaded.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\synch\refcount_policies\refcount_policy_single_threaded.hpp"
 # End Source File
 # Begin Source File
 
@@ -790,7 +790,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\meta\select_first_type_if.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\shim_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\string\shim_string.hpp"
 # End Source File
 # Begin Source File
 
@@ -814,19 +814,19 @@ SOURCE="$(STLSOFT)\include\stlsoft\stlsoft.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\stlsoft_1_10.h"
+SOURCE="$(STLSOFT)\include\stlsoft\stlsoft_1_10.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\shims\access\string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_slice.h"
+SOURCE="$(STLSOFT)\include\stlsoft\string\string_slice.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_slice.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\string\string_slice.hpp"
 # End Source File
 # Begin Source File
 
@@ -838,7 +838,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\string\string_traits_fwd.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_view.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\string\string_view.hpp"
 # End Source File
 # Begin Source File
 
@@ -846,7 +846,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\time.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\shims\access\string\std\type_info.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\type_info.hpp"
 # End Source File
 # Begin Source File
 

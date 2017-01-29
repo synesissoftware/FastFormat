@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.arguments.reals project.
  *
  * Created:     2nd June 2008
- * Updated:     26th September 2015
+ * Updated:     20th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,7 +18,11 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/shims/conversion/filter_type/reals.hpp>
 #include <fastformat/fastformat.hpp>
@@ -27,9 +31,9 @@
 # error Cannot compile this file with a compiler that does not support the filter_type mechanism
 #endif /* FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -39,12 +43,12 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int argc, char** /*argv*/)
 {
     const float     flt =   1.2345f;
     const double    dbl =   -123E-45;
@@ -75,7 +79,7 @@ static int main_(int /* argc */, char** /*argv*/)
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
     // This code just to ensure widestring compatibility for integral types
-    if(0)
+    if(0 == argc)
     {
         const int       i   =   -123;
     

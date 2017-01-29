@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for STLSoft's stlsoft::FILE_stream.
  *
  * Created:     19th July 2010
- * Updated:     7th December 2010
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2010-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     3
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_REVISION 3
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     6
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -75,14 +75,24 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/util/sinks/helpers.hpp>
 
-#include <stlsoft/filesystem/FILE_stream.hpp>
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-        _MSC_VER < 1310
-# include <platformstl/filesystem/FILE_stream.hpp>
-#endif /* compiler */
+#include <platformstl/filesystem/FILE_stream.hpp>
+
+#include <ios>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * compatibility
+ */
+
+#if _STLSOFT_VER < 0x010a0181
+
+# define FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(x)     stlsoft::x
+#else
+
+# define FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(x)     platformstl::x
+#endif
+
+/* /////////////////////////////////////////////////////////////////////////
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -93,7 +103,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -159,16 +169,19 @@ inline F& fmt_slices_(
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
-/** Writes an array of string slices into a <code>stlsoft::FILE_stream</code> sink.
+/** Writes an array of string slices into
+ * a <code>platformstl::FILE_stream</code> sink.
  */
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
     _MSC_VER < 1310
 
-inline stlsoft::FILE_stream& fmt_slices(
-    stlsoft::FILE_stream&       sink
+inline
+FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream)&
+fmt_slices(
+    FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream)&   sink
 ,   int                         flags
 ,   size_t                      cchTotal
 ,   size_t                      numResults
@@ -178,7 +191,9 @@ inline stlsoft::FILE_stream& fmt_slices(
     return ximpl_FILE_stream::fmt_slices_(sink, flags, cchTotal, numResults, results);
 }
 
-inline platformstl::thread_shareable_FILE_stream& fmt_slices(
+inline
+platformstl::thread_shareable_FILE_stream&
+fmt_slices(
     platformstl::thread_shareable_FILE_stream&  sink
 ,   int                                         flags
 ,   size_t                                      cchTotal
@@ -195,12 +210,14 @@ template<
     typename R
 ,   typename I
 >
-inline stlsoft::FILE_stream_base<R, I>& fmt_slices(
-    stlsoft::FILE_stream_base<R, I>&    sink
-,   int                                 flags
-,   size_t                              cchTotal
-,   size_t                              numResults
-,   ff_string_slice_t const*            results
+inline
+FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream_base)<R, I>&
+fmt_slices(
+    FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream_base)<R, I>&    sink
+,   int                                                                 flags
+,   size_t                                                              cchTotal
+,   size_t                                                              numResults
+,   ff_string_slice_t const*                                            results
 )
 {
     return ximpl_FILE_stream::fmt_slices_(sink, flags, cchTotal, numResults, results);
@@ -209,7 +226,7 @@ inline stlsoft::FILE_stream_base<R, I>& fmt_slices(
 #endif /* compiler */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

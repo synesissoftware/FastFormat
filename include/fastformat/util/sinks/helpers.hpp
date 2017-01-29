@@ -5,11 +5,11 @@
  *              library.
  *
  * Created:     19th December 2007
- * Updated:     17th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_UTIL_SINKS_HPP_HELPERS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      14
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -69,20 +69,19 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
-//#include <platformstl/error/exceptions.hpp>
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <string>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -93,7 +92,7 @@ namespace util
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Functions
+ * functions
  */
 
 
@@ -170,7 +169,7 @@ inline size_t concat_slices(size_t cchBuff, ff_char_t* buff, size_t numResults, 
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

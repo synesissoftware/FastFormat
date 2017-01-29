@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for snprintf() utility functions.
  *
  * Created:     1st June 2008
- * Updated:     3rd February 2012
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,13 +41,10 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/util/string/snprintf.h>
 #include <fastformat/init_codes.h>
@@ -59,7 +56,7 @@
 #include <stdio.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -104,7 +101,7 @@ namespace util
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Private API
+ * private API
  */
 
 FASTFORMAT_CALL(int) fastformat_util_vsnprintf_a(
@@ -182,7 +179,7 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

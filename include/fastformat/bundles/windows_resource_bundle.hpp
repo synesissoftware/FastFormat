@@ -4,11 +4,11 @@
  * Purpose:     Windows resource bundle.
  *
  * Created:     24th April 2009
- * Updated:     15th August 2016
+ * Updated:     20th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     7
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 4
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */
@@ -90,7 +90,7 @@
 #include <string>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -99,7 +99,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A resource bundle that reads Windows INI files
@@ -134,7 +134,10 @@ public:
          *
          * \param id The identifier of the resource that could not be loaded
          */
-        explicit missing_resource_id_exception(int id)
+        explicit
+        missing_resource_id_exception(
+            int id
+        )
             : parent_class_type(create_message_(NULL, 0u, id, NULL).c_str())
             , id(id)
             , code(-1)
@@ -152,7 +155,12 @@ public:
          * \param resourceType The type of the resource that could not be
          *   loaded
          */
-        missing_resource_id_exception(char const* msg, DWORD code, ff_char_t const* id, ff_char_t const* resourceType)
+        missing_resource_id_exception(
+            char const*         msg
+        ,   DWORD               code
+        ,   ff_char_t const*    id
+        ,   ff_char_t const*    resourceType
+        )
             : parent_class_type(create_message_(msg, code, reinterpret_cast<int>(id), resourceType).c_str())
             , id(reinterpret_cast<int>(id))
             , code(code)
@@ -170,7 +178,12 @@ public:
          * \param resourceType The type of the resource that could not be
          *   loaded
          */
-        missing_resource_id_exception(char const* msg, DWORD code, int id, ff_char_t const* resourceType)
+        missing_resource_id_exception(
+            char const*         msg
+        ,   DWORD               code
+        ,   int                 id
+        ,   ff_char_t const*    resourceType
+        )
             : parent_class_type(create_message_(msg, code, id, resourceType).c_str())
             , id(id)
             , code(code)
@@ -189,7 +202,14 @@ public:
         const DWORD code;
 
     private:
-        static multibyte_string_type create_message_(char const* msg, DWORD code, int id, ff_char_t const* resourceType)
+        static
+        multibyte_string_type
+        create_message_(
+            char const*         msg
+        ,   DWORD               code
+        ,   int                 id
+        ,   ff_char_t const*    resourceType
+        )
         {
             static const char       string0[]   =   "could not load bundle resource corresponding to identifier ";
             static const char       string1[]   =   ": ";
@@ -230,11 +250,14 @@ private:
 /// \name Construction
 /// @{
 public:
-    explicit windows_resource_bundle(HINSTANCE hinst);
-    ~windows_resource_bundle() ss_noexcept_k;
+    explicit
+    windows_resource_bundle(
+        HINSTANCE hinst
+    );
+    ~windows_resource_bundle() STLSOFT_NOEXCEPT;
 private:
-    windows_resource_bundle(class_type const&);
-    class_type& operator =(class_type const&);
+    windows_resource_bundle(class_type const&); // copy-construction proscribed
+    class_type& operator =(class_type const&);  // copy-assignment proscribed
 /// @}
 
 /// \name Accessors
@@ -256,21 +279,30 @@ private:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline /* explicit */ windows_resource_bundle::windows_resource_bundle(HINSTANCE hinst)
+inline
+/* explicit */
+windows_resource_bundle::windows_resource_bundle(
+    HINSTANCE hinst
+)
     : m_instance(hinst)
 {}
 
-inline windows_resource_bundle::~windows_resource_bundle() ss_noexcept_k
+inline
+windows_resource_bundle::~windows_resource_bundle() STLSOFT_NOEXCEPT
 {
     ::FreeLibrary(m_instance);
 }
 
-inline windows_resource_bundle::string_type windows_resource_bundle::operator [](int id) const /* throw(windows_resource_bundle::missing_resource_id_exception) */
+inline
+windows_resource_bundle::string_type
+windows_resource_bundle::operator [](
+    int id
+) const /* throw(windows_resource_bundle::missing_resource_id_exception) */
 {
     resource_string_type_   str(m_instance, id);
     string_type             s2 = str;
@@ -300,7 +332,7 @@ inline windows_resource_bundle::string_type windows_resource_bundle::operator []
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

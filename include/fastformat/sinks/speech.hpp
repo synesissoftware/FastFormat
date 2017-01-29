@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for the Windows Speech API.
  *
  * Created:     27th November 2007
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SPEECH
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MINOR    3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     20
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -72,7 +72,7 @@
 #endif /* OS */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -87,7 +87,7 @@
 #include <stlsoft/memory/auto_buffer.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -98,7 +98,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into speech
@@ -196,7 +196,7 @@ private: // Member Variables
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a speech sink.
@@ -210,7 +210,7 @@ inline speech_sink& fmt_slices(speech_sink& sink, int flags, size_t cchTotal, si
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

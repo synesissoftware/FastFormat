@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for floating-point types
  *
  * Created:     30th April 2009
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,24 +48,24 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_E
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_E_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_E_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_E_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_E_EDIT      7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_E_EDIT      9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/inserters/real.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -76,7 +76,7 @@ namespace inserters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of a floating-point value
@@ -164,7 +164,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> to_E(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -175,7 +175,7 @@ using ::fastformat::inserters::to_E;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

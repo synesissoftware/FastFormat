@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for exceptions.
  *
  * Created:     12th November 2012
- * Updated:     7th June 2014
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2012-2014, Matthew Wilson and Synesis Software
+ * Copyright (c) 2012-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_EXCEPTION
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_MAJOR     0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_EDIT      3
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_EDIT      5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -76,7 +76,7 @@
 #include <string>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -87,7 +87,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 #if !defined(STLSOFT_COMPILER_IS_MSVC) || \
@@ -227,7 +227,7 @@ namespace sinks
     }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -236,7 +236,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

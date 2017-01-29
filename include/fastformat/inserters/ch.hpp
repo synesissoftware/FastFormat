@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for character types.
  *
  * Created:     7th December 2010
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2010-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,25 +48,25 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CH
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_EDIT      2
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_EDIT      4
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 #include <fastformat/inserters/character.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -77,7 +77,7 @@ namespace inserters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 /** Shorthand form of character() inserter function.
@@ -94,7 +94,7 @@ inline ximpl_character::character_state ch(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -104,7 +104,7 @@ using ::fastformat::inserters::ch;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

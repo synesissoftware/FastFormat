@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.api.parse_format project.
  *
  * Created:     27th May 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -29,28 +29,28 @@
 #include <fastformat/exceptions.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/conversion/char_conversions.hpp>
 #include <stlsoft/conversion/integer_to_string.hpp>
 #include <platformstl/platformstl.h>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <string>
 #include <vector>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -68,7 +68,7 @@
 #define FF_STR                              FASTFORMAT_LITERAL_STRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -141,10 +141,10 @@ namespace
     static void test_illformed_continue_with_format_as_literal_8(void);
     static void test_illformed_continue_with_format_as_literal_9(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 int ff_setup(void*);
@@ -163,7 +163,7 @@ int ff_teardown(void*)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -259,7 +259,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -1449,6 +1449,6 @@ static void test_illformed_continue_with_format_as_literal_9()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

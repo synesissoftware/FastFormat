@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for FastFormat core API: memory pool.
  *
  * Created:     1st September 2008
- * Updated:     5th November 2013
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,13 +41,10 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/init_codes.h>
 #include <fastformat/quality/contract.h>
@@ -70,7 +67,7 @@
 #include <string.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -79,7 +76,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Types & Non-local variables
+ * types & non-local variables
  */
 
 namespace
@@ -139,7 +136,7 @@ namespace
 
     public: /// Construction
         memory_pool_t();
-        ~memory_pool_t() stlsoft_throw_0();
+        ~memory_pool_t() STLSOFT_NOEXCEPT;
     private:
         memory_pool_t(memory_pool_t const&);
         memory_pool_t& operator =(memory_pool_t const&);
@@ -157,10 +154,10 @@ namespace
         memory_pool_entry_t*                        m_head;
     };
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 int ximpl_core::fastformat_impl_memoryPool_init(void** ptoken)
@@ -236,7 +233,7 @@ namespace
         , m_head(NULL)
     {}
 
-    memory_pool_t::~memory_pool_t() stlsoft_throw_0()
+    memory_pool_t::~memory_pool_t() STLSOFT_NOEXCEPT
     {
         // 0. Deallocate all entries in memory pool
         { for(memory_pool_entry_t* entry = m_head; NULL != entry; )
@@ -286,10 +283,10 @@ namespace
         return NULL;
     }
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

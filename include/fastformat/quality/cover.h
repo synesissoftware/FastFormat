@@ -5,11 +5,11 @@
  *              FastFormat core.
  *
  * Created:     22nd April 2008
- * Updated:     18th February 2009
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2009, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_EDIT     5
+# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_EDIT     7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -75,7 +75,7 @@
 #endif /* FASTFORMAT_USE_XCOVER */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_XCOVER

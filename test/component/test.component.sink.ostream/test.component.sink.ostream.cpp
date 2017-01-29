@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.sink.ostream project.
  *
  * Created:     14th September 2010
- * Updated:     26th September 2015
+ * Updated:     22nd January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,26 +18,29 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #define FASTFORMAT_NO_IMPLICIT_GENERIC_STRING_ACTION_SHIM
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
-#include <platformstl/error/exceptions.hpp>
+/* STLSoft Header Files */
 #include <platformstl/filesystem/file_lines.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <fstream>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \
@@ -48,7 +51,7 @@
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 static void test_1_1();

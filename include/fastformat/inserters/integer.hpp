@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for integral types
  *
  * Created:     26th May 2009
- * Updated:     28th September 2015
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_INTEGER
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   7
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       24
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      3
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   1
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       27
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -92,7 +92,7 @@
 #include <stdlib.h>     /* for abs() */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -103,7 +103,7 @@ namespace inserters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -454,11 +454,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         {
             ff_char_t           sz[21];
             size_t              n;
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
             ff_char_t const*    s = stlsoft::integer_to_decimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
             ff_char_t const*    s = stlsoft::integer_to_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
             return ff_to_i_r_t_(s, n);
         }
@@ -545,11 +545,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         // a nul terminator, we need to do this is a strange order
 
         // 4. precision
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - (21 + typeLen), 21, precision, &n1);
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - (21 + typeLen), 21, precision, &n1);
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
         // 5. type
         ::memcpy(end - (typeLen + 1), type, sizeof(ff_char_t) * typeLen);
@@ -566,11 +566,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         end -= n1;
 
         // 2. width
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
 
         // 3. .
         *--end = '.';
@@ -610,7 +610,7 @@ inline ff_to_i_r_t_ integer_helper_hex_3(
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of an integral value
@@ -645,7 +645,7 @@ inline ximpl_integer::ff_to_i_r_t_ integer(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -655,7 +655,7 @@ using ::fastformat::inserters::integer;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

@@ -4,11 +4,11 @@
  * Purpose:     Open-RJ bundle.
  *
  * Created:     19th September 2006
- * Updated:     15th August 2016
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_REVISION   10
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_EDIT       16
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_EDIT       18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */
@@ -85,7 +85,7 @@
 #include <stdexcept>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -94,7 +94,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A resource bundle that reads Open-RJ Jar files
@@ -130,13 +130,17 @@ public:
         : m_database(open_ns_(source, flags))
     {}
 
-    ~openrj_bundle() ss_noexcept_k;
+    ~openrj_bundle() STLSOFT_NOEXCEPT;
+private:
+    openrj_bundle(class_type const&);           // copy-construction proscribed
+    class_type& operator =(class_type const&);  // copy-assignment proscribed
 /// @}
 
 /// \name Accessors
 /// @{
 public:
     string_type operator [](char const *name) const /* throw(std::out_of_range) */;
+
     template <typename S>
     string_type operator [](S const& name) const /* throw(std::out_of_range) */
     {
@@ -164,24 +168,23 @@ private:
 /// \name Members
 /// @{
 private:
-    ::openrj::ORJDatabase const *m_database;
-/// @}
-
-/// \name Not to be implemented
-/// @{
-private:
-    openrj_bundle(class_type const&);
-    class_type& operator =(class_type const&);
+    ::openrj::ORJDatabase const* const m_database;
 /// @}
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline /* static */ ::openrj::ORJDatabase const *openrj_bundle::open_(char const *source, unsigned flags)
+inline
+/* static */
+::openrj::ORJDatabase const*
+openrj_bundle::open_(
+    char const* source
+,   unsigned    flags
+)
 {
 #if !defined(ORJ_NO_NAMESPACE)
     using namespace openrj;
@@ -220,11 +223,16 @@ inline /* static */ ::openrj::ORJDatabase const *openrj_bundle::open_(char const
     return database;
 }
 
-inline openrj_bundle::openrj_bundle(char const *source, unsigned flags)
+inline
+openrj_bundle::openrj_bundle(
+    char const* source
+,   unsigned    flags
+)
     : m_database(open_ns_(source, flags))
 {}
 
-inline openrj_bundle::~openrj_bundle() ss_noexcept_k
+inline
+openrj_bundle::~openrj_bundle() STLSOFT_NOEXCEPT
 {
 #if !defined(ORJ_NO_NAMESPACE)
     using namespace openrj;
@@ -236,7 +244,11 @@ inline openrj_bundle::~openrj_bundle() ss_noexcept_k
     }
 }
 
-inline openrj_bundle::string_type openrj_bundle::operator [](char const *name) const /* throw(std::out_of_range) */
+inline
+openrj_bundle::string_type
+openrj_bundle::operator [](
+    char const* name
+) const /* throw(std::out_of_range) */
 {
 #if !defined(ORJ_NO_NAMESPACE)
     using namespace openrj;
@@ -244,7 +256,7 @@ inline openrj_bundle::string_type openrj_bundle::operator [](char const *name) c
 
     FASTFORMAT_CONTRACT_ENFORCE_CLASS_INVARIANT_APPL_LAYER(NULL != m_database, "underlying database cannot be null");
 
-    ORJField const  *field  =   ORJ_Record_FindFieldByNameA(&m_database->records[0], name, NULL);
+    ORJField const* const field = ORJ_Record_FindFieldByNameA(&m_database->records[0], name, NULL);
 
     if(NULL == field)
     {
@@ -257,7 +269,7 @@ inline openrj_bundle::string_type openrj_bundle::operator [](char const *name) c
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

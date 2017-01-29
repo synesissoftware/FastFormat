@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.inserters.integer project.
  *
  * Created:     11th December 2010
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -27,31 +27,28 @@
 #include <fastformat/inserters/integer.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
-#if _XTESTS_VER < 0x001203ff
-# error xTests v0.18.3 or later required
-#endif
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/conversion/integer_to_string.hpp>
 #include <stlsoft/util/limit_traits.h>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <numeric>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -65,7 +62,7 @@
 #define FF_STR                              FASTFORMAT_LITERAL_STRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -92,10 +89,10 @@ namespace
     static void test_1_18(void);
     static void test_1_19(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -137,7 +134,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -417,6 +414,6 @@ static void test_1_19()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

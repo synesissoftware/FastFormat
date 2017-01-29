@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.ff_test_1 project.
  *
  * Created:     15th September 2006
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2006-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,12 +18,16 @@
  * ////////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/fastformat.hpp>
 
 #if defined(_WIN32) && \
     defined(_AFXDLL)
- /* MFCSTL header files */
+ /* MFCSTL Header Files */
 # include <mfcstl/mfcstl.hpp>
 # include <mfcstl/string/grab_cstring_buffer.hpp>
 # include <fastformat/sinks/CString.hpp>
@@ -36,33 +40,33 @@
 # include <fastformat/bundles/winini_bundle.hpp>
 #endif /* OS */
 
-/* Open-RJ header files */
+/* Open-RJ Header Files */
 #include <openrj/implicit_link.h>
 
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/memory/auto_buffer.hpp>
 #include <stlsoft/string/simple_string.hpp>
 #include <stlsoft/shims/access/string.hpp>
 #include <stlsoft/shims/access/string/std/time.hpp>
 
-/* PlatformSTL header files */
+/* PlatformSTL Header Files */
 #include <platformstl/platformstl.hpp>
 #include <platformstl/filesystem/path.hpp>
 #include <platformstl/system/environment_map.hpp>
 
-/* COMSTL header files */
+/* COMSTL Header Files */
 #if defined(PLATFORMSTL_OS_IS_WINDOWS)
 # include <comstl/shims/access/string.hpp>
 #endif /* OS */
 
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

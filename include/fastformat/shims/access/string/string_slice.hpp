@@ -4,11 +4,11 @@
  * Purpose:     Defines string access shims for ff_string_slice_t
  *
  * Created:     11th November 2013
- * Updated:     13th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_STRING_SLICE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_STRING_SLICE_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_STRING_SLICE_MINOR       0
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_STRING_SLICE_REVISION    3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_STRING_SLICE_EDIT        3
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_STRING_SLICE_EDIT        6
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -67,7 +67,7 @@
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -80,7 +80,7 @@ namespace ximpl_SAS_string_slice_
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * String Access Shims
+ * string access shims
  *
  * Shims are defined as follows (where F+ means fastformat namespace enabled;
  * S- means stlsoft namespace disabled):
@@ -107,10 +107,13 @@ using ::fastformat::ff_string_slice_t;
 # endif /* FASTFORMAT_NO_NAMESPACE */
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the slice */
+inline
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_data_w(
+wchar_t const*
+c_str_data_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_data_a(
+char const*
+c_str_data_a(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
     ff_string_slice_t const& slice
 )
@@ -119,7 +122,9 @@ inline char const* c_str_data_a(
 }
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the slice */
-inline ff_char_t const* c_str_data(
+inline
+ff_char_t const*
+c_str_data(
     ff_string_slice_t const& slice
 )
 {
@@ -131,10 +136,12 @@ inline ff_char_t const* c_str_data(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the slice */
+inline
+size_t
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline size_t c_str_len_w(
+c_str_len_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline size_t c_str_len_a(
+c_str_len_a(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
     ff_string_slice_t const& slice
 )
@@ -143,7 +150,9 @@ inline size_t c_str_len_a(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the slice */
-inline size_t c_str_len(
+inline
+size_t
+c_str_len(
     ff_string_slice_t const& slice
 )
 {
@@ -155,7 +164,7 @@ inline size_t c_str_len(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -249,7 +258,7 @@ namespace stlsoft
 #endif /* !STLSOFT_CF_ADL_SUPPORT */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

@@ -4,11 +4,11 @@
  * Purpose:     FastFormat standard format flags.
  *
  * Created:     18th November 2007
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_REVISION  8
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_EDIT      12
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_EDIT      14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT
@@ -75,7 +75,7 @@
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -84,7 +84,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Constants and definitions
+ * constants and definitions
  */
 
 namespace flags
@@ -105,7 +105,7 @@ const ::stlsoft::sint16_t   ff_flush    =   0x0002;
 } /* namespace flags */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -113,7 +113,7 @@ const ::stlsoft::sint16_t   ff_flush    =   0x0002;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

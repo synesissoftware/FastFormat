@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for STLSoft's shim_string class template.
  *
  * Created:     12th November 2008
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SHIM_STRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_REVISION   5
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       9
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,7 +79,7 @@
 #include <stlsoft/string/shim_string.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,7 +90,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #if _STLSOFT_VER < 0x010a0000 && \
@@ -101,7 +101,7 @@ namespace sinks
 #endif /* _STLSOFT_VER */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** This class acts as a sink for string shims, to be used with STLSoft 1.9
@@ -262,18 +262,21 @@ private:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Shims
+ * shims
  */
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the shim string */
+inline
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_data_w(
+wchar_t const*
+c_str_data_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_data_a(
+char const*
+c_str_data_a(
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
     shim_string_sink const& sink
 )
@@ -282,7 +285,9 @@ inline char const* c_str_data_a(
 }
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the shim string */
-inline ff_char_t const* c_str_data(
+inline
+ff_char_t const*
+c_str_data(
     shim_string_sink const& sink
 )
 {
@@ -290,10 +295,12 @@ inline ff_char_t const* c_str_data(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the shim string */
+inline
+size_t
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline size_t c_str_len_w(
+c_str_len_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline size_t c_str_len_a(
+c_str_len_a(
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
     shim_string_sink const& sink
 )
@@ -302,7 +309,9 @@ inline size_t c_str_len_a(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the shim string */
-inline size_t c_str_len(
+inline
+size_t
+c_str_len(
     shim_string_sink const& sink
 )
 {
@@ -310,7 +319,7 @@ inline size_t c_str_len(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

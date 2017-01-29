@@ -4,7 +4,7 @@ FastFormat - TODO lists
 Updated:    26th September 2015
 
 
-FastFormat 0.7+ TODOs:
+FastFormat 0.8+ TODOs:
 ---------------------
 
  + full distribution of makefiles, project files, workspace files, etc.
@@ -22,9 +22,6 @@ FastFormat 0.7+ TODOs:
  ~ ensure that platform-specific EOL is only emitted in file output
 
  ~ inserters :
-    + lc_i - these will do "thousands" (or whatever is appropriate to a 
-	  given locale) formatting on integers, e.g. "100,000,000"
-    + storage_size
     +
 
  ~ shims :
@@ -33,6 +30,5 @@ FastFormat 0.7+ TODOs:
  ~ sinks :
     + include/fastformat/sinks/WindowsFileHANDLE.hpp
     ~ synchronisation of ostream sink : spin / thread_mutex
-    + include/fastformat/sinks/to_sink.hpp
 
 =============================== End of file ================================

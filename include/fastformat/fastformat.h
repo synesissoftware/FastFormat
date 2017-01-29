@@ -4,11 +4,11 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     30th November 2016
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,14 +48,14 @@
 #define FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       26
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        108
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    4
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        113
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -96,22 +96,26 @@
 # define FASTFORMAT_VER_0_7_4_RC_2          0x00070482
 # define FASTFORMAT_VER_0_8_1_ALPHA_1       0x00080101
 # define FASTFORMAT_VER_0_8_1_ALPHA_2       0x00080102
+# define FASTFORMAT_VER_0_8_1_ALPHA_3       0x00080103
+# define FASTFORMAT_VER_0_8_1_ALPHA_4       0x00080104
+# define FASTFORMAT_VER_0_8_1_ALPHA_5       0x00080105
+# define FASTFORMAT_VER_0_8_1_ALPHA_6       0x00080106
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           8
 #define FASTFORMAT_VER_REVISION        1
 
-#define FASTFORMAT_VER                 FASTFORMAT_VER_0_8_1_ALPHA_2
+#define FASTFORMAT_VER                 FASTFORMAT_VER_0_8_1_ALPHA_6
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 1
+ * includes - 1
  */
 
 #include <stddef.h>     /* for size_t */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Feature detection
+ * feature detection
  */
 
 /* By default, FastFormat is a multi-byte string library
@@ -125,7 +129,7 @@
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 2
+ * includes - 2
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -137,7 +141,7 @@
 #include <fastformat/internal/string_encoding.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 /* FASTFORMAT_NO_NAMESPACE is defined if
@@ -165,7 +169,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 3
+ * includes - 3
  */
 
 #ifdef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -175,7 +179,7 @@ namespace fastformat
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 /** \def FASTFORMAT_DECLSPEC
@@ -239,7 +243,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_CALL */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 
@@ -700,7 +704,7 @@ typedef mismatchedHandler_info_t        mismatched_handler_info_t;
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * API Initialisation Functions
+ * API initialisation functions
  */
 
 /** Returns information about the version of FastFormat
@@ -911,7 +915,7 @@ FASTFORMAT_CALL(ff_mismatchedHandler_info_t)
 fastformat_getDefaultMismatchedHandler(void);
 
 /* /////////////////////////////////////////////////////////////////////////
- * API Parsing Functions
+ * API parsing functions
  */
 
 /** Calculates the exact number of replacements required for the given
@@ -1006,7 +1010,7 @@ fastformat_accumulateSliceLengths(
 );
 
 /* /////////////////////////////////////////////////////////////////////////
- * API Format Caching Functions
+ * API format caching functions
  */
 
 /** Looks up the array of replacement element descriptors, corresponding to
@@ -1030,7 +1034,7 @@ fastformat_lookupPattern(
 );
 
 /* /////////////////////////////////////////////////////////////////////////
- * API Utility Functions
+ * API utility functions
  */
 
 /** Returns a slice representing the CR/LF combination for the current
@@ -1040,7 +1044,7 @@ FASTFORMAT_CALL(ff_string_slice_t)
 fastformat_getNewlineForPlatform(void);
 
 /* /////////////////////////////////////////////////////////////////////////
- * Undocumented externally visible functions
+ * undocumented externally visible functions
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -1067,7 +1071,7 @@ fastformat_malloc(size_t cb);
 # endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -1154,7 +1158,7 @@ namespace internal
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -1164,7 +1168,7 @@ namespace internal
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * String Access Shims
+ * string access shims
  */
 
 #ifdef FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS
@@ -1190,7 +1194,7 @@ namespace internal
 #endif
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.bundle.winini project.
  *
  * Created:     12th April 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,22 +18,26 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/bundles/winini_bundle.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -45,7 +49,7 @@
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -63,7 +67,7 @@
 #define FF_STR(x)                           FASTFORMAT_LITERAL_STRING(x)
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -82,7 +86,7 @@ namespace
     static void test_1_7();
     static void test_1_8();
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -203,6 +207,6 @@ static void test_1_8()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.mismatched_handlers project.
  *
  * Created:     11th November 2013
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2013-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2013-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,13 +20,13 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Preprocessor control
+ * preprocessor control
  */
 
 #define FASTFORMAT_NO_AUTO_INIT
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
@@ -49,7 +49,7 @@
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -76,10 +76,10 @@ namespace
     static void test_1_18(void);
     static void test_1_19(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 using fastformat::mismatched_arguments_scope_base;
@@ -165,7 +165,7 @@ private: // Fields
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 int ff_setup(void*);
@@ -184,7 +184,7 @@ int ff_teardown(void*)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -233,7 +233,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -363,6 +363,6 @@ static void test_1_19()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

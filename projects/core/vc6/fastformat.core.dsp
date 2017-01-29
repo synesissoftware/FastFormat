@@ -7,16 +7,16 @@
 CFG=fastformat.core - Win32 Release
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "fastformat.core.mak".
-!MESSAGE 
+!MESSAGE
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
-!MESSAGE 
+!MESSAGE
 !MESSAGE NMAKE /f "fastformat.core.mak" CFG="fastformat.core - Win32 Release"
-!MESSAGE 
+!MESSAGE
 !MESSAGE Possible choices for configuration are:
-!MESSAGE 
+!MESSAGE
 !MESSAGE "fastformat.core - Win32 Release" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Debug" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Release Multithreaded" (based on "Win32 (x86) Static Library")
@@ -35,7 +35,7 @@ CFG=fastformat.core - Win32 Release
 !MESSAGE "fastformat.core - Win32 Debug Multithreaded pseudoUNIX" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Release Multithreaded DLL pseudoUNIX" (based on "Win32 (x86) Static Library")
 !MESSAGE "fastformat.core - Win32 Debug Multithreaded DLL pseudoUNIX" (based on "Win32 (x86) Static Library")
-!MESSAGE 
+!MESSAGE
 
 # Begin Project
 # PROP AllowPerConfigDependencies 0
@@ -58,8 +58,7 @@ RSC=rc.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -83,8 +82,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /Fr /YX
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -108,8 +106,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -133,8 +130,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -158,8 +154,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -183,8 +178,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -208,8 +202,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -233,8 +226,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -258,8 +250,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -283,8 +274,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -308,8 +298,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "NDEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -333,8 +322,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /FI"pch.hpp" /D "WIN32" /D "_DEBUG" /D "_UNICODE" /D "UNICODE" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -358,8 +346,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /FI"pch.hpp" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -383,8 +370,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /FI"pch.hpp" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -408,8 +394,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MT /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /FI"pch.hpp" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -433,8 +418,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MTd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /FI"pch.hpp" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -458,8 +442,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /WX /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MD /W3 /WX /GR /GX /O2 /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /FI"pch.hpp" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "NDEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -483,8 +466,7 @@ LIB32=link.exe -lib
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
 # SUBTRACT BASE CPP /YX
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /FD /GZ /c
-# SUBTRACT CPP /YX
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /I "$(STLSOFT)/include" /I "$(UNIXEM)/include" /I "$(PTHREADS_WIN32)/include" /FI"pch.hpp" /D "UNIX" /D "_STLSOFT_FORCE_ANY_COMPILER" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "FASTFORMAT_NO_INCLUDE_FASTFORMAT_STRING_ACCESS_SHIMS" /Yu"pch.hpp" /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -494,7 +476,7 @@ LIB32=link.exe -lib
 # ADD BASE LIB32 /nologo /out:"../../../lib/fastformat.0.core.vc6.unix.dll.debug.lib"
 # ADD LIB32 /nologo /out:"../../../lib/fastformat.0.core.vc6.unix.dll.debug.lib"
 
-!ENDIF 
+!ENDIF
 
 # Begin Target
 
@@ -519,6 +501,27 @@ LIB32=link.exe -lib
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Group "Module Source Files"
+
+# PROP Default_Filter ""
+# Begin Group "_dev_pragmatics_"
+
+# PROP Default_Filter ""
+# Begin Source File
+
+SOURCE="..\_dev_pragmatics_\warnings.msvc.10+.h"
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE=..\pch.cpp
+# ADD CPP /Yc"pch.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE=..\pch.hpp
+# End Source File
+# End Group
 # Begin Source File
 
 SOURCE=..\..\..\src\api.cpp
@@ -567,11 +570,11 @@ SOURCE="$(STLSOFT)\include\stlsoft\memory\allocator_base.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\memory\allocator_features.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\util\allocator_features.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\memory\allocator_selector.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\util\allocator_selector.hpp"
 # End Source File
 # Begin Source File
 
@@ -607,11 +610,23 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\quality\contract.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\quality\cover.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\util\exception_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\error\exceptions.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\util\exception_string_creator.hpp"
 # End Source File
 # Begin Source File
 
@@ -623,7 +638,35 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_decimal_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_hexadecimal_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_octal_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_string.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_format_width_limits.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_limits.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_limits.hpp"
 # End Source File
 # Begin Source File
 
@@ -659,7 +702,11 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\library_discriminator.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\util\limit_traits.h"
+SOURCE="$(STLSOFT)\include\stlsoft\exception\library_identifier_provider.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\diagnostics\LibraryIdentifier.h"
 # End Source File
 # Begin Source File
 
@@ -691,7 +738,11 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\cccap\obsolete.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\error\os_exception.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\exception\os_exception.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\exception\out_of_memory_exception.hpp"
 # End Source File
 # Begin Source File
 
@@ -699,7 +750,19 @@ SOURCE="$(STLSOFT)\include\stlsoft\algorithms\pod.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\error\project_exception.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\exception\project_exception.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\exception\project_identifier_provider.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\diagnostics\ProjectIdentifier.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\exception\root_exception.hpp"
 # End Source File
 # Begin Source File
 
@@ -731,7 +794,15 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\size_traits.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\synch\spin_policies.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\synch\spin_mutex_base.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\exception\status_code_provider.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\exception\util\status_code_translating_exception_base.hpp"
 # End Source File
 # Begin Source File
 
@@ -751,7 +822,11 @@ SOURCE="$(STLSOFT)\include\stlsoft\string\string_view.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\stlsoft\error\throw_policies.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\internal\warnings\push\suppress_deprecation_.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\internal\warnings\pop\suppress_deprecation_.h"
 # End Source File
 # Begin Source File
 
@@ -760,6 +835,10 @@ SOURCE="$(STLSOFT)\include\stlsoft\string\tokeniser_functions.hpp"
 # Begin Source File
 
 SOURCE="$(STLSOFT)\include\stlsoft\conversion\truncation_test.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\stlsoft\synch\util\windows_api_.h"
 # End Source File
 # Begin Source File
 
@@ -827,15 +906,19 @@ SOURCE="$(STLSOFT)\include\winstl\synch\atomic_types.h"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\winstl\synch\common.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\winstl\error\error_functions.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\winstl\error\exceptions.hpp"
+SOURCE="$(STLSOFT)\include\winstl\synch\exceptions.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT)\include\winstl\synch\error\exceptions.hpp"
+SOURCE="$(STLSOFT)\include\winstl\api\external\MemoryManagement.h"
 # End Source File
 # Begin Source File
 
@@ -847,6 +930,18 @@ SOURCE="$(STLSOFT)\include\winstl\synch\spin_mutex.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\winstl\synch\spin_mutex_policies.hpp"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\synch\Synchronisation_status_code.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\api\external\Synchronization.h"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\winstl\synch\thread_mutex.hpp"
 # End Source File
 # Begin Source File
@@ -855,7 +950,15 @@ SOURCE="$(STLSOFT)\include\winstl\synch\tss_index.hpp"
 # End Source File
 # Begin Source File
 
+SOURCE="$(STLSOFT)\include\winstl\exception\policy\windows_status_code_to_string_translation_policy.hpp"
+# End Source File
+# Begin Source File
+
 SOURCE="$(STLSOFT)\include\winstl\winstl.h"
+# End Source File
+# Begin Source File
+
+SOURCE="$(STLSOFT)\include\winstl\exception\winstl_exception.hpp"
 # End Source File
 # End Group
 # End Group

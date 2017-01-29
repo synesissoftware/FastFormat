@@ -4,11 +4,11 @@
  * Purpose:     Initialisation codes.
  *
  * Created:     27th May 2008
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.include.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_H_ERROR_CODES
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_EDIT       5
+# define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_EDIT       7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
@@ -69,7 +69,7 @@
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Documentation
+ * documentation
  */
 
 /** \defgroup group__status_codes FastFormat Low-level Status Codes
@@ -80,7 +80,7 @@
  */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Status codes
+ * status codes
  */
 
 /** \def FASTFORMAT_INIT_RC_SUCCESS

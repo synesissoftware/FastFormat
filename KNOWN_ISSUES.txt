@@ -1,11 +1,11 @@
 FastFormat - Known Issues
 =========================
 
-Updated:    1st December 2011
+Updated:    26th September 2015
 
 
 
-FastFormat 0.7 Known Issues:
+FastFormat 0.8 Known Issues:
 ----------------------------
 
  * docs are incomplete
@@ -22,7 +22,7 @@ FastFormat 0.7 Known Issues:
    templates (and certain example and test programs in the distro).
 
 
-FastFormat 0.7 Suspected Issues:
+FastFormat 0.8 Suspected Issues:
 --------------------------------
 
  <none>

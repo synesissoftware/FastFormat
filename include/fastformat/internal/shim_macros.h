@@ -5,11 +5,11 @@
  *              components
  *
  * Created:     19th September 2006
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -49,7 +49,7 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_SHIM_MACROS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -57,11 +57,11 @@
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compiler compatibility
+ * compiler compatibility
  */
 
 /* The Digital Mars and GCC compilers both exhibit strange behaviour (bugs?)
@@ -186,7 +186,7 @@
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

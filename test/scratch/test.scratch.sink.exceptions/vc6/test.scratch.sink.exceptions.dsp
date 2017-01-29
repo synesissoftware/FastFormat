@@ -42,7 +42,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /c
-# ADD CPP /nologo /W3 /GR /GX /O2 /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /c
+# ADD CPP /nologo /W3 /GR /GX /O2 /I "$(FASTFORMAT_ROOT)/include"  /I "$(STLSOFT)/include" /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /c
 # ADD BASE RSC /l 0xc09 /d "NDEBUG"
 # ADD RSC /l 0xc09 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -66,7 +66,7 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /GZ /c
-# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include" /I "$(STLSOFT_1_10)/include" /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /GZ /c
+# ADD CPP /nologo /W3 /Gm /GR /GX /Zi /Od /I "$(FASTFORMAT_ROOT)/include"  /I "$(STLSOFT)/include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /YX /FD /GZ /c
 # ADD BASE RSC /l 0xc09 /d "_DEBUG"
 # ADD RSC /l 0xc09 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -105,19 +105,19 @@ SOURCE=..\test.scratch.sink.exceptions.cpp
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\allocator_features.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\allocator_features.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\util\allocator_features.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\util\allocator_features.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\allocator_selector.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\allocator_selector.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\memory\util\allocator_selector.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\memory\util\allocator_selector.hpp"
 # End Source File
 # Begin Source File
 
@@ -153,7 +153,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\constraints.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\quality\contract.h"
+SOURCE="$(STLSOFT)\include\stlsoft\quality\contract.h"
 # End Source File
 # Begin Source File
 
@@ -161,7 +161,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\error\conversion_error.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\quality\cover.h"
+SOURCE="$(STLSOFT)\include\stlsoft\quality\cover.h"
 # End Source File
 # Begin Source File
 
@@ -169,7 +169,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\exception.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\util\exception_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\util\exception_string.hpp"
 # End Source File
 # Begin Source File
 
@@ -185,35 +185,35 @@ SOURCE="$(STLSOFT)\include\stlsoft\internal\head_version.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_decimal_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_decimal_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_hexadecimal_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_hexadecimal_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_octal_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_octal_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\conversion\integer_to_string\integer_to_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\conversion\integer_to_string\integer_to_string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_format_width_limits.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_format_width_limits.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_limits.h"
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_limits.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\limits\integral_limits.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\limits\integral_limits.hpp"
 # End Source File
 # Begin Source File
 
@@ -237,7 +237,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\util\std\iterator_helper.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\internal\lead_version.h"
+SOURCE="$(STLSOFT)\include\stlsoft\internal\lead_version.h"
 # End Source File
 # Begin Source File
 
@@ -281,7 +281,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\smartptr\scoped_handle.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\shim_string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\string\shim_string.hpp"
 # End Source File
 # Begin Source File
 
@@ -305,19 +305,19 @@ SOURCE="$(STLSOFT)\include\stlsoft\stlsoft.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\stlsoft_1_10.h"
+SOURCE="$(STLSOFT)\include\stlsoft\stlsoft_1_10.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\shims\access\string.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_slice.h"
+SOURCE="$(STLSOFT)\include\stlsoft\string\string_slice.h"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_slice.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\string\string_slice.hpp"
 # End Source File
 # Begin Source File
 
@@ -329,7 +329,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\string\string_traits_fwd.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\string\string_view.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\string\string_view.hpp"
 # End Source File
 # Begin Source File
 
@@ -341,7 +341,7 @@ SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\time.hpp"
 # End Source File
 # Begin Source File
 
-SOURCE="$(STLSOFT_1_10)\include\stlsoft\shims\access\string\std\type_info.hpp"
+SOURCE="$(STLSOFT)\include\stlsoft\shims\access\string\std\type_info.hpp"
 # End Source File
 # Begin Source File
 

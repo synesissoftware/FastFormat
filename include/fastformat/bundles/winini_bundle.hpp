@@ -4,11 +4,11 @@
  * Purpose:     Windows INI file bundle.
  *
  * Created:     19th September 2006
- * Updated:     15th August 2016
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_MINOR      1
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_REVISION   4
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_EDIT       16
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_REVISION   5
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_EDIT       18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */
@@ -85,7 +85,7 @@
 #include <string>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -94,7 +94,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A resource bundle that reads Windows INI files.
@@ -122,13 +122,23 @@ public:
         , m_iniSection(::stlsoft::c_str_data(section), ::stlsoft::c_str_len(section))
     {}
 
-    ~winini_bundle() ss_noexcept_k;
+    ~winini_bundle() STLSOFT_NOEXCEPT;
+private:
+    winini_bundle(class_type const&);           // copy-construction proscribed
+    class_type& operator =(class_type const&);  // copy-assignment proscribed
 /// @}
 
 /// \name Accessors
 /// @{
 public:
+    /// Obtains the value of the given key
+    ///
+    /// \exception std::out_of_range Thrown if no entry matches the given key
     string_type operator [](char_type const *name) const /* throw(std::out_of_range) */;
+
+    /// Obtains the value of the given key
+    ///
+    /// \exception std::out_of_range Thrown if no entry matches the given key
     template <typename S>
     string_type operator [](S const& name) const /* throw(std::out_of_range) */
     {
@@ -143,49 +153,52 @@ public:
 private:
 /// @}
 
-/// \name Members
+/// \name Fields
 /// @{
 private:
-    const string_type   m_iniFileName;
-    const string_type   m_iniSection;
-/// @}
-
-/// \name Not to be implemented
-/// @{
-private:
-    winini_bundle(class_type const&);
-    class_type& operator =(class_type const&);
+    string_type const   m_iniFileName;
+    string_type const   m_iniSection;
 /// @}
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline winini_bundle::winini_bundle(char_type const *source, char_type const *section)
+inline
+winini_bundle::winini_bundle(
+    char_type const*    source
+,   char_type const*    section
+)
     : m_iniFileName(source)
     , m_iniSection(section)
 {}
 
-inline winini_bundle::~winini_bundle() ss_noexcept_k
+inline
+winini_bundle::~winini_bundle() STLSOFT_NOEXCEPT
 {}
 
-inline winini_bundle::string_type winini_bundle::operator [](char_type const *name) const /* throw(std::out_of_range) */
+inline
+winini_bundle::string_type
+winini_bundle::operator [](
+    char_type const *name
+) const /* throw(std::out_of_range) */
 {
     static const char_type sentinel[] = FASTFORMAT_LITERAL_STRING("{5DDAADE5-5134-4734-ACB8-A6D0FA3BD0EA}-{D875F19B-8279-4c44-9517-F16366BC13E3}");
 
     ::SetLastError(0);
 
     char_type   result[1001];
-    DWORD       dw = ::GetPrivateProfileString(
-                                            m_iniSection.c_str()
-                                        ,   name
-                                        ,   sentinel
-                                        ,   &result[0]
-                                        ,   STLSOFT_NUM_ELEMENTS(result)
-                                        ,   m_iniFileName.c_str());
+    DWORD const dw = ::GetPrivateProfileString(
+                            m_iniSection.c_str()
+                        ,   name
+                        ,   sentinel
+                        ,   &result[0]
+                        ,   STLSOFT_NUM_ELEMENTS(result)
+                        ,   m_iniFileName.c_str()
+                        );
 
     if(dw == STLSOFT_NUM_ELEMENTS(sentinel) - 1)    /* element not found */
     {
@@ -203,7 +216,7 @@ inline winini_bundle::string_type winini_bundle::operator [](char_type const *na
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

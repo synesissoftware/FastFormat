@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for floating-point types
  *
  * Created:     1st March 2009
- * Updated:     18th August 2014
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2014, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_REAL
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MAJOR     1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MINOR     1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  8
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      13
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MINOR     2
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  1
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,7 +79,7 @@
 #include <stdlib.h> /* for abs() */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,7 +90,7 @@ namespace inserters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -332,18 +332,18 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_4(
         size_t          n1;
         size_t          n2;
 
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - 21, 21, precision, &n1);
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - 21, 21, precision, &n1);
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
         *--end = type;
         end -= n1;
-#ifdef FASTFORMAT_STLSOFT_1_12_OR_LATER
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
-#else /* ? FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
-#endif /* FASTFORMAT_STLSOFT_1_12_OR_LATER */
+#endif /* STLSoft version */
         *--end = '.';
         end -= n2;
         *--end = '%';
@@ -359,7 +359,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_4(
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** [DEPRECATED] Inserts the string form of a floating-point value
@@ -434,7 +434,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -444,7 +444,7 @@ using ::fastformat::inserters::real;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.inserter.real project.
  *
  * Created:     1st March 2009
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,7 +18,11 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/ff.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/inserters/real.hpp>
@@ -26,16 +30,16 @@
 #include <fastformat/inserters/to_f.hpp>
 #include <fastformat/inserters/to_g.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
-/* UNIXem header files */
+/* UNIXem Header Files */
 #if defined(_WIN32) || \
     defined(_WIN64)
 # include <unixem/unixem.h>
 #endif /* Win32 || Win64 */
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #if 0
@@ -46,7 +50,7 @@
 #include <vector>
 #endif /* 0 */
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -56,21 +60,21 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Globals
+ * globals
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 /* ////////////////////////////////////////////////////////////////////// */

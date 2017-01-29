@@ -4,11 +4,11 @@
  * Purpose:     Parse code strings for FastFormat API
  *
  * Created:     11th November 2013
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2013-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,7 +41,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
@@ -54,7 +54,7 @@
 #include <fastformat/quality/cover.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -216,7 +216,7 @@ FASTFORMAT_CALL(size_t) fastformat_getReplacementCodeStringLength(ff_replacement
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

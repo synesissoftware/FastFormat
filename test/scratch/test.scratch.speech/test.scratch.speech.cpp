@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.speech project.
  *
  * Created:     27th November 2007
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2007-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -21,24 +21,28 @@
 //#include <sapi.h>
 //#define COMSTL_SPEECH_SAPI_UTIL_USE_MS_SAPI_HEADERS
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/sinks/speech.hpp>
 #include <fastformat/ff.hpp>
 
 
-/* VOLE header files */
+/* VOLE Header Files */
 #ifdef FASTFORMAT_USE_VOLE
 # include <vole/vole.hpp>
 #endif /* FASTFORMAT_USE_VOLE */
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <comstl/conversion/interface_cast.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -48,7 +52,7 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 #define FF_STR          FASTFORMAT_LITERAL_STRING

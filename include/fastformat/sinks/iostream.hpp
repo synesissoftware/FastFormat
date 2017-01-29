@@ -5,11 +5,11 @@
  *              IOStreams' std::ostream and the standard header <iostream>.
  *
  * Created:     17th January 2011
- * Updated:     6th August 2012
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -51,18 +51,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_IOSTREAM
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       2
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       4
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -70,7 +70,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>

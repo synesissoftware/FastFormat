@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.api.illformed_handlers project.
  *
  * Created:     27th May 2008
- * Updated:     26th September 2015
+ * Updated:     21st January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -28,23 +28,23 @@
 #include <fastformat/internal/threading.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <string>
 #include <vector>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -116,7 +116,7 @@ inline int compare_function_pointers(param p1, param p2, XTESTS_NS_C_QUAL(xtests
 #endif
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -135,10 +135,10 @@ namespace
     static void test_10(void);
     static void test_11(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 int ff_setup(void*);
@@ -157,7 +157,7 @@ int ff_teardown(void*)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -199,7 +199,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -234,6 +234,7 @@ namespace
         return FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
 
+#if 0
     ff_handler_response_t
     FASTFORMAT_CALLCONV illformedHandler_1_continue(
         void*               /* param */
@@ -249,6 +250,7 @@ namespace
     {
         return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
     }
+#endif
 
 
 static void test_0()
@@ -345,6 +347,6 @@ static void test_11()
 {
 }
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

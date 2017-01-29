@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink adaptor for MFC's CString.
  *
  * Created:     2nd June 2008
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_REVISION   4
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       13
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <afx.h> // MFC requires that it is the first includer of Windows.h
@@ -80,7 +80,7 @@
 #include <mfcstl/string/grab_cstring_buffer.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -91,7 +91,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>CString</code> sink.
@@ -138,7 +138,7 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

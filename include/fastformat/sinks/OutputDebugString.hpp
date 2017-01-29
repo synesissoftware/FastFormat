@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for Windows' OutputDebugString().
  *
  * Created:     24th February 2009
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      7
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,7 +79,7 @@
 #include <windows.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -105,7 +105,7 @@ struct OutputDebugString_helper
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for sending a statement to Windows' <code>OutputDebugString()</code>.
@@ -156,7 +156,7 @@ public:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices to Windows'
@@ -170,7 +170,7 @@ inline OutputDebugString_sink& fmt_slices(OutputDebugString_sink& sink, int flag
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -179,7 +179,7 @@ inline OutputDebugString_sink& fmt_slices(OutputDebugString_sink& sink, int flag
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

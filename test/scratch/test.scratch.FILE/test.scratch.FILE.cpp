@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.FILE project.
  *
  * Created:     24th September 2006
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2006-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -35,7 +35,11 @@
 #endif
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/sinks/FILE.hpp>
 #include <fastformat/ff.hpp>
 
@@ -57,15 +61,15 @@
 # endif
 #endif
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <platformstl/platformstl.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -82,7 +86,7 @@
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 /* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+ * macros and definitions
  */
 
 #define FF_STR      FASTFORMAT_LITERAL_STRING

@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.sink.c_string project.
  *
  * Created:     28th May 2008
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -27,13 +27,13 @@
 #include <fastformat/sinks/c_string.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #if defined(STLSOFT_VER) && \
     STLSOFT_VER >= 0x010c0000
@@ -42,17 +42,17 @@
 # include <stlsoft/iterators/member_selector_iterator.hpp>
 #endif
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <numeric>
 #include <string>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
@@ -64,7 +64,7 @@
 #define FF_STR                              FASTFORMAT_LITERAL_STRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -91,10 +91,10 @@ namespace
     static void test_1_18(void);
     static void test_1_19(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -136,7 +136,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -512,6 +512,6 @@ static void test_1_19()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

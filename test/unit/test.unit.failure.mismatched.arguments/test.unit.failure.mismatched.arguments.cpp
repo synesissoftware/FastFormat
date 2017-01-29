@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.unit.failure.mismatched.arguments project.
  *
  * Created:     28th October 2013
- * Updated:     16th August 2016
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2013-2016, Synesis Software Pty Ltd.
+ *              Copyright (c) 2013-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -27,20 +27,20 @@
 #include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -67,10 +67,10 @@ namespace
     static void test_1_18(void);
     static void test_1_19(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -112,7 +112,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -270,6 +270,6 @@ static void test_1_19()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

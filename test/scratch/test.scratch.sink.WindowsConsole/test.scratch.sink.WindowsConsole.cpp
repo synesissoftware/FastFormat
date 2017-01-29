@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.scratch.sink.WindowsConsole project.
  *
  * Created:     6th January 2011
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2011-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2011-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,18 +18,22 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/ff.hpp>
 #include <fastformat/sinks/WindowsConsole.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <winstl/error/error_desc.hpp>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdio.h>
 #include <stdlib.h>
 

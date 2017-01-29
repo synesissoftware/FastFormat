@@ -4,11 +4,11 @@
  * Purpose:     Declarations of internal shared core functions.
  *
  * Created:     3rd February 2012
- * Updated:     16th August 2016
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2012-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2012-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,13 +41,21 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * compatibility
+ */
+
+#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+#endif
+
+/* /////////////////////////////////////////////////////////////////////////
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -56,7 +64,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -114,7 +122,7 @@ public: // Defect handlers - in fmt_spec_defect_handlers.cpp
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

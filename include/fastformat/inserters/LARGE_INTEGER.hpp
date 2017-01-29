@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for Windows' LARGE_INTEGER type.
  *
  * Created:     24th November 2010
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2010-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,24 +48,24 @@
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_EDIT     5
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_EDIT     7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/inserters/to_i.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -76,7 +76,7 @@ namespace inserters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
@@ -142,7 +142,7 @@ to_i(
 #endif /* compiler */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -152,7 +152,7 @@ using ::fastformat::inserters::to_i;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

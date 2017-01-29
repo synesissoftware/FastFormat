@@ -4,6 +4,12 @@ FastFormat - History
 Updated:    26th September 2015
 
 
+28th September 2015 - 0.8.1 alpha 3
+-----------------------------------
+
+ * 
+
+
 26th September 2015 - 0.7.1
 ---------------------------
 

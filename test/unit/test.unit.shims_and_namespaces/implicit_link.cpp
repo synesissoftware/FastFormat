@@ -4,13 +4,13 @@
  * Purpose:     Implicit link file for the test.unit.shims_and_namespaces project.
  *
  * Created:     11th November 2013
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2013-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2013-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -19,7 +19,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */

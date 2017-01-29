@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for FastFormat core API: API init.
  *
  * Created:     20th November 2007
- * Updated:     11th November 2013
+ * Updated:     21st January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,13 +41,10 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/quality/contract.h>
 #include <fastformat/quality/cover.h>
@@ -61,7 +58,7 @@
 #   include <pthread.h>
 #   include <platformstl/synch/thread_mutex.hpp>
 #  else /* ? OS */
-#   error FastFormat does not currently support non-UNIX operating systems that do not have support for atomic_preincrement operations. If you have information that will facilitate support for your operation, please contact the Pantheios project members.
+#   error FastFormat does not currently support non-UNIX operating systems that do not have support for atomic_preincrement operations. If you have information that will facilitate support for your operation, please contact the FastFormat project members.
 #  endif /* OS */
 # endif /* PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS */
 #else /* ? FASTFORMAT_MT */
@@ -74,7 +71,7 @@
 #include <stdlib.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -83,7 +80,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Function declarations
+ * function declarations
  */
 
 namespace
@@ -92,10 +89,10 @@ namespace
     int fastformat_init_onetime();
     void fastformat_uninit_onetime();
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 namespace
@@ -181,10 +178,10 @@ namespace
     //////////////////////////////////////////////////////////////////
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 namespace
@@ -269,10 +266,10 @@ namespace
         s_stateMemoryPool = NULL;
     }
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * API Functions
+ * API functions
  */
 
 FASTFORMAT_CALL(size_t) fastformat_getVersion(void)
@@ -698,7 +695,7 @@ FASTFORMAT_CALL(ff_char_t const*) fastformat_getHashesSlice(size_t len)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

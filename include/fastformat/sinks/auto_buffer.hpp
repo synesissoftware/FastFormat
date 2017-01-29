@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for STLSoft's auto_buffer class template.
  *
  * Created:     21st April 2008
- * Updated:     13th September 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_AUTO_BUFFER
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       16
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -78,7 +78,7 @@
 #include <fastformat/util/memory/auto_buffer_selector.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
@@ -89,7 +89,7 @@
 #endif /* compiler */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -100,11 +100,11 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 #ifndef STLSOFT_AUTO_BUFFER_NEW_FORM
@@ -215,7 +215,7 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)

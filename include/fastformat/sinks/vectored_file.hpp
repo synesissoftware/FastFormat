@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for the UNIX writev() vector I/O function.
  *
  * Created:     24th November 2007
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_VECTORED_FILE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_EDIT      22
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_EDIT      24
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -75,14 +75,18 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
-#include <platformstl/error/exceptions.hpp>
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+# include <platformstl/exception/platformstl_exception.hpp>
+#else /* ? STLSoft version */
+# include <platformstl/error/exceptions.hpp>
+#endif /* STLSoft version */
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <string>
 #include <sys/uio.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -93,7 +97,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into iovec instructions
@@ -182,7 +186,7 @@ private:
 };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into an <code>iovec</code> sink.
@@ -194,7 +198,7 @@ inline vectored_file_sink& fmt_slices(vectored_file_sink& sink, int flags, size_
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -203,7 +207,7 @@ inline vectored_file_sink& fmt_slices(vectored_file_sink& sink, int flags, size_
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

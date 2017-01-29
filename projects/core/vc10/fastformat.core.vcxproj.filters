@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;ipp;ixx;inc;</Extensions>
+    </Filter>
+    <Filter Include="Header Files\include">
+      <UniqueIdentifier>{50992a8a-af08-4806-902d-b13eb9b47dd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat">
+      <UniqueIdentifier>{dbd7c0d3-4b04-4ef9-89d3-e4bda816a327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\bundles">
+      <UniqueIdentifier>{215a7edb-bee5-4f1c-8b28-8d3fec122024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\format">
+      <UniqueIdentifier>{69a9a642-2b36-4274-bbe0-ea9fef0cd43e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\format\specification_defect_handling">
+      <UniqueIdentifier>{36204c64-f061-4de0-ab55-482f13256057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\inserters">
+      <UniqueIdentifier>{b89ee922-054d-44f9-b32e-1bd725a428c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\inserters\dynamic">
+      <UniqueIdentifier>{0379a0d7-2c82-47f4-bd54-952d8618fa60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\internal">
+      <UniqueIdentifier>{349bbc47-4d4d-4672-aaaa-f988ac540e86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\internal\generated">
+      <UniqueIdentifier>{45b4a2cb-4e7f-463c-82d8-da15510e9f86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\internal\inserters">
+      <UniqueIdentifier>{19651efd-b393-47f8-a88a-a9c35f2a1928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\iterators">
+      <UniqueIdentifier>{54bd751c-c329-44c5-921d-77783a9ea34f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\quality">
+      <UniqueIdentifier>{856fc4bc-702f-41ad-a81b-e4a11d2537cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\shims">
+      <UniqueIdentifier>{d80ce979-ea37-4588-a239-6be849ddd351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\shims\action">
+      <UniqueIdentifier>{3a356038-1391-45e0-9e85-2d2e370b2ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\shims\action\fmt_slices">
+      <UniqueIdentifier>{af74ae7c-5fd4-4074-bd09-d9cb7cb9ce20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\shims\access">
+      <UniqueIdentifier>{513099e6-9485-43ea-905f-9d64f56168d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\shims\access\string">
+      <UniqueIdentifier>{15e66cb8-ca1b-462f-9fd5-a083dc71ce3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\shims\conversion">
+      <UniqueIdentifier>{620913c1-d05d-4753-9674-2b26663e9956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\shims\conversion\filter_type">
+      <UniqueIdentifier>{3d1c889f-1d6c-4a85-8894-39d642eaa987}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\sinks">
+      <UniqueIdentifier>{29b02178-2a09-4e65-b561-106374fd367e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\sinks\stlsoft">
+      <UniqueIdentifier>{6c103e56-e855-4f0c-b6f6-42ff67b6f06a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src">
+      <UniqueIdentifier>{c9aeecf6-1396-4292-9b5a-61607fc93208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation Files">
+      <UniqueIdentifier>{D235CB96-B7A2-46ac-B7DC-310587E1D366}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;</Extensions>
+    </Filter>
+    <Filter Include="Implementation Files\src">
+      <UniqueIdentifier>{5c1278a0-2826-4e94-a9df-b7121dac2348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation Files\src\inserters">
+      <UniqueIdentifier>{f5bd9db9-27f3-4afa-baaf-a175b5af683f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\test">
+      <UniqueIdentifier>{de58bbf3-776c-4b94-9ab4-e3477648d976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\fastformat\test\util">
+      <UniqueIdentifier>{d218ca0d-9b3a-47f7-bb2c-e74d6e6b7d6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module Files">
+      <UniqueIdentifier>{115E6387-3699-414f-89E3-A8DCD7CD1CD3}</UniqueIdentifier>
+      <Extensions>def;odl;idl;hpj;rc;xsd;</Extensions>
+    </Filter>
+    <Filter Include="Module Files\_dev_pragmatics_">
+      <UniqueIdentifier>{F31D58C5-9614-4cd6-A019-C75F99CF755F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project Files">
+      <UniqueIdentifier>{731CEAB5-BC88-43b4-87FA-AF15449536B3}</UniqueIdentifier>
+      <Extensions>bat;cmd;txt;</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>bin;bmp;cur;dlg;gif;ico;jpe;jpeg;jpg;rc2;rct;rcv;rgs;resx;tiff;tif;png;wav;mfcribbon-ms;</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\pch.cpp">
+      <Filter>Module Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\scripts\make_hdrs.rb">
+      <Filter>Project Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\api.cpp">
+      <Filter>Implementation Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\fmt_cache.cpp">
+      <Filter>Implementation Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\fmt_spec_defect_handlers.cpp">
+      <Filter>Implementation Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\init_code_strings.cpp">
+      <Filter>Implementation Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\memory_pool.cpp">
+      <Filter>Implementation Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\replacements.cpp">
+      <Filter>Implementation Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\snprintf.cpp">
+      <Filter>Implementation Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\inserters\plural.cpp">
+      <Filter>Implementation Files\src\inserters</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\pch.hpp">
+      <Filter>Module Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_dev_pragmatics_\warnings.msvc.10+.h">
+      <Filter>Module Files\_dev_pragmatics_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\init_codes.h">
+      <Filter>Header Files\include\fastformat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\exceptions.hpp">
+      <Filter>Header Files\include\fastformat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\fastformat.h">
+      <Filter>Header Files\include\fastformat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\fastformat.hpp">
+      <Filter>Header Files\include\fastformat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\bundles\openrj_bundle.hpp">
+      <Filter>Header Files\include\fastformat\bundles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\bundles\properties_bundle.hpp">
+      <Filter>Header Files\include\fastformat\bundles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\bundles\windows_resource_bundle.hpp">
+      <Filter>Header Files\include\fastformat\bundles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\bundles\winini_bundle.hpp">
+      <Filter>Header Files\include\fastformat\bundles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\format\standard_flags.hpp">
+      <Filter>Header Files\include\fastformat\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\format\specification_defect_handling\ignore_missing_arguments_scope.hpp">
+      <Filter>Header Files\include\fastformat\format\specification_defect_handling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\format\specification_defect_handling\ignore_unreferenced_arguments_scope.hpp">
+      <Filter>Header Files\include\fastformat\format\specification_defect_handling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\format\specification_defect_handling\mismatched_arguments_scope_base.hpp">
+      <Filter>Header Files\include\fastformat\format\specification_defect_handling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\ch.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\character.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\exception.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\integer.2.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\integer.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\LARGE_INTEGER.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\lc_i.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\lclf_i.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\plural.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\program_name.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\real.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\storage_size.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\to_e.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\to_f.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\to_g.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\to_i.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\to_i_null_if_not.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\to_i_null_if_zero.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\to_x.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\ULARGE_INTEGER.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\inserters\WindowsLargeIntegers.hpp">
+      <Filter>Header Files\include\fastformat\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\threading.h">
+      <Filter>Header Files\include\fastformat\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\fastformat.c++.h">
+      <Filter>Header Files\include\fastformat\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\format_element.h">
+      <Filter>Header Files\include\fastformat\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\initialiser.hpp">
+      <Filter>Header Files\include\fastformat\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\shim_macros.h">
+      <Filter>Header Files\include\fastformat\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\stlsoft.h">
+      <Filter>Header Files\include\fastformat\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\string_encoding.h">
+      <Filter>Header Files\include\fastformat\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\generated\api_functions.hpp">
+      <Filter>Header Files\include\fastformat\internal\generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\generated\helper_functions.hpp">
+      <Filter>Header Files\include\fastformat\internal\generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\internal\inserters\int_typedefs.hpp">
+      <Filter>Header Files\include\fastformat\internal\inserters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\iterators\format_iterator.hpp">
+      <Filter>Header Files\include\fastformat\iterators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\quality\contract.h">
+      <Filter>Header Files\include\fastformat\quality</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\quality\cover.h">
+      <Filter>Header Files\include\fastformat\quality</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\access\string\parse_code.hpp">
+      <Filter>Header Files\include\fastformat\shims\access\string</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\access\string\replacement_code.hpp">
+      <Filter>Header Files\include\fastformat\shims\access\string</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\access\string\string_slice.hpp">
+      <Filter>Header Files\include\fastformat\shims\access\string</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\action\fmt_slices\generic_string.hpp">
+      <Filter>Header Files\include\fastformat\shims\action\fmt_slices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\conversion\filter_type\bool.hpp">
+      <Filter>Header Files\include\fastformat\shims\conversion\filter_type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\conversion\filter_type\fast_integers.hpp">
+      <Filter>Header Files\include\fastformat\shims\conversion\filter_type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\conversion\filter_type\reals.hpp">
+      <Filter>Header Files\include\fastformat\shims\conversion\filter_type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\shims\conversion\filter_type\void_pointers.hpp">
+      <Filter>Header Files\include\fastformat\shims\conversion\filter_type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\WindowsMessageBox.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\ACE_CString.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\auto_buffer.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\c_string.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\CComBSTR.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\char_buffer.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\CString.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\exception.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\FILE.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\iostream.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\null.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\ostream.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\ostream_synch_spin.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\OutputDebugString.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\ribbon.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\shim_string.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\speech.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\string_array.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\stringstream.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\vectored_file.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\WindowsConsole.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\WindowsFileHANDLE.hpp">
+      <Filter>Header Files\include\fastformat\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\sinks\stlsoft\FILE_stream.hpp">
+      <Filter>Header Files\include\fastformat\sinks\stlsoft</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\test\util\compiler_warnings_suppression.first_include.h">
+      <Filter>Header Files\include\fastformat\test\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\fastformat\test\util\compiler_warnings_suppression.last_include.h">
+      <Filter>Header Files\include\fastformat\test\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ximpl_core.hpp">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

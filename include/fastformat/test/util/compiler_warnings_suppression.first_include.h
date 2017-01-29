@@ -5,11 +5,11 @@
  *              list.
  *
  * Created:     3rd February 2008
- * Updated:     18th February 2009
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2009, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,24 +50,24 @@
 #define FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_EDIT     3
+# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_EDIT     5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <stlsoft/stlsoft.h> /* This will be reported not found if STLSoft version < 1.9 */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Warning suppressions
+ * warning suppressions
  */
 
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT

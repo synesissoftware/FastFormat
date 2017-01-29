@@ -5,11 +5,11 @@
  *              list.
  *
  * Created:     3rd February 2008
- * Updated:     13th August 2010
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_EDIT      4
+# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_EDIT      6
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef STLSOFT_INCL_STLSOFT_H_STLSOFT
@@ -69,7 +69,7 @@
 #endif /* !STLSOFT_INCL_STLSOFT_H_STLSOFT */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Warning suppressions
+ * warning suppressions
  */
 
 #if defined(STLSOFT_COMPILER_IS_BORLAND)

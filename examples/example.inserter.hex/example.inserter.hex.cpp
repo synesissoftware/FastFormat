@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.inserter.hex project.
  *
  * Created:     4th February 2010
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,15 +18,19 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/fastformat.h>
 #include <fastformat/inserters/to_x.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -36,7 +40,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 /* ////////////////////////////////////////////////////////////////////// */

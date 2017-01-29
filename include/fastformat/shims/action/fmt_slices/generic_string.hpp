@@ -4,7 +4,7 @@
  * Purpose:     FastFormat formatting action shim for generic string types.
  *
  * Created:     19th September 2006
- * Updated:     11th November 2013
+ * Updated:     22nd January 2017
  *
  * Thanks:      To Ric Parkin for pointing out the ramifications of 
  *              21.3.5.2/6 and 21.3.1/6 before I change the definition of
@@ -12,7 +12,7 @@
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -52,18 +52,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MAJOR     3
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      22
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      25
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -71,7 +71,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -80,7 +80,7 @@
 #include <fastformat/format/standard_flags.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -91,7 +91,7 @@ namespace sinks
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Overloadable functions
+ * overloadable functions
  */
 
 /** Action shim for generic string types 
@@ -107,7 +107,9 @@ namespace sinks
  *   strong guarantee, you should write your own action shim.
  */
 template <typename S>
-inline S& fmt_slices(
+inline
+S&
+fmt_slices(
     S&                          sink
 ,   int                         flags
 ,   size_t                      cchTotal
@@ -138,7 +140,7 @@ inline S& fmt_slices(
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -147,7 +149,7 @@ inline S& fmt_slices(
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

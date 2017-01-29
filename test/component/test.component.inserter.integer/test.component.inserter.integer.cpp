@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.inserter.integer project.
  *
  * Created:     26th April 2008
- * Updated:     26th September 2015
+ * Updated:     21st January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,25 +20,25 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/integer.hpp>
 #include <fastformat/inserters/to_i.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/string/trim_functions.hpp>
 #include <stlsoft/util/minmax.hpp>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <limits.h>
 #include <math.h>
 #include <stdlib.h>
@@ -68,7 +68,7 @@ namespace
 } /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -155,10 +155,10 @@ namespace
     static void test_3_29(void);
 #endif /* 0 */
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -254,15 +254,15 @@ int main(int argc, char **argv)
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
-    }
 
-    STLSOFT_SUPPRESS_UNUSED(CORRECT_DEC_PLACES);
+        STLSOFT_SUPPRESS_UNUSED(CORRECT_DEC_PLACES);
+    }
 
     return retCode;
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -371,15 +371,21 @@ static void test_1_4()
     {
         const int value = values[i];
 
+//fprintf(stderr, STLSOFT_STRINGIZE(__LINE__) "value: %d\n", value);
         std::basic_string<ff_char_t>    sink;
         ff_char_t                       expected[21];
 
+//fprintf(stderr, STLSOFT_STRINGIZE(__LINE__) "value: %d\n", value);
         ff::fmt(sink, FF_STR("{0}"), ff::to_i(value));
 
+//fprintf(stderr, STLSOFT_STRINGIZE(__LINE__) "value: %d\n", value);
         ff_char_t const* s = stlsoft::integer_to_string(expected, STLSOFT_NUM_ELEMENTS(expected), value);
 
+//fprintf(stderr, STLSOFT_STRINGIZE(__LINE__) "value: %d\n", value);
         XTESTS_TEST_STRING_EQUAL_(s, sink);
+//fprintf(stderr, STLSOFT_STRINGIZE(__LINE__) "value: %d\n", value);
     }}
+//fprintf(stderr, STLSOFT_STRINGIZE(__LINE__) "\n");
 }
 
 static void test_1_5()
@@ -1233,7 +1239,7 @@ static void test_3_29()
 #endif /* 0 */
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

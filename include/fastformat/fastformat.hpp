@@ -4,11 +4,11 @@
  * Purpose:     FastFormat C++ primary include.
  *
  * Created:     19th September 2006
- * Updated:     11th November 2013
+ * Updated:     10th January 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -48,18 +48,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MINOR     4
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      47
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      49
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -67,7 +67,7 @@
 #endif /* !__cplusplus */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 1
+ * includes - 1
  */
 
 #include <fastformat/fastformat.h>
@@ -80,7 +80,7 @@
 #include <fastformat/quality/contract.h>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 /* FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT
@@ -131,7 +131,7 @@
 #endif /* !FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 2
+ * includes - 2
  */
 
 #include <stlsoft/memory/auto_buffer.hpp>
@@ -143,7 +143,7 @@
 #include <stlsoft/string/string_view.hpp>
 
  /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -152,7 +152,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -170,7 +170,7 @@ struct defs
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Creator functions
+ * creator functions
  */
 
 /** [PROVISIONAL] Degenerate conversion shim for specifying a sink.
@@ -188,7 +188,7 @@ to_sink(T& sink)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Stock sinks
+ * stock sinks
  *
  * This section includes all the implicit action shims that are available
  * for sinks, without the need to explicitly include sinks files (e.g.
@@ -240,7 +240,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Conversion shims for implicit filtering
+ * conversion shims for implicit filtering
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -262,7 +262,7 @@ inline T const& filter_type(T const& t, T const*, C const volatile*)
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Stock filtering
+ * stock filtering
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -308,7 +308,7 @@ namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -460,7 +460,7 @@ inline S& flush(
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -478,7 +478,7 @@ inline S& flush(
 #endif /* !FASTFORMAT_LEAN_AND_MEAN */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion control
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT

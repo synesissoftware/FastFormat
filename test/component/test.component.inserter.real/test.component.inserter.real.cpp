@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.inserter.real project.
  *
  * Created:     26th April 2008
- * Updated:     26th September 2015
+ * Updated:     21st January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -20,23 +20,23 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat header files */
+/* FastFormat Header Files */
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/real.hpp>
 
-/* xTests header files */
+/* xTests Header Files */
 #include <xtests/xtests.h>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/util/minmax.hpp>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <math.h>
 #include <stdlib.h>
 
@@ -54,7 +54,7 @@ namespace
 #elif defined(STLSOFT_COMPILER_IS_BORLAND)
     const int   CORRECT_DEC_PLACES  =   12;
     const int   MAX_DEC_PLACES      =   35;
-#elif defined(STLSOFT_COMPILER_IS_CLANG) || \
+#elif defined(STLSOFT_COMPILER_IS_CLANG) ||\
       defined(STLSOFT_COMPILER_IS_GCC)
     const int   CORRECT_DEC_PLACES  =   12;
 #elif defined(STLSOFT_COMPILER_IS_MWERKS)
@@ -66,7 +66,7 @@ namespace
 } /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -151,10 +151,10 @@ namespace
     static void test_3_28(void);
     static void test_3_29(void);
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
 int main(int argc, char **argv)
@@ -348,7 +348,7 @@ int main(int argc, char **argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -739,8 +739,8 @@ static void test_2_5()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(12345.67, 10, 0, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_INTEGER_EQUAL(10u, sink.size());
     XTESTS_TEST_STRING_CONTAIN("1e+", sink);
@@ -832,8 +832,8 @@ static void test_2_14()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(12345.67, 20, 0, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_STRING_CONTAIN("1e+", sink);
 
@@ -870,8 +870,8 @@ static void test_2_17()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(12345.67, 63, 7, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_FLOATINGPOINT_EQUAL(12345.67, str_to_double(sink.c_str()));
 
@@ -886,8 +886,8 @@ static void test_2_17()
 
 static void test_2_18()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     std::basic_string<ff_char_t> sink;
 
@@ -906,8 +906,8 @@ static void test_2_18()
 
 static void test_2_19()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     std::basic_string<ff_char_t> sink;
 
@@ -924,8 +924,8 @@ static void test_2_19()
 
 static void test_2_20()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     std::basic_string<ff_char_t> sink;
 
@@ -946,8 +946,8 @@ static void test_2_28()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(1e-10, 0, -1, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_STRING_CONTAIN("1e-", sink);
 
@@ -960,8 +960,8 @@ static void test_2_29()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(1e-10, 0, -1, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_STRING_CONTAIN("1e-", sink);
 
@@ -1150,9 +1150,9 @@ static void test_3_16()
 
 static void test_3_17()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1170,9 +1170,9 @@ static void test_3_17()
 
 static void test_3_18()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1190,9 +1190,9 @@ static void test_3_18()
 
 static void test_3_19()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1210,9 +1210,9 @@ static void test_3_19()
 
 static void test_3_20()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1251,6 +1251,6 @@ static void test_3_29()
 }
 
 
-} // anonymous namespace
+} /* anonymous namespace */
 
 /* ///////////////////////////// end of file //////////////////////////// */

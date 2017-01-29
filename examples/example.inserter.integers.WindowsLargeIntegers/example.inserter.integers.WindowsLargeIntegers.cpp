@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.inserter.integers.WindowsLargeIntegers project.
  *
  * Created:     30th November 2010
- * Updated:     26th September 2015
+ * Updated:     10th January 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -18,18 +18,22 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* FastFormat header files */
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* FastFormat Header Files */
 #include <fastformat/ff.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/inserters/WindowsLargeIntegers.hpp>
 
-/* STLSoft header files */
+/* STLSoft Header Files */
 #include <stlsoft/util/limit_traits.h>
 
-/* Standard C++ header files */
+/* Standard C++ Header Files */
 #include <iostream>
 
-/* Standard C header files */
+/* Standard C Header Files */
 #include <stdlib.h>
 
 /* ////////////////////////////////////////////////////////////////////// */
