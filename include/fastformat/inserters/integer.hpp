@@ -4,7 +4,7 @@
  * Purpose:     Inserter functions for integral types
  *
  * Created:     26th May 2009
- * Updated:     7th August 2015
+ * Updated:     28th September 2015
  *
  * Home:        http://www.fastformat.org/
  *
@@ -418,7 +418,7 @@ inline ff_to_i_r_t_ hex_integer_helper(
 ,   ff_i2s_case_selection_t uppercaseAlpha
 )
 {
-    ff_char_t   fmt[3] = { '%', (FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha) ? 'X' : 'x', '\0' };
+    ff_char_t   fmt[3] = { FASTFORMAT_LITERAL_CHARACTER('%'), (FF_ximpl_REQUIRE_UPPERCASE == uppercaseAlpha) ? FASTFORMAT_LITERAL_CHARACTER('X') : FASTFORMAT_LITERAL_CHARACTER('x'), FASTFORMAT_LITERAL_CHARACTER('\0') };
     ff_char_t   result[17];
     int         n = fastformat_util_snprintf(&result[0], STLSOFT_NUM_ELEMENTS(result), fmt, value);
 

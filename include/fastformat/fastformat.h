@@ -4,11 +4,11 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     26th September 2015
+ * Updated:     30th November 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -90,6 +90,10 @@
 # define FASTFORMAT_VER_0_7_1_ALPHA_9       0x00070109
 # define FASTFORMAT_VER_0_7_1_ALPHA_10      0x0007010a
 # define FASTFORMAT_VER_0_7_1               0x000701ff
+# define FASTFORMAT_VER_0_7_2               0x000702ff
+# define FASTFORMAT_VER_0_7_3               0x000703ff
+# define FASTFORMAT_VER_0_7_4_RC_1          0x00070481
+# define FASTFORMAT_VER_0_7_4_RC_2          0x00070482
 # define FASTFORMAT_VER_0_8_1_ALPHA_1       0x00080101
 # define FASTFORMAT_VER_0_8_1_ALPHA_2       0x00080102
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */

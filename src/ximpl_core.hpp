@@ -4,11 +4,11 @@
  * Purpose:     Declarations of internal shared core functions.
  *
  * Created:     3rd February 2012
- * Updated:     11th November 2013
+ * Updated:     16th August 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2012-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2012-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

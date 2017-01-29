@@ -5,11 +5,11 @@
  *              unreferenced arguments.
  *
  * Created:     25th April 2009
- * Updated:     19th July 2015
+ * Updated:     15th August 2016
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2016, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -121,7 +121,7 @@ public: // Construction
      * \warning The system behaviour is undefined if the thread/process 
      *   mismatch handler is modified during the lifetime of this instance
      */
-    ~ignore_missing_arguments_scope() throw()
+    ~ignore_missing_arguments_scope() ss_noexcept_k
     {}
 private:
     ignore_missing_arguments_scope(class_type const&);
