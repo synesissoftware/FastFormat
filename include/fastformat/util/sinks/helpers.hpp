@@ -5,7 +5,7 @@
  *              library.
  *
  * Created:     19th December 2007
- * Updated:     5th February 2012
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
@@ -56,8 +56,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      14
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_REVISION  2
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

@@ -5,7 +5,7 @@
 #           compiler, on UNIX
 #
 # Created:  22nd December 2007
-# Updated:  16th August 2016
+# Updated:  5th February 2017
 #
 ############################################################################
 
@@ -408,6 +408,7 @@ CORE_HEADERS=\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\bundles\openrj_bundle.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\bundles\properties_bundle.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\bundles\windows_resource_bundle.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\bundles\winini_bundle.hpp\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\format\standard_flags.hpp\
@@ -415,28 +416,41 @@ CORE_HEADERS=\
  $(PROJ_INCLUDE_DIR)\fastformat\format\specification_defect_handling\ignore_unreferenced_arguments_scope.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\format\specification_defect_handling\mismatched_arguments_scope_base.hpp\
  \
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\ch.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\character.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\integer.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\real.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_e.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_f.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_g.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_i.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_i_null_if_not.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_i_null_if_zero.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\to_x.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\ULARGE_INTEGER.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\inserters\WindowsLargeIntegers.hpp\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\internal\format_element.h\
+ $(PROJ_INCLUDE_DIR)\fastformat\internal\shim_macros.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\stlsoft.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\string_encoding.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\threading.h\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\initialiser.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\generated\api_functions.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\internal\generated\helper_functions.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\internal\inserters\int_typedefs.hpp\
+ \
+ $(PROJ_INCLUDE_DIR)\fastformat\iterators\format_iterator.hpp\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\quality\contract.h\
  $(PROJ_INCLUDE_DIR)\fastformat\quality\cover.h\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\shims\action\fmt_slices\generic_string.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\bool.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\fast_integers.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\reals.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\shims\conversion\filter_type\void_pointers.hpp\
+ \
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\ACE_CString.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\auto_buffer.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\CComBSTR.hpp\
@@ -444,6 +458,7 @@ CORE_HEADERS=\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\CString.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\c_string.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\FILE.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\iostream.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\null.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\ostream.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\OutputDebugString.hpp\
@@ -452,10 +467,14 @@ CORE_HEADERS=\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\stringstream.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\string_array.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\sinks\vectored_file.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\WindowsConsole.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\WindowsMessageBox.hpp\
+ $(PROJ_INCLUDE_DIR)\fastformat\sinks\stlsoft\FILE_stream.hpp\
  \
  $(PROJ_INCLUDE_DIR)\fastformat\test\util\compiler_warnings_suppression.first_include.h\
  $(PROJ_INCLUDE_DIR)\fastformat\test\util\compiler_warnings_suppression.last_include.h\
  \
+ $(PROJ_INCLUDE_DIR)\fastformat\util\bundle\windows_replacement_translation_functions.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\util\memory\auto_buffer_selector.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\util\sinks\helpers.hpp\
  $(PROJ_INCLUDE_DIR)\fastformat\util\string\snprintf.h\
@@ -614,6 +633,7 @@ TARG_TEST_UNIT_api_init_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api
 TARG_TEST_UNIT_api_lkptrn_MT_UX	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_api_msmtchh_MT_UX	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_api_prsrpl_MT_UX	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).mt.exe
+TARG_TEST_UNIT_bndl_util_MT_UX	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_fmt_stdfl_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_ins_ch_MT_UX		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt.exe
 TARG_TEST_UNIT_ins_i_MT_UX			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG).mt.exe
@@ -633,6 +653,7 @@ TARG_TEST_UNIT_api_init_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.un
 TARG_TEST_UNIT_api_lkptrn_MT_UX_DEBUG	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.lookup_pattern.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_api_msmtchh_MT_UX_DEBUG	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.mismatched_handlers.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_api_prsrpl_MT_UX_DEBUG	=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.api.parse_format.$(COMP_ARCH_OS_TAG).mt.debug.exe
+TARG_TEST_UNIT_bndl_util_MT_UX_DEBUG	    =   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.bundle.util.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.format.standard_flags.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_ins_ch_MT_UX_DEBUG		=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.character.$(COMP_ARCH_OS_TAG).mt.debug.exe
 TARG_TEST_UNIT_ins_i_MT_UX_DEBUG			=   $(PROJ_BIN_DIR)\$(PROJ_TAG_VER).test.unit.inserters.integer.$(COMP_ARCH_OS_TAG).mt.debug.exe
@@ -886,6 +907,7 @@ OBJ_TEST_UNIT_api_init_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisation.m
 OBJ_TEST_UNIT_api_lkptrn_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.mt.obj
 OBJ_TEST_UNIT_api_msmtchh_MT_UX	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.mt.obj
 OBJ_TEST_UNIT_api_prsrpl_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.mt.obj
+OBJ_TEST_UNIT_bndl_util_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.mt.obj
 OBJ_TEST_UNIT_fmt_stdfl_MT_UX		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.mt.obj
 OBJ_TEST_UNIT_ins_ch_MT_UX			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.mt.obj
 OBJ_TEST_UNIT_ins_i_MT_UX			=   $(PROJ_OBJ_DIR)\test.unit.inserters.integer.mt.obj
@@ -906,6 +928,7 @@ OBJ_TEST_UNIT_api_init_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.api.initialisa
 OBJ_TEST_UNIT_api_lkptrn_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.api.lookup_pattern.mt.debug.obj
 OBJ_TEST_UNIT_api_msmtchh_MT_UX_DEBUG	=   $(PROJ_OBJ_DIR)\test.unit.api.mismatched_handlers.mt.debug.obj
 OBJ_TEST_UNIT_api_prsrpl_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.api.parse_format.mt.debug.obj
+OBJ_TEST_UNIT_bndl_util_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.bundle.util.mt.debug.obj
 OBJ_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG		=   $(PROJ_OBJ_DIR)\test.unit.format.standard_flags.mt.debug.obj
 OBJ_TEST_UNIT_ins_ch_MT_UX_DEBUG			=   $(PROJ_OBJ_DIR)\test.unit.inserters.character.mt.debug.obj
 OBJ_TEST_UNIT_ins_i_MT_UX_DEBUG			=   $(PROJ_OBJ_DIR)\test.unit.inserters.integer.mt.debug.obj
@@ -1058,6 +1081,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_UX)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_UX)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_UX)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_UX)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_UX)\
  $(OBJ_TEST_UNIT_ins_ch_MT_UX)\
  $(OBJ_TEST_UNIT_ins_i_MT_UX)\
@@ -1076,6 +1100,7 @@ OBJS_TEST_UNIT=\
  $(OBJ_TEST_UNIT_api_lkptrn_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_api_msmtchh_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_api_prsrpl_MT_UX_DEBUG)\
+ $(OBJ_TEST_UNIT_bndl_util_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_ins_ch_MT_UX_DEBUG)\
  $(OBJ_TEST_UNIT_ins_i_MT_UX_DEBUG)\
@@ -1230,6 +1255,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_UX)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_UX)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_UX)\
+ $(TARG_TEST_UNIT_bndl_util_MT_UX)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_UX)\
  $(TARG_TEST_UNIT_ins_ch_MT_UX)\
  $(TARG_TEST_UNIT_ins_i_MT_UX)\
@@ -1248,6 +1274,7 @@ TARGETS_TEST_UNIT=\
  $(TARG_TEST_UNIT_api_lkptrn_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_api_msmtchh_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_api_prsrpl_MT_UX_DEBUG)\
+ $(TARG_TEST_UNIT_bndl_util_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_ins_ch_MT_UX_DEBUG)\
  $(TARG_TEST_UNIT_ins_i_MT_UX_DEBUG)\
@@ -1423,12 +1450,16 @@ test.unit_:
 	$(TARG_TEST_UNIT_api_msmtchh_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_api_prsrpl_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_api_prsrpl_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_UX) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_bndl_util_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_fmt_stdfl_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_fmt_stdfl_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_ins_ch_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_ins_ch_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_ins_i_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_ins_i_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_shim_fi_MT_UX) --verbosity=$(TEST_VERBOSITY)
+	$(TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_shim_fi_MT_UX) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_shim_fi_MT_UX_DEBUG) --verbosity=$(TEST_VERBOSITY)
 	$(TARG_TEST_UNIT_snk_a_b_MT_UX) --verbosity=$(TEST_VERBOSITY)
@@ -3375,6 +3406,38 @@ $(TARG_TEST_UNIT_api_msmtchh_MT_UX_DEBUG):    \
 
 $(OBJ_TEST_UNIT_api_msmtchh_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.api.mismatched_handlers\test.unit.api.mismatched_handlers.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
 	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.api.mismatched_handlers\test.unit.api.mismatched_handlers.cpp
+
+$(TARG_TEST_UNIT_bndl_util_MT_UX):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_UX)\
+		$(LIB_CORE_MT_UX)\
+		$(LIB_SHWILD_MT_UX)\
+		$(LIB_XTESTS_MT_UX)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_UX) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_UX)\
+		$(LIB_CORE_MT_UX)\
+		$(LIB_SHWILD_MT_UX)\
+		$(LIB_XTESTS_MT_UX)\
+		$(TARGET_LIB_MT_UX)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_UX): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
+
+$(TARG_TEST_UNIT_bndl_util_MT_UX_DEBUG):    \
+		$(OBJ_TEST_UNIT_bndl_util_MT_UX_DEBUG)\
+		$(LIB_CORE_MT_UX_DEBUG)\
+		$(LIB_SHWILD_MT_UX_DEBUG)\
+		$(LIB_XTESTS_MT_UX_DEBUG)\
+		$(PROJ_MAKEFILE_NAME)
+	$(LD) $(LD_ARGS_MT_UX_DEBUG) -out:$@ \
+		$(OBJ_TEST_UNIT_bndl_util_MT_UX_DEBUG)\
+		$(LIB_CORE_MT_UX_DEBUG)\
+		$(LIB_SHWILD_MT_UX_DEBUG)\
+		$(LIB_XTESTS_MT_UX_DEBUG)\
+		$(TARGET_LIB_MT_UX_DEBUG)
+
+$(OBJ_TEST_UNIT_bndl_util_MT_UX_DEBUG): $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp $(CORE_HEADERS) $(SHWILD_HEADERS) $(XTESTS_HEADERS) $(PROJ_MAKEFILE_NAME)
+	$(CPPC) $(CPPC_ARGS_MT_UX_DEBUG) -Fo$@ $(PROJ_TEST_UNIT_DIR)\test.unit.bundle.util\test.unit.bundle.util.cpp
 
 $(TARG_TEST_UNIT_fmt_stdfl_MT_UX):    \
 		$(OBJ_TEST_UNIT_fmt_stdfl_MT_UX)\

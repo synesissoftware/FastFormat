@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the example.arguments.reals project.
  *
  * Created:     2nd June 2008
- * Updated:     26th September 2015
+ * Updated:     5th February 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -44,7 +44,7 @@ using std::endl;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int argc, char** /*argv*/)
 {
     const float     flt =   1.2345f;
     const double    dbl =   -123E-45;
@@ -75,7 +75,7 @@ static int main_(int /* argc */, char** /*argv*/)
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
     // This code just to ensure widestring compatibility for integral types
-    if(0)
+    if(0 == argc)
     {
         const int       i   =   -123;
     

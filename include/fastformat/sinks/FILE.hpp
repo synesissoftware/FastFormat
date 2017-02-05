@@ -4,7 +4,7 @@
  * Purpose:     A FastFormat sink for FILE*.
  *
  * Created:     3rd January 2008
- * Updated:     5th February 2012
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
@@ -55,7 +55,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   7
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       26
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       27
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
