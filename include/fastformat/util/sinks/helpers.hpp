@@ -5,7 +5,7 @@
  *              library.
  *
  * Created:     19th December 2007
- * Updated:     10th January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
@@ -76,6 +76,11 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
+#if _STLSOFT_VER >= 0x010a0182
+# include <platformstl/exception/platformstl_exception.hpp>
+#else
+# include <platformstl/error/exceptions.hpp>
+#endif
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <string>

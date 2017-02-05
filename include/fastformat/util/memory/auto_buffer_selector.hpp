@@ -5,7 +5,7 @@
  *              specialisations.
  *
  * Created:     22nd April 2008
- * Updated:     22nd January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *

@@ -4,7 +4,7 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     10th January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
@@ -94,6 +94,8 @@
 # define FASTFORMAT_VER_0_7_3               0x000703ff
 # define FASTFORMAT_VER_0_7_4_RC_1          0x00070481
 # define FASTFORMAT_VER_0_7_4_RC_2          0x00070482
+# define FASTFORMAT_VER_0_7_4_RC_3          0x00070483
+# define FASTFORMAT_VER_0_7_4_RC_4          0x00070484
 # define FASTFORMAT_VER_0_8_1_ALPHA_1       0x00080101
 # define FASTFORMAT_VER_0_8_1_ALPHA_2       0x00080102
 # define FASTFORMAT_VER_0_8_1_ALPHA_3       0x00080103

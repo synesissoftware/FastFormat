@@ -4,7 +4,7 @@
  * Purpose:     A FastFormat sink for string sequences.
  *
  * Created:     24th December 2007
- * Updated:     10th January 2017
+ * Updated:     5th February 2012
  *
  * Home:        http://www.fastformat.org/
  *
@@ -57,8 +57,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MAJOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MINOR      0
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       7
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_REVISION   3
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -79,7 +79,7 @@
 #include <fastformat/format/standard_flags.hpp>
 
 #ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
-# include <platformstl/exception/s.hpp>
+# include <platformstl/exception/platformstl_exception.hpp>
 #else /* ? STLSoft version */
 # include <platformstl/error/exceptions.hpp>
 #endif /* STLSoft version */

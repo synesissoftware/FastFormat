@@ -4,7 +4,7 @@
  * Purpose:     A FastFormat sink for the UNIX writev() vector I/O function.
  *
  * Created:     24th November 2007
- * Updated:     10th January 2017
+ * Updated:     5th February 2012
  *
  * Home:        http://www.fastformat.org/
  *

@@ -4,7 +4,7 @@
  * Purpose:     A FastFormat sink for FILE*.
  *
  * Created:     3rd January 2008
- * Updated:     10th January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
@@ -54,7 +54,7 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MINOR      3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   6
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   7
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       33
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
@@ -75,6 +75,11 @@
 #include <fastformat/util/sinks/helpers.hpp>
 #include <fastformat/format/standard_flags.hpp>
 
+#if _STLSOFT_VER >= 0x010a0182
+# include <platformstl/exception/platformstl_exception.hpp>
+#else
+# include <platformstl/error/exceptions.hpp>
+#endif
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <stdio.h>

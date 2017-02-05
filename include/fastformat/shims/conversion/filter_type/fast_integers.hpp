@@ -5,7 +5,7 @@
  *              conversion of integral types.
  *
  * Created:     1st June 2008
- * Updated:     10th January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *

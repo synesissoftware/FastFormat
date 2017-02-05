@@ -4,7 +4,7 @@
  * Purpose:     Inserter functions for integral types
  *
  * Created:     26th May 2009
- * Updated:     10th January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *

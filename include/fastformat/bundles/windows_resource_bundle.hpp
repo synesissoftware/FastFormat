@@ -4,7 +4,7 @@
  * Purpose:     Windows resource bundle.
  *
  * Created:     24th April 2009
- * Updated:     20th January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
@@ -54,7 +54,7 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 4
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 5
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
@@ -79,11 +79,14 @@
 #include <winstl/winstl.h>
 
 /* STLSoft header files */
-#include <stlsoft/conversion/integer_to_string.hpp>
-#include <stlsoft/shims/access/string.hpp>
-#include <stlsoft/util/minmax.hpp>
 #include <winstl/error/error_desc.hpp>
 #include <winstl/string/resource_string.hpp>
+#include <stlsoft/conversion/integer_to_string.hpp>
+#if _STLSOFT_VER >= 0x010a0181
+# include <stlsoft/exception/throw_policies.hpp>
+#endif
+#include <stlsoft/shims/access/string.hpp>
+#include <stlsoft/util/minmax.hpp>
 
 /* C++ Standard header files */
 #include <stdexcept>
@@ -214,7 +217,11 @@ public:
             static const char       string0[]   =   "could not load bundle resource corresponding to identifier ";
             static const char       string1[]   =   ": ";
             char                    num_[21];
+#if _STLSOFT_VER >= 0x010a0182
+            char const*             num         =   stlsoft::integer_to_decimal_string(&num_[0], STLSOFT_NUM_ELEMENTS(num_), id);
+#else
             char const*             num         =   stlsoft::integer_to_string(&num_[0], STLSOFT_NUM_ELEMENTS(num_), id);
+#endif
             winstl::error_desc_a    reason(code);
             multibyte_string_type   message;
 

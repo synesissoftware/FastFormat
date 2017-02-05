@@ -4,7 +4,7 @@
  * Purpose:     Inserter functions for floating-point types
  *
  * Created:     1st March 2009
- * Updated:     10th January 2017
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
