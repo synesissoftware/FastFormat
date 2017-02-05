@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 4
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     8
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 5
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -79,11 +79,14 @@
 #include <winstl/winstl.h>
 
 /* STLSoft header files */
-#include <stlsoft/conversion/integer_to_string.hpp>
-#include <stlsoft/shims/access/string.hpp>
-#include <stlsoft/util/minmax.hpp>
 #include <winstl/error/error_desc.hpp>
 #include <winstl/string/resource_string.hpp>
+#include <stlsoft/conversion/integer_to_string.hpp>
+#if _STLSOFT_VER >= 0x010a0181
+# include <stlsoft/exception/throw_policies.hpp>
+#endif
+#include <stlsoft/shims/access/string.hpp>
+#include <stlsoft/util/minmax.hpp>
 
 /* C++ Standard header files */
 #include <stdexcept>
