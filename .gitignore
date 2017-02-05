@@ -46,7 +46,17 @@ Unicode Release Multithreaded DLL/
 
 # files (by name)
 
+bzr-branching-notes.txt
+handler-design-notes.txt
+
+.bzrignore
+.update_deps
 list_changes.cmd
+prepare.cmd
+update
+
+build/makefile.tmpl
+build/makefile.tools.xml
 
 include/fastformat/internal/dos2unix.has.been.performed
 
