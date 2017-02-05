@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for integral types
  *
  * Created:     26th May 2009
- * Updated:     28th September 2015
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   7
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       22
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   8
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       23
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -454,7 +454,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         {
             ff_char_t           sz[21];
             size_t              n;
+#if _STLSOFT_VER >= 0x010a0182
+            ff_char_t const*    s = stlsoft::integer_to_decimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
+#else
             ff_char_t const*    s = stlsoft::integer_to_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
+#endif
 
             return ff_to_i_r_t_(s, n);
         }
@@ -541,7 +545,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         // a nul terminator, we need to do this is a strange order
 
         // 4. precision
+#if _STLSOFT_VER >= 0x010a0182
+        stlsoft::integer_to_decimal_string(end - (21 + typeLen), 21, precision, &n1);
+#else
         stlsoft::integer_to_string(end - (21 + typeLen), 21, precision, &n1);
+#endif
 
         // 5. type
         ::memcpy(end - (typeLen + 1), type, sizeof(ff_char_t) * typeLen);
@@ -558,7 +566,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         end -= n1;
 
         // 2. width
+#if _STLSOFT_VER >= 0x010a0182
+        stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
+#else
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
+#endif
 
         // 3. .
         *--end = '.';

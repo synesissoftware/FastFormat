@@ -4,11 +4,11 @@
  * Purpose:     A FastFormat sink for the UNIX writev() vector I/O function.
  *
  * Created:     24th November 2007
- * Updated:     13th September 2010
+ * Updated:     5th February 2012
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_MINOR     1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_EDIT      21
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_REVISION  4
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_EDIT      22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -75,7 +75,11 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
-#include <platformstl/error/exceptions.hpp>
+#if _STLSOFT_VER >= 0x010a0182
+# include <platformstl/exception/platformstl_exception.hpp>
+#else
+# include <platformstl/error/exceptions.hpp>
+#endif
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <string>

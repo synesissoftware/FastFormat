@@ -4,11 +4,11 @@
  * Purpose:     Inserter functions for floating-point types
  *
  * Created:     1st March 2009
- * Updated:     31st July 2012
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MINOR     1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  6
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      10
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -332,10 +332,18 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_4(
         size_t          n1;
         size_t          n2;
 
+#if _STLSOFT_VER >= 0x010a0182
+        stlsoft::integer_to_decimal_string(end - 21, 21, precision, &n1);
+#else
         stlsoft::integer_to_string(end - 21, 21, precision, &n1);
+#endif
         *--end = type;
         end -= n1;
+#if _STLSOFT_VER >= 0x010a0182
+        stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
+#else
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
+#endif
         *--end = '.';
         end -= n2;
         *--end = '%';

@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.FILE project.
  *
  * Created:     3rd January 2008
- * Updated:     26th September 2015
+ * Updated:     5th February 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2007-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -28,7 +28,11 @@
 #include <xtests/xtests.h>
 
 /* STLSoft header files */
-#include <platformstl/error/exceptions.hpp>
+#if _STLSOFT_VER >= 0x010a0182
+# include <platformstl/exception/platformstl_exception.hpp>
+#else
+# include <platformstl/error/exceptions.hpp>
+#endif
 #include <platformstl/filesystem/file_lines.hpp>
 #include <platformstl/system/system_traits.hpp>
 
@@ -110,8 +114,6 @@ int main(int argc, char** argv)
 static void test_1_1()
 {
     using   fastformat::ff_char_t;
-
-    typedef std::basic_string<ff_char_t>    string_t;
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
 # define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_WIDE_STRING_EQUAL
