@@ -4,13 +4,13 @@
  * Purpose:     Implementation file for the test.component.sink.ostream project.
  *
  * Created:     14th September 2010
- * Updated:     26th September 2015
+ * Updated:     5th February 2017
  *
  * Status:      Wizard-generated
  *
  * License:     (Licensed under the Synesis Software Open License)
  *
- *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
+ *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
  *              All rights reserved.
  *
  *              www:        http://www.synesis.com.au/software
@@ -29,7 +29,11 @@
 #include <xtests/xtests.h>
 
 /* STLSoft header files */
-#include <platformstl/error/exceptions.hpp>
+#if _STLSOFT_VER >= 0x010a0182
+# include <platformstl/exception/platformstl_exception.hpp>
+#else
+# include <platformstl/error/exceptions.hpp>
+#endif
 #include <platformstl/filesystem/file_lines.hpp>
 
 /* Standard C++ header files */

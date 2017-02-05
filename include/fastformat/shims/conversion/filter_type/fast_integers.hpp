@@ -5,11 +5,11 @@
  *              conversion of integral types.
  *
  * Created:     1st June 2008
- * Updated:     30th July 2012
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -56,8 +56,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      20
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_REVISION  4
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      21
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -206,7 +206,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<ximpl_fast_integers::ff_fi_sint64_t> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -227,7 +231,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<ximpl_fast_integers::ff_fi_uint64_t> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -249,7 +257,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed long> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -269,7 +281,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned long> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -289,7 +305,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed int> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -309,7 +329,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned int> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -329,7 +353,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed short> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -349,7 +377,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned short> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#endif
 
     return r;
 }
@@ -369,7 +401,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::sint32_t> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
+#endif
 
     return r;
 }
@@ -386,7 +422,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::uint32_t> r;
 
+#if _STLSOFT_VER >= 0x010a0182
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
+#else
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
+#endif
 
     return r;
 }

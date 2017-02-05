@@ -4,11 +4,11 @@
  * Purpose:     Windows resource bundle.
  *
  * Created:     24th April 2009
- * Updated:     15th August 2016
+ * Updated:     5th February 2017
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2009-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +54,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     7
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 4
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -194,7 +194,11 @@ public:
             static const char       string0[]   =   "could not load bundle resource corresponding to identifier ";
             static const char       string1[]   =   ": ";
             char                    num_[21];
+#if _STLSOFT_VER >= 0x010a0182
+            char const*             num         =   stlsoft::integer_to_decimal_string(&num_[0], STLSOFT_NUM_ELEMENTS(num_), id);
+#else
             char const*             num         =   stlsoft::integer_to_string(&num_[0], STLSOFT_NUM_ELEMENTS(num_), id);
+#endif
             winstl::error_desc_a    reason(code);
             multibyte_string_type   message;
 
