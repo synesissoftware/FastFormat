@@ -1,7 +1,7 @@
 FastFormat - Changes
 =====================
 
-Updated:    26th September 2015
+Updated:    21st March 2021
 
 
     ************************************
@@ -14,6 +14,19 @@ Updated:    26th September 2015
     *                                  *
     ************************************
 
+
+21st March 2021 - 0.7.4 RC-5
+============================
+
+Summary:
+--------
+
+ * VC++ 15/16 compatibility
+
+Details:
+--------
+
+ -
 
 26th September 2015 - 0.7.1
 ===========================

@@ -4,11 +4,11 @@
  * Purpose:     Implementation file for FastFormat core API: replacements.
  *
  * Created:     18th September 2006
- * Updated:     22nd August 2015
+ * Updated:     6th September 2019
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -40,13 +40,32 @@
 
 
 
-/* /////////////////////////////////////////////////////////////////////////
- * Includes
- */
-
 // #define FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS // This is not defined by default, but unreferenced arguments are not always a defect
 
+/* /////////////////////////////////////////////////////////////////////////
+ * Includes - 0
+ */
+
+#include <stlsoft/stlsoft.h>
+
+/* /////////////////////////////////////////////////////////////////////////
+ * Compatibility
+ */
+
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC)
+# if _MSC_VER == 1500
+#  pragma warning(disable : 4551)
+# endif
+#else
+#endif
+
+/* /////////////////////////////////////////////////////////////////////////
+ * Includes - 1
+ */
+
 #include "ximpl_core.hpp"
+
 #ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
 # define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
 #endif
