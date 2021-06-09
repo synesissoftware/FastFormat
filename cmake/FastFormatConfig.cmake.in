@@ -1,0 +1,3 @@
+include("${CMAKE_CURRENT_LIST_DIR}/FastFormatTargets.cmake")
+set(FastFormat_INCLUDE_DIRS "@PACKAGE_INCLUDE_DIR@")
+
