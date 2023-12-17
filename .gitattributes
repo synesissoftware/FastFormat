@@ -1,0 +1,7 @@
+*.c linguist-language=C
+*.h linguist-language=C
+*.cpp linguist-language=C++
+*.hpp linguist-language=C++
+*.html linguist-detectable=false
+makefile linguist-detectable=false
+
