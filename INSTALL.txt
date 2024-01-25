@@ -5,6 +5,7 @@ Updated:    26th September 2015
 
 
 The following steps are required to install FastFormat:
+ (Please see below if your project uses CMake.)
 
     1. Download the latest distribution of FastFormat, from
        http://fastformat.org/
@@ -43,5 +44,26 @@ The following steps are required to install FastFormat:
 
 NOTE: FastFormat depends on the (header-only) STLSoft libraries - version
   1.9.121 or later - available from http://www.stlsoft.org/.
+
+ CMake Users
+ If your project uses CMake (https://cmake.org/) as its build tool,
+ you can install FastFormat as you would any other CMake project:
+ 1. cd FastFormat
+ 2. mkdir build && cd build
+ 3. cmake .. -DCMAKE_INSTALL_PREFIX=<dir_to_install_if_wanted>
+ (3. make install)
+ Installing FastFormat is not necessary for using it.
+
+ When using FastFormat in your own project, add these rows to your CMakeLists.txt:
+ find_package(FastFormat <version> REQUIRED)
+ include_directories (${FastFormat_INCLUDE_DIRS})
+
+ If you ran 'cmake' as stated above, then the location of FastFormat is
+ automatically known to CMake.
+ (Cached in User's home directory; ~/.cmake/packages/FastFormat/ in Unix).
+
+ Exported library target is 'FastFormat::FastFormat'.
+ Specify it with:
+ 'target_link_libraries(<your target> FastFormat::FastFormat)'
 
 =============================== End of file ================================

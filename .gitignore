@@ -95,4 +95,7 @@ test/tests-plan.txt
 *.vc8.sln
 *.vc9.sln
 
+# CMake build directories (here alternatives cmake-build and build-cmake)
+/cmake-build
+/build-cmake
 
