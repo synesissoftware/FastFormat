@@ -5,16 +5,7 @@
  *              project.
  *
  * Created:     29th April 2009
- * Updated:     20th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -297,10 +288,10 @@ inline std::ostream& operator <<(
 
   return stm
       << ((ra >> 24) & 0xff)
-      << '.' 
-      << ((ra >> 16) & 0xff) 
       << '.'
-      << ((ra >> 8) & 0xff) 
+      << ((ra >> 16) & 0xff)
+      << '.'
+      << ((ra >> 8) & 0xff)
       << '.'
       << ((ra >> 0) & 0xff);
 }
@@ -460,4 +451,6 @@ void log_connection_boost(connection_t const& /* conn */)
 }
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

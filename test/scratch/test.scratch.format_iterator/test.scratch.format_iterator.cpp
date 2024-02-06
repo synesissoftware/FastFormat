@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.format_iterator project.
  *
  * Created:     20th May 2009
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -55,6 +46,7 @@
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * types
  */
@@ -62,9 +54,6 @@
 typedef std::string             string_t;
 typedef std::vector<string_t>   strings_t;
 
-/* /////////////////////////////////////////////////////////////////////////
- * namespace
- */
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -187,4 +176,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

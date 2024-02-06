@@ -1,13 +1,29 @@
 FastFormat - News
 =================
 
-Updated:    26th September 2015
+Updated:    21st March 2021
 
 
 
 News:
 
+  6th February 2024     -   FastFormat 0.7.4 RC 6
+
+  21st March 2021       -   FastFormat 0.7.4 RC 5
+
+  5th February 2017     -   FastFormat 0.7.5 RC 4
+
+  5th February 2017     -   FastFormat 0.7.5 RC 3
+
+  30th November 2016    -   FastFormat 0.7.5 RC 2
+
+  16th August 2016      -   FastFormat 0.7.5 RC 1
+
+  15th August 2016      -   FastFormat 0.7.3
+
   26th September 2015   -   FastFormat 0.8.1 alpha 2
+
+  26th September 2015   -   FastFormat 0.7.2
 
   26th September 2015   -   FastFormat 0.7.1
 
@@ -151,4 +167,6 @@ News:
 
   3rd September 2008    -   FastFormat 0.2.1 alpha 1 released
 
+
 =============================== End of file ================================
+

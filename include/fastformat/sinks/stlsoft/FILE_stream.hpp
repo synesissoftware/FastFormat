@@ -4,11 +4,12 @@
  * Purpose:     A FastFormat sink for STLSoft's stlsoft::FILE_stream.
  *
  * Created:     19th July 2010
- * Updated:     21st January 2017
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -179,9 +180,9 @@ inline F& fmt_slices_(
     _MSC_VER < 1310
 
 inline
-FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream)&
+platformstl::FILE_stream&
 fmt_slices(
-    FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream)&   sink
+    platformstl::FILE_stream&   sink
 ,   int                         flags
 ,   size_t                      cchTotal
 ,   size_t                      numResults
@@ -211,13 +212,13 @@ template<
 ,   typename I
 >
 inline
-FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream_base)<R, I>&
+platformstl::FILE_stream_base<R, I>&
 fmt_slices(
-    FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(FILE_stream_base)<R, I>&    sink
-,   int                                                                 flags
-,   size_t                                                              cchTotal
-,   size_t                                                              numResults
-,   ff_string_slice_t const*                                            results
+    platformstl::FILE_stream_base<R, I>&    sink
+,   int                                     flags
+,   size_t                                  cchTotal
+,   size_t                                  numResults
+,   ff_string_slice_t const*                results
 )
 {
     return ximpl_FILE_stream::fmt_slices_(sink, flags, cchTotal, numResults, results);
@@ -239,3 +240,4 @@ fmt_slices(
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+

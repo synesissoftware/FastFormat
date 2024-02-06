@@ -4,11 +4,12 @@
  * Purpose:     Parse code strings for FastFormat API
  *
  * Created:     11th November 2013
- * Updated:     10th January 2017
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2013-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2013-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -45,9 +46,11 @@
  */
 
 #include "ximpl_core.hpp"
+
 #ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
 # define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
 #endif
+
 #include <fastformat/internal/threading.h>
 #include <fastformat/init_codes.h>
 #include <fastformat/quality/contract.h>

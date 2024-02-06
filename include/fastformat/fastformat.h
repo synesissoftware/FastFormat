@@ -4,11 +4,12 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     5th February 2017
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -96,6 +97,8 @@
 # define FASTFORMAT_VER_0_7_4_RC_2          0x00070482
 # define FASTFORMAT_VER_0_7_4_RC_3          0x00070483
 # define FASTFORMAT_VER_0_7_4_RC_4          0x00070484
+# define FASTFORMAT_VER_0_7_4_RC_5          0x00070485
+# define FASTFORMAT_VER_0_7_4_RC_6          0x00070486
 # define FASTFORMAT_VER_0_8_1_ALPHA_1       0x00080101
 # define FASTFORMAT_VER_0_8_1_ALPHA_2       0x00080102
 # define FASTFORMAT_VER_0_8_1_ALPHA_3       0x00080103
@@ -547,9 +550,9 @@ typedef illformedHandler_info_t         illformed_handler_info_t;
  */
 
 /** Determines mismatched replacement action
- * 
+ *
  * This is only acted upon (within fastformat_fillReplacements()) only
- * when a mismatched-handler returns 
+ * when a mismatched-handler returns
  *
  * \ingroup group__format_specification_defect_handling
  */
@@ -614,7 +617,7 @@ typedef ff_replacement_action_t         replacement_action_t;
  *   that notification pertains to no parameter
  * \param action This parameter will point to a variable to receive an
  *   action that will determine what to do in the event of a missing argument
- *   (as indicated by \c code having the 
+ *   (as indicated by \c code having the
  *   value \c FF_REPLACEMENTCODE_MISSING_ARGUMENT); it's value is ignored in
  *   other cases, and the implementer may ignore it.
  * \param slice A pointer to a slice to receive any replacement string for

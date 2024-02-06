@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.format_alignment project.
  *
  * Created:     1st June 2008
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -49,13 +40,6 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
-/* /////////////////////////////////////////////////////////////////////////
- * macros and definitions
- */
-
-/* /////////////////////////////////////////////////////////////////////////
- * globals
- */
 
 /* /////////////////////////////////////////////////////////////////////////
  * types
@@ -64,6 +48,7 @@
 #if 0
 typedef std::string     string_t;
 #endif /* 0 */
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -147,4 +132,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

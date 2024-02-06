@@ -4,21 +4,13 @@
  * Purpose:     Implementation file for the example.sink.c_string project.
  *
  * Created:     17th May 2009
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -39,11 +31,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * compatibility
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -91,7 +85,7 @@ static int main_(int /* argc */, char** /* argv */)
 
         STLSOFT_ASSERT(17u == sink.size());
 
-        ff::write(sink, arg2); // Teleport to ... 
+        ff::write(sink, arg2); // Teleport to ...
 
         STLSOFT_MESSAGE_ASSERT("should never get here", 0);
     }
@@ -123,4 +117,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

@@ -4,11 +4,12 @@
  * Purpose:     Initialisation code strings for FastFormat API
  *
  * Created:     27th May 2008
- * Updated:     21st January 2017
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -71,9 +72,9 @@ typedef struct InitCodeString  InitCodeString;
 struct InitCodeString
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 {
-    int                 code;   /*!< The initialisation code. */
-    ff_char_t const*    str;    /*!< The string.        */
-    size_t              len;    /*!< The string length. */
+    int                 code;   /*!< The initialisation code.   */
+    ff_char_t const*    str;    /*!< The string.                */
+    size_t              len;    /*!< The string length.         */
 };
 
 static ff_char_t s_emptyString[1] = { '\0' };

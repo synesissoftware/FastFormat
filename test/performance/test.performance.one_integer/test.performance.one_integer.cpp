@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.performance.one_integer project.
  *
  * Created:     9th September 2006
- * Updated:     22nd January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2006-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -146,15 +137,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * globals
  */
 
 extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.one_integer";
 
-/* /////////////////////////////////////////////////////////////////////////////
- * types
- */
 
 /* /////////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -175,6 +164,7 @@ static CString      with_MFC(int value);
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING */
 static std::string  with_FF_Write(int value);
 static std::string  with_FF_Format(int value);
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -710,6 +700,7 @@ int main(int argc, char *argv[])
     return EXIT_FAILURE;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * conversion functions
  */
@@ -804,4 +795,6 @@ static std::string with_FF_Format(int value)
     return str;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

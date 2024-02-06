@@ -4,11 +4,12 @@
  * Purpose:     Declarations of internal shared core functions.
  *
  * Created:     3rd February 2012
- * Updated:     21st January 2017
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2012-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2012-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -73,7 +74,10 @@ class ximpl_core
 {
 private: // Types
 #ifdef FASTFORMAT_NO_NAMESPACE
-    typedef ff_format_element_t                     format_element_t;
+    typedef ff_format_element_t                             format_element_t;
+#else
+    typedef ff_illformedHandler_info_t                      illformed_handler_info_type;
+    typedef ff_mismatchedHandler_info_t                     mismatched_handler_info_type;
 #endif /* FASTFORMAT_NO_NAMESPACE */
 
 private:
@@ -105,17 +109,17 @@ public: // Defect handlers - in fmt_spec_defect_handlers.cpp
     static int      fastformat_impl_handlers_init(void **ptoken);
     static void     fastformat_impl_handlers_uninit(void* token);
 
-    static ff_illformedHandler_info_t fastformat_impl_handlers_getIllformedProcessHandler(void* token);
-    static ff_illformedHandler_info_t fastformat_impl_handlers_setIllformedProcessHandler(void* token, ff_illformedHandler_info_t handler_info);
-    static ff_illformedHandler_info_t fastformat_impl_handlers_getIllformedThreadHandler(void* token);
-    static ff_illformedHandler_info_t fastformat_impl_handlers_setIllformedThreadHandler(void* token, ff_illformedHandler_info_t handler_info);
-    static ff_illformedHandler_info_t fastformat_impl_handlers_getDefaultIllformedHandler(void* token);
+    static illformed_handler_info_type fastformat_impl_handlers_getIllformedProcessHandler(void* token);
+    static illformed_handler_info_type fastformat_impl_handlers_setIllformedProcessHandler(void* token, illformed_handler_info_type handler_info);
+    static illformed_handler_info_type fastformat_impl_handlers_getIllformedThreadHandler(void* token);
+    static illformed_handler_info_type fastformat_impl_handlers_setIllformedThreadHandler(void* token, illformed_handler_info_type handler_info);
+    static illformed_handler_info_type fastformat_impl_handlers_getDefaultIllformedHandler(void* token);
 
-    static ff_mismatchedHandler_info_t fastformat_impl_handlers_getMismatchedProcessHandler(void* token);
-    static ff_mismatchedHandler_info_t fastformat_impl_handlers_setMismatchedProcessHandler(void* token, ff_mismatchedHandler_info_t handler_info);
-    static ff_mismatchedHandler_info_t fastformat_impl_handlers_getMismatchedThreadHandler(void* token);
-    static ff_mismatchedHandler_info_t fastformat_impl_handlers_setMismatchedThreadHandler(void* token, ff_mismatchedHandler_info_t handler_info);
-    static ff_mismatchedHandler_info_t fastformat_impl_handlers_getDefaultMismatchedHandler(void* token);
+    static mismatched_handler_info_type fastformat_impl_handlers_getMismatchedProcessHandler(void* token);
+    static mismatched_handler_info_type fastformat_impl_handlers_setMismatchedProcessHandler(void* token, mismatched_handler_info_type handler_info);
+    static mismatched_handler_info_type fastformat_impl_handlers_getMismatchedThreadHandler(void* token);
+    static mismatched_handler_info_type fastformat_impl_handlers_setMismatchedThreadHandler(void* token, mismatched_handler_info_type handler_info);
+    static mismatched_handler_info_type fastformat_impl_handlers_getDefaultMismatchedHandler(void* token);
 
 }; /* class ximpl_core */
 
@@ -130,3 +134,4 @@ public: // Defect handlers - in fmt_spec_defect_handlers.cpp
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+

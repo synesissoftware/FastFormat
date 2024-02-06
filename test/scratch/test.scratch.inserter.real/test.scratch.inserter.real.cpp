@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.inserter.real project.
  *
  * Created:     1st March 2009
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -59,23 +50,6 @@
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
-/* /////////////////////////////////////////////////////////////////////////
- * macros and definitions
- */
-
-
-/* /////////////////////////////////////////////////////////////////////////
- * globals
- */
-
-
-/* /////////////////////////////////////////////////////////////////////////
- * types
- */
-
-/* /////////////////////////////////////////////////////////////////////////
- * forward declarations
- */
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -200,4 +174,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.sink.ostream project.
  *
  * Created:     14th September 2010
- * Updated:     5th February 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -55,6 +46,7 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
  */
@@ -67,6 +59,7 @@ static void test_1_5();
 static void test_1_6();
 static void test_1_7();
 static void test_1_8();
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -95,6 +88,7 @@ int main(int argc, char** argv)
 
     return retCode;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -374,4 +368,6 @@ static void open_or_throw(
     stm.open(fileName);
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

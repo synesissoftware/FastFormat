@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.string_array project.
  *
  * Created:     24th December 2007
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -45,6 +36,7 @@
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
  */
@@ -59,6 +51,7 @@ static void test_1_7();
 static void test_1_8();
 static void test_1_9();
 static void test_1_10();
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -132,6 +125,7 @@ int main(int argc, char** argv)
 
     return res;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -247,4 +241,6 @@ static void test_1_10()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

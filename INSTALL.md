@@ -24,7 +24,7 @@ The following steps are required to install FastFormat:
 
     7. Open a command shell in the appropriate directory that matches your
        compiler:
-       
+
        * if you're compiling with Visual C++ 7.1 then cd to build/vc71
        * if you're compiling for UNIX with GCC 4.5, then cd
          to build/gcc42.unix
@@ -44,4 +44,6 @@ The following steps are required to install FastFormat:
 NOTE: FastFormat depends on the (header-only) STLSoft libraries - version
   1.9.131 or later - available from http://www.stlsoft.org/.
 
+
 =============================== End of file ================================
+

@@ -5,16 +5,7 @@
  *              project.
  *
  * Created:     30th April 2009
- * Updated:     8th July 2009
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -266,4 +257,6 @@ int output_by_boost_2()
 }
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

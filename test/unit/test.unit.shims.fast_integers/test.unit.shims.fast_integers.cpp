@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.unit.inserters.integer project.
  *
  * Created:     11th December 2010
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2010-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -51,6 +42,7 @@
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * macros
@@ -96,6 +88,7 @@
     
 /* std::string(stlsoft::a2t"" #actual */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
  */
@@ -125,6 +118,7 @@ namespace
     static void test_1_19(void);
 
 } /* anonymous namespace */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
@@ -167,6 +161,7 @@ int main(int argc, char **argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * test function implementations
@@ -575,4 +570,6 @@ static void test_1_19()
 
 } /* anonymous namespace */
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

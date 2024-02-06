@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.inserter.integer project.
  *
  * Created:     26th April 2008
- * Updated:     21st January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -45,6 +36,7 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Decimal places expected as correct, per compiler
  */
@@ -66,6 +58,7 @@ namespace
 #endif
 
 } /* anonymous namespace */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -156,6 +149,7 @@ namespace
 #endif /* 0 */
 
 } /* anonymous namespace */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
@@ -260,6 +254,7 @@ int main(int argc, char **argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * test function implementations
@@ -1240,6 +1235,7 @@ static void test_3_29()
 
 
 } /* anonymous namespace */
+
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

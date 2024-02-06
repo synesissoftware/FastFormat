@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.performance.overload.ex.1 project.
  *
  * Created:     19th October 2008
- * Updated:     22nd January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -146,17 +137,20 @@
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * macros
  */
 
 #define TX(x)       FASTFORMAT_LITERAL_STRING(x)
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * globals
  */
 
 extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.overload.ex.1";
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -626,4 +620,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

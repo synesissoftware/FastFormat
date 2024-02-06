@@ -4,11 +4,12 @@
  * Purpose:     Implementation file for FastFormat core API: replacements.
  *
  * Created:     18th September 2006
- * Updated:     21st January 2017
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2006-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -40,13 +41,36 @@
 
 
 
-/* /////////////////////////////////////////////////////////////////////////
- * includes
- */
-
 // #define FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS // This is not defined by default, but unreferenced arguments are not always a defect
 
+/* /////////////////////////////////////////////////////////////////////////
+ * includes - 0
+ */
+
+#include <stlsoft/stlsoft.h>
+
 #include "ximpl_core.hpp"
+
+#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+#endif
+
+/* /////////////////////////////////////////////////////////////////////////
+ * compatibility
+ */
+
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC)
+# if _MSC_VER == 1500
+#  pragma warning(disable : 4551)
+# endif
+#else
+#endif
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes - 1
+ */
+
 #include <fastformat/internal/format_element.h>
 #include <fastformat/internal/threading.h>
 #include <fastformat/exceptions.hpp>
@@ -249,7 +273,7 @@ namespace
     // format element as a literal, and updates the counters. It does NOT
     // update the pointer(s)
     inline
-    void 
+    void
     record_parameter_as_literal_(
         ff_char_t const*        p0
     ,   ff_char_t const* const  p1
@@ -277,7 +301,7 @@ namespace
 #endif
 
     inline
-    int 
+    int
     parse_replacement_find_next_token_(
         ff_char_t const*        start
     ,   ff_char_t const* const  end
@@ -424,7 +448,7 @@ namespace
     // into the format element as a literal, and updates the counters. It
     // does NOT update the pointer(s)
     inline
-    int 
+    int
     parse_parameter_(
         ff_char_t const*        p0
     ,   ff_char_t const* const  p1
@@ -600,7 +624,7 @@ namespace
     ,   size_t                      /* reserved1 */
     ,   void*                       /* reserved2 */
     ,   int                         /* reserved3 */
-    )                               
+    )
     {
         // Simplistic factory for exceptions
 
@@ -723,6 +747,7 @@ namespace
 
             ff_illformedHandler_info_t const* const end     =   &handlers[0] + STLSOFT_NUM_ELEMENTS(handlers);
             ff_illformedHandler_info_t const* const begin   =   end - numHandlers;
+
             { for(ff_illformedHandler_info_t const* it = begin; it != end; ++it)
             {
                 ff_handler_response_t const hr = (*(*it).handler)(
@@ -793,6 +818,7 @@ namespace
             {
                 ff_illformedHandler_info_t const* const end     =   &handlers[0] + STLSOFT_NUM_ELEMENTS(handlers);
                 ff_illformedHandler_info_t const* const begin   =   end - numHandlers;
+
                 for(ff_illformedHandler_info_t const* it = begin; it != end; ++it)
             {
                 FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL != (*it).handler);
@@ -1126,7 +1152,7 @@ FASTFORMAT_CALL(unsigned) fastformat_parseFormat(
                         FASTFORMAT_COVER_MARK_ENTRY();
 
                         // Handle "malformed"
-                        
+
                         size_t  len = 2; // TODO: find '}' in [p1, end), and use that distance; assume '{'
 
                         { for(ff_char_t const* p2 = p1; end != p2; ++p2)

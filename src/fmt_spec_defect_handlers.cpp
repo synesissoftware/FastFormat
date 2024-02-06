@@ -5,11 +5,12 @@
  *              handlers.
  *
  * Created:     26th November 2007
- * Updated:     21st January 2017
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,11 +42,36 @@
 
 
 
+// #define FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS // This is not defined by default, but unreferenced arguments are not always a defect
+
 /* /////////////////////////////////////////////////////////////////////////
- * includes
+ * includes - 0
  */
 
+#include <stlsoft/stlsoft.h>
+
 #include "ximpl_core.hpp"
+
+#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+#endif
+
+/* /////////////////////////////////////////////////////////////////////////
+ * compatibility
+ */
+
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC)
+# if _MSC_VER == 1500
+#  pragma warning(disable : 4551)
+# endif
+#else
+#endif
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes - 1
+ */
+
 #include <fastformat/internal/threading.h>
 #include <fastformat/exceptions.hpp>
 #include <fastformat/init_codes.h>

@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the example.overload.3.record_insert project.
  *
  * Created:     20th September 2008
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -51,22 +42,13 @@ platformstl_ns_using(performance_counter)
 #endif /* _MSC_VER) && _DEBUG */
 
 /* /////////////////////////////////////////////////////////////////////////
- * macros and definitions
- */
-
-
-/* /////////////////////////////////////////////////////////////////////////
- * globals
- */
-
-
-/* /////////////////////////////////////////////////////////////////////////
- * types
+ * Typedefs
  */
 
 #if 0
 typedef std::string     string_t;
 #endif /* 0 */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * record insertion functions
@@ -310,6 +292,7 @@ std::string BusinessAdapter::insertRecord_ff_write( const BusinessRecord& r )
     return result;
 }
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
 #ifdef _DEBUG
@@ -513,4 +496,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

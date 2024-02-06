@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.unit.failure.mismatched.arguments project.
  *
  * Created:     28th October 2013
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2013-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -38,6 +29,7 @@
 
 /* Standard C Header Files */
 #include <stdlib.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -68,6 +60,7 @@ namespace
     static void test_1_19(void);
 
 } /* anonymous namespace */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
@@ -110,6 +103,7 @@ int main(int argc, char **argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * test function implementations
@@ -272,4 +266,6 @@ static void test_1_19()
 
 } /* anonymous namespace */
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

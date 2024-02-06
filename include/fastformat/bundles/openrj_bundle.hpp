@@ -204,7 +204,7 @@ openrj_bundle::open_(
 
     ORJError            error;
     ORJRC               rc;
-    ORJDatabase const   *database;
+    ORJDatabase const*  database;
 
     if(treatSourceAsMemory & flags)
     {

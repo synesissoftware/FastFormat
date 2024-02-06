@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.sink.string.fmt project.
  *
  * Created:     19th December 2007
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -48,6 +39,7 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -98,6 +90,7 @@ namespace
     static void test_2_11();
 
 } /* anonymous namespace */
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -201,6 +194,7 @@ int main(int argc, char** argv)
 
     return res;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -609,4 +603,6 @@ static void test_2_11()
 
 } /* anonymous namespace */
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

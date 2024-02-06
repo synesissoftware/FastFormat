@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the example.overload.2.custom_type.string_access_shims project.
  *
  * Created:     2nd March 2009
- * Updated:     10th January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -69,6 +60,7 @@ namespace stlsoft
     size_t c_str_len_a(superhero const& hero);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
@@ -93,6 +85,7 @@ namespace stlsoft
 /* Standard C Header Files */
 #include <stdlib.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * string access shims
  */
@@ -103,7 +96,7 @@ namespace stlsoft
 #if !defined(STLSOFT_COMPILER_IS_BORLAND) /* Borland is messed up, and cannot handle the filter type mechanism */ && \
     !defined(STLSOFT_COMPILER_IS_DMC) /* DMC++ gets confused and can't find any matches for c_str_data_a */
 
-    // The version of basic_shim_string available from STLSoft 1.10.1 
+    // The version of basic_shim_string available from STLSoft 1.10.1
     // alpha 9, or later, can be used directly.
     //
     // Otherwise, we must use the fastformat::sinks::sinks::shim_string_sink
@@ -143,6 +136,7 @@ size_t c_str_len_a(superhero const& hero)
 
 } // namespace stlsoft
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
 static int main_(int /* argc */, char** /*argv*/)
@@ -177,4 +171,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.performance.three_strings_one_integer project.
  *
  * Created:     19th September 2006
- * Updated:     22nd January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2006-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -146,6 +137,7 @@
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * macros
  */
@@ -154,11 +146,13 @@
 
 //#define SHOW_FIRST_RESULT
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * globals
  */
 
 extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.three_strings_one_integer";
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -611,4 +605,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

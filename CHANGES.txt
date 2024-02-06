@@ -1,7 +1,7 @@
 FastFormat - Changes
 =====================
 
-Updated:    26th September 2015
+Updated:    6th February 2024
 
 
     ************************************
@@ -13,6 +13,34 @@ Updated:    26th September 2015
     *  *  means a general bullet-point *
     *                                  *
     ************************************
+
+
+6th February 2024 - 0.7.4 RC 6
+==============================
+
+Summary:
+--------
+
+ * CMake support
+
+Details:
+--------
+
+ -
+
+
+21st March 2021 - 0.7.4 RC-5
+============================
+
+Summary:
+--------
+
+ * VC++ 15/16 compatibility
+
+Details:
+--------
+
+ -
 
 
 28th September 2015 - 0.8.1 alpha 3
@@ -32,8 +60,6 @@ General:
    ~ missing_argument_exception.numberOfReplacements replaced by missing_argument_exception.numArguments
    ~ mismatched_replacements_exception.numberOfReplacements replaced by mismatched_replacements_exception.numArguments
    ~ unreferenced_argument_exception.numberOfReplacements replaced by unreferenced_argument_exception.numArguments
-
-
 
 Core:
 
@@ -5784,4 +5810,6 @@ Depends on:
 To all intents and purposes, this is the first public release of
 FastFormat. From here on in, it gets interesting ....
 
+
 =============================== End of file ================================
+
