@@ -1,7 +1,13 @@
 FastFormat - History
 ====================
 
-Updated:    21st March 2021
+Updated:    6th February 2024
+
+
+6th February 2024 - 0.7.4 RC 6
+------------------------------
+
+ * CMake support
 
 
 21st March 2021 - 0.7.4 RC 5

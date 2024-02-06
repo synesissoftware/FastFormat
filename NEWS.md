@@ -7,6 +7,8 @@ Updated:    21st March 2021
 
 News:
 
+  6th February 2024     -   FastFormat 0.7.4 RC 6
+
   21st March 2021       -   FastFormat 0.7.4 RC 5
 
   5th February 2017     -   FastFormat 0.7.5 RC 4
