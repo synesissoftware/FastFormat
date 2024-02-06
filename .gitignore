@@ -1,6 +1,8 @@
 
 # directories (by name)
 
+/_build/
+
 include/b64/
 include/shwild/
 include/xcontract/

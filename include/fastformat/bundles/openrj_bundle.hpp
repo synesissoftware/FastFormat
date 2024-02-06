@@ -201,7 +201,7 @@ inline /* static */ ::openrj::ORJDatabase const *openrj_bundle::open_(char const
 
     ORJError            error;
     ORJRC               rc;
-    ORJDatabase const   *database;
+    ORJDatabase const*  database;
 
     if(treatSourceAsMemory & flags)
     {
@@ -244,7 +244,7 @@ inline openrj_bundle::string_type openrj_bundle::operator [](char const *name) c
 
     FASTFORMAT_CONTRACT_ENFORCE_CLASS_INVARIANT_APPL_LAYER(NULL != m_database, "underlying database cannot be null");
 
-    ORJField const  *field  =   ORJ_Record_FindFieldByNameA(&m_database->records[0], name, NULL);
+    ORJField const* const field = ORJ_Record_FindFieldByNameA(&m_database->records[0], name, NULL);
 
     if(NULL == field)
     {

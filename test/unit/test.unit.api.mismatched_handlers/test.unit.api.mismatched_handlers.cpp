@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.unit.api.mismatched_handlers project.
  *
  * Created:     27th May 2008
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -42,6 +33,7 @@
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////////
  * Macros and definitions
@@ -107,6 +99,7 @@ inline int compare_function_pointers(param p1, param p2, XTESTS_NS_C_QUAL(xtests
 
 #endif
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Forward declarations
  */
@@ -129,6 +122,7 @@ namespace
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Helper functions
  */
@@ -147,6 +141,7 @@ int ff_teardown(void*)
 
     return 0;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Main
@@ -189,6 +184,7 @@ int main(int argc, char **argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test function implementations
@@ -365,4 +361,6 @@ static void test_11()
 
 } // anonymous namespace
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

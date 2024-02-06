@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the example.arguments.reals project.
  *
  * Created:     2nd June 2008
- * Updated:     5th February 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -41,6 +32,7 @@ using std::endl;
 
 /* Standard C header files */
 #include <stdlib.h>
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -78,7 +70,7 @@ static int main_(int argc, char** /*argv*/)
     if(0 == argc)
     {
         const int       i   =   -123;
-    
+
 # ifdef FASTFORMAT_USE_WIDE_STRINGS
         fastformat::fmtln(std::wcout, L"an integer={0}", i);
 # else /* ? FASTFORMAT_USE_WIDE_STRINGS */
@@ -108,4 +100,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

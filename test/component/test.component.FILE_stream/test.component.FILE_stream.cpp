@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.FILE_stream project.
  *
  * Created:     3rd January 2008
- * Updated:     22nd January 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -27,7 +18,6 @@
 /* FastFormat Header Files */
 #include <fastformat/sinks/stlsoft/FILE_stream.hpp>
 #include <fastformat/ff.hpp>
-#include <fastformat/util/filesystem/FILE_functions.hpp>
 
 /* xTests Header Files */
 #include <xtests/xtests.h>
@@ -229,3 +219,4 @@ static void test_1_8()
 {}
 
 /* ///////////////////////////// end of file //////////////////////////// */
+

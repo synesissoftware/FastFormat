@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.FILE project.
  *
  * Created:     24th September 2006
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -69,6 +60,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * Character-encoding compatibility
  */
@@ -81,11 +73,13 @@
 # define    std_string      std::string
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * Macros and definitions
  */
 
 #define FF_STR      FASTFORMAT_LITERAL_STRING
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -377,4 +371,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

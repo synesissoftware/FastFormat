@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.speech project.
  *
  * Created:     27th November 2007
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2007-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -46,6 +37,7 @@
     defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
+
 
 /* /////////////////////////////////////////////////////////////////////////////
  * Macros and definitions
@@ -85,6 +77,7 @@
 #  define FF_CONFIGURATION  "single-threaded debug"
 # endif /* NDEBUG */
 #endif /* FASTFORMAT_MT */
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -158,4 +151,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

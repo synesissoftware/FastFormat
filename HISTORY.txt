@@ -208,7 +208,7 @@ Updated:    21st March 2021
 -----------------------
 
  * now fully supports '#' as fill character (in addition to ' ')
- * ensures all (format specification defect) exceptions are correctly propagated to the caller 
+ * ensures all (format specification defect) exceptions are correctly propagated to the caller
  * detects (and rejects) negative width elements
  * detects (and rejects) extra format specifier elements
  + added test.component.format_specification_defect_exceptions
@@ -276,8 +276,8 @@ Updated:    21st March 2021
  * minor correction to makefile targets
  * NOTE: bundles xTests 0.14.4
  * NOTE: depends on STLSoft 1.9.90
- 
- 
+
+
 20th January 2010 - 0.4.5
 -------------------------
 
@@ -285,8 +285,8 @@ Updated:    21st March 2021
  * compatibility fixes for 64-bit compilation
  * NOTE: bundles xTests 0.14.3
  * NOTE: depends on STLSoft 1.9.89
- 
- 
+
+
 10th July 2009 - 0.4.4
 ----------------------
 
@@ -508,7 +508,7 @@ Updated:    21st March 2021
  * renaming/addition of several nested namespaces
  * preparation for full localisation via renaming of stock (non-localised) conversion components
  * added support for shim_string sinks, which facilitate high-speed intermediate conversion in composite statements
- * NOTE: this includes some potentially BREAKING CHANGES from 0.2, due to namespace name changes. You may have to modify your customisations (sinks and/or filtering) accordingly 
+ * NOTE: this includes some potentially BREAKING CHANGES from 0.2, due to namespace name changes. You may have to modify your customisations (sinks and/or filtering) accordingly
  * NOTE: depends on STLSoft 1.9.68
 
 
@@ -602,7 +602,7 @@ Updated:    21st March 2021
  * changed per-handler information (both ill-formed & mismatched) to use
    paired handler function + opaque parameter, to allow user-level chaining
    of handlers
- * added support for parameters of type void* (and all cv-forms)   
+ * added support for parameters of type void* (and all cv-forms)
  * added ignore_unreferenced_arguments_scope scoping class that causes
    unreferenced arguments to be ignored in the current thread (or the
    whole process, in the case of single-threaded operation).
@@ -621,7 +621,7 @@ Updated:    21st March 2021
 -----------------------------------
 
  * added new sink for CComBSTR
- * fixed widestring compatibility for speech sink 
+ * fixed widestring compatibility for speech sink
 
 
 19th November 2008 - 0.2.1 alpha 10
@@ -722,4 +722,6 @@ Updated:    21st March 2021
 
  All history before this day is moot!
 
+
 =============================== End of file ================================
+

@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.FILE project.
  *
  * Created:     3rd January 2008
- * Updated:     5th February 2017
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2007-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -52,6 +43,7 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Forward declarations
  */
@@ -81,6 +73,7 @@ static int   fclose_(FILE* stm)
 # define fclose     fclose_
 #endif /* __BORLANDC__ */
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
 int main(int argc, char** argv)
@@ -108,6 +101,7 @@ int main(int argc, char** argv)
 
     return retCode;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -261,4 +255,6 @@ static FILE* fopen_or_throw(char const* fileName, char const* mode /* = "r" */)
     return f;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

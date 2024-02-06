@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.implicit_integer project.
  *
  * Created:     1st June 2008
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -42,15 +33,6 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
-/* /////////////////////////////////////////////////////////////////////////
- * Macros and definitions
- */
-
-
-/* /////////////////////////////////////////////////////////////////////////
- * Globals
- */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Typedefs
@@ -59,6 +41,7 @@
 #if 0
 typedef std::string     string_t;
 #endif /* 0 */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Filters
@@ -92,6 +75,7 @@ namespace fastformat
     } // namespace filters
 
 } // namespace fastformat
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -168,4 +152,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

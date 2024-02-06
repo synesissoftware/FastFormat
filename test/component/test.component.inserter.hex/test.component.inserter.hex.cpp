@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.inserter.hex project.
  *
  * Created:     16th January 2010
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -43,6 +34,7 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Decimal places expected as correct, per compiler
  */
@@ -51,6 +43,7 @@ namespace
 {
 
 } /* anonymous namespace */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Forward declarations
@@ -104,6 +97,7 @@ namespace
     static void test_2_20(void);
 
 } // anonymous namespace
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Main
@@ -169,6 +163,7 @@ int main(int argc, char **argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test function implementations
@@ -536,4 +531,6 @@ static void test_2_20()
 
 } // anonymous namespace
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

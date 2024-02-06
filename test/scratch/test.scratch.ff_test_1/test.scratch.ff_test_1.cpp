@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.ff_test_1 project.
  *
  * Created:     15th September 2006
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -71,6 +62,7 @@
     defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -134,9 +126,9 @@ static int main_(int /* argc */, char * /* argv */ [])
     {
         namespace ff = ::fastformat;
 
-        std::string     s;
-        time_t          t   =   ::time(NULL);
-        struct tm       *tm =   ::gmtime(&t);
+        std::string         s;
+        time_t              t   =   ::time(NULL);
+        struct tm* const    tm  =   ::gmtime(&t);
 
         ff::fmt(s, "Param #1: {0}; param #2: {1}; param #1 again: {0}", tm, "def");
 
@@ -433,4 +425,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

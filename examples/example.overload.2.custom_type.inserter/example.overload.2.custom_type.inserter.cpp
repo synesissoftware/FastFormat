@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the example.overload.2.custom_type.inserter project.
  *
  * Created:     2nd March 2009
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -54,6 +45,7 @@ public: /// Member Variables
     const int           goodness;
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Includes
  */
@@ -74,6 +66,7 @@ public: /// Member Variables
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Compatibility
  */
@@ -87,6 +80,7 @@ public: /// Member Variables
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Forward declarations
  */
@@ -99,6 +93,7 @@ std::string edna_3(superhero const& hero);
 std::string edna_4(superhero const& hero);
 std::string edna_5(superhero const& hero);
 #endif /* compiler */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Helper functions
@@ -173,6 +168,7 @@ std::string edna_5(superhero const& hero)
 
 #endif /* compiler */
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
 ff::properties_bundle* bundle;
@@ -183,6 +179,7 @@ ff::properties_bundle const& getAppBundle()
 
     return *bundle;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -262,4 +259,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

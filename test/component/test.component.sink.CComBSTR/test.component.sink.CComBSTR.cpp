@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.component.sink.CComBSTR project.
  *
  * Created:     14th September 2010
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2010-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -49,6 +40,7 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Forward declarations
  */
@@ -68,6 +60,7 @@ namespace
     static void test_1_10();
 
 } // anonymous namespace
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -141,6 +134,7 @@ int main(int argc, char** argv)
 
     return res;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -268,4 +262,6 @@ static void test_1_10()
 
 } // anonymous namespace
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

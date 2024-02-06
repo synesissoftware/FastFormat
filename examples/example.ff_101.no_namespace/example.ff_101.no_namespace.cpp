@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the example.ff_101.no_namespace project.
  *
  * Created:     2nd June 2008
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -57,6 +48,7 @@ using std::endl;
 
 /* Standard C header files */
 #include <stdlib.h>
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -285,4 +277,6 @@ int main(int argc, char** argv)
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

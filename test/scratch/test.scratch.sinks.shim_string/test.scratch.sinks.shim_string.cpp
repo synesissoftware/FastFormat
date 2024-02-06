@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.sinks.shim_string project.
  *
  * Created:     12th November 2008
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -54,6 +45,7 @@
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Typedefs
  */
@@ -75,9 +67,6 @@ public: /// Member Variables
     const int           age;
 };
 
-/* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
- */
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -143,4 +132,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

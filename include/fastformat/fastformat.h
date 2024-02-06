@@ -4,11 +4,11 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     21st March 2021
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2019-2021, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       22
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    8
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        107
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    9
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        108
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -98,13 +98,14 @@
 # define FASTFORMAT_VER_0_7_4_RC_3          0x00070483
 # define FASTFORMAT_VER_0_7_4_RC_4          0x00070484
 # define FASTFORMAT_VER_0_7_4_RC_5          0x00070485
+# define FASTFORMAT_VER_0_7_4_RC_6          0x00070486
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           7
 #define FASTFORMAT_VER_REVISION        4
 
-#define FASTFORMAT_VER                 FASTFORMAT_VER_0_7_4_RC_5
+#define FASTFORMAT_VER                 FASTFORMAT_VER_0_7_4_RC_6
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes - 1

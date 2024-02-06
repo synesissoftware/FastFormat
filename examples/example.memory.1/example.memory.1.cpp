@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the example.memory.1 project.
  *
  * Created:     20th September 2008
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -47,6 +38,7 @@
     defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Memory functions
@@ -162,6 +154,7 @@ static void test_1()
     }
 }
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
 static int main_(int /* argc */, char** /*argv*/)
@@ -274,4 +267,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

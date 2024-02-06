@@ -8,9 +8,8 @@
 
 #include <platformstl/performance/performance_counter.hpp>
 
-//#include <stlsoft/util/rand.hpp>
-
 #include <iostream>
+#include <limits>
 
 #include <stdio.h>
 
@@ -70,7 +69,7 @@ int main()
         ff::fmtln(std::cout, "{0} incremental (int) numbers in {1}us", static_cast<unsigned long>(INT_MAX) * 2, counter.get_microseconds());
     }
 
-    if(~(0) == x)
+    if(std::numeric_limits<unsigned>::max() == x)
     {
         fputs("", stdin);
     }

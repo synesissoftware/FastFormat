@@ -4,11 +4,12 @@
  * Purpose:     A FastFormat sink for STLSoft's stlsoft::FILE_stream.
  *
  * Created:     19th July 2010
- * Updated:     7th December 2010
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     3
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_REVISION 3
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     4
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -75,11 +76,7 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/util/sinks/helpers.hpp>
 
-#include <stlsoft/filesystem/FILE_stream.hpp>
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-        _MSC_VER < 1310
-# include <platformstl/filesystem/FILE_stream.hpp>
-#endif /* compiler */
+#include <platformstl/filesystem/FILE_stream.hpp>
 
 /* /////////////////////////////////////////////////////////////////////////
  * Namespace
@@ -195,12 +192,12 @@ template<
     typename R
 ,   typename I
 >
-inline stlsoft::FILE_stream_base<R, I>& fmt_slices(
-    stlsoft::FILE_stream_base<R, I>&    sink
-,   int                                 flags
-,   size_t                              cchTotal
-,   size_t                              numResults
-,   ff_string_slice_t const*            results
+inline platformstl::FILE_stream_base<R, I>& fmt_slices(
+    platformstl::FILE_stream_base<R, I>&    sink
+,   int                                     flags
+,   size_t                                  cchTotal
+,   size_t                                  numResults
+,   ff_string_slice_t const*                results
 )
 {
     return ximpl_FILE_stream::fmt_slices_(sink, flags, cchTotal, numResults, results);

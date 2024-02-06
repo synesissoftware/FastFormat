@@ -4,11 +4,12 @@
  * Purpose:     Implementation file for FastFormat core API: API init.
  *
  * Created:     20th November 2007
- * Updated:     28th October 2013
+ * Updated:     6th February 2024
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2007-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,7 +42,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
@@ -73,8 +74,9 @@
 
 #include <stdlib.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -82,8 +84,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Function declarations
+ * function declarations
  */
 
 namespace
@@ -94,8 +97,9 @@ namespace
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * typedefs
  */
 
 namespace
@@ -183,8 +187,9 @@ namespace
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation Functions
  */
 
 namespace
@@ -271,6 +276,7 @@ namespace
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * API Functions
  */
@@ -293,7 +299,7 @@ FASTFORMAT_CALL(int) fastformat_init()
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    // If we can make the initialisation thread-safe, without 
+    // If we can make the initialisation thread-safe, without
     // expense, then we do so.
     platformstl::spin_mutex                         mx(&s_mx);
     stlsoft::lock_scope<platformstl::spin_mutex>    lock(mx);
@@ -431,7 +437,7 @@ FASTFORMAT_CALL(void) fastformat_uninit()
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    // If we can make the (un)initialisation thread-safe, without 
+    // If we can make the (un)initialisation thread-safe, without
     // expense, then we do so.
     platformstl::spin_mutex                         mx(&s_mx);
     stlsoft::lock_scope<platformstl::spin_mutex>    lock(mx);
@@ -686,8 +692,9 @@ FASTFORMAT_CALL(ff_char_t const*) fastformat_getHashesSlice(size_t len)
     return ximpl_core::fastformat_impl_replacements_getHashes(s_stateReplacements, len);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -695,3 +702,4 @@ FASTFORMAT_CALL(ff_char_t const*) fastformat_getHashesSlice(size_t len)
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+

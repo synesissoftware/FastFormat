@@ -4,17 +4,8 @@
  * Purpose:     Implementation file for the test.performance.api.parse_format project.
  *
  * Created:     17th November 2008
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2008-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
- *
+ * Updated:     6th February 2024
+ * *
  * ////////////////////////////////////////////////////////////////////// */
 
 //#define FF_PRSFMT_USE_SV_PARAM
@@ -487,10 +478,9 @@ int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
 ,   void*                           reserved2
 )
 {
-    switch(code)
+    if (fastformat::FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT == code)
     {
-        case    fastformat::FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT:
-            return 0;
+        return 0;
     }
 
     return prev(param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);

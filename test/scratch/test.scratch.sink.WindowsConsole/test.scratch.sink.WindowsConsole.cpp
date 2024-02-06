@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.sink.WindowsConsole project.
  *
  * Created:     6th January 2011
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2011-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -32,6 +23,7 @@
 /* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -66,4 +58,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

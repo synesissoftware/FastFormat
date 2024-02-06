@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.scratch.sink.WindowsMessageBox project.
  *
  * Created:     4th January 2009
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -46,6 +37,7 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 #include "resource.h"
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -110,6 +102,7 @@ void Display32bitFileSize(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
     ::DialogBoxParam(hinst, MAKEINTRESOURCE(IDD_PARENT), parent, ParentProc, (LPARAM)fileName);
 }
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
 static int main_(int argc, char** argv)
@@ -167,4 +160,6 @@ int main(int argc, char** argv)
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

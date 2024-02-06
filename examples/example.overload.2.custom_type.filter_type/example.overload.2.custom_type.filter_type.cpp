@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the example.overload.2.custom_type.filter_type project.
  *
  * Created:     2nd March 2009
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2009-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -55,6 +46,7 @@ public:
         : superhero(name, weight, strength, goodness)
     {}
 };
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Helper functions
@@ -102,6 +94,7 @@ namespace filters
 
 #endif /* FF_COMPILER_SUPPORTS_FILTER_TYPE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Includes
  */
@@ -119,6 +112,7 @@ namespace filters
 
 /* Standard C header files */
 #include <stdlib.h>
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -140,6 +134,7 @@ std::string superhero_to_string(superhero const& hero)
 
     return result;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -176,4 +171,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+

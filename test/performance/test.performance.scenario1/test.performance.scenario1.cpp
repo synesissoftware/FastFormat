@@ -4,16 +4,7 @@
  * Purpose:     Implementation file for the test.performance.scenario1 project.
  *
  * Created:     19th September 2006
- * Updated:     26th September 2015
- *
- * Status:      Wizard-generated
- *
- * License:     (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2006-2015, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated:     6th February 2024
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -142,17 +133,20 @@
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * Macros
  */
 
 #define TX(x)       FASTFORMAT_LITERAL_STRING(x)
 
+
 /* /////////////////////////////////////////////////////////////////////////////
  * Globals
  */
 
 extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.scenario1";
+
 
 /* /////////////////////////////////////////////////////////////////////////////
  * Typedefs
@@ -162,6 +156,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.scenar
 
 #define PERF_TEST_USE_3_PARAMS
 //#define PERF_TEST_USE_4_PARAMS_3_STR_1_INT
+
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
@@ -661,4 +656,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
+
 /* ///////////////////////////// end of file //////////////////////////// */
+
