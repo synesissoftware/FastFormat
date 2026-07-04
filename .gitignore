@@ -1,80 +1,199 @@
+# Synesis Information Systems .gitignore for C/C++ libraries
+
 
 # directories (by name)
 
+/.git-old/
+/.vs/
+
+.svn/
+
+.classpath
+/.idea/
+/__pycache__
+/node_modules
+
 /_build/
+/_build-ci/
+/_internal/
+/_analyses/
 
-include/b64/
-include/shwild/
-include/xcontract/
-include/xcover/
-include/xtests/
-
-src/b64/
-src/shwild/
-src/xcontract/
-src/xcover/
-src/xtests/
-
-vc71/
-vc8/
-vc9/
-
+/bin/
+/ipch/
+/lib/
 bin/
-
+ipch/
 lib/
 
+/doc/
+/docs/
+/dox/
+/dox
+/ideas/
 ideas/
+/included/
+/releases/
+/scratch/
+/temp/
 
-bin/
+/--include
+/--src
+/-include
+/-src
 
-lib/
+/examples/bin
+/examples/c/bin
+/examples/cpp/bin
 
-ideas/
+/examples/lib
+/examples/c/lib
+/examples/cpp/lib
 
-Debug/
-Debug Multithreaded/
+projects/util/vc10-generated/
+
+perf_test/
+
+scripts/internal/
+
+/include/b64/
+/include/shwild/
+/include/xcontract/
+/include/xcover/
+/include/xtests/
+/src/b64/
+/src/shwild/
+/src/xcontract/
+/src/xcover/
+/src/xtests/
 Debug Multithreaded DLL/
-Unicode Debug/
-Unicode Debug Multithreaded/
-Unicode Debug Multithreaded DLL/
-Release/
-Release Multithreaded/
+Debug Multithreaded Dll/
+Debug Multithreaded pseudoUNIX/
+Debug Multithreaded pseudoUnix/
+Debug Multithreaded/
+Debug/
+DebugDLL/
+DebugDLLUNIX/
+DebugDll/
+DebugMTDLL/
+DebugMTDll/
+DebugMTUnix/
+DebugMt/
+DebugNox/
+DebugUNIX/
+DebugUnix/
 Release Multithreaded DLL/
-Unicode Release/
-Unicode Release Multithreaded/
+Release Multithreaded Dll/
+Release Multithreaded pseudoUNIX/
+Release Multithreaded pseudoUnix/
+Release Multithreaded/
+Release/
+ReleaseDLL/
+ReleaseDLLUNIX/
+ReleaseDll/
+ReleaseMTDLL/
+ReleaseMTDll/
+ReleaseMTUnix/
+ReleaseMt/
+ReleaseNox/
+ReleaseUnix/
+UDebug/
+UDebugMt/
+URelease/
+UReleaseMt/
+Unicode Debug Multithreaded DLL/
+Unicode Debug Multithreaded Dll/
+Unicode Debug Multithreaded/
+Unicode Debug/
 Unicode Release Multithreaded DLL/
+Unicode Release Multithreaded Dll/
+Unicode Release Multithreaded/
+Unicode Release/
+
+Win32/
+x64/
+
 
 # directories (by pattern)
 
+/build/ar*
+/build/bc5*
+/build/como*
+/build/cw*
+/build/gcc3*
+/build/gcc4*
+/build/icl*
+/build/vc5*
+/build/*.zip
+
+/include-*/
+
+
 # files (by name)
 
-bzr-branching-notes.txt
-handler-design-notes.txt
-
-.bzrignore
+.DS_Store
+.ruby-version
+.ruby-version-exclusions
+.svnignore
+.svnignore-at-root
 .update_deps
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 list_changes.cmd
+logging-bailout.txt
 prepare.cmd
-update
+sh.exe.stackdump
+tidydir.cmd
+update_deps.cmd
 
 build/makefile.tmpl
 build/makefile.tools.xml
+build/shwild.tmplgen
+build/CMakeCache.txt
 
 include/fastformat/internal/dos2unix.has.been.performed
+include/pantheios/internal/dos2unix.has.been.performed
+include/stlsoft/dos2unix.has.been.performed
+include/stlsoft/internal/dos2unix.has.been.performed
 
+test/testpatterns.orj
 test/tests-plan.txt
+
 
 # files (by pattern)
 
 *~
+*.*~
+*.???_obj
+*.VC.db
+*.VC.opendb
 *.a
 *.app
+*.aps
+*.b64
+*.bak
+*.chm
+*.class
+*.d
+*.diff
 *.dll
+*.dsp
 *.dylib
 *.exe
 *.gch
+*.gem
+*.idb
 *.ilk
+*.iobj
+*.ipch
+*.ipdb
+*.la
+*.lai
 *.lib
+*.lo
+*.log
 *.ncb
 *.o
 *.obj
@@ -84,17 +203,40 @@ test/tests-plan.txt
 *.out
 *.pch
 *.pdb
-*.sdf
+*.pyc
+*.rar
+*.res
 *.sbr
 *.scc
+*.sdf
+*.slo
 *.so
 *.suo
 *.swp
+*.sw[ponm]
+*.test
+*.tlog
+*.tmp
+*.unsuccessfulbuild
 *.vcproj*.user
 *.vcxproj*.user
+*.csproj*user
+*.vcproj*user
+*.vcxproj*user
+*.xcuserstate
+*.zip
 
 *.vc71.sln
 *.vc8.sln
 *.vc9.sln
 
+RCa0*
+RCb0*
 
+build/*.tmplgen
+build/*.tmpl
+build/*.tools.xml
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
