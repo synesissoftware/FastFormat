@@ -1,0 +1,3 @@
+FastFormat is an extremely fast, 100% type-safe, infinitely-extensible, I18N/L10N-friendly C++ formatting library
+Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
