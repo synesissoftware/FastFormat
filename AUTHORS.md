@@ -1,4 +1,4 @@
-# FastFormat - Authors
+# FastFormat - Authors <!-- omit in toc -->
 
 ## Major Contributors:
 
