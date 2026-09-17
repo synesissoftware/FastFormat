@@ -1,7 +1,99 @@
-*.c linguist-language=C
-*.h linguist-language=C
-*.cpp linguist-language=C++
-*.hpp linguist-language=C++
-*.html linguist-detectable=false
-makefile linguist-detectable=false
+# .gitattributes — C / C++ (GitHub-hosted)
+#
+# Sources: GitHub Docs (line endings), git-scm gitattributes (diff=cpp),
+# gitattributes/gitattributes C++.gitattributes + Common.gitattributes,
+# github-linguist overrides.
 
+# Default: detect text, normalize to LF in the repository
+* text=auto
+
+# --- Source ---
+*.c text diff=cpp
+*.c++ text diff=cpp
+*.cc text diff=cpp
+*.cpp text diff=cpp
+*.cxx text diff=cpp
+*.h text diff=cpp
+*.h++ text diff=cpp
+*.hh text diff=cpp
+*.hpp text diff=cpp
+*.hxx text diff=cpp
+*.inc text
+*.inl text
+*.ipp text
+*.tcc text
+*.tpp text
+
+# --- Build / config ---
+*.am text
+*.cmake text
+*.m4 text
+*.mak text
+*.mk text
+*akefile text
+CMakeLists.txt text
+configure text eol=lf
+configure.ac text
+
+# --- Scripts ---
+*.bash text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.sh text eol=lf
+*.zsh text eol=lf
+
+# --- Docs / meta ---
+*.adoc text
+*.markdown text diff=markdown
+*.md text diff=markdown
+*.txt text
+AUTHORS text
+CHANGELOG text
+CHANGES text
+CONTRIBUTING text
+COPYING text
+LICENSE text
+NEWS text
+README text
+TODO text
+.gitattributes text
+.gitignore text
+
+# --- Serialisation ---
+*.json text
+*.toml text
+*.xml text
+*.yaml text
+*.yml text
+
+# --- Compiled / binary artefacts ---
+*.a binary
+*.dll binary
+*.dylib binary
+*.exe binary
+*.gch binary
+*.la binary
+*.lai binary
+*.lib binary
+*.lo binary
+*.o binary
+*.obj binary
+*.out binary
+*.pch binary
+*.slo binary
+*.so binary
+
+# --- Archives / images (common) ---
+*.gif binary
+*.gz binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.tar binary
+*.zip binary
+
+# --- GitHub Linguist ---
+**/build/** linguist-generated
+**/cmake-build-*/** linguist-generated

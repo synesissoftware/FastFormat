@@ -1,80 +1,160 @@
+# Synesis Information Systems .gitignore for C / C++ libraries
+
 
 # directories (by name)
 
+bin/
+ideas/
+ipch/
+lib/
+scripts/internal/
+Win32/
+x64/
+
+.idea/
+.svn/
+.vs/
+
+__pycache__/
+
+/_analyses/
+/_build-ci/
 /_build/
+/_internal/
 
-include/b64/
-include/shwild/
-include/xcontract/
-include/xcover/
-include/xtests/
+/docs/
+/dox/
+/ideas/
+/include/xcontract/
+/include/xcover/
+/included/
+/node_modules/
+/releases/
+/scratch/
+/src/xcontract/
+/src/xcover/
+/target/
+/temp/
 
-src/b64/
-src/shwild/
-src/xcontract/
-src/xcover/
-src/xtests/
+/examples/bin/
+/examples/c/bin/
+/examples/c/lib/
+/examples/cpp/bin/
+/examples/cpp/lib/
+/examples/lib/
 
-vc71/
-vc8/
-vc9/
-
-bin/
-
-lib/
-
-ideas/
-
-bin/
-
-lib/
-
-ideas/
-
-Debug/
-Debug Multithreaded/
+Debug Multithreaded Dll/
 Debug Multithreaded DLL/
-Unicode Debug/
-Unicode Debug Multithreaded/
-Unicode Debug Multithreaded DLL/
-Release/
-Release Multithreaded/
+Debug Multithreaded pseudoUnix/
+Debug Multithreaded pseudoUNIX/
+Debug Multithreaded/
+Debug/
+DebugDll/
+DebugDLL/
+DebugDLLUNIX/
+DebugMt/
+DebugMTDll/
+DebugMTDLL/
+DebugMTUnix/
+DebugNox/
+DebugUnix/
+DebugUNIX/
+Release Multithreaded Dll/
 Release Multithreaded DLL/
-Unicode Release/
-Unicode Release Multithreaded/
+Release Multithreaded pseudoUnix/
+Release Multithreaded pseudoUNIX/
+Release Multithreaded/
+Release/
+ReleaseDll/
+ReleaseDLL/
+ReleaseDLLUNIX/
+ReleaseMt/
+ReleaseMTDll/
+ReleaseMTDLL/
+ReleaseMTUnix/
+ReleaseNox/
+ReleaseUnix/
+UDebug/
+UDebugMt/
+Unicode Debug Multithreaded Dll/
+Unicode Debug Multithreaded DLL/
+Unicode Debug Multithreaded/
+Unicode Debug/
+Unicode Release Multithreaded Dll/
 Unicode Release Multithreaded DLL/
+Unicode Release Multithreaded/
+Unicode Release/
+URelease/
+UReleaseMt/
+
 
 # directories (by pattern)
 
+/include-*/
+
+
 # files (by name)
 
-bzr-branching-notes.txt
-handler-design-notes.txt
+.DS_Store
 
-.bzrignore
+.classpath
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.ruby-version
+.svnignore
+.svnignore-at-root
 .update_deps
-list_changes.cmd
-prepare.cmd
-update
 
+build/CMakeCache.txt
 build/makefile.tmpl
 build/makefile.tools.xml
-
-include/fastformat/internal/dos2unix.has.been.performed
-
+build/shwild.tmplgen
+include/pantheios/internal/dos2unix.has.been.performed
+include/stlsoft/dos2unix.has.been.performed
+include/stlsoft/internal/dos2unix.has.been.performed
+list_changes.cmd
+logging-bailout.txt
+prepare.cmd
+sh.exe.stackdump
+test/testpatterns.orj
 test/tests-plan.txt
+tidydir.cmd
+update_deps.cmd
+
 
 # files (by pattern)
 
 *~
+*.*~
+*.???_obj
 *.a
 *.app
+*.aps
+*.b64
+*.bak
+*.chm
+*.class
+*.csproj*user
+*.d
+*.diff
 *.dll
+*.dsp
 *.dylib
 *.exe
 *.gch
+*.gem
+*.idb
 *.ilk
+*.iobj
+*.ipch
+*.ipdb
+*.la
+*.lai
 *.lib
+*.lo
+*.log
 *.ncb
 *.o
 *.obj
@@ -84,17 +164,51 @@ test/tests-plan.txt
 *.out
 *.pch
 *.pdb
-*.sdf
+*.pyc
+*.rar
+*.res
 *.sbr
 *.scc
+*.sdf
+*.slo
 *.so
 *.suo
+*.sw[ponm]
 *.swp
-*.vcproj*.user
-*.vcxproj*.user
+*.test
+*.tlog
+*.tmp
+*.unsuccessfulbuild
+*.VC.db
+*.VC.opendb
+*.xcuserstate
+*.zip
+
+/build/*.tmpl
+/build/*.tmplgen
+/build/*.tools.xml
+/build/*.zip
+/build/ar*
+/build/bc5*
+/build/como*
+/build/cw*
+/build/gcc3*
+/build/gcc4*
+/build/icl*
+/build/vc5*
+
+RCa0*
+RCb0*
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 *.vc71.sln
 *.vc8.sln
 *.vc9.sln
-
+*.vcproj*.user
+*.vcproj*user
+*.vcxproj*.user
+*.vcxproj*user
 
