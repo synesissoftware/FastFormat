@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.overload.ex.1.cpp
+ * File:    test.performance.overload.ex.1.cpp
  *
- * Purpose:     Implementation file for the test.performance.overload.ex.1 project.
+ * Purpose: Implementation file for the test.performance.overload.ex.1 project.
  *
- * Created:     19th October 2008
- * Updated:     6th February 2024
+ * Created: 19th October 2008
+ * Updated: 18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -46,7 +46,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -348,13 +348,13 @@ static int main_(int argc, char** argv)
             stlsoft::auto_buffer<fastformat::ff_char_t, 8>  buff(total);
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-            int r = ::wsprintf(&buff[0], TX("My name is %s %s; I am %d years old; call me %s")
+            int r = ::wsnprintf(&buff[0], buff.size(), TX("My name is %s %s; I am %d years old; call me %s")
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-            int r = ::sprintf(&buff[0], "My name is %s %s; I am %d years old; call me %s"
+            int r = ::snprintf(&buff[0], buff.size(), "My name is %s %s; I am %d years old; call me %s"
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
                             , forename.c_str(), surname, age, forename.c_str());
 
-            // TODO: handle r < 0 
+            // TODO: handle r < 0
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
             std::wstring    s(buff.data(), size_t(r));

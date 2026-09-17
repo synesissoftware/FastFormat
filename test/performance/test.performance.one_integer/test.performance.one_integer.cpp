@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.one_integer.cpp
+ * File:    test.performance.one_integer.cpp
  *
- * Purpose:     Implementation file for the test.performance.one_integer project.
+ * Purpose: Implementation file for the test.performance.one_integer project.
  *
- * Created:     9th September 2006
- * Updated:     6th February 2024
+ * Created: 9th September 2006
+ * Updated: 18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -49,7 +49,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -703,9 +703,9 @@ int main(int argc, char *argv[])
 
 static std::string with_Streams(int value)
 {
-    char    num[21];
+    char num[21];
 
-    return std::string(num, size_t(::sprintf(&num[0], "%d", value)));
+    return std::string(num, size_t(::snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), "%d", value)));
 }
 
 static std::string with_IOStreams(int value)
@@ -766,7 +766,7 @@ static std::string with_STLSoftI2S(int value)
 static CString with_MFC(int value)
 {
     CString str;
-    
+
     str.Format(TEXT("%d"), value);
 
     return str;

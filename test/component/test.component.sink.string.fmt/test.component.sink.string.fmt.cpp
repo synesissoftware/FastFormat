@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.string.fmt.cpp
+ * File:    test.component.sink.string.fmt.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.string.fmt project.
+ * Purpose: Implementation file for the test.component.sink.string.fmt project.
  *
- * Created:     19th December 2007
- * Updated:     6th February 2024
+ * Created: 19th December 2007
+ * Updated: 18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -14,6 +14,10 @@
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
+#if 1
+# include <stlsoft/string/simple_string.hpp>
+#endif
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>
