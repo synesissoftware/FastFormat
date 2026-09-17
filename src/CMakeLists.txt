@@ -21,16 +21,16 @@ if (APPLE)
     include_directories("/usr/local/include")
 endif()
 
-if(UNIX)
+if(_BUILD_AS_UNIX)
 
     add_definitions(-DUNIX)
     add_definitions(-Dunix)
-endif(UNIX)
+endif(_BUILD_AS_UNIX)
 
-if(WIN32)
+if(_BUILD_AS_WIN32)
 
     message(FATAL_ERROR "Use of CMake on Windows not currently supported")
-endif(WIN32)
+endif(_BUILD_AS_WIN32)
 
 
 # specify the primary public headers for the library, which controls whether

@@ -8,10 +8,10 @@ add_subdirectory(test.unit.api.lookup_pattern)
 add_subdirectory(test.unit.api.mismatched_handlers)
 add_subdirectory(test.unit.api.parse_format)
 add_subdirectory(test.unit.bundle.util)
-if(WIN32)
+if(_BUILD_AS_WIN32)
 
     add_subdirectory(test.unit.bundle.winini)
-endif(WIN32)
+endif(_BUILD_AS_WIN32)
 #[====[
 add_subdirectory(test.unit.failure.mismatched.arguments)
 #]====]
@@ -22,16 +22,16 @@ add_subdirectory(test.unit.shims.fast_integers)
 add_subdirectory(test.unit.sink.auto_buffer)
 add_subdirectory(test.unit.sink.c_string)
 add_subdirectory(test.unit.sink.char_buffer)
-if(WIN32)
+if(_BUILD_AS_WIN32)
 
     add_subdirectory(test.unit.sink.CString)
-endif(WIN32)
+endif(_BUILD_AS_WIN32)
 add_subdirectory(test.unit.sink.null)
 add_subdirectory(test.unit.sink.ostream)
-if(WIN32)
+if(_BUILD_AS_WIN32)
 
     add_subdirectory(test.unit.sink.OutputDebugString)
-endif(WIN32)
+endif(_BUILD_AS_WIN32)
 add_subdirectory(test.unit.sink.stringstream)
 
 

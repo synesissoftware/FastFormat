@@ -9,11 +9,11 @@ if (APPLE)
 endif()
 
 
-if(UNIX)
+if(_BUILD_AS_UNIX)
 
     add_definitions(-DUNIX)
     add_definitions(-Dunix)
-endif(UNIX)
+endif(_BUILD_AS_UNIX)
 
 if(WIN32)
 

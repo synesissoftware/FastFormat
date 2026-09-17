@@ -16,21 +16,21 @@ add_subdirectory(test.scratch.implicit_integer)
 #]====]
 add_subdirectory(test.scratch.inserter.integer)
 add_subdirectory(test.scratch.inserter.real)
-if(WIN32)
+if(_BUILD_AS_WIN32)
 
     add_subdirectory(test.scratch.overload.3.BSTR_out_parameter)
     add_subdirectory(test.scratch.sink.WindowsConsole)
     add_subdirectory(test.scratch.sink.WindowsMessageBox)
-endif(WIN32)
+endif(_BUILD_AS_WIN32)
 add_subdirectory(test.scratch.sink.auto_buffer)
 #[====[
 add_subdirectory(test.scratch.sink.vectored_file)
 #]====]
 add_subdirectory(test.scratch.sinks.shim_string)
-if(WIN32)
+if(_BUILD_AS_WIN32)
 
     add_subdirectory(test.scratch.speech)
-endif(WIN32)
+endif(_BUILD_AS_WIN32)
 
 
 # ############################## end of file ############################# #
