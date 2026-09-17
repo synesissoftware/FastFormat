@@ -5,7 +5,7 @@ add_executable(test.performance.overload.ex.1
 
 target_link_libraries(test.performance.overload.ex.1
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.performance.overload.ex.1 PRIVATE

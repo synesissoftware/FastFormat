@@ -5,7 +5,7 @@ add_executable(test.performance.name_age_height
 
 target_link_libraries(test.performance.name_age_height
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.performance.name_age_height PRIVATE

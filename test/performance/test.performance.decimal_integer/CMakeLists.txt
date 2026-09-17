@@ -5,7 +5,7 @@ add_executable(test.performance.decimal_integer
 
 target_link_libraries(test.performance.decimal_integer
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.performance.decimal_integer PRIVATE

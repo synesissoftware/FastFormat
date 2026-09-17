@@ -5,7 +5,7 @@ add_executable(test.component.sink.ostream
 
 target_link_libraries(test.component.sink.ostream
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.component.sink.ostream PRIVATE

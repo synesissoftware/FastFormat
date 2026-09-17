@@ -5,7 +5,7 @@ add_executable(test.unit.failure.mismatched.arguments
 
 target_link_libraries(test.unit.failure.mismatched.arguments
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.unit.failure.mismatched.arguments PRIVATE

@@ -5,7 +5,7 @@ add_executable(test.performance.scenario1
 
 target_link_libraries(test.performance.scenario1
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.performance.scenario1 PRIVATE

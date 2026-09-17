@@ -5,7 +5,7 @@ add_executable(test.unit.api.parse_format
 
 target_link_libraries(test.unit.api.parse_format
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.unit.api.parse_format PRIVATE

@@ -5,7 +5,7 @@ add_executable(test.scratch.format_alignment
 
 target_link_libraries(test.scratch.format_alignment
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.scratch.format_alignment PRIVATE

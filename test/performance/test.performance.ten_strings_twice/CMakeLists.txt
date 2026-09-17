@@ -5,7 +5,7 @@ add_executable(test.performance.ten_strings_twice
 
 target_link_libraries(test.performance.ten_strings_twice
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.performance.ten_strings_twice PRIVATE

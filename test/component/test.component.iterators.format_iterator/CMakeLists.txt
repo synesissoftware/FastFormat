@@ -5,7 +5,7 @@ add_executable(test.component.iterators.format_iterator
 
 target_link_libraries(test.component.iterators.format_iterator
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.component.iterators.format_iterator PRIVATE

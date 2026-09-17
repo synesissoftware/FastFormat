@@ -5,7 +5,7 @@ add_executable(test.component.inserter.integer
 
 target_link_libraries(test.component.inserter.integer
 	fastformat
-	xTests::xTests.core
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.component.inserter.integer PRIVATE
