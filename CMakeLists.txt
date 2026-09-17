@@ -5,7 +5,7 @@
 # Purpose:  Top-level CMake lists file for FastFormat
 #
 # Created:  6th February 2024
-# Updated:  6th February 2024
+# Updated:  17th September 2026
 #
 # ######################################################################## #
 
@@ -46,8 +46,8 @@ string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_MAJOR${RX_WS}+
 set(_VERSION_MAJOR ${CMAKE_MATCH_1})
 string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_MINOR${RX_WS}+([0-9]+)" MINOR_DUMMY ${_header_file})
 set(_VERSION_MINOR ${CMAKE_MATCH_1})
-string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_REVISION${RX_WS}+([0-9]+)" PATCH_DUMMY ${_header_file})
-set(_VERSION_PATCH ${CMAKE_MATCH_1})
+string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_(PATCH|REVISION)${RX_WS}+([0-9]+)" PATCH_DUMMY ${_header_file})
+set(_VERSION_PATCH ${CMAKE_MATCH_2})
 
 # set project version number here
 set(PROJECT_VERSION_MAJOR ${_VERSION_MAJOR})
