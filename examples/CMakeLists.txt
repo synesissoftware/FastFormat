@@ -3,21 +3,21 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 if (APPLE)
 
-    message("adding '/usr/local/include' to include-directories for 'examples'")
+	message("adding '/usr/local/include' to include-directories for 'examples'")
 
-    include_directories("/usr/local/include")
+	include_directories("/usr/local/include")
 endif()
 
 
 if(_BUILD_AS_UNIX)
 
-    add_definitions(-DUNIX)
-    add_definitions(-Dunix)
+	add_definitions(-DUNIX)
+	add_definitions(-Dunix)
 endif(_BUILD_AS_UNIX)
 
 if(_BUILD_AS_WIN32)
 
-    message(FATAL_ERROR "Use of CMake on Windows not currently supported")
+	message(FATAL_ERROR "Use of CMake on Windows not currently supported")
 endif(_BUILD_AS_WIN32)
 
 
@@ -32,7 +32,7 @@ add_subdirectory(example.inserter.hex)
 add_subdirectory(example.inserter.integers)
 if(_BUILD_AS_WIN32)
 
-    add_subdirectory(example.inserter.integers.WindowsLargeIntegers)
+	add_subdirectory(example.inserter.integers.WindowsLargeIntegers)
 endif(_BUILD_AS_WIN32)
 add_subdirectory(example.inserter.reals)
 add_subdirectory(example.iterators.format_iterator)
@@ -51,7 +51,7 @@ add_subdirectory(example.overload.3.tabulations)
 add_subdirectory(example.pad.hash)
 if(_BUILD_AS_WIN32)
 
-    add_subdirectory(example.sink.OutputDebugString)
+	add_subdirectory(example.sink.OutputDebugString)
 endif(_BUILD_AS_WIN32)
 add_subdirectory(example.sink.c_string)
 

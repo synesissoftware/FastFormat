@@ -10,7 +10,7 @@ add_subdirectory(test.unit.api.parse_format)
 add_subdirectory(test.unit.bundle.util)
 if(_BUILD_AS_WIN32)
 
-    add_subdirectory(test.unit.bundle.winini)
+	add_subdirectory(test.unit.bundle.winini)
 endif(_BUILD_AS_WIN32)
 #[====[
 add_subdirectory(test.unit.failure.mismatched.arguments)
@@ -24,13 +24,13 @@ add_subdirectory(test.unit.sink.c_string)
 add_subdirectory(test.unit.sink.char_buffer)
 if(_BUILD_AS_WIN32)
 
-    add_subdirectory(test.unit.sink.CString)
+	add_subdirectory(test.unit.sink.CString)
 endif(_BUILD_AS_WIN32)
 add_subdirectory(test.unit.sink.null)
 add_subdirectory(test.unit.sink.ostream)
 if(_BUILD_AS_WIN32)
 
-    add_subdirectory(test.unit.sink.OutputDebugString)
+	add_subdirectory(test.unit.sink.OutputDebugString)
 endif(_BUILD_AS_WIN32)
 add_subdirectory(test.unit.sink.stringstream)
 
