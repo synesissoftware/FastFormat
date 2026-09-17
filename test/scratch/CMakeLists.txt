@@ -31,6 +31,7 @@ if(_BUILD_AS_WIN32)
 
 	add_subdirectory(test.scratch.speech)
 endif(_BUILD_AS_WIN32)
+add_subdirectory(versions)
 
 
 # ############################## end of file ############################# #
