@@ -3,6 +3,11 @@
 # Sources: GitHub Docs (line endings), git-scm gitattributes (diff=cpp),
 # gitattributes/gitattributes C++.gitattributes + Common.gitattributes,
 # github-linguist overrides.
+#
+# Linguist language-bar policy (Synesis): classify public C API headers as C
+# and *.cmake as CMake scripts; keep helper scripts, IDE project files, and
+# CMakeLists.txt config out of the advertised language mix. Prefer
+# -linguist-detectable over linguist-detectable=false.
 
 # Default: detect text, normalize to LF in the repository
 * text=auto
@@ -97,3 +102,25 @@ TODO text
 # --- GitHub Linguist ---
 **/build/** linguist-generated
 **/cmake-build-*/** linguist-generated
+
+# Classification (C-primary / C API with C++ tests; *.cmake as CMake scripts)
+*.c linguist-language=C
+*.cmake linguist-language=CMake
+*.cpp linguist-language=C++
+*.cxx linguist-language=C++
+*.h linguist-language=C
+*.hpp linguist-language=C++
+*.hxx linguist-language=C++
+
+# Keep the bar on library languages (helpers / legacy IDE / docs /
+# CMakeLists.txt config; leave *.cmake detectable as CMake)
+*.cmd -linguist-detectable
+*.dsp -linguist-detectable
+*.dsw -linguist-detectable
+*.html -linguist-detectable
+*.sh -linguist-detectable
+*.sln -linguist-detectable
+*.vcxproj -linguist-detectable
+*.vimrc -linguist-detectable
+CMakeLists.txt -linguist-detectable
+makefile -linguist-detectable
