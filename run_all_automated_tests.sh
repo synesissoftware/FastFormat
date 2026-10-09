@@ -11,24 +11,10 @@ ProjectName=$(tr -d '[:space:]' < "$ProjectNameFile")
 ScriptPath=$0
 
 AlwaysUseColours=${SIS_CMAKE_ALWAYS_USE_COLOURS:-${SIS_ALWAYS_USE_COLOURS:-0}}
-Directories=(
-  CMakeFiles
-  Testing
-  cmake
-  examples
-  projects
-  src
-  test
-)
-Files=(
-  CMakeCache.txt
-  CTestTestfile.cmake
-  DartConfiguration.tcl
-  Makefile
-  cmake_install.cmake
-  install_manifest.txt
-)
+ComponentOnly=0
+ForwardedArgs=()
 SisUseColours=0
+UnitOnly=0
 
 
 # ##########################################################
@@ -84,30 +70,8 @@ if [ $SisUseColours -ne 0 ]; then
   SisClr_Yellow=${FG_YELLOW:-$(tput setaf 3)}
 fi
 
-CMakeDirClr="${SisClr_Blue}${SisClr_Bold}${CMakeDir}${SisClr_None}"
 ProjectNameClr="${SisClr_Blue}${SisClr_Bold}${ProjectName}${SisClr_None}"
 ScriptPathClr="${SisClr_Blue}${SisClr_Bold}${ScriptPath}${SisClr_None}"
-
-
-# ##########################################################
-# operating environment detection
-
-OsName="$(uname -s 2>/dev/null || echo Unknown)"
-case "${OsName}" in
-  CYGWIN*|MINGW*|MSYS_NT*|Windows_NT)
-
-    Directories+=(
-      ARM64
-      Win32
-      x64
-    )
-    Files+=(
-      "*.filters"
-      "*.sln"
-      "*.vcxproj"
-    )
-    ;;
-esac
 
 
 # ##########################################################
@@ -118,13 +82,22 @@ while [[ $# -gt 0 ]]; do
   case $1 in
     --always-use-colors|--always-use-colours|-A)
 
-      # AlwaysUseColours=1 - this is handled by the for loop above
+      # AlwaysUseColours=1 - handled above; forward so category runners see it
+      ForwardedArgs+=("$1")
+      ;;
+    --unit-only)
+
+      UnitOnly=1
+      ;;
+    --component-only)
+
+      ComponentOnly=1
       ;;
     --help)
 
       [ -f "$Dir/.sis/script_info_lines.txt" ] && cat "$Dir/.sis/script_info_lines.txt"
       cat << EOF
-Removes all known CMake artefacts
+Runs all (matching) automated test programs (unit and component)
 
 ${ScriptPath} [ ... flags/options ... ]
 
@@ -136,6 +109,14 @@ Flags/options:
     --always-use-colors
     --always-use-colours
         forces use of colours even when stdout is not a TTY
+
+    --component-only
+        runs only component-test programs
+
+    --unit-only
+        runs only unit-test programs
+
+    (all other flags are forwarded to the category runner script)
 
 
     standard flags:
@@ -149,65 +130,51 @@ EOF
       ;;
     *)
 
-      >&2 echo "${ScriptPathClr}: unrecognised argument '${SisClr_Red}${SisClr_Bold}$1${SisClr_None}'; use --help for usage"
-
-      exit 1
+      ForwardedArgs+=("$1")
       ;;
   esac
 
   shift
 done
 
+if [ $UnitOnly -ne 0 ] && [ $ComponentOnly -ne 0 ]; then
+
+  >&2 echo "${ScriptPathClr}: ${SisClr_Red}${SisClr_Bold}--unit-only${SisClr_None} and ${SisClr_Red}${SisClr_Bold}--component-only${SisClr_None} are mutually exclusive"
+
+  exit 1
+fi
+
 
 # ##########################################################
 # main()
 
-if [ ! -d "$CMakeDir" ]; then
+status=0
 
-  echo "${ScriptPathClr}: CMake build directory '${CMakeDirClr}' not found so nothing to do; use script 'prepare_cmake.sh' if you wish to prepare CMake artefacts"
+if [ $UnitOnly -ne 0 ]; then
 
-  exit 0
+  "$Dir/run_all_unit_tests.sh" "${ForwardedArgs[@]}"
+  exit $?
 fi
 
-echo "Removing all ${ProjectNameClr} cmake artefacts in '${CMakeDirClr}'"
+if [ $ComponentOnly -ne 0 ]; then
 
-num_dirs_removed=0
-num_files_removed=0
-
-for d in "${Directories[@]}"; do
-
-  fq_dir_path="$CMakeDir/$d"
-
-  [ -d "$fq_dir_path" ] || continue
-
-  echo "removing directory '$d'"
-
-  rm -dfr "$fq_dir_path"
-
-  num_dirs_removed=$((num_dirs_removed+1))
-done
-
-for f in "${Files[@]}"; do
-
-  for fq_file_path in "$CMakeDir"/$f; do
-
-    [ -f "$fq_file_path" ] || continue
-
-    echo "removing file '$fq_file_path'"
-
-    rm -f "$fq_file_path"
-
-    num_files_removed=$((num_files_removed+1))
-  done
-done
-
-if [ 0 -eq $num_dirs_removed ] && [ 0 -eq $num_files_removed ]; then
-
-  echo "nothing to do"
-else
-
-  echo "removed $num_dirs_removed directories and $num_files_removed files"
+  "$Dir/run_all_component_tests.sh" "${ForwardedArgs[@]}"
+  exit $?
 fi
+
+echo
+echo "Running all ${ProjectNameClr} automated test programs (unit and component)"
+
+"$Dir/run_all_unit_tests.sh" "${ForwardedArgs[@]}"
+status=$?
+
+if [ $status -eq 0 ]; then
+
+  "$Dir/run_all_component_tests.sh" "${ForwardedArgs[@]}"
+  status=$?
+fi
+
+exit $status
 
 
 # ############################## end of file ############################# #
