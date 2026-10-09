@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.one_pointer.cpp
+ * File:    test.performance.one_pointer.cpp
  *
- * Purpose:     Implementation file for the test.performance.one_pointer project.
+ * Purpose: Implementation file for the test.performance.one_pointer project.
  *
- * Created:     19th September 2006
- * Updated:     6th February 2024
+ * Created: 19th September 2006
+ * Updated: 18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -46,7 +46,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -351,7 +351,7 @@ static int main_(int argc, char** argv)
             { for(unsigned k = 0; k != STLSOFT_NUM_ELEMENTS(args); ++k)
             {
                 char    sz[21];
-                int     cch = ::sprintf(&sz[0], "%p", args[k]);
+                int     cch = ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "%p", args[k]);
 
                 std::string s(sz, size_t(cch));
 

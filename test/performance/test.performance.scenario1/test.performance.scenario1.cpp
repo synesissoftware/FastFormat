@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.scenario1.cpp
+ * File:    test.performance.scenario1.cpp
  *
- * Purpose:     Implementation file for the test.performance.scenario1 project.
+ * Purpose: Implementation file for the test.performance.scenario1 project.
  *
- * Created:     19th September 2006
- * Updated:     6th February 2024
+ * Created: 19th September 2006
+ * Updated: 18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -46,7 +46,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -376,13 +376,13 @@ static int main_(int argc, char** argv)
         {
             char    sz[1001];
 #if defined(PERF_TEST_USE_4_PARAMS_3_STR_1_INT)
-            int     cch =   ::sprintf(&sz[0], "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
+            int     cch =   ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
                                     , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0), stlsoft::c_str_ptr(arg2), arg3);
 #elif defined(PERF_TEST_USE_3_PARAMS)
-            int     cch =   ::sprintf(&sz[0], "The first param '%s', and the second '%s', and the first again '%s'. Finally, the third '%s'"
+            int     cch =   ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "The first param '%s', and the second '%s', and the first again '%s'. Finally, the third '%s'"
                                     , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0), stlsoft::c_str_ptr(arg2));
 #else /* ? PERF_TEST_USE_3_PARAMS */
-            int     cch =   ::sprintf(&sz[0], "The first param '%s', and the second '%s', and the first again '%s'"
+            int     cch =   ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "The first param '%s', and the second '%s', and the first again '%s'"
                                     , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0));
 #endif /* !PERF_TEST_USE_3_PARAMS */
 

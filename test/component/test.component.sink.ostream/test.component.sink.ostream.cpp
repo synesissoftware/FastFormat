@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.component.sink.ostream project.
  *
  * Created:     14th September 2010
- * Updated:     6th February 2024
+ * Updated:     18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -126,7 +126,7 @@ static void test_1_1()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -156,7 +156,7 @@ static void test_1_2()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -187,7 +187,7 @@ static void test_1_3()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abcdef", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abcdef", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -218,8 +218,8 @@ static void test_1_4()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(2u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("def", lines[1].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("def", lines[1]);
 
         ::remove(FILE_NAME);
     }
@@ -249,7 +249,7 @@ static void test_1_5()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -279,7 +279,7 @@ static void test_1_6()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -310,7 +310,7 @@ static void test_1_7()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abcdef", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abcdef", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -341,8 +341,8 @@ static void test_1_8()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(2u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("def", lines[1].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("def", lines[1]);
 
         ::remove(FILE_NAME);
     }
