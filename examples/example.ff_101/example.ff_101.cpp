@@ -48,7 +48,7 @@ using std::endl;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     // Case 1:
     puts("Case 1");
@@ -352,7 +352,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

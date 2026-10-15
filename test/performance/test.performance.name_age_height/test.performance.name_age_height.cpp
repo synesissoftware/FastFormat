@@ -161,7 +161,7 @@ struct person_t
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     // 0 - nothing
     // 1 - ratios only, in the form of "t:v; t:v; ..."

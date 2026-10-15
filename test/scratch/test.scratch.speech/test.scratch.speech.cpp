@@ -80,7 +80,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     ff::sinks::speech_sink sink(SPF_IS_FILENAME);
 
@@ -111,7 +111,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 

@@ -65,7 +65,7 @@
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char * /* argv */ [])
+static int main_(int /*argc*/, char * /*argv*/ [])
 {
     ::puts("to std:string");
     {

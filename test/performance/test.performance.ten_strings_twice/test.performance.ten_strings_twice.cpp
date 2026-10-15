@@ -149,7 +149,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.ten_st
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     // 0 - nothing
     // 1 - ratios only, in the form of "t:v; t:v; ..."

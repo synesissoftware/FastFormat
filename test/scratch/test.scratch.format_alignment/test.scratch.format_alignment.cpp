@@ -47,7 +47,7 @@ typedef std::string     string_t;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
 
 #if 1
@@ -83,7 +83,7 @@ ff::fmtln(std::cout, "x={0}; y={0,,2,<};", "abc");
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 

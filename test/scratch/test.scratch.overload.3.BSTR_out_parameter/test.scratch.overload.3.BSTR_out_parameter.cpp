@@ -47,7 +47,7 @@ HRESULT get_BSTR_ff(BSTR* bstr2);
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     BSTR    bstr1;
     BSTR    bstr2;
@@ -67,7 +67,7 @@ static int main_(int argc, char** argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 

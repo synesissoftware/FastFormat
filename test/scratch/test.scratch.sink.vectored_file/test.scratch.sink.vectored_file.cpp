@@ -45,7 +45,7 @@
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char ** /*argv*/)
+static int main_(int /*argc*/, char ** /*argv*/)
 {
     platformstl::file_path_buffer       path1;
     platformstl::file_path_buffer       path2;

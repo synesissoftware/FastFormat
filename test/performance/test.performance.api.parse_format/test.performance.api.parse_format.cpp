@@ -148,7 +148,7 @@ fastformat::mismatchedHandler_t prev = NULL;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     platformstl::performance_counter                counter;
     platformstl::performance_counter::interval_type tmManual;
@@ -156,7 +156,7 @@ static int main_(int /* argc */, char** /*argv*/)
     platformstl::performance_counter::interval_type tmStringView;
     platformstl::performance_counter::interval_type tmStdString;
 
-    char const* params[] = 
+    char const* params[] =
     {
             "{0}"
         ,   "{1}"
@@ -424,7 +424,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -464,7 +464,7 @@ int main(int argc, char** argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Function definitions 
+ * Function definitions
  */
 
 int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(

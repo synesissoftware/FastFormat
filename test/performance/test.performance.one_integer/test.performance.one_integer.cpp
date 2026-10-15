@@ -163,7 +163,7 @@ static std::string  with_FF_Format(int value);
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
 #ifdef _DEBUG
     unsigned ITERATIONS =   3;

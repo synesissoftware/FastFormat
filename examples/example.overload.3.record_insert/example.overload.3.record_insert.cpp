@@ -296,7 +296,7 @@ const size_t ITERATIONS =   1;
 const size_t ITERATIONS =   100000;
 #endif /* _DEBUG */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     platformstl::performance_counter                counter;
     platformstl::performance_counter::interval_type tm;
@@ -445,7 +445,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 

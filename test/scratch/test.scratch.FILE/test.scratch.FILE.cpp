@@ -83,7 +83,7 @@
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /* argv */)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     {
 #if 1
@@ -344,7 +344,7 @@ static int main_(int /* argc */, char** /* argv */)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
 #if 0
     { for(size_t i = 0; i < 0xffffffff; ++i){} }

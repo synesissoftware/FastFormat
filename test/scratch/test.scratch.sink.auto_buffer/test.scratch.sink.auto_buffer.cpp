@@ -68,7 +68,7 @@ typedef std::string     string_t;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     stlsoft::auto_buffer<char>          buff1(1);
     stlsoft::auto_buffer<char, 100>     buff2(1);
@@ -82,7 +82,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
