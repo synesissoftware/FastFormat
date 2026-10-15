@@ -38,9 +38,8 @@ cmake --build _build
 ```
 
 A local **STLSoft** tree can be passed with
-`./prepare_cmake.sh --stlsoft-root-dir <dir>`. **src/CMakeLists.txt**
-rejects `_BUILD_AS_WIN32`, so a Windows CMake configure stops there. Full
-options are in **INSTALL.md**; `./prepare_cmake.sh --help`.
+`./prepare_cmake.sh --stlsoft-root-dir <dir>`. Full options are in
+**INSTALL.md**; `./prepare_cmake.sh --help`.
 
 
 ## Installation

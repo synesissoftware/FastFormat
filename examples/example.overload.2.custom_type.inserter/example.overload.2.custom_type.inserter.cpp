@@ -59,6 +59,7 @@ public: /// Member Variables
 
 /* Standard C++ header files */
 #include <exception>
+#include <fstream>
 #include <iostream>
 #include <string>
 
@@ -185,14 +186,38 @@ ff::properties_bundle const& getAppBundle()
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static char const* select_bundle_path(int argc, char* argv[])
 {
-    char const* bundlePath  =   "superhero.properties";
-
     if(argc > 1)
     {
-        bundlePath = argv[1];
+        return argv[1];
     }
+
+    // Repo-root runners (CI, run_all_examples.sh) keep the sample bundle
+    // under test/data/bundles. A copy in the working directory still wins.
+    char const* candidates[] =
+    {
+        "superhero.properties",
+        "test/data/bundles/superhero.properties",
+        NULL,
+    };
+
+    for(size_t i = 0; NULL != candidates[i]; ++i)
+    {
+        std::ifstream stm(candidates[i]);
+
+        if(stm.is_open())
+        {
+            return candidates[i];
+        }
+    }
+
+    return candidates[0];
+}
+
+static int main_(int argc, char* argv[])
+{
+    char const* bundlePath = select_bundle_path(argc, argv);
 
 #if 1
     superhero   thing("The Thing", 200, 99, 100);
@@ -243,7 +268,7 @@ static int main_(int argc, char** argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

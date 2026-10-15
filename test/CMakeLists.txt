@@ -15,11 +15,6 @@ if(_BUILD_AS_UNIX)
 	add_definitions(-Dunix)
 endif(_BUILD_AS_UNIX)
 
-if(WIN32)
-
-	message(FATAL_ERROR "Use of CMake on Windows not currently supported")
-endif(WIN32)
-
 
 add_subdirectory(component)
 add_subdirectory(performance)

@@ -27,11 +27,6 @@ if(_BUILD_AS_UNIX)
 	add_definitions(-Dunix)
 endif(_BUILD_AS_UNIX)
 
-if(_BUILD_AS_WIN32)
-
-	message(FATAL_ERROR "Use of CMake on Windows not currently supported")
-endif(_BUILD_AS_WIN32)
-
 
 # specify the primary public headers for the library, which controls whether
 # they'll be installed

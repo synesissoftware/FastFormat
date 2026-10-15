@@ -50,9 +50,6 @@ jobs:
             os: macos-latest
             c_compiler: gcc
             cpp_compiler: g++
-          # src/CMakeLists.txt rejects _BUILD_AS_WIN32, so CMake on Windows
-          # is not supported yet. Cells stay in the matrix for .cmd dogfood
-          # and fail at configure until that gate is lifted.
           - id: windows-cl
             os: windows-latest
             c_compiler: cl
