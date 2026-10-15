@@ -8,6 +8,13 @@ target_link_libraries(test.scratch.inserter.integer
 	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
+if(WIN32)
+
+	target_link_libraries(test.scratch.inserter.integer
+		UNIXem::UNIXem
+	)
+endif()
+
 target_compile_options(test.scratch.inserter.integer PRIVATE
 	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
 		-Werror -Wall -Wextra -pedantic

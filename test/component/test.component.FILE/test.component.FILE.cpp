@@ -25,6 +25,7 @@
 #endif
 #include <platformstl/filesystem/file_lines.hpp>
 #include <platformstl/system/system_traits.hpp>
+#include <stlsoft/smartptr/scoped_handle.hpp>
 
 /* Standard C++ header files */
 #include <exception>

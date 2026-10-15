@@ -56,7 +56,7 @@ int main()
         ff::fmtln(std::cout, "{0} incremental numbers in {1}us", NUM_ITERATIONS, counter.get_microseconds());
     }
 
-    if(std::numeric_limits<unsigned>::max() == x)
+    if((std::numeric_limits<unsigned>::max)() == x)
     {
         fputs("", stdin);
     }

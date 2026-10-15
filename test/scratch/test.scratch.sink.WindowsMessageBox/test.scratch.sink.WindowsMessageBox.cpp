@@ -80,7 +80,7 @@ void Display32bitFileSize_(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
     }
 }
 
-BOOL CALLBACK ParentProc(HWND hwnd, UINT code, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK ParentProc(HWND hwnd, UINT code, WPARAM /*wParam*/, LPARAM lParam)
 {
     if(WM_INITDIALOG == code)
     {

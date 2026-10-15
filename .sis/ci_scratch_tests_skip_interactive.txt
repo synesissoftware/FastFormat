@@ -1,0 +1,3 @@
+# Scratch programs that open a window or a speech engine.
+test.scratch.sink.WindowsMessageBox
+test.scratch.speech

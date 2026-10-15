@@ -74,6 +74,10 @@ if(MSVC)
 		add_compile_options("/wd4996")
 	endif()
 
+	# MSVC leaves __cplusplus at 199711L unless told otherwise, so
+	# STLSoft trim still calls removed std::bind1st / std::ptr_fun.
+	add_compile_options("/Zc:__cplusplus")
+
 	if(MSVC_VERSION LESS 1930)
 
 		set(CMAKE_C_STANDARD 90)
@@ -285,6 +289,22 @@ if(BUILD_TESTING)
 
 	message("-- CMake package xTests found (version ${xTests_VERSION}; ${xTests_REQUIRED_VERSION_} requested)")
 endif(BUILD_TESTING)
+
+
+# ############################
+# UNIXem
+#
+# Windows scratch programs include <unixem/unixem.h>. UNIXem configure
+# rejects every other host, so the package is required only on Windows.
+
+if(WIN32 AND BUILD_TESTING)
+
+	set(UNIXem_REQUIRED_VERSION_ 1.14.2)
+
+	find_package(UNIXem ${UNIXem_REQUIRED_VERSION_} REQUIRED)
+
+	message("-- CMake package UNIXem found (version ${UNIXem_VERSION}; ${UNIXem_REQUIRED_VERSION_} requested)")
+endif()
 
 
 # ################################################

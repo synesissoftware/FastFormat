@@ -56,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_REVISION   4
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       14
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -115,7 +115,7 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
             cchTotal += crlf.len;
         }
 
-        mfcstl::grab_cstring_buffer buff(sink, static_cast<int>(cchTotal) + sink.GetLength());
+        mfcstl::grab_CString_buffer buff(sink, static_cast<int>(cchTotal) + sink.GetLength());
         ff_char_t*                  base    =   buff;
         size_t                      n       =   concat_slices(cchTotal, base + buff.original_length(), numResults, results);
 

@@ -314,7 +314,7 @@ static int main_(int /* argc */, char** /*argv*/)
     { for(size_t i = 0; i != 2; ++i)
     {
         counter.start();
-        { for(size_t i = 0; i != ITERATIONS; ++i)
+        { for(size_t j = 0; j != ITERATIONS; ++j)
         {
             result = adapter.insertRecord(record);
         }}
@@ -325,7 +325,7 @@ static int main_(int /* argc */, char** /*argv*/)
     { for(size_t i = 0; i != 2; ++i)
     {
         counter.start();
-        { for(size_t i = 0; i != ITERATIONS; ++i)
+        { for(size_t j = 0; j != ITERATIONS; ++j)
         {
             result_ff_fmt_1 = adapter.insertRecord_ff_fmt_1(record);
         }}
@@ -336,7 +336,7 @@ static int main_(int /* argc */, char** /*argv*/)
     { for(size_t i = 0; i != 2; ++i)
     {
         counter.start();
-        { for(size_t i = 0; i != ITERATIONS; ++i)
+        { for(size_t j = 0; j != ITERATIONS; ++j)
         {
             result_ff_fmt_2 = adapter.insertRecord_ff_fmt_2(record);
         }}
@@ -347,7 +347,7 @@ static int main_(int /* argc */, char** /*argv*/)
     { for(size_t i = 0; i != 2; ++i)
     {
         counter.start();
-        { for(size_t i = 0; i != ITERATIONS; ++i)
+        { for(size_t j = 0; j != ITERATIONS; ++j)
         {
             result_ff_write = adapter.insertRecord_ff_write(record);
         }}

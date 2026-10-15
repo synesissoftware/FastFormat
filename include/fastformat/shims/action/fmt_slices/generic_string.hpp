@@ -60,7 +60,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MAJOR     3
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      22
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      23
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -130,9 +130,9 @@ inline S& fmt_slices(
 
     if(flags::ff_newLine & flags)
     {
-        const ff_string_slice_t crlf = fastformat_getNewlineForPlatform();
+        const ff_string_slice_t newline = fastformat_getNewlineForPlatform();
 
-        sink.append(crlf.ptr, crlf.len);
+        sink.append(newline.ptr, newline.len);
     }
 
     return sink;

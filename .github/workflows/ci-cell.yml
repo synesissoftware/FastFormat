@@ -59,14 +59,15 @@ jobs:
       # Dependency order is deliberate (not lexicographic): each package
       # configures against those already installed. shwild precedes xTests.
       # STLSoft is required; shwild is optional and enables richer xTests
-      # matches.
+      # matches. UNIXem is appended on Windows only: its configure rejects
+      # every other host, and scratch programs include <unixem/unixem.h>.
       - name: Install SIS dependencies
         uses: ./.github/actions/install-sis-deps
         with:
           build-type: ${{ inputs.build-type }}
           c-compiler: ${{ inputs.c-compiler }}
           cpp-compiler: ${{ inputs.cpp-compiler }}
-          dependencies: STLSoft shwild xTests
+          dependencies: ${{ runner.os == 'Windows' && 'STLSoft shwild xTests UNIXem' || 'STLSoft shwild xTests' }}
           toolchain: ${{ inputs.toolchain }}
 
       - name: Configure
@@ -364,7 +365,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          SIS_CMAKE_BUILD_DIR="${{ github.workspace }}/build" ./run_all_scratch_tests.sh -M
+          SIS_CMAKE_BUILD_DIR="${{ github.workspace }}/build" ./run_all_scratch_tests.sh -M --skip-interactive
 
       - name: Run scratch tests (native cmd)
         if: runner.os == 'Windows'
@@ -374,5 +375,5 @@ jobs:
           SIS_CMAKE_BUILD_DIR: ${{ github.workspace }}\build
         run: |
           if "${{ inputs.toolchain }}"=="mingw" set "PATH=%MSYS2_LOCATION%\mingw64\bin;%PATH%"
-          call run_all_scratch_tests.cmd
+          call run_all_scratch_tests.cmd --skip-interactive
           if errorlevel 1 exit /b 1

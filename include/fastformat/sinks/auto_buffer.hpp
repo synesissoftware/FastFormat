@@ -56,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       17
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -194,10 +194,10 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 
         if(flags::ff_newLine & flags)
         {
-            const ff_string_slice_t crlf = fastformat_getNewlineForPlatform();
+            const ff_string_slice_t newline = fastformat_getNewlineForPlatform();
 
-            ::memcpy(p, crlf.ptr, crlf.len * sizeof(char_t));
-            p += crlf.len;
+            ::memcpy(p, newline.ptr, newline.len * sizeof(char_t));
+            p += newline.len;
         }
 
         // finally we append the terminating nul character

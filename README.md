@@ -29,7 +29,10 @@ I18N/L10N-friendly output/formatting library.
 **1.11** or later. Examples and tests also need
 [**xTests**](https://github.com/synesissoftware/xTests) **0.26** or later;
 [**shwild**](https://github.com/synesissoftware/shwild) is optional and
-enables richer **xTests** matches.
+enables richer **xTests** matches. On Windows, scratch programs that
+include `<unixem/unixem.h>` need
+[**UNIXem**](https://github.com/synesissoftware/UNIXem), via
+`find_package(UNIXem)`.
 
 ```bash
 ./prepare_cmake.sh -v
