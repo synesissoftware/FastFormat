@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        doc/doxygen_stlsoft_stubs.h
+ * File:    doc/doxygen_stlsoft_stubs.h
  *
- * Purpose:     Documentation-only stand-ins for STLSoft integer typedefs
- *              named in FastFormat public headers. Keeps Doxygen link
- *              resolution working when STLSoft is not on INCLUDE_PATH.
+ * Purpose: Documentation-only stand-ins for STLSoft integer typedefs named
+ *          in FastFormat public headers. Keeps Doxygen link resolution
+ *          working when STLSoft is not on INCLUDE_PATH.
  *
- * Created:     16th October 2026
- * Updated:     16th October 2026
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * All rights reserved.

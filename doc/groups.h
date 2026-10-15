@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        doc/groups.h
+ * File:    doc/groups.h
  *
- * Purpose:     Documentation-only Doxygen group declarations for FastFormat.
+ * Purpose: Documentation-only Doxygen group declarations for FastFormat.
  *              Public headers historically use \ingroup without always
  *              declaring a matching \defgroup; this file supplies the
  *              missing group definitions so Doxygen (WARN_AS_ERROR) can run.
  *
- * Created:     16th October 2026
- * Updated:     16th October 2026
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * All rights reserved.

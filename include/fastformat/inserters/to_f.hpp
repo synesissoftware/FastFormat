@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/to_f.hpp
+ * File:    fastformat/inserters/to_f.hpp
  *
- * Purpose:     Inserter functions for floating-point types
+ * Purpose: Inserter functions for floating-point types
  *
- * Created:     29th April 2009
- * Updated:     7th December 2010
+ * Created: 29th April 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_REVISION  6
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_EDIT      8
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_EDIT      9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
