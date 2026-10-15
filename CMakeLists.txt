@@ -5,7 +5,7 @@
 # Purpose:  Top-level CMake lists file for FastFormat
 #
 # Created:  6th February 2024
-# Updated:  6th February 2024
+# Updated:  16th October 2026
 #
 # ######################################################################## #
 
@@ -30,7 +30,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 # project
 
 project(FastFormat
-    DESCRIPTION "FastFormat is a small, standalone library, that provides extensible C-style string instances and extensible arrays of such."
+    DESCRIPTION "The fastest, most robust C++ formatting library"
     HOMEPAGE_URL "https://github.com/synesissoftware/FastFormat"
     LANGUAGES C CXX
 )
@@ -46,8 +46,8 @@ string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_MAJOR${RX_WS}+
 set(_VERSION_MAJOR ${CMAKE_MATCH_1})
 string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_MINOR${RX_WS}+([0-9]+)" MINOR_DUMMY ${_header_file})
 set(_VERSION_MINOR ${CMAKE_MATCH_1})
-string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_REVISION${RX_WS}+([0-9]+)" PATCH_DUMMY ${_header_file})
-set(_VERSION_PATCH ${CMAKE_MATCH_1})
+string(REGEX MATCH "#${RX_WS}*define${RX_WS}+_?${RX_PROJ_TAG}_VER_(PATCH|REVISION)${RX_WS}+([0-9]+)" PATCH_DUMMY ${_header_file})
+set(_VERSION_PATCH ${CMAKE_MATCH_2})
 
 # set project version number here
 set(PROJECT_VERSION_MAJOR ${_VERSION_MAJOR})
@@ -69,8 +69,83 @@ set(CMAKE_CXX_EXTENSIONS ON)
 
 
 # ##########################################################
-# dependencies
+# options
 
+option(BUILD_EXAMPLES "Build examples" ON)
+
+option(BUILD_TESTING "Build tests" ON)
+
+option(FASTFORMAT_USE_WIDE_STRINGS "Build with wide string support" OFF)
+
+
+# ##########################################################
+# features
+
+if(FASTFORMAT_USE_WIDE_STRINGS)
+
+    add_definitions(-DFASTFORMAT_USE_WIDE_STRINGS)
+    if(WIN32)
+
+        add_definitions(-DUNICODE)
+        add_definitions(-D_UNICODE)
+    endif(WIN32)
+endif(FASTFORMAT_USE_WIDE_STRINGS)
+
+
+# ##########################################################
+# dependencies
+#
+# required:
+# - STLSoft;
+#
+# required (when BUILD_TESTING):
+# - xTests;
+
+
+# ############################
+# STLSoft (required)
+#
+# We provide flexibility here, as in:
+# 1. if a CMake variable STLSOFT is provided then it is used; otherwise
+# 2. if an environment variable STLSOFT is provided then it then it is used;
+#    otherwise
+# 3. if the package STLSoft (via find_package()) is found then it is used;
+#    otherwise
+# 4. we abort
+
+set(STLSoft_REQUIRED_VERSION_ 1.11)
+
+if(NOT DEFINED STLSOFT AND NOT DEFINED ENV{STLSOFT})
+
+    set(STLSoft_IS_PACKAGE_ TRUE)
+
+    find_package(STLSoft ${STLSoft_REQUIRED_VERSION_} REQUIRED)
+
+    message("-- CMake package STLSoft found (version ${STLSoft_VERSION}; ${STLSoft_REQUIRED_VERSION_} requested)")
+else()
+
+    set(STLSoft_IS_PACKAGE_ FALSE)
+
+    if(DEFINED STLSOFT)
+
+        message("-- STLSOFT provided as CMake variable with value '${STLSOFT}'")
+
+        set(STLSOFT_INCLUDE_DIR ${STLSOFT}/include)
+    else()
+
+        message("-- STLSOFT provided as environment variable with value '$ENV{STLSOFT}'")
+
+        set(STLSOFT_INCLUDE_DIR $ENV{STLSOFT}/include)
+    endif()
+
+    get_filename_component(STLSOFT_INCLUDE_DIR "${STLSOFT_INCLUDE_DIR}" ABSOLUTE)
+
+    include_directories(${STLSOFT_INCLUDE_DIR})
+endif()
+
+
+# ############################
+# xTests (testing only)
 
 if(BUILD_TESTING)
 
@@ -79,15 +154,7 @@ if(BUILD_TESTING)
     find_package(xTests ${xTests_REQUIRED_VERSION_} REQUIRED)
 
     message("-- CMake package xTests found (version ${xTests_VERSION}; ${xTests_REQUIRED_VERSION_} requested)")
-
-
-    set(STLSoft_REQUIRED_VERSION_ 0.10.8)
-
-    find_package(STLSoft ${STLSoft_REQUIRED_VERSION_} REQUIRED)
-
-    message("-- CMake package STLSoft found (version ${STLSoft_VERSION}; ${STLSoft_REQUIRED_VERSION_} requested)")
 endif(BUILD_TESTING)
-
 
 
 # ##########################################################
@@ -95,10 +162,6 @@ endif(BUILD_TESTING)
 
 # provides install directory variables as defined by the GNU Coding Standards.
 include(GNUInstallDirs)
-
-
-# ##########################################################
-# STLSoft
 
 
 # ##########################################################
@@ -126,17 +189,12 @@ endif()
 # ##########################################################
 # examples
 
-option(BUILD_EXAMPLES "Build examples" ON)
 if(BUILD_EXAMPLES)
 
     message("-- enabled building of examples ...")
 
     add_subdirectory(examples)
 endif()
-
-
-# ##########################################################
-# install
 
 
 # ##########################################################
@@ -169,7 +227,7 @@ install(EXPORT project-targets
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${EXPORT_NAME}
 )
 
-install( FILES
+install(FILES
     "${CMAKE_CURRENT_BINARY_DIR}/cmake/${EXPORT_NAME}-config.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/cmake/${EXPORT_NAME}-config-version.cmake"
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${EXPORT_NAME}

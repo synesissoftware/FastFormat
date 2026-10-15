@@ -12,6 +12,7 @@
 #include <limits>
 
 #include <stdio.h>
+#include <limits.h>
 
 #ifdef _DEBUG
 const size_t NUM_ITERATIONS =   1;

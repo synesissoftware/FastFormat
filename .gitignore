@@ -233,6 +233,10 @@ test/tests-plan.txt
 RCa0*
 RCb0*
 
+# CMake build directories (here alternatives cmake-build and build-cmake)
+/build-cmake
+/cmake-build
+
 build/*.tmplgen
 build/*.tmpl
 build/*.tools.xml
