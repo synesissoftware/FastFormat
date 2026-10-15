@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.record_insert.cpp
+ * File:    examples/example.overload.3.record_insert/example.overload.3.record_insert.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.record_insert project.
+ * Purpose: Example for record-insert overload.
  *
- * Created:     20th September 2008
- * Updated:     6th February 2024
+ * Created: 20th September 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>

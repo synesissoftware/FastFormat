@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.memory.1.cpp
+ * File:    examples/example.memory.1/example.memory.1.cpp
  *
- * Purpose:     Implementation file for the example.memory.1 project.
+ * Purpose: Example for memory / allocation behaviour.
  *
- * Created:     20th September 2008
- * Updated:     6th February 2024
+ * Created: 20th September 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #define FASTFORMAT_NO_USE_JIT_CACHE
 

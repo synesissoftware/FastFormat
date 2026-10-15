@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.inserter.integers.cpp
+ * File:    examples/example.inserter.integers/example.inserter.integers.cpp
  *
- * Purpose:     Implementation file for the example.inserter.integers project.
+ * Purpose: Example for integer inserters.
  *
- * Created:     26th May 2009
- * Updated:     6th February 2024
+ * Created: 26th May 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>

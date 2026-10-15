@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.arguments.character/example.arguments.character.cpp
+ * File:    examples/example.arguments.character/example.arguments.character.cpp
  *
- * Purpose:     Implementation file for the example.arguments.character project.
+ * Purpose: Example for character arguments.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>

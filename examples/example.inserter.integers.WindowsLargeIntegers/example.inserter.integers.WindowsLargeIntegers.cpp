@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.inserter.integers.WindowsLargeIntegers.cpp
+ * File:    examples/example.inserter.integers.WindowsLargeIntegers/example.inserter.integers.WindowsLargeIntegers.cpp
  *
- * Purpose:     Implementation file for the example.inserter.integers.WindowsLargeIntegers project.
+ * Purpose: Example for Windows large-integer inserters.
  *
- * Created:     30th November 2010
- * Updated:     6th February 2024
+ * Created: 30th November 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>

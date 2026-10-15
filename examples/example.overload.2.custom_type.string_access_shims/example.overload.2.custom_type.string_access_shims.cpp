@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.overload.2.custom_type.string_access_shims/example.overload.2.custom_type.string_access_shims.cpp
+ * File:    examples/example.overload.2.custom_type.string_access_shims/example.overload.2.custom_type.string_access_shims.cpp
  *
- * Purpose:     Implementation file for the example.overload.2.custom_type.string_access_shims project.
+ * Purpose: Example for custom-type overload via string access shims.
  *
- * Created:     2nd March 2009
- * Updated:     6th February 2024
+ * Created: 2nd March 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Custom types

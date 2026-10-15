@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.floatingpoint_columns.cpp
+ * File:    examples/example.overload.3.floatingpoint_columns/example.overload.3.floatingpoint_columns.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.floatingpoint_columns
- *              project.
+ * Purpose: Example for floating-point column overloads.
  *
- * Created:     30th April 2009
- * Updated:     6th February 2024
+ * Created: 30th April 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/fastformat.h>
 

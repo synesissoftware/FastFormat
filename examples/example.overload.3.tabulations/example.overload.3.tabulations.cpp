@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.tabulations.cpp
+ * File:    examples/example.overload.3.tabulations/example.overload.3.tabulations.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.tabulations
- *              project.
+ * Purpose: Example for tabulation overload.
  *
- * Created:     29th April 2009
- * Updated:     6th February 2024
+ * Created: 29th April 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/fastformat.h>
 

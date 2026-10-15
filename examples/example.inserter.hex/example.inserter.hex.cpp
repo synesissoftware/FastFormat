@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.inserter.hex.cpp
+ * File:    examples/example.inserter.hex/example.inserter.hex.cpp
  *
- * Purpose:     Implementation file for the example.inserter.hex project.
+ * Purpose: Example for hexadecimal inserters.
  *
- * Created:     4th February 2010
- * Updated:     6th February 2024
+ * Created: 4th February 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>

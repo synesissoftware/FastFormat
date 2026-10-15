@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.overload.2.custom_type.inserter/example.overload.2.custom_type.inserter.cpp
+ * File:    examples/example.overload.2.custom_type.inserter/example.overload.2.custom_type.inserter.cpp
  *
- * Purpose:     Implementation file for the example.overload.2.custom_type.inserter project.
+ * Purpose: Example for custom-type overload via inserter.
  *
- * Created:     2nd March 2009
- * Updated:     16th October 2026
+ * Created: 2nd March 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
