@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.ten_strings_twice.cpp
+ * File:    test.performance.ten_strings_twice.cpp
  *
- * Purpose:     Implementation file for the test.performance.ten_strings_twice project.
+ * Purpose: Implementation file for the test.performance.ten_strings_twice project.
  *
- * Created:     19th September 2006
- * Updated:     6th February 2024
+ * Created: 19th September 2006
+ * Updated: 18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -46,7 +46,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -314,9 +314,9 @@ static int main_(int argc, char** argv)
         {
             CString s;
 
-            s.Format(TX("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str()
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str());
+            s.Format(TX("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%.*s%s%.*s")
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data()
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data());
 
 #ifdef SHOW_FIRST_RESULT
 (0 == i) && fprintf(stderr, "%.*s\n", int(s.GetLength()), static_cast<char const*>(s));
@@ -346,9 +346,9 @@ static int main_(int argc, char** argv)
         { for(unsigned i = 0; i < ITERATIONS; ++i)
         {
             char    sz[10001];
-            int     cch = ::sprintf(&sz[0], TX("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str()
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str());
+            int     cch = ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), TX("%s%s%s%s%s%s%s%.*s%s%.*s%s%s%s%s%s%s%s%.*s%s%.*s")
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data()
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data());
 
             std::string s(sz, size_t(cch));
 

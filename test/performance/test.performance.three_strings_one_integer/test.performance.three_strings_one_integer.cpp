@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.three_strings_one_integer.cpp
+ * File:    test.performance.three_strings_one_integer.cpp
  *
- * Purpose:     Implementation file for the test.performance.three_strings_one_integer project.
+ * Purpose: Implementation file for the test.performance.three_strings_one_integer project.
  *
- * Created:     19th September 2006
- * Updated:     6th February 2024
+ * Created: 19th September 2006
+ * Updated: 18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -46,7 +46,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -342,7 +342,7 @@ static int main_(int argc, char** argv)
         { for(unsigned i = 0; i < ITERATIONS; ++i)
         {
             char    sz[1001];
-            int     cch =   ::sprintf(&sz[0], "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
+            int     cch =   ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
                                     , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0), stlsoft::c_str_ptr(arg2), arg3);
 
             std::string s(sz, size_t(cch));

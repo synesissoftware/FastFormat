@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.component.FILE_stream project.
  *
  * Created:     3rd January 2008
- * Updated:     6th February 2024
+ * Updated:     18th September 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -152,7 +152,7 @@ static void test_1_1()
     file_lines_t    lines(t);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
 }
 
 static void test_1_2()
@@ -168,7 +168,7 @@ static void test_1_2()
     file_lines_t    lines(t);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
 }
 
 static void test_1_3()
@@ -185,7 +185,7 @@ static void test_1_3()
     file_lines_t    lines(t);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abcdef"), lines[0].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abcdef"), lines[0]);
 }
 
 static void test_1_4()
@@ -202,8 +202,8 @@ static void test_1_4()
     file_lines_t    lines(t);
 
     XTESTS_REQUIRE(XTESTS_TEST_INTEGER_EQUAL(2u, lines.size()));
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0].c_str());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("def"), lines[1].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("def"), lines[1]);
 }
 
 static void test_1_5()

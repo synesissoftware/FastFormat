@@ -1,4 +1,4 @@
-# FastFormat - To Do
+# FastFormat - TODO <!-- omit in toc -->
 
 
 ----

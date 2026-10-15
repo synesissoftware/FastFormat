@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.record_insert.cpp
+ * File:    example.overload.3.record_insert.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.record_insert project.
+ * Purpose: Implementation file for the example.overload.3.record_insert project.
  *
- * Created:     20th September 2008
- * Updated:     6th February 2024
+ * Created: 20th September 2008
+ * Updated: 18th August 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -176,7 +176,7 @@ static stlsoft::basic_shim_string<char, 20> make_shim_string(T const& t)
 
 
 static stlsoft::basic_shim_string<char, 20>
- make_slice(const int val)
+make_slice(const int val)
 {
     if(intNaN == val)
     {
