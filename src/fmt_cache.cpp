@@ -221,6 +221,9 @@ namespace
         typedef ::stlsoft::null_mutex                   mutex_type_;
 #endif /* FASTFORMAT_MT */
         typedef stlsoft::shared_ptr<pattern_record_t>   record_ptr_type_;
+        // Allocator value_type is the map pair, not the key.
+        typedef std::pair<pattern_t const, record_ptr_type_>
+                                                        map_value_type_;
         typedef std::map<   pattern_t
                         ,   record_ptr_type_
 #if !defined(UNIXSTL_OS_IS_MACOSX)
@@ -235,9 +238,9 @@ namespace
       defined(PLATFORMSTL_OS_IS_WINDOWS) && \
       (  !defined(STLSOFT_COMPILER_IS_MSVC) || \
          _MSC_VER < 1400)
-                        ,   winstl::processheap_allocator<pattern_t>
+                        ,   winstl::processheap_allocator<map_value_type_>
 #  else /* ? VC++ _DEBUG */
-                        ,   std::allocator<pattern_t>
+                        ,   std::allocator<map_value_type_>
 #  endif /* VC++ _DEBUG */
 # endif /* compiler */
 #endif /* UNIXSTL_OS_IS_MACOSX */
@@ -397,6 +400,9 @@ unsigned format_cache::lookup_pattern(
 #endif /* cache */
 }
 
+#if defined(_FASTFORMAT_USE_1PHASE_CACHE) || \
+    (defined(_FASTFORMAT_USE_2PHASE_CACHE) && \
+     !defined(FASTFORMAT_MT))
 unsigned format_cache::lookup_pattern_1phase(
     pattern_t                   pattern
 ,   format_element_t const**    elements
@@ -482,6 +488,7 @@ unsigned format_cache::lookup_pattern_1phase(
 
     return (recptr->numFormatElements & 0xffff) | ((recptr->numResultElements & 0xffff) << 16);
 }
+#endif /* 1-phase, or 2-phase without FASTFORMAT_MT */
 
 unsigned format_cache::lookup_pattern_2phase(
     pattern_t                   pattern

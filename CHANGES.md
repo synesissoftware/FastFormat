@@ -10,6 +10,7 @@
 * Enlarged the hexadecimal inserter buffer in **integer.hpp** to 18 characters so the 64-bit signed-minimum form (`'-'`, 16 digits, NUL) fits under GCC `-Werror=array-bounds`;
 * **example.overload.2.custom_type.inserter** loads **test/data/bundles/superhero.properties** when that file is absent from the working directory;
 * Removed the CMake fatal gate that stopped Windows configures in **src/CMakeLists.txt**, **examples/CMakeLists.txt**, and **test/CMakeLists.txt**;
+* Corrected the format-cache map allocator in **fmt_cache.cpp** so its value type is `std::pair<const key, mapped>`, and compiled `lookup_pattern_1phase()` only when that cache path is selected;
 
 
 ## 0.7.4-rc6 - 6th February 2024
