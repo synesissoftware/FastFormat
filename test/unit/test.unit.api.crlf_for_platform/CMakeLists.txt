@@ -5,7 +5,7 @@ add_executable(test.unit.api.crlf_for_platform
 
 target_link_libraries(test.unit.api.crlf_for_platform
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.api.crlf_for_platform PRIVATE

@@ -5,7 +5,7 @@ add_executable(test.scratch.sinks.shim_string
 
 target_link_libraries(test.scratch.sinks.shim_string
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.sinks.shim_string PRIVATE

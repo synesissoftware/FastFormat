@@ -5,7 +5,7 @@ add_executable(test.unit.api.illformed_handlers
 
 target_link_libraries(test.unit.api.illformed_handlers
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.api.illformed_handlers PRIVATE

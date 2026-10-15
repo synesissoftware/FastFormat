@@ -5,7 +5,7 @@ add_executable(test.component.inserter.hex
 
 target_link_libraries(test.component.inserter.hex
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.component.inserter.hex PRIVATE

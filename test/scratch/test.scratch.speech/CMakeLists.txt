@@ -5,7 +5,7 @@ add_executable(test.scratch.speech
 
 target_link_libraries(test.scratch.speech
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.speech PRIVATE

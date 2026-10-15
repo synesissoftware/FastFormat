@@ -5,7 +5,7 @@ add_executable(test.scratch.implicit_integer
 
 target_link_libraries(test.scratch.implicit_integer
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.implicit_integer PRIVATE

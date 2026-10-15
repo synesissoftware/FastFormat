@@ -5,7 +5,7 @@ add_executable(test.scratch.sink.vectored_file
 
 target_link_libraries(test.scratch.sink.vectored_file
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.sink.vectored_file PRIVATE

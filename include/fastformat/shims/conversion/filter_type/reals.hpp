@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/shims/conversion/filter_type/reals.hpp
+ * File:    fastformat/shims/conversion/filter_type/reals.hpp
  *
- * Purpose:     FastFormat argument conversion shim for floating-point
- *              types.
+ * Purpose: FastFormat argument conversion shim for floating-point types.
  *
- * Created:     1st June 2008
- * Updated:     23rd July 2010
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_EDIT      8
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_REVISION  3
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_EDIT      9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -74,10 +74,9 @@
 #include <fastformat/fastformat.h>
 #include <fastformat/internal/stlsoft.h>
 #include <fastformat/quality/contract.h>
+#include <fastformat/util/string/snprintf.h>
 
 #include <stlsoft/string/shim_string.hpp>
-
-#include <stdio.h>
 
 /* /////////////////////////////////////////////////////////////////////////
  * Namespace
@@ -104,34 +103,21 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(double value, doubl
 {
     static const ff_char_t  fmt[] = { '%', 'G', '\0' };
 
-    ff_char_t num[100];
+    stlsoft::basic_shim_string<ff_char_t, 32>   r(32);
 
-    // TODO: Sort this properly, using detection of the "Safe" string library, a la Pantheios
-
-    // TODO: Sort this properly, using traits instead of all the preprocessor clutter
-
-#if defined(__STDC_SECURE_LIB__) && \
-    defined(__STDC_WANT_SECURE_LIB__) && \
-    __STDC_WANT_SECURE_LIB__ == 1
-# ifdef FASTFORMAT_USE_WIDE_STRINGS
-    int     n = ::swprintf_s(&num[0], STLSOFT_NUM_ELEMENTS(num), fmt, value);
-# else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-    int     n = ::sprintf_s(&num[0], STLSOFT_NUM_ELEMENTS(num), fmt, value);
-# endif /* FASTFORMAT_USE_WIDE_STRINGS */
-#else /* ? "secure" */
-# ifdef FASTFORMAT_USE_WIDE_STRINGS
-    int     n = ::swprintf(&num[0], fmt, value);
-# else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-    int     n = ::sprintf(&num[0], fmt, value);
-# endif /* FASTFORMAT_USE_WIDE_STRINGS */
-#endif /* "secure" */
+    // Use FastFormat's snprintf insulator (same pattern as void_pointers.hpp)
+    // rather than bare sprintf/snprintf — Apple Clang deprecates sprintf
+    // under -Werror, and compiler snprintf signatures vary.
+    int n = fastformat_util_snprintf(r.data(), r.size(), fmt, value);
 
     if(n < 0)
     {
         n = 0;
     }
 
-    return stlsoft::basic_shim_string<ff_char_t, 32>(num, static_cast<size_t>(n));
+    r.truncate(static_cast<size_t>(n));
+
+    return r;
 }
 
 /** Filtering conversion shim function for implicitly adapting

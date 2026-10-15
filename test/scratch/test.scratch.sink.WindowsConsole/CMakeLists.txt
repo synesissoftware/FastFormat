@@ -5,7 +5,7 @@ add_executable(test.scratch.sink.WindowsConsole
 
 target_link_libraries(test.scratch.sink.WindowsConsole
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.sink.WindowsConsole PRIVATE

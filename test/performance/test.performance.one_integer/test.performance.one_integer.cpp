@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.performance.one_integer project.
  *
  * Created:     9th September 2006
- * Updated:     6th February 2024
+ * Updated:     16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -705,7 +705,7 @@ static std::string with_Streams(int value)
 {
     char    num[21];
 
-    return std::string(num, size_t(::sprintf(&num[0], "%d", value)));
+    return std::string(num, size_t(::snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), "%d", value)));
 }
 
 static std::string with_IOStreams(int value)

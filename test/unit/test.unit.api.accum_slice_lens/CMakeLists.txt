@@ -5,7 +5,7 @@ add_executable(test.unit.api.accum_slice_lens
 
 target_link_libraries(test.unit.api.accum_slice_lens
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.api.accum_slice_lens PRIVATE

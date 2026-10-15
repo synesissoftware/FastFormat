@@ -5,7 +5,7 @@ add_executable(test.component.sink.CComBSTR
 
 target_link_libraries(test.component.sink.CComBSTR
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.component.sink.CComBSTR PRIVATE

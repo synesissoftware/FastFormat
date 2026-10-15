@@ -5,7 +5,7 @@ add_executable(test.component.format_specification_defect_exceptions
 
 target_link_libraries(test.component.format_specification_defect_exceptions
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.component.format_specification_defect_exceptions PRIVATE

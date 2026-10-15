@@ -174,7 +174,7 @@ void format_performance_sprintf()
     //[karma_format_performance_printf
     char buffer[256];
     for (int i = 0; i < NUMITERATIONS; ++i) {
-        sprintf(buffer, "[%-14.3f%-14.3f]", 12345.12345, 12345.12345);
+        snprintf(buffer, sizeof(buffer), "[%-14.3f%-14.3f]", 12345.12345, 12345.12345);
     }
     //]
 

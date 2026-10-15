@@ -5,7 +5,7 @@ add_executable(test.scratch.overload.3.BSTR_out_parameter
 
 target_link_libraries(test.scratch.overload.3.BSTR_out_parameter
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.overload.3.BSTR_out_parameter PRIVATE

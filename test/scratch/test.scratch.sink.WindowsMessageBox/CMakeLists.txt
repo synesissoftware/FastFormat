@@ -5,7 +5,7 @@ add_executable(test.scratch.sink.WindowsMessageBox
 
 target_link_libraries(test.scratch.sink.WindowsMessageBox
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.sink.WindowsMessageBox PRIVATE

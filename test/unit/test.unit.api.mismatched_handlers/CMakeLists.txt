@@ -5,7 +5,7 @@ add_executable(test.unit.api.mismatched_handlers
 
 target_link_libraries(test.unit.api.mismatched_handlers
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.api.mismatched_handlers PRIVATE

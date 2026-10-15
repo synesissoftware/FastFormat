@@ -5,7 +5,7 @@ add_executable(test.unit.shims.fast_integers
 
 target_link_libraries(test.unit.shims.fast_integers
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.shims.fast_integers PRIVATE

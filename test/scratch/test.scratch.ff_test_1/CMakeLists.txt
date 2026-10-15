@@ -5,7 +5,7 @@ add_executable(test.scratch.ff_test_1
 
 target_link_libraries(test.scratch.ff_test_1
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.ff_test_1 PRIVATE

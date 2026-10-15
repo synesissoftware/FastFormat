@@ -5,7 +5,7 @@ add_executable(test.unit.sink.char_buffer
 
 target_link_libraries(test.unit.sink.char_buffer
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.sink.char_buffer PRIVATE

@@ -5,7 +5,7 @@ add_executable(test.component.FILE_stream
 
 target_link_libraries(test.component.FILE_stream
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.component.FILE_stream PRIVATE

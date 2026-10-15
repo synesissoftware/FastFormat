@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the test.performance.name_age_height project.
  *
  * Created:     19th September 2006
- * Updated:     6th February 2024
+ * Updated:     16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////////// */
 
@@ -346,7 +346,7 @@ static int main_(int argc, char** argv)
             { for(unsigned k = 0; k != STLSOFT_NUM_ELEMENTS(args); ++k)
             {
                 char    sz[1001];
-                int     cch = ::sprintf(&sz[0], "%s, %d, %g", args[k].name, args[k].age, args[k].height);
+                int     cch = ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "%s, %d, %g", args[k].name, args[k].age, args[k].height);
 
                 std::string s(sz, size_t(cch));
 

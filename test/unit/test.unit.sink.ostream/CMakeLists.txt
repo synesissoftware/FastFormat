@@ -5,7 +5,7 @@ add_executable(test.unit.sink.ostream
 
 target_link_libraries(test.unit.sink.ostream
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.sink.ostream PRIVATE

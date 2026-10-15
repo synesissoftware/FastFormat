@@ -5,7 +5,7 @@ add_executable(test.component.sink.string.write
 
 target_link_libraries(test.component.sink.string.write
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.component.sink.string.write PRIVATE

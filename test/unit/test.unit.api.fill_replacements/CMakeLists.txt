@@ -5,7 +5,7 @@ add_executable(test.unit.api.fill_replacements
 
 target_link_libraries(test.unit.api.fill_replacements
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.api.fill_replacements PRIVATE

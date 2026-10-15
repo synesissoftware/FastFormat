@@ -5,7 +5,7 @@ add_executable(test.performance.boost.karma
 
 target_link_libraries(test.performance.boost.karma
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.performance.boost.karma PRIVATE

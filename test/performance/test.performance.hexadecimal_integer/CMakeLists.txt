@@ -5,7 +5,7 @@ add_executable(test.performance.hexadecimal_integer
 
 target_link_libraries(test.performance.hexadecimal_integer
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.performance.hexadecimal_integer PRIVATE

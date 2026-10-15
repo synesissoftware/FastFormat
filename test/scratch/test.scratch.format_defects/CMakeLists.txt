@@ -5,7 +5,7 @@ add_executable(test.scratch.format_defects
 
 target_link_libraries(test.scratch.format_defects
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.scratch.format_defects PRIVATE

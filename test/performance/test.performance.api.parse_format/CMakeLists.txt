@@ -5,7 +5,7 @@ add_executable(test.performance.api.parse_format
 
 target_link_libraries(test.performance.api.parse_format
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.performance.api.parse_format PRIVATE

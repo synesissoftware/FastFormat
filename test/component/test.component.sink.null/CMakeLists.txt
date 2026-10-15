@@ -5,7 +5,7 @@ add_executable(test.component.sink.null
 
 target_link_libraries(test.component.sink.null
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.component.sink.null PRIVATE

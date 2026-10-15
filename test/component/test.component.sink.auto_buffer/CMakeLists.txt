@@ -5,7 +5,7 @@ add_executable(test.component.sink.auto_buffer
 
 target_link_libraries(test.component.sink.auto_buffer
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.component.sink.auto_buffer PRIVATE

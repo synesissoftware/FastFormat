@@ -5,7 +5,7 @@ add_executable(test.unit.api.lookup_pattern
 
 target_link_libraries(test.unit.api.lookup_pattern
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.api.lookup_pattern PRIVATE

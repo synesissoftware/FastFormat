@@ -5,7 +5,7 @@ add_executable(test.unit.inserters.character
 
 target_link_libraries(test.unit.inserters.character
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.inserters.character PRIVATE

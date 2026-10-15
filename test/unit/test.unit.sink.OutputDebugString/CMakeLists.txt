@@ -5,7 +5,7 @@ add_executable(test.unit.sink.OutputDebugString
 
 target_link_libraries(test.unit.sink.OutputDebugString
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.sink.OutputDebugString PRIVATE

@@ -5,7 +5,7 @@ add_executable(test.unit.format.standard_flags
 
 target_link_libraries(test.unit.format.standard_flags
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.format.standard_flags PRIVATE

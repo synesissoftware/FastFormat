@@ -4,7 +4,7 @@
  * Purpose:     Implementation file for the example.overload.2.custom_type.inserter project.
  *
  * Created:     2nd March 2009
- * Updated:     6th February 2024
+ * Updated:     16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -54,6 +54,7 @@ public: /// Member Variables
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/bundles/properties_bundle.hpp>
+#include <fastformat/util/string/snprintf.h>
 
 /* STLSoft header files */
 
@@ -65,18 +66,6 @@ public: /// Member Variables
 /* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
-
-
-/* /////////////////////////////////////////////////////////////////////////
- * Compatibility
- */
-
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER >= 1400
- /* This is legitimate *only* in the case of the behaviour of this code */
-# include <windows.h>
-# define sprintf    wsprintf
-#endif /* VC++ 8+ */
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
@@ -101,15 +90,22 @@ std::string edna_5(superhero const& hero);
 
 std::string edna_1(superhero const& hero)
 {
+  using fastformat::fastformat_util_snprintf;
+
   std::string result;
   char        num[21];
+  int         n;
+
   result += hero.name;
   result += " {weight=";
-  result.append(num, (size_t)sprintf(num, "%d", hero.weight));
+  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.weight);
+  result.append(num, n < 0 ? size_t(0) : size_t(n));
   result += ", strength=";
-  result.append(num, (size_t)sprintf(num, "%d", hero.strength));
+  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.strength);
+  result.append(num, n < 0 ? size_t(0) : size_t(n));
   result += ", goodness=";
-  result.append(num, (size_t)sprintf(num, "%d", hero.goodness));
+  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.goodness);
+  result.append(num, n < 0 ? size_t(0) : size_t(n));
   result += '}';
 
   return result;
@@ -117,16 +113,23 @@ std::string edna_1(superhero const& hero)
 
 std::string edna_2(superhero const& hero)
 {
+  using fastformat::fastformat_util_snprintf;
+
   std::string result;
   char        num[21];
+  int         n;
+
   result.reserve(hero.name.size() + 32 + (3 * 20));
   result += hero.name;
   result += " {weight=";
-  result.append(num, (size_t)sprintf(num, "%d", hero.weight));
+  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.weight);
+  result.append(num, n < 0 ? size_t(0) : size_t(n));
   result += ", strength=";
-  result.append(num, (size_t)sprintf(num, "%d", hero.strength));
+  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.strength);
+  result.append(num, n < 0 ? size_t(0) : size_t(n));
   result += ", goodness=";
-  result.append(num, (size_t)sprintf(num, "%d", hero.goodness));
+  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.goodness);
+  result.append(num, n < 0 ? size_t(0) : size_t(n));
   result += '}';
 
   return result;

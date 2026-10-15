@@ -5,7 +5,7 @@ add_executable(test.unit.sink.CString
 
 target_link_libraries(test.unit.sink.CString
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.sink.CString PRIVATE

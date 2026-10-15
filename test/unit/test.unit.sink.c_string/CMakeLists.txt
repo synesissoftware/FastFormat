@@ -5,7 +5,7 @@ add_executable(test.unit.sink.c_string
 
 target_link_libraries(test.unit.sink.c_string
     fastformat
-    xTests::xTests.core
+    xTests::core
 )
 
 target_compile_options(test.unit.sink.c_string PRIVATE
