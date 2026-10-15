@@ -1,129 +1,94 @@
-# Synesis Information Systems .gitignore for C/C++ libraries
+# Synesis Information Systems .gitignore for C / C++ libraries
 
 
 # directories (by name)
 
-/.git-old/
-/.vs/
-
-.svn/
-
-.classpath
-/.idea/
-/__pycache__
-/node_modules
-
-/_build/
-/_build-ci/
-/_internal/
-/_analyses/
-
-/bin/
-/ipch/
-/lib/
 bin/
+ideas/
 ipch/
 lib/
+scripts/internal/
+Win32/
+x64/
 
-/doc/
+.idea/
+.svn/
+.vs/
+
+__pycache__/
+
+/_analyses/
+/_build-ci/
+/_build/
+/_internal/
+
 /docs/
 /dox/
-/dox
 /ideas/
-ideas/
-/included/
-/releases/
-/scratch/
-/temp/
-
-/--include
-/--src
-/-include
-/-src
-
-/examples/bin
-/examples/c/bin
-/examples/cpp/bin
-
-/examples/lib
-/examples/c/lib
-/examples/cpp/lib
-
-projects/util/vc10-generated/
-
-perf_test/
-
-scripts/internal/
-
-/include/b64/
-/include/shwild/
 /include/xcontract/
 /include/xcover/
-/include/xtests/
-/src/b64/
-/src/shwild/
+/included/
+/node_modules/
+/releases/
+/scratch/
 /src/xcontract/
 /src/xcover/
-/src/xtests/
-Debug Multithreaded DLL/
+/target/
+/temp/
+
+/examples/bin/
+/examples/c/bin/
+/examples/c/lib/
+/examples/cpp/bin/
+/examples/cpp/lib/
+/examples/lib/
+
 Debug Multithreaded Dll/
-Debug Multithreaded pseudoUNIX/
+Debug Multithreaded DLL/
 Debug Multithreaded pseudoUnix/
+Debug Multithreaded pseudoUNIX/
 Debug Multithreaded/
 Debug/
+DebugDll/
 DebugDLL/
 DebugDLLUNIX/
-DebugDll/
-DebugMTDLL/
-DebugMTDll/
-DebugMTUnix/
 DebugMt/
+DebugMTDll/
+DebugMTDLL/
+DebugMTUnix/
 DebugNox/
-DebugUNIX/
 DebugUnix/
-Release Multithreaded DLL/
+DebugUNIX/
 Release Multithreaded Dll/
-Release Multithreaded pseudoUNIX/
+Release Multithreaded DLL/
 Release Multithreaded pseudoUnix/
+Release Multithreaded pseudoUNIX/
 Release Multithreaded/
 Release/
+ReleaseDll/
 ReleaseDLL/
 ReleaseDLLUNIX/
-ReleaseDll/
-ReleaseMTDLL/
-ReleaseMTDll/
-ReleaseMTUnix/
 ReleaseMt/
+ReleaseMTDll/
+ReleaseMTDLL/
+ReleaseMTUnix/
 ReleaseNox/
 ReleaseUnix/
 UDebug/
 UDebugMt/
-URelease/
-UReleaseMt/
-Unicode Debug Multithreaded DLL/
 Unicode Debug Multithreaded Dll/
+Unicode Debug Multithreaded DLL/
 Unicode Debug Multithreaded/
 Unicode Debug/
-Unicode Release Multithreaded DLL/
 Unicode Release Multithreaded Dll/
+Unicode Release Multithreaded DLL/
 Unicode Release Multithreaded/
 Unicode Release/
-
-Win32/
-x64/
+URelease/
+UReleaseMt/
 
 
 # directories (by pattern)
-
-/build/ar*
-/build/bc5*
-/build/como*
-/build/cw*
-/build/gcc3*
-/build/gcc4*
-/build/icl*
-/build/vc5*
-/build/*.zip
 
 /include-*/
 
@@ -131,35 +96,32 @@ x64/
 # files (by name)
 
 .DS_Store
+
+.classpath
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
 .ruby-version
-.ruby-version-exclusions
 .svnignore
 .svnignore-at-root
 .update_deps
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
+build/CMakeCache.txt
+build/makefile.tmpl
+build/makefile.tools.xml
+build/shwild.tmplgen
+include/pantheios/internal/dos2unix.has.been.performed
+include/stlsoft/dos2unix.has.been.performed
+include/stlsoft/internal/dos2unix.has.been.performed
 list_changes.cmd
 logging-bailout.txt
 prepare.cmd
 sh.exe.stackdump
-tidydir.cmd
-update_deps.cmd
-
-build/makefile.tmpl
-build/makefile.tools.xml
-build/shwild.tmplgen
-build/CMakeCache.txt
-
-include/fastformat/internal/dos2unix.has.been.performed
-include/pantheios/internal/dos2unix.has.been.performed
-include/stlsoft/dos2unix.has.been.performed
-include/stlsoft/internal/dos2unix.has.been.performed
-
 test/testpatterns.orj
 test/tests-plan.txt
+tidydir.cmd
+update_deps.cmd
 
 
 # files (by pattern)
@@ -167,15 +129,19 @@ test/tests-plan.txt
 *~
 *.*~
 *.???_obj
-*.VC.db
-*.VC.opendb
 *.a
 *.app
 *.aps
 *.b64
+# Directories whose names end in .b64 match *.b64; keep their sources.
+!examples/cpp/inserters/example.cpp.inserter.b64/
+!examples/cpp/inserters/example.cpp.inserter.b64/**
+!test/component/test.component.inserters.b64/
+!test/component/test.component.inserters.b64/**
 *.bak
 *.chm
 *.class
+*.csproj*user
 *.d
 *.diff
 *.dll
@@ -212,35 +178,42 @@ test/tests-plan.txt
 *.slo
 *.so
 *.suo
-*.swp
 *.sw[ponm]
+*.swp
 *.test
 *.tlog
 *.tmp
 *.unsuccessfulbuild
-*.vcproj*.user
-*.vcxproj*.user
-*.csproj*user
-*.vcproj*user
-*.vcxproj*user
+*.VC.db
+*.VC.opendb
 *.xcuserstate
 *.zip
 
-*.vc71.sln
-*.vc8.sln
-*.vc9.sln
+/build/*.tmpl
+/build/*.tmplgen
+/build/*.tools.xml
+/build/*.zip
+/build/ar*
+/build/bc5*
+/build/como*
+/build/cw*
+/build/gcc3*
+/build/gcc4*
+/build/icl*
+/build/vc5*
 
 RCa0*
 RCb0*
 
-# CMake build directories (here alternatives cmake-build and build-cmake)
-/build-cmake
-/cmake-build
-
-build/*.tmplgen
-build/*.tmpl
-build/*.tools.xml
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+*.vc71.sln
+*.vc8.sln
+*.vc9.sln
+*.vcproj*.user
+*.vcproj*user
+*.vcxproj*.user
+*.vcxproj*user
+
