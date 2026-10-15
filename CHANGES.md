@@ -16,6 +16,7 @@
 * Obtained **UNIXem** with `find_package(UNIXem)` for Windows tests and appended it to the Windows CI dependency list, keeping the scratch `#include <unixem/unixem.h>` on the classic `_WIN32` guard;
 * Renamed locals that MSVC `/WX` treated as hiding (`newline`, properties `key`, record-insert loop index), and narrowed a string resource id to `int` in a helper so the constructor is not a pointer-truncation warning;
 * Switched the CString sink to `mfcstl::grab_CString_buffer` (the old typedef is under `STLSOFT_OBSOLETE`), built the MFC/ATL programs only with MSVC (`_AFXDLL` for the BSTR scratch), left the speech scratch out of the build, and skipped **test.scratch.sink.WindowsMessageBox** under `--skip-interactive`;
+* Expanded **README.md** with **Components**, **Examples** (via **EXAMPLES.md**), and a full **Dependencies** section;
 
 
 ## 0.7.4-rc6 - 6th February 2024
