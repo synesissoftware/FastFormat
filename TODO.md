@@ -15,9 +15,11 @@
   * [ ] lc_i - these will do "thousands" (or whatever is appropriate to a given locale) formatting on integers, e.g. "100,000,000";
   * [ ] storage_size;
 * [ ] sinks:
+  * [ ] add macOS speech variant;
   * [ ] include/fastformat/sinks/WindowsFileHANDLE.hpp;
-  * [ ] synchronisation of ostream sink : spin / thread_mutex;
   * [ ] include/fastformat/sinks/to_sink.hpp;
+  * [ ] re-enable speech output;
+  * [ ] synchronisation of ostream sink : spin / thread_mutex;
 
 
 ## Performance improvements
@@ -30,8 +32,9 @@
 * [-] ~~~full distribution of makefiles, project files, workspace files, etc. (legacy build trees removed; CMake-only)~~~ - ❌;
 * [ ] decent docs;
 * [ ] decent website;
-* [ ] GNU Autotools : "./configure; make; make install";
 * [ ] Debian package;
+* [ ] GNU Autotools : "./configure; make; make install";
+* [ ] remove all implicit-link files and inclusions (keep **implicit_link.h**);
 * [ ] RPM package;
 
 
