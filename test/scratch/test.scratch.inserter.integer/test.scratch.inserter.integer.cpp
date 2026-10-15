@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.inserter.integer.cpp
+ * File:    test/scratch/test.scratch.inserter.integer/test.scratch.inserter.integer.cpp
  *
- * Purpose:     Implementation file for the test.scratch.inserter.integer project.
+ * Purpose: Scratch program for inserter.integer.
  *
- * Created:     1st March 2009
- * Updated:     6th February 2024
+ * Created: 1st March 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>

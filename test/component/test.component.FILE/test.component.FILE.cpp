@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.FILE.cpp
+ * File:    test/component/test.component.FILE/test.component.FILE.cpp
  *
- * Purpose:     Implementation file for the test.component.FILE project.
+ * Purpose: Component tests for FILE.
  *
- * Created:     3rd January 2008
- * Updated:     6th February 2024
+ * Created: 3rd January 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

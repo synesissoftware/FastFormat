@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.scenario1.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.scenario1/test.performance.scenario1.cpp
  *
- * Purpose:     Implementation file for the test.performance.scenario1 project.
+ * Purpose: Performance tests for scenario1.
  *
- * Created:     19th September 2006
- * Updated:     16th October 2026
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 

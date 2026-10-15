@@ -1,11 +1,11 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.performance.api.parse_format.cpp
+ * File:    test/performance/test.performance.api.parse_format/test.performance.api.parse_format.cpp
  *
- * Purpose:     Implementation file for the test.performance.api.parse_format project.
+ * Purpose: Performance tests for api.parse_format.
  *
- * Created:     17th November 2008
- * Updated:     6th February 2024
- * *
+ * Created: 17th November 2008
+ * Updated: 16th October 2026
+ *
  * ////////////////////////////////////////////////////////////////////// */
 
 //#define FF_PRSFMT_USE_SV_PARAM

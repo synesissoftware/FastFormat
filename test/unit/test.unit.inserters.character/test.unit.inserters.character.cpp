@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.inserters.character.cpp
+ * File:    test/unit/test.unit.inserters.character/test.unit.inserters.character.cpp
  *
- * Purpose:     Implementation file for the test.unit.inserters.character project.
+ * Purpose: Unit tests for inserters.character.
  *
- * Created:     11th December 2010
- * Updated:     6th February 2024
+ * Created: 11th December 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

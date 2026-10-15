@@ -1,4 +1,12 @@
-
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.hexadecimal_integer/test.performance.hexadecimal_integer.cpp
+ *
+ * Purpose: Performance tests for hexadecimal_integer.
+ *
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
+ *
+ * ////////////////////////////////////////////////////////////////////// */
 
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/to_i.hpp>

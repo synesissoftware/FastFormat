@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.format_iterator.cpp
+ * File:    test/scratch/test.scratch.format_iterator/test.scratch.format_iterator.cpp
  *
- * Purpose:     Implementation file for the test.scratch.format_iterator project.
+ * Purpose: Scratch program for format_iterator.
  *
- * Created:     20th May 2009
- * Updated:     6th February 2024
+ * Created: 20th May 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>

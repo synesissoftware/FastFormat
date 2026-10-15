@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.format_alignment.cpp
+ * File:    test/scratch/test.scratch.format_alignment/test.scratch.format_alignment.cpp
  *
- * Purpose:     Implementation file for the test.scratch.format_alignment project.
+ * Purpose: Scratch program for format_alignment.
  *
- * Created:     1st June 2008
- * Updated:     6th February 2024
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #define FASTFORMAT_NO_USE_JIT_CACHE
 

@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.ff_test_1.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/scratch/test.scratch.ff_test_1/test.scratch.ff_test_1.cpp
  *
- * Purpose:     Implementation file for the test.scratch.ff_test_1 project.
+ * Purpose: Scratch program for ff_test_1.
  *
- * Created:     15th September 2006
- * Updated:     6th February 2024
+ * Created: 15th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 /* FastFormat header files */
 #include <fastformat/fastformat.hpp>

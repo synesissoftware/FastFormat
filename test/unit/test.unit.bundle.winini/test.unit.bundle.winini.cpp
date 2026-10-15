@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.bundle.winini.cpp
+ * File:    test/unit/test.unit.bundle.winini/test.unit.bundle.winini.cpp
  *
- * Purpose:     Implementation file for the test.unit.bundle.winini project.
+ * Purpose: Unit tests for bundle.winini.
  *
- * Created:     12th April 2008
- * Updated:     6th February 2024
+ * Created: 12th April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

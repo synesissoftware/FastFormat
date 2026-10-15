@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sink.vectored_file.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/scratch/test.scratch.sink.vectored_file/test.scratch.sink.vectored_file.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sink.vectored_file project.
+ * Purpose: Scratch program for sink.vectored_file.
  *
- * Created:     28th October 2006
- * Updated:     6th February 2024
+ * Created: 28th October 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 /* UNIXem header files */
 #include <platformstl/platformstl.h>

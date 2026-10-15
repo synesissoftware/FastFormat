@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.inserter.hex.cpp
+ * File:    test/component/test.component.inserter.hex/test.component.inserter.hex.cpp
  *
- * Purpose:     Implementation file for the test.component.inserter.hex project.
+ * Purpose: Component tests for inserter.hex.
  *
- * Created:     16th January 2010
- * Updated:     6th February 2024
+ * Created: 16th January 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

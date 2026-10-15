@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.name_age_height.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.name_age_height/test.performance.name_age_height.cpp
  *
- * Purpose:     Implementation file for the test.performance.name_age_height project.
+ * Purpose: Performance tests for name_age_height.
  *
- * Created:     19th September 2006
- * Updated:     16th October 2026
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 

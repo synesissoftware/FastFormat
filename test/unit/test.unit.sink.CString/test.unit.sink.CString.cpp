@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.sink.CString.cpp
+ * File:    test/unit/test.unit.sink.CString/test.unit.sink.CString.cpp
  *
- * Purpose:     Implementation file for the test.unit.sink.CString project.
+ * Purpose: Unit tests for sink.CString.
  *
- * Created:     28th May 2008
- * Updated:     6th February 2024
+ * Created: 28th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #if defined(_MSC_VER) && \
     defined(_DLL)

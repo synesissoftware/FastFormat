@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.overload.ex.1.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.overload.ex.1/test.performance.overload.ex.1.cpp
  *
- * Purpose:     Implementation file for the test.performance.overload.ex.1 project.
+ * Purpose: Performance tests for overload.ex.1.
  *
- * Created:     19th October 2008
- * Updated:     16th October 2026
+ * Created: 19th October 2008
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 

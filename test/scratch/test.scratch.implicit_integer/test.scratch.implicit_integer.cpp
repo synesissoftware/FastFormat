@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.implicit_integer.cpp
+ * File:    test/scratch/test.scratch.implicit_integer/test.scratch.implicit_integer.cpp
  *
- * Purpose:     Implementation file for the test.scratch.implicit_integer project.
+ * Purpose: Scratch program for implicit_integer.
  *
- * Created:     1st June 2008
- * Updated:     16th October 2026
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

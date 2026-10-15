@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.sink.char_buffer.cpp
+ * File:    test/unit/test.unit.sink.char_buffer/test.unit.sink.char_buffer.cpp
  *
- * Purpose:     Implementation file for the test.unit.sink.char_buffer project.
+ * Purpose: Unit tests for sink.char_buffer.
  *
- * Created:     28th May 2008
- * Updated:     6th February 2024
+ * Created: 28th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

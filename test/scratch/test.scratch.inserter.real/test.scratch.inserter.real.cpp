@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.inserter.real.cpp
+ * File:    test/scratch/test.scratch.inserter.real/test.scratch.inserter.real.cpp
  *
- * Purpose:     Implementation file for the test.scratch.inserter.real project.
+ * Purpose: Scratch program for inserter.real.
  *
- * Created:     1st March 2009
- * Updated:     6th February 2024
+ * Created: 1st March 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>

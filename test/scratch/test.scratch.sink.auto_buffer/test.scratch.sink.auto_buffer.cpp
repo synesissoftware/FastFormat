@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.auto_buffer.cpp
+ * File:    test/scratch/test.scratch.sink.auto_buffer/test.scratch.sink.auto_buffer.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.auto_buffer project.
+ * Purpose: Scratch program for sink.auto_buffer.
  *
- * Created:     21st April 2008
- * Updated:     6th February 2024
+ * Created: 21st April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #define FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS // VC++ 6 can't distinguish the auto_buffer action shim from the generic string one

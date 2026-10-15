@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.one_integer.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.one_integer/test.performance.one_integer.cpp
  *
- * Purpose:     Implementation file for the test.performance.one_integer project.
+ * Purpose: Performance tests for one_integer.
  *
- * Created:     9th September 2006
- * Updated:     16th October 2026
+ * Created: 9th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 

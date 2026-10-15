@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.inserter.real.cpp
+ * File:    test/component/test.component.inserter.real/test.component.inserter.real.cpp
  *
- * Purpose:     Implementation file for the test.component.inserter.real project.
+ * Purpose: Component tests for inserter.real.
  *
- * Created:     26th April 2008
- * Updated:     6th February 2024
+ * Created: 26th April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

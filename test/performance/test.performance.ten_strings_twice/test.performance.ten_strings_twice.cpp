@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.ten_strings_twice.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.ten_strings_twice/test.performance.ten_strings_twice.cpp
  *
- * Purpose:     Implementation file for the test.performance.ten_strings_twice project.
+ * Purpose: Performance tests for ten_strings_twice.
  *
- * Created:     19th September 2006
- * Updated:     16th October 2026
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
