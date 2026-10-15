@@ -1,6 +1,14 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.7.4-rc7 - 16th October 2026
+
+* Migrated the version low-byte macro to `FASTFORMAT_VER_RELSTATUS` (packed value remains **0x86**; header major/minor/patch unchanged), retaining `FASTFORMAT_VER_ALPHABETA` as a documentation-skip alias;
+* Re-synced tip **`run_all_examples.cmd`** and **`run_all_scratch_tests.cmd`** from **misc-dev-scripts** `cmake-helpers` `@0754c23`;
+* Added modular GitHub Actions CI (**`.github/workflows/ci.yml`**, **`ci-cell.yml`**, **`install-sis-deps`**): artifact split, execute-bit restore, Windows **`.cmd`** dogfood; dependencies **STLSoft**, **shwild**, **xTests**; README CI badge targets **`ci.yml`**;
+* Modernised **NEWS.md** to the three-column chronology;
+
+
 ## 0.7.4-rc6 - 6th February 2024
 
 * CMake support;

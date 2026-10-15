@@ -1,0 +1,235 @@
+#
+# Created: 16th October 2026
+# Updated: 16th October 2026
+#
+
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+      - boilerplate
+      - idiomatic
+      - rc1
+      - rc2
+      - rc3
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  cell:
+    name: CI (${{ matrix.id }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: linux-clang
+            os: ubuntu-latest
+            c_compiler: clang
+            cpp_compiler: clang++
+          - id: linux-gcc
+            os: ubuntu-latest
+            c_compiler: gcc
+            cpp_compiler: g++
+          - id: macos-clang
+            os: macos-latest
+            c_compiler: clang
+            cpp_compiler: clang++
+          - id: macos-gcc
+            os: macos-latest
+            c_compiler: gcc
+            cpp_compiler: g++
+          # src/CMakeLists.txt rejects _BUILD_AS_WIN32, so CMake on Windows
+          # is not supported yet. Cells stay in the matrix for .cmd dogfood
+          # and fail at configure until that gate is lifted.
+          - id: windows-cl
+            os: windows-latest
+            c_compiler: cl
+            cpp_compiler: cl
+          # `toolchain` carries what is not a compiler: MinGW needs its own
+          # generator and PATH, but the compilers it drives are gcc and g++
+          - id: windows-mingw
+            os: windows-latest
+            c_compiler: gcc
+            cpp_compiler: g++
+            toolchain: mingw
+    uses: ./.github/workflows/ci-cell.yml
+    with:
+      cell-id: ${{ matrix.id }}
+      os: ${{ matrix.os }}
+      c-compiler: ${{ matrix.c_compiler }}
+      cpp-compiler: ${{ matrix.cpp_compiler }}
+      build-type: Release
+      toolchain: ${{ matrix.toolchain }}
+    secrets: inherit
+
+  install-smoke:
+    name: Install smoke (${{ matrix.os }}, ${{ matrix.toolchain || matrix.c_compiler }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            c_compiler: gcc
+            cpp_compiler: g++
+          - os: ubuntu-latest
+            c_compiler: clang
+            cpp_compiler: clang++
+          - os: macos-latest
+            c_compiler: clang
+            cpp_compiler: clang++
+          - os: windows-latest
+            c_compiler: cl
+            cpp_compiler: cl
+          - os: windows-latest
+            c_compiler: gcc
+            cpp_compiler: g++
+            toolchain: mingw
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Clang (Ubuntu)
+        if: runner.os == 'Linux' && matrix.c_compiler == 'clang'
+        run: sudo apt-get update && sudo apt-get install -y clang
+
+      - name: Setup MSYS2 MinGW
+        if: runner.os == 'Windows' && matrix.toolchain == 'mingw'
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-cmake
+            mingw-w64-x86_64-make
+
+      # Dependency order is deliberate (not lexicographic): each package
+      # configures against those already installed. shwild precedes xTests.
+      - name: Install runtime dependencies (STLSoft + shwild + xTests)
+        uses: ./.github/actions/install-sis-deps
+        with:
+          build-type: ${{ env.BUILD_TYPE }}
+          c-compiler: ${{ matrix.c_compiler }}
+          cpp-compiler: ${{ matrix.cpp_compiler }}
+          dependencies: STLSoft shwild xTests
+          toolchain: ${{ matrix.toolchain }}
+
+      - name: Configure
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ matrix.c_compiler }}" = "cl" ]; then
+            cmake -B build -S . \
+              -DCMAKE_DISABLE_FIND_PACKAGE_MFC=TRUE \
+              -DCMAKE_PREFIX_PATH="${{ env.SIS_DEPS }}" \
+              -DBUILD_EXAMPLES=OFF \
+              -DBUILD_TESTING=OFF
+          elif [ "${{ matrix.toolchain }}" = "mingw" ]; then
+            export PATH="/mingw64/bin:$PATH"
+            cmake -B build -S . -G "MinGW Makefiles" \
+              -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" \
+              -DCMAKE_C_COMPILER="${{ matrix.c_compiler }}" \
+              -DCMAKE_CXX_COMPILER="${{ matrix.cpp_compiler }}" \
+              -DCMAKE_PREFIX_PATH="${{ env.SIS_DEPS }}" \
+              -DBUILD_EXAMPLES=OFF \
+              -DBUILD_TESTING=OFF
+          else
+            cmake -B build -S . \
+              -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" \
+              -DCMAKE_C_COMPILER="${{ matrix.c_compiler }}" \
+              -DCMAKE_CXX_COMPILER="${{ matrix.cpp_compiler }}" \
+              -DCMAKE_PREFIX_PATH="${{ env.SIS_DEPS }}" \
+              -DBUILD_EXAMPLES=OFF \
+              -DBUILD_TESTING=OFF
+          fi
+
+      - name: Build
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ matrix.c_compiler }}" = "cl" ]; then
+            cmake --build build --config "${{ env.BUILD_TYPE }}" --parallel
+          elif [ "${{ matrix.toolchain }}" = "mingw" ]; then
+            export PATH="/mingw64/bin:$PATH"
+            cmake --build build --parallel 2
+          else
+            cmake --build build --parallel
+          fi
+
+      - name: Install
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREFIX="${RUNNER_TEMP}/install-prefix"
+          echo "INSTALL_PREFIX=$PREFIX" >> "$GITHUB_ENV"
+          if [ "${{ matrix.c_compiler }}" = "cl" ]; then
+            cmake --install build --config "${{ env.BUILD_TYPE }}" --prefix "$PREFIX"
+          else
+            cmake --install build --prefix "$PREFIX"
+          fi
+
+      - name: Verify install tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "${INSTALL_PREFIX}/include/fastformat/fastformat.h"
+          test -f "${INSTALL_PREFIX}/include/fastformat/fastformat.hpp"
+          test -f "${INSTALL_PREFIX}/lib/cmake/fastformat/fastformat-config.cmake"
+
+      # Installed config does not yet find_dependency(STLSoft). The consumer
+      # finds STLSoft, then FastFormat, and links FastFormat::fastformat.
+      - name: Configure and build install smoke consumer
+        shell: bash
+        run: |
+          set -euo pipefail
+          CONSUMER="${RUNNER_TEMP}/consumer"
+          mkdir -p "$CONSUMER"
+          cat > "$CONSUMER/CMakeLists.txt" <<'EOF'
+          cmake_minimum_required(VERSION 3.20)
+          project(fastformat_install_smoke CXX)
+          find_package(STLSoft REQUIRED)
+          find_package(FastFormat REQUIRED)
+          add_executable(consumer consumer.cpp)
+          target_link_libraries(consumer PRIVATE FastFormat::fastformat)
+          EOF
+          cat > "$CONSUMER/consumer.cpp" <<'EOF'
+          #include <fastformat/fastformat.h>
+
+          int main(int /*argc*/, char* /*argv*/[])
+          {
+              return 0 == FASTFORMAT_VER_MAJOR ? 0 : 1;
+          }
+          EOF
+          if [ "${{ matrix.c_compiler }}" = "cl" ]; then
+            cmake -S "$CONSUMER" -B consumer-build \
+              -DCMAKE_PREFIX_PATH="${INSTALL_PREFIX};${{ env.SIS_DEPS }}"
+            cmake --build consumer-build --config "${{ env.BUILD_TYPE }}" --parallel
+          elif [ "${{ matrix.toolchain }}" = "mingw" ]; then
+            export PATH="/mingw64/bin:$PATH"
+            cmake -S "$CONSUMER" -B consumer-build -G "MinGW Makefiles" \
+              -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" \
+              -DCMAKE_C_COMPILER="${{ matrix.c_compiler }}" \
+              -DCMAKE_CXX_COMPILER="${{ matrix.cpp_compiler }}" \
+              -DCMAKE_PREFIX_PATH="${INSTALL_PREFIX};${{ env.SIS_DEPS }}"
+            cmake --build consumer-build --parallel 2
+          else
+            cmake -S "$CONSUMER" -B consumer-build \
+              -DCMAKE_BUILD_TYPE="${{ env.BUILD_TYPE }}" \
+              -DCMAKE_C_COMPILER="${{ matrix.c_compiler }}" \
+              -DCMAKE_CXX_COMPILER="${{ matrix.cpp_compiler }}" \
+              -DCMAKE_PREFIX_PATH="${INSTALL_PREFIX};${{ env.SIS_DEPS }}"
+            cmake --build consumer-build --parallel
+          fi

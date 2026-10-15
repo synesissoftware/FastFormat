@@ -1,169 +1,87 @@
 # FastFormat - News <!-- omit in toc -->
 
-Updated:    21st March 2021
 
-
-
-News:
-
-  6th February 2024     -   FastFormat 0.7.4 RC 6
-
-  21st March 2021       -   FastFormat 0.7.4 RC 5
-
-  5th February 2017     -   FastFormat 0.7.5 RC 4
-
-  5th February 2017     -   FastFormat 0.7.5 RC 3
-
-  30th November 2016    -   FastFormat 0.7.5 RC 2
-
-  16th August 2016      -   FastFormat 0.7.5 RC 1
-
-  15th August 2016      -   FastFormat 0.7.3
-
-  26th September 2015   -   FastFormat 0.7.2
-
-  26th September 2015   -   FastFormat 0.7.1
-
-  17th August 2012      -   FastFormat 0.7.1 alpha 9
-
-  7th August 2012       -   FastFormat 0.7.1 alpha 8
-
-  7th February 2012     -   FastFormat 0.7.1 alpha 7
-
-  2nd December 2011     -   FastFormat 0.7.1 alpha 6
-
-  2nd December 2011     -   FastFormat 0.7.1 alpha 5
-
-  1st December 2011     -   FastFormat 0.7.1 alpha 4
-
-  21st January 2011     -   FastFormat 0.7.1 alpha 3
-
-  16th January 2011     -   FastFormat 0.7.1 alpha 2
-
-  11th December 2010    -   FastFormat 0.7.1 alpha 1
-
-  29th November 2010    -   FastFormat 0.6.4
-
-  11th November 2010    -   FastFormat 0.6.3
-
-  14th October 2010     -   FastFormat 0.6.2
-
-  23rd June 2010        -   FastFormat 0.6.1 alpha 1
-
-  21st June 2010        -   FastFormat 0.5.9
-
-  7th June 2010         -   FastFormat 0.5.8
-
-  16th April 2010       -   FastFormat 0.5.7
-
-  13th April 2010       -   FastFormat 0.5.6
-
-  5th April 2010        -   FastFormat 0.5.5
-
-  10th March 2010       -   FastFormat 0.5.4
-
-  9th March 2010        -   FastFormat 0.5.3
-
-  7th March 2010        -   FastFormat 0.5.2
-
-  5th February 2010     -   FastFormat 0.5.1 alpha 1
-
-  21st January 2010     -   FastFormat 0.4.6
-
-  20th January 2010     -   FastFormat 0.4.5
-
-  10th July 2009        -   FastFormat 0.4.4
-
-  8th July 2009         -   FastFormat 0.4.3
-
-  19th June 2009        -   FastFormat 0.4.2
-
-  16th June 2009        -   FastFormat 0.4.1
-
-  June 2009             -   "An Introduction to FastFormat, part 3: Solving Real Problems, Quickly" has been published in Overload 91
-
-  24th May 2009         -   FastFormat 0.3.6
-
-  1st May 2009          -   FastFormat 0.3.5
-
-  29th April 2009       -   FastFormat 0.3.4
-
-  26th April 2009       -   FastFormat 0.3.3
-
-  19th April 2009       -   FastFormat 0.3.2
-
-  17th April 2009       -   FastFormat 0.3.2 beta 4 released
-
-  16th April 2009       -   FastFormat 0.3.2 beta 3 released
-
-  15th April 2009       -   FastFormat 0.3.2 beta 2 released
-
-  9th April 2009        -   FastFormat 0.3.2 beta 1 released
-
-  6th April 2009        -   "An Introduction to FastFormat, part 2: Custom Argument and Sink Types" has been published in Overload 90
-
-  9th March 2009        -   FastFormat 0.3.1 beta 5 released
-
-  9th March 2009        -   FastFormat 0.3.1 beta 4 released
-
-  9th March 2009        -   STLSoft 1.10.1 alpha 9 (delta) released
-
-  6th March 2009        -   STLSoft 1.9.76 released
-
-  16th February 2009    -   "An Introduction to FastFormat, part 1: The State of the Art" has been published in Overload 89
-
-  13th February 2009    -   FastFormat 0.3.1 beta 3 released
-
-  13th February 2009    -   FastFormat 0.3.1 beta 2 released
-
-  1st February 2009     -   FastFormat 0.3.1 beta 1 released
-
-  19th January 2009     -   FastFormat 0.3.1 alpha 1 released
-
-  4th January 2009      -   FastFormat 0.2.1 beta 10 released
-
-  2nd January 2009      -   FastFormat 0.2.1 beta 9 released
-
-  1st January 2009      -   FastFormat 0.2.1 beta 8 released
-
-  30th December 2008    -   FastFormat 0.2.1 beta 7 released
-
-  28th December 2008    -   FastFormat 0.2.1 beta 6 released
-
-  17th December 2008    -   FastFormat 0.2.1 beta 5 released
-
-  14th December 2008    -   FastFormat 0.2.1 beta 4 released
-
-  10th December 2008    -   FastFormat 0.2.1 beta 3 released
-
-  4th December 2008     -   FastFormat 0.2.1 beta 2 released
-
-  1st December 2008     -   FastFormat 0.2.1 beta 1 released
-
-  27th November 2008    -   FastFormat 0.2.1 alpha 12 released
-
-  23rd November 2008    -   FastFormat 0.2.1 alpha 11 released
-
-  19th November 2008    -   FastFormat 0.2.1 alpha 10 released
-
-  12th November 2008    -   FastFormat 0.2.1 alpha 9 released
-
-  11th November 2008    -   FastFormat 0.2.1 alpha 8 released
-
-  9th November 2008     -   FastFormat 0.2.1 alpha 7 released
-
-  4th November 2008     -   FastFormat 0.2.1 alpha 6 released
-
-  25th October 2008     -   FastFormat 0.2.1 alpha 5 released
-
-  14th October 2008     -   FastFormat 0.2.1 alpha 4 released
-
-  12th September 2008   -   FastFormat 0.2.1 alpha 3 released
-
-  8th September 2008    -   FastFormat 0.2.1 alpha 2 released
-
-  3rd September 2008    -   FastFormat 0.2.1 alpha 1 released
-
-
-=============================== End of file ================================
-
+| Date                | News Item                           | Details                                           |
+| ------------------- | ----------------------------------- | ------------------------------------------------- |
+| 6th February 2024   | Release of FastFormat 0.7.4-rc6     | CMake support                                     |
+| 21st March 2021     | Release of FastFormat 0.7.4-rc5     | **VC++** 15/16 compatibility                      |
+| 5th February 2017   | Release of FastFormat 0.7.5-rc4     | prerelease; no **CHANGES.md** section             |
+| 5th February 2017   | Release of FastFormat 0.7.5-rc3     | prerelease; no **CHANGES.md** section             |
+| 30th November 2016  | Release of FastFormat 0.7.5-rc2     | prerelease; no **CHANGES.md** section             |
+| 16th August 2016    | Release of FastFormat 0.7.5-rc1     | prerelease; no **CHANGES.md** section             |
+| 15th August 2016    | Release of FastFormat 0.7.3         | release; no **CHANGES.md** section                |
+| 26th September 2015 | Release of FastFormat 0.7.2         | release; no **CHANGES.md** section                |
+| 26th September 2015 | Release of FastFormat 0.7.1         | **Clang** and **VC++** 11/12/14                   |
+| 17th August 2012    | Release of FastFormat 0.7.1-alpha9  | **GCC** 4.6+; bundles **shwild** / **xTests**     |
+| 7th August 2012     | Release of FastFormat 0.7.1-alpha8  | inserters, sinks, `fastformat::to_sink()`         |
+| 7th February 2012   | Release of FastFormat 0.7.1-alpha7  | integer forms via `integral_printf_traits`        |
+| 2nd December 2011   | Release of FastFormat 0.7.1-alpha6  | **GCC** 4.2 Mac OS-X workaround                   |
+| 2nd December 2011   | Release of FastFormat 0.7.1-alpha5  | infinite-loop defect on some **GCC**              |
+| 1st December 2011   | Release of FastFormat 0.7.1-alpha4  | `fastformat::util::snprintf()`                    |
+| 21st January 2011   | Release of FastFormat 0.7.1-alpha3  | `to_sink(FILE*)` for stdout/stderr                |
+| 16th January 2011   | Release of FastFormat 0.7.1-alpha2  | WindowsConsole sink                               |
+| 11th December 2010  | Release of FastFormat 0.7.1-alpha1  | `fastformat::character` inserter                  |
+| 29th November 2010  | Release of FastFormat 0.6.4         | ostream sink unless `FASTFORMAT_LEAN_AND_MEAN`    |
+| 11th November 2010  | Release of FastFormat 0.6.3         | minor defect fixes                                |
+| 14th October 2010   | Release of FastFormat 0.6.2         | `fastformat::flush()`                             |
+| 22nd June 2010      | Release of FastFormat 0.6.1-alpha1  | default-formatted integer handling                |
+| 21st June 2010      | Release of FastFormat 0.5.9         | `FASTFORMAT_NO_VERSION_NAG`                       |
+| 7th June 2010       | Release of FastFormat 0.5.8         | zero maximum width truncates to empty             |
+| 16th April 2010     | Release of FastFormat 0.5.7         | **VC** 10 `format_iterator`                       |
+| 13th April 2010     | Release of FastFormat 0.5.6         | `'#'` fill character                              |
+| 5th April 2010      | Release of FastFormat 0.5.5         | `format_iterator` example and tests               |
+| 10th March 2010     | Release of FastFormat 0.5.4         | **Visual C++** 10 support                         |
+| 9th March 2010      | Release of FastFormat 0.5.3         | Fedora test compilation                           |
+| 7th March 2010      | Release of FastFormat 0.5.2         | `throw()` on `~ignore_missing_arguments_scope()`  |
+| 5th February 2010   | Release of FastFormat 0.5.1-alpha1  | `fastformat::to_x()` / `fastformat::to_X()`       |
+| 21st January 2010   | Release of FastFormat 0.4.6         | uninitialisation defect                           |
+| 20th January 2010   | Release of FastFormat 0.4.5         | **GCC** 3.4 Windows compatibility                 |
+| 10th July 2009      | Release of FastFormat 0.4.4         | missing-arguments assert                          |
+| 8th July 2009       | Release of FastFormat 0.4.3         | widestring bundle compile                         |
+| 19th June 2009      | Release of FastFormat 0.4.2         | makefile merge adjustments                        |
+| 16th June 2009      | Release of FastFormat 0.4.1         | `fastformat::windows_resource_bundle`             |
+| June 2009           | Overload 91: FastFormat part 3      | Solving real problems, quickly                    |
+| 24th May 2009       | Release of FastFormat 0.3.6         | **Como**, **GCC** 4.0, **Sun Pro** makefiles      |
+| 1st May 2009        | Release of FastFormat 0.3.5         | `ff::real()` negative widths                      |
+| 29th April 2009     | Release of FastFormat 0.3.4         | include order on Mac OS-X                         |
+| 26th April 2009     | Release of FastFormat 0.3.3         | `fastformat_malloc()` zeroes the block            |
+| 19th April 2009     | Release of FastFormat 0.3.2         | remaining **VC++** 6/7.1/8/9 projects             |
+| 17th April 2009     | Release of FastFormat 0.3.2-beta4   | **GCC** example compatibility                     |
+| 16th April 2009     | Release of FastFormat 0.3.2-beta3   | **GCC** example compatibility                     |
+| 15th April 2009     | Release of FastFormat 0.3.2-beta2   | `real()` inserter test adjustments                |
+| 9th April 2009      | Release of FastFormat 0.3.2-beta1   | widestring compatibility                          |
+| 6th April 2009      | Overload 90: FastFormat part 2      | Custom argument and sink types                    |
+| 9th March 2009      | Release of FastFormat 0.3.1-beta5   | type warning in `fastformat::real()`              |
+| 9th March 2009      | Release of FastFormat 0.3.1-beta4   | `fastformat::real` inserters                      |
+| 9th March 2009      | STLSoft 1.10.1-alpha9 released      | STLSoft delta noted with **FastFormat**           |
+| 6th March 2009      | STLSoft 1.9.76 released             | STLSoft release noted with **FastFormat**         |
+| 16th February 2009  | Overload 89: FastFormat part 1      | The state of the art                              |
+| 13th February 2009  | Release of FastFormat 0.3.1-beta3   | Mac OS-X compilation                              |
+| 13th February 2009  | Release of FastFormat 0.3.1-beta2   | **Borland** 5.9 / 6.1                             |
+| 1st February 2009   | Release of FastFormat 0.3.1-beta1   | **GCC** 4.3 makefiles                             |
+| 19th January 2009   | Release of FastFormat 0.3.1-alpha1  | min/max width and alignment                       |
+| 4th January 2009    | Release of FastFormat 0.2.1-beta10  | ACE_CString sink defect                           |
+| 2nd January 2009    | Release of FastFormat 0.2.1-beta9   | Mac OS-X compilation                              |
+| 1st January 2009    | Release of FastFormat 0.2.1-beta8   | `unsigned` / `size_t` on 64-bit Linux             |
+| 30th December 2008  | Release of FastFormat 0.2.1-beta7   | merge adjustments toward 0.3                      |
+| 28th December 2008  | Release of FastFormat 0.2.1-beta6   | **Loki**.SafeFormat performance comparison        |
+| 17th December 2008  | Release of FastFormat 0.2.1-beta5   | six new performance tests                         |
+| 14th December 2008  | Release of FastFormat 0.2.1-beta4   | projects added to workspaces                      |
+| 10th December 2008  | Release of FastFormat 0.2.1-beta3   | **VC++** 6 `auto_buffer` workaround               |
+| 4th December 2008   | Release of FastFormat 0.2.1-beta2   | test defects from beta 1                          |
+| 1st December 2008   | Release of FastFormat 0.2.1-beta1   | handler function + opaque parameter               |
+| 27th November 2008  | Release of FastFormat 0.2.1-alpha12 | speech sink defect                                |
+| 23rd November 2008  | Release of FastFormat 0.2.1-alpha11 | CComBSTR sink                                     |
+| 19th November 2008  | Release of FastFormat 0.2.1-alpha10 | speech sink flags parameter                       |
+| 12th November 2008  | Release of FastFormat 0.2.1-alpha9  | wide integer and floating-point                   |
+| 10th November 2008  | Release of FastFormat 0.2.1-alpha8  | widestring string-slice shims                     |
+| 9th November 2008   | Release of FastFormat 0.2.1-alpha7  | absolute includes for **CodeWarrior**             |
+| 5th November 2008   | Release of FastFormat 0.2.1-alpha6  | reports unreferenced arguments                    |
+| 25th October 2008   | Release of FastFormat 0.2.1-alpha5  | illformed and mismatched exceptions               |
+| 14th October 2008   | Release of FastFormat 0.2.1-alpha4  | contract enforcement rework                       |
+| 12th September 2008 | Release of FastFormat 0.2.1-alpha3  | wide-string adjustments                           |
+| 8th September 2008  | Release of FastFormat 0.2.1-alpha2  | CString::Format in **test.performance.scenario1** |
+| 3rd September 2008  | Release of FastFormat 0.2.1-alpha1  | first public release                              |
+
+
+<!-- ########################### end of file ########################### -->
