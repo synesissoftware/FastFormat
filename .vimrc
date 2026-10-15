@@ -48,9 +48,6 @@ augroup sis_c_cxx
   " [c] / [cpp]
   autocmd FileType c,cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=60,64,68,72,76
 
-  " [rust]
-  autocmd FileType rs setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 colorcolumn=76
-
   " [cmake]
   autocmd FileType cmake setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 

@@ -175,7 +175,7 @@ static stlsoft::basic_shim_string<char, 20> make_shim_string(T const& t)
 
 
 static stlsoft::basic_shim_string<char, 20>
- make_slice(const int val)
+make_slice(const int val)
 {
     if(intNaN == val)
     {

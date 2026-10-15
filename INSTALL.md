@@ -1,5 +1,4 @@
-FastFormat - Install
-====================
+# FastFormat - Installation and Use <!-- omit in toc -->
 
 Updated:    26th September 2015
 

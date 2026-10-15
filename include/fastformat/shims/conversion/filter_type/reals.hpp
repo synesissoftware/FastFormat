@@ -59,6 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_EDIT      9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Language
  */
@@ -66,6 +67,7 @@
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes
@@ -88,6 +90,7 @@ namespace fastformat
 namespace filters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Overloadable conversion shim functions:
@@ -130,6 +133,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(float value, float 
     return filter_type(value2, &value2, static_cast<ff_char_t const volatile*>(0));
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Namespace
  */
@@ -139,6 +143,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(float value, float 
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Inclusion
  */
@@ -146,8 +151,6 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(float value, float 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
-
-/* ////////////////////////////////////////////////////////////////////// */
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS */
 

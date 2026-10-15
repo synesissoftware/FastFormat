@@ -1,5 +1,4 @@
-FastFormat - News
-=================
+# FastFormat - News <!-- omit in toc -->
 
 Updated:    21st March 2021
 

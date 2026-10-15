@@ -19,11 +19,6 @@ end_of_line = crlf
 indent_size = 4
 indent_style = space
 
-# [c]
-[*.{c,h}]
-indent_size = 4
-indent_style = space
-
 # [cmake]
 [{CMakeLists.txt,*.cmake}]
 indent_size = 4

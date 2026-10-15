@@ -5,7 +5,7 @@
  *              in response to mismatched arguments.
  *
  * Created:     1st December 2008
- * Updated:     15th August 2016
+ * Updated:     16th October 2026
  *
  * Home:        http://www.fastformat.org/
  *
@@ -135,7 +135,13 @@ protected: // Overrides
      *   statement
      * \param parameterIndex The index of the parameter that is associated
      *   with the mismatch
-     * \param slice A slice that may be modified in handling the mismatch.
+     * \param slice A slice that may be modified in handling the mismatch
+     * \param reserved0 Reserved for future use; must not be used by
+     *   derived classes
+     * \param reserved1 Reserved for future use; must not be used by
+     *   derived classes
+     * \param reserved2 Reserved for future use; must not be used by
+     *   derived classes
      */
     virtual int handle(
         ff_replacement_code_t   code

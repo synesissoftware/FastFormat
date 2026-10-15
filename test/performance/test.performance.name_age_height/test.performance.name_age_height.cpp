@@ -45,7 +45,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }

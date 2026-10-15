@@ -48,7 +48,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -702,7 +702,7 @@ int main(int argc, char *argv[])
 
 static std::string with_Streams(int value)
 {
-    char    num[21];
+    char num[21];
 
     return std::string(num, size_t(::snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), "%d", value)));
 }
@@ -765,7 +765,7 @@ static std::string with_STLSoftI2S(int value)
 static CString with_MFC(int value)
 {
     CString str;
-    
+
     str.Format(TEXT("%d"), value);
 
     return str;

@@ -14,8 +14,9 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-#include <stlsoft/string/simple_string.hpp>
-#include <stlsoft/string/static_string.hpp>
+#if 1
+# include <stlsoft/string/simple_string.hpp>
+#endif
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>

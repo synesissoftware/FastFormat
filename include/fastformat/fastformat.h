@@ -4,11 +4,11 @@
  * Purpose:     FastFormat Core API.
  *
  * Created:     18th September 2006
- * Updated:     6th February 2024
+ * Updated:     16th October 2026
  *
  * Home:        http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       22
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    9
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        108
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    10
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        109
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -67,8 +67,13 @@
  * The minor version number of FastFormat
  */
 
-/** \def FASTFORMAT_VER_REVISION
- * The revision version number of FastFormat
+/** \def FASTFORMAT_VER_PATCH
+ * The patch version number of FastFormat
+ */
+
+/** \def FASTFORMAT_VER_ALPHABETA
+ * The alpha/beta number of FastFormat, in the range 1-0xFE for
+ * prerelease versions, and 0xFF for a released version
  */
 
 /** \def FASTFORMAT_VER
@@ -103,9 +108,20 @@
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           7
-#define FASTFORMAT_VER_REVISION        4
+#define FASTFORMAT_VER_PATCH           4
+#define FASTFORMAT_VER_ALPHABETA       0x86
 
-#define FASTFORMAT_VER                 FASTFORMAT_VER_0_7_4_RC_6
+#define FASTFORMAT_VER \
+    (0\
+        |   (   FASTFORMAT_VER_MAJOR       << 24   ) \
+        |   (   FASTFORMAT_VER_MINOR       << 16   ) \
+        |   (   FASTFORMAT_VER_PATCH       <<  8   ) \
+        |   (   FASTFORMAT_VER_ALPHABETA   <<  0   ) \
+    )
+
+#ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
+# define FASTFORMAT_VER_REVISION                            FASTFORMAT_VER_PATCH
+#endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes - 1
@@ -213,9 +229,15 @@ namespace fastformat
  * \ingroup group__utility
  */
 
-#if !defined(FASTFORMAT_DECLSPEC)
+/* Under FASTFORMAT_DOCUMENTATION_SKIP_SECTION always emit the #define so
+ * Doxygen can attach the \def documentation (an empty PREDEFINED value
+ * would hide these lines and yield "unknown define").
+ */
+#if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
 # define FASTFORMAT_DECLSPEC
-#endif /* !FASTFORMAT_DECLSPEC */
+#elif !defined(FASTFORMAT_DECLSPEC)
+# define FASTFORMAT_DECLSPEC
+#endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION || !FASTFORMAT_DECLSPEC */
 
 #if defined(__cplusplus) || \
     defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
@@ -224,9 +246,11 @@ namespace fastformat
 # define FASTFORMAT_EXTERN_C           extern
 #endif /* !__cplusplus */
 
-#if !defined(FASTFORMAT_CALLCONV)
+#if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
 # define FASTFORMAT_CALLCONV
-#endif /* !FASTFORMAT_CALLCONV */
+#elif !defined(FASTFORMAT_CALLCONV)
+# define FASTFORMAT_CALLCONV
+#endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION || !FASTFORMAT_CALLCONV */
 
 #if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION) || \
     !defined(FASTFORMAT_CALL)

@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/util/string/snprintf.h (was fastformat/util/string/string.h)
+ * File:        fastformat/util/string/snprintf.h
  *
  * Purpose:     snprintf() utility functions.
  *
  * Created:     1st June 2008
- * Updated:     1st December 2011
+ * Updated:     16th October 2026
  *
  * Home:        http://www.fastformat.org/
  *
@@ -39,7 +39,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/** \file fastformat/util/string/string.h
+/** \file fastformat/util/string/snprintf.h
  *
  * [C, C++] snprintf() utility functions.
  */
