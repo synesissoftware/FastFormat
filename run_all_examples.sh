@@ -27,6 +27,7 @@ CMakeDir=${SIS_CMAKE_BUILD_DIR:-$Dir/_build}
 ProjectNameFile="$Dir/.sis/project_name.txt"
 ProjectName=$(tr -d '[:space:]' < "$ProjectNameFile")
 ScriptPath=$0
+AllowedToFailFile="$Dir/.sis/ci_examples_allowed_to_fail.txt"
 
 AlwaysUseColours=${SIS_CMAKE_ALWAYS_USE_COLOURS:-${SIS_ALWAYS_USE_COLOURS:-0}}
 ListOnly=0
@@ -115,6 +116,49 @@ sis_cmake_build() {
   cmake "${args[@]}"
 }
 
+# Reduces a program path to its (lowercase) name, without any directory or
+# .exe suffix.
+sis_program_stem() {
+
+  local p="${1//\\//}"
+
+  p="${p##*/}"
+
+  case "$p" in
+    *.exe|*.EXE) p="${p%.*}" ;;
+  esac
+
+  printf '%s' "$p" | tr '[:upper:]' '[:lower:]'
+}
+
+# Succeeds if the program is named (by name or stem, case-insensitively) in
+# the optional .sis/ci_examples_allowed_to_fail.txt file; blank lines and
+# lines beginning with '#' are ignored.
+sis_is_allowed_to_fail() {
+
+  local name line
+
+  [ -f "$AllowedToFailFile" ] || return 1
+
+  name=$(sis_program_stem "$1")
+
+  while IFS= read -r line || [ -n "$line" ]; do
+
+    line="${line//$'\r'/}"
+
+    case "$line" in
+      ''|\#*) continue ;;
+    esac
+
+    if [ "$name" = "$(sis_program_stem "$line")" ]; then
+
+      return 0
+    fi
+  done < "$AllowedToFailFile"
+
+  return 1
+}
+
 
 # ##########################################################
 # command-line handling
@@ -158,6 +202,15 @@ Flags/options:
     -M
     --no-make
         does not execute a build before running programs
+
+
+    files:
+
+    .sis/ci_examples_allowed_to_fail.txt
+        optional list of example programs (one name per line; blank lines
+        and lines beginning with '#' are ignored) that are allowed to fail;
+        such a program is still executed, but a non-zero exit is reported as
+        anticipated and neither stops the run nor affects the exit status
 
 
     standard flags:
@@ -247,7 +300,13 @@ if [ $status -eq 0 ]; then
 
     if [ $ListOnly -ne 0 ]; then
 
-      echo "would execute ${fClr}:"
+      if sis_is_allowed_to_fail "$f"; then
+
+        echo "would execute ${fClr} (allowed to fail):"
+      else
+
+        echo "would execute ${fClr}:"
+      fi
 
       continue
     fi
@@ -260,11 +319,25 @@ if [ $status -eq 0 ]; then
       :
     else
 
-      status=$?
+      fStatus=$?
+
+      if sis_is_allowed_to_fail "$f"; then
+
+        echo "${SisClr_Yellow}${SisClr_Bold}anticipated failure${SisClr_None}: ${fClr} exited with status ${fStatus}; it is listed in .sis/ci_examples_allowed_to_fail.txt"
+
+        continue
+      fi
+
+      status=$fStatus
 
       break 1
     fi
-  done < <(find "$CMakeDir" -type f \( -name 'example*' ! -name '*.md' \) \( -perm -100 -o -name '*.exe' \) -print0 2>/dev/null | sort -z)
+  done < <(find "$CMakeDir" -type f \( -name 'example*' ! -name '*.md' \) \
+    ! -path '*/CMakeFiles/*' \
+    ! -name '*.a' \
+    ! -name '*.d' \
+    ! -name '*.lib' \
+    \( -perm -100 -o -name '*.exe' \) -print0 2>/dev/null | sort -z)
 
   if [ $NumPrograms -eq 0 ]; then
 

@@ -54,6 +54,16 @@ target_include_directories(fastformat PUBLIC
 	$<INSTALL_INTERFACE:include>
 )
 
+# Public headers depend on STLSoft; when the CMake package is used, propagate
+# the imported target on the exported interface (mikkoi/cmake-build-2).
+if(STLSoft_IS_PACKAGE_)
+
+    target_link_libraries(fastformat
+        PUBLIC
+            STLSoft::STLSoft
+    )
+endif(STLSoft_IS_PACKAGE_)
+
 target_compile_options(fastformat PRIVATE
 	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
 		-Werror -Wall -Wextra -pedantic

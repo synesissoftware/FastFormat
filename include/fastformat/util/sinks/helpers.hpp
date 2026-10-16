@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/util/sinks/helpers.hpp
+ * File:    fastformat/util/sinks/helpers.hpp
  *
- * Purpose:     Sink implementation helper functions for the FastFormat
+ * Purpose: Sink implementation helper functions for the FastFormat
  *              library.
  *
- * Created:     19th December 2007
- * Updated:     5th February 2017
+ * Created: 19th December 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2007-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -57,7 +58,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      15
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

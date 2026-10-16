@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.string.write.cpp
+ * File:    test/component/test.component.sink.string.write/test.component.sink.string.write.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.string.write project.
+ * Purpose: Component tests for sink.string.write.
  *
- * Created:     19th December 2007
- * Updated:     6th February 2024
+ * Created: 19th December 2007
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

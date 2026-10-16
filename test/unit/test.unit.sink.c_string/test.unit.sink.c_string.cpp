@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.sink.c_string.cpp
+ * File:    test/unit/test.unit.sink.c_string/test.unit.sink.c_string.cpp
  *
- * Purpose:     Implementation file for the test.unit.sink.c_string project.
+ * Purpose: Unit tests for sink.c_string.
  *
- * Created:     28th May 2008
- * Updated:     6th February 2024
+ * Created: 28th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.ff_101/example.ff_101.cpp
+ * File:    examples/example.ff_101/example.ff_101.cpp
  *
- * Purpose:     Implementation file for the example.ff_101 project.
+ * Purpose: Example introducing FastFormat basics.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #ifdef _AFXDLL
 # include <afx.h>

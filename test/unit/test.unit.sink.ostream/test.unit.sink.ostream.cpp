@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.sink.ostream.cpp
+ * File:    test/unit/test.unit.sink.ostream/test.unit.sink.ostream.cpp
  *
- * Purpose:     Implementation file for the test.unit.sink.ostream project.
+ * Purpose: Unit tests for sink.ostream.
  *
- * Created:     28th May 2008
- * Updated:     6th February 2024
+ * Created: 28th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

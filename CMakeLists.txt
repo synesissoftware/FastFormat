@@ -5,7 +5,7 @@
 # Purpose:  Top-level CMake lists file for FastFormat
 #
 # Created:  6th February 2024
-# Updated:  18th September 2026
+# Updated:  16th October 2026
 #
 # ######################################################################## #
 
@@ -33,9 +33,9 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 # project
 
 project(FastFormat
-	DESCRIPTION "FastFormat is a small, standalone library, that provides extensible C-style string instances and extensible arrays of such."
-	HOMEPAGE_URL "https://github.com/synesissoftware/FastFormat"
-	LANGUAGES C CXX
+    DESCRIPTION "The fastest, most robust C++ formatting library"
+    HOMEPAGE_URL "https://github.com/synesissoftware/FastFormat"
+    LANGUAGES C CXX
 )
 
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
@@ -97,6 +97,81 @@ endif(MSVC)
 # ##########################################################
 # dependencies, features, includes, and options
 
+option(BUILD_EXAMPLES "Build examples" ON)
+
+option(BUILD_TESTING "Build tests" ON)
+
+option(FASTFORMAT_USE_WIDE_STRINGS "Build with wide string support" OFF)
+
+
+# ##########################################################
+# features
+
+if(FASTFORMAT_USE_WIDE_STRINGS)
+
+    add_definitions(-DFASTFORMAT_USE_WIDE_STRINGS)
+    if(WIN32)
+
+        add_definitions(-DUNICODE)
+        add_definitions(-D_UNICODE)
+    endif(WIN32)
+endif(FASTFORMAT_USE_WIDE_STRINGS)
+
+
+# ##########################################################
+# dependencies
+#
+# required:
+# - STLSoft;
+#
+# required (when BUILD_TESTING):
+# - xTests;
+
+
+# ############################
+# STLSoft (required)
+#
+# We provide flexibility here, as in:
+# 1. if a CMake variable STLSOFT is provided then it is used; otherwise
+# 2. if an environment variable STLSOFT is provided then it then it is used;
+#    otherwise
+# 3. if the package STLSoft (via find_package()) is found then it is used;
+#    otherwise
+# 4. we abort
+
+set(STLSoft_REQUIRED_VERSION_ 1.11)
+
+if(NOT DEFINED STLSOFT AND NOT DEFINED ENV{STLSOFT})
+
+    set(STLSoft_IS_PACKAGE_ TRUE)
+
+    find_package(STLSoft ${STLSoft_REQUIRED_VERSION_} REQUIRED)
+
+    message("-- CMake package STLSoft found (version ${STLSoft_VERSION}; ${STLSoft_REQUIRED_VERSION_} requested)")
+else()
+
+    set(STLSoft_IS_PACKAGE_ FALSE)
+
+    if(DEFINED STLSOFT)
+
+        message("-- STLSOFT provided as CMake variable with value '${STLSOFT}'")
+
+        set(STLSOFT_INCLUDE_DIR ${STLSOFT}/include)
+    else()
+
+        message("-- STLSOFT provided as environment variable with value '$ENV{STLSOFT}'")
+
+        set(STLSOFT_INCLUDE_DIR $ENV{STLSOFT}/include)
+    endif()
+
+    get_filename_component(STLSOFT_INCLUDE_DIR "${STLSOFT_INCLUDE_DIR}" ABSOLUTE)
+
+    include_directories(${STLSOFT_INCLUDE_DIR})
+endif()
+
+
+# ############################
+# xTests (testing only)
 
 # ################################################
 # includes - 1
@@ -288,10 +363,6 @@ else(BUILD_TESTING)
 
 	message("-- disabled building of tests - define BUILD_TESTING to enable")
 endif(BUILD_TESTING)
-
-
-# ##########################################################
-# install
 
 
 # ##########################################################

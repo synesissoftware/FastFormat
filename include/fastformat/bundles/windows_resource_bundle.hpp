@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/bundles/windows_resource_bundle.hpp
+ * File:    fastformat/bundles/windows_resource_bundle.hpp
  *
- * Purpose:     Windows resource bundle.
+ * Purpose: Windows resource bundle.
  *
- * Created:     24th April 2009
- * Updated:     5th February 2017
+ * Created: 24th April 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 5
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     9
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

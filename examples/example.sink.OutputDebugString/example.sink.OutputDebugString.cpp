@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.sink.OutputDebugString/example.sink.OutputDebugString.cpp
+ * File:    examples/example.sink.OutputDebugString/example.sink.OutputDebugString.cpp
  *
- * Purpose:     Implementation file for the example.sink.OutputDebugString project.
+ * Purpose: Example for the OutputDebugString sink.
  *
- * Created:     19th April 2009
- * Updated:     6th February 2024
+ * Created: 19th April 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

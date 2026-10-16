@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sink.WindowsMessageBox.cpp
+ * File:    test/scratch/test.scratch.sink.WindowsMessageBox/test.scratch.sink.WindowsMessageBox.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sink.WindowsMessageBox project.
+ * Purpose: Scratch program for sink.WindowsMessageBox.
  *
- * Created:     4th January 2009
- * Updated:     6th February 2024
+ * Created: 4th January 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/bundles/windows_resource_bundle.hpp>

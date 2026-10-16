@@ -4,7 +4,7 @@
  * Purpose: FastFormat argument conversion shim for floating-point types.
  *
  * Created: 1st June 2008
- * Updated: 18th September 2026
+ * Updated: 16th October 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -80,9 +80,6 @@
 
 #include <stlsoft/string/shim_string.hpp>
 
-#include <stdio.h>
-
-
 /* /////////////////////////////////////////////////////////////////////////
  * Namespace
  */
@@ -109,16 +106,21 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(double value, doubl
 {
     static const ff_char_t  fmt[] = { '%', 'G', '\0' };
 
-    ff_char_t num[100];
+    stlsoft::basic_shim_string<ff_char_t, 32>   r(32);
 
-    int n = fastformat_util_snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), fmt, value);
+    // Use FastFormat's snprintf insulator (same pattern as void_pointers.hpp)
+    // rather than bare sprintf/snprintf — Apple Clang deprecates sprintf
+    // under -Werror, and compiler snprintf signatures vary.
+    int n = fastformat_util_snprintf(r.data(), r.size(), fmt, value);
 
     if(n < 0)
     {
         n = 0;
     }
 
-    return stlsoft::basic_shim_string<ff_char_t, 32>(num, static_cast<size_t>(n));
+    r.truncate(static_cast<size_t>(n));
+
+    return r;
 }
 
 /** Filtering conversion shim function for implicitly adapting

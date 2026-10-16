@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.api.parse_format.cpp
+ * File:    test/unit/test.unit.api.parse_format/test.unit.api.parse_format.cpp
  *
- * Purpose:     Implementation file for the test.unit.api.parse_format project.
+ * Purpose: Unit tests for api.parse_format.
  *
- * Created:     27th May 2008
- * Updated:     6th February 2024
+ * Created: 27th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

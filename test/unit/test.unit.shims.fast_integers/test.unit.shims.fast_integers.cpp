@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.inserters.integer.cpp
+ * File:    test/unit/test.unit.shims.fast_integers/test.unit.shims.fast_integers.cpp
  *
- * Purpose:     Implementation file for the test.unit.inserters.integer project.
+ * Purpose: Unit tests for shims.fast_integers.
  *
- * Created:     11th December 2010
- * Updated:     6th February 2024
+ * Created: 11th December 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.FILE_stream.cpp
+ * File:    test/component/test.component.FILE_stream/test.component.FILE_stream.cpp
  *
- * Purpose:     Implementation file for the test.component.FILE_stream project.
+ * Purpose: Component tests for FILE_stream.
  *
- * Created:     3rd January 2008
- * Updated:     18th September 2026
+ * Created: 3rd January 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes

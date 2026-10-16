@@ -1,3 +1,13 @@
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.boost.karma/test.performance.boost.karma.cpp
+ *
+ * Purpose: Performance tests for boost.karma.
+ *
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
+ *
+ * ////////////////////////////////////////////////////////////////////// */
+
 //   Copyright (c) 2002-2009 Joel Hartmut Kaiser
 //   Copyright (c) 2002-2009 Joel de Guzman
 // 
@@ -22,6 +32,7 @@
 #include <boost/format.hpp>
 
 #include <iostream>
+#include <iomanip>
 
 namespace util
 {
@@ -173,7 +184,7 @@ void format_performance_sprintf()
     //[karma_format_performance_printf
     char buffer[256];
     for (int i = 0; i < NUMITERATIONS; ++i) {
-        sprintf(buffer, "[%-14.3f%-14.3f]", 12345.12345, 12345.12345);
+        snprintf(buffer, sizeof(buffer), "[%-14.3f%-14.3f]", 12345.12345, 12345.12345);
     }
     //]
 

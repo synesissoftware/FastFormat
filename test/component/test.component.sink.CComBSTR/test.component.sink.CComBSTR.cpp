@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.CComBSTR.cpp
+ * File:    test/component/test.component.sink.CComBSTR/test.component.sink.CComBSTR.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.CComBSTR project.
+ * Purpose: Component tests for sink.CComBSTR.
  *
- * Created:     14th September 2010
- * Updated:     6th February 2024
+ * Created: 14th September 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

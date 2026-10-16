@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/integer.hpp
+ * File:    fastformat/inserters/integer.hpp
  *
- * Purpose:     Inserter functions for integral types
+ * Purpose: Inserter functions for integral types
  *
- * Created:     26th May 2009
- * Updated:     5th February 2017
+ * Created: 26th May 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   8
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       23
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       24
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

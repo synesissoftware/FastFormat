@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.overload.3.BSTR_out_parameter.cpp
+ * File:    test/scratch/test.scratch.overload.3.BSTR_out_parameter/test.scratch.overload.3.BSTR_out_parameter.cpp
  *
- * Purpose:     Implementation file for the test.scratch.overload.3.BSTR_out_parameter project.
+ * Purpose: Scratch program for overload.3.BSTR_out_parameter.
  *
- * Created:     4th January 2009
- * Updated:     6th February 2024
+ * Created: 4th January 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.arguments.void_pointers/example.arguments.void_pointers.cpp
+ * File:    examples/example.arguments.void_pointers/example.arguments.void_pointers.cpp
  *
- * Purpose:     Implementation file for the example.arguments.void_pointers project.
+ * Purpose: Example for void-pointer arguments.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #define FASTFORMAT_USE_VOID_POINTERS_CONVERSION_SHIMS

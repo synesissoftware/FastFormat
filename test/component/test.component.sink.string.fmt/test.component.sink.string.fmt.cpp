@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test.component.sink.string.fmt.cpp
+ * File:    test/component/test.component.sink.string.fmt/test.component.sink.string.fmt.cpp
  *
- * Purpose: Implementation file for the test.component.sink.string.fmt project.
+ * Purpose: Component tests for sink.string.fmt.
  *
  * Created: 19th December 2007
- * Updated: 18th September 2026
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

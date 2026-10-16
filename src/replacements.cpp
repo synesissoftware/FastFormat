@@ -1,13 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/replacements.cpp
+ * File:    src/replacements.cpp
  *
- * Purpose:     Implementation file for FastFormat core API: replacements.
+ * Purpose: Implementation file for FastFormat core API: replacements.
  *
- * Created:     18th September 2006
- * Updated:     6th September 2019
+ * Created: 18th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *

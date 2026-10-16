@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/iostream.hpp
+ * File:    fastformat/sinks/iostream.hpp
  *
- * Purpose:     Shorthand header that includes the FastFormat sink for
+ * Purpose: Shorthand header that includes the FastFormat sink for
  *              IOStreams' std::ostream and the standard header <iostream>.
  *
- * Created:     17th January 2011
- * Updated:     6th August 2012
+ * Created: 17th January 2011
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -58,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       2
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       3
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

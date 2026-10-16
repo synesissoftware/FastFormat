@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sinks.shim_string.cpp
+ * File:    test/scratch/test.scratch.sinks.shim_string/test.scratch.sinks.shim_string.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sinks.shim_string project.
+ * Purpose: Scratch program for sinks.shim_string.
  *
- * Created:     12th November 2008
- * Updated:     6th February 2024
+ * Created: 12th November 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/sinks/shim_string.hpp>

@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/fastformat.hpp
+ * File:    fastformat/fastformat.hpp
  *
- * Purpose:     FastFormat C++ primary include.
+ * Purpose: FastFormat C++ primary include.
  *
- * Created:     19th September 2006
- * Updated:     17th June 2012
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2006-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MINOR     4
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      46
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  3
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      47
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -337,7 +338,7 @@ namespace helpers
  *
  * \ingroup group__application_layer
  *
- * 
+ *
  */
 
 /** \defgroup group__interface_functions__api_format Format API Interface Functions

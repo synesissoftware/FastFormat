@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/internal/threading.h
+ * File:    fastformat/internal/threading.h
  *
- * Purpose:     Detects whether the library is being built single- or
+ * Purpose: Detects whether the library is being built single- or
  *              multi-threaded.
  *
- * Created:     20th November 2007
- * Updated:     16th February 2009
+ * Created: 20th November 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2007-2009, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

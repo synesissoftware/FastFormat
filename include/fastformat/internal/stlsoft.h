@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/internal/stlsoft.h
+ * File:    fastformat/internal/stlsoft.h
  *
- * Purpose:     "Entry point" include into the STLSoft libraries.
+ * Purpose: "Entry point" include into the STLSoft libraries.
  *
- * Created:     18th November 2007
- * Updated:     15th August 2016
+ * Created: 18th November 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2007-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

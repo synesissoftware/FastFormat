@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/internal/shim_macros.h
+ * File:    fastformat/internal/shim_macros.h
  *
- * Purpose:     Definitions of macros used internally in the library
+ * Purpose: Definitions of macros used internally in the library
  *              components
  *
- * Created:     19th September 2006
- * Updated:     7th March 2010
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2006-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

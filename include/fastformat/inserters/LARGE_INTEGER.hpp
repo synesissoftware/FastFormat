@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/LARGE_INTEGER.hpp
+ * File:    fastformat/inserters/LARGE_INTEGER.hpp
  *
- * Purpose:     Inserter functions for Windows' LARGE_INTEGER type.
+ * Purpose: Inserter functions for Windows' LARGE_INTEGER type.
  *
- * Created:     24th November 2010
- * Updated:     1st December 2011
+ * Created: 24th November 2010
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2010-2011, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_EDIT     4
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER_EDIT     5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.string_array.cpp
+ * File:    test/component/test.component.sink.string_array/test.component.sink.string_array.cpp
  *
- * Purpose:     Implementation file for the test.component.string_array project.
+ * Purpose: Component tests for sink.string_array.
  *
- * Created:     24th December 2007
- * Updated:     6th February 2024
+ * Created: 24th December 2007
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/sinks/string_array.hpp>

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.inserter.reals.cpp
+ * File:    examples/example.inserter.reals/example.inserter.reals.cpp
  *
- * Purpose:     Implementation file for the example.inserter.reals project.
+ * Purpose: Example for real (floating-point) inserters.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>

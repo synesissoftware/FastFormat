@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/to_x.hpp
+ * File:    fastformat/inserters/to_x.hpp
  *
- * Purpose:     Inserter functions for integral types in hex format
+ * Purpose: Inserter functions for integral types in hex format
  *
- * Created:     19th December 2009
- * Updated:     5th November 2013
+ * Created: 19th December 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2013, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_EDIT      7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_X_EDIT      8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

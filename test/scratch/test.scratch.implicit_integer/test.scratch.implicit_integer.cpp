@@ -1,19 +1,19 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.implicit_integer.cpp
+ * File:    test/scratch/test.scratch.implicit_integer/test.scratch.implicit_integer.cpp
  *
- * Purpose:     Implementation file for the test.scratch.implicit_integer project.
+ * Purpose: Scratch program for implicit_integer.
  *
- * Created:     1st June 2008
- * Updated:     6th February 2024
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
+#include <fastformat/util/string/snprintf.h>
 
 /* STLSoft header files */
 #include <platformstl/platformstl.hpp>
@@ -55,14 +55,14 @@ namespace fastformat
         inline std::string filter_type(double t, double const*, char const volatile*)
         {
             char    num[100];
-            int     n = ::sprintf(&num[0], "%G", t);
+            int     n = fastformat_util_snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), "%G", t);
 
             if(n < 0)
             {
                 n = 0;
             }
 
-            return std::string(num, n);
+            return std::string(num, static_cast<size_t>(n));
         }
 
         inline std::string filter_type(float t, float const*, char const volatile*)

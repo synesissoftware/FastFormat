@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.arguments.boolean/example.arguments.boolean.cpp
+ * File:    examples/example.arguments.boolean/example.arguments.boolean.cpp
  *
- * Purpose:     Implementation file for the example.arguments.boolean project.
+ * Purpose: Example for boolean arguments.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>

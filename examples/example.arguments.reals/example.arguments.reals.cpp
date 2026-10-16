@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.arguments.reals/example.arguments.reals.cpp
+ * File:    examples/example.arguments.reals/example.arguments.reals.cpp
  *
- * Purpose:     Implementation file for the example.arguments.reals project.
+ * Purpose: Example for real (floating-point) arguments.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>

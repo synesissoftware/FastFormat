@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:    test.performance.one_pointer.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.one_pointer/test.performance.one_pointer.cpp
  *
- * Purpose: Implementation file for the test.performance.one_pointer project.
+ * Purpose: Performance tests for one_pointer.
  *
  * Created: 19th September 2006
- * Updated: 18th September 2026
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 

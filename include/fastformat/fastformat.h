@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/fastformat.h
+ * File:    fastformat/fastformat.h
  *
- * Purpose:     FastFormat Core API.
+ * Purpose: FastFormat Core API.
  *
- * Created:     18th September 2006
- * Updated:     17th September 2026
+ * Created: 18th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
@@ -56,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       22
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    10
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        109
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        110
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -229,9 +229,15 @@ namespace fastformat
  * \ingroup group__utility
  */
 
-#if !defined(FASTFORMAT_DECLSPEC)
+/* Under FASTFORMAT_DOCUMENTATION_SKIP_SECTION always emit the #define so
+ * Doxygen can attach the \def documentation (an empty PREDEFINED value
+ * would hide these lines and yield "unknown define").
+ */
+#if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
 # define FASTFORMAT_DECLSPEC
-#endif /* !FASTFORMAT_DECLSPEC */
+#elif !defined(FASTFORMAT_DECLSPEC)
+# define FASTFORMAT_DECLSPEC
+#endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION || !FASTFORMAT_DECLSPEC */
 
 #if defined(__cplusplus) || \
     defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
@@ -240,9 +246,11 @@ namespace fastformat
 # define FASTFORMAT_EXTERN_C           extern
 #endif /* !__cplusplus */
 
-#if !defined(FASTFORMAT_CALLCONV)
+#if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
 # define FASTFORMAT_CALLCONV
-#endif /* !FASTFORMAT_CALLCONV */
+#elif !defined(FASTFORMAT_CALLCONV)
+# define FASTFORMAT_CALLCONV
+#endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION || !FASTFORMAT_CALLCONV */
 
 #if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION) || \
     !defined(FASTFORMAT_CALL)

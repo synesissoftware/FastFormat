@@ -1,12 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.FILE.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/scratch/test.scratch.FILE/test.scratch.FILE.cpp
  *
- * Purpose:     Implementation file for the test.scratch.FILE project.
+ * Purpose: Scratch program for FILE.
  *
- * Created:     24th September 2006
- * Updated:     6th February 2024
+ * Created: 24th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
+ * ////////////////////////////////////////////////////////////////////// */
 
 #if defined(_DEBUG) && \
     defined(WIN32) && \

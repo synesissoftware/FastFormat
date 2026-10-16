@@ -282,7 +282,12 @@ if [ $status -eq 0 ]; then
 
       break 1
     fi
-  done < <(find "$CMakeDir" -type f \( -name 'test_unit*' -o -name 'test.unit.*' \) \( -perm -100 -o -name '*.exe' \) -print0 2>/dev/null | sort -z)
+  done < <(find "$CMakeDir" -type f \( -name 'test_unit*' -o -name 'test.unit.*' \) \
+    ! -path '*/CMakeFiles/*' \
+    ! -name '*.a' \
+    ! -name '*.d' \
+    ! -name '*.lib' \
+    \( -perm -100 -o -name '*.exe' \) -print0 2>/dev/null | sort -z)
 
   if [ $NumPrograms -eq 0 ]; then
 

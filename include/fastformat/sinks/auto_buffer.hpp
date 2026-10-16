@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/auto_buffer.hpp
+ * File:    fastformat/sinks/auto_buffer.hpp
  *
- * Purpose:     A FastFormat sink for STLSoft's auto_buffer class template.
+ * Purpose: A FastFormat sink for STLSoft's auto_buffer class template.
  *
- * Created:     21st April 2008
- * Updated:     13th September 2010
+ * Created: 21st April 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       16
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       17
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.speech.cpp
+ * File:    test/scratch/test.scratch.speech/test.scratch.speech.cpp
  *
- * Purpose:     Implementation file for the test.scratch.speech project.
+ * Purpose: Scratch program for speech.
  *
- * Created:     27th November 2007
- * Updated:     6th February 2024
+ * Created: 27th November 2007
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 //#include <sapi.h>
 //#define COMSTL_SPEECH_SAPI_UTIL_USE_MS_SAPI_HEADERS

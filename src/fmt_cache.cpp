@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/fmt_cache.cpp
+ * File:    src/fmt_cache.cpp
  *
- * Purpose:     Implementation file for FastFormat core API: format cache.
+ * Purpose: Implementation file for FastFormat core API: format cache.
  *
- * Created:     18th September 2006
- * Updated:     7th August 2015
+ * Created: 18th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2006-2015, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

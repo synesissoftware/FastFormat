@@ -1,3 +1,12 @@
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    examples/example.pad.hash/example.pad.hash.cpp
+ *
+ * Purpose: Example for padding / hash formatting.
+ *
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
+ *
+ * ////////////////////////////////////////////////////////////////////// */
 
 #include <fastformat/ff.hpp>
 #include <fastformat/sinks/ostream.hpp>

@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:    test.performance.ten_strings_twice.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.ten_strings_twice/test.performance.ten_strings_twice.cpp
  *
- * Purpose: Implementation file for the test.performance.ten_strings_twice project.
+ * Purpose: Performance tests for ten_strings_twice.
  *
  * Created: 19th September 2006
- * Updated: 18th September 2026
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
@@ -282,7 +281,7 @@ static int main_(int argc, char** argv)
         {
             std::string s;
 
-            Loki::SPrintf(s, "%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s")(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)(arg7.c_str())(arg8)(arg9.c_str())(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)(arg7.c_str())(arg8)(arg9.c_str());
+            Loki::SPrintf(s, "%s%s%s%s%s%s%s%.*s%s%.*s%s%s%s%s%s%s%s%.*s%s%.*s")(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)((int)arg7.size())(arg7.data())(arg8)((int)arg9.size())(arg9.data())(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)((int)arg7.size())(arg7.data())(arg8)((int)arg9.size())(arg9.data());
 
 #ifdef SHOW_FIRST_RESULT
 (0 == i) && fprintf(stderr, "%.*s\n", int(s.size()), s.c_str());

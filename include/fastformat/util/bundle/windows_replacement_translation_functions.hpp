@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/util/bundle/windows_replacement_translation_functions.hpp
+ * File:    fastformat/util/bundle/windows_replacement_translation_functions.hpp
  *
- * Purpose:     Functions to assist with translation between Windows and
+ * Purpose: Functions to assist with translation between Windows and
  *              FastFormat replacement parameters.
  *
- * Created:     24th April 2009
- * Updated:     10th January 2017
+ * Created: 24th April 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -57,7 +58,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       8
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
