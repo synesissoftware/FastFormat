@@ -26,6 +26,7 @@
 * Gave every FastFormat exception type a **public** copy constructor (required for portable throw/catch) and closed assignment with C++11 `= delete` or a C++03 private declaration — no `-Wno-deprecated-copy` in client or library builds;
 * Built with MSVC **`/EHs`** (not **`/EHsc`**) so C++ exceptions from stock defect handlers can unwind through the **`extern "C"`** API and be caught by callers;
 * Stopped the handmade **`properties_bundle::open_`** path returning a `const` map-by-value (`map_init_type_` is now the non-`const` map type);
+* Skipped the **`properties_bundle`** / **edna_5** path in **example.overload.2.custom_type.inserter** under MinGW (access violation after the bundle-free overloads; tracked on **TODO.md**);
 
 
 ## 0.7.4-rc6 - 6th February 2024

@@ -30,6 +30,7 @@
 ## Packaging improvements
 
 * [x] ~~~full distribution of makefiles, project files, workspace files, etc. (legacy build trees removed; CMake-only)~~~ - ❌;
+* [ ] diagnose MinGW access violation in **example.overload.2.custom_type.inserter** when constructing / using **`properties_bundle`** (bundle-free overloads are fine; that path is skipped under `__MINGW32__` until fixed);
 * [ ] create an **xTests**-like internal **`checked_main`** (**include/fastformat/internal/checked_main.hpp**, mirroring **xtests/internal/checked_main.hpp**) and apply it across examples, unit/component/scratch/performance programs that currently hand-roll `main` / `main_` exception and CRT-leak wrappers;
 * [ ] create a set of internal helper macros (as in gold projects such as **Pantheios** and **STLSoft**) for language/compiler compatibility — e.g. public copy / closed assignment (`= delete` vs C++03 private declaration), and related facilities — and replace ad-hoc definitions such as **`FASTFORMAT_EXCEPTION_NO_ASSIGN_`** in **exceptions.hpp**;
 * [ ] remove all implicit-link files and inclusions (keep **implicit_link.h**);
