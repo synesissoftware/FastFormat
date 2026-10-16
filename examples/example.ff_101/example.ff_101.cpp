@@ -224,7 +224,7 @@ static int main_(int /*argc*/, char* /*argv*/[])
     // Case 6: bad formats(s)
     puts("Case 6");
     //
-    // - 
+    // -
     puts("Case 6.1");
     try
     {

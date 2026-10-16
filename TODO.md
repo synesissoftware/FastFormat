@@ -29,12 +29,12 @@
 
 ## Packaging improvements
 
-* [-] ~~~full distribution of makefiles, project files, workspace files, etc. (legacy build trees removed; CMake-only)~~~ - ❌;
+* [x] ~~~full distribution of makefiles, project files, workspace files, etc. (legacy build trees removed; CMake-only)~~~ - ❌;
+* [ ] remove all implicit-link files and inclusions (keep **implicit_link.h**);
 * [ ] decent docs;
 * [ ] decent website;
 * [ ] Debian package;
 * [ ] GNU Autotools : "./configure; make; make install";
-* [ ] remove all implicit-link files and inclusions (keep **implicit_link.h**);
 * [ ] RPM package;
 
 

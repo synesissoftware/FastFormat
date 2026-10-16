@@ -80,7 +80,7 @@ static int main_(int /*argc*/, char* /*argv*/[])
         printf("%%5f:    [%5f]\n", values[i]);
         printf("%%5.8f:  [%5.8f]\n", values[i]);
         printf("%%5.4f:  [%5.4f]\n", values[i]);
-    
+
         printf("%%.5f:   [%.5f]\n", values[i]);
     }}
 

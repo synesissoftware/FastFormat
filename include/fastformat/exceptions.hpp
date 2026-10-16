@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      13
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  3
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -179,6 +179,14 @@ public: // Construction
         FASTFORMAT_COVER_MARK_ENTRY();
     }
     virtual ~fastformat_exception() stlsoft_throw_0() = 0;
+
+protected: // Construction
+    /// Copy construction (required for throw-by-value; assignment remains closed)
+    fastformat_exception(class_type const& rhs)
+        : parent_class_type(rhs)
+    {
+        FASTFORMAT_COVER_MARK_ENTRY();
+    }
 
 private:
     /// Not assignment-copyable
@@ -473,6 +481,15 @@ protected: // Implementation
             FASTFORMAT_COVER_MARK_ENTRY();
         }
         virtual ~bundle_exception() stlsoft_throw_0() = 0;
+
+    protected: // Construction
+        /// Copy construction (required for throw-by-value; assignment remains closed)
+        bundle_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
+
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);

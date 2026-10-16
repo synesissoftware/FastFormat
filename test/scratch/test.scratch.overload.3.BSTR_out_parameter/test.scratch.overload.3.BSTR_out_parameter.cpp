@@ -139,15 +139,15 @@ HRESULT get_BSTR_ff(BSTR* bstr2)
 
 #include <atlbase.h>
 
-HRESULT XXGetFilterEx_(dimension_t dimension, int newIndex, std::string* fg, std::string* fv)
+HRESULT XXGetFilterEx_(dimension_t /* dimension */, int /* newIndex */, std::string* fg, std::string* fv)
 {
-    *fg = "fg"; // +1 
+    *fg = "fg"; // +1
     *fv = "fv"; // +1
 
     return S_OK;
 }
 
-int offset_to_new_index_(int filter, dimension_t dimension, int index)
+int offset_to_new_index_(int /* filter */, dimension_t /* dimension */, int index)
 {
     return index + 1;
 }

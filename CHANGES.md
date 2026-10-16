@@ -17,6 +17,9 @@
 * Renamed locals that MSVC `/WX` treated as hiding (`newline`, properties `key`, record-insert loop index), and narrowed a string resource id to `int` in a helper so the constructor is not a pointer-truncation warning;
 * Switched the CString sink to `mfcstl::grab_CString_buffer` (the old typedef is under `STLSOFT_OBSOLETE`), built the MFC/ATL programs only with MSVC (`_AFXDLL` for the BSTR scratch), left the speech scratch out of the build, and skipped **test.scratch.sink.WindowsMessageBox** under `--skip-interactive`;
 * Expanded **README.md** with **Components**, **Examples** (via **EXAMPLES.md**), and a full **Dependencies** section;
+* Quieted MSVC `/WX` unused-parameter warnings in the BSTR and WindowsMessageBox scratch programs;
+* Bound WindowsConsole / WindowsMessageBox sinks to named locals so `fmt` / `writeln` can take non-const `S&` under MinGW;
+* Provided explicit copy constructors on **`fastformat_exception`**, **`bundle_exception`**, and **`missing_resource_id_exception`** so MinGW `-Werror=deprecated-copy` does not fire on throw-by-value;
 
 
 ## 0.7.4-rc6 - 6th February 2024

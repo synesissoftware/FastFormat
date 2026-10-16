@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 5
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     11
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 6
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     12
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -178,6 +178,14 @@ public:
             : parent_class_type(create_message_(msg, code, id, resourceType).c_str())
             , id(id)
             , code(code)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
+        /// Copy construction (required for throw-by-value; assignment remains closed)
+        missing_resource_id_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+            , id(rhs.id)
+            , code(rhs.code)
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }

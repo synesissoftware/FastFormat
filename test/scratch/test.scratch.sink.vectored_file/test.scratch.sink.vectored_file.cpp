@@ -67,7 +67,7 @@ static int main_(int /*argc*/, char ** /*argv*/)
 
     fprintf(stdout, "writing to '%s' via raw API (writev())\n", path1.c_str());
     {
-        iovec   vecs[] = 
+        iovec   vecs[] =
         {
                 {   &fragment1[0],  STLSOFT_NUM_ELEMENTS(fragment1) - 1 }   // "FastFormat"
             ,   {   &fragment0[0],  STLSOFT_NUM_ELEMENTS(fragment0) - 1 }   // " "
