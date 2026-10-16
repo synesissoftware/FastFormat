@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/format/standard_flags.hpp
+ * File:    fastformat/format/standard_flags.hpp
  *
- * Purpose:     FastFormat standard format flags.
+ * Purpose: FastFormat standard format flags.
  *
- * Created:     18th November 2007
- * Updated:     16th July 2024
+ * Created: 18th November 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -130,6 +130,6 @@ const ::stlsoft::sint16_t   ff_flush    =   0x0002;
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

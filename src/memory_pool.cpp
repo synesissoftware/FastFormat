@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/memory_pool.cpp
+ * File:    src/memory_pool.cpp
  *
- * Purpose:     Implementation file for FastFormat core API: memory pool.
+ * Purpose: Implementation file for FastFormat core API: memory pool.
  *
- * Created:     1st September 2008
- * Updated:     16th July 2024
+ * Created: 1st September 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -40,7 +40,6 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
@@ -67,6 +66,7 @@
 
 #include <string.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
  */
@@ -75,6 +75,7 @@
 namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * types & non-local variables
@@ -155,7 +156,8 @@ namespace
         memory_pool_entry_t*                        m_head;
     };
 
-} /* anonymous namespace */
+} // anonymous namespace
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * implementation functions
@@ -284,7 +286,8 @@ namespace
         return NULL;
     }
 
-} /* anonymous namespace */
+} // anonymous namespace
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
@@ -295,4 +298,5 @@ namespace
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

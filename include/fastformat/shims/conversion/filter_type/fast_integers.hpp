@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/shims/conversion/filter_type/fast_integers.hpp
+ * File:    fastformat/shims/conversion/filter_type/fast_integers.hpp
  *
- * Purpose:     FastFormat argument conversion shim for fast, non-L10N,
+ * Purpose: FastFormat argument conversion shim for fast, non-L10N,
  *              conversion of integral types.
  *
- * Created:     1st June 2008
- * Updated:     16th July 2024
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -703,6 +703,6 @@ c_str_len(
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/util/string/snprintf.h (was fastformat/util/string/string.h)
+ * File:    fastformat/util/string/snprintf.h (was fastformat/util/string/string.h)
  *
- * Purpose:     snprintf() utility functions.
+ * Purpose: snprintf() utility functions.
  *
- * Created:     1st June 2008
- * Updated:     16th July 2024
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -225,6 +225,6 @@ using ::fastformat::util::fastformat_util_vsnprintf_a;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_UTIL_STRING_H_SNPRINTF */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

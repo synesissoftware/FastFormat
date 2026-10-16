@@ -1,11 +1,11 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.server_log.cpp
+ * File:    example.overload.3.server_log.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.server_log
+ * Purpose: Implementation file for the example.overload.3.server_log
  *              project.
  *
- * Created:     29th April 2009
- * Updated:     16th July 2024
+ * Created: 29th April 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -451,6 +451,6 @@ void log_connection_boost(connection_t const& /* conn */)
 }
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

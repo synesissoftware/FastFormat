@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.FILE_stream.cpp
+ * File:    test.component.FILE_stream.cpp
  *
- * Purpose:     Implementation file for the test.component.FILE_stream project.
+ * Purpose: Implementation file for the test.component.FILE_stream project.
  *
- * Created:     3rd January 2008
- * Updated:     16th July 2024
+ * Created: 3rd January 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,23 +15,23 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/stlsoft/FILE_stream.hpp>
 #include <fastformat/ff.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 #include <xtests/util/temp_file.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <platformstl/filesystem/file_lines.hpp>
 #include <stlsoft/smartptr/scoped_handle.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -42,6 +42,7 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * compatibility
@@ -57,6 +58,7 @@
 
 #define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
  */
@@ -65,16 +67,13 @@ static void test_1_1();
 static void test_1_2();
 static void test_1_3();
 static void test_1_4();
-static void test_1_5();
-static void test_1_6();
-static void test_1_7();
-static void test_1_8();
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
 #include <iostream>
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;
@@ -88,11 +87,6 @@ int main(int argc, char** argv)
         XTESTS_RUN_CASE(test_1_2);
         XTESTS_RUN_CASE(test_1_3);
         XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -100,6 +94,7 @@ int main(int argc, char** argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * types
@@ -135,6 +130,7 @@ typedef platformstl::file_lines_a       file_lines_t;
 char const                              write_mode[] = "w";
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * forward implementations
  */
@@ -152,7 +148,7 @@ static void test_1_1()
     file_lines_t    lines(t);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
 }
 
 static void test_1_2()
@@ -168,7 +164,7 @@ static void test_1_2()
     file_lines_t    lines(t);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
 }
 
 static void test_1_3()
@@ -185,7 +181,7 @@ static void test_1_3()
     file_lines_t    lines(t);
 
     XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abcdef"), lines[0].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abcdef"), lines[0]);
 }
 
 static void test_1_4()
@@ -202,21 +198,10 @@ static void test_1_4()
     file_lines_t    lines(t);
 
     XTESTS_REQUIRE(XTESTS_TEST_INTEGER_EQUAL(2u, lines.size()));
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0].c_str());
-    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("def"), lines[1].c_str());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("def"), lines[1]);
 }
 
-static void test_1_5()
-{}
-
-static void test_1_6()
-{}
-
-static void test_1_7()
-{}
-
-static void test_1_8()
-{}
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

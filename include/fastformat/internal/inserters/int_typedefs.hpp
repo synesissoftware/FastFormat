@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/internal/inserters/int_typedefs.hpp
+ * File:    fastformat/internal/inserters/int_typedefs.hpp
  *
- * Purpose:     Common typedefs for integral inserters
+ * Purpose: Common typedefs for integral inserters
  *
- * Created:     26th May 2009
- * Updated:     16th July 2024
+ * Created: 26th May 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -125,6 +125,6 @@ typedef stlsoft::basic_shim_string<ff_char_t, 20>       ff_to_i_r_t_;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_INSERTERS_HPP_INT_TYPEDEFS */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

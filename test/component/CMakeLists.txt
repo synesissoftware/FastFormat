@@ -7,10 +7,10 @@ add_subdirectory(test.component.inserter.integer)
 add_subdirectory(test.component.inserter.real)
 add_subdirectory(test.component.iterators.format_iterator)
 add_subdirectory(test.component.sink.auto_buffer)
-if(WIN32)
+if(MSVC)
 
-    add_subdirectory(test.component.sink.CComBSTR)
-endif(WIN32)
+	add_subdirectory(test.component.sink.CComBSTR)
+endif(MSVC)
 add_subdirectory(test.component.sink.null)
 add_subdirectory(test.component.sink.ostream)
 #[====[

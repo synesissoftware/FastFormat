@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.format_defects.cpp
+ * File:    test.scratch.format_defects.cpp
  *
- * Purpose:     Implementation file for the test.scratch.format_defects project.
+ * Purpose: Implementation file for the test.scratch.format_defects project.
  *
- * Created:     1st June 2008
- * Updated:     6th February 2024
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -16,20 +15,20 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <platformstl/platformstl.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -43,7 +42,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     fastformat::fmtln(std::cout, "format with two replacements: #1={0}; #2={1}", 10, 200);
 
@@ -243,7 +242,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -286,6 +285,6 @@ int main(int argc, char** argv)
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

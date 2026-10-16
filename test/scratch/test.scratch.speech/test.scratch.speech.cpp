@@ -1,44 +1,45 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.speech.cpp
+ * File:    test/scratch/test.scratch.speech/test.scratch.speech.cpp
  *
- * Purpose:     Implementation file for the test.scratch.speech project.
+ * Purpose: Scratch program for speech.
  *
- * Created:     27th November 2007
- * Updated:     6th February 2024
+ * Created: 27th November 2007
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
-
 //#include <sapi.h>
 //#define COMSTL_SPEECH_SAPI_UTIL_USE_MS_SAPI_HEADERS
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/speech.hpp>
 #include <fastformat/ff.hpp>
 
 
-/* VOLE Header Files */
+/* VOLE header files */
 #ifdef FASTFORMAT_USE_VOLE
 # include <vole/vole.hpp>
 #endif /* FASTFORMAT_USE_VOLE */
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <comstl/conversion/interface_cast.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -85,7 +86,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     ff::sinks::speech_sink sink(SPF_IS_FILENAME);
 
@@ -116,17 +117,19 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -147,14 +150,15 @@ int main(int argc, char** argv)
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

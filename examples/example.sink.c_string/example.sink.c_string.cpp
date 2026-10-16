@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.sink.c_string/example.sink.c_string.cpp
+ * File:    examples/example.sink.c_string/example.sink.c_string.cpp
  *
- * Purpose:     Implementation file for the example.sink.c_string project.
+ * Purpose: Example for the c_string sink.
  *
- * Created:     17th May 2009
- * Updated:     6th February 2024
+ * Created: 17th May 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -16,18 +15,18 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/c_string.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -41,7 +40,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /* argv */)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
 
@@ -99,7 +98,7 @@ static int main_(int /* argc */, char** /* argv */)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -117,6 +116,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

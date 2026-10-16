@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/ostream.hpp
+ * File:    fastformat/sinks/ostream.hpp
  *
- * Purpose:     A FastFormat sink for writing width-limited output.
+ * Purpose: A FastFormat sink for writing width-limited output.
  *
- * Created:     21st February 2012
- * Updated:     16th July 2024
+ * Created: 21st February 2012
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2012-2019, Matthew Wilson and Synesis Software
@@ -258,4 +258,5 @@ using ::fastformat::sinks::ribbon;
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINKS_HPP_RIBBON */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

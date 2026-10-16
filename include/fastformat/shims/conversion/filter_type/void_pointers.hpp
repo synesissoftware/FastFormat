@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/shims/conversion/filter_type/void_pointers.hpp
+ * File:    fastformat/shims/conversion/filter_type/void_pointers.hpp
  *
- * Purpose:     FastFormat argument conversion shim for floating-point
+ * Purpose: FastFormat argument conversion shim for floating-point
  *              types.
  *
- * Created:     30th November 2008
- * Updated:     16th July 2024
+ * Created: 30th November 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -173,6 +173,6 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(void* value, void* 
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/integer.hpp
+ * File:    fastformat/inserters/integer.hpp
  *
- * Purpose:     Inserter functions for integral types
+ * Purpose: Inserter functions for integral types
  *
- * Created:     26th May 2009
- * Updated:     16th July 2024
+ * Created: 26th May 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -672,6 +672,6 @@ using ::fastformat::inserters::integer;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_INTEGER */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

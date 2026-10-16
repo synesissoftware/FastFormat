@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.bundle.util.cpp
+ * File:    test.unit.bundle.util.cpp
  *
- * Purpose:     Implementation file for the test.unit.bundle.util project.
+ * Purpose: Implementation file for the test.unit.bundle.util project.
  *
- * Created:     30th November 2016
- * Updated:     16th July 2024
+ * Created: 30th November 2016
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,19 +15,19 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/util/bundle/windows_replacement_translation_functions.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -110,21 +110,12 @@ namespace
     static void escape_fastformat_replacement_parameters_9();
     static void escape_fastformat_replacement_parameters_10();
 
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_8();
-
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -176,15 +167,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(escape_fastformat_replacement_parameters_8);
         XTESTS_RUN_CASE(escape_fastformat_replacement_parameters_9);
         XTESTS_RUN_CASE(escape_fastformat_replacement_parameters_10);
-
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
 
         XTESTS_PRINT_RESULTS();
 
@@ -465,7 +447,6 @@ static void change_windows_replacement_parameters_to_fastformat_10()
 }
 
 
-
 static void escape_fastformat_replacement_parameters_1()
 {
     string_t const  input;
@@ -557,40 +538,8 @@ static void escape_fastformat_replacement_parameters_10()
 }
 
 
-static void test_1_1()
-{
-}
-
-static void test_1_2()
-{
-}
-
-static void test_1_3()
-{
-}
-
-static void test_1_4()
-{
-}
-
-static void test_1_5()
-{
-}
-
-static void test_1_6()
-{
-}
-
-static void test_1_7()
-{
-}
-
-static void test_1_8()
-{
-}
-
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

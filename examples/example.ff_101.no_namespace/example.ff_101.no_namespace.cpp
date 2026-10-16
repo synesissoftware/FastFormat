@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.ff_101.no_namespace/example.ff_101.no_namespace.cpp
+ * File:    examples/example.ff_101.no_namespace/example.ff_101.no_namespace.cpp
  *
- * Purpose:     Implementation file for the example.ff_101.no_namespace project.
+ * Purpose: Example introducing FastFormat basics without the FastFormat namespace.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #ifndef FASTFORMAT_NO_NAMESPACE
 # define FASTFORMAT_NO_NAMESPACE
@@ -17,18 +16,19 @@
 # include <afx.h>
 #endif /* _AFXDLL */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #ifdef __AFX_H__
 # include <fastformat/sinks/CString.hpp>
 #endif /* __AFX_H__ */
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/string/simple_string.hpp>
 #include <platformstl/platformstl.hpp>
 #ifdef __AFX_H__
@@ -40,7 +40,7 @@
 # include <comstl/util/variant.hpp>
 #endif /* OS */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -50,13 +50,13 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     // Case 1:
     //
@@ -226,7 +226,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -247,6 +247,7 @@ int main(int argc, char** argv)
 
     return EXIT_FAILURE;
 }
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -281,6 +282,6 @@ int main(int argc, char** argv)
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

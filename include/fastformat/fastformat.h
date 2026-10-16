@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/fastformat.h
+ * File:    fastformat/fastformat.h
  *
- * Purpose:     FastFormat Core API.
+ * Purpose: FastFormat Core API.
  *
- * Created:     18th September 2006
- * Updated:     16th July 2024
+ * Created: 18th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       26
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    5
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        117
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        118
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -68,8 +68,13 @@
  * The minor version number of FastFormat
  */
 
-/** \def FASTFORMAT_VER_REVISION
- * The revision version number of FastFormat
+/** \def FASTFORMAT_VER_PATCH
+ * The patch version number of FastFormat
+ */
+
+/** \def FASTFORMAT_VER_RELSTATUS
+ * The release status of FastFormat, in the range 1-0xFE for prerelease
+ * versions, and 0xFF for a released version
  */
 
 /** \def FASTFORMAT_VER
@@ -100,6 +105,7 @@
 # define FASTFORMAT_VER_0_7_4_RC_4          0x00070484
 # define FASTFORMAT_VER_0_7_4_RC_5          0x00070485
 # define FASTFORMAT_VER_0_7_4_RC_6          0x00070486
+# define FASTFORMAT_VER_0_7_4_RC_7          0x00070487
 # define FASTFORMAT_VER_0_8_1_ALPHA_1       0x00080101
 # define FASTFORMAT_VER_0_8_1_ALPHA_2       0x00080102
 # define FASTFORMAT_VER_0_8_1_ALPHA_3       0x00080103
@@ -107,13 +113,26 @@
 # define FASTFORMAT_VER_0_8_1_ALPHA_5       0x00080105
 # define FASTFORMAT_VER_0_8_1_ALPHA_6       0x00080106
 # define FASTFORMAT_VER_0_8_1_ALPHA_7       0x00080107
+# define FASTFORMAT_VER_0_8_1_ALPHA_8       0x00080148
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           8
-#define FASTFORMAT_VER_REVISION        1
+#define FASTFORMAT_VER_PATCH           1
+#define FASTFORMAT_VER_RELSTATUS       0x48
 
-#define FASTFORMAT_VER                 FASTFORMAT_VER_0_8_1_ALPHA_7
+#define FASTFORMAT_VER \
+    (0\
+        |   (   FASTFORMAT_VER_MAJOR       << 24   ) \
+        |   (   FASTFORMAT_VER_MINOR       << 16   ) \
+        |   (   FASTFORMAT_VER_PATCH       <<  8   ) \
+        |   (   FASTFORMAT_VER_RELSTATUS   <<  0   ) \
+    )
+
+#ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
+# define FASTFORMAT_VER_ALPHABETA                           FASTFORMAT_VER_RELSTATUS
+# define FASTFORMAT_VER_REVISION                            FASTFORMAT_VER_PATCH
+#endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -235,9 +254,15 @@ namespace fastformat
  * \ingroup group__utility
  */
 
-#if !defined(FASTFORMAT_DECLSPEC)
+/* Under FASTFORMAT_DOCUMENTATION_SKIP_SECTION always emit the #define so
+ * Doxygen can attach the \def documentation (an empty PREDEFINED value
+ * would hide these lines and yield "unknown define").
+ */
+#if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
 # define FASTFORMAT_DECLSPEC
-#endif /* !FASTFORMAT_DECLSPEC */
+#elif !defined(FASTFORMAT_DECLSPEC)
+# define FASTFORMAT_DECLSPEC
+#endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION || !FASTFORMAT_DECLSPEC */
 
 #if defined(__cplusplus) || \
     defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
@@ -246,9 +271,11 @@ namespace fastformat
 # define FASTFORMAT_EXTERN_C                                extern
 #endif /* !__cplusplus */
 
-#if !defined(FASTFORMAT_CALLCONV)
+#if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION)
 # define FASTFORMAT_CALLCONV
-#endif /* !FASTFORMAT_CALLCONV */
+#elif !defined(FASTFORMAT_CALLCONV)
+# define FASTFORMAT_CALLCONV
+#endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION || !FASTFORMAT_CALLCONV */
 
 #if defined(FASTFORMAT_DOCUMENTATION_SKIP_SECTION) || \
     !defined(FASTFORMAT_CALL)
@@ -1104,7 +1131,7 @@ fastformat_malloc(size_t cb);
 namespace util
 {}
 
-/** Namespace within which FastFormat filtering conversion shim functions
+/** namespace within which FastFormat filtering conversion shim functions
  *   are defined.
  *
  * \remarks This namespace is designed to contain the filter_type()
@@ -1118,7 +1145,7 @@ namespace util
 namespace filters
 {}
 
-/** Namespace within which FastFormat flag constants (of type <code>int</code>)
+/** namespace within which FastFormat flag constants (of type <code>int</code>)
  *   are defined.
  *
  *
@@ -1129,7 +1156,7 @@ namespace filters
 namespace flags
 {}
 
-/** Namespace within which FastFormat iterators are defined.
+/** namespace within which FastFormat iterators are defined.
  *
  *
  * \warning All entities defined within any sub-namespace whose name begins
@@ -1139,7 +1166,7 @@ namespace flags
 namespace iterators
 {}
 
-/** Namespace within which FastFormat sink functions are defined
+/** namespace within which FastFormat sink functions are defined
  *
  * \remarks This namespace is designed to contain the fmt_slices()
  *   action shim, and is open for extension by users who may define
@@ -1152,7 +1179,7 @@ namespace iterators
 namespace sinks
 {}
 
-/** Namespace within which internal FastFormat types and functions are defined
+/** namespace within which internal FastFormat types and functions are defined
  *
  * \warning All entities defined within this namespace are subject to change
  *   without warning on any release, including revision releases.
@@ -1223,6 +1250,6 @@ namespace internal
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

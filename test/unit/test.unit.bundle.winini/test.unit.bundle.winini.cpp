@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.bundle.winini.cpp
+ * File:    test.unit.bundle.winini.cpp
  *
- * Purpose:     Implementation file for the test.unit.bundle.winini project.
+ * Purpose: Implementation file for the test.unit.bundle.winini project.
  *
- * Created:     12th April 2008
- * Updated:     16th July 2024
+ * Created: 12th April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,20 +15,20 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/bundles/winini_bundle.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -81,15 +81,12 @@ namespace
     static void test_1_5();
     static void test_1_6();
     static void test_1_7();
-    static void test_1_8();
-
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -123,8 +120,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE_THAT_THROWS(test_1_5, std::out_of_range);
         XTESTS_RUN_CASE_THAT_THROWS(test_1_6, std::out_of_range);
         XTESTS_RUN_CASE_THAT_THROWS(test_1_7, std::out_of_range);
-        XTESTS_RUN_CASE(test_1_8);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -202,14 +197,9 @@ static void test_1_7()
     XTESTS_TEST_STRING_EQUAL("", val1);
 }
 
-static void test_1_8()
-{
-}
 
-
-} /* anonymous namespace */
-
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

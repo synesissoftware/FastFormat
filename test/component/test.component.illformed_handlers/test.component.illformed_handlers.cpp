@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.illformed_handlers.cpp
+ * File:    test.component.illformed_handlers.cpp
  *
- * Purpose:     Implementation file for the test.component.illformed_handlers project.
+ * Purpose: Implementation file for the test.component.illformed_handlers project.
  *
- * Created:     11th November 2013
- * Updated:     16th July 2024
+ * Created: 11th November 2013
+ * Updated: 16th July 2024
  *
- * Status:      Wizard-generated
+ * Status:  Wizard-generated
  *
- * License:     (Licensed under the Synesis Software Open License)
+ * License: (Licensed under the Synesis Software Open License)
  *
  *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
  *              Copyright (c) 2013-2019, Synesis Software Pty Ltd.
@@ -19,12 +19,12 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * preprocessor control
  */
 
 #define FASTFORMAT_NO_AUTO_INIT
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -46,6 +46,7 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
  */
@@ -58,24 +59,8 @@ namespace
     static void test_scenario_1_configuration_2(void);
     static void test_scenario_1_configuration_3(void);
     static void test_scenario_1_configuration_4(void);
-    static void test_1_4(void);
-    static void test_1_5(void);
-    static void test_1_6(void);
-    static void test_1_7(void);
-    static void test_1_8(void);
-    static void test_1_9(void);
-    static void test_1_10(void);
-    static void test_1_11(void);
-    static void test_1_12(void);
-    static void test_1_13(void);
-    static void test_1_14(void);
-    static void test_1_15(void);
-    static void test_1_16(void);
-    static void test_1_17(void);
-    static void test_1_18(void);
-    static void test_1_19(void);
+} // anonymous namespace
 
-} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
  * classes
@@ -254,6 +239,7 @@ private: // Fields
     unsigned    m_numCalls;
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * helper functions
  */
@@ -272,6 +258,7 @@ int ff_teardown(void*)
 
     return 0;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
@@ -298,23 +285,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_scenario_1_configuration_2);
         XTESTS_RUN_CASE(test_scenario_1_configuration_3);
         XTESTS_RUN_CASE(test_scenario_1_configuration_4);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -322,6 +292,7 @@ int main(int argc, char **argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * test function implementations
@@ -404,72 +375,9 @@ static void test_scenario_1_configuration_4()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL("x=x, y={", sink);
 }
 
-static void test_1_4()
-{
-}
 
-static void test_1_5()
-{
-}
-
-static void test_1_6()
-{
-}
-
-static void test_1_7()
-{
-}
-
-static void test_1_8()
-{
-}
-
-static void test_1_9()
-{
-}
-
-static void test_1_10()
-{
-}
-
-static void test_1_11()
-{
-}
-
-static void test_1_12()
-{
-}
-
-static void test_1_13()
-{
-}
-
-static void test_1_14()
-{
-}
-
-static void test_1_15()
-{
-}
-
-static void test_1_16()
-{
-}
-
-static void test_1_17()
-{
-}
-
-static void test_1_18()
-{
-}
-
-static void test_1_19()
-{
-}
-
-
-} /* anonymous namespace */
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

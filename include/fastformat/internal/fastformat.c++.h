@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/internal/fastformat.c++.h
+ * File:    fastformat/internal/fastformat.c++.h
  *
- * Purpose:     FastFormat Core API C++ utilities and overloads.
+ * Purpose: FastFormat Core API C++ utilities and overloads.
  *
- * Created:     18th September 2006
- * Updated:     16th July 2024
+ * Created: 18th September 2006
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
@@ -209,6 +209,6 @@ inline string_slice_t getNewlineForPlatform()
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/to_f.hpp
+ * File:    fastformat/inserters/to_f.hpp
  *
- * Purpose:     Inserter functions for floating-point types
+ * Purpose: Inserter functions for floating-point types
  *
- * Created:     29th April 2009
- * Updated:     16th July 2024
+ * Created: 29th April 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -148,6 +148,6 @@ using ::fastformat::inserters::to_f;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_F */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

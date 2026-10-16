@@ -1,4 +1,12 @@
-
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.decimal_integer/test.performance.decimal_integer.cpp
+ *
+ * Purpose: Performance tests for decimal_integer.
+ *
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
+ *
+ * ////////////////////////////////////////////////////////////////////// */
 
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/to_i.hpp>
@@ -48,7 +56,7 @@ int main()
         ff::fmtln(std::cout, "{0} incremental numbers in {1}us", NUM_ITERATIONS, counter.get_microseconds());
     }
 
-    if(std::numeric_limits<unsigned>::max() == x)
+    if((std::numeric_limits<unsigned>::max)() == x)
     {
         fputs("", stdin);
     }
@@ -56,6 +64,6 @@ int main()
     return 0;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

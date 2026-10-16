@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.api.illformed_handlers.cpp
+ * File:    test.unit.api.illformed_handlers.cpp
  *
- * Purpose:     Implementation file for the test.unit.api.illformed_handlers project.
+ * Purpose: Implementation file for the test.unit.api.illformed_handlers project.
  *
- * Created:     27th May 2008
- * Updated:     16th July 2024
+ * Created: 27th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test component header file include(s)
@@ -18,18 +19,19 @@
 #include <fastformat/fastformat.h>
 #include <fastformat/internal/threading.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -123,15 +125,7 @@ namespace
     static void test_3(void);
     static void test_4(void);
     static void test_5(void);
-    static void test_6(void);
-    static void test_7(void);
-    static void test_8(void);
-    static void test_9(void);
-    static void test_10(void);
-    static void test_11(void);
-
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -158,7 +152,7 @@ int ff_teardown(void*)
  * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -181,13 +175,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_3);
         XTESTS_RUN_CASE(test_4);
         XTESTS_RUN_CASE(test_5);
-        XTESTS_RUN_CASE(test_6);
-        XTESTS_RUN_CASE(test_7);
-        XTESTS_RUN_CASE(test_8);
-        XTESTS_RUN_CASE(test_9);
-        XTESTS_RUN_CASE(test_10);
-        XTESTS_RUN_CASE(test_11);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -322,33 +309,9 @@ static void test_5()
     XTESTS_TEST_POINTER_EQUAL(param, replaced.param);
 }
 
-static void test_6()
-{
-}
 
-static void test_7()
-{
-}
-
-static void test_8()
-{
-}
-
-static void test_9()
-{
-}
-
-static void test_10()
-{
-}
-
-static void test_11()
-{
-}
-
-} /* anonymous namespace */
-
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

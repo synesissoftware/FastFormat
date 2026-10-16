@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.arguments.void_pointers/example.arguments.void_pointers.cpp
+ * File:    examples/example.arguments.void_pointers/example.arguments.void_pointers.cpp
  *
- * Purpose:     Implementation file for the example.arguments.void_pointers project.
+ * Purpose: Implementation file for the example.arguments.void_pointers project.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,12 +13,12 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #define FASTFORMAT_USE_VOID_POINTERS_CONVERSION_SHIMS
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -28,13 +28,13 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     void*                   p   =   &p;
     void const*             pc  =   &pc;
@@ -74,7 +74,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -92,6 +92,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

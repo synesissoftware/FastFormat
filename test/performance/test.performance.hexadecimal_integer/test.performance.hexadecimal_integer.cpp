@@ -1,4 +1,12 @@
-
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.hexadecimal_integer/test.performance.hexadecimal_integer.cpp
+ *
+ * Purpose: Performance tests for hexadecimal_integer.
+ *
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
+ *
+ * ////////////////////////////////////////////////////////////////////// */
 
 #include <fastformat/ff.hpp>
 #include <fastformat/inserters/to_i.hpp>
@@ -12,6 +20,7 @@
 #include <limits>
 
 #include <stdio.h>
+#include <limits.h>
 
 #ifdef _DEBUG
 const size_t NUM_ITERATIONS =   1;
@@ -69,7 +78,7 @@ int main()
         ff::fmtln(std::cout, "{0} incremental (int) numbers in {1}us", static_cast<unsigned long>(INT_MAX) * 2, counter.get_microseconds());
     }
 
-    if(std::numeric_limits<unsigned>::max() == x)
+    if((std::numeric_limits<unsigned>::max)() == x)
     {
         fputs("", stdin);
     }
@@ -77,6 +86,6 @@ int main()
     return 0;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

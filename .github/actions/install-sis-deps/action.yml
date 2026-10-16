@@ -1,0 +1,109 @@
+name: Install Synesis dependencies
+description: >-
+  Clones, builds, and installs the named Synesis Information Systems
+  dependencies into a single CMake prefix, and exports that prefix both as
+  the SIS_DEPS environment variable and as the `prefix` output.
+
+inputs:
+  build-type:
+    description: CMake build type, for single-configuration generators
+    required: false
+    default: Release
+  c-compiler:
+    description: C compiler name, or the selector `cl`
+    required: true
+  cpp-compiler:
+    description: C++ compiler name; unused for the `cl` selector
+    required: true
+  dependencies:
+    description: >-
+      Whitespace-separated synesissoftware repository names, in dependency
+      order. Each is configured against those already installed, so this
+      list is deliberately NOT in lexicographic order.
+    required: true
+  install-prefix:
+    description: Directory into which every dependency is installed
+    required: false
+    default: ''
+  toolchain:
+    description: >-
+      Toolchain selector, for a toolchain that is not implied by the compiler
+      names and needs its own generator; presently only `mingw`. Empty
+      otherwise, in which case the compiler names alone select the toolchain.
+    required: false
+    default: ''
+
+outputs:
+  prefix:
+    description: Directory into which every dependency was installed
+    value: ${{ steps.install.outputs.prefix }}
+
+runs:
+  using: composite
+
+  steps:
+    - id: install
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        PREFIX="${{ inputs.install-prefix }}"
+        [ -n "$PREFIX" ] || PREFIX="${RUNNER_TEMP}/sis-deps"
+
+        mkdir -p "$PREFIX"
+
+        if [ "${{ inputs.toolchain }}" = "mingw" ]; then
+          export PATH="/mingw64/bin:$PATH"
+        fi
+
+        for dep in ${{ inputs.dependencies }}; do
+
+          echo "::group::Installing $dep"
+
+          SRC="${RUNNER_TEMP}/${dep}-src"
+          BUILD="${RUNNER_TEMP}/${dep}-build"
+
+          git clone --depth 1 "https://github.com/synesissoftware/${dep}" "$SRC"
+
+          # NOTE: the generator and the build-type/compiler options are the
+          # *only* things that may differ between these paths; every other
+          # -D option is passed in all cases, so that no branch can silently
+          # ignore one.
+          if [ "${{ inputs.c-compiler }}" = "cl" ]; then
+            cmake -S "$SRC" -B "$BUILD" \
+              -DBUILD_EXAMPLES=OFF \
+              -DBUILD_TESTING=OFF \
+              -DCMAKE_DISABLE_FIND_PACKAGE_MFC=TRUE \
+              -DCMAKE_INSTALL_PREFIX="$PREFIX" \
+              -DCMAKE_PREFIX_PATH="$PREFIX"
+            cmake --build "$BUILD" --config "${{ inputs.build-type }}" --parallel
+            cmake --install "$BUILD" --config "${{ inputs.build-type }}"
+          elif [ "${{ inputs.toolchain }}" = "mingw" ]; then
+            cmake -S "$SRC" -B "$BUILD" -G "MinGW Makefiles" \
+              -DBUILD_EXAMPLES=OFF \
+              -DBUILD_TESTING=OFF \
+              -DCMAKE_BUILD_TYPE="${{ inputs.build-type }}" \
+              -DCMAKE_C_COMPILER="${{ inputs.c-compiler }}" \
+              -DCMAKE_CXX_COMPILER="${{ inputs.cpp-compiler }}" \
+              -DCMAKE_INSTALL_PREFIX="$PREFIX" \
+              -DCMAKE_PREFIX_PATH="$PREFIX"
+            cmake --build "$BUILD" --parallel 2
+            cmake --install "$BUILD"
+          else
+            cmake -S "$SRC" -B "$BUILD" \
+              -DBUILD_EXAMPLES=OFF \
+              -DBUILD_TESTING=OFF \
+              -DCMAKE_BUILD_TYPE="${{ inputs.build-type }}" \
+              -DCMAKE_C_COMPILER="${{ inputs.c-compiler }}" \
+              -DCMAKE_CXX_COMPILER="${{ inputs.cpp-compiler }}" \
+              -DCMAKE_INSTALL_PREFIX="$PREFIX" \
+              -DCMAKE_PREFIX_PATH="$PREFIX"
+            cmake --build "$BUILD" --parallel
+            cmake --install "$BUILD"
+          fi
+
+          echo "::endgroup::"
+        done
+
+        echo "prefix=$PREFIX" >> "$GITHUB_OUTPUT"
+        echo "SIS_DEPS=$PREFIX" >> "$GITHUB_ENV"

@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.ff_101/example.ff_101.cpp
+ * File:    examples/example.ff_101/example.ff_101.cpp
  *
- * Purpose:     Implementation file for the example.ff_101 project.
+ * Purpose: Implementation file for the example.ff_101 project.
  *
- * Created:     2nd June 2008
- * Updated:     16th July 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,18 +13,19 @@
 # include <afx.h>
 #endif /* _AFXDLL */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #ifdef __AFX_H__
 # include <fastformat/sinks/CString.hpp>
 #endif /* __AFX_H__ */
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/string/simple_string.hpp>
 #include <platformstl/platformstl.hpp>
 #ifdef __AFX_H__
@@ -36,7 +37,7 @@
 # include <comstl/util/variant.hpp>
 #endif /* OS */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -46,14 +47,14 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     // Case 1:
     puts("Case 1");
@@ -240,11 +241,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.2");
@@ -257,11 +258,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.3");
@@ -274,11 +275,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.4");
@@ -291,11 +292,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.5");
@@ -310,11 +311,15 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::missing_argument_exception& x)
     {
-        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numArguments);
+        cerr
+            << "error: " << x.what()
+            << "; arg " << x.firstMismatchedReplacementIndex
+            << " out of " << x.numArguments
+            << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
 # ifdef FASTFORMAT_DETECT_UNREFERENCED_ARGUMENTS
@@ -328,11 +333,15 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::unreferenced_argument_exception& x)
     {
-        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numArguments);
+        cerr
+            << "error: " << x.what()
+            << "; arg " << x.firstMismatchedReplacementIndex
+            << " out of " << x.numArguments
+            << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.7");
@@ -345,11 +354,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::unreferenced_argument_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x);
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 # endif /* FASTFORMAT_DETECT_UNREFERENCED_ARGUMENTS */
 #endif /* !FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
@@ -357,7 +366,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -379,6 +388,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

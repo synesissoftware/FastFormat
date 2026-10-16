@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/util/filesystem/FILE_functions.hpp
+ * File:    fastformat/util/filesystem/FILE_functions.hpp
  *
- * Purpose:     Utility functions for using <code>FILE*</code>.
+ * Purpose: Utility functions for using <code>FILE*</code>.
  *
- * Created:     3rd January 2008
- * Updated:     16th July 2024
+ * Created: 3rd January 2008
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
@@ -163,6 +163,6 @@ fopen_or_throw(
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_UTIL_FILESYSTEM_HPP_FILE_FUNCTIONS */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

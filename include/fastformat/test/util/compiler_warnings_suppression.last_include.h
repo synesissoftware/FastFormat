@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/test/util/compiler_warnings_suppression.last_include.h
+ * File:    fastformat/test/util/compiler_warnings_suppression.last_include.h
  *
- * Purpose:     #include file to go at the end of a test file's #include
+ * Purpose: #include file to go at the end of a test file's #include
  *              list.
  *
- * Created:     3rd February 2008
- * Updated:     16th July 2024
+ * Created: 3rd February 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -93,4 +93,5 @@
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

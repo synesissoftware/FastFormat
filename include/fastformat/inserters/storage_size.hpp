@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/storage_size.hpp
+ * File:    fastformat/inserters/storage_size.hpp
  *
- * Purpose:     Inserter functions for storage sizes.
+ * Purpose: Inserter functions for storage sizes.
  *
- * Created:     16th August 2010
- * Updated:     16th July 2024
+ * Created: 16th August 2010
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
@@ -465,6 +465,6 @@ using ::fastformat::inserters::storage_size;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

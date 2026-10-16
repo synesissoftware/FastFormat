@@ -1,18 +1,18 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/shims/action/fmt_slices/generic_string.hpp
+ * File:    fastformat/shims/action/fmt_slices/generic_string.hpp
  *
- * Purpose:     FastFormat formatting action shim for generic string types.
+ * Purpose: FastFormat formatting action shim for generic string types.
  *
- * Created:     19th September 2006
- * Updated:     16th July 2024
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * Thanks:      To Ric Parkin for pointing out the ramifications of
+ * Thanks:  To Ric Parkin for pointing out the ramifications of
  *              21.3.5.2/6 and 21.3.1/6 before I change the definition of
  *              c_str_data[_a|_w] to allow NULL to be returned.
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -166,6 +166,6 @@ fmt_slices(
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

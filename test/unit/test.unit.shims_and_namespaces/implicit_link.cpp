@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        implicit_link.cpp
+ * File:    implicit_link.cpp
  *
- * Purpose:     Implicit link file for the test.unit.shims_and_namespaces project.
+ * Purpose: Implicit link file for the test.unit.shims_and_namespaces project.
  *
- * Created:     11th November 2013
- * Updated:     16th July 2024
+ * Created: 11th November 2013
+ * Updated: 16th July 2024
  *
- * Status:      Wizard-generated
+ * Status:  Wizard-generated
  *
- * License:     (Licensed under the Synesis Software Open License)
+ * License: (Licensed under the Synesis Software Open License)
  *
  *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
  *              Copyright (c) 2013-2019, Synesis Software Pty Ltd.
@@ -37,4 +37,5 @@
 #include <xtests/implicit_link.h>
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

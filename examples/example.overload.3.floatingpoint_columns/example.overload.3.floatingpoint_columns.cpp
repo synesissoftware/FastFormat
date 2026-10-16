@@ -1,11 +1,11 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.floatingpoint_columns.cpp
+ * File:    example.overload.3.floatingpoint_columns.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.floatingpoint_columns
+ * Purpose: Implementation file for the example.overload.3.floatingpoint_columns
  *              project.
  *
- * Created:     30th April 2009
- * Updated:     16th July 2024
+ * Created: 30th April 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -257,6 +257,6 @@ int output_by_boost_2()
 }
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

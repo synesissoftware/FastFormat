@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/to_i_null_if_not.hpp
+ * File:    fastformat/inserters/to_i_null_if_not.hpp
  *
- * Purpose:     Nullable inserter functions for integral types
+ * Purpose: Nullable inserter functions for integral types
  *
- * Created:     20th February 2010
- * Updated:     16th July 2024
+ * Created: 20th February 2010
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -171,6 +171,6 @@ using ::fastformat::inserters::to_i_null_if_not;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

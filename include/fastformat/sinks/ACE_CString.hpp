@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/ACE_CString.hpp
+ * File:    fastformat/sinks/ACE_CString.hpp
  *
- * Purpose:     A FastFormat sink adaptor for ACE's ACE_CString.
+ * Purpose: A FastFormat sink adaptor for ACE's ACE_CString.
  *
- * Created:     2nd January 2009
- * Updated:     16th July 2024
+ * Created: 2nd January 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -163,4 +163,5 @@ inline ACE_CString& fmt_slices(ACE_CString& sink, int flags, size_t cchTotal, si
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_ACE_CSTRING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

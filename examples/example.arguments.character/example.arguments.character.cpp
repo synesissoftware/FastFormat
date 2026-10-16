@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.arguments.character/example.arguments.character.cpp
+ * File:    examples/example.arguments.character/example.arguments.character.cpp
  *
- * Purpose:     Implementation file for the example.arguments.character project.
+ * Purpose: Implementation file for the example.arguments.character project.
  *
- * Created:     2nd June 2008
- * Updated:     16th July 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,13 +13,13 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 #include <fastformat/sinks/ostream.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -29,7 +29,7 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
@@ -75,7 +75,7 @@ namespace filters
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
 # define    stm                                             std::wcout
@@ -98,7 +98,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -116,6 +116,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

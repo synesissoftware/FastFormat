@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/snprintf.cpp
+ * File:    src/snprintf.cpp
  *
- * Purpose:     Implementation file for snprintf() utility functions.
+ * Purpose: Implementation file for snprintf() utility functions.
  *
- * Created:     1st June 2008
- * Updated:     16th July 2024
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -40,7 +40,6 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
@@ -56,6 +55,7 @@
 
 #include <stdio.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
  */
@@ -66,6 +66,7 @@ namespace fastformat
 namespace util
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Compiler / feature discrimination
@@ -100,6 +101,7 @@ namespace util
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
 # define fastformat_util_vsnprintf_(d, n, f, a)         fastformat_util_vsnprintf_a_(d, n, f, a)
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * private API
@@ -140,6 +142,7 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf_a(
     return ret;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * API
  */
@@ -179,6 +182,7 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
     return ret;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
  */
@@ -189,4 +193,5 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

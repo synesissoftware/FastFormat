@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/internal/initialiser.hpp (derived from Pantheios)
+ * File:    fastformat/internal/initialiser.hpp (derived from Pantheios)
  *
- * Purpose:     Automatic initialisation of FastFormat library
+ * Purpose: Automatic initialisation of FastFormat library
  *
- * Created:     21st June 2005
- * Updated:     16th July 2024
+ * Created: 21st June 2005
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2005-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -278,11 +278,12 @@ namespace
     /// ensures that the FastFormat library is initialised prior to use.
     static fastformat_initialiser    s_fastformat_initialiser;
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 /* ////////////////////////////////////////////////////////////////////// */
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_HPP_INITIALISER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

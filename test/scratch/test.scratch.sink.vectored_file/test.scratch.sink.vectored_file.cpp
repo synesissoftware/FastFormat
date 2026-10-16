@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sink.vectored_file.cpp
+ * File:    test.scratch.sink.vectored_file.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sink.vectored_file project.
+ * Purpose: Implementation file for the test.scratch.sink.vectored_file project.
  *
- * Created:     28th October 2006
- * Updated:     16th July 2024
+ * Created: 28th October 2006
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,26 +13,26 @@
  * includes
  */
 
-/* UNIXem Header Files */
+/* UNIXem header files */
 #include <platformstl/platformstl.h>
 #if defined(PLATFORMSTL_OS_IS_WINDOWS)
 # include <unixem/implicit_link.h>
 #endif /* PLATFORMSTL_OS_IS_WINDOWS */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/vectored_file.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/smartptr/scoped_handle.hpp>
 #include <platformstl/filesystem/file_path_buffer.hpp>
 #include <platformstl/filesystem/file_lines.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -50,7 +50,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char ** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     platformstl::file_path_buffer       path1;
     platformstl::file_path_buffer       path2;
@@ -174,6 +174,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

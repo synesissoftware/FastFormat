@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/bundles/windows_resource_bundle.hpp
+ * File:    fastformat/bundles/windows_resource_bundle.hpp
  *
- * Purpose:     Windows resource bundle.
+ * Purpose: Windows resource bundle.
  *
- * Created:     24th April 2009
- * Updated:     16th July 2024
+ * Created: 24th April 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -359,4 +359,5 @@ windows_resource_bundle::operator [](
 #endif /* FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

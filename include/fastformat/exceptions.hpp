@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/exceptions.hpp
+ * File:    fastformat/exceptions.hpp
  *
- * Purpose:     FastFormat API exception classes.
+ * Purpose: FastFormat API exception classes.
  *
- * Created:     23rd October 2008
- * Updated:     16th July 2024
+ * Created: 23rd October 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -48,7 +48,6 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * version information
  */
@@ -56,10 +55,9 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      21
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  7
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * language
@@ -69,6 +67,24 @@
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+/* /////////////////////////////////////////////////////////////////////////
+ * Compatibility
+ *
+ * Exception types must be publicly copy-constructible for portable
+ * throw/catch. Assignment stays closed: =delete from C++11, otherwise a
+ * private unimplemented declaration (C++03 clients).
+ */
+
+#if 0
+#elif defined(__cplusplus) && \
+      __cplusplus >= 201103L
+# define FASTFORMAT_EXCEPTION_NO_ASSIGN_() \
+        class_type& operator =(class_type const&) = delete
+#else /* ? C++11 */
+# define FASTFORMAT_EXCEPTION_NO_ASSIGN_() \
+        private: \
+            class_type& operator =(class_type const&)
+#endif /* C++11 */
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -86,7 +102,6 @@
 #include <stdexcept>
 #include <string>
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
  */
@@ -96,45 +111,62 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-
 /* /////////////////////////////////////////////////////////////////////////
- * documenation
+ * Classes
  */
 
 #if 0
 
     /* Taxonomy: */
 
-  [std::runtime_error]
-    |
-    + - fastformat_exception
+    [std::runtime_error]
         |
-        + - bundle_exception
-        |
-        + - format_parsing_exception
-        |   |
-        |   + - illformed_format_exception
-        |
-        + - mismatched_replacements_exception
-        |   |
-        |   + - missing_argument_exception
-        |   |
-        |   + - unreferenced_argument_exception
-        |
-        + - sink_exception
-            |
-            + - sink_output_exception
+        + - fastformat_exception
                 |
-                .
-                .
-                .
-                . . . sink-specific exception classes
+                + - bundle_exception
+                |
+                + - format_parsing_exception
+                |       |
+                |       + - illformed_format_exception
+                |
+                + - mismatched_replacements_exception
+                |       |
+                |       + - missing_argument_exception
+                |       |
+                |       + - unreferenced_argument_exception
+                |
+                + - sink_exception
+                        |
+                        + - sink_output_exception
+                                |
+                                .
+                                .
+                                .
+                                . . . sink-specific exception classes
 #endif
 
 
-/* /////////////////////////////////////////////////////////////////////////
- * classes
+
+#if 0
+/** Helper class for handling numeric status codes.
+ *
+ * \ingroup group__contingent
+ *
  */
+class status_code
+{
+public:
+    typedef status_code     class_type;
+    typedef int             standard_status_code_type;
+#if defined(PLATFORMSTL_OS_IS_UNIX)
+    typedef int             os_status_code_type;
+#elif defined(PLATFORMSTL_OS_IS_WINDOWS)
+    typedef DWORD           os_status_code_type;
+#else /* ? OS */
+# error Operating system not discriminated
+#endif /* OS */
+};
+#endif /* 0 */
 
 /** Root class for all FastFormat exception.
  *
@@ -165,11 +197,15 @@ public: // Construction
     {
         FASTFORMAT_COVER_MARK_ENTRY();
     }
+    /// Copy construction (public: required for portable throw/catch)
+    fastformat_exception(class_type const& rhs)
+        : parent_class_type(rhs)
+    {
+        FASTFORMAT_COVER_MARK_ENTRY();
+    }
     virtual ~fastformat_exception() STLSOFT_NOEXCEPT = 0;
 
-private:
-    /// Not assignment-copyable
-    class_type& operator =(class_type const&);
+    FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
 protected: // Implementation
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -248,10 +284,17 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
+        /// Copy construction (public: required for portable throw/catch)
+        format_parsing_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+            , code(rhs.code)
+            , format(rhs.format)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
         virtual ~format_parsing_exception() STLSOFT_NOEXCEPT = 0;
-    private:
-        /// Not assignment-copyable
-        class_type& operator =(class_type const&);
+
+        FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
     public: // Attributes
         /// The code indicating the cause of the problem
@@ -299,9 +342,14 @@ protected: // Implementation
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
-        private:
-            /// Not assignment-copyable
-            class_type& operator =(class_type const&);
+            /// Copy construction (public: required for portable throw/catch)
+            illformed_format_exception(class_type const& rhs)
+                : parent_class_type(rhs)
+            {
+                FASTFORMAT_COVER_MARK_ENTRY();
+            }
+
+            FASTFORMAT_EXCEPTION_NO_ASSIGN_();
         };
 
     /** Root class for all parameter replacement exceptions.
@@ -341,15 +389,23 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
+        /// Copy construction (public: required for portable throw/catch)
+        mismatched_replacements_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+            , code(rhs.code)
+            , numArguments(rhs.numArguments)
+            , firstMismatchedReplacementIndex(rhs.firstMismatchedReplacementIndex)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
         virtual ~mismatched_replacements_exception() STLSOFT_NOEXCEPT = 0;
-    private:
-        /// Not assignment-copyable
-        class_type& operator =(class_type const&);
+
+        FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
     public: // Attributes
         /// The code indicating the cause of the problem
         const ff_replacement_code_t     code;
-        /// The number of arguments specified in the statement
+        /// The number of replacement parameters in the format
         const int                       numArguments;
         /// The index of the first mismatched replacement parameter
         const int                       firstMismatchedReplacementIndex;
@@ -385,9 +441,14 @@ protected: // Implementation
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
-        private:
-            /// Not assignment-copyable
-            class_type& operator =(class_type const&);
+            /// Copy construction (public: required for portable throw/catch)
+            missing_argument_exception(class_type const& rhs)
+                : parent_class_type(rhs)
+            {
+                FASTFORMAT_COVER_MARK_ENTRY();
+            }
+
+            FASTFORMAT_EXCEPTION_NO_ASSIGN_();
         };
 
         /** Exception class that represents the case where one or more arguments in
@@ -423,9 +484,14 @@ protected: // Implementation
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
-        private:
-            /// Not assignment-copyable
-            class_type& operator =(class_type const&);
+            /// Copy construction (public: required for portable throw/catch)
+            unreferenced_argument_exception(class_type const& rhs)
+                : parent_class_type(rhs)
+            {
+                FASTFORMAT_COVER_MARK_ENTRY();
+            }
+
+            FASTFORMAT_EXCEPTION_NO_ASSIGN_();
         };
 
     /** Root class for all bundle exceptions.
@@ -459,10 +525,15 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
+        /// Copy construction (public: required for portable throw/catch)
+        bundle_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
         virtual ~bundle_exception() STLSOFT_NOEXCEPT = 0;
-    private:
-        /// Not assignment-copyable
-        class_type& operator =(class_type const&);
+
+        FASTFORMAT_EXCEPTION_NO_ASSIGN_();
     };
 
     /** Root class for all sink exceptions.
@@ -492,10 +563,15 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
+        /// Copy construction (public: required for portable throw/catch)
+        sink_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
         virtual ~sink_exception() STLSOFT_NOEXCEPT = 0;
-    private:
-        /// Not assignment-copyable
-        class_type& operator =(class_type const&);
+
+        FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
     public: // Attributes
     };
@@ -526,11 +602,15 @@ protected: // Implementation
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
-        private:
-            /// Not assignment-copyable
-            class_type& operator =(class_type const&);
-        };
+            /// Copy construction (public: required for portable throw/catch)
+            sink_output_exception(class_type const& rhs)
+                : parent_class_type(rhs)
+            {
+                FASTFORMAT_COVER_MARK_ENTRY();
+            }
 
+            FASTFORMAT_EXCEPTION_NO_ASSIGN_();
+        };
 
 /* /////////////////////////////////////////////////////////////////////////
  * implementation
@@ -555,6 +635,7 @@ inline /* virtual */ sink_exception::~sink_exception() STLSOFT_NOEXCEPT /* = 0 *
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+#undef FASTFORMAT_EXCEPTION_NO_ASSIGN_
 
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
@@ -575,6 +656,6 @@ inline /* virtual */ sink_exception::~sink_exception() STLSOFT_NOEXCEPT /* = 0 *
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

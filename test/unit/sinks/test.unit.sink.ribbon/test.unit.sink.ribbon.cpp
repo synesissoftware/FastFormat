@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.sink.ribbon.cpp
+ * File:    test.unit.sink.ribbon.cpp
  *
- * Purpose:     Implementation file for the test.unit.sink.ribbon project.
+ * Purpose: Implementation file for the test.unit.sink.ribbon project.
  *
- * Created:     6th September 2014
- * Updated:     16th July 2024
+ * Created: 6th September 2014
+ * Updated: 16th July 2024
  *
- * Status:      Wizard-generated
+ * Status:  Wizard-generated
  *
- * License:     (Licensed under the Synesis Software Open License)
+ * License: (Licensed under the Synesis Software Open License)
  *
  *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
  *              Copyright (c) 2008-2019, Synesis Software Pty Ltd.
@@ -21,11 +21,13 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * test component header file include(s)
  */
 
 #include <fastformat/sinks/ribbon.hpp>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -51,6 +53,7 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * macros
  */
@@ -64,6 +67,7 @@
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 #define FF_STR                                              FASTFORMAT_LITERAL_STRING
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -79,22 +83,9 @@ namespace
     static void test_string_ribbon_4(void);
     static void test_string_ribbon_5(void);
     static void test_string_ribbon_6(void);
-    static void test_1_6(void);
-    static void test_1_7(void);
-    static void test_1_8(void);
-    static void test_1_9(void);
     static void test_1_10(void);
-    static void test_1_11(void);
-    static void test_1_12(void);
-    static void test_1_13(void);
-    static void test_1_14(void);
-    static void test_1_15(void);
-    static void test_1_16(void);
-    static void test_1_17(void);
-    static void test_1_18(void);
-    static void test_1_19(void);
+} // anonymous namespace
 
-} /* anonymous namespace */
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
@@ -116,21 +107,7 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_string_ribbon_4);
         XTESTS_RUN_CASE(test_string_ribbon_5);
         XTESTS_RUN_CASE(test_string_ribbon_6);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
         XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -138,6 +115,7 @@ int main(int argc, char **argv)
 
     return retCode;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * test function implementations
@@ -282,21 +260,6 @@ static void test_string_ribbon_6()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL("~...", s);
 }
 
-static void test_1_6()
-{
-}
-
-static void test_1_7()
-{
-}
-
-static void test_1_8()
-{
-}
-
-static void test_1_9()
-{
-}
 
 static void test_1_10()
 {
@@ -304,44 +267,9 @@ static void test_1_10()
 
 }
 
-static void test_1_11()
-{
-}
 
-static void test_1_12()
-{
-}
-
-static void test_1_13()
-{
-}
-
-static void test_1_14()
-{
-}
-
-static void test_1_15()
-{
-}
-
-static void test_1_16()
-{
-}
-
-static void test_1_17()
-{
-}
-
-static void test_1_18()
-{
-}
-
-static void test_1_19()
-{
-}
-
-
-} /* anonymous namespace */
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.overload.3.BSTR_out_parameter.cpp
+ * File:    test.scratch.overload.3.BSTR_out_parameter.cpp
  *
- * Purpose:     Implementation file for the test.scratch.overload.3.BSTR_out_parameter project.
+ * Purpose: Implementation file for the test.scratch.overload.3.BSTR_out_parameter project.
  *
- * Created:     4th January 2009
- * Updated:     16th July 2024
+ * Created: 4th January 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,24 +15,24 @@
 
 #include <afx.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/CComBSTR.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <winstl/conversion/char_conversions.hpp>
 #include <winstl/error/error_desc.hpp>
 #include <winstl/string/resource_string.hpp>
 
-/* Windows Header Files */
+/* Windows header files */
 #include <windows.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -52,7 +52,7 @@ HRESULT get_BSTR_ff(BSTR* bstr2);
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     BSTR    bstr1;
     BSTR    bstr2;
@@ -72,7 +72,7 @@ static int main_(int argc, char** argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -216,6 +216,6 @@ HRESULT GetFilter_new(dimension_t dimension, short index, BSTR* filter)
     return S_OK;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

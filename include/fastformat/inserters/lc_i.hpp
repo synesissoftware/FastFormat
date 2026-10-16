@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/lc_i.hpp
+ * File:    fastformat/inserters/lc_i.hpp
  *
- * Purpose:     Inserter function for integral types in locale format.
+ * Purpose: Inserter function for integral types in locale format.
  *
- * Created:     1st September 2012
- * Updated:     16th July 2024
+ * Created: 1st September 2012
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2012, Matthew Wilson and Synesis Software
  * All rights reserved.
@@ -49,7 +49,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -61,7 +61,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/internal/inserters/int_typedefs.hpp>
@@ -72,7 +72,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -130,7 +130,7 @@ lc_i(
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -141,7 +141,7 @@ using ::fastformat::inserters::lc_i;
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
@@ -150,6 +150,6 @@ using ::fastformat::inserters::lc_i;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_LC_I */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/bundles/openrj_bundle.hpp
+ * File:    fastformat/bundles/openrj_bundle.hpp
  *
- * Purpose:     Open-RJ bundle.
+ * Purpose: Open-RJ bundle.
  *
- * Created:     19th September 2006
- * Updated:     16th July 2024
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -295,6 +295,6 @@ openrj_bundle::operator [](
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

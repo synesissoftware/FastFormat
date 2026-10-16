@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/api.cpp
+ * File:    src/api.cpp
  *
- * Purpose:     Implementation file for FastFormat core API: API init.
+ * Purpose: Implementation file for FastFormat core API: API init.
  *
- * Created:     20th November 2007
- * Updated:     6th February 2024
+ * Created: 20th November 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -38,7 +38,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -92,7 +91,7 @@ namespace
     int fastformat_init_onetime();
     void fastformat_uninit_onetime();
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -182,7 +181,7 @@ namespace
     //////////////////////////////////////////////////////////////////
 
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -271,7 +270,7 @@ namespace
         s_stateMemoryPool = NULL;
     }
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -510,7 +509,8 @@ FASTFORMAT_CALL(void) fastformat_exitProcess(int code)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
-#if defined(WIN32)
+#if 0
+#elif defined(WIN32)
 
     // By rights, Windows programs should use exit() to close down. However,
     // fastformat_exitProcess() is not a general substitute for exit(). It is
@@ -532,7 +532,8 @@ FASTFORMAT_CALL(ff_string_slice_t) fastformat_getNewlineForPlatform(void)
 
     static const ff_char_t crlf[] =
     {
-#if defined(PLATFORMSTL_OS_IS_UNIX)
+#if 0
+#elif defined(PLATFORMSTL_OS_IS_UNIX)
 # if defined(UNIXSTL_OS_IS_MACOSX)
             '\r'
 # else /* ? UNIXSTL_OS_IS_MACOSX */
@@ -710,4 +711,5 @@ FASTFORMAT_CALL(ff_char_t const*) fastformat_getHashesSlice(size_t len)
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

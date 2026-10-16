@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.inserter.hex.cpp
+ * File:    example.inserter.hex.cpp
  *
- * Purpose:     Implementation file for the example.inserter.hex project.
+ * Purpose: Implementation file for the example.inserter.hex project.
  *
- * Created:     4th February 2010
- * Updated:     16th July 2024
+ * Created: 4th February 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,15 +13,15 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 #include <fastformat/inserters/to_x.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -31,13 +31,13 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
 
@@ -62,7 +62,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -80,6 +80,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

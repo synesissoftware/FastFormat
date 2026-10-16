@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/ch.hpp
+ * File:    fastformat/inserters/ch.hpp
  *
- * Purpose:     Inserter functions for character types.
+ * Purpose: Inserter functions for character types.
  *
- * Created:     7th December 2010
- * Updated:     16th July 2024
+ * Created: 7th December 2010
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -120,6 +120,6 @@ using ::fastformat::inserters::ch;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CH */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

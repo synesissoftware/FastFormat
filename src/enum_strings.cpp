@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/enum_strings.cpp
+ * File:    src/enum_strings.cpp
  *
- * Purpose:     Parse code strings for FastFormat API
+ * Purpose: Parse code strings for FastFormat API
  *
- * Created:     11th November 2013
- * Updated:     16th July 2024
+ * Created: 11th November 2013
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2013-2019, Matthew Wilson and Synesis Software
@@ -40,7 +40,6 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
@@ -56,6 +55,7 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/quality/cover.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
  */
@@ -64,6 +64,7 @@
 namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * API
@@ -132,6 +133,7 @@ fastformat_LookupCodeA_(
     return (*len = 0, s_emptyString);
 }
 
+
 /* ///////////////////////////////////////////////
  * ff_parse_code_t
  */
@@ -174,6 +176,7 @@ FASTFORMAT_CALL(size_t) fastformat_getParseCodeStringLength(ff_parse_code_t pars
 
     return (fastformat_LookupParseCodeStringA_(parseCode, &len), len);
 }
+
 
 /* ///////////////////////////////////////////////
  * ff_replacement_code_t
@@ -218,6 +221,7 @@ FASTFORMAT_CALL(size_t) fastformat_getReplacementCodeStringLength(ff_replacement
     return (fastformat_LookupReplacementCodeStringA_(replacementCode, &len), len);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
  */
@@ -227,4 +231,5 @@ FASTFORMAT_CALL(size_t) fastformat_getReplacementCodeStringLength(ff_replacement
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/fmt_spec_defect_handlers.cpp
+ * File:    src/fmt_spec_defect_handlers.cpp
  *
- * Purpose:     Implementation file for FastFormat core API: defect
+ * Purpose: Implementation file for FastFormat core API: defect
  *              handlers.
  *
- * Created:     26th November 2007
- * Updated:     6th February 2024
+ * Created: 26th November 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -43,6 +43,7 @@
 
 
 // #define FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS // This is not defined by default, but unreferenced arguments are not always a defect
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes - 0
@@ -201,7 +202,8 @@ namespace
 #endif /* !FASTFORMAT_MT */
     };
 
-} /* anonymous namespace */
+} // anonymous namespace
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * implementation functions
@@ -557,7 +559,7 @@ namespace
         return oldHandler;
     }
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -568,6 +570,6 @@ namespace
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.performance.api.parse_format.cpp
+ * File:    test.performance.api.parse_format.cpp
  *
- * Purpose:     Implementation file for the test.performance.api.parse_format project.
+ * Purpose: Implementation file for the test.performance.api.parse_format project.
  *
- * Created:     17th November 2008
- * Updated:     16th July 2024
+ * Created: 17th November 2008
+ * Updated: 16th October 2026
  * *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,29 +15,30 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/string/split_functions.hpp>
 #include <stlsoft/string/string_view.hpp>
 #include <stlsoft/string/tokeniser_functions.hpp> // for find_next_token
 #include <platformstl/platformstl.hpp>
 #include <platformstl/performance/performance_counter.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \
     defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * constants and definitions
@@ -83,6 +84,7 @@ enum
     ,   foundMaxWidth   =   0x04
     ,   foundAlign      =   0x08
 };
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -150,9 +152,10 @@ int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
 
 fastformat::mismatchedHandler_t prev = NULL;
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     platformstl::performance_counter                counter;
     platformstl::performance_counter::interval_type tmManual;
@@ -428,7 +431,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -466,6 +469,7 @@ int main(int argc, char** argv)
 
     return res;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * function definitions
@@ -1164,4 +1168,5 @@ int parse_replacement_std_string(
 }
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

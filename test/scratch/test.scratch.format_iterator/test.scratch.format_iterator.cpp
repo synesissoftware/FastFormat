@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.format_iterator.cpp
+ * File:    test.scratch.format_iterator.cpp
  *
- * Purpose:     Implementation file for the test.scratch.format_iterator project.
+ * Purpose: Implementation file for the test.scratch.format_iterator project.
  *
- * Created:     20th May 2009
- * Updated:     6th February 2024
+ * Created: 20th May 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,31 +13,31 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 #include <fastformat/iterators/format_iterator.hpp>
 #include <fastformat/sinks/FILE.hpp>
 #include <fastformat/sinks/ostream.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 
-/* UNIXem Header Files */
+/* UNIXem header files */
 #if defined(_WIN32) || \
     defined(_WIN64)
 # include <unixem/unixem.h>
 #endif /* Win32 || Win64 */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -57,7 +57,7 @@ typedef std::vector<string_t>                               strings_t;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     strings_t   strings;
 
@@ -128,7 +128,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -176,6 +176,6 @@ int main(int argc, char** argv)
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

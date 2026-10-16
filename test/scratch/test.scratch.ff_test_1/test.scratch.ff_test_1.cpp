@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.ff_test_1.cpp
+ * File:    test.scratch.ff_test_1.cpp
  *
- * Purpose:     Implementation file for the test.scratch.ff_test_1 project.
+ * Purpose: Implementation file for the test.scratch.ff_test_1 project.
  *
- * Created:     15th September 2006
- * Updated:     6th February 2024
+ * Created: 15th September 2006
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,12 +13,12 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.hpp>
 
 #if defined(_WIN32) && \
     defined(_AFXDLL)
- /* MFCSTL Header Files */
+ /* MFCSTL header files */
 # include <mfcstl/mfcstl.hpp>
 # include <mfcstl/string/grab_cstring_buffer.hpp>
 # include <fastformat/sinks/CString.hpp>
@@ -31,33 +31,33 @@
 # include <fastformat/bundles/winini_bundle.hpp>
 #endif /* OS */
 
-/* Open-RJ Header Files */
+/* Open-RJ header files */
 #include <openrj/implicit_link.h>
 
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <stlsoft/memory/auto_buffer.hpp>
 #include <stlsoft/string/simple_string.hpp>
 #include <stlsoft/shims/access/string.hpp>
 #include <stlsoft/shims/access/string/std/time.hpp>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 #include <platformstl/filesystem/path.hpp>
 #include <platformstl/system/environment_map.hpp>
 
-/* COMSTL Header Files */
+/* COMSTL header files */
 #if defined(PLATFORMSTL_OS_IS_WINDOWS)
 # include <comstl/shims/access/string.hpp>
 #endif /* OS */
 
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -429,6 +429,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

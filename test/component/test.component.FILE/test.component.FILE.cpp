@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.FILE.cpp
+ * File:    test.component.FILE.cpp
  *
- * Purpose:     Implementation file for the test.component.FILE project.
+ * Purpose: Implementation file for the test.component.FILE project.
  *
- * Created:     3rd January 2008
- * Updated:     16th July 2024
+ * Created: 3rd January 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,12 +15,12 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/FILE.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/util/filesystem/FILE_functions.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
 /* STLSoft header files */
@@ -33,11 +33,11 @@
 #include <platformstl/system/system_traits.hpp>
 #include <stlsoft/smartptr/scoped_handle.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,14 +58,11 @@ static void test_1_1();
 static void test_1_2();
 static void test_1_3();
 static void test_1_4();
-static void test_1_5();
-static void test_1_6();
-static void test_1_7();
-static void test_1_8();
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;
@@ -78,11 +75,6 @@ int main(int argc, char** argv)
         XTESTS_RUN_CASE(test_1_2);
         XTESTS_RUN_CASE(test_1_3);
         XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -121,7 +113,7 @@ static void test_1_1()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -149,7 +141,7 @@ static void test_1_2()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -178,7 +170,7 @@ static void test_1_3()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(1u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abcdef", lines[0].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abcdef", lines[0]);
 
         ::remove(FILE_NAME);
     }
@@ -207,8 +199,8 @@ static void test_1_4()
         platformstl::file_lines lines(FILE_NAME);
 
         XTESTS_TEST_INTEGER_EQUAL(2u, lines.size());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0].c_str());
-        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("def", lines[1].c_str());
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", lines[0]);
+        XTESTS_TEST_MULTIBYTE_STRING_EQUAL("def", lines[1]);
 
         ::remove(FILE_NAME);
     }
@@ -220,18 +212,6 @@ static void test_1_4()
     }
 }
 
-static void test_1_5()
-{}
-
-static void test_1_6()
-{}
-
-static void test_1_7()
-{}
-
-static void test_1_8()
-{}
-
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

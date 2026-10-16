@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.string_array.cpp
+ * File:    test.component.string_array.cpp
  *
- * Purpose:     Implementation file for the test.component.string_array project.
+ * Purpose: Implementation file for the test.component.string_array project.
  *
- * Created:     24th December 2007
- * Updated:     6th February 2024
+ * Created: 24th December 2007
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,21 +13,21 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/string_array.hpp>
 #include <fastformat/ff.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -55,7 +55,7 @@ static void test_1_10();
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;
@@ -83,7 +83,7 @@ static int main_(int argc, char** argv)
     return retCode;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -241,6 +241,6 @@ static void test_1_10()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

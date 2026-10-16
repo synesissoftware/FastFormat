@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/fmt_cache.cpp
+ * File:    src/fmt_cache.cpp
  *
- * Purpose:     Implementation file for FastFormat core API: format cache.
+ * Purpose: Implementation file for FastFormat core API: format cache.
  *
- * Created:     18th September 2006
- * Updated:     16th July 2024
+ * Created: 18th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -38,7 +38,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -84,6 +83,7 @@
 # include <crtdbg.h>
 #endif
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * implementation selection
  */
@@ -91,6 +91,7 @@
 //#define _FASTFORMAT_USE_TSS_CACHE
 //#define _FASTFORMAT_USE_1PHASE_CACHE
 #define _FASTFORMAT_USE_2PHASE_CACHE
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
@@ -100,6 +101,7 @@
 namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * types & non-local variables
@@ -268,7 +270,8 @@ namespace
         map_type_       m_map;
     };
 
-} /* anonymous namespace */
+} // anonymous namespace
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * implementation functions
@@ -594,7 +597,7 @@ namespace
     const size_t    offsetElement1  =   STLSOFT_RAW_OFFSETOF(pattern_record_base_t, elements_[1]);
     const size_t    sizeofElement   =   offsetElement1 - offsetElement0;
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 void* pattern_record_t::operator new(size_t /* cb */, size_t numFormatElements, size_t cchPattern)
 {
@@ -693,7 +696,8 @@ pattern_t pattern_record_t::pattern() const
 }
 
 
-} /* anonymous namespace */
+} // anonymous namespace
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
@@ -704,4 +708,5 @@ pattern_t pattern_record_t::pattern() const
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

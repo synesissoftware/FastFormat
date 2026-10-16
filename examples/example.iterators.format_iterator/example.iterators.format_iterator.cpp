@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.iterators.format_iterator/example.iterators.format_iterator.cpp
+ * File:    examples/example.iterators.format_iterator/example.iterators.format_iterator.cpp
  *
- * Purpose:     Implementation file for the example.iterators.format_iterator project.
+ * Purpose: Implementation file for the example.iterators.format_iterator project.
  *
- * Created:     26th March 2010
- * Updated:     16th July 2024
+ * Created: 26th March 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
 #if ( defined(STLSOFT_COMPILER_IS_INTEL) || \
@@ -18,27 +18,28 @@
 # pragma warning(disable : 4996)
 #endif
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/fastformat.h>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/iterators/format_iterator.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/algorithms/debug.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <algorithm>
 #include <exception>
 #include <iostream>
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
@@ -50,9 +51,10 @@
 # error Cannot compile this file with a compiler that does not support the filter_type mechanism
 #endif /* FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
   typedef std::wstring            string_t;
@@ -98,7 +100,7 @@ static int main_(int /* argc */, char** /*argv*/)
   return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
   try
   {
@@ -116,6 +118,6 @@ int main(int argc, char** argv)
   return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

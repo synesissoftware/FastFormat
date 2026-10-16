@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.auto_buffer.cpp
+ * File:    test.component.sink.auto_buffer.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.auto_buffer project.
+ * Purpose: Implementation file for the test.component.sink.auto_buffer project.
  *
- * Created:     21st April 2008
- * Updated:     6th February 2024
+ * Created: 21st April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,25 +13,25 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #define FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS // VC++ 6 can't distinguish the auto_buffer action shim from the generic string one
 #include <fastformat/sinks/auto_buffer.hpp>
 #include <fastformat/ff.hpp>
 
-/* shwild Header Files */
+/* shwild header files */
 #include <shwild/shwild.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #if 0
 #include <algorithm>
@@ -52,7 +52,7 @@ namespace std
 }
 #endif /* __WATCOMC__ */
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -73,7 +73,7 @@ typedef std::string                                         string_t;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     stlsoft::auto_buffer<char>          buff1(1);
     stlsoft::auto_buffer<char, 100>     buff2(1);
@@ -87,7 +87,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -130,6 +130,6 @@ int main(int argc, char** argv)
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

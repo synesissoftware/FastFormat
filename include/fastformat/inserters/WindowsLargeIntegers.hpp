@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/WindowsLargeIntegers.hpp
+ * File:    fastformat/inserters/WindowsLargeIntegers.hpp
  *
- * Purpose:     Inserter functions for Windows' large integer types.
+ * Purpose: Inserter functions for Windows' large integer types.
  *
- * Created:     13th September 2010
- * Updated:     16th July 2024
+ * Created: 13th September 2010
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -84,6 +84,6 @@
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

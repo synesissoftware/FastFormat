@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sink.exceptions.cpp
+ * File:    test.scratch.sink.exceptions.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sink.exceptions project.
+ * Purpose: Implementation file for the test.scratch.sink.exceptions project.
  *
- * Created:     12th November 2012
- * Updated:     16th July 2024
+ * Created: 12th November 2012
+ * Updated: 16th July 2024
  *
- * Status:      Wizard-generated
+ * Status:  Wizard-generated
  *
- * License:     (Licensed under the Synesis Software Open License)
+ * License: (Licensed under the Synesis Software Open License)
  *
  *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
  *              Copyright (c) 2012-2019, Synesis Software Pty Ltd.
@@ -29,6 +29,7 @@
 
 #include <stlsoft/stlsoft.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * types
  */
@@ -41,6 +42,7 @@ public: // Construction
         : std::runtime_error(msg)
     {}
 };
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
@@ -107,4 +109,5 @@ int main(int argc, char** argv)
 }
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

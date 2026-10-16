@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.overload.2.custom_type.filter_type/example.overload.2.custom_type.filter_type.cpp
+ * File:    examples/example.overload.2.custom_type.filter_type/example.overload.2.custom_type.filter_type.cpp
  *
- * Purpose:     Implementation file for the example.overload.2.custom_type.filter_type project.
+ * Purpose: Example for custom-type overload via filter_type.
  *
- * Created:     2nd March 2009
- * Updated:     6th February 2024
+ * Created: 2nd March 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -99,18 +99,18 @@ namespace filters
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
@@ -138,7 +138,7 @@ std::string superhero_to_string(superhero const& hero)
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     superhero   thing("The Thing", 200, 99, 100);
     extrasuperhero  batman("Batman", 100, 80, 95);
@@ -153,7 +153,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -171,6 +171,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

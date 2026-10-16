@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.CComBSTR.cpp
+ * File:    test.component.sink.CComBSTR.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.CComBSTR project.
+ * Purpose: Implementation file for the test.component.sink.CComBSTR project.
  *
- * Created:     14th September 2010
- * Updated:     16th July 2024
+ * Created: 14th September 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,21 +15,21 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 #include <fastformat/sinks/CComBSTR.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -59,13 +59,12 @@ namespace
     static void test_1_9();
     static void test_1_10();
 
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;
@@ -93,7 +92,7 @@ static int main_(int argc, char** argv)
     return retCode;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -261,9 +260,8 @@ static void test_1_10()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"abc", sink);
 }
 
-} /* anonymous namespace */
-
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

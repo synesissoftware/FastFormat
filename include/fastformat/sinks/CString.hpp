@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/CString.hpp
+ * File:    fastformat/sinks/CString.hpp
  *
- * Purpose:     A FastFormat sink adaptor for MFC's CString.
+ * Purpose: A FastFormat sink adaptor for MFC's CString.
  *
- * Created:     2nd June 2008
- * Updated:     16th July 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -158,4 +158,5 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

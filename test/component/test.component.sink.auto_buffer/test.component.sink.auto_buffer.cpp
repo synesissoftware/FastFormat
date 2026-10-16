@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.auto_buffer.cpp
+ * File:    test.component.sink.auto_buffer.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.auto_buffer project.
+ * Purpose: Implementation file for the test.component.sink.auto_buffer project.
  *
- * Created:     26th April 2008
- * Updated:     16th July 2024
+ * Created: 26th April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -16,18 +15,18 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #define FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS // VC++ 6 can't distinguish the auto_buffer action shim from the generic string one
 #include <fastformat/sinks/auto_buffer.hpp>
 #include <fastformat/ff.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -58,33 +57,26 @@ namespace
     static void test_1_0(void);
     static void test_1_1(void);
     static void test_1_2(void);
-    static void test_1_3(void);
-    static void test_1_4(void);
     static void test_1_5(void);
     static void test_1_6(void);
     static void test_1_7(void);
-    static void test_1_8(void);
-    static void test_1_9(void);
     static void test_1_10(void);
     static void test_1_11(void);
     static void test_1_12(void);
-    static void test_1_13(void);
-    static void test_1_14(void);
     static void test_1_15(void);
     static void test_1_16(void);
     static void test_1_17(void);
     static void test_1_18(void);
     static void test_1_19(void);
 
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -96,18 +88,12 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_0);
         XTESTS_RUN_CASE(test_1_1);
         XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
         XTESTS_RUN_CASE(test_1_5);
         XTESTS_RUN_CASE(test_1_6);
         XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
         XTESTS_RUN_CASE(test_1_10);
         XTESTS_RUN_CASE(test_1_11);
         XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
         XTESTS_RUN_CASE(test_1_15);
         XTESTS_RUN_CASE(test_1_16);
         XTESTS_RUN_CASE(test_1_17);
@@ -178,13 +164,6 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink.data());
 }
 
-static void test_1_3()
-{
-}
-
-static void test_1_4()
-{
-}
 
 static void test_1_5()
 {
@@ -227,13 +206,6 @@ static void test_1_7()
     XTESTS_TEST_STRING_EQUAL("a" + crlf + FF_STR("b") + crlf + FF_STR("c") + crlf + FF_STR("d") + crlf + FF_STR("e") + crlf + FF_STR("f") + crlf + FF_STR("g") + crlf + FF_STR("h") + crlf + FF_STR("i") + crlf + FF_STR("j") + crlf + FF_STR("k") + crlf + FF_STR("l") + crlf + FF_STR("m") + crlf + FF_STR("n") + crlf + FF_STR("o") + crlf + FF_STR("p") + crlf + FF_STR("q") + crlf + FF_STR("r") + crlf + FF_STR("s") + crlf + FF_STR("t") + crlf + FF_STR("u") + crlf + FF_STR("v") + crlf + FF_STR("w") + crlf + FF_STR("x") + crlf + FF_STR("y") + crlf + FF_STR("z") + crlf, sink.data());
 }
 
-static void test_1_8()
-{
-}
-
-static void test_1_9()
-{
-}
 
 static void test_1_10()
 {
@@ -278,13 +250,6 @@ static void test_1_12()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink.data());
 }
 
-static void test_1_13()
-{
-}
-
-static void test_1_14()
-{
-}
 
 static void test_1_15()
 {
@@ -368,9 +333,8 @@ static void test_1_19()
 }
 
 
-} /* anonymous namespace */
-
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

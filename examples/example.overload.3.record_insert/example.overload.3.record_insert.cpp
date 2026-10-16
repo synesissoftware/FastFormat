@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.record_insert.cpp
+ * File:    example.overload.3.record_insert.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.record_insert project.
+ * Purpose: Implementation file for the example.overload.3.record_insert project.
  *
- * Created:     20th September 2008
- * Updated:     6th February 2024
+ * Created: 20th September 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,14 +13,14 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 
 #include <platformstl/performance/performance_counter.hpp>
@@ -28,18 +28,19 @@
 platformstl_ns_using(performance_counter)
 
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <sstream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #if defined(_MSC_VER) && \
     defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Typedefs
@@ -301,7 +302,7 @@ const size_t ITERATIONS =   1;
 const size_t ITERATIONS =   100000;
 #endif /* _DEBUG */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     platformstl::performance_counter                counter;
     platformstl::performance_counter::interval_type tm;
@@ -450,7 +451,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -496,6 +497,6 @@ int main(int argc, char** argv)
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

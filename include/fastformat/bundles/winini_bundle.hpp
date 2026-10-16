@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/bundles/winini_bundle.hpp
+ * File:    fastformat/bundles/winini_bundle.hpp
  *
- * Purpose:     Windows INI file bundle.
+ * Purpose: Windows INI file bundle.
  *
- * Created:     19th September 2006
- * Updated:     16th July 2024
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -236,4 +236,5 @@ winini_bundle::operator [](
 #endif /* FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

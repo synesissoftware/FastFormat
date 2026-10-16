@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/vectored_file.hpp
+ * File:    fastformat/sinks/vectored_file.hpp
  *
- * Purpose:     A FastFormat sink for the UNIX writev() vector I/O function.
+ * Purpose: A FastFormat sink for the UNIX writev() vector I/O function.
  *
- * Created:     24th November 2007
- * Updated:     16th July 2024
+ * Created: 24th November 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -225,6 +225,6 @@ inline vectored_file_sink& fmt_slices(vectored_file_sink& sink, int flags, size_
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_VECTORED_FILE */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

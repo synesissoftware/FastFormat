@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
+ * File:    test.unit.shims_and_namespaces.without_stlsoft_namespace.cpp
  *
- * Purpose:     Without-namespace implementation file for the test.unit.shims_and_namespaces project.
+ * Purpose: Without-namespace implementation file for the test.unit.shims_and_namespaces project.
  *
- * Created:     11th November 2013
- * Updated:     16th July 2024
+ * Created: 11th November 2013
+ * Updated: 16th July 2024
  *
- * Status:      Wizard-generated
+ * Status:  Wizard-generated
  *
- * License:     (Licensed under the Synesis Software Open License)
+ * License: (Licensed under the Synesis Software Open License)
  *
  *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
  *              Copyright (c) 2013-2019, Synesis Software Pty Ltd.
@@ -19,12 +19,12 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * preprocessor feature control
  */
 
 #define _STLSOFT_NO_NAMESPACE
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -33,11 +33,12 @@
 /* FastFormat header files */
 #include <fastformat/fastformat.h>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -63,6 +64,7 @@ extern "C++"
     } /* namespace without_stlsoft_namespace */
 
 } // extern "C++"
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * test function implementations
@@ -225,4 +227,5 @@ void test_replacement_code_3()
 } // extern "C++"
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

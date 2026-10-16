@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/exception.hpp
+ * File:    fastformat/sinks/exception.hpp
  *
- * Purpose:     A FastFormat sink for exceptions.
+ * Purpose: A FastFormat sink for exceptions.
  *
- * Created:     12th November 2012
- * Updated:     16th July 2024
+ * Created: 12th November 2012
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2012-2019, Matthew Wilson and Synesis Software
@@ -253,6 +253,6 @@ namespace sinks
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_EXCEPTION */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

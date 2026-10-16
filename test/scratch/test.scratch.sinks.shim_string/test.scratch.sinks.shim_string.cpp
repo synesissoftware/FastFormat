@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sinks.shim_string.cpp
+ * File:    test.scratch.sinks.shim_string.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sinks.shim_string project.
+ * Purpose: Implementation file for the test.scratch.sinks.shim_string project.
  *
- * Created:     12th November 2008
- * Updated:     6th February 2024
+ * Created: 12th November 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,23 +13,23 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/shim_string.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* PlatformSTL Header Files */
+/* PlatformSTL header files */
 #include <platformstl/platformstl.hpp>
 
-/* UNIXem Header Files */
+/* UNIXem header files */
 #if defined(_WIN32) || \
     defined(_WIN64)
 # include <unixem/unixem.h>
 #endif /* Win32 || Win64 */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #if 0
@@ -40,7 +40,7 @@
 #include <vector>
 #endif /* 0 */
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -74,7 +74,7 @@ public: /// Member Variables
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     fastformat::sinks::shim_string_sink str(0u);
 
@@ -88,7 +88,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -136,6 +136,6 @@ int main(int argc, char** argv)
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

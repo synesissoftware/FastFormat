@@ -1,5 +1,4 @@
-FastFormat - FAQ
-================
+# FastFormat - FAQ <!-- omit in toc -->
 
 Updated:    21st January 2017
 

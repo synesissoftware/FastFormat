@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.api.accum_slice_lens.cpp
+ * File:    test.unit.api.accum_slice_lens.cpp
  *
- * Purpose:     Implementation file for the test.unit.api.accum_slice_lens project.
+ * Purpose: Implementation file for the test.unit.api.accum_slice_lens project.
  *
- * Created:     27th May 2008
- * Updated:     16th July 2024
+ * Created: 27th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test component header file include(s)
@@ -17,17 +18,18 @@
 
 #include <fastformat/fastformat.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <platformstl/platformstl.h>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -47,29 +49,14 @@ namespace
     static void test_1_4(void);
     static void test_1_5(void);
     static void test_1_6(void);
-    static void test_1_7(void);
-    static void test_1_8(void);
-    static void test_1_9(void);
-    static void test_1_10(void);
-    static void test_1_11(void);
-    static void test_1_12(void);
-    static void test_1_13(void);
-    static void test_1_14(void);
-    static void test_1_15(void);
-    static void test_1_16(void);
-    static void test_1_17(void);
-    static void test_1_18(void);
-    static void test_1_19(void);
-
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -85,20 +72,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_4);
         XTESTS_RUN_CASE(test_1_5);
         XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -202,62 +175,9 @@ static void test_1_6()
     XTESTS_TEST_INTEGER_EQUAL(3u, len);
 }
 
-static void test_1_7()
-{
-}
 
-static void test_1_8()
-{
-}
-
-static void test_1_9()
-{
-}
-
-static void test_1_10()
-{
-}
-
-static void test_1_11()
-{
-}
-
-static void test_1_12()
-{
-}
-
-static void test_1_13()
-{
-}
-
-static void test_1_14()
-{
-}
-
-static void test_1_15()
-{
-}
-
-static void test_1_16()
-{
-}
-
-static void test_1_17()
-{
-}
-
-static void test_1_18()
-{
-}
-
-static void test_1_19()
-{
-}
-
-
-} /* anonymous namespace */
-
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

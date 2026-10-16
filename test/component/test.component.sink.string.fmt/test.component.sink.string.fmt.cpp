@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.string.fmt.cpp
+ * File:    test.component.sink.string.fmt.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.string.fmt project.
+ * Purpose: Implementation file for the test.component.sink.string.fmt project.
  *
- * Created:     19th December 2007
- * Updated:     16th July 2024
+ * Created: 19th December 2007
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -15,21 +15,21 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/string/simple_string.hpp>
 #include <stlsoft/string/static_string.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -79,23 +79,20 @@ namespace
     static void test_2_0();
     static void test_2_1();
     static void test_2_2();
-    static void test_2_3();
     static void test_2_4();
     static void test_2_5();
     static void test_2_6();
-    static void test_2_7();
     static void test_2_8();
     static void test_2_9();
     static void test_2_10();
     static void test_2_11();
 
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;
@@ -135,11 +132,9 @@ static int main_(int argc, char** argv)
         XTESTS_RUN_CASE(test_2_0);
         XTESTS_RUN_CASE(test_2_1);
         XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
         XTESTS_RUN_CASE(test_2_4);
         XTESTS_RUN_CASE(test_2_5);
         XTESTS_RUN_CASE(test_2_6);
-        XTESTS_RUN_CASE(test_2_7);
         XTESTS_RUN_CASE(test_2_8);
         XTESTS_RUN_CASE(test_2_9);
         XTESTS_RUN_CASE(test_2_10);
@@ -153,7 +148,7 @@ static int main_(int argc, char** argv)
     return retCode;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
@@ -483,8 +478,6 @@ static void test_1_10()
 }
 
 
-
-
 static void test_2_0()
 {
     string_t    sink;
@@ -518,9 +511,6 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL("abcdef|  abcdef  |bcde", sink.c_str());
 }
 
-static void test_2_3()
-{
-}
 
 static void test_2_4()
 {
@@ -555,9 +545,6 @@ static void test_2_6()
     XTESTS_TEST_STRING_EQUAL("abcdef|  abcdef  |bcde", sink.c_str());
 }
 
-static void test_2_7()
-{
-}
 
 static void test_2_8()
 {
@@ -604,9 +591,8 @@ static void test_2_11()
 }
 
 
-} /* anonymous namespace */
-
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

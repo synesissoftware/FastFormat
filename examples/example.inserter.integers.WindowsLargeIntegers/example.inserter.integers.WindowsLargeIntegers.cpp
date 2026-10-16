@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.inserter.integers.WindowsLargeIntegers.cpp
+ * File:    example.inserter.integers.WindowsLargeIntegers.cpp
  *
- * Purpose:     Implementation file for the example.inserter.integers.WindowsLargeIntegers project.
+ * Purpose: Implementation file for the example.inserter.integers.WindowsLargeIntegers project.
  *
- * Created:     30th November 2010
- * Updated:     6th February 2024
+ * Created: 30th November 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,24 +13,24 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/ff.hpp>
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/inserters/WindowsLargeIntegers.hpp>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/util/limit_traits.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <iostream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
   { // LARGE_INTEGER
     LARGE_INTEGER li;
@@ -69,7 +69,7 @@ static int main_(int /* argc */, char** /*argv*/)
   return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
   try
   {
@@ -87,6 +87,6 @@ int main(int argc, char** argv)
   return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

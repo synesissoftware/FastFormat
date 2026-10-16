@@ -1,23 +1,21 @@
 
 add_executable(test.performance.name_age_height
-    test.performance.name_age_height.cpp
+	test.performance.name_age_height.cpp
 )
 
 target_link_libraries(test.performance.name_age_height
-    fastformat
-    xTests::core
+	fastformat
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
 )
 
 target_compile_options(test.performance.name_age_height PRIVATE
-    $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
-        -Werror -Wall -Wextra -pedantic
+	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
+		-Werror -Wall -Wextra -pedantic
 
-        -Wno-deprecated-copy-with-user-provided-copy
-		-Wno-deprecated-declarations
-        -Wno-string-plus-int
-        -Wno-unused-value
-    >
-    $<$<CXX_COMPILER_ID:MSVC>: /WX /W4>
+		-Wno-string-plus-int
+		-Wno-unused-value
+	>
+	$<$<CXX_COMPILER_ID:MSVC>: /WX /W4>
 )
 
 

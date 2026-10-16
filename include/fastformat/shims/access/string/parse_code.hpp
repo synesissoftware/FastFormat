@@ -1,12 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/shims/access/string/parse_code.hpp
+ * File:    fastformat/shims/access/string/parse_code.hpp
  *
- * Purpose:     Defines string access shims for ff_parse_code_t
+ * Purpose: Defines string access shims for ff_parse_code_t
  *
- * Created:     11th November 2013
- * Updated:     16th July 2024
+ * Created: 11th November 2013
+ * Updated: 16th July 2024
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
  * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
@@ -314,6 +314,6 @@ namespace stlsoft
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_PARSE_CODE */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

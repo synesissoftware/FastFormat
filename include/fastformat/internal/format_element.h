@@ -1,15 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/internal/format_element.h
+ * File:    fastformat/internal/format_element.h
  *
- * Purpose:     Definition of the format element type and associated
+ * Purpose: Definition of the format element type and associated
  *              constants
  *
- * Created:     6th November 2008
- * Updated:     16th July 2024
+ * Created: 6th November 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -161,4 +161,5 @@ struct ff_format_element_t
 #endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FORMAT_ELEMENT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

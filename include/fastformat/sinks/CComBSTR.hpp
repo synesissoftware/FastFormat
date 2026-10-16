@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/CComBSTR.hpp
+ * File:    fastformat/sinks/CComBSTR.hpp
  *
- * Purpose:     A FastFormat sink adaptor for ATL's CComBSTR.
+ * Purpose: A FastFormat sink adaptor for ATL's CComBSTR.
  *
- * Created:     21st November 2008
- * Updated:     16th July 2024
+ * Created: 21st November 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -191,4 +191,5 @@ inline CComBSTR& fmt_slices(CComBSTR& sink, int flags, size_t cchTotal, size_t n
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CCOMBSTR */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.performance.scenario1.cpp
+ * File:    test.performance.scenario1.cpp
  *
- * Purpose:     Implementation file for the test.performance.scenario1 project.
+ * Purpose: Implementation file for the test.performance.scenario1 project.
  *
- * Created:     19th September 2006
- * Updated:     16th July 2024
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -21,7 +22,7 @@
 #endif
 
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/internal/stlsoft.h>
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \
     _MSC_VER >= 1400
@@ -88,7 +89,7 @@
 # include <platformstl/performance/performance_counter.hpp>
 #endif
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #if defined(_WIN32) && \
     defined(_AFXDLL)
 # include <mfcstl/mfcstl.hpp>
@@ -107,26 +108,26 @@
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
 
-/* Boost Header Files */
+/* Boost header files */
 #ifdef FASTFORMAT_PERFTEST_USE_BOOST
 # include <boost/format.hpp>
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-/* Loki Header Files */
+/* Loki header files */
 #ifdef FASTFORMAT_PERFTEST_USE_LOKI
 # include <loki/SafeFormat.h>
 #endif /* FASTFORMAT_PERFTEST_USE_LOKI */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
 #include <sstream>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -164,7 +165,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.scenar
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     // 0 - nothing
     // 1 - ratios only, in the form of "t:v; t:v; ..."
@@ -660,6 +661,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

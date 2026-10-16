@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/real.hpp
+ * File:    fastformat/inserters/real.hpp
  *
- * Purpose:     Inserter functions for floating-point types
+ * Purpose: Inserter functions for floating-point types
  *
- * Created:     1st March 2009
- * Updated:     16th July 2024
+ * Created: 1st March 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -461,6 +461,6 @@ using ::fastformat::inserters::real;
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_REAL */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

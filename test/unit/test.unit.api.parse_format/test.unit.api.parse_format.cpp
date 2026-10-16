@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.api.parse_format.cpp
+ * File:    test.unit.api.parse_format.cpp
  *
- * Purpose:     Implementation file for the test.unit.api.parse_format project.
+ * Purpose: Implementation file for the test.unit.api.parse_format project.
  *
- * Created:     27th May 2008
- * Updated:     16th July 2024
+ * Created: 27th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test component header file include(s)
@@ -19,23 +20,24 @@
 #include <fastformat/internal/format_element.h>
 #include <fastformat/exceptions.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/conversion/char_conversions.hpp>
 #include <stlsoft/conversion/integer_to_string.hpp>
 #include <platformstl/platformstl.h>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <string>
 #include <vector>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
@@ -93,7 +95,6 @@ namespace
     static void test_good_with_qualifiers_6(void);
     static void test_good_with_qualifiers_7(void);
     static void test_good_with_qualifiers_8(void);
-    static void test_good_with_qualifiers_9(void);
     static void test_good_with_qualifiers_10(void);
     static void test_good_with_qualifiers_11(void);
     static void test_good_with_qualifiers_12(void);
@@ -103,8 +104,6 @@ namespace
     static void test_good_with_qualifiers_16(void);
     static void test_good_with_qualifiers_17(void);
     static void test_good_with_qualifiers_18(void);
-    static void test_good_with_qualifiers_19(void);
-
     static void test_illformed_defaulting_to_next_0(void);
     static void test_illformed_defaulting_to_next_1(void);
     static void test_illformed_defaulting_to_next_2(void);
@@ -124,9 +123,6 @@ namespace
     static void test_illformed_continue_with_blank_5(void);
     static void test_illformed_continue_with_blank_6(void);
     static void test_illformed_continue_with_blank_7(void);
-    static void test_illformed_continue_with_blank_8(void);
-    static void test_illformed_continue_with_blank_9(void);
-
     static void test_illformed_continue_with_format_as_literal_0(void);
     static void test_illformed_continue_with_format_as_literal_1(void);
     static void test_illformed_continue_with_format_as_literal_2(void);
@@ -135,11 +131,7 @@ namespace
     static void test_illformed_continue_with_format_as_literal_5(void);
     static void test_illformed_continue_with_format_as_literal_6(void);
     static void test_illformed_continue_with_format_as_literal_7(void);
-    static void test_illformed_continue_with_format_as_literal_8(void);
-    static void test_illformed_continue_with_format_as_literal_9(void);
-
-} /* anonymous namespace */
-
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -161,11 +153,12 @@ int ff_teardown(void*)
     return 0;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -204,7 +197,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_good_with_qualifiers_6);
         XTESTS_RUN_CASE(test_good_with_qualifiers_7);
         XTESTS_RUN_CASE(test_good_with_qualifiers_8);
-        XTESTS_RUN_CASE(test_good_with_qualifiers_9);
         XTESTS_RUN_CASE(test_good_with_qualifiers_10);
         XTESTS_RUN_CASE(test_good_with_qualifiers_11);
         XTESTS_RUN_CASE(test_good_with_qualifiers_12);
@@ -214,8 +206,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_good_with_qualifiers_16);
         XTESTS_RUN_CASE(test_good_with_qualifiers_17);
         XTESTS_RUN_CASE(test_good_with_qualifiers_18);
-        XTESTS_RUN_CASE(test_good_with_qualifiers_19);
-
         XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_0, fastformat::illformed_format_exception);
         XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_1, fastformat::illformed_format_exception);
         XTESTS_RUN_CASE_THAT_THROWS(test_illformed_defaulting_to_next_2, fastformat::illformed_format_exception);
@@ -235,9 +225,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_illformed_continue_with_blank_5);
         XTESTS_RUN_CASE(test_illformed_continue_with_blank_6);
         XTESTS_RUN_CASE(test_illformed_continue_with_blank_7);
-        XTESTS_RUN_CASE(test_illformed_continue_with_blank_8);
-        XTESTS_RUN_CASE(test_illformed_continue_with_blank_9);
-
         XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_0);
         XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_1);
         XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_2);
@@ -246,9 +233,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_5);
         XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_6);
         XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_7);
-        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_8);
-        XTESTS_RUN_CASE(test_illformed_continue_with_format_as_literal_9);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -677,7 +661,6 @@ static void test_good_11()
 }
 
 
-
 static void test_good_with_qualifiers_0()
 {
     const ff_char_t                 fmt[] = FF_STR("{0}");
@@ -856,9 +839,6 @@ static void test_good_with_qualifiers_8()
     XTESTS_TEST_INTEGER_EQUAL(2,  int(replacements[0].maxWidth));
 }
 
-static void test_good_with_qualifiers_9()
-{
-}
 
 static void test_good_with_qualifiers_10()
 {
@@ -1050,11 +1030,6 @@ static void test_good_with_qualifiers_18()
     XTESTS_TEST_INTEGER_EQUAL(int('#'), replacements[0].fill);
 }
 
-static void test_good_with_qualifiers_19()
-{
-}
-
-
 
 static void test_illformed_defaulting_to_next_0()
 {
@@ -1139,7 +1114,6 @@ static void test_illformed_defaulting_to_next_9()
     // Stub to satisfy test invocation
     throw fastformat::illformed_format_exception("blah", ff_parse_code_t(), FF_STR(""));
 }
-
 
 
 static void test_illformed_continue_with_blank_0()
@@ -1286,15 +1260,6 @@ static void test_illformed_continue_with_blank_7()
     XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
 }
 
-static void test_illformed_continue_with_blank_8()
-{
-}
-
-static void test_illformed_continue_with_blank_9()
-{
-}
-
-
 
 static void test_illformed_continue_with_format_as_literal_0()
 {
@@ -1440,18 +1405,9 @@ static void test_illformed_continue_with_format_as_literal_7()
     XTESTS_TEST_STRING_EQUAL(FASTFORMAT_LITERAL_STRING("{a}"), pe.defect);
 }
 
-static void test_illformed_continue_with_format_as_literal_8()
-{
-}
 
-static void test_illformed_continue_with_format_as_literal_9()
-{
-}
-
-
-} /* anonymous namespace */
-
-
+} // anonymous namespace
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

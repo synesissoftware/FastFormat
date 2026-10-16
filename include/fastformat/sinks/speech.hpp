@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/speech.hpp
+ * File:    fastformat/sinks/speech.hpp
  *
- * Purpose:     A FastFormat sink for the Windows Speech API.
+ * Purpose: A FastFormat sink for the Windows Speech API.
  *
- * Created:     27th November 2007
- * Updated:     16th July 2024
+ * Created: 27th November 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -231,4 +231,5 @@ inline speech_sink& fmt_slices(speech_sink& sink, int flags, size_t cchTotal, si
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SPEECH */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

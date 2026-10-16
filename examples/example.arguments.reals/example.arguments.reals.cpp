@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.arguments.reals/example.arguments.reals.cpp
+ * File:    examples/example.arguments.reals/example.arguments.reals.cpp
  *
- * Purpose:     Implementation file for the example.arguments.reals project.
+ * Purpose: Implementation file for the example.arguments.reals project.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -13,7 +13,7 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/shims/conversion/filter_type/reals.hpp>
 #include <fastformat/fastformat.hpp>
@@ -22,9 +22,9 @@
 # error Cannot compile this file with a compiler that does not support the filter_type mechanism
 #endif /* FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <iostream>
 #include <string>
@@ -34,13 +34,13 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** /*argv*/)
+static int main_(int argc, char* /*argv*/[])
 {
     const float     flt =   1.2345f;
     const double    dbl =   -123E-45;
@@ -86,7 +86,7 @@ static int main_(int argc, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {
@@ -104,6 +104,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

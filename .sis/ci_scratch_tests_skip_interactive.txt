@@ -1,0 +1,5 @@
+# Scratch programs that open a window, a speech engine, or need a real
+# Windows console (GetConsoleScreenBufferInfo fails under CI redirection).
+test.scratch.sink.WindowsConsole
+test.scratch.sink.WindowsMessageBox
+test.scratch.speech

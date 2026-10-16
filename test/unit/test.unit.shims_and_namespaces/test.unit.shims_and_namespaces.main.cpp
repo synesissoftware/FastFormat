@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.shims_and_namespaces.main.cpp
+ * File:    test.unit.shims_and_namespaces.main.cpp
  *
- * Purpose:     Main implementation file for the test.unit.shims_and_namespaces project.
+ * Purpose: Main implementation file for the test.unit.shims_and_namespaces project.
  *
- * Created:     11th November 2013
- * Updated:     16th July 2024
+ * Created: 11th November 2013
+ * Updated: 16th July 2024
  *
- * Status:      Wizard-generated
+ * Status:  Wizard-generated
  *
- * License:     (Licensed under the Synesis Software Open License)
+ * License: (Licensed under the Synesis Software Open License)
  *
  *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
  *              Copyright (c) 2013-2019, Synesis Software Pty Ltd.
@@ -19,22 +19,22 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
 
-/* xTests Header Files */
+/* xTests header files */
 #include <xtests/xtests.h>
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdlib.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * forward declarations
@@ -109,6 +109,7 @@ extern "C++"
 
 
 } // extern "C++"
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * main()
@@ -193,4 +194,5 @@ int main(int argc, char **argv)
 }
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

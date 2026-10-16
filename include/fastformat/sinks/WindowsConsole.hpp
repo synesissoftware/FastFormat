@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/WindowsConsole.hpp
+ * File:    fastformat/sinks/WindowsConsole.hpp
  *
- * Purpose:     A FastFormat sink for coloured output via Windows' console.
+ * Purpose: A FastFormat sink for coloured output via Windows' console.
  *
- * Created:     6th January 2011
- * Updated:     16th July 2024
+ * Created: 6th January 2011
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2011-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -249,6 +249,6 @@ inline WindowsConsole_sink& fmt_slices(WindowsConsole_sink& sink, int flags, siz
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

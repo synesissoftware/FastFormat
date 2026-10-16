@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/replacements.cpp
+ * File:    src/replacements.cpp
  *
- * Purpose:     Implementation file for FastFormat core API: replacements.
+ * Purpose: Implementation file for FastFormat core API: replacements.
  *
- * Created:     18th September 2006
- * Updated:     6th February 2024
+ * Created: 18th September 2006
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -42,6 +42,7 @@
 
 
 // #define FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS // This is not defined by default, but unreferenced arguments are not always a defect
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes - 0
@@ -193,7 +194,7 @@ namespace
     };
 
     static const ff_char_t ValidFillCharacters[] = FASTFORMAT_LITERAL_STRING("# ");
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -576,7 +577,7 @@ namespace
 
         return derive_parse_result_(1, 1);
     }
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -694,7 +695,7 @@ namespace
         // Return to indicate that we're ignoring
         return FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
     }
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -952,7 +953,7 @@ namespace
         ff_mismatchedHandler_info_t handlers[4];
         size_t                      numHandlers; // 0 value is sentinel (denoting uninitialised array)
     };
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -1700,6 +1701,6 @@ ff_char_t const* ximpl_core::fastformat_impl_replacements_getHashes(void* token,
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

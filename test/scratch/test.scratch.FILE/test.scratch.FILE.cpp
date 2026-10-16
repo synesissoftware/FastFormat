@@ -1,10 +1,10 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.FILE.cpp
+ * File:    test.scratch.FILE.cpp
  *
- * Purpose:     Implementation file for the test.scratch.FILE project.
+ * Purpose: Implementation file for the test.scratch.FILE project.
  *
- * Created:     24th September 2006
- * Updated:     6th February 2024
+ * Created: 24th September 2006
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -30,7 +30,7 @@
  * includes
  */
 
-/* FastFormat Header Files */
+/* FastFormat header files */
 #include <fastformat/sinks/FILE.hpp>
 #include <fastformat/ff.hpp>
 
@@ -52,15 +52,15 @@
 # endif
 #endif
 
-/* STLSoft Header Files */
+/* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 #include <platformstl/platformstl.hpp>
 
-/* Standard C++ Header Files */
+/* Standard C++ header files */
 #include <exception>
 #include <string>
 
-/* Standard C Header Files */
+/* Standard C header files */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -348,7 +348,7 @@ static int main_(int /* argc */, char** /* argv */)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
 #if 0
     { for(size_t i = 0; i < 0xffffffff; ++i){} }
@@ -375,6 +375,6 @@ int main(int argc, char** argv)
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 
