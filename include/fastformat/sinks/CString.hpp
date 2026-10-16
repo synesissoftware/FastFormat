@@ -120,7 +120,7 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
             cchTotal += crlf.len;
         }
 
-        mfcstl::grab_cstring_buffer buff(sink, static_cast<int>(cchTotal) + sink.GetLength());
+        mfcstl::grab_CString_buffer buff(sink, static_cast<int>(cchTotal) + sink.GetLength());
         ff_char_t*                  base    =   buff;
         size_t                      n       =   concat_slices(cchTotal, base + buff.original_length(), numResults, results);
 

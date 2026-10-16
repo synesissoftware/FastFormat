@@ -85,7 +85,7 @@ void Display32bitFileSize_(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
     }
 }
 
-BOOL CALLBACK ParentProc(HWND hwnd, UINT code, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK ParentProc(HWND hwnd, UINT code, WPARAM /*wParam*/, LPARAM lParam)
 {
     if(WM_INITDIALOG == code)
     {
@@ -109,7 +109,7 @@ void Display32bitFileSize(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char* argv[])
+static int main_(int /*argc*/, char* argv[])
 {
     const HINSTANCE hinst = ::GetModuleHandleA(argv[0]);
 

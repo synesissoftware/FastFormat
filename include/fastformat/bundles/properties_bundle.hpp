@@ -253,17 +253,17 @@ properties_bundle::open_(
 
     for(; std::getline(stm, line); )
     {
-        std::string name;
+        std::string key;
         std::string value;
 
         stlsoft::trim_all(line);
 
-        if(stlsoft::split(line, '=', name, value))
+        if(stlsoft::split(line, '=', key, value))
         {
-            stlsoft::trim_all(name);
+            stlsoft::trim_all(key);
             stlsoft::trim_left(value);
 
-            map[name] = value;
+            map[key] = value;
         }
     }
 

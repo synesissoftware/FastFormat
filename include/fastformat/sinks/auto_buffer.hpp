@@ -201,10 +201,10 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 
         if(flags::ff_newLine & flags)
         {
-            const ff_string_slice_t crlf = fastformat_getNewlineForPlatform();
+            const ff_string_slice_t newline = fastformat_getNewlineForPlatform();
 
-            ::memcpy(p, crlf.ptr, crlf.len * sizeof(char_t));
-            p += crlf.len;
+            ::memcpy(p, newline.ptr, newline.len * sizeof(char_t));
+            p += newline.len;
         }
 
         // finally we append the terminating nul character

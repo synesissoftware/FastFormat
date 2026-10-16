@@ -137,9 +137,9 @@ fmt_slices(
 
     if(flags::ff_newLine & flags)
     {
-        const ff_string_slice_t crlf = fastformat_getNewlineForPlatform();
+        const ff_string_slice_t newline = fastformat_getNewlineForPlatform();
 
-        sink.append(crlf.ptr, crlf.len);
+        sink.append(newline.ptr, newline.len);
     }
 
     return sink;

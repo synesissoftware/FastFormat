@@ -52,7 +52,7 @@ HRESULT get_BSTR_ff(BSTR* bstr2);
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char* argv[])
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     BSTR    bstr1;
     BSTR    bstr2;
@@ -144,7 +144,7 @@ HRESULT get_BSTR_ff(BSTR* bstr2)
 
 #include <atlbase.h>
 
-HRESULT XXGetFilterEx_(dimension_t dimension, int newIndex, std::string* fg, std::string* fv)
+HRESULT XXGetFilterEx_(dimension_t /* dimension */, int /* newIndex */, std::string* fg, std::string* fv)
 {
     *fg = "fg"; // +1
     *fv = "fv"; // +1
@@ -152,7 +152,7 @@ HRESULT XXGetFilterEx_(dimension_t dimension, int newIndex, std::string* fg, std
     return S_OK;
 }
 
-int offset_to_new_index_(int filter, dimension_t dimension, int index)
+int offset_to_new_index_(int /* filter */, dimension_t /* dimension */, int index)
 {
     return index + 1;
 }

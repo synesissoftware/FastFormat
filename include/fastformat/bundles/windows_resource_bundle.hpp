@@ -149,7 +149,7 @@ public:
         )
             : parent_class_type(create_message_(NULL, 0u, id, NULL).c_str())
             , id(id)
-            , code(-1)
+            , code(~static_cast<DWORD>(0))
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
@@ -170,8 +170,8 @@ public:
         ,   ff_char_t const*    id
         ,   ff_char_t const*    resourceType
         )
-            : parent_class_type(create_message_(msg, code, reinterpret_cast<int>(id), resourceType).c_str())
-            , id(reinterpret_cast<int>(id))
+            : parent_class_type(create_message_(msg, code, pointer_id_(id), resourceType).c_str())
+            , id(pointer_id_(id))
             , code(code)
         {
             FASTFORMAT_COVER_MARK_ENTRY();
@@ -199,10 +199,24 @@ public:
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
+        /// Copy construction (public: required for portable throw/catch)
+        missing_resource_id_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+            , id(rhs.id)
+            , code(rhs.code)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
 
+#if 0
+#elif defined(__cplusplus) && \
+      __cplusplus >= 201103L
+        class_type& operator =(class_type const&) = delete;
+#else /* ? C++11 */
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
+#endif /* C++11 */
 
     public: // Attributes
         /// The identifier of the resource that could not be loaded
@@ -211,13 +225,30 @@ public:
         const DWORD code;
 
     private:
+        static int pointer_id_(ff_char_t const* p)
+        {
+#if defined(_MSC_VER)
+# pragma warning(push)
+# pragma warning(disable : 4244 4267)
+#endif /* _MSC_VER */
+
+            // Resource ids that are string pointers are stored in an int,
+            // as this exception's id member has always been int.
+            int const   id = static_cast<int>(reinterpret_cast<INT_PTR>(p));
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif /* _MSC_VER */
+
+            return id;
+        }
         static
         multibyte_string_type
         create_message_(
-            char const*         msg
+            char const*      /* msg */
         ,   DWORD               code
         ,   int                 id
-        ,   ff_char_t const*    resourceType
+        ,   ff_char_t const* /* resourceType */
         )
         {
             static const char       string0[]   =   "could not load bundle resource corresponding to identifier ";
