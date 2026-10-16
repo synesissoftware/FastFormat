@@ -63,11 +63,15 @@ void Display32bitFileSize_(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
 
         ff::ignore_unreferenced_arguments_scope scoper;
 
-        ff::fmt(ff::sinks::MessageBox(parent, FASTFORMAT_LITERAL_STRING("Problem"), MB_ICONWARNING)
-            ,   bundle[IDS_FMT_MISSING_FILE]
-            ,   fileName
-            ,   err
-            ,   winstl::error_desc(err));
+        {
+            ff::sinks::WindowsMessageBox_sink box(parent, FASTFORMAT_LITERAL_STRING("Problem"), MB_ICONWARNING);
+
+            ff::fmt(box
+                ,   bundle[IDS_FMT_MISSING_FILE]
+                ,   fileName
+                ,   err
+                ,   winstl::error_desc(err));
+        }
     }
     else
     {
@@ -76,10 +80,14 @@ void Display32bitFileSize_(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
 
         ff::ignore_unreferenced_arguments_scope scoper;
 
-        ff::fmt(ff::sinks::MessageBox(parent, NULL, MB_ICONWARNING)
-            ,   bundle[IDS_FMT_FOUND_FILE]
-            ,   fileName
-            ,   fd.nFileSizeLow);
+        {
+            ff::sinks::WindowsMessageBox_sink box(parent, NULL, MB_ICONWARNING);
+
+            ff::fmt(box
+                ,   bundle[IDS_FMT_FOUND_FILE]
+                ,   fileName
+                ,   fd.nFileSizeLow);
+        }
 
         ::FindClose(h);
     }
