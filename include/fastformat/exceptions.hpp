@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      14
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  4
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -271,6 +271,17 @@ protected: // Implementation
             FASTFORMAT_COVER_MARK_ENTRY();
         }
         virtual ~format_parsing_exception() stlsoft_throw_0() = 0;
+
+    protected: // Construction
+        /// Copy construction (required for throw-by-value; assignment remains closed)
+        format_parsing_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+            , code(rhs.code)
+            , format(rhs.format)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
+
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
@@ -321,6 +332,13 @@ protected: // Implementation
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
+            /// Copy construction (required for throw-by-value; assignment remains closed)
+            illformed_format_exception(class_type const& rhs)
+                : parent_class_type(rhs)
+            {
+                FASTFORMAT_COVER_MARK_ENTRY();
+            }
+
         private:
             /// Not assignment-copyable
             class_type& operator =(class_type const&);
@@ -364,6 +382,18 @@ protected: // Implementation
             FASTFORMAT_COVER_MARK_ENTRY();
         }
         virtual ~mismatched_replacements_exception() stlsoft_throw_0() = 0;
+
+    protected: // Construction
+        /// Copy construction (required for throw-by-value; assignment remains closed)
+        mismatched_replacements_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+            , code(rhs.code)
+            , numberOfReplacements(rhs.numberOfReplacements)
+            , firstMismatchedReplacementIndex(rhs.firstMismatchedReplacementIndex)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
+
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
@@ -407,6 +437,13 @@ protected: // Implementation
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
+            /// Copy construction (required for throw-by-value; assignment remains closed)
+            missing_argument_exception(class_type const& rhs)
+                : parent_class_type(rhs)
+            {
+                FASTFORMAT_COVER_MARK_ENTRY();
+            }
+
         private:
             /// Not assignment-copyable
             class_type& operator =(class_type const&);
@@ -445,6 +482,13 @@ protected: // Implementation
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
+            /// Copy construction (required for throw-by-value; assignment remains closed)
+            unreferenced_argument_exception(class_type const& rhs)
+                : parent_class_type(rhs)
+            {
+                FASTFORMAT_COVER_MARK_ENTRY();
+            }
+
         private:
             /// Not assignment-copyable
             class_type& operator =(class_type const&);

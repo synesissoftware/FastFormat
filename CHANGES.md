@@ -19,7 +19,9 @@
 * Expanded **README.md** with **Components**, **Examples** (via **EXAMPLES.md**), and a full **Dependencies** section;
 * Quieted MSVC `/WX` unused-parameter warnings in the BSTR and WindowsMessageBox scratch programs;
 * Bound WindowsConsole / WindowsMessageBox sinks to named locals so `fmt` / `writeln` can take non-const `S&` under MinGW;
-* Provided explicit copy constructors on **`fastformat_exception`**, **`bundle_exception`**, and **`missing_resource_id_exception`** so MinGW `-Werror=deprecated-copy` does not fire on throw-by-value;
+* Provided explicit copy constructors across the FastFormat exception hierarchy (including **`format_parsing_exception`**, **`illformed_format_exception`**, **`mismatched_replacements_exception`**, and **`missing_resource_id_exception`**) so throw-by-value is well-formed under MinGW `-Werror=deprecated-copy`;
+* Reported Case 6 format-defect demos in **example.ff_101** with iostreams only (no FastFormat re-entry from catch handlers);
+* Listed **test.scratch.sink.WindowsConsole** in **ci_scratch_tests_skip_interactive.txt** (needs a real console; fails under CI redirection);
 
 
 ## 0.7.4-rc6 - 6th February 2024
