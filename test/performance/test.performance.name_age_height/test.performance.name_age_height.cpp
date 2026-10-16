@@ -21,7 +21,6 @@
 # include <mfcstl/mfcstl.hpp>
 #endif
 
-
 /* FastFormat header files */
 #include <fastformat/internal/stlsoft.h>
 #if defined(STLSOFT_COMPILER_IS_MSVC) && \

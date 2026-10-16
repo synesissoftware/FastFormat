@@ -15,6 +15,10 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
+#if 1
+# include <stlsoft/string/simple_string.hpp> // hack (for now) for GCC phase
+#endif
+
 /* FastFormat header files */
 #include <fastformat/ff.hpp>
 
