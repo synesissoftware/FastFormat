@@ -481,7 +481,7 @@ inline ff_to_i_r_t_ integer_helper_5(
             }
 
             return ff_to_i_r_t_(s, n);
-#else 
+#else
             return hex_integer_helper(value, uppercaseAlpha);
 #endif /* STLSOFT_VER_STLSOFT_CONVERSION_INTEGER_TO_STRING_HPP_INTEGER_TO_HEXADECIMAL_STRING_MAJOR */
         }

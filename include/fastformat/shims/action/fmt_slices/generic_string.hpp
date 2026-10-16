@@ -6,7 +6,7 @@
  * Created: 19th September 2006
  * Updated: 16th October 2026
  *
- * Thanks:      To Ric Parkin for pointing out the ramifications of 
+ * Thanks:      To Ric Parkin for pointing out the ramifications of
  *              21.3.5.2/6 and 21.3.1/6 before I change the definition of
  *              c_str_data[_a|_w] to allow NULL to be returned.
  *
@@ -95,7 +95,7 @@ namespace sinks
  * Overloadable functions
  */
 
-/** Action shim for generic string types 
+/** Action shim for generic string types
  *
  * \remarks Users are encouraged to overload this function (which is an
  *   <i>Action Shim</i>; see "Breaking Up The Monolith") in order to make
