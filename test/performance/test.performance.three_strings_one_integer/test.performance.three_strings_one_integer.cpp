@@ -567,8 +567,9 @@ int main(int argc, char *argv[])
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
         puts("test.performance.three_strings_one_integer: " STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 

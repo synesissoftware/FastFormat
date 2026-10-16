@@ -468,8 +468,10 @@ int main(int argc, char* argv[])
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
+
 #endif /* debug */
 
         res = main_(argc, argv);

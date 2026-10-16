@@ -147,8 +147,10 @@ int main(int argc, char* argv[])
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
+
         puts("test.scratch.format_iterator: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
