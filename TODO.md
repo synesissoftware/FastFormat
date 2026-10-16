@@ -30,6 +30,7 @@
 ## Packaging improvements
 
 * [x] ~~~full distribution of makefiles, project files, workspace files, etc. (legacy build trees removed; CMake-only)~~~ - ❌;
+* [ ] create an **xTests**-like internal **`checked_main`** (**include/fastformat/internal/checked_main.hpp**, mirroring **xtests/internal/checked_main.hpp**) and apply it across examples, unit/component/scratch/performance programs that currently hand-roll `main` / `main_` exception and CRT-leak wrappers;
 * [ ] remove all implicit-link files and inclusions (keep **implicit_link.h**);
 * [ ] decent docs;
 * [ ] decent website;
