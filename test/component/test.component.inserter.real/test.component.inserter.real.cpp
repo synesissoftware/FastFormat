@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/component/test.component.inserter.real/test.component.inserter.real.cpp
+ * File:    test.component.inserter.real.cpp
  *
- * Purpose: Component tests for inserter.real.
+ * Purpose: Implementation file for the test.component.inserter.real project.
  *
  * Created: 26th April 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
@@ -44,7 +45,7 @@ namespace
 #elif defined(STLSOFT_COMPILER_IS_BORLAND)
     const int   CORRECT_DEC_PLACES  =   12;
     const int   MAX_DEC_PLACES      =   35;
-#elif defined(STLSOFT_COMPILER_IS_CLANG) || \
+#elif defined(STLSOFT_COMPILER_IS_CLANG) ||\
       defined(STLSOFT_COMPILER_IS_GCC)
     const int   CORRECT_DEC_PLACES  =   12;
 #elif defined(STLSOFT_COMPILER_IS_MWERKS)
@@ -53,11 +54,11 @@ namespace
     const int   CORRECT_DEC_PLACES  =   20;
 #endif
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -66,7 +67,6 @@ namespace
     static void test_1_0(void);
     static void test_1_1(void);
     static void test_1_2(void);
-    static void test_1_3(void);
     static void test_1_4(void);
     static void test_1_5(void);
     static void test_1_6(void);
@@ -78,7 +78,6 @@ namespace
     static void test_1_12(void);
     static void test_1_13(void);
     static void test_1_14(void);
-    static void test_1_15(void);
     static void test_1_16(void);
     static void test_1_17(void);
     static void test_1_18(void);
@@ -87,17 +86,9 @@ namespace
     static void test_1_21(void);
     static void test_1_22(void);
     static void test_1_23(void);
-    static void test_1_24(void);
-    static void test_1_25(void);
-    static void test_1_26(void);
-    static void test_1_27(void);
-    static void test_1_28(void);
-    static void test_1_29(void);
-
     static void test_2_0(void);
     static void test_2_1(void);
     static void test_2_2(void);
-    static void test_2_3(void);
     static void test_2_4(void);
     static void test_2_5(void);
     static void test_2_6(void);
@@ -121,7 +112,6 @@ namespace
     static void test_3_0(void);
     static void test_3_1(void);
     static void test_3_2(void);
-    static void test_3_3(void);
     static void test_3_4(void);
     static void test_3_5(void);
     static void test_3_6(void);
@@ -146,10 +136,10 @@ namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -255,7 +245,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_0);
         XTESTS_RUN_CASE(test_1_1);
         XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
         XTESTS_RUN_CASE(test_1_4);
         XTESTS_RUN_CASE(test_1_5);
         XTESTS_RUN_CASE(test_1_6);
@@ -267,7 +256,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_12);
         XTESTS_RUN_CASE(test_1_13);
         XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
         XTESTS_RUN_CASE(test_1_16);
         XTESTS_RUN_CASE(test_1_17);
         XTESTS_RUN_CASE(test_1_18);
@@ -276,17 +264,9 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_21);
         XTESTS_RUN_CASE(test_1_22);
         XTESTS_RUN_CASE(test_1_23);
-        XTESTS_RUN_CASE(test_1_24);
-        XTESTS_RUN_CASE(test_1_25);
-        XTESTS_RUN_CASE(test_1_26);
-        XTESTS_RUN_CASE(test_1_27);
-        XTESTS_RUN_CASE(test_1_28);
-        XTESTS_RUN_CASE(test_1_29);
-
         XTESTS_RUN_CASE(test_2_0);
         XTESTS_RUN_CASE(test_2_1);
         XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
         XTESTS_RUN_CASE(test_2_4);
         XTESTS_RUN_CASE(test_2_5);
         XTESTS_RUN_CASE(test_2_6);
@@ -310,7 +290,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_3_0);
         XTESTS_RUN_CASE(test_3_1);
         XTESTS_RUN_CASE(test_3_2);
-        XTESTS_RUN_CASE(test_3_3);
         XTESTS_RUN_CASE(test_3_4);
         XTESTS_RUN_CASE(test_3_5);
         XTESTS_RUN_CASE(test_3_6);
@@ -341,7 +320,7 @@ int main(int argc, char **argv)
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -351,16 +330,18 @@ namespace
     typedef std::basic_string<ff_char_t>    string_t;
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL(x, a)         XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
-# define XTESTS_TEST_STRING_EQUAL_N(x, a, n)    XTESTS_TEST_WIDE_STRING_EQUAL_N(FASTFORMAT_LITERAL_STRING(x), a, n)
-# define XTESTS_TEST_STRING_CONTAIN(x, a)       XTESTS_TEST_WIDE_STRING_CONTAIN(FASTFORMAT_LITERAL_STRING(x), a)
+
+# define XTESTS_TEST_STRING_EQUAL(x, a)                     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
+# define XTESTS_TEST_STRING_EQUAL_N(x, a, n)                XTESTS_TEST_WIDE_STRING_EQUAL_N(FASTFORMAT_LITERAL_STRING(x), a, n)
+# define XTESTS_TEST_STRING_CONTAIN(x, a)                   XTESTS_TEST_WIDE_STRING_CONTAIN(FASTFORMAT_LITERAL_STRING(x), a)
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL               XTESTS_TEST_MULTIBYTE_STRING_EQUAL
-# define XTESTS_TEST_STRING_EQUAL_N             XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N
-# define XTESTS_TEST_STRING_CONTAIN             XTESTS_TEST_MULTIBYTE_STRING_CONTAIN
+
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+# define XTESTS_TEST_STRING_EQUAL_N                         XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N
+# define XTESTS_TEST_STRING_CONTAIN                         XTESTS_TEST_MULTIBYTE_STRING_CONTAIN
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                                  FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
     inline double str_to_double(ff_char_t const* s)
     {
@@ -433,7 +414,6 @@ namespace
     }
 
 
-
 static void test_1_0()
 {
     std::basic_string<ff_char_t> sink;
@@ -461,9 +441,6 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("   123.456", sink);
 }
 
-static void test_1_3()
-{
-}
 
 static void test_1_4()
 {
@@ -564,9 +541,6 @@ static void test_1_14()
     XTESTS_TEST_STRING_EQUAL("               12346", sink);
 }
 
-static void test_1_15()
-{
-}
 
 static void test_1_16()
 {
@@ -658,33 +632,6 @@ static void test_1_23()
     XTESTS_TEST_STRING_EQUAL("-1.234567e-5", strip_leading_zeroes(sink));
 }
 
-static void test_1_24()
-{
-}
-
-static void test_1_25()
-{
-}
-
-static void test_1_26()
-{
-}
-
-static void test_1_27()
-{
-}
-
-static void test_1_28()
-{
-}
-
-static void test_1_29()
-{
-}
-
-
-
-
 
 static void test_2_0()
 {
@@ -713,9 +660,6 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL("       123", sink);
 }
 
-static void test_2_3()
-{
-}
 
 static void test_2_4()
 {
@@ -732,8 +676,8 @@ static void test_2_5()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(12345.67, 10, 0, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_INTEGER_EQUAL(10u, sink.size());
     XTESTS_TEST_STRING_CONTAIN("1e+", sink);
@@ -825,8 +769,8 @@ static void test_2_14()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(12345.67, 20, 0, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_STRING_CONTAIN("1e+", sink);
 
@@ -863,8 +807,8 @@ static void test_2_17()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(12345.67, 63, 7, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_FLOATINGPOINT_EQUAL(12345.67, str_to_double(sink.c_str()));
 
@@ -879,8 +823,8 @@ static void test_2_17()
 
 static void test_2_18()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     std::basic_string<ff_char_t> sink;
 
@@ -899,8 +843,8 @@ static void test_2_18()
 
 static void test_2_19()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     std::basic_string<ff_char_t> sink;
 
@@ -917,8 +861,8 @@ static void test_2_19()
 
 static void test_2_20()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     std::basic_string<ff_char_t> sink;
 
@@ -939,8 +883,8 @@ static void test_2_28()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(1e-10, 0, -1, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_STRING_CONTAIN("1e-", sink);
 
@@ -953,15 +897,13 @@ static void test_2_29()
 
     ff::fmt(sink, FF_STR("{0}"), ff::real(1e-10, 0, -1, 'g'));
 
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC)
 
     XTESTS_TEST_STRING_CONTAIN("1e-", sink);
 
 #endif /* compiler */
 }
-
-
 
 
 static void test_3_0()
@@ -991,9 +933,6 @@ static void test_3_2()
     XTESTS_TEST_STRING_CONTAIN("1.235e+", sink);
 }
 
-static void test_3_3()
-{
-}
 
 static void test_3_4()
 {
@@ -1143,9 +1082,9 @@ static void test_3_16()
 
 static void test_3_17()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1163,9 +1102,9 @@ static void test_3_17()
 
 static void test_3_18()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1183,9 +1122,9 @@ static void test_3_18()
 
 static void test_3_19()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1203,9 +1142,9 @@ static void test_3_19()
 
 static void test_3_20()
 {
-#if !defined(STLSOFT_COMPILER_IS_GCC) && \
-    !defined(STLSOFT_COMPILER_IS_MWERKS) && \
-    !defined(STLSOFT_COMPILER_IS_CLANG)
+#if !defined(STLSOFT_COMPILER_IS_CLANG) && \
+    !defined(STLSOFT_COMPILER_IS_GCC) && \
+    !defined(STLSOFT_COMPILER_IS_MWERKS)
 
     std::basic_string<ff_char_t> sink;
 
@@ -1246,6 +1185,6 @@ static void test_3_29()
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

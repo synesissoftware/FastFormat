@@ -49,27 +49,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR
 #define FASTFORMAT_INCL_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_REVISION   6
-# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       11
+# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       17
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.hpp>
@@ -79,8 +82,9 @@
 #include <stlsoft/shims/access/string.hpp>
 #include <stlsoft/util/std/iterator_helper.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,8 +94,9 @@ namespace iterators
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Helpers
+ * helpers
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -126,8 +131,9 @@ namespace ximpl_format_iterator
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** This class template defines an output iterator that writes to
@@ -164,8 +170,7 @@ private:
     class deref_proxy;
     friend class deref_proxy;
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MWERKS)
+#if defined(STLSOFT_COMPILER_IS_MWERKS)
 public:
 #else
 private:
@@ -531,8 +536,9 @@ inline format_output_iterator<S, F, A1, A2, A3, A4, A5, A6, A7, A8> format_itera
 }
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -541,16 +547,17 @@ using ::fastformat::iterators::format_iterator;
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

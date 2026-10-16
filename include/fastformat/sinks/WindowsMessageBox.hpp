@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      10
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -80,8 +83,9 @@
 
 #include <windows.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -91,8 +95,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for sending a statement to Windows' <code>MessageBox()</code>.
@@ -197,8 +202,9 @@ private:
     int                 m_result;
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Creator Functions
+ * creator functions
  */
 
 /** Creator function for the WindowsMessageBox_sink class
@@ -219,8 +225,9 @@ inline WindowsMessageBox_sink MessageBox(LPCTSTR caption, UINT type)
     return WindowsMessageBox_sink(NULL, caption, type);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a
@@ -234,8 +241,9 @@ inline WindowsMessageBox_sink& fmt_slices(WindowsMessageBox_sink& sink, int flag
     return sink.write(flags, cchTotal, numResults, results);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -243,16 +251,17 @@ inline WindowsMessageBox_sink& fmt_slices(WindowsMessageBox_sink& sink, int flag
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

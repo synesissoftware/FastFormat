@@ -49,20 +49,23 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_SHIM_MACROS
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_SHIM_MACROS
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # include <fastformat/fastformat.h>
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
-/* /////////////////////////////////////////////////////////////////////////
- * Macros
- */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compiler compatibility
+ * macros
+ */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * compiler compatibility
  */
 
 /* The Digital Mars and GCC compilers both exhibit strange behaviour (bugs?)
@@ -104,13 +107,13 @@
 # endif /* FASTFORMAT_c_str_data_name_ */
 
 # ifdef FASTFORMAT_USE_WIDE_STRINGS
-#  define FASTFORMAT_c_str_data_name_                   c_str_data_w
-#  define FASTFORMAT_c_str_len_name_                    c_str_len_w
-#  define FASTFORMAT_c_str_ptr_name_                    c_str_ptr_w
+#  define FASTFORMAT_c_str_data_name_                       c_str_data_w
+#  define FASTFORMAT_c_str_len_name_                        c_str_len_w
+#  define FASTFORMAT_c_str_ptr_name_                        c_str_ptr_w
 # else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-#  define FASTFORMAT_c_str_data_name_                   c_str_data_a
-#  define FASTFORMAT_c_str_len_name_                    c_str_len_a
-#  define FASTFORMAT_c_str_ptr_name_                    c_str_ptr_a
+#  define FASTFORMAT_c_str_data_name_                       c_str_data_a
+#  define FASTFORMAT_c_str_len_name_                        c_str_len_a
+#  define FASTFORMAT_c_str_ptr_name_                        c_str_ptr_a
 # endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 # if defined(STLSOFT_COMPILER_IS_DMC)
@@ -186,16 +189,17 @@
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_SHIM_MACROS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

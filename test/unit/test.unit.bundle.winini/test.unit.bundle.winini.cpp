@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/unit/test.unit.bundle.winini/test.unit.bundle.winini.cpp
+ * File:    test.unit.bundle.winini.cpp
  *
- * Purpose: Unit tests for bundle.winini.
+ * Purpose: Implementation file for the test.unit.bundle.winini project.
  *
  * Created: 12th April 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -27,43 +32,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+/* /////////////////////////////////////////////////////////////////////////
+ * macros and definitions
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL(x, a)     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
+
+# define XTESTS_TEST_STRING_EQUAL(x, a)                     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define t2m        stlsoft::w2m
+
+# define t2m                                                stlsoft::w2m
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define t2m(x)     x
+
+# define t2m(x)                                             x
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR(x)                           FASTFORMAT_LITERAL_STRING(x)
+#define FF_STR(x)                                           FASTFORMAT_LITERAL_STRING(x)
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
 {
     using   fastformat::ff_char_t;
 
-#define WININI_UNITTEST_FILE_NAME_          "./test.unit.bundle.winini.ini"
+#define WININI_UNITTEST_FILE_NAME_                          "./test.unit.bundle.winini.ini"
     static const ff_char_t   WININI_UNITTEST_FILE_NAME[] = FF_STR(WININI_UNITTEST_FILE_NAME_);
 
     static void test_1_1();
@@ -73,14 +81,12 @@ namespace
     static void test_1_5();
     static void test_1_6();
     static void test_1_7();
-    static void test_1_8();
-
 } // anonymous namespace
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -114,8 +120,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE_THAT_THROWS(test_1_5, std::out_of_range);
         XTESTS_RUN_CASE_THAT_THROWS(test_1_6, std::out_of_range);
         XTESTS_RUN_CASE_THAT_THROWS(test_1_7, std::out_of_range);
-        XTESTS_RUN_CASE(test_1_8);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -193,13 +197,9 @@ static void test_1_7()
     XTESTS_TEST_STRING_EQUAL("", val1);
 }
 
-static void test_1_8()
-{
-}
-
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

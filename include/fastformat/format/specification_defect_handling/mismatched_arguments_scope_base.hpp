@@ -50,34 +50,38 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE
 #define FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MAJOR       1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MINOR       1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_REVISION    3
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        10
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MINOR       2
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_REVISION    1
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 #include <fastformat/quality/contract.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -85,8 +89,51 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * helpers
+ */
+
+#ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
+namespace ximpl_mismatched_arguments_scope_base
+{
+
+/* Separated out in order to ensure field construction order */
+class mismatched_handler_scope_specifier_base
+{
+private:
+    typedef mismatched_handler_scope_specifier_base class_type;
+public:
+    typedef fastformat::ff_mismatchedHandler_info_t handler_info_type;
+protected:
+    typedef handler_info_type
+                              (FASTFORMAT_CALLCONV *handler_specifier_function_type)(handler_info_type);
+
+protected:
+    explicit mismatched_handler_scope_specifier_base(ff_handler_domain_t domain)
+        : m_specifier(select_specifier_(domain))
+    {}
+private:
+    class_type& operator =(class_type const&);
+
+private:
+    static handler_specifier_function_type select_specifier_(ff_handler_domain_t domain)
+    {
+        using namespace fastformat;
+
+        return (FF_HANDLERDOMAIN_PROCESS == domain) ? fastformat_setProcessMismatchedHandler : fastformat_setThreadMismatchedHandler;
+    }
+
+protected:
+    handler_specifier_function_type const   m_specifier;
+};
+
+}/* namespace ximpl_mismatched_arguments_scope_base */
+#endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * classes
  */
 
 /** Base class for scoping classes that customise the behaviour in response
@@ -95,10 +142,17 @@ namespace fastformat
  * \ingroup group__format_specification_defect_handling
  */
 class mismatched_arguments_scope_base
+    : protected ximpl_mismatched_arguments_scope_base::mismatched_handler_scope_specifier_base
 {
 public: // Member Types
+protected:
+    typedef ximpl_mismatched_arguments_scope_base::mismatched_handler_scope_specifier_base
+                                                        parent_class_type;
+public:
     /// This type
-    typedef mismatched_arguments_scope_base     class_type;
+    typedef mismatched_arguments_scope_base             class_type;
+protected:
+    typedef fastformat::ff_handler_response_t           handler_response_type;
 
 protected: // Construction
     /** Causes the thread/process mismatched handler to be set to a function
@@ -106,19 +160,20 @@ protected: // Construction
      * <code>FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT</code> code and
      * passes all others to the previously-registered handler
      */
-    mismatched_arguments_scope_base()
-        : m_previous(fastformat_setThreadMismatchedHandler(&class_type::handler, get_this_()))
+    explicit mismatched_arguments_scope_base(ff_handler_domain_t domain)
+        : parent_class_type(domain)
+        , m_previous((*m_specifier)(ff_mismatchedHandler_info_t::make(&class_type::handler, get_this_())))
     {}
 public:
     /** Restores the thread/process mismatched handler to the function
      * registered prior to the construction of this instance
      *
-     * \warning The system behaviour is undefined if the thread/process 
+     * \warning The system behaviour is undefined if the thread/process
      *   mismatch handler is modified during the lifetime of this instance
      */
     virtual ~mismatched_arguments_scope_base() ss_noexcept_k
     {
-        fastformat_setThreadMismatchedHandler(m_previous.handler, m_previous.param);
+        (*m_specifier)(m_previous);
     }
 
 private:
@@ -132,26 +187,18 @@ protected: // Overrides
      * statement.
      *
      * \param code The type of mismatch
-     * \param numParameters The number of arguments provided to the format
+     * \param numArguments The number of arguments provided to the format
      *   statement
-     * \param parameterIndex The index of the parameter that is associated
+     * \param mismatchedParameterIndex The index of the parameter that is associated
      *   with the mismatch
-     * \param slice A slice that may be modified in handling the mismatch
-     * \param reserved0 Reserved for future use; must not be used by
-     *   derived classes
-     * \param reserved1 Reserved for future use; must not be used by
-     *   derived classes
-     * \param reserved2 Reserved for future use; must not be used by
-     *   derived classes
+     * \param slice A slice that may be modified in handling the mismatch.
      */
-    virtual int handle(
-        ff_replacement_code_t   code
-    ,   size_t                  numParameters
-    ,   int                     parameterIndex
-    ,   ff_string_slice_t*      slice
-    ,   void*                   reserved0
-    ,   size_t                  reserved1
-    ,   void*                   reserved2
+    virtual ff_handler_response_t handle(
+        ff_replacement_code_t       code
+    ,   size_t                      numArguments
+    ,   int                         mismatchedParameterIndex
+    ,   ff_replacement_action_t*    action
+    ,   ff_string_slice_t*          slice
     ) = 0;
 
 private: // Implementation
@@ -160,29 +207,46 @@ private: // Implementation
         return this;
     }
 
-    static int FASTFORMAT_CALLCONV handler(
-        void*                   param
-    ,   ff_replacement_code_t   code
-    ,   size_t                  numParameters
-    ,   int                     parameterIndex
-    ,   ff_string_slice_t*      slice
-    ,   void*                   reserved0
-    ,   size_t                  reserved1
-    ,   void*                   reserved2
+    static
+    ff_handler_response_t
+    FASTFORMAT_CALLCONV handler(
+        void*                       param
+    ,   ff_replacement_code_t       code
+    ,   size_t                      numArguments
+    ,   int                         mismatchedParameterIndex
+    ,   ff_replacement_action_t*    action
+    ,   ff_string_slice_t*          slice
+    ,   void*                       reserved0
+    ,   size_t                      reserved1
+    ,   void*                       reserved2
+    ,   int                         reserved3
     )
     {
         class_type* pThis = static_cast<class_type*>(param);
 
-        return pThis->handle(code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
+        handler_response_type hr = pThis->handle(code, numArguments, mismatchedParameterIndex, action, slice);
+
+        if(fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING == hr)
+        {
+            return hr;
+        }
+
+        if(NULL != pThis->m_previous.handler)
+        {
+            return (*pThis->m_previous.handler)(pThis->m_previous.param, code, numArguments, mismatchedParameterIndex, action, slice, reserved0, reserved1, reserved2, reserved3);
+        }
+
+        return fastformat::FF_HANDLERRESPONSE_NEXT_HANDLER;
     }
 
 protected: // Fields
     // A (very) rare use case for protected member data, when using (private) implementation inheritance
-    mismatched_handler_info_t const m_previous; //!< Previous handler, for chaining
+    ff_mismatchedHandler_info_t const   m_previous; //!< Previous handler, for chaining
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -194,3 +258,5 @@ protected: // Fields
 #endif /* FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

@@ -49,18 +49,18 @@
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS
 
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  6
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      17
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  7
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -87,7 +87,7 @@
 #endif /* C++11 */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -103,7 +103,7 @@
 #include <string>
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -203,7 +203,7 @@ public: // Construction
     {
         FASTFORMAT_COVER_MARK_ENTRY();
     }
-    virtual ~fastformat_exception() stlsoft_throw_0() = 0;
+    virtual ~fastformat_exception() STLSOFT_NOEXCEPT = 0;
 
     FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
@@ -292,7 +292,7 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~format_parsing_exception() stlsoft_throw_0() = 0;
+        virtual ~format_parsing_exception() STLSOFT_NOEXCEPT = 0;
 
         FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
@@ -378,13 +378,13 @@ protected: // Implementation
          *
          * \param message The message. May not be NULL
          * \param code The code associated with the condition
-         * \param numberOfReplacements The number of replacement elements
+         * \param numArguments The number of replacement elements
          * \param firstMismatchedReplacementIndex The index of the first mismatched replacement element
          */
-        explicit mismatched_replacements_exception(char const* message, ff_replacement_code_t code, int numberOfReplacements, int firstMismatchedReplacementIndex)
+        explicit mismatched_replacements_exception(char const* message, ff_replacement_code_t code, int numArguments, int firstMismatchedReplacementIndex)
             : parent_class_type(validate_message_(message))
             , code(code)
-            , numberOfReplacements(numberOfReplacements)
+            , numArguments(numArguments)
             , firstMismatchedReplacementIndex(firstMismatchedReplacementIndex)
         {
             FASTFORMAT_COVER_MARK_ENTRY();
@@ -393,12 +393,12 @@ protected: // Implementation
         mismatched_replacements_exception(class_type const& rhs)
             : parent_class_type(rhs)
             , code(rhs.code)
-            , numberOfReplacements(rhs.numberOfReplacements)
+            , numArguments(rhs.numArguments)
             , firstMismatchedReplacementIndex(rhs.firstMismatchedReplacementIndex)
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~mismatched_replacements_exception() stlsoft_throw_0() = 0;
+        virtual ~mismatched_replacements_exception() STLSOFT_NOEXCEPT = 0;
 
         FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
@@ -406,7 +406,7 @@ protected: // Implementation
         /// The code indicating the cause of the problem
         const ff_replacement_code_t     code;
         /// The number of replacement parameters in the format
-        const int                       numberOfReplacements;
+        const int                       numArguments;
         /// The index of the first mismatched replacement parameter
         const int                       firstMismatchedReplacementIndex;
     };
@@ -433,11 +433,11 @@ protected: // Implementation
              *
              * \param message The message. May not be NULL
              * \param code The code associated with the condition
-             * \param numberOfReplacements The number of replacement elements
+             * \param numArguments The number of replacement elements
              * \param firstMismatchedReplacementIndex The index of the first mismatched replacement element
              */
-            missing_argument_exception(char const* message, ff_replacement_code_t code, int numberOfReplacements, int firstMismatchedReplacementIndex)
-                : parent_class_type(validate_message_(message), code, numberOfReplacements, firstMismatchedReplacementIndex)
+            missing_argument_exception(char const* message, ff_replacement_code_t code, int numArguments, int firstMismatchedReplacementIndex)
+                : parent_class_type(validate_message_(message), code, numArguments, firstMismatchedReplacementIndex)
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
@@ -476,11 +476,11 @@ protected: // Implementation
              *
              * \param message The message. May not be NULL
              * \param code The code associated with the condition
-             * \param numberOfReplacements The number of replacement elements
+             * \param numArguments The number of replacement elements
              * \param firstMismatchedReplacementIndex The index of the first mismatched replacement element
              */
-            unreferenced_argument_exception(char const* message, ff_replacement_code_t code, int numberOfReplacements, int firstMismatchedReplacementIndex)
-                : parent_class_type(validate_message_(message), code, numberOfReplacements, firstMismatchedReplacementIndex)
+            unreferenced_argument_exception(char const* message, ff_replacement_code_t code, int numArguments, int firstMismatchedReplacementIndex)
+                : parent_class_type(validate_message_(message), code, numArguments, firstMismatchedReplacementIndex)
             {
                 FASTFORMAT_COVER_MARK_ENTRY();
             }
@@ -531,7 +531,7 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~bundle_exception() stlsoft_throw_0() = 0;
+        virtual ~bundle_exception() STLSOFT_NOEXCEPT = 0;
 
         FASTFORMAT_EXCEPTION_NO_ASSIGN_();
     };
@@ -569,7 +569,7 @@ protected: // Implementation
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        virtual ~sink_exception() stlsoft_throw_0() = 0;
+        virtual ~sink_exception() STLSOFT_NOEXCEPT = 0;
 
         FASTFORMAT_EXCEPTION_NO_ASSIGN_();
 
@@ -613,24 +613,24 @@ protected: // Implementation
         };
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline /* virtual */ fastformat_exception::~fastformat_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ fastformat_exception::~fastformat_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ format_parsing_exception::~format_parsing_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ format_parsing_exception::~format_parsing_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ mismatched_replacements_exception::~mismatched_replacements_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ mismatched_replacements_exception::~mismatched_replacements_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ bundle_exception::~bundle_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ bundle_exception::~bundle_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
-inline /* virtual */ sink_exception::~sink_exception() stlsoft_throw_0() /* = 0 */
+inline /* virtual */ sink_exception::~sink_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
@@ -638,23 +638,24 @@ inline /* virtual */ sink_exception::~sink_exception() stlsoft_throw_0() /* = 0 
 #undef FASTFORMAT_EXCEPTION_NO_ASSIGN_
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

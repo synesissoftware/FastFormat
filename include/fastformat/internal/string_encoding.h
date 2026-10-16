@@ -50,14 +50,16 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_STRING_ENCODING
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_STRING_ENCODING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 /** Used to define literal strings
@@ -87,16 +89,17 @@
 # define FASTFORMAT_LITERAL_CHARACTER(c)    c
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_STRING_ENCODING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

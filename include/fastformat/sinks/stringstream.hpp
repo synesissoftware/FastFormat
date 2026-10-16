@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRINGSTREAM
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRINGSTREAM
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_EDIT       12
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_EDIT       15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,8 +82,9 @@
 
 #include <sstream>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,8 +94,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>std::stringstream</code> sink.
@@ -146,8 +151,9 @@ fmt_slices(
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -160,3 +166,5 @@ fmt_slices(
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRINGSTREAM */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

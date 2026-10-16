@@ -40,15 +40,24 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * compatibility
+ */
+
+#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+#endif
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -56,60 +65,71 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
 class ximpl_core
 {
+private: // Types
+#ifdef FASTFORMAT_NO_NAMESPACE
+    typedef ff_format_element_t                             format_element_t;
+#else
+    typedef ff_illformedHandler_info_t                      illformed_handler_info_type;
+    typedef ff_mismatchedHandler_info_t                     mismatched_handler_info_type;
+#endif /* FASTFORMAT_NO_NAMESPACE */
+
 private:
     ximpl_core();
     ~ximpl_core();
-public:
 
-    // Memory pool
+public: // Memory pool - in memory_pool.cpp
     static int      fastformat_impl_memoryPool_init(void** ptoken);
     static void     fastformat_impl_memoryPool_uninit(void* token);
     static void*    fastformat_impl_memoryPool_alloc(void* ptoken, size_t cb);
 
-    // Format cache
+public: // Format cache - in fmt_cache.cpp
     static int      fastformat_impl_formatCache_init(void **ptoken);
     static void     fastformat_impl_formatCache_uninit(void* token);
     static unsigned fastformat_impl_formatCache_lookupPattern(
-        void*                       token
-    ,   ff_char_t const*            pattern
-    ,   size_t                      cchPattern
-    ,   format_element_t const**    elements
-    );
+                            void*                       token
+                        ,   ff_char_t const*            pattern
+                        ,   size_t                      cchPattern
+                        ,   format_element_t const**    elements
+                        );
 
-    // Replacements
+public: // Replacements - in replacements.cpp
     static int              fastformat_impl_replacements_init(void **ptoken);
     static void             fastformat_impl_replacements_uninit(void* token);
     static ff_char_t const* fastformat_impl_replacements_getSpaces(void* token, size_t len);
     static ff_char_t const* fastformat_impl_replacements_getHashes(void* token, size_t len);
 
-    // Defect handlers
+public: // Defect handlers - in fmt_spec_defect_handlers.cpp
     static int      fastformat_impl_handlers_init(void **ptoken);
     static void     fastformat_impl_handlers_uninit(void* token);
-    static ff_illformed_handler_info_t fastformat_impl_handlers_getIllformedProcessHandler(void* token);
-    static ff_illformed_handler_info_t fastformat_impl_handlers_setIllformedProcessHandler(void* token, fastformat_illformedHandler_t handler, void* param);
-    static ff_illformed_handler_info_t fastformat_impl_handlers_getIllformedThreadHandler(void* token);
-    static ff_illformed_handler_info_t fastformat_impl_handlers_setIllformedThreadHandler(void* token, fastformat_illformedHandler_t handler, void* param);
-    static ff_illformed_handler_info_t fastformat_impl_handlers_getIllformedDefaultHandler(void* token);
-    static ff_mismatched_handler_info_t fastformat_impl_handlers_getMismatchedProcessHandler(void* token);
-    static ff_mismatched_handler_info_t fastformat_impl_handlers_setMismatchedProcessHandler(void* token, fastformat_mismatchedHandler_t handler, void* param);
-    static ff_mismatched_handler_info_t fastformat_impl_handlers_getMismatchedThreadHandler(void* token);
-    static ff_mismatched_handler_info_t fastformat_impl_handlers_setMismatchedThreadHandler(void* token, fastformat_mismatchedHandler_t handler, void* param);
-    static ff_mismatched_handler_info_t fastformat_impl_handlers_getDefaultMismatchedHandler(void* token);
+
+    static illformed_handler_info_type fastformat_impl_handlers_getIllformedProcessHandler(void* token);
+    static illformed_handler_info_type fastformat_impl_handlers_setIllformedProcessHandler(void* token, illformed_handler_info_type handler_info);
+    static illformed_handler_info_type fastformat_impl_handlers_getIllformedThreadHandler(void* token);
+    static illformed_handler_info_type fastformat_impl_handlers_setIllformedThreadHandler(void* token, illformed_handler_info_type handler_info);
+    static illformed_handler_info_type fastformat_impl_handlers_getDefaultIllformedHandler(void* token);
+
+    static mismatched_handler_info_type fastformat_impl_handlers_getMismatchedProcessHandler(void* token);
+    static mismatched_handler_info_type fastformat_impl_handlers_setMismatchedProcessHandler(void* token, mismatched_handler_info_type handler_info);
+    static mismatched_handler_info_type fastformat_impl_handlers_getMismatchedThreadHandler(void* token);
+    static mismatched_handler_info_type fastformat_impl_handlers_setMismatchedThreadHandler(void* token, mismatched_handler_info_type handler_info);
+    static mismatched_handler_info_type fastformat_impl_handlers_getDefaultMismatchedHandler(void* token);
 
 }; /* class ximpl_core */
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -117,3 +137,5 @@ public:
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

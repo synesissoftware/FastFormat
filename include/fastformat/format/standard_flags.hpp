@@ -48,35 +48,39 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS
 #define FASTFORMAT_INCL_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_REVISION  8
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_EDIT      12
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_EDIT      17
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT
 # include <fastformat/internal/stlsoft.h>   /* for sint16_t */
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -84,8 +88,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Constants and definitions
+ * constants and definitions
  */
 
 namespace flags
@@ -105,24 +110,26 @@ const ::stlsoft::sint16_t   ff_flush    =   0x0002;
 
 } /* namespace flags */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

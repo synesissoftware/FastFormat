@@ -1,7 +1,8 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    fastformat/shims/conversion/filter_type/reals.hpp
  *
- * Purpose: FastFormat argument conversion shim for floating-point types.
+ * Purpose: FastFormat argument conversion shim for floating-point
+ *              types.
  *
  * Created: 1st June 2008
  * Updated: 16th October 2026
@@ -48,20 +49,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS
 #define FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_EDIT      9
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_REVISION  2
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_EDIT      15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -70,18 +72,20 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 #include <fastformat/internal/stlsoft.h>
 #include <fastformat/quality/contract.h>
-#include <fastformat/util/string/snprintf.h>
 
 #include <stlsoft/string/shim_string.hpp>
 
+#include <fastformat/util/string/snprintf.h>
+
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -113,11 +117,6 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(double value, doubl
     // under -Werror, and compiler snprintf signatures vary.
     int n = fastformat_util_snprintf(r.data(), r.size(), fmt, value);
 
-    if(n < 0)
-    {
-        n = 0;
-    }
-
     r.truncate(static_cast<size_t>(n));
 
     return r;
@@ -135,7 +134,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(float value, float 
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -145,7 +144,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(float value, float 
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
@@ -155,3 +154,5 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(float value, float 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

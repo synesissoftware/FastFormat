@@ -48,41 +48,49 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef STLSOFT_INCL_STLSOFT_H_STLSOFT
 # include <stlsoft/stlsoft.h>
 #endif /* !STLSOFT_INCL_STLSOFT_H_STLSOFT */
-#if !defined(_STLSOFT_VER) || \
-    _STLSOFT_VER < 0x010981ff
-# error Requires STLSoft 1.9.129, or later. (www.stlsoft.org)
-#endif /* STLSoft version */
 
-#if _STLSOFT_VER < 0x010a0000 && \
-    defined(_STLSOFT_1_10_VER) && \
-    _STLSOFT_1_10_VER < 0x010a0109
-
-# error Not all aspects of FastFormat work with STLSoft 1.10 versions between 1.10.1 alpha 1 and 1.10.1 alpha 8. If you wish to use STLSoft 1.10 alpha with FastFormat, please download the latest version from www.stlsoft.org
-
-#endif /* STLSoft 1.10.1 alpha 1 - alpha 8 */
-
+#if 0
+#elif defined(STLSOFT_VER) && \
+      STLSOFT_VER >= 0x010c0000
+# define FASTFORMAT_STLSOFT_1_12_OR_LATER
+#elif defined(_STLSOFT_VER) && \
+      _STLSOFT_VER >= 0x010a0181
+# define FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+#else /* ? STLSoft 1.10+/1.12+ */
+# if !defined(_STLSOFT_VER) || \
+     _STLSOFT_VER < 0x010981ff
+#  error Requires STLSoft 1.9.129, or later. (www.stlsoft.org)
+# endif /* STLSoft version */
+# if _STLSOFT_VER < 0x010a0000 && \
+     defined(_STLSOFT_1_10_VER) && \
+     _STLSOFT_1_10_VER < 0x010a0109
+#  error Not all aspects of FastFormat work with STLSoft 1.10 versions between 1.10.1 alpha 1 and 1.10.1 alpha 8. If you wish to use STLSoft 1.10 alpha with FastFormat, please download the latest version from www.stlsoft.org
+# endif /* STLSoft 1.10.1 alpha 1 - alpha 8 */
+#endif /* STLSoft 1.12+ */
 
 #ifdef _STLSOFT_NO_NAMESPACE
 # error FastFormat requires that STLSoft`s namespace has not been disabled
 #endif /* _STLSOFT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

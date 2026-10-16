@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CHAR_BUFFER
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CHAR_BUFFER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_MINOR       2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_REVISION    3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_EDIT        16
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_REVISION    4
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_EDIT        20
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -78,8 +81,9 @@
 
 #include <stdexcept>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -89,8 +93,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into char_buffer instructions
@@ -117,6 +122,7 @@ public:
 #ifdef STLSOFT_CF_STATIC_ARRAY_SIZE_DETERMINATION_SUPPORT
     /// Constructs from a character array
     template <size_t N>
+    explicit
     char_buffer_sink(char_type (&ar)[N])
         : m_capacity(N)
         , m_len(0)
@@ -193,8 +199,9 @@ private: // Not to be implemented
     class_type& operator =(class_type const&);
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Formats into a char_buffer
@@ -207,8 +214,9 @@ inline char_buffer_sink& fmt_slices(char_buffer_sink& sink, int flags, size_t cc
     return sink.write(cchTotal, numResults, results, flags);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -221,3 +229,5 @@ inline char_buffer_sink& fmt_slices(char_buffer_sink& sink, int flags, size_t cc
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CHAR_BUFFER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

@@ -1,4 +1,3 @@
-
 #include <fastformat/implicit_link.h>
 
 #include <platformstl/platformstl.h>
@@ -7,6 +6,6 @@
 # include <unixem/implicit_link.h>
 #endif /* operating system */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

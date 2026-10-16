@@ -50,8 +50,9 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_THREADING
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_THREADING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -59,16 +60,16 @@
 #include <platformstl/platformstl.h>
 #include <platformstl/synch/util/features.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifdef FASTFORMAT_MT
 # undef FASTFORMAT_MT
 #endif /* FASTFORMAT_MT */
 
-#if 0
-#elif defined(FASTFORMAT_FORCE_MT)
+#if defined(FASTFORMAT_FORCE_MT)
 # define FASTFORMAT_MT
 #elif !defined(FASTFORMAT_NO_MT)
 # if defined(PLATFORMSTL_OS_IS_UNIX)
@@ -91,3 +92,5 @@
 #endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_THREADING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

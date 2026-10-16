@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    examples/example.inserter.integers.WindowsLargeIntegers/example.inserter.integers.WindowsLargeIntegers.cpp
+ * File:    example.inserter.integers.WindowsLargeIntegers.cpp
  *
- * Purpose: Example for Windows large-integer inserters.
+ * Purpose: Implementation file for the example.inserter.integers.WindowsLargeIntegers project.
  *
  * Created: 30th November 2010
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>
@@ -25,7 +30,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
   { // LARGE_INTEGER
     LARGE_INTEGER li;
@@ -42,6 +47,24 @@ static int main_(int /*argc*/, char* /*argv*/[])
 
     ff::writeln(std::cout, "uli: ", ff::to_i(uli));
   }
+
+
+  { // LARGE_INTEGER
+    LARGE_INTEGER li;
+
+    li.QuadPart = STLSOFT_GEN_SINT64_SUFFIX(0x1234567890abcdef);
+
+    ff::fmtln(std::cout, "li:  {0}", ff::to_i(li));
+  }
+
+  { // ULARGE_INTEGER
+    ULARGE_INTEGER uli;
+
+    uli.QuadPart = STLSOFT_GEN_UINT64_SUFFIX(0x1234567890abcdef);
+
+    ff::fmtln(std::cout, "uli: {0}", ff::to_i(uli));
+  }
+
 
   return EXIT_SUCCESS;
 }
@@ -64,6 +87,6 @@ int main(int argc, char* argv[])
   return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -51,27 +51,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRING_ARRAY
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRING_ARRAY
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MAJOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       8
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,17 +82,18 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
 # include <platformstl/exception/platformstl_exception.hpp>
-#else
+#else /* ? STLSoft version */
 # include <platformstl/error/exceptions.hpp>
-#endif
+#endif /* STLSoft version */
 #include <stlsoft/memory/auto_buffer.hpp>
 
 #include <string>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -99,8 +103,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into an entry in an array of strings
@@ -187,8 +192,9 @@ private:
     std::string m_delim;
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a string array sink.
@@ -201,8 +207,9 @@ inline string_array_sink& fmt_slices(string_array_sink& sink, int flags, size_t 
     return sink.write(numResults, results, flags);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -215,3 +222,5 @@ inline string_array_sink& fmt_slices(string_array_sink& sink, int flags, size_t 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_STRING_ARRAY */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

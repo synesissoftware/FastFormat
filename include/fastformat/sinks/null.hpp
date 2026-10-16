@@ -48,35 +48,39 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_NULL
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_NULL
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_NULL_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_NULL_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_NULL_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_NULL_EDIT       7
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_NULL_EDIT       10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 #include <fastformat/format/standard_flags.hpp>
 #include <fastformat/quality/contract.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -86,8 +90,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A class that acts as a bit-bucket sink
@@ -110,8 +115,9 @@ public: // Construction
     {}
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>null_sink</code> sink.
@@ -142,8 +148,9 @@ inline null_sink&
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -156,3 +163,5 @@ inline null_sink&
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_NULL */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

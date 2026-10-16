@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE
 #define FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_REVISION   10
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_EDIT       17
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_EDIT       22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */
@@ -85,8 +88,9 @@
 /* C++ Standard header files */
 #include <stdexcept>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -94,8 +98,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A resource bundle that reads Open-RJ Jar files
@@ -131,13 +136,17 @@ public:
         : m_database(open_ns_(source, flags))
     {}
 
-    ~openrj_bundle() ss_noexcept_k;
+    ~openrj_bundle() STLSOFT_NOEXCEPT;
+private:
+    openrj_bundle(class_type const&);           // copy-construction proscribed
+    class_type& operator =(class_type const&);  // copy-assignment proscribed
 /// @}
 
 /// \name Accessors
 /// @{
 public:
     string_type operator [](char const *name) const /* throw(std::out_of_range) */;
+
     template <typename S>
     string_type operator [](S const& name) const /* throw(std::out_of_range) */
     {
@@ -165,24 +174,24 @@ private:
 /// \name Members
 /// @{
 private:
-    ::openrj::ORJDatabase const *m_database;
-/// @}
-
-/// \name Not to be implemented
-/// @{
-private:
-    openrj_bundle(class_type const&);
-    class_type& operator =(class_type const&);
+    ::openrj::ORJDatabase const* const m_database;
 /// @}
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline /* static */ ::openrj::ORJDatabase const *openrj_bundle::open_(char const *source, unsigned flags)
+inline
+/* static */
+::openrj::ORJDatabase const*
+openrj_bundle::open_(
+    char const* source
+,   unsigned    flags
+)
 {
 #if !defined(ORJ_NO_NAMESPACE)
     using namespace openrj;
@@ -221,11 +230,16 @@ inline /* static */ ::openrj::ORJDatabase const *openrj_bundle::open_(char const
     return database;
 }
 
-inline openrj_bundle::openrj_bundle(char const *source, unsigned flags)
+inline
+openrj_bundle::openrj_bundle(
+    char const* source
+,   unsigned    flags
+)
     : m_database(open_ns_(source, flags))
 {}
 
-inline openrj_bundle::~openrj_bundle() ss_noexcept_k
+inline
+openrj_bundle::~openrj_bundle() STLSOFT_NOEXCEPT
 {
 #if !defined(ORJ_NO_NAMESPACE)
     using namespace openrj;
@@ -237,7 +251,11 @@ inline openrj_bundle::~openrj_bundle() ss_noexcept_k
     }
 }
 
-inline openrj_bundle::string_type openrj_bundle::operator [](char const *name) const /* throw(std::out_of_range) */
+inline
+openrj_bundle::string_type
+openrj_bundle::operator [](
+    char const* name
+) const /* throw(std::out_of_range) */
 {
 #if !defined(ORJ_NO_NAMESPACE)
     using namespace openrj;
@@ -257,16 +275,26 @@ inline openrj_bundle::string_type openrj_bundle::operator [](char const *name) c
 
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

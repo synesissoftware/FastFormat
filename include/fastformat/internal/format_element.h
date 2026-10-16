@@ -54,14 +54,16 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FORMAT_ELEMENT
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FORMAT_ELEMENT
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -69,19 +71,21 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Constants and definitions
+ * constants and definitions
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-#define FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_LITERAL_       (-1)
-#define FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_INVALID_       (-2)
+#define FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_LITERAL_   (-1)
+#define FASTFORMAT_INTERNAL_FORMAT_ELEMENT_INDEX_INVALID_   (-2)
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -143,8 +147,9 @@ struct ff_format_element_t
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -156,3 +161,5 @@ struct ff_format_element_t
 #endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FORMAT_ELEMENT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

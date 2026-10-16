@@ -1,14 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/unit/test.unit.shims.fast_integers/test.unit.shims.fast_integers.cpp
+ * File:    test.unit.inserters.integer.cpp
  *
- * Purpose: Unit tests for shims.fast_integers.
+ * Purpose: Implementation file for the test.unit.inserters.integer project.
  *
  * Created: 11th December 2010
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test component header file include(s)
@@ -18,15 +20,13 @@
 
 #include <fastformat/shims/conversion/filter_type/fast_integers.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* xTests header files */
 #include <xtests/xtests.h>
-#if _XTESTS_VER < 0x001203ff
-# error xTests v0.18.3 or later required
-#endif
 
 /* STLSoft header files */
 #include <stlsoft/stlsoft.h>
@@ -47,24 +47,24 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL_(x, a)    XTESTS_TEST_WIDE_STRING_EQUAL(x, a)
-# define XTESTS_TEST_STRING_EQUAL(x, a)     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
-# define std_string                         std::wstring
-# define XTESTS_TEST_FIIS_EXPR_t2s(x)       stlsoft::w2a(x).c_str()
+
+# define XTESTS_TEST_STRING_EQUAL_(x, a)                    XTESTS_TEST_WIDE_STRING_EQUAL(x, a)
+# define XTESTS_TEST_STRING_EQUAL(x, a)                     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
+# define std_string                                         std::wstring
+# define XTESTS_TEST_FIIS_EXPR_t2s(x)                       stlsoft::w2a(x).c_str()
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL_          XTESTS_TEST_MULTIBYTE_STRING_EQUAL
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
-# define std_string                         std::string
-# define XTESTS_TEST_FIIS_EXPR_t2s(x)       x
+
+# define XTESTS_TEST_STRING_EQUAL_                          XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+# define std_string                                         std::string
+# define XTESTS_TEST_FIIS_EXPR_t2s(x)                       x
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
-
-
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
 #define XTESTS_TEST_FIIS_EXPR(expected, actual) \
@@ -87,12 +87,12 @@
 
 #define XTESTS_TEST_FIIS_EQUAL(expected, actual)    XTESTS_TEST_FIIS_EQUAL_(FF_STR(expected), actual)
 
-    
+
 /* std::string(stlsoft::a2t"" #actual */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -111,22 +111,14 @@ namespace
     static void test_1_10(void);
     static void test_1_11(void);
     static void test_1_12(void);
-    static void test_1_13(void);
-    static void test_1_14(void);
-    static void test_1_15(void);
-    static void test_1_16(void);
-    static void test_1_17(void);
-    static void test_1_18(void);
-    static void test_1_19(void);
-
 } // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -148,14 +140,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_10);
         XTESTS_RUN_CASE(test_1_11);
         XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -166,7 +150,7 @@ int main(int argc, char **argv)
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -252,7 +236,6 @@ namespace
         ,   comp
         );
     }
-
 
 
 static void test_1_0()
@@ -541,37 +524,9 @@ static void test_1_12()
 #endif /* 0 */
 }
 
-static void test_1_13()
-{
-}
-
-static void test_1_14()
-{
-}
-
-static void test_1_15()
-{
-}
-
-static void test_1_16()
-{
-}
-
-static void test_1_17()
-{
-}
-
-static void test_1_18()
-{
-}
-
-static void test_1_19()
-{
-}
-
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

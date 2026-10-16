@@ -1,21 +1,22 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/component/test.component.sink.string.fmt/test.component.sink.string.fmt.cpp
+ * File:    test.component.sink.string.fmt.cpp
  *
- * Purpose: Component tests for sink.string.fmt.
+ * Purpose: Implementation file for the test.component.sink.string.fmt project.
  *
  * Created: 19th December 2007
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
 #if 1
-# include <stlsoft/string/simple_string.hpp>
+# include <stlsoft/string/simple_string.hpp> // hack (for now) for GCC phase
 #endif
 
 /* FastFormat header files */
@@ -36,9 +37,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -46,7 +46,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -83,11 +83,9 @@ namespace
     static void test_2_0();
     static void test_2_1();
     static void test_2_2();
-    static void test_2_3();
     static void test_2_4();
     static void test_2_5();
     static void test_2_6();
-    static void test_2_7();
     static void test_2_8();
     static void test_2_9();
     static void test_2_10();
@@ -138,11 +136,9 @@ static int main_(int argc, char* argv[])
         XTESTS_RUN_CASE(test_2_0);
         XTESTS_RUN_CASE(test_2_1);
         XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
         XTESTS_RUN_CASE(test_2_4);
         XTESTS_RUN_CASE(test_2_5);
         XTESTS_RUN_CASE(test_2_6);
-        XTESTS_RUN_CASE(test_2_7);
         XTESTS_RUN_CASE(test_2_8);
         XTESTS_RUN_CASE(test_2_9);
         XTESTS_RUN_CASE(test_2_10);
@@ -160,15 +156,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -193,9 +187,8 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -213,12 +206,14 @@ namespace
     typedef std::basic_string<ff_char_t>    string_t;
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL(x, a)     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
+
+# define XTESTS_TEST_STRING_EQUAL(x, a)                     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
 static void test_1_0_a()
@@ -487,8 +482,6 @@ static void test_1_10()
 }
 
 
-
-
 static void test_2_0()
 {
     string_t    sink;
@@ -522,9 +515,6 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL("abcdef|  abcdef  |bcde", sink.c_str());
 }
 
-static void test_2_3()
-{
-}
 
 static void test_2_4()
 {
@@ -559,9 +549,6 @@ static void test_2_6()
     XTESTS_TEST_STRING_EQUAL("abcdef|  abcdef  |bcde", sink.c_str());
 }
 
-static void test_2_7()
-{
-}
 
 static void test_2_8()
 {
@@ -610,6 +597,6 @@ static void test_2_11()
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

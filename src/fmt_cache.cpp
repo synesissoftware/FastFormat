@@ -40,15 +40,11 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/format_element.h>
 #include <fastformat/internal/threading.h>
 #include <fastformat/init_codes.h>
@@ -67,14 +63,12 @@
 #include <stlsoft/string/string_view.hpp>
 #include <stlsoft/synch/lock_scope.hpp>
 
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if defined(_DEBUG) && \
+    defined(PLATFORMSTL_OS_IS_WINDOWS)
 # include <winstl/memory/processheap_allocator.hpp>
 #endif /* VC++ _DEBUG */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC)
+#if defined(STLSOFT_COMPILER_IS_MSVC)
 # pragma warning(disable : 4702) // suppresses "unreachable code"
 #endif /* compiler */
 
@@ -84,22 +78,23 @@
 
 #include <ctype.h>
 
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(STLSOFT_COMPILER_IS_MSVC)
+#if defined(_DEBUG) && \
+    defined(STLSOFT_COMPILER_IS_MSVC)
 # include <crtdbg.h>
 #endif
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation selection
+ * implementation selection
  */
 
 //#define _FASTFORMAT_USE_TSS_CACHE
 //#define _FASTFORMAT_USE_1PHASE_CACHE
 #define _FASTFORMAT_USE_2PHASE_CACHE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -107,8 +102,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Types & Non-local variables
+ * types & non-local variables
  */
 
 namespace
@@ -117,9 +113,8 @@ namespace
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if defined(_DEBUG) && \
+    defined(PLATFORMSTL_OS_IS_WINDOWS)
         return ::HeapAlloc(::GetProcessHeap(), 0, cb);
 #else /* ? VC++ _DEBUG */
         return ::operator new(cb);
@@ -130,9 +125,8 @@ namespace
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if defined(_DEBUG) && \
+    defined(PLATFORMSTL_OS_IS_WINDOWS)
         ::HeapFree(::GetProcessHeap(), 0, pv);
 #else /* ? VC++ _DEBUG */
         ::operator delete(pv);
@@ -152,19 +146,18 @@ namespace
 /* That weird linker defect with VC++ 8+ raises its ugly head again
  * here, so we have to specialise in more details. Super-boring
  */
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER >= 1400
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER >= 1400
     typedef stlsoft::basic_string_view<
         ff_char_t
     ,   std::char_traits<ff_char_t>
     ,   std::allocator<ff_char_t>
-    >                                               pattern_t;
+    >                                                       pattern_t;
 #else /* ? compiler */
 # ifdef FASTFORMAT_USE_WIDE_STRINGS
-    typedef stlsoft::wstring_view                   pattern_t;
+    typedef stlsoft::wstring_view                           pattern_t;
 # else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-    typedef stlsoft::string_view                    pattern_t;
+    typedef stlsoft::string_view                            pattern_t;
 # endif /* FASTFORMAT_USE_WIDE_STRINGS */
 #endif /* compiler */
 
@@ -222,14 +215,16 @@ namespace
     {
     private: /// Member Types
 #ifdef FASTFORMAT_MT
-        typedef ::platformstl::thread_mutex             mutex_type_;
+        typedef ::platformstl::thread_mutex                 mutex_type_;
 #else /* ? FASTFORMAT_MT */
-        typedef ::stlsoft::null_mutex                   mutex_type_;
+        typedef ::stlsoft::null_mutex                       mutex_type_;
 #endif /* FASTFORMAT_MT */
-        typedef stlsoft::shared_ptr<pattern_record_t>   record_ptr_type_;
+        typedef stlsoft::shared_ptr<pattern_record_t>       record_ptr_type_;
         // Allocator value_type is the map pair, not the key.
-        typedef std::pair<pattern_t const, record_ptr_type_>
-                                                        map_value_type_;
+        typedef std::pair<
+            pattern_t const
+        ,   record_ptr_type_
+        >                                                   map_value_type_;
         typedef std::map<   pattern_t
                         ,   record_ptr_type_
 #if !defined(UNIXSTL_OS_IS_MACOSX)
@@ -250,8 +245,8 @@ namespace
 #  endif /* VC++ _DEBUG */
 # endif /* compiler */
 #endif /* UNIXSTL_OS_IS_MACOSX */
-                        >                               map_type_;
-        typedef stlsoft::auto_buffer<format_element_t>  format_elements_type_;
+                        >                                   map_type_;
+        typedef stlsoft::auto_buffer<format_element_t>      format_elements_type_;
 
     public: /// Construction
         void* operator new(size_t cb);
@@ -282,8 +277,9 @@ namespace
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 // class ximpl_core
@@ -337,7 +333,9 @@ void ximpl_core::fastformat_impl_formatCache_uninit(void* token)
 
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != token, "token must not be null");
 
-    delete static_cast<format_cache*>(token);
+    format_cache* const ctxt = static_cast<format_cache*>(token);
+
+    delete ctxt;
 }
 
 unsigned ximpl_core::fastformat_impl_formatCache_lookupPattern(
@@ -395,8 +393,7 @@ unsigned format_cache::lookup_pattern(
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
-#if 0
-#elif defined(_FASTFORMAT_USE_TSS_CACHE)
+#if defined(_FASTFORMAT_USE_TSS_CACHE)
     return this->lookup_pattern_tss(pattern, elements);
 #elif defined(_FASTFORMAT_USE_1PHASE_CACHE)
     return this->lookup_pattern_1phase(pattern, elements);
@@ -468,9 +465,8 @@ unsigned format_cache::lookup_pattern_1phase(
 
         STLSOFT_ASSERT(numFormatElements <= formatElements.size());
 
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(STLSOFT_COMPILER_IS_MSVC)
+#if defined(_DEBUG) && \
+    defined(STLSOFT_COMPILER_IS_MSVC)
         // This code ensures that subsequent allocations made in this scope
         // to the MSVCRT heap will not be tracked.
         //
@@ -554,9 +550,8 @@ unsigned format_cache::lookup_pattern_2phase(
 
     FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_RETURN_INTERNAL(numFormatElements <= formatElements.size(), "number of pattern elements calculated cannot be greater than the number specified available");
 
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(STLSOFT_COMPILER_IS_MSVC)
+#if defined(_DEBUG) && \
+    defined(STLSOFT_COMPILER_IS_MSVC)
     // This code ensures that subsequent allocations made in this scope
     // to the MSVCRT heap will not be tracked.
     //
@@ -647,6 +642,8 @@ void pattern_record_t::operator delete(void* pv)
 
 inline ff_char_t* pattern_record_t::get_pattern_memory_() const
 {
+    FASTFORMAT_COVER_MARK_ENTRY();
+
     const size_t    elementsSize    =   offsetElement0
                                     +   ((numFormatElements < 2) ? 2 : numFormatElements) * sizeofElement;
 
@@ -704,6 +701,8 @@ pattern_record_t::pattern_record_t(
 
 pattern_t pattern_record_t::pattern() const
 {
+    FASTFORMAT_COVER_MARK_ENTRY();
+
     /// TODO: place a length record into the memory, between the elements and
     /// the pattern, and then this invocation will not have to do a strlen.
     return pattern_t(get_pattern_memory_(), cchPattern);
@@ -712,8 +711,9 @@ pattern_t pattern_record_t::pattern() const
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -721,3 +721,5 @@ pattern_t pattern_record_t::pattern() const
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

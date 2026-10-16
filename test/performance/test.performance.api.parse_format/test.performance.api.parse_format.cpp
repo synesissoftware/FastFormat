@@ -1,15 +1,19 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/performance/test.performance.api.parse_format/test.performance.api.parse_format.cpp
+ * File:    test.performance.api.parse_format.cpp
  *
- * Purpose: Performance tests for api.parse_format.
+ * Purpose: Implementation file for the test.performance.api.parse_format project.
  *
  * Created: 17th November 2008
  * Updated: 16th October 2026
- *
+ * *
  * ////////////////////////////////////////////////////////////////////// */
 
 //#define FF_PRSFMT_USE_SV_PARAM
 
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
@@ -30,14 +34,14 @@
 /* Standard C header files */
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Constants and definitions
+ * constants and definitions
  */
 
 #ifdef _DEBUG
@@ -54,12 +58,12 @@ platformstl::performance_counter::interval_type (platformstl::performance_counte
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Globals
+ * globals
  */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 typedef stlsoft::string_view    string_view_t;
@@ -81,8 +85,9 @@ enum
     ,   foundAlign      =   0x08
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 int parse_replacement_raw(
@@ -137,8 +142,8 @@ int parse_replacement_std_string(
 int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
     void*                           param
 ,   fastformat::replacement_code_t  code
-,   size_t                          numParameters
-,   int                             parameterIndex
+,   size_t                          numArguments
+,   int                             mismatchedParameterIndex
 ,   fastformat::string_slice_t*     slice
 ,   void*                           reserved0
 ,   size_t                          reserved1
@@ -147,9 +152,10 @@ int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
 
 fastformat::mismatchedHandler_t prev = NULL;
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
     platformstl::performance_counter                counter;
     platformstl::performance_counter::interval_type tmManual;
@@ -429,15 +435,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -458,28 +462,30 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Function definitions
+ * function definitions
  */
 
 int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
-    void*                           param
-,   fastformat::replacement_code_t  code
-,   size_t                          numParameters
-,   int                             parameterIndex
-,   fastformat::string_slice_t*     slice
-,   void*                           reserved0
-,   size_t                          reserved1
-,   void*                           reserved2
+    void*                                   param
+,   fastformat::replacement_code_t          code
+,   size_t                                  numArguments
+,   int                                     mismatchedParameterIndex
+,   fastformat::ff_replacement_action_t*    missingArgumentAction
+,   fastformat::string_slice_t*             slice
+,   void*                                   reserved0
+,   size_t                                  reserved1
+,   void*                                   reserved2
+,   int                                     reserved3
 )
 {
     if (fastformat::FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT == code)
@@ -487,7 +493,7 @@ int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(
         return 0;
     }
 
-    return prev(param, code, numParameters, parameterIndex, slice, reserved0, reserved1, reserved2);
+    return prev(param, code, numArguments, mismatchedParameterIndex, missingArgumentAction, slice, reserved0, reserved1, reserved2, reserved3);
 }
 
 
@@ -1162,3 +1168,5 @@ int parse_replacement_std_string(
 }
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

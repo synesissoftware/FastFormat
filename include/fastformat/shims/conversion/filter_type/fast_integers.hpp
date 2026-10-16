@@ -50,27 +50,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS
 #define FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MAJOR     2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      22
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MINOR     3
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_REVISION  1
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      29
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -86,8 +89,9 @@
 # include <stlsoft/util/integral_printf_traits.hpp>
 #endif /* STLSOFT_LEAD_VER */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -97,8 +101,9 @@ namespace filters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -188,9 +193,8 @@ namespace ximpl_fast_integers
  * short unsigned
  */
 
-#if 0
-#elif defined(STLSOFT_CF_BUILTIN_long_long_SUPPORT) ||\
-      defined(STLSOFT_CF_64BIT_INT_SUPPORT)
+#if defined(STLSOFT_CF_BUILTIN_long_long_SUPPORT) || \
+    defined(STLSOFT_CF_64BIT_INT_SUPPORT)
 
 /** Filtering conversion shim function for implicitly adapting signed
  *  64-bit/<code>long long</code> integers as format arguments.
@@ -208,11 +212,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<ximpl_fast_integers::ff_fi_sint64_t> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -233,11 +237,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<ximpl_fast_integers::ff_fi_uint64_t> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -259,11 +263,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed long> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -283,11 +287,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned long> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -307,11 +311,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed int> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -331,11 +335,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned int> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -355,11 +359,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<signed short> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -379,11 +383,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<unsigned short> r;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
     r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#else
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -391,6 +395,48 @@ filter_type(
 /* ////////////////////////////////////////////////////////////////////// */
 
 #ifdef STLSOFT_CF_INT_DISTINCT_INT_TYPE
+inline
+ximpl_fast_integers::integer_shim<
+    ::stlsoft::sint16_t
+>
+filter_type(
+    ::stlsoft::sint16_t value
+,   ::stlsoft::sint16_t const*
+,   ff_char_t const volatile*
+)
+{
+    ximpl_fast_integers::integer_shim<::stlsoft::sint16_t> r;
+
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else /* ? STLSoft version */
+    r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
+#endif /* STLSoft version */
+
+    return r;
+}
+
+inline
+ximpl_fast_integers::integer_shim<
+    ::stlsoft::uint16_t
+>
+filter_type(
+    ::stlsoft::uint16_t value
+,   ::stlsoft::uint16_t const*
+,   ff_char_t const volatile*
+)
+{
+    ximpl_fast_integers::integer_shim<::stlsoft::uint16_t> r;
+
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else /* ? STLSoft version */
+    r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
+#endif /* STLSoft version */
+
+    return r;
+}
+
 inline
 ximpl_fast_integers::integer_shim<
     ::stlsoft::sint32_t
@@ -403,11 +449,11 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::sint32_t> r;
 
-#if _STLSOFT_VER >= 0x010a0182
-    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#else
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
@@ -424,18 +470,19 @@ filter_type(
 {
     ximpl_fast_integers::integer_shim<::stlsoft::uint32_t> r;
 
-#if _STLSOFT_VER >= 0x010a0182
-    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#else
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
+    r.assign(stlsoft::integer_to_decimal_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, &r.len));
+#else /* ? STLSoft version */
     r.assign(stlsoft::integer_to_string(r.buff, STLSOFT_NUM_ELEMENTS(r.buff), value, r.len));
-#endif
+#endif /* STLSoft version */
 
     return r;
 }
 #endif /* STLSOFT_CF_INT_DISTINCT_INT_TYPE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Shims
+ * shims
  */
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the structure */
@@ -522,8 +569,9 @@ c_str_len(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -644,16 +692,17 @@ c_str_len(
 
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

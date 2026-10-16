@@ -1,12 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    examples/example.overload.3.floatingpoint_columns/example.overload.3.floatingpoint_columns.cpp
+ * File:    example.overload.3.floatingpoint_columns.cpp
  *
- * Purpose: Example for floating-point column overloads.
+ * Purpose: Implementation file for the example.overload.3.floatingpoint_columns
+ *              project.
  *
  * Created: 30th April 2009
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
 
 #include <fastformat/fastformat.h>
 
@@ -167,7 +169,7 @@ int output_by_streams()
 
 int output_by_iostreams()
 {
-    std::cout 
+    std::cout
         << '['
         << std::setiosflags(std::ios::fixed)
         << std::left
@@ -193,7 +195,7 @@ int output_by_iostreams()
 
 FILE* FILE_stm = stdout;
 //#define ff_stm    FILE_stm
-#define ff_stm  std::cout
+#define ff_stm                                              std::cout
 
 int output_by_ff_fmt_1()
 {
@@ -255,6 +257,6 @@ int output_by_boost_2()
 }
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

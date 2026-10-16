@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    examples/example.arguments.void_pointers/example.arguments.void_pointers.cpp
  *
- * Purpose: Example for void-pointer arguments.
+ * Purpose: Implementation file for the example.arguments.void_pointers project.
  *
  * Created: 2nd June 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #define FASTFORMAT_USE_VOID_POINTERS_CONVERSION_SHIMS
@@ -29,7 +34,7 @@ using std::endl;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
     void*                   p   =   &p;
     void const*             pc  =   &pc;
@@ -87,6 +92,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

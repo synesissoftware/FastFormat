@@ -1,6 +1,21 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.8.1-alpha7 - 16th October 2026
+
+* Merged **master** (0.7.4-rc7 boilerplate / CI / CMake modernisation) into **dev-0.8**, retaining the 0.8 API line (`numArguments`, `enum_strings`, STLSoft 1.10+/1.12+ gates) while adopting packed `FASTFORMAT_VER_RELSTATUS`, exception copy/`=delete` hygiene, and `fastformat_util_snprintf` for real filter shims;
+
+## 0.8.1-alpha6 - 29th January 2017
+
+* Prerelease on the 0.8 line (tag **0.8.1-alpha6**);
+* Documentation / distribution catch-up relative to **0.8.1-alpha3**;
+
+## 0.8.1-alpha3 - 28th September 2015
+
+* Renamed `numberOfReplacements` to `numArguments` on `missing_argument_exception`, `mismatched_replacements_exception`, and `unreferenced_argument_exception`;
+* Depends on **STLSoft** 1.9.121 or later;
+
+
 ## 0.7.4-rc7 - 16th October 2026
 
 * Migrated the version low-byte macro to `FASTFORMAT_VER_RELSTATUS` (packed value remains **0x86**; header major/minor/patch unchanged), retaining `FASTFORMAT_VER_ALPHABETA` as a documentation-skip alias;
@@ -39,10 +54,55 @@
 * **VC++** 15/16 compatibility;
 
 
+## 0.7.4-rc4 - 5th February 2017
+
+* **STLSoft** 1.10 compatibility;
+
+
+## 0.7.4-rc3 - 5th February 2017
+
+* Prerelease **0.7.4** RC3;
+
+
+## 0.7.4-rc2 - 30th November 2016
+
+* Fixed defect in `change_windows_replacement_parameters_to_fastformat()` whereby a trailing `%N` was not translated;
+
+
+## 0.7.4-rc1 - 16th August 2016
+
+* Added `CC_CUSTOM_DEFS_DEBUG` / `CC_CUSTOM_DEFS_RELEASE` / `CPPC_CUSTOM_DEFS_DEBUG` / `CPPC_CUSTOM_DEFS_RELEASE`;
+* Made PDB filenames unique across compiler/configurations;
+* Implicit-link support for **VC++** 11/12/14;
+* Changed `throw()` to `ss_noexcept_k` where applicable;
+
+
+## 0.7.3 - 15th August 2016
+
+* **VC++** compatibility fixes;
+* Makefiles for **VC++** 11/12/14;
+* **Clang** compatibility;
+* **STLSoft** 1.10 compatibility fix;
+* More flexible makefiles (non-bundled **shwild** / **xTests** / **xCover** / **xContract**);
+* Allow `TEST_VERBOSITY` to be specified in the environment;
+* Removed redundant `fastformat_getNewlineForPlatform()` invocation;
+
+
+## 0.7.2 - 26th September 2015
+
+* Added missing implicit-link directives for **VC++** 11/12/14;
+
+
 ## 0.7.1 - 26th September 2015
 
 * **Clang** compatibility;
 * **VC++** 11/12/14 compatibility;
+
+
+## 0.7.1-alpha10 - 25th September 2015
+
+* Makefiles for **VC++** 11/12/14;
+* Makefile / distribution updates ahead of **0.7.1**;
 
 
 ## 0.7.1-alpha9 - 17th August 2012

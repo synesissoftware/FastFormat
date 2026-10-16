@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      7
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      12
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,8 +82,9 @@
 
 #include <windows.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -105,8 +109,9 @@ struct OutputDebugString_helper
 };
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for sending a statement to Windows' <code>OutputDebugString()</code>.
@@ -156,8 +161,9 @@ public:
     }
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices to Windows'
@@ -170,8 +176,9 @@ inline OutputDebugString_sink& fmt_slices(OutputDebugString_sink& sink, int flag
     return sink.write(flags, cchTotal, numResults, results);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -179,16 +186,17 @@ inline OutputDebugString_sink& fmt_slices(OutputDebugString_sink& sink, int flag
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

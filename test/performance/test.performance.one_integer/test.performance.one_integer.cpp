@@ -1,20 +1,26 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/performance/test.performance.one_integer/test.performance.one_integer.cpp
+ * File:    test.performance.one_integer.cpp
  *
- * Purpose: Performance tests for one_integer.
+ * Purpose: Implementation file for the test.performance.one_integer project.
  *
  * Created: 9th September 2006
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
-/* STLSoft header files */
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #if defined(_WIN32) && \
     defined(_AFXDLL)
 # include <mfcstl/mfcstl.hpp>
-#endif /* OS */
+#endif
+
 
 /* FastFormat header files */
 #include <fastformat/internal/stlsoft.h>
@@ -133,15 +139,15 @@
 #include <time.h>
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Globals
+/* /////////////////////////////////////////////////////////////////////////
+ * globals
  */
 
 extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.one_integer";
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Forward declarations
+/* /////////////////////////////////////////////////////////////////////////
+ * forward declarations
  */
 
 static std::string  with_Streams(int value);
@@ -161,7 +167,7 @@ static std::string  with_FF_Write(int value);
 static std::string  with_FF_Format(int value);
 
 
-/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////// */
 
 static int main_(int argc, char* argv[])
 {
@@ -697,12 +703,12 @@ int main(int argc, char *argv[])
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Conversion Functions
+ * conversion functions
  */
 
 static std::string with_Streams(int value)
 {
-    char num[21];
+    char    num[21];
 
     return std::string(num, size_t(::snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), "%d", value)));
 }
@@ -790,6 +796,6 @@ static std::string with_FF_Format(int value)
     return str;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

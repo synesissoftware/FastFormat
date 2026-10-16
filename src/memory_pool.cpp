@@ -40,15 +40,11 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/init_codes.h>
 #include <fastformat/quality/contract.h>
@@ -70,8 +66,9 @@
 
 #include <string.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -79,8 +76,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Types & Non-local variables
+ * types & non-local variables
  */
 
 namespace
@@ -101,9 +99,8 @@ namespace
 
             cbActual = (cbActual + 15) & ~(15);
 
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if defined(_DEBUG) && \
+    defined(PLATFORMSTL_OS_IS_WINDOWS)
             memory_pool_entry_t*  entry = static_cast<memory_pool_entry_t*>(::HeapAlloc(::GetProcessHeap(), 0, cbActual));
 #else /* ? VC++ _DEBUG */
             memory_pool_entry_t*  entry = static_cast<memory_pool_entry_t*>(::malloc(cbActual));
@@ -121,9 +118,8 @@ namespace
         }
         static void free(void* pv)
         {
-#if 0
-#elif defined(_DEBUG) &&\
-      defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if defined(_DEBUG) && \
+    defined(PLATFORMSTL_OS_IS_WINDOWS)
             ::HeapFree(::GetProcessHeap(), 0, pv);
 #else /* ? VC++ _DEBUG */
             ::free(pv);
@@ -142,7 +138,7 @@ namespace
 
     public: /// Construction
         memory_pool_t();
-        ~memory_pool_t() stlsoft_throw_0();
+        ~memory_pool_t() STLSOFT_NOEXCEPT;
     private:
         memory_pool_t(memory_pool_t const&);
         memory_pool_t& operator =(memory_pool_t const&);
@@ -151,9 +147,8 @@ namespace
         void* alloc(size_t cb);
 
     private:
-#if 0
-#elif defined(FASTFORMAT_MT) &&\
-      defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
+#if defined(FASTFORMAT_MT) && \
+    defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
         platformstl::spin_mutex::atomic_int_type    m_mxCount;
 #else /* ? FASTFORMAT_MT && PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS */
         mx_type_                                    m_mx;
@@ -163,8 +158,9 @@ namespace
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 int ximpl_core::fastformat_impl_memoryPool_init(void** ptoken)
@@ -210,7 +206,7 @@ void ximpl_core::fastformat_impl_memoryPool_uninit(void* token)
 
     FASTFORMAT_COVER_MARK_ENTRY();
 
-    memory_pool_t* ctxt = static_cast<memory_pool_t*>(token);
+    memory_pool_t* const ctxt = static_cast<memory_pool_t*>(token);
 
     delete ctxt;
 }
@@ -231,9 +227,8 @@ namespace
 {
 
     memory_pool_t::memory_pool_t()
-#if 0
-#elif defined(FASTFORMAT_MT) &&\
-      defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
+#if defined(FASTFORMAT_MT) && \
+    defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
         : m_mxCount(0)
 #else /* ? FASTFORMAT_MT && PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS */
         : m_mx()
@@ -241,7 +236,7 @@ namespace
         , m_head(NULL)
     {}
 
-    memory_pool_t::~memory_pool_t() stlsoft_throw_0()
+    memory_pool_t::~memory_pool_t() STLSOFT_NOEXCEPT
     {
         // 0. Deallocate all entries in memory pool
         { for(memory_pool_entry_t* entry = m_head; NULL != entry; )
@@ -263,9 +258,8 @@ namespace
         // 2. multithreading on a platform that has atomic integer operations
         // 3. multithreading on a platform that does not have atomic integer operations
 
-#if 0
-#elif defined(FASTFORMAT_MT) &&\
-      defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
+#if defined(FASTFORMAT_MT) && \
+    defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
 
         // 2.
 
@@ -294,8 +288,9 @@ namespace
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -303,3 +298,5 @@ namespace
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

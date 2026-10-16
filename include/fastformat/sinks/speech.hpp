@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SPEECH
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SPEECH
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MINOR    3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     21
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     25
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
@@ -72,8 +74,9 @@
 # error The speech_sink component is currently implemented only on Windows, using SAPI; contributions for Mac, Linux and others are welcomed
 #endif /* OS */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -87,8 +90,9 @@
 #include <stlsoft/smartptr/ref_ptr.hpp>
 #include <stlsoft/memory/auto_buffer.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -98,8 +102,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into speech
@@ -181,7 +186,7 @@ private: // Implementation
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT
         if(FAILED(hr))
         {
-// TODO:            throw 
+// TODO:            throw
         }
 #else /* STLSOFT_CF_EXCEPTION_SUPPORT */
         STLSOFT_SUPPRESS_UNUSED(hr);
@@ -196,8 +201,9 @@ private: // Member Variables
     const int               m_flags;
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a speech sink.
@@ -210,8 +216,9 @@ inline speech_sink& fmt_slices(speech_sink& sink, int flags, size_t cchTotal, si
     return sink.write(flags, cchTotal, numResults, results);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -224,3 +231,5 @@ inline speech_sink& fmt_slices(speech_sink& sink, int flags, size_t cchTotal, si
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SPEECH */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

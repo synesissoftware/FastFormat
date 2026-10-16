@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE
 #define FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       23
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_REVISION   2
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       25
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 1
+ * includes - 1
  */
 
 /* FastFormat header files */
@@ -78,8 +81,9 @@
 /* STLSoft header files */
 #include <stlsoft/stlsoft.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #if _STLSOFT_VER >= 0x010101ff && \
@@ -88,8 +92,9 @@
 # define FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE
 #endif /* STLSoft 1.10a1+ */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 2
+ * includes - 2
  */
 
 /* STLSoft header files */
@@ -107,8 +112,9 @@
 #include <stdexcept>
 #include <string>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -116,8 +122,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A resource bundle that reads properties files
@@ -140,7 +147,7 @@ private:
         string_type
     ,   string_type
     >                                       map_type_;
-    typedef map_type_                       map_init_type_;
+    typedef map_type_ const                 map_init_type_;
 #endif /* FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE */
 /// @}
 
@@ -164,13 +171,23 @@ public:
         : m_properties(open_ns_(source))
     {}
 
-    ~properties_bundle() ss_noexcept_k;
+    ~properties_bundle() STLSOFT_NOEXCEPT;
+private:
+    properties_bundle(class_type const&);       // copy-construction proscribed
+    class_type& operator =(class_type const&);  // copy-assigment proscribed
 /// @}
 
 /// \name Accessors
 /// @{
 public:
+    /// Obtains the value of the given key
+    ///
+    /// \exception std::out_of_range Thrown if no entry matches the given key
     string_type operator [](char const* name) const /* throw(std::out_of_range) */;
+
+    /// Obtains the value of the given key
+    ///
+    /// \exception std::out_of_range Thrown if no entry matches the given key
     template <typename S>
     string_type operator [](S const& name) const /* throw(std::out_of_range) */
     {
@@ -193,7 +210,7 @@ private:
         return open_(FASTFORMAT_INVOKE_c_str_ptr_(source));
     }
 
-    static map_init_type_ open_(char const *name);
+    static map_init_type_ const open_(char const *name);
 /// @}
 
 /// \name Members
@@ -201,22 +218,21 @@ private:
 private:
     map_type_ const m_properties;
 /// @}
-
-/// \name Not to be implemented
-/// @{
-private:
-    properties_bundle(class_type const&);
-    class_type& operator =(class_type const&);
-/// @}
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline /* static */ properties_bundle::map_init_type_ properties_bundle::open_(char const *name)
+inline
+/* static */
+properties_bundle::map_init_type_ const
+properties_bundle::open_(
+    char const* name
+)
 {
 # ifdef FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE
 
@@ -256,14 +272,22 @@ inline /* static */ properties_bundle::map_init_type_ properties_bundle::open_(c
 # endif /* FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE */
 }
 
-inline properties_bundle::properties_bundle(char const *source)
+inline
+properties_bundle::properties_bundle(
+    char const* source
+)
     : m_properties(open_(source))
 {}
 
-inline properties_bundle::~properties_bundle() ss_noexcept_k
+inline
+properties_bundle::~properties_bundle() STLSOFT_NOEXCEPT
 {}
 
-inline properties_bundle::string_type properties_bundle::operator [](char const *name) const /* throw(std::out_of_range) */
+inline
+properties_bundle::string_type
+properties_bundle::operator [](
+    char const* name
+) const /* throw(std::out_of_range) */
 {
 # ifdef FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE
 
@@ -287,16 +311,19 @@ inline properties_bundle::string_type properties_bundle::operator [](char const 
 
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////// */
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

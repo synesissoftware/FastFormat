@@ -48,25 +48,28 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_F
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_F
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_REVISION  6
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_EDIT      9
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_F_EDIT      15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/inserters/real.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -76,8 +79,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of a floating-point value
@@ -90,7 +94,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> to_f(
     double const&   value
 )
 {
-    return 
+    return
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
@@ -115,15 +119,16 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> to_f(
 ,   int             decimalPlaces
 )
 {
-    return 
+    return
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
         real(value, minimumWidth, decimalPlaces, 'f');
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -132,16 +137,17 @@ using ::fastformat::inserters::to_f;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_F */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/component/test.component.sink.CComBSTR/test.component.sink.CComBSTR.cpp
+ * File:    test.component.sink.CComBSTR.cpp
  *
- * Purpose: Component tests for sink.CComBSTR.
+ * Purpose: Implementation file for the test.component.sink.CComBSTR project.
  *
  * Created: 14th September 2010
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
@@ -32,9 +33,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -42,7 +42,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -96,15 +96,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -129,9 +127,8 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -148,7 +145,7 @@ namespace
 
     typedef CComBSTR    string_t;
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
 static void test_1_1()
@@ -265,6 +262,6 @@ static void test_1_10()
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.sink.auto_buffer/test.scratch.sink.auto_buffer.cpp
+ * File:    test.component.sink.auto_buffer.cpp
  *
- * Purpose: Scratch program for sink.auto_buffer.
+ * Purpose: Implementation file for the test.component.sink.auto_buffer project.
  *
  * Created: 21st April 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #define FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS // VC++ 6 can't distinguish the auto_buffer action shim from the generic string one
@@ -51,25 +56,24 @@ namespace std
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #if 0
-typedef std::string     string_t;
+typedef std::string                                         string_t;
 #endif /* 0 */
 
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
     stlsoft::auto_buffer<char>          buff1(1);
     stlsoft::auto_buffer<char, 100>     buff2(1);
@@ -87,15 +91,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -120,15 +122,14 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

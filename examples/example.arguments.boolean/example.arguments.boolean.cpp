@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    examples/example.arguments.boolean/example.arguments.boolean.cpp
  *
- * Purpose: Example for boolean arguments.
+ * Purpose: Implementation file for the example.arguments.boolean project.
  *
  * Created: 2nd June 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>
@@ -29,22 +34,24 @@ using std::endl;
 /* Standard C header files */
 #include <stdlib.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #ifdef FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT
 # error Cannot compile this file with a compiler that does not support the filter_type mechanism
 #endif /* FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define    stm     std::wcout
+# define    stm                                             std::wcout
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define    stm     std::cout
+# define    stm                                             std::cout
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
     const bool  True    =   true;
@@ -77,6 +84,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

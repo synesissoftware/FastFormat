@@ -10,8 +10,9 @@
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */
@@ -29,11 +30,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
+
 
 /* ////////////////////////////////////////////////////////////////////// */
 
@@ -72,6 +75,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

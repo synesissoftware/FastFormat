@@ -1,17 +1,19 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    examples/example.overload.2.custom_type.inserter/example.overload.2.custom_type.inserter.cpp
  *
- * Purpose: Example for custom-type overload via inserter.
+ * Purpose: Implementation file for the example.overload.2.custom_type.inserter project.
  *
  * Created: 2nd March 2009
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Custom types
+ * custom types
  *
  * We put this at the start of the file, to emulate the circumstances where
  * the application specific types are in a header, which, of course, would
@@ -46,14 +48,13 @@ public: /// Member Variables
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
 #include <fastformat/bundles/properties_bundle.hpp>
-#include <fastformat/util/string/snprintf.h>
 
 /* STLSoft header files */
 
@@ -67,11 +68,23 @@ public: /// Member Variables
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/* /////////////////////////////////////////////////////////////////////////
+ * compatibility
+ */
+
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER >= 1400
+ /* This is legitimate *only* in the case of the behaviour of this code */
+# include <windows.h>
+# define sprintf                                            wsprintf
+#endif /* VC++ 8+ */
+
 #include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 std::string edna_1(superhero const& hero);
@@ -87,27 +100,20 @@ std::string edna_5(superhero const& hero, ff::properties_bundle const& appBundle
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 std::string edna_1(superhero const& hero)
 {
-  using fastformat::fastformat_util_snprintf;
-
   std::string result;
   char        num[21];
-  int         n;
-
   result += hero.name;
   result += " {weight=";
-  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.weight);
-  result.append(num, n < 0 ? size_t(0) : size_t(n));
+  result.append(num, (size_t)sprintf(num, "%d", hero.weight));
   result += ", strength=";
-  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.strength);
-  result.append(num, n < 0 ? size_t(0) : size_t(n));
+  result.append(num, (size_t)sprintf(num, "%d", hero.strength));
   result += ", goodness=";
-  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.goodness);
-  result.append(num, n < 0 ? size_t(0) : size_t(n));
+  result.append(num, (size_t)sprintf(num, "%d", hero.goodness));
   result += '}';
 
   return result;
@@ -115,23 +121,16 @@ std::string edna_1(superhero const& hero)
 
 std::string edna_2(superhero const& hero)
 {
-  using fastformat::fastformat_util_snprintf;
-
   std::string result;
   char        num[21];
-  int         n;
-
   result.reserve(hero.name.size() + 32 + (3 * 20));
   result += hero.name;
   result += " {weight=";
-  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.weight);
-  result.append(num, n < 0 ? size_t(0) : size_t(n));
+  result.append(num, (size_t)sprintf(num, "%d", hero.weight));
   result += ", strength=";
-  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.strength);
-  result.append(num, n < 0 ? size_t(0) : size_t(n));
+  result.append(num, (size_t)sprintf(num, "%d", hero.strength));
   result += ", goodness=";
-  n = fastformat_util_snprintf(num, STLSOFT_NUM_ELEMENTS(num), "%d", hero.goodness);
-  result.append(num, n < 0 ? size_t(0) : size_t(n));
+  result.append(num, (size_t)sprintf(num, "%d", hero.goodness));
   result += '}';
 
   return result;
@@ -162,6 +161,8 @@ std::string edna_4(superhero const& hero)
 std::string edna_5(superhero const& hero, ff::properties_bundle const& appBundle)
 {
   std::string result;
+  // Materialise the format string: operator[] returns by value, and fmt
+  // needs a stable format buffer for the call.
   std::string const format = appBundle["superhero.format"];
 
   ff::fmt(result, format
@@ -267,6 +268,7 @@ int main(int argc, char* argv[])
     }
     catch(std::exception& x)
     {
+        // iostreams only — avoid FastFormat re-entry from a catch handler
         std::cerr << "exception: " << x.what() << std::endl;
     }
     catch(...)
@@ -277,5 +279,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

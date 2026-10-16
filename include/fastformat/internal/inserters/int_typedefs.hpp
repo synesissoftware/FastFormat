@@ -48,8 +48,9 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_INSERTERS_HPP_INT_TYPEDEFS
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_INSERTERS_HPP_INT_TYPEDEFS
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -58,13 +59,13 @@
 
 #include <stlsoft/string/shim_string.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER < 1300
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER < 1300
  /* can't use shim string with some old compilers - not clear why - so
   * must use a string type. stlsoft::simple_string is used because it
   * guarantees contiguous storage, so can sprintf() into its buffer
@@ -73,8 +74,9 @@
 # include <stlsoft/string/simple_string.hpp>
 #endif
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -84,8 +86,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -101,8 +104,9 @@ typedef stlsoft::basic_shim_string<ff_char_t, 20>       ff_to_i_r_t_;
 } /* namespace ximpl_integer */
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -110,16 +114,17 @@ typedef stlsoft::basic_shim_string<ff_char_t, 20>       ff_to_i_r_t_;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_INSERTERS_HPP_INT_TYPEDEFS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

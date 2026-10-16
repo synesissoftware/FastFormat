@@ -52,8 +52,9 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_HPP_INITIALISER
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_INITIALISER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Feature discrimination
+ * feature discrimination
  */
 
 /* Which diagnostic output to use if initialisation fails */
@@ -77,8 +78,9 @@
 # endif /* compiler / OS */
 #endif
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT
@@ -107,8 +109,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /**  Schwarz Counter initialiser for the FastFormat library
@@ -204,7 +207,7 @@ private:
             LPCTSTR strings[2] = { FASTFORMAT_LITERAL_STRING("process"), message };
             ::ReportEvent(h, EVENTLOG_ERROR_TYPE, 0, 1001, 0, 2, 0, strings, 0);
             ::DeregisterEventSource(h);
-        }        
+        }
     }
 #endif // FASTFORMAT_INIT_FAILURE_REPORT_VIA_WINDOWS_LOGGING
     static void record_init_failure_(int r)
@@ -275,10 +278,12 @@ namespace
     /// ensures that the FastFormat library is initialised prior to use.
     static fastformat_initialiser    s_fastformat_initialiser;
 
-} /* anonymous namespace */
+} // anonymous namespace
 
 /* ////////////////////////////////////////////////////////////////////// */
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_HPP_INITIALISER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

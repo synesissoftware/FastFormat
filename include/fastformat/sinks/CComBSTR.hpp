@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CCOMBSTR
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CCOMBSTR
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_EDIT       16
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_EDIT       19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,8 +82,9 @@
 
 #include <atlbase.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,8 +94,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>CComBSTR</code> sink.
@@ -171,8 +176,9 @@ inline CComBSTR& fmt_slices(CComBSTR& sink, int flags, size_t cchTotal, size_t n
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -185,3 +191,5 @@ inline CComBSTR& fmt_slices(CComBSTR& sink, int flags, size_t cchTotal, size_t n
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CCOMBSTR */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

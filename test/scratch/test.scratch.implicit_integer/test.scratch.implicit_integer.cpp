@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.implicit_integer/test.scratch.implicit_integer.cpp
+ * File:    test.scratch.implicit_integer.cpp
  *
- * Purpose: Scratch program for implicit_integer.
+ * Purpose: Implementation file for the test.scratch.implicit_integer project.
  *
  * Created: 1st June 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -26,9 +31,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -36,7 +40,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #if 0
@@ -45,7 +49,7 @@ typedef std::string     string_t;
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Filters
+ * filters
  */
 
 namespace fastformat
@@ -56,14 +60,19 @@ namespace fastformat
         inline std::string filter_type(double t, double const*, char const volatile*)
         {
             char    num[100];
-            int     n = fastformat_util_snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), "%G", t);
+            int     n = fastformat::util::fastformat_util_snprintf(
+                            &num[0]
+                        ,   STLSOFT_NUM_ELEMENTS(num)
+                        ,   "%G"
+                        ,   t
+                        );
 
             if(n < 0)
             {
                 n = 0;
             }
 
-            return std::string(num, static_cast<size_t>(n));
+            return std::string(num, n);
         }
 
         inline std::string filter_type(float t, float const*, char const volatile*)
@@ -80,7 +89,7 @@ namespace fastformat
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
     ff::writeln(std::cout, "1", " + ", "2", " = ", "3");
 
@@ -109,15 +118,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -127,10 +134,8 @@ int main(int argc, char* argv[])
 
     try
     {
-#if 0
-#elif defined(_DEBUG) ||\
-      defined(__SYNSOFT_DBS_DEBUG)
-
+#if defined(_DEBUG) || \
+    defined(__SYNSOFT_DBS_DEBUG)
         puts("test.scratch.implicit_integer: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -149,15 +154,14 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -44,14 +44,22 @@
 
 // #define FASTFORMAT_DO_NOT_DETECT_UNREFERENCED_ARGUMENTS // This is not defined by default, but unreferenced arguments are not always a defect
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 0
+ * includes - 0
  */
 
 #include <stlsoft/stlsoft.h>
 
+#include "ximpl_core.hpp"
+
+#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
+#endif
+
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #if 0
@@ -62,15 +70,11 @@
 #else
 #endif
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 1
+ * includes - 1
  */
 
-#include "ximpl_core.hpp"
-
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/exceptions.hpp>
 #include <fastformat/init_codes.h>
@@ -90,8 +94,9 @@
 #include <new>
 #include <stdexcept>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -99,59 +104,50 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Types & Non-local variables
+ * types & non-local variables
  */
 
 namespace
 {
 
-    struct ff_illformed_handler_info_t_
-        : public ff_illformed_handler_info_t
+    /* /////////////////////////////////////////////////////////////////////
+     * constants
+     */
+
+    ff_illformedHandler_info_t const s_emptyIllformedHandler    =   { NULL, NULL };
+    ff_mismatchedHandler_info_t const s_emptyMismatchedHandler  =   { NULL, NULL };
+
+
+    /* /////////////////////////////////////////////////////////////////////
+     * helper functions
+     */
+
+    void
+    swap_handler(
+        ff_illformedHandler_info_t&     lhs
+    ,   ff_illformedHandler_info_t&     rhs
+    )
     {
-    public:
-        ff_illformed_handler_info_t_()
-        {
-            handler =   NULL;
-            param   =   NULL;
-        }
-        ff_illformed_handler_info_t_(fastformat_illformedHandler_t h, void* p)
-        {
-            handler =   h;
-            param   =   p;
-        }
+        std::swap(lhs.handler, rhs.handler);
+        std::swap(lhs.param, rhs.param);
+    }
 
-    public:
-        void swap(ff_illformed_handler_info_t_& rhs)
-        {
-            std::swap(handler, rhs.handler);
-            std::swap(param, rhs.param);
-        }
-    };
-
-    struct ff_mismatched_handler_info_t_
-        : public ff_mismatched_handler_info_t
+    void
+    swap_handler(
+        ff_mismatchedHandler_info_t&    lhs
+    ,   ff_mismatchedHandler_info_t&    rhs
+    )
     {
-        ff_mismatched_handler_info_t_()
-        {
-            handler =   NULL;
-            param   =   NULL;
-        }
-        ff_mismatched_handler_info_t_(fastformat_mismatchedHandler_t h, void* p)
-        {
-            handler =   h;
-            param   =   p;
-        }
-
-    public:
-        void swap(ff_mismatched_handler_info_t_& rhs)
-        {
-            std::swap(handler, rhs.handler);
-            std::swap(param, rhs.param);
-        }
-    };
+        std::swap(lhs.handler, rhs.handler);
+        std::swap(lhs.param, rhs.param);
+    }
 
 
+    /* /////////////////////////////////////////////////////////////////////
+     * Classes
+     */
 
     class defectHandlers_context_t
     {
@@ -159,12 +155,12 @@ namespace
 #ifdef FASTFORMAT_MT
         struct slot_type_
         {
-            ff_illformed_handler_info_t_    illformedHandler;
-            ff_mismatched_handler_info_t_   mismatchedHandler;
+            ff_illformedHandler_info_t      illformedHandler;
+            ff_mismatchedHandler_info_t     mismatchedHandler;
         };
-        typedef platformstl::thread_mutex   mx_type_;
+        typedef platformstl::thread_mutex                       mx_type_;
 #else /* ? FASTFORMAT_MT */
-        typedef stlsoft::null_mutex         mx_type_;
+        typedef stlsoft::null_mutex                             mx_type_;
 #endif /* FASTFORMAT_MT */
 
     public: /// Construction
@@ -174,36 +170,43 @@ namespace
         defectHandlers_context_t& operator =(defectHandlers_context_t const&);
 
     public: /// Operations
-        ff_illformed_handler_info_t_    getIllformedProcessHandler() const;
-        ff_illformed_handler_info_t_    setIllformedProcessHandler(fastformat_illformedHandler_t handler, void* param);
+        ff_illformedHandler_info_t  getIllformedProcessHandler() const;
+        ff_illformedHandler_info_t  setIllformedProcessHandler(ff_illformedHandler_info_t handler_info);
 
-        ff_illformed_handler_info_t_    getIllformedThreadHandler() const;
-        ff_illformed_handler_info_t_    setIllformedThreadHandler(fastformat_illformedHandler_t handler, void* param);
+        ff_illformedHandler_info_t  getIllformedThreadHandler() const;
+        ff_illformedHandler_info_t  setIllformedThreadHandler(ff_illformedHandler_info_t handler_info);
 
 
-        ff_mismatched_handler_info_t_   getMismatchedProcessHandler() const;
-        ff_mismatched_handler_info_t_   setMismatchedProcessHandler(fastformat_mismatchedHandler_t handler, void* param);
+        ff_mismatchedHandler_info_t getMismatchedProcessHandler() const;
+        ff_mismatchedHandler_info_t setMismatchedProcessHandler(ff_mismatchedHandler_info_t handler_info);
 
-        ff_mismatched_handler_info_t_   getMismatchedThreadHandler() const;
-        ff_mismatched_handler_info_t_   setMismatchedThreadHandler(fastformat_mismatchedHandler_t handler, void* param);
+        ff_mismatchedHandler_info_t getMismatchedThreadHandler() const;
+        ff_mismatchedHandler_info_t setMismatchedThreadHandler(ff_mismatchedHandler_info_t handler_info);
+
+    private: /// Implementation
+#ifdef FASTFORMAT_MT
+        slot_type_*         get_slot_();
+        slot_type_ const*   get_slot_() const;
+#endif /* FASTFORMAT_MT */
 
     private: /// Member Variables
         mx_type_                            m_mx;
 #ifdef FASTFORMAT_MT
         platformstl::tss_index              m_key;
 #endif /* FASTFORMAT_MT */
-        ff_illformed_handler_info_t_        m_illformedProcessHandler;
-        ff_mismatched_handler_info_t_       m_unmatchedProcessHandler;
+        ff_illformedHandler_info_t          m_illformedProcessHandler;
+        ff_mismatchedHandler_info_t         m_unmatchedProcessHandler;
 #ifndef FASTFORMAT_MT
-        ff_illformed_handler_info_t_        m_illformedThreadHandler;
-        ff_mismatched_handler_info_t_       m_unmatchedThreadHandler;
+        ff_illformedHandler_info_t          m_illformedThreadHandler;
+        ff_mismatchedHandler_info_t         m_unmatchedThreadHandler;
 #endif /* !FASTFORMAT_MT */
     };
 
 } // anonymous namespace
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation Functions
+ * implementation functions
  */
 
 int ximpl_core::fastformat_impl_handlers_init(void** ptoken)
@@ -247,12 +250,12 @@ void ximpl_core::fastformat_impl_handlers_uninit(void* token)
 {
     FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_STATE_INTERNAL(NULL != token, "FastFormat error handlers have not been initialised");
 
-    defectHandlers_context_t* ctxt = static_cast<defectHandlers_context_t*>(token);
+    defectHandlers_context_t* const ctxt = static_cast<defectHandlers_context_t*>(token);
 
     delete ctxt;
 }
 
-ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_getIllformedProcessHandler(void* token)
+ff_illformedHandler_info_t ximpl_core::fastformat_impl_handlers_getIllformedProcessHandler(void* token)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -263,7 +266,7 @@ ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_getIllformedPro
     return ctxt->getIllformedProcessHandler();
 }
 
-ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_setIllformedProcessHandler(void* token, fastformat_illformedHandler_t handler, void* param)
+ff_illformedHandler_info_t ximpl_core::fastformat_impl_handlers_setIllformedProcessHandler(void* token, ff_illformedHandler_info_t handler_info)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -271,10 +274,10 @@ ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_setIllformedPro
 
     defectHandlers_context_t* ctxt = static_cast<defectHandlers_context_t*>(token);
 
-    return ctxt->setIllformedProcessHandler(handler, param);
+    return ctxt->setIllformedProcessHandler(handler_info);
 }
 
-ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_getIllformedThreadHandler(void* token)
+ff_illformedHandler_info_t ximpl_core::fastformat_impl_handlers_getIllformedThreadHandler(void* token)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -285,7 +288,7 @@ ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_getIllformedThr
     return ctxt->getIllformedThreadHandler();
 }
 
-ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_setIllformedThreadHandler(void* token, fastformat_illformedHandler_t handler, void* param)
+ff_illformedHandler_info_t ximpl_core::fastformat_impl_handlers_setIllformedThreadHandler(void* token, ff_illformedHandler_info_t handler_info)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -293,11 +296,11 @@ ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_setIllformedThr
 
     defectHandlers_context_t* ctxt = static_cast<defectHandlers_context_t*>(token);
 
-    return ctxt->setIllformedThreadHandler(handler, param);
+    return ctxt->setIllformedThreadHandler(handler_info);
 }
 
 
-ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_getMismatchedProcessHandler(void* token)
+ff_mismatchedHandler_info_t ximpl_core::fastformat_impl_handlers_getMismatchedProcessHandler(void* token)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -308,7 +311,7 @@ ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_getMismatchedP
     return ctxt->getMismatchedProcessHandler();
 }
 
-ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_setMismatchedProcessHandler(void* token, fastformat_mismatchedHandler_t handler, void* param)
+ff_mismatchedHandler_info_t ximpl_core::fastformat_impl_handlers_setMismatchedProcessHandler(void* token, ff_mismatchedHandler_info_t handler_info)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -316,10 +319,10 @@ ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_setMismatchedP
 
     defectHandlers_context_t* ctxt = static_cast<defectHandlers_context_t*>(token);
 
-    return ctxt->setMismatchedProcessHandler(handler, param);
+    return ctxt->setMismatchedProcessHandler(handler_info);
 }
 
-ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_getMismatchedThreadHandler(void* token)
+ff_mismatchedHandler_info_t ximpl_core::fastformat_impl_handlers_getMismatchedThreadHandler(void* token)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -330,7 +333,7 @@ ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_getMismatchedT
     return ctxt->getMismatchedThreadHandler();
 }
 
-ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_setMismatchedThreadHandler(void* token, fastformat_mismatchedHandler_t handler, void* param)
+ff_mismatchedHandler_info_t ximpl_core::fastformat_impl_handlers_setMismatchedThreadHandler(void* token, ff_mismatchedHandler_info_t handler_info)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
@@ -338,118 +341,78 @@ ff_mismatched_handler_info_t ximpl_core::fastformat_impl_handlers_setMismatchedT
 
     defectHandlers_context_t* ctxt = static_cast<defectHandlers_context_t*>(token);
 
-    return ctxt->setMismatchedThreadHandler(handler, param);
+    return ctxt->setMismatchedThreadHandler(handler_info);
 }
 
 
 namespace
 {
 
-#ifdef STLSOFT_CF_EXCEPTION_SUPPORT
-    int FASTFORMAT_CALLCONV fastformat_stock_illformedHandler_throw(
-        void*            /* param */
-    ,   ff_parse_code_t     code
-    ,   ff_char_t const*    format
-    ,   size_t              formatLen
-    ,   size_t           /* replacementIndex */
-    ,   ff_char_t const* /* defect */
-    ,   size_t           /* defectLen */
-    ,   int              /* parameterIndex */
-    ,   void*            /* reserved0 */
-    ,   size_t           /* reserved1 */
-    ,   void*            /* reserved2 */
-    )
-    {
-        // Simplistic factory for exceptions
-
-        FASTFORMAT_COVER_MARK_ENTRY();
-
-        switch(code)
-        {
-            default:
-                FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("unknown parse code");
-                break;
-            case    FF_PARSECODE_SUCCESS:
-                FASTFORMAT_CONTRACT_ENFORCE_UNEXPECTED_CONDITION_INTERNAL("handler invoked with success parse code");
-                break;
-            case    FF_PARSECODE_INCOMPLETEREPLACEMENT:
-                throw illformed_format_exception("ill-formed format: incomplete replacement", code, format, formatLen);
-            case    FF_PARSECODE_INVALIDINDEX:
-                throw illformed_format_exception("ill-formed format: invalid index", code, format, formatLen);
-        }
-
-        return 0;
-    }
-#endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
-
-    int FASTFORMAT_CALLCONV fastformat_stock_illformedHandler_ignore(
-        void*            /* param */
-    ,   ff_parse_code_t  /* code */
-    ,   ff_char_t const* /* format */
-    ,   size_t           /* formatLen */
-    ,   size_t           /* replacementIndex */
-    ,   ff_char_t const* /* defect */
-    ,   size_t           /* defectLen */
-    ,   int              /* parameterIndex */
-    ,   void*            /* reserved0 */
-    ,   size_t           /* reserved1 */
-    ,   void*            /* reserved2 */
-    )
-    {
-        // No-op
-
-        return 0; // Return 0 to indicate
-    }
-
-
     defectHandlers_context_t::defectHandlers_context_t()
         : m_mx()
 #ifdef FASTFORMAT_MT
         , m_key()
 #endif /* FASTFORMAT_MT */
-        , m_illformedProcessHandler(fastformat_stock_illformedHandler_throw, NULL)
-        , m_unmatchedProcessHandler()
+        , m_illformedProcessHandler(s_emptyIllformedHandler)
+        , m_unmatchedProcessHandler(s_emptyMismatchedHandler)
 #ifndef FASTFORMAT_MT
-        , m_illformedThreadHandler()
-        , m_unmatchedThreadHandler()
+        , m_illformedThreadHandler(s_emptyIllformedHandler)
+        , m_unmatchedThreadHandler(s_emptyMismatchedHandler)
 #endif /* !FASTFORMAT_MT */
     {
         FASTFORMAT_COVER_MARK_ENTRY();
     }
 
+#ifdef FASTFORMAT_MT
+    inline
+    defectHandlers_context_t::slot_type_* defectHandlers_context_t::get_slot_()
+    {
+        return static_cast<slot_type_*>(m_key.get_value());
+    }
+    inline
+    defectHandlers_context_t::slot_type_ const* defectHandlers_context_t::get_slot_() const
+    {
+        return static_cast<slot_type_*>(m_key.get_value());
+    }
+#endif /* FASTFORMAT_MT */
 
-    ff_illformed_handler_info_t_ defectHandlers_context_t::getIllformedProcessHandler() const
+    ff_illformedHandler_info_t defectHandlers_context_t::getIllformedProcessHandler() const
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
         return m_illformedProcessHandler;
     }
 
-    ff_illformed_handler_info_t_ defectHandlers_context_t::setIllformedProcessHandler(fastformat_illformedHandler_t handler, void* param)
+    ff_illformedHandler_info_t defectHandlers_context_t::setIllformedProcessHandler(ff_illformedHandler_info_t handler_info)
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        ff_illformed_handler_info_t_    oldHandler(handler, param);
+        ff_illformedHandler_info_t oldHandler = handler_info;
 
         {
             stlsoft::lock_scope<mx_type_> lock(m_mx);
 
             FASTFORMAT_COVER_MARK_ENTRY();
 
-            m_illformedProcessHandler.swap(oldHandler);
+            swap_handler(m_illformedProcessHandler, oldHandler);
         }
 
         return oldHandler;
     }
 
-    ff_illformed_handler_info_t_ defectHandlers_context_t::getIllformedThreadHandler() const
+    ff_illformedHandler_info_t defectHandlers_context_t::getIllformedThreadHandler() const
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
 #ifdef FASTFORMAT_MT
-        slot_type_* slot = static_cast<slot_type_*>(m_key.get_value());
+        slot_type_ const* const slot = get_slot_();
 
-        return (NULL == slot) ? ff_illformed_handler_info_t_() : slot->illformedHandler;
+        if(NULL != slot)
+        {
+            return slot->illformedHandler;
+        }
+
+        return s_emptyIllformedHandler;
 #else /* ? FASTFORMAT_MT */
         // Not multithreading
 
@@ -457,13 +420,13 @@ namespace
 #endif /* FASTFORMAT_MT */
     }
 
-    ff_illformed_handler_info_t_ defectHandlers_context_t::setIllformedThreadHandler(fastformat_illformedHandler_t handler, void* param)
+    ff_illformedHandler_info_t defectHandlers_context_t::setIllformedThreadHandler(ff_illformedHandler_info_t handler_info)
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        ff_illformed_handler_info_t_    oldHandler(handler, param);
+        ff_illformedHandler_info_t      oldHandler = handler_info;
 #ifdef FASTFORMAT_MT
-        slot_type_*                     slot = static_cast<slot_type_*>(m_key.get_value());
+        slot_type_*                     slot = get_slot_();
 
         if(NULL == slot)
         {
@@ -477,20 +440,18 @@ namespace
 
                 throw std::bad_alloc();
             }
-            else
-            {
-                FASTFORMAT_COVER_MARK_ENTRY();
 
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.handler);
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.param);
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.handler);
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.param);
-            }
+            FASTFORMAT_COVER_MARK_ENTRY();
+
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.handler);
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.param);
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.handler);
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.param);
 
             m_key.set_value(slot);
         }
 
-        slot->illformedHandler.swap(oldHandler);
+        swap_handler(slot->illformedHandler, oldHandler);
 #else /* ? FASTFORMAT_MT */
         // Not multithreading
 
@@ -499,7 +460,7 @@ namespace
 
             FASTFORMAT_COVER_MARK_ENTRY();
 
-            m_illformedThreadHandler.swap(oldHandler);
+            swap_handler(m_illformedThreadHandler, oldHandler);
         }
 #endif /* FASTFORMAT_MT */
 
@@ -507,38 +468,43 @@ namespace
     }
 
 
-    ff_mismatched_handler_info_t_ defectHandlers_context_t::getMismatchedProcessHandler() const
+    ff_mismatchedHandler_info_t defectHandlers_context_t::getMismatchedProcessHandler() const
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
         return m_unmatchedProcessHandler;
     }
 
-    ff_mismatched_handler_info_t_ defectHandlers_context_t::setMismatchedProcessHandler(fastformat_mismatchedHandler_t handler, void* param)
+    ff_mismatchedHandler_info_t defectHandlers_context_t::setMismatchedProcessHandler(ff_mismatchedHandler_info_t handler_info)
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        ff_mismatched_handler_info_t_ oldHandler(handler, param);
+        ff_mismatchedHandler_info_t oldHandler = handler_info;
 
         {
             stlsoft::lock_scope<mx_type_> lock(m_mx);
 
             FASTFORMAT_COVER_MARK_ENTRY();
 
-            m_unmatchedProcessHandler.swap(oldHandler);
+            swap_handler(m_unmatchedProcessHandler, oldHandler);
         }
 
         return oldHandler;
     }
 
-    ff_mismatched_handler_info_t_ defectHandlers_context_t::getMismatchedThreadHandler() const
+    ff_mismatchedHandler_info_t defectHandlers_context_t::getMismatchedThreadHandler() const
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
 #ifdef FASTFORMAT_MT
-        slot_type_* slot = static_cast<slot_type_*>(m_key.get_value());
+        slot_type_ const* const slot = get_slot_();
 
-        return (NULL == slot) ? ff_mismatched_handler_info_t_() : slot->mismatchedHandler;
+        if(NULL != slot)
+        {
+            return slot->mismatchedHandler;
+        }
+
+        return s_emptyMismatchedHandler;
 #else /* ? FASTFORMAT_MT */
         // Not multithreading
 
@@ -546,13 +512,13 @@ namespace
 #endif /* FASTFORMAT_MT */
     }
 
-    ff_mismatched_handler_info_t_ defectHandlers_context_t::setMismatchedThreadHandler(fastformat_mismatchedHandler_t handler, void* param)
+    ff_mismatchedHandler_info_t defectHandlers_context_t::setMismatchedThreadHandler(ff_mismatchedHandler_info_t handler_info)
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-        ff_mismatched_handler_info_t_   oldHandler(handler, param);
+        ff_mismatchedHandler_info_t     oldHandler = handler_info;
 #ifdef FASTFORMAT_MT
-        slot_type_*                     slot = static_cast<slot_type_*>(m_key.get_value());
+        slot_type_*                     slot = get_slot_();
 
         if(NULL == slot)
         {
@@ -566,20 +532,18 @@ namespace
 
                 throw std::bad_alloc();
             }
-            else
-            {
-                FASTFORMAT_COVER_MARK_ENTRY();
 
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.handler);
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.param);
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.handler);
-                FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.param);
-            }
+            FASTFORMAT_COVER_MARK_ENTRY();
+
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.handler);
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->illformedHandler.param);
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.handler);
+            FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(NULL == slot->mismatchedHandler.param);
 
             m_key.set_value(slot);
         }
 
-        slot->mismatchedHandler.swap(oldHandler);
+        swap_handler(slot->mismatchedHandler, oldHandler);
 #else /* ? FASTFORMAT_MT */
         // Not multithreading
 
@@ -588,7 +552,7 @@ namespace
 
             FASTFORMAT_COVER_MARK_ENTRY();
 
-            m_unmatchedThreadHandler.swap(oldHandler);
+            swap_handler(m_unmatchedThreadHandler, oldHandler);
         }
 #endif /* FASTFORMAT_MT */
 
@@ -597,32 +561,9 @@ namespace
 
 } // anonymous namespace
 
-ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_getIllformedDefaultHandler(void* token)
-{
-    FASTFORMAT_COVER_MARK_ENTRY();
-
-    FASTFORMAT_CONTRACT_ENFORCE_PRECONDITION_PARAMS_INTERNAL(NULL != token, "token must not be null");
-    STLSOFT_SUPPRESS_UNUSED(token);
-
-    ff_illformed_handler_info_t r;
-
-    r.param     =   NULL;
-
-#ifdef STLSOFT_CF_EXCEPTION_SUPPORT
-    r.handler   =   fastformat_stock_illformedHandler_throw;
-
-    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_illformedHandler_ignore);
-#else /* ? STLSOFT_CF_EXCEPTION_SUPPORT */
-    r.handler   =   fastformat_stock_illformedHandler_ignore;
-
-    STLSOFT_SUPPRESS_UNUSED(fastformat_stock_illformedHandler_throw);
-#endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
-
-    return r;
-}
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -630,3 +571,5 @@ ff_illformed_handler_info_t ximpl_core::fastformat_impl_handlers_getIllformedDef
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

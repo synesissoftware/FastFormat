@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_FILE
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_FILE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   7
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       28
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       36
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -85,8 +88,9 @@
 
 #include <stdio.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -96,8 +100,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Utility class that allows a standard C stream - \c stdout, \c stderr -
@@ -116,7 +121,7 @@ public: // Construction
     )
         : stream(stm)
     {}
-    ~ff_FILE_sink() stlsoft_throw_0()
+    ~ff_FILE_sink() STLSOFT_NOEXCEPT
     {}
 private:
     ff_FILE_sink& operator =(ff_FILE_sink const&);
@@ -126,8 +131,9 @@ public: // Fields
     FILE* const stream;
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Creator functions
+ * creator functions
  */
 
 /** Conversion shim that allows a standard C stream - \c stdout, \c stderr -
@@ -146,8 +152,9 @@ to_sink(FILE* stm)
     return ff_FILE_sink(stm);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>FILE*</code> sink.
@@ -179,6 +186,11 @@ fmt_slices(
 ,   ff_string_slice_t const*    results
 )
 {
+    if(NULL == sink)
+    {
+        return sink;
+    }
+
 #ifndef FASTFORMAT_FILE_SINK_OLD_IMPLEMENTATION
     stlsoft::auto_buffer<ff_char_t> buff(cchTotal + 1 + 1); // 1 for \0, 1 for newline (if needed)
 #else /* ? !FASTFORMAT_FILE_SINK_OLD_IMPLEMENTATION */
@@ -271,8 +283,9 @@ fmt_slices(
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -281,16 +294,17 @@ using sinks::to_sink;
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_FILE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

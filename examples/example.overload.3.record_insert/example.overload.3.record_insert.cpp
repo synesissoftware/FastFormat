@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    examples/example.overload.3.record_insert/example.overload.3.record_insert.cpp
+ * File:    example.overload.3.record_insert.cpp
  *
- * Purpose: Example for record-insert overload.
+ * Purpose: Implementation file for the example.overload.3.record_insert project.
  *
  * Created: 20th September 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
@@ -31,11 +36,11 @@ platformstl_ns_using(performance_counter)
 /* Standard C header files */
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Typedefs
@@ -47,7 +52,7 @@ typedef std::string     string_t;
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Record insertion functions
+ * record insertion functions
  */
 
 const int   intNaN = 0x7fffffff;
@@ -176,7 +181,7 @@ static stlsoft::basic_shim_string<char, 20> make_shim_string(T const& t)
 
 
 static stlsoft::basic_shim_string<char, 20>
-make_slice(const int val)
+ make_slice(const int val)
 {
     if(intNaN == val)
     {
@@ -297,7 +302,7 @@ const size_t ITERATIONS =   1;
 const size_t ITERATIONS =   100000;
 #endif /* _DEBUG */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
     platformstl::performance_counter                counter;
     platformstl::performance_counter::interval_type tm;
@@ -450,15 +455,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -468,10 +471,8 @@ int main(int argc, char* argv[])
 
     try
     {
-#if 0
-#elif defined(_DEBUG) ||\
-      defined(__SYNSOFT_DBS_DEBUG)
-
+#if defined(_DEBUG) || \
+    defined(__SYNSOFT_DBS_DEBUG)
 #endif /* debug */
 
         res = main_(argc, argv);
@@ -488,15 +489,14 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

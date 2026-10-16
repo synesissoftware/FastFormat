@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/component/test.component.sink.ostream/test.component.sink.ostream.cpp
+ * File:    test.component.sink.ostream.cpp
  *
- * Purpose: Component tests for sink.ostream.
+ * Purpose: Implementation file for the test.component.sink.ostream project.
  *
  * Created: 14th September 2010
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -34,9 +39,8 @@
 /* Standard C header files */
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -44,7 +48,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 static void test_1_1();
@@ -95,12 +99,12 @@ typedef std::basic_ostream<ff_char_t>   ostream_t;
 typedef std::basic_ofstream<ff_char_t>  ofstream_t;
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_WIDE_STRING_EQUAL
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_WIDE_STRING_EQUAL
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 static void open_or_throw(
     char const* fileName
@@ -364,6 +368,6 @@ static void open_or_throw(
     stm.open(fileName);
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

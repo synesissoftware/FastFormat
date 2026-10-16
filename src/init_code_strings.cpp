@@ -40,28 +40,26 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/init_codes.h>
 #include <fastformat/quality/contract.h>
 #include <fastformat/quality/cover.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * API
@@ -70,7 +68,7 @@ namespace fastformat
 #ifdef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 struct InitCodeString
 #else /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
-# define InitCodeString        fastformat_src_util_InitCodeString
+# define InitCodeString                                     fastformat_src_util_InitCodeString
 typedef struct InitCodeString  InitCodeString;
 struct InitCodeString
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
@@ -172,8 +170,9 @@ FASTFORMAT_CALL(size_t) fastformat_getInitCodeStringLength(int code)
     return (fastformat_LookupInitCodeStringA_((int)code, &len), len);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -181,3 +180,5 @@ FASTFORMAT_CALL(size_t) fastformat_getInitCodeStringLength(int code)
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

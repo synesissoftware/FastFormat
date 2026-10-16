@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS_EDIT      2
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS_EDIT      7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER
@@ -71,16 +73,17 @@
 # include <fastformat/inserters/LARGE_INTEGER.hpp>
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_LARGE_INTEGER */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_WINDOWSLARGEINTEGERS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

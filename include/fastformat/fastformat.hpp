@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MINOR     4
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      47
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  2
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      54
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 1
+ * includes - 1
  */
 
 #include <fastformat/fastformat.h>
@@ -80,8 +83,9 @@
 #include <fastformat/internal/stlsoft.h>
 #include <fastformat/quality/contract.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 /* FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT
@@ -131,8 +135,9 @@
 # endif /* compiler */
 #endif /* !FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 2
+ * includes - 2
  */
 
 #include <stlsoft/memory/auto_buffer.hpp>
@@ -143,8 +148,9 @@
 #include <stlsoft/string/string_traits.hpp>
 #include <stlsoft/string/string_view.hpp>
 
- /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+
+/* /////////////////////////////////////////////////////////////////////////
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -152,8 +158,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -170,8 +177,9 @@ struct defs
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Creator functions
+ * creator functions
  */
 
 /** [PROVISIONAL] Degenerate conversion shim for specifying a sink.
@@ -188,8 +196,9 @@ to_sink(T& sink)
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Stock sinks
+ * stock sinks
  *
  * This section includes all the implicit action shims that are available
  * for sinks, without the need to explicitly include sinks files (e.g.
@@ -240,8 +249,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Conversion shims for implicit filtering
+ * conversion shims for implicit filtering
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -262,8 +272,9 @@ inline T const& filter_type(T const& t, T const*, C const volatile*)
 } /* namespace filters */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Stock filtering
+ * stock filtering
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -308,8 +319,9 @@ namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -329,6 +341,7 @@ namespace helpers
 } /* namespace helpers */
 } /* namespace internal */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * API functions
@@ -436,6 +449,7 @@ inline S& flush(
     return FASTFORMAT_INVOKE_fmt_slices_(sink, flags::ff_flush, 0, 0, NULL);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * Auto-initialisation
  *
@@ -445,12 +459,9 @@ inline S& flush(
  * To force it for a DLL, define FASTFORMAT_FORCE_AUTO_INIT
  */
 
-#if 0
-#elif 0 ||\
-      defined(__DLL__) /* Borland, with -WD */ ||\
-      defined(_WINDLL) /* VC++, defined by user/wizard */ ||\
-      defined(_USRDLL) /* VC++, defined by user/wizard */ ||\
-      0
+#if defined(__DLL__) /* Borland, with -WD */ || \
+    defined(_WINDLL) /* VC++, defined by user/wizard */ || \
+    defined(_USRDLL) /* VC++, defined by user/wizard */
 # define FASTFORMAT_NO_AUTO_INIT
 #endif /* dynamic library */
 
@@ -463,13 +474,15 @@ inline S& flush(
 # endif /* FASTFORMAT_FORCE_AUTO_INIT || !FASTFORMAT_NO_AUTO_INIT */
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Application-layer includes - 2
@@ -477,20 +490,19 @@ inline S& flush(
 
 #ifndef FASTFORMAT_LEAN_AND_MEAN
 
-
-
 #endif /* !FASTFORMAT_LEAN_AND_MEAN */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

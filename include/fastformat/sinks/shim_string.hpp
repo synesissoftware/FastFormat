@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SHIM_STRING
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SHIM_STRING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_REVISION   5
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       10
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,8 +82,9 @@
 #include <stlsoft/shims/access/string/std/c_string.h>
 #include <stlsoft/string/shim_string.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,8 +94,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #if _STLSOFT_VER < 0x010a0000 && \
@@ -101,8 +106,9 @@ namespace sinks
 # endif /* _STLSOFT_1_10_VER */
 #endif /* _STLSOFT_VER */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** This class acts as a sink for string shims, to be used with STLSoft 1.9
@@ -243,7 +249,7 @@ public: // Operations
 
 public: // Accessors
 
-    /// The string size 
+    /// The string size
     size_type size() const
     {
         STLSOFT_ASSERT(m_len < const_cast<class_type*>(this)->parent_class_type::get_buffer().size());
@@ -262,19 +268,24 @@ private:
 #endif
 };
 
-/* /////////////////////////////////////////////////////////////////////////
- * Action Shims
- */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Shims
+ * action shims
+ */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * shims
  */
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the shim string */
+inline
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_data_w(
+wchar_t const*
+c_str_data_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_data_a(
+char const*
+c_str_data_a(
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
     shim_string_sink const& sink
 )
@@ -283,7 +294,9 @@ inline char const* c_str_data_a(
 }
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the shim string */
-inline ff_char_t const* c_str_data(
+inline
+ff_char_t const*
+c_str_data(
     shim_string_sink const& sink
 )
 {
@@ -291,10 +304,12 @@ inline ff_char_t const* c_str_data(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the shim string */
+inline
+size_t
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline size_t c_str_len_w(
+c_str_len_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline size_t c_str_len_a(
+c_str_len_a(
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
     shim_string_sink const& sink
 )
@@ -303,15 +318,18 @@ inline size_t c_str_len_a(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the shim string */
-inline size_t c_str_len(
+inline
+size_t
+c_str_len(
     shim_string_sink const& sink
 )
 {
     return size_t(sink.size());
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -324,3 +342,5 @@ inline size_t c_str_len(
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

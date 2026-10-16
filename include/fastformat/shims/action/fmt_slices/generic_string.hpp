@@ -6,7 +6,7 @@
  * Created: 19th September 2006
  * Updated: 16th October 2026
  *
- * Thanks:      To Ric Parkin for pointing out the ramifications of
+ * Thanks:  To Ric Parkin for pointing out the ramifications of
  *              21.3.5.2/6 and 21.3.1/6 before I change the definition of
  *              c_str_data[_a|_w] to allow NULL to be returned.
  *
@@ -52,27 +52,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING
 #define FASTFORMAT_INCL_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MAJOR     3
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      23
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      29
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -80,8 +83,9 @@
 #include <fastformat/quality/contract.h>
 #include <fastformat/format/standard_flags.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -91,8 +95,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Overloadable functions
+ * overloadable functions
  */
 
 /** Action shim for generic string types
@@ -108,7 +113,9 @@ namespace sinks
  *   strong guarantee, you should write your own action shim.
  */
 template <typename S>
-inline S& fmt_slices(
+inline
+S&
+fmt_slices(
     S&                          sink
 ,   int                         flags
 ,   size_t                      cchTotal
@@ -138,8 +145,9 @@ inline S& fmt_slices(
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -147,16 +155,17 @@ inline S& fmt_slices(
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

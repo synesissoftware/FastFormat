@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.sink.WindowsConsole/test.scratch.sink.WindowsConsole.cpp
+ * File:    test.scratch.sink.WindowsConsole.cpp
  *
- * Purpose: Scratch program for sink.WindowsConsole.
+ * Purpose: Implementation file for the test.scratch.sink.WindowsConsole project.
  *
  * Created: 6th January 2011
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>
@@ -26,7 +31,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
     /* . */
     ff::writeln(std::cout, "a regular output line");
@@ -61,6 +66,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

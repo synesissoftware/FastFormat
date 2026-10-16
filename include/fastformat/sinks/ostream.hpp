@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OSTREAM
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OSTREAM
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_MINOR       2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_REVISION    2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_EDIT        28
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_EDIT        30
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,8 +82,9 @@
 
 #include <ostream>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,8 +94,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>std::ostream</code> sink.
@@ -135,9 +140,8 @@ inline std::basic_ostream<ff_char_t>& fmt_slices(
             buff.resize(buff.size() - 1);
         }
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER == 1400
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER == 1400
         // VC++ 8 erroneously (at least IMO) asserts on the validity of the
         // pointer given to write() even when count is 0. Other versions
         // (including 9) don't do this, so we won't bother to catch it
@@ -165,8 +169,9 @@ inline std::basic_ostream<ff_char_t>& fmt_slices(
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -179,3 +184,5 @@ inline std::basic_ostream<ff_char_t>& fmt_slices(
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OSTREAM */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

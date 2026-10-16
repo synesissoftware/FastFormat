@@ -1,4 +1,3 @@
-
 #include <fastformat/implicit_link.h>
 
 #include <platformstl/platformstl.h>
@@ -8,4 +7,5 @@
 #endif /* operating system */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

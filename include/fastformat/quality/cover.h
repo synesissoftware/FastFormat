@@ -50,19 +50,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER
 #define FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_EDIT     6
+# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_EDIT     9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -75,8 +77,9 @@
 # endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 #endif /* FASTFORMAT_USE_XCOVER */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_XCOVER
@@ -94,3 +97,5 @@
 #endif /* FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

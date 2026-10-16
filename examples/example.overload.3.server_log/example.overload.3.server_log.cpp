@@ -1,17 +1,23 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    examples/example.overload.3.server_log/example.overload.3.server_log.cpp
+ * File:    example.overload.3.server_log.cpp
  *
- * Purpose: Example for server-log overload.
+ * Purpose: Implementation file for the example.overload.3.server_log
+ *              project.
  *
  * Created: 29th April 2009
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 #include <fastformat/fastformat.h>
 
 #include <inetstl/inetstl.h>
-#include <inetstl/includes/std/in_addr.h>
+#if _STLSOFT_VER >= 0x010a0181
+# include <inetstl/shims/access/string/std/in_addr.hpp>
+#else
+# include <inetstl/includes/std/in_addr.h>
+#endif
 
 #include <platformstl/performance/performance_counter.hpp>
 
@@ -381,7 +387,7 @@ void log_connection_iostreams(connection_t const& conn)
 
 FILE* ff_stm = stdout;
 //#define ff_stm    FILE_stm
-#define ff_stm  std::cout
+#define ff_stm                                              std::cout
 
 void log_connection_ff_fmt_1(connection_t const& conn)
 {
@@ -445,6 +451,6 @@ void log_connection_boost(connection_t const& /* conn */)
 }
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -51,27 +51,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_IOSTREAM
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_IOSTREAM
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       3
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       6
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -84,3 +87,5 @@
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_IOSTREAM */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

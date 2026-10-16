@@ -1,12 +1,13 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    examples/example.iterators.format_iterator/example.iterators.format_iterator.cpp
  *
- * Purpose: Example for format_iterator.
+ * Purpose: Implementation file for the example.iterators.format_iterator project.
  *
  * Created: 26th March 2010
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
 
 /* STLSoft header files */
 #include <stlsoft/stlsoft.h>
@@ -16,6 +17,11 @@
     _MSC_VER >= 1400
 # pragma warning(disable : 4996)
 #endif
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>
@@ -38,23 +44,24 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
 #ifdef FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT
 # error Cannot compile this file with a compiler that does not support the filter_type mechanism
 #endif /* FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
   typedef std::wstring            string_t;
-# define    stm                   std::wcout
+# define    stm                                             std::wcout
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
   typedef std::string             string_t;
-# define    stm                   std::cout
+# define    stm                                             std::cout
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
   typedef std::vector<string_t>   strings_t;
 
@@ -111,6 +118,6 @@ int main(int argc, char* argv[])
   return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

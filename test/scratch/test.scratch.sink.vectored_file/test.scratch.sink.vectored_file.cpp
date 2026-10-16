@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.sink.vectored_file/test.scratch.sink.vectored_file.cpp
+ * File:    test.scratch.sink.vectored_file.cpp
  *
- * Purpose: Scratch program for sink.vectored_file.
+ * Purpose: Implementation file for the test.scratch.sink.vectored_file project.
  *
  * Created: 28th October 2006
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* UNIXem header files */
 #include <platformstl/platformstl.h>
@@ -43,9 +48,9 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 
-/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char ** /*argv*/)
+static int main_(int /* argc */, char* /*argv*/[])
 {
     platformstl::file_path_buffer       path1;
     platformstl::file_path_buffer       path2;
@@ -123,15 +128,13 @@ int main(int argc, char *argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -163,15 +166,14 @@ int main(int argc, char *argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.sink.WindowsMessageBox/test.scratch.sink.WindowsMessageBox.cpp
+ * File:    test.scratch.sink.WindowsMessageBox.cpp
  *
- * Purpose: Scratch program for sink.WindowsMessageBox.
+ * Purpose: Implementation file for the test.scratch.sink.WindowsMessageBox project.
  *
  * Created: 4th January 2009
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/bundles/windows_resource_bundle.hpp>
@@ -30,9 +35,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -128,24 +132,20 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
     try
     {
-#if 0
-#elif defined(_DEBUG) ||\
-      defined(__SYNSOFT_DBS_DEBUG)
-
+#if defined(_DEBUG) || \
+    defined(__SYNSOFT_DBS_DEBUG)
         puts("test.scratch.sink.WindowsMessageBox: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -164,15 +164,14 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

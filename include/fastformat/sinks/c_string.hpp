@@ -50,27 +50,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_C_STRING
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_C_STRING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_EDIT       15
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_REVISION   4
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_EDIT       20
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -80,8 +83,9 @@
 
 #include <stdexcept>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -91,8 +95,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for translating a statement into c_string instructions
@@ -101,15 +106,15 @@ namespace sinks
  */
 class c_string_sink
 {
-public:
+public: // Types
     /// This type
-    typedef c_string_sink       class_type;
+    typedef c_string_sink                                   class_type;
     /// The character type
-    typedef ff_char_t           char_type;
+    typedef ff_char_t                                       char_type;
     /// The size type
-    typedef size_t              size_type;
+    typedef size_t                                          size_type;
 
-public:
+public: // Construction
     /// Constructs from a character buffer
     c_string_sink(size_type n, char_type* buffer)
         : m_capacity(n)
@@ -119,12 +124,16 @@ public:
 #ifdef STLSOFT_CF_STATIC_ARRAY_SIZE_DETERMINATION_SUPPORT
     /// Constructs from a character array
     template <size_t N>
+    explicit
     c_string_sink(char_type (&ar)[N])
         : m_capacity(N)
         , m_len(0)
         , m_buffer(&ar[0])
     {}
 #endif /* STLSOFT_CF_STATIC_ARRAY_SIZE_DETERMINATION_SUPPORT */
+private:
+    c_string_sink(class_type const&);           // copy-construction proscribed
+    class_type& operator =(class_type const&);  // copy-assignment proscribed
 
 public: // Attributes
     /// The number of characters written to the sink
@@ -140,7 +149,13 @@ public: // Attributes
 
 public: // Operations
     /// Outputs the results, according to the given flags
-    class_type& write(size_type cchTotal, size_type numResults, ff_string_slice_t const* results, int flags)
+    class_type&
+    write(
+        size_type                   cchTotal
+    ,   size_type                   numResults
+    ,   ff_string_slice_t const*    results
+    ,   int                         flags
+    )
     {
         const ff_string_slice_t crlf            =   fastformat_getNewlineForPlatform();
 
@@ -186,30 +201,36 @@ public: // Operations
         return *this;
     }
 
-private: // Member variables
-    const size_type     m_capacity;
+private: // Fields
+    size_type const     m_capacity;
     size_t              m_len;
     char_type* const    m_buffer;
-
-private: // Not to be implemented
-    c_string_sink(class_type const&);
-    class_type& operator =(class_type const&);
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Formats into a c_string
  *
  */
-inline c_string_sink& fmt_slices(c_string_sink& sink, int flags, size_t cchTotal, size_t numResults, ff_string_slice_t const* results)
+inline
+c_string_sink&
+fmt_slices(
+    c_string_sink&              sink
+,   int                         flags
+,   size_t                      cchTotal
+,   size_t                      numResults
+,   ff_string_slice_t const*    results
+)
 {
     return sink.write(cchTotal, numResults, results, flags);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -222,3 +243,5 @@ inline c_string_sink& fmt_slices(c_string_sink& sink, int flags, size_t cchTotal
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_C_STRING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

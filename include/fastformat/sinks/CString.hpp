@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_REVISION   4
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       15
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       17
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <afx.h> // MFC requires that it is the first includer of Windows.h
@@ -80,8 +83,9 @@
 
 #include <mfcstl/string/grab_cstring_buffer.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -91,8 +95,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a <code>CString</code> sink.
@@ -138,8 +143,9 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -152,3 +158,5 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

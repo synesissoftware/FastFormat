@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM
 #define FASTFORMAT_INCL_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     5
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -78,8 +81,24 @@
 
 #include <platformstl/filesystem/FILE_stream.hpp>
 
+#include <ios>
+
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * compatibility
+ */
+
+#if _STLSOFT_VER < 0x010a0181
+
+# define FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(x)         stlsoft::x
+#else
+
+# define FASTFORMAT_SINK_STLSOFT_FILE_stream_NS_(x)         platformstl::x
+#endif
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -89,8 +108,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Helper functions
+ * helper functions
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -130,9 +150,8 @@ inline F& fmt_slices_(
 
         // TODO: translate the exceptions into ff::sink_output_exception
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER == 1400
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER == 1400
         // VC++ 8 erroneously (at least IMO) asserts on the validity of the
         // pointer given to write() even when count is 0. Other versions
         // (including 9) don't do this, so we won't bother to catch it
@@ -153,21 +172,23 @@ inline F& fmt_slices_(
 }
 
 } /* namespace ximpl_FILE_stream */
-
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
-/** Writes an array of string slices into a <code>stlsoft::FILE_stream</code> sink.
+/** Writes an array of string slices into
+ * a <code>platformstl::FILE_stream</code> sink.
  */
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER < 1310
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER < 1310
 
-inline stlsoft::FILE_stream& fmt_slices(
-    stlsoft::FILE_stream&       sink
+inline
+platformstl::FILE_stream&
+fmt_slices(
+    platformstl::FILE_stream&   sink
 ,   int                         flags
 ,   size_t                      cchTotal
 ,   size_t                      numResults
@@ -177,7 +198,9 @@ inline stlsoft::FILE_stream& fmt_slices(
     return ximpl_FILE_stream::fmt_slices_(sink, flags, cchTotal, numResults, results);
 }
 
-inline platformstl::thread_shareable_FILE_stream& fmt_slices(
+inline
+platformstl::thread_shareable_FILE_stream&
+fmt_slices(
     platformstl::thread_shareable_FILE_stream&  sink
 ,   int                                         flags
 ,   size_t                                      cchTotal
@@ -187,14 +210,15 @@ inline platformstl::thread_shareable_FILE_stream& fmt_slices(
 {
     return ximpl_FILE_stream::fmt_slices_(sink, flags, cchTotal, numResults, results);
 }
-
 #else /* ? compiler */
 
 template<
     typename R
 ,   typename I
 >
-inline platformstl::FILE_stream_base<R, I>& fmt_slices(
+inline
+platformstl::FILE_stream_base<R, I>&
+fmt_slices(
     platformstl::FILE_stream_base<R, I>&    sink
 ,   int                                     flags
 ,   size_t                                  cchTotal
@@ -204,11 +228,11 @@ inline platformstl::FILE_stream_base<R, I>& fmt_slices(
 {
     return ximpl_FILE_stream::fmt_slices_(sink, flags, cchTotal, numResults, results);
 }
-
 #endif /* compiler */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -216,8 +240,17 @@ inline platformstl::FILE_stream_base<R, I>& fmt_slices(
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

@@ -50,27 +50,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_UTIL_SINKS_HPP_HELPERS
 #define FASTFORMAT_INCL_FASTFORMAT_UTIL_SINKS_HPP_HELPERS
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_MINOR     2
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      16
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_REVISION  1
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_SINKS_HPP_HELPERS_EDIT      18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -86,8 +89,9 @@
 
 #include <string>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -97,8 +101,9 @@ namespace util
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Functions
+ * functions
  */
 
 
@@ -174,8 +179,9 @@ inline size_t concat_slices(size_t cchBuff, ff_char_t* buff, size_t numResults, 
     return total;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -188,3 +194,5 @@ inline size_t concat_slices(size_t cchBuff, ff_char_t* buff, size_t numResults, 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_UTIL_SINKS_HPP_HELPERS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

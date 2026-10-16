@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/component/test.component.inserter.hex/test.component.inserter.hex.cpp
+ * File:    test.component.inserter.hex.cpp
  *
- * Purpose: Component tests for inserter.hex.
+ * Purpose: Implementation file for the test.component.inserter.hex project.
  *
  * Created: 16th January 2010
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
@@ -34,17 +35,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Decimal places expected as correct, per compiler
- */
-
-namespace
-{
-
-} /* anonymous namespace */
-
-
-/* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
@@ -67,11 +58,6 @@ namespace
     static void test_1_14(void);
     static void test_1_15(void);
     static void test_1_16(void);
-    static void test_1_17(void);
-    static void test_1_18(void);
-    static void test_1_19(void);
-    static void test_1_20(void);
-
     static void test_2_0(void);
     static void test_2_1(void);
     static void test_2_2(void);
@@ -89,19 +75,14 @@ namespace
     static void test_2_14(void);
     static void test_2_15(void);
     static void test_2_16(void);
-    static void test_2_17(void);
-    static void test_2_18(void);
-    static void test_2_19(void);
-    static void test_2_20(void);
-
 } // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -127,11 +108,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_1_14);
         XTESTS_RUN_CASE(test_1_15);
         XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
-        XTESTS_RUN_CASE(test_1_20);
-
         XTESTS_RUN_CASE(test_2_0);
         XTESTS_RUN_CASE(test_2_1);
         XTESTS_RUN_CASE(test_2_2);
@@ -149,11 +125,6 @@ int main(int argc, char **argv)
         XTESTS_RUN_CASE(test_2_14);
         XTESTS_RUN_CASE(test_2_15);
         XTESTS_RUN_CASE(test_2_16);
-        XTESTS_RUN_CASE(test_2_17);
-        XTESTS_RUN_CASE(test_2_18);
-        XTESTS_RUN_CASE(test_2_19);
-        XTESTS_RUN_CASE(test_2_20);
-
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -164,26 +135,28 @@ int main(int argc, char **argv)
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
 {
-    using   fastformat::ff_char_t;
+    using fastformat::ff_char_t;
 
     typedef std::basic_string<ff_char_t>    string_t;
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL(x, a)         XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
-# define XTESTS_TEST_STRING_EQUAL_N(x, a, n)    XTESTS_TEST_WIDE_STRING_EQUAL_N(FASTFORMAT_LITERAL_STRING(x), a, n)
-# define XTESTS_TEST_STRING_CONTAIN(x, a)       XTESTS_TEST_WIDE_STRING_CONTAIN(FASTFORMAT_LITERAL_STRING(x), a)
+
+# define XTESTS_TEST_STRING_EQUAL(x, a)                     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
+# define XTESTS_TEST_STRING_EQUAL_N(x, a, n)                XTESTS_TEST_WIDE_STRING_EQUAL_N(FASTFORMAT_LITERAL_STRING(x), a, n)
+# define XTESTS_TEST_STRING_CONTAIN(x, a)                   XTESTS_TEST_WIDE_STRING_CONTAIN(FASTFORMAT_LITERAL_STRING(x), a)
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL               XTESTS_TEST_MULTIBYTE_STRING_EQUAL
-# define XTESTS_TEST_STRING_EQUAL_N             XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N
-# define XTESTS_TEST_STRING_CONTAIN             XTESTS_TEST_MULTIBYTE_STRING_CONTAIN
+
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+# define XTESTS_TEST_STRING_EQUAL_N                         XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N
+# define XTESTS_TEST_STRING_CONTAIN                         XTESTS_TEST_MULTIBYTE_STRING_CONTAIN
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                                  FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
     static string_t crlf(ff::getNewlineForPlatform().ptr, ff::getNewlineForPlatform().len);
 
@@ -340,22 +313,6 @@ static void test_1_16()
     XTESTS_TEST_STRING_EQUAL("0000123456789abc", sink);
 }
 
-static void test_1_17()
-{
-}
-
-static void test_1_18()
-{
-}
-
-static void test_1_19()
-{
-}
-
-static void test_1_20()
-{
-}
-
 
 static void test_2_0()
 {
@@ -510,25 +467,9 @@ static void test_2_16()
     XTESTS_TEST_STRING_EQUAL("0000123456789ABC", sink);
 }
 
-static void test_2_17()
-{
-}
-
-static void test_2_18()
-{
-}
-
-static void test_2_19()
-{
-}
-
-static void test_2_20()
-{
-}
-
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

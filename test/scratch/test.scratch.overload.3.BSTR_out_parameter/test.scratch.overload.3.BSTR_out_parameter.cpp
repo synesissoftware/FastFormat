@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.overload.3.BSTR_out_parameter/test.scratch.overload.3.BSTR_out_parameter.cpp
+ * File:    test.scratch.overload.3.BSTR_out_parameter.cpp
  *
- * Purpose: Scratch program for overload.3.BSTR_out_parameter.
+ * Purpose: Implementation file for the test.scratch.overload.3.BSTR_out_parameter project.
  *
  * Created: 4th January 2009
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 #include <afx.h>
 
@@ -31,15 +36,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward Declarations
+ * forward declarations
  */
 
 HRESULT get_BSTR_original(BSTR* bstr1);
@@ -72,24 +76,20 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
     try
     {
-#if 0
-#elif defined(_DEBUG) ||\
-      defined(__SYNSOFT_DBS_DEBUG)
-
+#if defined(_DEBUG) || \
+    defined(__SYNSOFT_DBS_DEBUG)
         puts("test.scratch.overload.3.BSTR_out_parameter: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -108,9 +108,8 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -119,7 +118,7 @@ int main(int argc, char* argv[])
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 enum dimension_t { X, Y, Z };
@@ -217,6 +216,6 @@ HRESULT GetFilter_new(dimension_t dimension, short index, BSTR* filter)
     return S_OK;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

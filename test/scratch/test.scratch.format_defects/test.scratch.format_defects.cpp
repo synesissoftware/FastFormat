@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.format_defects/test.scratch.format_defects.cpp
+ * File:    test.scratch.format_defects.cpp
  *
- * Purpose: Scratch program for format_defects.
+ * Purpose: Implementation file for the test.scratch.format_defects project.
  *
  * Created: 1st June 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -27,9 +32,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -38,42 +42,82 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
-    fastformat::fmtln(std::cout, "format with two replacements; #1={0}, #2={1}", 10, 200);
+    fastformat::fmtln(std::cout, "format with two replacements: #1={0}; #2={1}", 10, 200);
 
     try
     {
         fastformat::fmtln(std::cout, "{0,", 10);
     }
-    catch(fastformat::illformed_format_exception& x)
-    {
-        fprintf(stdout, "illformed_format_exception: %s\n", x.what());
-    }
     catch(fastformat::format_parsing_exception& x)
     {
-        fprintf(stdout, "format_parsing_exception: %s\n", x.what());
-    }
-    catch(fastformat::missing_argument_exception& x)
-    {
-        fprintf(stdout, "missing_argument_exception: %s\n", x.what());
-    }
-    catch(fastformat::unreferenced_argument_exception& x)
-    {
-        fprintf(stdout, "unreferenced_argument_exception: %s\n", x.what());
+        fprintf(
+                stdout
+            ,   "format_parsing_exception (%s): %s; format='%s'; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.format.c_str()
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
     }
     catch(fastformat::mismatched_replacements_exception& x)
     {
-        fprintf(stdout, "mismatched_replacements_exception: %s\n", x.what());
+        fprintf(
+                stdout
+            ,   "mismatched_replacements_exception (%s): %s; %d arguments; mismatch at parameter %d; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.numArguments
+            ,   x.firstMismatchedReplacementIndex
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
+    }
+    catch(std::exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "std::exception (%s): %s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            );
     }
 
     try
     {
         fastformat::fmtln(std::cout, "format string with no replacements", 10, 200);
     }
-    catch(fastformat::fastformat_exception& x)
+    catch(fastformat::format_parsing_exception& x)
     {
-        fprintf(stdout, "exception: %s\n", x.what());
+        fprintf(
+                stdout
+            ,   "format_parsing_exception (%s): %s; format='%s'; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.format.c_str()
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
+    }
+    catch(fastformat::mismatched_replacements_exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "mismatched_replacements_exception (%s): %s; %d arguments; mismatch at parameter %d; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.numArguments
+            ,   x.firstMismatchedReplacementIndex
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
+    }
+    catch(std::exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "std::exception (%s): %s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            );
     }
 
     try
@@ -82,20 +126,75 @@ static int main_(int /*argc*/, char* /*argv*/[])
 
         fastformat::fmtln(std::cout, "format string with no replacements", 10, 200);
     }
-    catch(fastformat::fastformat_exception& x)
+    catch(fastformat::format_parsing_exception& x)
     {
-        fprintf(stdout, "exception: %s\n", x.what());
+        fprintf(
+                stdout
+            ,   "format_parsing_exception (%s): %s; format='%s'; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.format.c_str()
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
+    }
+    catch(fastformat::mismatched_replacements_exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "mismatched_replacements_exception (%s): %s; %d arguments; mismatch at parameter %d; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.numArguments
+            ,   x.firstMismatchedReplacementIndex
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
+    }
+    catch(std::exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "std::exception (%s): %s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            );
     }
 
     try
     {
         fastformat::fmtln(std::cout, "{0,,,}{1,,,}", 10, 200);
     }
-    catch(fastformat::fastformat_exception& x)
+    catch(fastformat::format_parsing_exception& x)
     {
-        fprintf(stdout, "exception: %s\n", x.what());
+        fprintf(
+                stdout
+            ,   "format_parsing_exception (%s): %s; format='%s'; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.format.c_str()
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
     }
-
+    catch(fastformat::mismatched_replacements_exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "mismatched_replacements_exception (%s): %s; %d arguments; mismatch at parameter %d; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.numArguments
+            ,   x.firstMismatchedReplacementIndex
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
+    }
+    catch(std::exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "std::exception (%s): %s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            );
+    }
 
     try
     {
@@ -103,15 +202,42 @@ static int main_(int /*argc*/, char* /*argv*/[])
 
         std::string str;
 
-        fastformat::fmt(str, "format string with no replacements {0} {1}", 10);
+        fastformat::fmt(str, "format string with insufficient arguments: #1={0}; #2={1}", 10);
 
-        STLSOFT_ASSERT("format string with no replacements 10 " == str);
+        STLSOFT_ASSERT("format string with insufficient arguments: #1=10; #2=" == str);
     }
-    catch(fastformat::fastformat_exception& x)
+    catch(fastformat::format_parsing_exception& x)
     {
-        fprintf(stdout, "exception: %s\n", x.what());
+        fprintf(
+                stdout
+            ,   "format_parsing_exception (%s): %s; format='%s'; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.format.c_str()
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
     }
-
+    catch(fastformat::mismatched_replacements_exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "mismatched_replacements_exception (%s): %s; %d arguments; mismatch at parameter %d; code=%s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            ,   x.numArguments
+            ,   x.firstMismatchedReplacementIndex
+            ,   stlsoft::c_str_ptr_a(x.code)
+            );
+    }
+    catch(std::exception& x)
+    {
+        fprintf(
+                stdout
+            ,   "std::exception (%s): %s\n"
+            ,   typeid(x).name()
+            ,   x.what()
+            );
+    }
 
     return EXIT_SUCCESS;
 }
@@ -120,15 +246,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -153,15 +277,14 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

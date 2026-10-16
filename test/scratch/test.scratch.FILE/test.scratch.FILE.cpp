@@ -1,7 +1,7 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/scratch/test.scratch.FILE/test.scratch.FILE.cpp
+ * File:    test.scratch.FILE.cpp
  *
- * Purpose: Scratch program for FILE.
+ * Purpose: Implementation file for the test.scratch.FILE project.
  *
  * Created: 24th September 2006
  * Updated: 16th October 2026
@@ -25,6 +25,10 @@
 # include <mfcstl/mfcstl.hpp>
 #endif
 
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/sinks/FILE.hpp>
@@ -61,7 +65,7 @@
 #include <stdlib.h>
 
 
-/* /////////////////////////////////////////////////////////////////////////////
+/* /////////////////////////////////////////////////////////////////////////
  * Character-encoding compatibility
  */
 
@@ -74,16 +78,16 @@
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+/* /////////////////////////////////////////////////////////////////////////
+ * macros and definitions
  */
 
 #define FF_STR      FASTFORMAT_LITERAL_STRING
 
 
-/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char** /* argv */)
 {
     {
 #if 1
@@ -352,9 +356,8 @@ int main(int argc, char* argv[])
 
     try
     {
-#if 0
-#elif defined(_DEBUG) ||\
-      defined(__SYNSOFT_DBS_DEBUG)
+#if defined(_DEBUG) || \
+    defined(__SYNSOFT_DBS_DEBUG)
         puts("test.scratch.FILE: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -372,6 +375,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

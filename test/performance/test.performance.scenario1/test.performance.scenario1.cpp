@@ -1,20 +1,26 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    test/performance/test.performance.scenario1/test.performance.scenario1.cpp
+ * File:    test.performance.scenario1.cpp
  *
- * Purpose: Performance tests for scenario1.
+ * Purpose: Implementation file for the test.performance.scenario1 project.
  *
  * Created: 19th September 2006
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
-/* STLSoft header files */
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #if defined(_WIN32) && \
     defined(_AFXDLL)
 # include <mfcstl/mfcstl.hpp>
-#endif /* OS */
+#endif
+
 
 /* FastFormat header files */
 #include <fastformat/internal/stlsoft.h>
@@ -101,6 +107,7 @@
 
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
+#include <fastformat/util/string/snprintf.h>
 
 /* Boost header files */
 #ifdef FASTFORMAT_PERFTEST_USE_BOOST
@@ -127,29 +134,28 @@
 #include <stdlib.h>
 #include <time.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Macros
+/* /////////////////////////////////////////////////////////////////////////
+ * macros
  */
 
 #define TX(x)       FASTFORMAT_LITERAL_STRING(x)
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Globals
+/* /////////////////////////////////////////////////////////////////////////
+ * globals
  */
 
 extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.scenario1";
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Typedefs
+/* /////////////////////////////////////////////////////////////////////////
+ * types
  */
 
 //#define SHOW_FIRST_RESULT
@@ -158,7 +164,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.scenar
 //#define PERF_TEST_USE_4_PARAMS_3_STR_1_INT
 
 
-/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////// */
 
 static int main_(int argc, char* argv[])
 {
@@ -366,7 +372,7 @@ static int main_(int argc, char* argv[])
 
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING */
-    // sprintf()
+    // fastformat_util_snprintf()
 
     { for(unsigned j = 0; j < WARMUPS; ++j)
     {
@@ -376,14 +382,35 @@ static int main_(int argc, char* argv[])
         {
             char    sz[1001];
 #if defined(PERF_TEST_USE_4_PARAMS_3_STR_1_INT)
-            int     cch =   ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
-                                    , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0), stlsoft::c_str_ptr(arg2), arg3);
+            int     cch =   fastformat::util::fastformat_util_snprintf(
+                                    &sz[0]
+                                ,   STLSOFT_NUM_ELEMENTS(sz)
+                                ,   "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   arg1
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   stlsoft::c_str_ptr(arg2)
+                                ,   arg3
+                                );
 #elif defined(PERF_TEST_USE_3_PARAMS)
-            int     cch =   ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "The first param '%s', and the second '%s', and the first again '%s'. Finally, the third '%s'"
-                                    , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0), stlsoft::c_str_ptr(arg2));
+            int     cch =   fastformat::util::fastformat_util_snprintf(
+                                    &sz[0]
+                                ,   STLSOFT_NUM_ELEMENTS(sz)
+                                ,   "The first param '%s', and the second '%s', and the first again '%s'. Finally, the third '%s'"
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   arg1
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   stlsoft::c_str_ptr(arg2)
+                                );
 #else /* ? PERF_TEST_USE_3_PARAMS */
-            int     cch =   ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), "The first param '%s', and the second '%s', and the first again '%s'"
-                                    , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0));
+            int     cch =   fastformat::util::fastformat_util_snprintf(
+                                    &sz[0]
+                                ,   STLSOFT_NUM_ELEMENTS(sz)
+                                ,   "The first param '%s', and the second '%s', and the first again '%s'"
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   arg1
+                                ,   stlsoft::c_str_ptr(arg0)
+                                );
 #endif /* !PERF_TEST_USE_3_PARAMS */
 
             std::string s(sz, size_t(cch));
@@ -401,7 +428,7 @@ static int main_(int argc, char* argv[])
         if( verbosity >= 3 &&
             j == WARMUPS - 1)
         {
-            ::fprintf(stdout, "sprintf():  %lu\t(%lu)\n", (unsigned long)tm_Streams, (unsigned long)length);
+            ::fprintf(stdout, "snprintf(): %lu\t(%lu)\n", (unsigned long)tm_Streams, (unsigned long)length);
         }
     }}
 
@@ -566,7 +593,7 @@ static int main_(int argc, char* argv[])
             break;
         case    3:
             ::puts("");
-            ::fprintf(stdout, "sprintf():FastFormat.Format:         \t%2.04g\n", double(tm_Streams) / double(tm_FF_Format));
+            ::fprintf(stdout, "snprintf():FastFormat.Format:        \t%2.04g\n", double(tm_Streams) / double(tm_FF_Format));
             ::fprintf(stdout, "IOStreams:FastFormat.Format:         \t%2.04g\n", double(tm_IOStreams) / double(tm_FF_Format));
 #ifdef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
             ::fprintf(stdout, "CString::Format():FastFormat.Format: \t%2.04g\n", double(tm_CString_Format) / double(tm_FF_Format));
@@ -578,7 +605,7 @@ static int main_(int argc, char* argv[])
             ::fprintf(stdout, "Loki.SafeFormat:FastFormat.Format:   \t%2.04g\n", double(tm_Loki) / double(tm_FF_Format));
 #endif /* FASTFORMAT_PERFTEST_USE_LOKI */
             ::puts("");
-            ::fprintf(stdout, "sprintf():FastFormat.Write:          \t%2.04g\n", double(tm_Streams) / double(tm_FF_Write));
+            ::fprintf(stdout, "snprintf():FastFormat.Write:         \t%2.04g\n", double(tm_Streams) / double(tm_FF_Write));
             ::fprintf(stdout, "IOStreams:FastFormat.Write:          \t%2.04g\n", double(tm_IOStreams) / double(tm_FF_Write));
 #ifdef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
             ::fprintf(stdout, "CString::Format():FastFormat.Write:  \t%2.04g\n", double(tm_CString_Format) / double(tm_FF_Write));
@@ -601,16 +628,12 @@ int main(int argc, char *argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
     defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
     defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
@@ -621,9 +644,8 @@ int main(int argc, char *argv[])
 
     try
     {
-#if 0
-#elif defined(_DEBUG) ||\
-      defined(__SYNSOFT_DBS_DEBUG)
+#if defined(_DEBUG) || \
+    defined(__SYNSOFT_DBS_DEBUG)
         puts("test.performance.scenario1: " STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -653,9 +675,7 @@ int main(int argc, char *argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
     defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
@@ -663,6 +683,6 @@ int main(int argc, char *argv[])
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

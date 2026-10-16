@@ -51,19 +51,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR
 #define FASTFORMAT_INCL_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MINOR     0
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      16
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  4
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      23
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
@@ -74,22 +76,21 @@
 # include <fastformat/internal/stlsoft.h>
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER >= 1400
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER >= 1400
 # define FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED
 #endif /* compiler */
 
 #ifndef FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED
-# if _STLSOFT_VER >= 0x010a0182
+# ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
 #  ifndef STLSOFT_INCL_STLSOFT_MEMORY_UTIL_HPP_ALLOCATOR_SELECTOR
 #   include <stlsoft/memory/util/allocator_selector.hpp>
 #  endif /* !STLSOFT_INCL_STLSOFT_MEMORY_UTIL_HPP_ALLOCATOR_SELECTOR */
-# else
+# else /* ? STLSoft 1.10 b1+ */
 #  ifndef STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR
 #   include <stlsoft/memory/allocator_selector.hpp>
 #  endif /* !STLSOFT_INCL_STLSOFT_MEMORY_HPP_ALLOCATOR_SELECTOR */
-# endif
+# endif /* STLSoft 1.10 b1+ */
 #endif /* !FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED */
 #ifndef STLSOFT_INCL_STLSOFT_MEMORY_HPP_AUTO_BUFFER
 # include <stlsoft/memory/auto_buffer.hpp>
@@ -100,8 +101,9 @@
 # endif /* !STLSOFT_INCL_STLSOFT_MEMORY_HPP_MALLOC_ALLOCATOR */
 #endif /* FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -111,8 +113,9 @@ namespace util
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** A <a href = "http://extendedstl.com/glossary.html#type-generator-template">Type Generator</a>
@@ -150,8 +153,9 @@ struct auto_buffer_selector
 #endif /* STLSOFT_AUTO_BUFFER_NEW_FORM */
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -159,16 +163,17 @@ struct auto_buffer_selector
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

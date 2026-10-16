@@ -1,12 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    examples/example.overload.3.tabulations/example.overload.3.tabulations.cpp
+ * File:    example.overload.3.tabulations.cpp
  *
- * Purpose: Example for tabulation overload.
+ * Purpose: Implementation file for the example.overload.3.tabulations
+ *              project.
  *
  * Created: 29th April 2009
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
 
 #include <fastformat/fastformat.h>
 
@@ -68,9 +70,9 @@ static void setup()
         tels_.push_back(tels[i]);
     }}
 
-#define forenames   forenames_
-#define surnames    surnames_
-#define tels        tels_
+#define forenames                                           forenames_
+#define surnames                                            surnames_
+#define tels                                                tels_
 }
 
 #ifdef FASTFORMAT_PERFTEST_USE_BOOST
@@ -143,7 +145,7 @@ int main()
 
 FILE* FILE_stm = stdout;
 //#define ff_stm    FILE_stm
-#define ff_stm  std::cout
+#define ff_stm                                              std::cout
 
 int output_by_ff()
 {
@@ -200,6 +202,6 @@ int output_by_boost()
 }
 #endif /* FASTFORMAT_PERFTEST_USE_BOOST */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

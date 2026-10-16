@@ -48,26 +48,29 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CH
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CH
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_EDIT      2
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CH_EDIT      7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
 #include <fastformat/inserters/character.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -77,8 +80,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 /** Shorthand form of character() inserter function.
@@ -94,8 +98,9 @@ inline ximpl_character::character_state ch(
     return character(value);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -104,16 +109,17 @@ using ::fastformat::inserters::ch;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CH */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

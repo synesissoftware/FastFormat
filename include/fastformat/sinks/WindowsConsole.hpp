@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_EDIT     3
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE_EDIT     8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -84,8 +87,9 @@
 
 #include <windows.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -95,8 +99,9 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Classes
+ * classes
  */
 
 /** Sink for coloured output via Windows' console.
@@ -184,8 +189,9 @@ private:
     WORD const      m_textAttributes;
 };
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Creator Functions
+ * creator functions
  */
 
 /** Creator function for the WindowsConsole_sink class
@@ -206,8 +212,9 @@ inline WindowsConsole_sink WindowsConsole(WORD textAttributes)
     return WindowsConsole_sink(::GetStdHandle(STD_OUTPUT_HANDLE), textAttributes);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * action shims
  */
 
 /** Writes an array of string slices into a
@@ -221,8 +228,9 @@ inline WindowsConsole_sink& fmt_slices(WindowsConsole_sink& sink, int flags, siz
     return sink.write(flags, cchTotal, numResults, results);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -230,16 +238,17 @@ inline WindowsConsole_sink& fmt_slices(WindowsConsole_sink& sink, int flags, siz
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_WINDOWSCONSOLE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

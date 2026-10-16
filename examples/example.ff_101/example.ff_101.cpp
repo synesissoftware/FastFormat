@@ -1,16 +1,22 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    examples/example.ff_101/example.ff_101.cpp
  *
- * Purpose: Example introducing FastFormat basics.
+ * Purpose: Implementation file for the example.ff_101 project.
  *
  * Created: 2nd June 2008
  * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 #ifdef _AFXDLL
 # include <afx.h>
 #endif /* _AFXDLL */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
@@ -48,7 +54,7 @@ using std::endl;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
     // Case 1:
     puts("Case 1");
@@ -225,9 +231,6 @@ static int main_(int /*argc*/, char* /*argv*/[])
     puts("Case 6");
     //
     // -
-    // Defect demos: report with iostreams/stdio only. Do not call FastFormat
-    // again from the catch handlers — the defective format strings (and the
-    // exception objects that carry them) can re-enter parsing and escape.
     puts("Case 6.1");
     try
     {
@@ -311,7 +314,7 @@ static int main_(int /*argc*/, char* /*argv*/[])
         cerr
             << "error: " << x.what()
             << "; arg " << x.firstMismatchedReplacementIndex
-            << " out of " << x.numberOfReplacements
+            << " out of " << x.numArguments
             << endl;
     }
     catch(std::exception&)
@@ -333,7 +336,7 @@ static int main_(int /*argc*/, char* /*argv*/[])
         cerr
             << "error: " << x.what()
             << "; arg " << x.firstMismatchedReplacementIndex
-            << " out of " << x.numberOfReplacements
+            << " out of " << x.numArguments
             << endl;
     }
     catch(std::exception&)
@@ -385,6 +388,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

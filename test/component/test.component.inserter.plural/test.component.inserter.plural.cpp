@@ -1,0 +1,138 @@
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test.component.inserter.plural.cpp
+ *
+ * Purpose: Implementation file for the test.component.inserter.plural project.
+ *
+ * Created: 15th November 2014
+ * Updated: 10th January 2017
+ *
+ * Status:  Wizard-generated
+ *
+ * License: (Licensed under the Synesis Software Open License)
+ *
+ *              Copyright (c) 2014-2017, Synesis Software Pty Ltd.
+ *              All rights reserved.
+ *
+ *              www:        http://www.synesis.com.au/software
+ *
+ * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * Test component header file include(s)
+ */
+
+#include <fastformat/inserters/plural.hpp>
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+/* xTests header files */
+#include <xtests/xtests.h>
+
+/* FastFormat header files */
+#include <fastformat/ff.hpp>
+
+/* STLSoft header files */
+#include <stlsoft/stlsoft.h>
+
+/* Standard C header files */
+#include <stdlib.h>
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * forward declarations
+ */
+
+namespace
+{
+
+	static void test_1_0(void);
+	static void test_item_1(void);
+	static int setup(void* param);
+	static int teardown(void* param);
+	static void* setupParam = NULL;
+
+} // anonymous namespace
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * main()
+ */
+
+int main(int argc, char **argv)
+{
+	int retCode = EXIT_SUCCESS;
+	int verbosity = 2;
+
+	XTESTS_COMMANDLINE_PARSEVERBOSITY(argc, argv, &verbosity);
+
+	if(XTESTS_START_RUNNER_WITH_SETUP_FNS("test.component.inserter.plural", verbosity, setup, teardown, setupParam))
+	{
+		XTESTS_RUN_CASE(test_1_0);
+		XTESTS_RUN_CASE(test_item_1);
+		XTESTS_PRINT_RESULTS();
+
+		XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
+	}
+
+	return retCode;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * test function implementations
+ */
+
+namespace
+{
+
+static int setup(void* param)
+{
+	((void)param); /* TODO: Use the parameter, if you need to */
+
+	return 0; /* Change to !0 to fail initialisation */
+}
+
+static int teardown(void* param)
+{
+	((void)param); /* TODO: Use the parameter, if you need to */
+
+	return 0; /* Currently ignored by xTests */
+}
+
+static void test_1_0()
+{
+#if 0
+	fastformat::plural instance;
+
+	STLSOFT_SUPPRESS_UNUSED(instance);
+
+	XTESTS_TEST_PASSED();
+#endif /* 0 */
+}
+
+static void test_item_1()
+{
+	XTESTS_TEST_MULTIBYTE_STRING_EQUAL("0 items", ff::plural(0, "item"));
+	XTESTS_TEST_MULTIBYTE_STRING_EQUAL("1 item",  ff::plural(1, "item"));
+	XTESTS_TEST_MULTIBYTE_STRING_EQUAL("2 items", ff::plural(2, "item"));
+	XTESTS_TEST_MULTIBYTE_STRING_EQUAL("3 items", ff::plural(3, "item"));
+	XTESTS_TEST_MULTIBYTE_STRING_EQUAL("4 items", ff::plural(4, "item"));
+}
+
+
+} // anonymous namespace
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * Test component implementation file include(s)
+ */
+
+#include <../src/inserters/plural.cpp>
+
+/* ///////////////////////////// end of file //////////////////////////// */
+
+

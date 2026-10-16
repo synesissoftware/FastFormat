@@ -2,6 +2,7 @@
 set(CORE_SRCS
 	api.cpp
 	bitbucket
+	enum_strings.cpp
 	fmt_cache.cpp
 	fmt_spec_defect_handlers.cpp
 	init_code_strings.cpp

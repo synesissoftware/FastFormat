@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CHARACTER
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CHARACTER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_EDIT     5
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_EDIT     11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -69,8 +71,9 @@
 // TODO: implement in terms of stlsoft::string_slice, when STLSoft 1.10 released
 //#include <stlsoft/string/string_slice.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -80,8 +83,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -117,8 +121,9 @@ namespace ximpl_character
 }/* namespace ximpl_character */
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of a character value.
@@ -127,22 +132,28 @@ namespace ximpl_character
  *
  * \param value The character value to be inserted.
  */
-inline ximpl_character::character_state character(
+inline
+ximpl_character::character_state
+character(
     ff_char_t const& value
 )
 {
     return ximpl_character::character_state(value);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Shims
+ * shims
  */
 
 /** Returns a nul-terminated non-NULL C-style string representing the structure */
+inline
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_ptr_w(
+wchar_t const*
+c_str_ptr_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_ptr_a(
+char const*
+c_str_ptr_a(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
@@ -154,10 +165,13 @@ inline char const* c_str_ptr_a(
 }
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the structure */
+inline
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_data_w(
+wchar_t const*
+c_str_data_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_data_a(
+char const*
+c_str_data_a(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
@@ -169,10 +183,12 @@ inline char const* c_str_data_a(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the structure */
+inline
+size_t
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline size_t c_str_len_w(
+c_str_len_w(
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline size_t c_str_len_a(
+c_str_len_a(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
@@ -183,8 +199,9 @@ inline size_t c_str_len_a(
     return s.length();
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -221,10 +238,13 @@ namespace stlsoft
 {
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the structure */
+inline
 #  ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_data_w(
+wchar_t const*
+c_str_data_w(
 #  else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_data_a(
+char const*
+c_str_data_a(
 #  endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
@@ -236,7 +256,9 @@ inline char const* c_str_data_a(
 }
 
 /** Returns a possibly non-nul-terminated non-NULL C-style string representing the structure */
-inline ff_char_t const* c_str_data(
+inline
+ff_char_t const*
+c_str_data(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
@@ -251,10 +273,13 @@ inline ff_char_t const* c_str_data(
 }
 
 /** Returns a nul-terminated non-NULL C-style string representing the structure */
+inline
 #  ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline wchar_t const* c_str_ptr_w(
+wchar_t const*
+c_str_ptr_w(
 #  else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline char const* c_str_ptr_a(
+char const*
+c_str_ptr_a(
 #  endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
@@ -266,7 +291,9 @@ inline char const* c_str_ptr_a(
 }
 
 /** Returns a nul-terminated non-NULL C-style string representing the structure */
-inline ff_char_t const* c_str_ptr(
+inline
+ff_char_t const*
+c_str_ptr(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
@@ -281,10 +308,12 @@ inline ff_char_t const* c_str_ptr(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the structure */
+inline
+size_t
 #  ifdef FASTFORMAT_USE_WIDE_STRINGS
-inline size_t c_str_len_w(
+c_str_len_w(
 #  else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-inline size_t c_str_len_a(
+c_str_len_a(
 #  endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
@@ -296,7 +325,9 @@ inline size_t c_str_len_a(
 }
 
 /** Returns the number of characters in the length of the C-style string representing the structure */
-inline size_t c_str_len(
+inline
+size_t
+c_str_len(
 #if !defined(FASTFORMAT_NO_NAMESPACE)
     ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
@@ -315,16 +346,17 @@ inline size_t c_str_len(
 
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_CHARACTER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

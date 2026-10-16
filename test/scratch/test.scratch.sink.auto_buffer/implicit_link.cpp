@@ -1,4 +1,3 @@
-
 #include <fastformat/implicit_link.h>
 
 #include <shwild/implicit_link.h>
@@ -11,4 +10,5 @@
 #endif /* operating system */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

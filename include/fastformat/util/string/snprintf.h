@@ -1,5 +1,5 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    fastformat/util/string/snprintf.h
+ * File:    fastformat/util/string/snprintf.h (was fastformat/util/string/string.h)
  *
  * Purpose: snprintf() utility functions.
  *
@@ -40,7 +40,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/** \file fastformat/util/string/snprintf.h
+/** \file fastformat/util/string/string.h
  *
  * [C, C++] snprintf() utility functions.
  */
@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_UTIL_STRING_H_SNPRINTF
 #define FASTFORMAT_INCL_FASTFORMAT_UTIL_STRING_H_SNPRINTF
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MINOR     3
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      13
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
@@ -72,8 +74,9 @@
 # include <stdarg.h>
 #endif /* !FASTFORMAT_INCL_H_STDARG */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -82,6 +85,7 @@ namespace fastformat
 namespace util
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * API
@@ -105,8 +109,7 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
 ,   ...
 )
 /* TODO: Change this to properly discriminated feature */
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_GCC)
+#if defined(STLSOFT_COMPILER_IS_GCC)
 __attribute__((format(printf,3,4)))
 #endif /* compiler */
 ;
@@ -138,8 +141,7 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf_a(
 ,   ...
 )
 /* TODO: Change this to properly discriminated feature */
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_GCC)
+#if defined(STLSOFT_COMPILER_IS_GCC)
 __attribute__((format(printf,3,4)))
 #endif /* compiler */
 ;
@@ -150,6 +152,7 @@ FASTFORMAT_CALL(int) fastformat_util_vsnprintf_a(
 ,   va_list         args
 );
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * C++ Functions
@@ -196,8 +199,9 @@ snprintf(
 # endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 #endif /* __cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -210,16 +214,17 @@ using ::fastformat::util::fastformat_util_vsnprintf_a;
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_UTIL_STRING_H_SNPRINTF */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

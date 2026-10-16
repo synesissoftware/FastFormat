@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_EDIT      6
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT_EDIT      11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -70,8 +72,9 @@
 
 #include <fastformat/inserters/to_i.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -81,8 +84,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of an integral value, or an empty string in the
@@ -145,8 +149,9 @@ fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_not(
     }
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -155,16 +160,17 @@ using ::fastformat::inserters::to_i_null_if_not;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_NOT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

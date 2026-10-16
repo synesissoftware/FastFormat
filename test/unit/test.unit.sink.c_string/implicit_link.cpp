@@ -1,4 +1,3 @@
-
 #include <fastformat/implicit_link.h>
 
 #include <platformstl/platformstl.h>
@@ -9,6 +8,6 @@
 
 #include <xtests/implicit_link.h>
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 
