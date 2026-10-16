@@ -9,12 +9,11 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 #if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#elif defined(_MSC_VER)
 # ifndef _AFXDLL
 #  define _AFXDLL
-# endif /* _AFXDLL */
-#endif /* _MSC_VER && _DLL */
+# endif /* !_AFXDLL */
+#endif /* _MSC_VER */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

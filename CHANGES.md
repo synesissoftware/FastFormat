@@ -22,6 +22,8 @@
 * Provided explicit copy constructors across the FastFormat exception hierarchy (including **`format_parsing_exception`**, **`illformed_format_exception`**, **`mismatched_replacements_exception`**, and **`missing_resource_id_exception`**) so throw-by-value is well-formed under MinGW `-Werror=deprecated-copy`;
 * Reported Case 6 format-defect demos in **example.ff_101** with iostreams only (no FastFormat re-entry from catch handlers);
 * Listed **test.scratch.sink.WindowsConsole** in **ci_scratch_tests_skip_interactive.txt** (needs a real console; fails under CI redirection);
+* Defined **`_AFXDLL`** for **test.unit.sink.CString** (MSVC Release `/MD` as well as Debug);
+* Hardened **example.overload.2.custom_type.inserter** (named properties-bundle pointer, fail if **superhero.properties** is missing, iostreams in catch) and normalised the sample properties line to `key=value`;
 
 
 ## 0.7.4-rc6 - 6th February 2024

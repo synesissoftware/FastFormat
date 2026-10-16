@@ -161,9 +161,10 @@ ff::properties_bundle const& getAppBundle();
 std::string edna_5(superhero const& hero)
 {
   std::string result;
-  ff::properties_bundle const& bundle = getAppBundle();
+  ff::properties_bundle const& appBundle = getAppBundle();
+  std::string const format = appBundle["superhero.format"];
 
-  ff::fmt(result, bundle["superhero.format"]
+  ff::fmt(result, format
         , hero.name, hero.weight
         , hero.strength, hero.goodness);
   return result;
@@ -174,13 +175,13 @@ std::string edna_5(superhero const& hero)
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-ff::properties_bundle* bundle;
+ff::properties_bundle* s_appPropertiesBundle;
 
 ff::properties_bundle const& getAppBundle()
 {
-    STLSOFT_ASSERT(NULL != bundle);
+    STLSOFT_ASSERT(NULL != s_appPropertiesBundle);
 
-    return *bundle;
+    return *s_appPropertiesBundle;
 }
 
 
@@ -212,25 +213,24 @@ static char const* select_bundle_path(int argc, char* argv[])
         }
     }
 
-    return candidates[0];
+    return NULL;
 }
 
 static int main_(int argc, char* argv[])
 {
     char const* bundlePath = select_bundle_path(argc, argv);
 
-#if 1
+    if(NULL == bundlePath)
+    {
+        throw std::runtime_error("superhero.properties not found (tried cwd and test/data/bundles)");
+    }
+
     superhero   thing("The Thing", 200, 99, 100);
     superhero   batman("Batman", 100, 80, 95);
 
-# if 0
-    ff::writeln(std::cout, "Ben Grimm is ", thing);
-    ff::fmtln(std::cout, "Bruce Wayne is {0}", batman);
-# else /* ? 0 */
-
     ff::properties_bundle   bundle_(bundlePath);
 
-    bundle = &bundle_;
+    s_appPropertiesBundle = &bundle_;
 
     ff::writeln(std::cout, "Ben Grimm is ", edna_1(thing));
     ff::writeln(std::cout, "Ben Grimm is ", edna_2(thing));
@@ -250,20 +250,7 @@ static int main_(int argc, char* argv[])
     ff::fmtln(std::cout, "Bruce Wayne is {0}", edna_5(batman));
 #endif /* compiler */
 
-    bundle = NULL;
-
-# endif /* 0 */
-#else /* ? 0 */
-
-#if 0
-    std::string sink1, sink2;
-    ff::fmt(ff::fmt(sink1, "{0}", 1), "{0}", 2);
-    ff::write(ff::write(sink2, 1), 2);
-#endif /* 0 */
-
-
-    OutputDebugString(NULL);
-#endif /* 0 */
+    s_appPropertiesBundle = NULL;
 
     return EXIT_SUCCESS;
 }
@@ -276,11 +263,11 @@ int main(int argc, char* argv[])
     }
     catch(std::exception& x)
     {
-        ff::fmtln(std::cerr, "exception: {0}", x);
+        std::cerr << "exception: " << x.what() << std::endl;
     }
     catch(...)
     {
-        ff::writeln(std::cerr, "unhandled unknown error");
+        std::cerr << "unhandled unknown error" << std::endl;
     }
 
     return EXIT_FAILURE;
