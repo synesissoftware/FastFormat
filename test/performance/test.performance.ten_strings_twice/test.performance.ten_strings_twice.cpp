@@ -288,7 +288,7 @@ static int main_(int argc, char* argv[])
         {
             std::string s;
 
-            Loki::SPrintf(s, "%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s")(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)(arg7.c_str())(arg8)(arg9.c_str())(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)(arg7.c_str())(arg8)(arg9.c_str());
+            Loki::SPrintf(s, "%s%s%s%s%s%s%s%.*s%s%.*s%s%s%s%s%s%s%s%.*s%s%.*s")(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)((int)arg7.size())(arg7.data())(arg8)((int)arg9.size())(arg9.data())(arg0)(arg1)(arg2.c_str())(arg3)(arg4.c_str())(arg5)(arg6)((int)arg7.size())(arg7.data())(arg8)((int)arg9.size())(arg9.data());
 
 #ifdef SHOW_FIRST_RESULT
 (0 == i) && fprintf(stderr, "%.*s\n", int(s.size()), s.c_str());
@@ -320,9 +320,9 @@ static int main_(int argc, char* argv[])
         {
             CString s;
 
-            s.Format(TX("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str()
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str());
+            s.Format(TX("%s%s%s%s%s%s%s%.*s%s%.*s%s%s%s%s%s%s%s%.*s%s%.*s")
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data()
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data());
 
 #ifdef SHOW_FIRST_RESULT
 (0 == i) && fprintf(stderr, "%.*s\n", int(s.GetLength()), static_cast<char const*>(s));
@@ -355,9 +355,9 @@ static int main_(int argc, char* argv[])
             int     cch = fastformat::util::fastformat_util_snprintf(
                             &sz[0]
                         ,   STLSOFT_NUM_ELEMENTS(sz)
-                        ,   TX("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str()
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, arg7.c_str(), arg8.c_str(), arg9.c_str()
+                        ,   TX("%s%s%s%s%s%s%s%.*s%s%.*s%s%s%s%s%s%s%s%.*s%s%.*s")
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data()
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data()
                         );
 
             std::string s(sz, size_t(cch));
