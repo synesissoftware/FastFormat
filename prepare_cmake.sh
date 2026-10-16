@@ -47,10 +47,6 @@ VerboseMakefile=0
 # misc-dev-scripts/shell-scripts/cmake-helpers/prepare_cmake.sh.
 
 
-NO_shwild=0
-STLSoftDirGiven=
-WideStrings=0
-
 # ##########################################################
 # colours
 #
@@ -171,22 +167,9 @@ while [[ $# -gt 0 ]]; do
 
       MSVC_MT=1
       ;;
-    --no-shwild)
-
-      NO_shwild=1
-      ;;
     --run-make|-m)
 
       RunMake=1
-      ;;
-    --stlsoft-root-dir|-s)
-
-      shift
-      STLSoftDirGiven=$1
-      ;;
-    --wide-strings|-w)
-
-      WideStrings=1
       ;;
     --help)
 
@@ -230,23 +213,10 @@ Flags/options:
     --msvc-mt
         when using Visual C++ (MSVC), select the static runtime library
 
-    --no-shwild
-        suppresses discovery of shwild package
-
     -m
     --run-make
         executes a build via cmake --build after a successful configure
 
-
-    -s <dir>
-    --stlsoft-root-dir <dir>
-        specifies the STLSoft root-directory, which will be passed to CMake
-        as the variable STLSOFT, and which will override the environment
-        variable STLSOFT (if present)
-
-    -w
-    --wide-strings
-        builds for wide-strings. Default is multibyte strings
 
     standard flags:
 
@@ -280,11 +250,8 @@ echo "Executing CMake for ${ProjectNameClr} (in ${CMakeDirClr})"
 if [ $BuildSharedLibs -eq 0 ]; then CMakeBuildSharedLibsFlag="OFF" ; else CMakeBuildSharedLibsFlag="ON" ; fi
 if [ $ExamplesDisabled -eq 0 ]; then CMakeBuildExamplesFlag="ON" ; else CMakeBuildExamplesFlag="OFF" ; fi
 if [ $MSVC_MT -eq 0 ]; then CMakeMsvcMtFlag="OFF" ; else CMakeMsvcMtFlag="ON" ; fi
-if [ $NO_shwild -eq 0 ]; then CMakeNoShwild="OFF" ; else CMakeNoShwild="ON" ; fi
-if [ -z "$STLSoftDirGiven" ]; then CMakeSTLSoftVariable="" ; else CMakeSTLSoftVariable="-DSTLSOFT=$STLSoftDirGiven/" ; fi
 if [ $TestingDisabled -eq 0 ]; then CMakeBuildTestingFlag="ON" ; else CMakeBuildTestingFlag="OFF" ; fi
 if [ $VerboseMakefile -eq 0 ]; then CMakeVerboseMakefileFlag="OFF" ; else CMakeVerboseMakefileFlag="ON" ; fi
-if [ $WideStrings -eq 0 ]; then CMakeWideStringVariable="" ; else CMakeWideStringVariable="-DPANTHEIOS_USE_WIDE_STRINGS:BOOL=ON" ; fi
 
 # NOTE: the generator is the *only* thing that may differ between the MinGW
 # and the default paths; every -D option is passed in both cases, so that no
@@ -309,9 +276,6 @@ cmake \
   -DCMAKE_BUILD_TYPE=$Configuration \
   -DCMAKE_VERBOSE_MAKEFILE:BOOL=$CMakeVerboseMakefileFlag \
   -DMSVC_USE_MT:BOOL=$CMakeMsvcMtFlag \
-  -DNO_SHWILD:BOOL=$CMakeNoShwild \
-  $CMakeWideStringVariable \
-  $CMakeSTLSoftVariable \
   "${CMakeGeneratorArgs[@]}" \
   -B "$CMakeDir" \
   -S "$Dir" \
