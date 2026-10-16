@@ -152,12 +152,12 @@ namespace
         ff_char_t
     ,   std::char_traits<ff_char_t>
     ,   std::allocator<ff_char_t>
-    >                                               pattern_t;
+    >                                                       pattern_t;
 #else /* ? compiler */
 # ifdef FASTFORMAT_USE_WIDE_STRINGS
-    typedef stlsoft::wstring_view                   pattern_t;
+    typedef stlsoft::wstring_view                           pattern_t;
 # else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-    typedef stlsoft::string_view                    pattern_t;
+    typedef stlsoft::string_view                            pattern_t;
 # endif /* FASTFORMAT_USE_WIDE_STRINGS */
 #endif /* compiler */
 
@@ -215,11 +215,16 @@ namespace
     {
     private: /// Member Types
 #ifdef FASTFORMAT_MT
-        typedef ::platformstl::thread_mutex             mutex_type_;
+        typedef ::platformstl::thread_mutex                 mutex_type_;
 #else /* ? FASTFORMAT_MT */
-        typedef ::stlsoft::null_mutex                   mutex_type_;
+        typedef ::stlsoft::null_mutex                       mutex_type_;
 #endif /* FASTFORMAT_MT */
-        typedef stlsoft::shared_ptr<pattern_record_t>   record_ptr_type_;
+        typedef stlsoft::shared_ptr<pattern_record_t>       record_ptr_type_;
+        // Allocator value_type is the map pair, not the key.
+        typedef std::pair<
+            pattern_t const
+        ,   record_ptr_type_
+        >                                                   map_value_type_;
         typedef std::map<   pattern_t
                         ,   record_ptr_type_
 #if !defined(UNIXSTL_OS_IS_MACOSX)
@@ -234,14 +239,14 @@ namespace
       defined(PLATFORMSTL_OS_IS_WINDOWS) && \
       (  !defined(STLSOFT_COMPILER_IS_MSVC) || \
          _MSC_VER < 1400)
-                        ,   winstl::processheap_allocator<pattern_t>
+                        ,   winstl::processheap_allocator<map_value_type_>
 #  else /* ? VC++ _DEBUG */
-                        ,   std::allocator<pattern_t>
+                        ,   std::allocator<map_value_type_>
 #  endif /* VC++ _DEBUG */
 # endif /* compiler */
 #endif /* UNIXSTL_OS_IS_MACOSX */
-                        >                               map_type_;
-        typedef stlsoft::auto_buffer<format_element_t>  format_elements_type_;
+                        >                                   map_type_;
+        typedef stlsoft::auto_buffer<format_element_t>      format_elements_type_;
 
     public: /// Construction
         void* operator new(size_t cb);
@@ -399,6 +404,13 @@ unsigned format_cache::lookup_pattern(
 #endif /* cache */
 }
 
+#if 0
+#elif 0 ||\
+      defined(_FASTFORMAT_USE_1PHASE_CACHE) ||\
+      ( defined(_FASTFORMAT_USE_2PHASE_CACHE) &&\
+        !defined(FASTFORMAT_MT)) ||\
+      0
+
 unsigned format_cache::lookup_pattern_1phase(
     pattern_t                   pattern
 ,   format_element_t const**    elements
@@ -484,6 +496,7 @@ unsigned format_cache::lookup_pattern_1phase(
 
     return (recptr->numFormatElements & 0xffff) | ((recptr->numResultElements & 0xffff) << 16);
 }
+#endif /* 1-phase, or 2-phase without FASTFORMAT_MT */
 
 unsigned format_cache::lookup_pattern_2phase(
     pattern_t                   pattern

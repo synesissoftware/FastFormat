@@ -472,7 +472,8 @@ inline ff_to_i_r_t_ integer_helper_5(
             FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(16 == base);
 
 #ifdef STLSOFT_VER_STLSOFT_CONVERSION_INTEGER_TO_STRING_HPP_INTEGER_TO_HEXADECIMAL_STRING_MAJOR
-            ff_char_t           sz[17];
+            // 18: '-' + 16 hex digits + NUL for 64-bit signed minimum
+            ff_char_t           sz[18];
             size_t              n;
             ff_char_t const*    s = stlsoft::integer_to_hexadecimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
 

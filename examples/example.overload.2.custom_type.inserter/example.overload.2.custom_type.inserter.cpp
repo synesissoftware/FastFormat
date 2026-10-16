@@ -60,6 +60,7 @@ public: /// Member Variables
 
 /* Standard C++ header files */
 #include <exception>
+#include <fstream>
 #include <iostream>
 #include <string>
 
@@ -184,23 +185,46 @@ ff::properties_bundle const& getAppBundle()
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char* argv[])
+static char const* select_bundle_path(int argc, char* argv[])
 {
-    char const* bundlePath  =   "superhero.properties";
-
     if(argc > 1)
     {
-        bundlePath = argv[1];
+        return argv[1];
     }
 
-#if 1
+    // Repo-root runners (CI, run_all_examples.sh) keep the sample bundle
+    // under test/data/bundles. A copy in the working directory still wins.
+    char const* candidates[] =
+    {
+        "superhero.properties",
+        "test/data/bundles/superhero.properties",
+        NULL,
+    };
+
+    for(size_t i = 0; NULL != candidates[i]; ++i)
+    {
+        std::ifstream stm(candidates[i]);
+
+        if(stm.is_open())
+        {
+            return candidates[i];
+        }
+    }
+
+    return NULL;
+}
+
+static int main_(int argc, char* argv[])
+{
+    char const* bundlePath = select_bundle_path(argc, argv);
+
+    if(NULL == bundlePath)
+    {
+        throw std::runtime_error("superhero.properties not found (tried cwd and test/data/bundles)");
+    }
+
     superhero   thing("The Thing", 200, 99, 100);
     superhero   batman("Batman", 100, 80, 95);
-
-# if 0
-    ff::writeln(std::cout, "Ben Grimm is ", thing);
-    ff::fmtln(std::cout, "Bruce Wayne is {0}", batman);
-# else /* ? 0 */
 
     ff::properties_bundle   bundle_(bundlePath);
 
@@ -226,19 +250,6 @@ static int main_(int argc, char* argv[])
 
     bundle = NULL;
 
-# endif /* 0 */
-#else /* ? 0 */
-
-#if 0
-    std::string sink1, sink2;
-    ff::fmt(ff::fmt(sink1, "{0}", 1), "{0}", 2);
-    ff::write(ff::write(sink2, 1), 2);
-#endif /* 0 */
-
-
-    OutputDebugString(NULL);
-#endif /* 0 */
-
     return EXIT_SUCCESS;
 }
 
@@ -250,11 +261,12 @@ int main(int argc, char* argv[])
     }
     catch(std::exception& x)
     {
-        ff::fmtln(std::cerr, "exception: {0}", x);
+        // iostreams only — avoid FastFormat re-entry from a catch handler
+        std::cerr << "exception: " << x.what() << std::endl;
     }
     catch(...)
     {
-        ff::writeln(std::cerr, "unhandled unknown error");
+        std::cerr << "unhandled unknown error" << std::endl;
     }
 
     return EXIT_FAILURE;
