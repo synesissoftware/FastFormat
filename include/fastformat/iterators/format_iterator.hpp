@@ -164,7 +164,8 @@ private:
     class deref_proxy;
     friend class deref_proxy;
 
-#if defined(STLSOFT_COMPILER_IS_MWERKS)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MWERKS)
 public:
 #else
 private:
@@ -312,7 +313,7 @@ private:
 };
 
 #ifdef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
-/** <a href="http://synesis.com.au/publishing/xstl/glossary.html#creator-function">Creator function</a> for 
+/** <a href="http://synesis.com.au/publishing/xstl/glossary.html#creator-function">Creator function</a> for
  * the fastformat::iterators::format_output_iterator output iterator class template.
  *
  * Used as follows

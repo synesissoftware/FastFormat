@@ -67,12 +67,14 @@
 #include <stlsoft/string/string_view.hpp>
 #include <stlsoft/synch/lock_scope.hpp>
 
-#if defined(_DEBUG) && \
-    defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(PLATFORMSTL_OS_IS_WINDOWS)
 # include <winstl/memory/processheap_allocator.hpp>
 #endif /* VC++ _DEBUG */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC)
 # pragma warning(disable : 4702) // suppresses "unreachable code"
 #endif /* compiler */
 
@@ -82,8 +84,9 @@
 
 #include <ctype.h>
 
-#if defined(_DEBUG) && \
-    defined(STLSOFT_COMPILER_IS_MSVC)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(STLSOFT_COMPILER_IS_MSVC)
 # include <crtdbg.h>
 #endif
 
@@ -114,8 +117,9 @@ namespace
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-#if defined(_DEBUG) && \
-    defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(PLATFORMSTL_OS_IS_WINDOWS)
         return ::HeapAlloc(::GetProcessHeap(), 0, cb);
 #else /* ? VC++ _DEBUG */
         return ::operator new(cb);
@@ -126,8 +130,9 @@ namespace
     {
         FASTFORMAT_COVER_MARK_ENTRY();
 
-#if defined(_DEBUG) && \
-    defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(PLATFORMSTL_OS_IS_WINDOWS)
         ::HeapFree(::GetProcessHeap(), 0, pv);
 #else /* ? VC++ _DEBUG */
         ::operator delete(pv);
@@ -147,8 +152,9 @@ namespace
 /* That weird linker defect with VC++ 8+ raises its ugly head again
  * here, so we have to specialise in more details. Super-boring
  */
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER >= 1400
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER >= 1400
     typedef stlsoft::basic_string_view<
         ff_char_t
     ,   std::char_traits<ff_char_t>
@@ -389,7 +395,8 @@ unsigned format_cache::lookup_pattern(
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
-#if defined(_FASTFORMAT_USE_TSS_CACHE)
+#if 0
+#elif defined(_FASTFORMAT_USE_TSS_CACHE)
     return this->lookup_pattern_tss(pattern, elements);
 #elif defined(_FASTFORMAT_USE_1PHASE_CACHE)
     return this->lookup_pattern_1phase(pattern, elements);
@@ -400,9 +407,13 @@ unsigned format_cache::lookup_pattern(
 #endif /* cache */
 }
 
-#if defined(_FASTFORMAT_USE_1PHASE_CACHE) || \
-    (defined(_FASTFORMAT_USE_2PHASE_CACHE) && \
-     !defined(FASTFORMAT_MT))
+#if 0
+#elif 0 ||\
+      defined(_FASTFORMAT_USE_1PHASE_CACHE) ||\
+      ( defined(_FASTFORMAT_USE_2PHASE_CACHE) &&\
+        !defined(FASTFORMAT_MT)) ||\
+      0
+
 unsigned format_cache::lookup_pattern_1phase(
     pattern_t                   pattern
 ,   format_element_t const**    elements
@@ -457,8 +468,9 @@ unsigned format_cache::lookup_pattern_1phase(
 
         STLSOFT_ASSERT(numFormatElements <= formatElements.size());
 
-#if defined(_DEBUG) && \
-    defined(STLSOFT_COMPILER_IS_MSVC)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(STLSOFT_COMPILER_IS_MSVC)
         // This code ensures that subsequent allocations made in this scope
         // to the MSVCRT heap will not be tracked.
         //
@@ -542,8 +554,9 @@ unsigned format_cache::lookup_pattern_2phase(
 
     FASTFORMAT_CONTRACT_ENFORCE_POSTCONDITION_RETURN_INTERNAL(numFormatElements <= formatElements.size(), "number of pattern elements calculated cannot be greater than the number specified available");
 
-#if defined(_DEBUG) && \
-    defined(STLSOFT_COMPILER_IS_MSVC)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(STLSOFT_COMPILER_IS_MSVC)
     // This code ensures that subsequent allocations made in this scope
     // to the MSVCRT heap will not be tracked.
     //

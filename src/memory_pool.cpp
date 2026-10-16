@@ -101,8 +101,9 @@ namespace
 
             cbActual = (cbActual + 15) & ~(15);
 
-#if defined(_DEBUG) && \
-    defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(PLATFORMSTL_OS_IS_WINDOWS)
             memory_pool_entry_t*  entry = static_cast<memory_pool_entry_t*>(::HeapAlloc(::GetProcessHeap(), 0, cbActual));
 #else /* ? VC++ _DEBUG */
             memory_pool_entry_t*  entry = static_cast<memory_pool_entry_t*>(::malloc(cbActual));
@@ -120,8 +121,9 @@ namespace
         }
         static void free(void* pv)
         {
-#if defined(_DEBUG) && \
-    defined(PLATFORMSTL_OS_IS_WINDOWS)
+#if 0
+#elif defined(_DEBUG) &&\
+      defined(PLATFORMSTL_OS_IS_WINDOWS)
             ::HeapFree(::GetProcessHeap(), 0, pv);
 #else /* ? VC++ _DEBUG */
             ::free(pv);
@@ -149,8 +151,9 @@ namespace
         void* alloc(size_t cb);
 
     private:
-#if defined(FASTFORMAT_MT) && \
-    defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
+#if 0
+#elif defined(FASTFORMAT_MT) &&\
+      defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
         platformstl::spin_mutex::atomic_int_type    m_mxCount;
 #else /* ? FASTFORMAT_MT && PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS */
         mx_type_                                    m_mx;
@@ -228,8 +231,9 @@ namespace
 {
 
     memory_pool_t::memory_pool_t()
-#if defined(FASTFORMAT_MT) && \
-    defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
+#if 0
+#elif defined(FASTFORMAT_MT) &&\
+      defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
         : m_mxCount(0)
 #else /* ? FASTFORMAT_MT && PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS */
         : m_mx()
@@ -259,8 +263,9 @@ namespace
         // 2. multithreading on a platform that has atomic integer operations
         // 3. multithreading on a platform that does not have atomic integer operations
 
-#if defined(FASTFORMAT_MT) && \
-    defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
+#if 0
+#elif defined(FASTFORMAT_MT) &&\
+      defined(PLATFORMSTL_HAS_ATOMIC_INTEGER_OPERATIONS)
 
         // 2.
 

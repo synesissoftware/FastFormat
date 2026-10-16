@@ -71,8 +71,9 @@
  * Implicit linking
  */
 
-#if defined(_WIN32) || \
-    defined(_WIN64)
+#if 0
+#elif defined(_WIN32) || \
+      defined(_WIN64)
 
 # if defined(__BORLANDC__) || \
      /* defined(__DMC__) || */ \
@@ -101,7 +102,7 @@
 
   /* major version */
 
-#  define FASTFORMAT_IMPL_LINK_MAJOR_VERSION            "." STLSOFT_STRINGIZE(FASTFORMAT_VER_MAJOR) 
+#  define FASTFORMAT_IMPL_LINK_MAJOR_VERSION            "." STLSOFT_STRINGIZE(FASTFORMAT_VER_MAJOR)
 
   /* module name */
 
@@ -298,7 +299,7 @@
                                                         FASTFORMAT_IMPL_LINK_NOX_TYPE \
                                                         FASTFORMAT_IMPL_LINK_DEBUG_TAG \
                                                         FASTFORMAT_IMPL_LINK_SUFFIX
-                                                        
+
 
 #  pragma message("lib: " FASTFORMAT_IMPL_LINK_LIBRARY_NAME)
 

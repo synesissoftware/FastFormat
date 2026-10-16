@@ -127,8 +127,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -600,12 +601,16 @@ int main(int argc, char *argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
@@ -647,7 +652,9 @@ int main(int argc, char *argv[])
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */

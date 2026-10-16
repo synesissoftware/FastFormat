@@ -130,8 +130,9 @@ inline F& fmt_slices_(
 
         // TODO: translate the exceptions into ff::sink_output_exception
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER == 1400
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER == 1400
         // VC++ 8 erroneously (at least IMO) asserts on the validity of the
         // pointer given to write() even when count is 0. Other versions
         // (including 9) don't do this, so we won't bother to catch it
@@ -161,8 +162,9 @@ inline F& fmt_slices_(
 
 /** Writes an array of string slices into a <code>stlsoft::FILE_stream</code> sink.
  */
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER < 1310
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER < 1310
 
 inline stlsoft::FILE_stream& fmt_slices(
     stlsoft::FILE_stream&       sink

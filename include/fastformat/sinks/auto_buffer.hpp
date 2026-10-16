@@ -82,8 +82,9 @@
  * Compatibility
  */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER < 1310
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER < 1310
 # ifndef FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS
 #  define FASTFORMAT_AUTO_BUFFER_SINK_ONLY_SIMPLE_FORM_SUPPORT
 # endif /* !FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS */
@@ -172,7 +173,7 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 
         // first we check for a current trailing nul character
 
-        if( 0 != currentSize && 
+        if( 0 != currentSize &&
             '\0' == sink[currentSize - 1])
         {
             --currentSize;

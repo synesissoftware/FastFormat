@@ -74,8 +74,9 @@
 # include <fastformat/internal/stlsoft.h>
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER >= 1400
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER >= 1400
 # define FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED
 #endif /* compiler */
 
@@ -121,8 +122,8 @@ namespace util
  * \ingroup group__utility
  *
  * There are two reasons for this:
- * - Some (older) compilers have to use the old (pre-1.9) form of 
- *   <code>stlsoft::auto_buffer</code>. Using 
+ * - Some (older) compilers have to use the old (pre-1.9) form of
+ *   <code>stlsoft::auto_buffer</code>. Using
  *   fastformat::auto_buffer_selector makes FastFormat code independent of
  *   such compilers' behavioural odities.
  * - Visual C++ 8 & 9 both have  bug that causes them to exhibit a linker

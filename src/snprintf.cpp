@@ -79,7 +79,8 @@ namespace util
  * fastformat_util_vsnprintf_(d, n, f, a)
  */
 
-#if defined(STLSOFT_COMPILER_IS_DMC) || \
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_DMC) ||\
     (   (   defined(WIN32) || \
             defined(WIN64)) && \
         (   defined(STLSOFT_COMPILER_IS_INTEL) || \

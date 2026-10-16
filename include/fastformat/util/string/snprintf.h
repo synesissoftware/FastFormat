@@ -105,7 +105,8 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
 ,   ...
 )
 /* TODO: Change this to properly discriminated feature */
-#if defined(STLSOFT_COMPILER_IS_GCC)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_GCC)
 __attribute__((format(printf,3,4)))
 #endif /* compiler */
 ;
@@ -137,7 +138,8 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf_a(
 ,   ...
 )
 /* TODO: Change this to properly discriminated feature */
-#if defined(STLSOFT_COMPILER_IS_GCC)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_GCC)
 __attribute__((format(printf,3,4)))
 #endif /* compiler */
 ;

@@ -139,7 +139,8 @@ class status_code
 public:
     typedef status_code     class_type;
     typedef int             standard_status_code_type;
-#if defined(PLATFORMSTL_OS_IS_UNIX)
+#if 0
+#elif defined(PLATFORMSTL_OS_IS_UNIX)
     typedef int             os_status_code_type;
 #elif defined(PLATFORMSTL_OS_IS_WINDOWS)
     typedef DWORD           os_status_code_type;
