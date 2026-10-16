@@ -80,7 +80,7 @@ std::string edna_2(superhero const& hero);
     !defined(STLSOFT_COMPILER_IS_DMC) /* DMC++ gets confused and can't find any matches for c_str_data_a */
 std::string edna_3(superhero const& hero);
 std::string edna_4(superhero const& hero);
-std::string edna_5(superhero const& hero);
+std::string edna_5(superhero const& hero, ff::properties_bundle const& appBundle);
 #endif /* compiler */
 
 
@@ -156,12 +156,9 @@ std::string edna_4(superhero const& hero)
   return result;
 }
 
-ff::properties_bundle const& getAppBundle();
-
-std::string edna_5(superhero const& hero)
+std::string edna_5(superhero const& hero, ff::properties_bundle const& appBundle)
 {
   std::string result;
-  ff::properties_bundle const& appBundle = getAppBundle();
   std::string const format = appBundle["superhero.format"];
 
   ff::fmt(result, format
@@ -171,18 +168,6 @@ std::string edna_5(superhero const& hero)
 }
 
 #endif /* compiler */
-
-
-/* ////////////////////////////////////////////////////////////////////// */
-
-ff::properties_bundle* s_appPropertiesBundle;
-
-ff::properties_bundle const& getAppBundle()
-{
-    STLSOFT_ASSERT(NULL != s_appPropertiesBundle);
-
-    return *s_appPropertiesBundle;
-}
 
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -218,27 +203,17 @@ static char const* select_bundle_path(int argc, char* argv[])
 
 static int main_(int argc, char* argv[])
 {
-    char const* bundlePath = select_bundle_path(argc, argv);
-
-    if(NULL == bundlePath)
-    {
-        throw std::runtime_error("superhero.properties not found (tried cwd and test/data/bundles)");
-    }
-
     superhero   thing("The Thing", 200, 99, 100);
     superhero   batman("Batman", 100, 80, 95);
 
-    ff::properties_bundle   bundle_(bundlePath);
-
-    s_appPropertiesBundle = &bundle_;
-
+    // Bundle-free overloads first so a properties load fault cannot hide
+    // the rest of the example.
     ff::writeln(std::cout, "Ben Grimm is ", edna_1(thing));
     ff::writeln(std::cout, "Ben Grimm is ", edna_2(thing));
 #if !defined(STLSOFT_COMPILER_IS_BORLAND) /* Borland is messed up, and cannot handle the filter type mechanism */ && \
     !defined(STLSOFT_COMPILER_IS_DMC) /* DMC++ gets confused and can't find any matches for c_str_data_a */
     ff::writeln(std::cout, "Ben Grimm is ", edna_3(thing));
     ff::writeln(std::cout, "Ben Grimm is ", edna_4(thing));
-    ff::writeln(std::cout, "Ben Grimm is ", edna_5(thing));
 #endif /* compiler */
 
     ff::fmtln(std::cout, "Bruce Wayne is {0}", edna_1(batman));
@@ -247,10 +222,22 @@ static int main_(int argc, char* argv[])
     !defined(STLSOFT_COMPILER_IS_DMC) /* DMC++ gets confused and can't find any matches for c_str_data_a */
     ff::fmtln(std::cout, "Bruce Wayne is {0}", edna_3(batman));
     ff::fmtln(std::cout, "Bruce Wayne is {0}", edna_4(batman));
-    ff::fmtln(std::cout, "Bruce Wayne is {0}", edna_5(batman));
 #endif /* compiler */
 
-    s_appPropertiesBundle = NULL;
+    char const* bundlePath = select_bundle_path(argc, argv);
+
+    if(NULL == bundlePath)
+    {
+        throw std::runtime_error("superhero.properties not found (tried cwd and test/data/bundles)");
+    }
+
+    ff::properties_bundle const bundle(bundlePath);
+
+#if !defined(STLSOFT_COMPILER_IS_BORLAND) /* Borland is messed up, and cannot handle the filter type mechanism */ && \
+    !defined(STLSOFT_COMPILER_IS_DMC) /* DMC++ gets confused and can't find any matches for c_str_data_a */
+    ff::writeln(std::cout, "Ben Grimm is ", edna_5(thing, bundle));
+    ff::fmtln(std::cout, "Bruce Wayne is {0}", edna_5(batman, bundle));
+#endif /* compiler */
 
     return EXIT_SUCCESS;
 }
@@ -275,4 +262,3 @@ int main(int argc, char* argv[])
 
 
 /* ///////////////////////////// end of file //////////////////////////// */
-

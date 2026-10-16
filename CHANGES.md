@@ -19,11 +19,12 @@
 * Expanded **README.md** with **Components**, **Examples** (via **EXAMPLES.md**), and a full **Dependencies** section;
 * Quieted MSVC `/WX` unused-parameter warnings in the BSTR and WindowsMessageBox scratch programs;
 * Bound WindowsConsole / WindowsMessageBox sinks to named locals so `fmt` / `writeln` can take non-const `S&` under MinGW;
-* Provided explicit copy constructors across the FastFormat exception hierarchy (including **`format_parsing_exception`**, **`illformed_format_exception`**, **`mismatched_replacements_exception`**, and **`missing_resource_id_exception`**) so throw-by-value is well-formed under MinGW `-Werror=deprecated-copy`;
 * Reported Case 6 format-defect demos in **example.ff_101** with iostreams only (no FastFormat re-entry from catch handlers);
 * Listed **test.scratch.sink.WindowsConsole** in **ci_scratch_tests_skip_interactive.txt** (needs a real console; fails under CI redirection);
 * Defined **`_AFXDLL`** for **test.unit.sink.CString** (MSVC Release `/MD` as well as Debug);
-* Hardened **example.overload.2.custom_type.inserter** (named properties-bundle pointer, fail if **superhero.properties** is missing, iostreams in catch) and normalised the sample properties line to `key=value`;
+* Hardened **example.overload.2.custom_type.inserter** (pass the properties bundle by reference, load it after the bundle-free overloads, fail if **superhero.properties** is missing, iostreams in catch) and normalised the sample properties line to `key=value`;
+* Gave every FastFormat exception type a **public** copy constructor (required for portable throw/catch; protected copies broke MSVC matching) and closed assignment with C++11 `= delete` or a C++03 private declaration — no `-Wno-deprecated-copy` in client or library builds;
+* Stopped **`properties_bundle::open_`** returning a `const` map-by-value (MinGW AV when constructing the handmade map path);
 
 
 ## 0.7.4-rc6 - 6th February 2024

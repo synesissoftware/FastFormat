@@ -63,7 +63,6 @@ target_compile_options(fastformat PRIVATE
 	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
 		-Werror -Wall -Wextra -pedantic
 
-		-Wno-deprecated-copy-with-user-provided-copy
 		# -Wno-missing-braces
 		# -Wno-missing-field-initializers
 		# -Wno-unused-parameter

@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 6
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     12
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 8
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -181,7 +181,7 @@ public:
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
-        /// Copy construction (required for throw-by-value; assignment remains closed)
+        /// Copy construction (public: required for portable throw/catch)
         missing_resource_id_exception(class_type const& rhs)
             : parent_class_type(rhs)
             , id(rhs.id)
@@ -190,9 +190,15 @@ public:
             FASTFORMAT_COVER_MARK_ENTRY();
         }
 
+#if 0
+#elif defined(__cplusplus) && \
+      __cplusplus >= 201103L
+        class_type& operator =(class_type const&) = delete;
+#else /* ? C++11 */
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
+#endif /* C++11 */
 
     public: // Attributes
         /// The identifier of the resource that could not be loaded
