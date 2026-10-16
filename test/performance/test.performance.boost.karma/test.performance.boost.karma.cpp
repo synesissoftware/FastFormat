@@ -1,3 +1,13 @@
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.boost.karma/test.performance.boost.karma.cpp
+ *
+ * Purpose: Performance tests for boost.karma.
+ *
+ * Created: 16th October 2026
+ * Updated: 16th October 2026
+ *
+ * ////////////////////////////////////////////////////////////////////// */
+
 //   Copyright (c) 2002-2009 Joel Hartmut Kaiser
 //   Copyright (c) 2002-2009 Joel de Guzman
 // 

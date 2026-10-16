@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.memory.1.cpp
+ * File:    examples/example.memory.1/example.memory.1.cpp
  *
- * Purpose:     Implementation file for the example.memory.1 project.
+ * Purpose: Example for memory / allocation behaviour.
  *
- * Created:     20th September 2008
- * Updated:     6th February 2024
+ * Created: 20th September 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #define FASTFORMAT_NO_USE_JIT_CACHE
 
@@ -34,8 +33,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -157,7 +157,7 @@ static void test_1()
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     test_1();
 
@@ -219,17 +219,19 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -239,8 +241,9 @@ int main(int argc, char** argv)
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
         puts("example.memory.1: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -259,8 +262,9 @@ int main(int argc, char** argv)
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 

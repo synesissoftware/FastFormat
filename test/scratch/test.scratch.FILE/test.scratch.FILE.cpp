@@ -1,12 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.FILE.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/scratch/test.scratch.FILE/test.scratch.FILE.cpp
  *
- * Purpose:     Implementation file for the test.scratch.FILE project.
+ * Purpose: Scratch program for FILE.
  *
- * Created:     24th September 2006
- * Updated:     6th February 2024
+ * Created: 24th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
+ * ////////////////////////////////////////////////////////////////////// */
 
 #if defined(_DEBUG) && \
     defined(WIN32) && \
@@ -83,7 +83,7 @@
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /* argv */)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     {
 #if 1
@@ -344,7 +344,7 @@ static int main_(int /* argc */, char** /* argv */)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
 #if 0
     { for(size_t i = 0; i < 0xffffffff; ++i){} }
@@ -352,8 +352,9 @@ int main(int argc, char** argv)
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
         puts("test.scratch.FILE: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 

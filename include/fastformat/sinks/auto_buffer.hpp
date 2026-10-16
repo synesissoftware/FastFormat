@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/auto_buffer.hpp
+ * File:    fastformat/sinks/auto_buffer.hpp
  *
- * Purpose:     A FastFormat sink for STLSoft's auto_buffer class template.
+ * Purpose: A FastFormat sink for STLSoft's auto_buffer class template.
  *
- * Created:     21st April 2008
- * Updated:     13th September 2010
+ * Created: 21st April 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       16
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -81,8 +82,9 @@
  * Compatibility
  */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER < 1310
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER < 1310
 # ifndef FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS
 #  define FASTFORMAT_AUTO_BUFFER_SINK_ONLY_SIMPLE_FORM_SUPPORT
 # endif /* !FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS */
@@ -171,7 +173,7 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 
         // first we check for a current trailing nul character
 
-        if( 0 != currentSize && 
+        if( 0 != currentSize &&
             '\0' == sink[currentSize - 1])
         {
             --currentSize;
@@ -193,10 +195,10 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 
         if(flags::ff_newLine & flags)
         {
-            const ff_string_slice_t crlf = fastformat_getNewlineForPlatform();
+            const ff_string_slice_t newline = fastformat_getNewlineForPlatform();
 
-            ::memcpy(p, crlf.ptr, crlf.len * sizeof(char_t));
-            p += crlf.len;
+            ::memcpy(p, newline.ptr, newline.len * sizeof(char_t));
+            p += newline.len;
         }
 
         // finally we append the terminating nul character

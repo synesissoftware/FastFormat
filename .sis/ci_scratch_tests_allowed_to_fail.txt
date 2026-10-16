@@ -1,0 +1,5 @@
+# Scratch-test programs that are allowed to fail: none currently.
+# run_all_scratch_tests.{sh,cmd} still executes each listed program, but
+# reports a non-zero exit as anticipated rather than failing the run.
+# List program names or stems (test.scratch.format_defects and
+# test.scratch.format_defects.exe are equivalent).

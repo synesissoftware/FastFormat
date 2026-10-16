@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.inserter.integer.cpp
+ * File:    test/component/test.component.inserter.integer/test.component.inserter.integer.cpp
  *
- * Purpose:     Implementation file for the test.component.inserter.integer project.
+ * Purpose: Component tests for inserter.integer.
  *
- * Created:     26th April 2008
- * Updated:     6th February 2024
+ * Created: 26th April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

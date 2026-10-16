@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.failure.mismatched.arguments.cpp
+ * File:    test/unit/test.unit.failure.mismatched.arguments/test.unit.failure.mismatched.arguments.cpp
  *
- * Purpose:     Implementation file for the test.unit.failure.mismatched.arguments project.
+ * Purpose: Unit tests for failure.mismatched.arguments.
  *
- * Created:     28th October 2013
- * Updated:     6th February 2024
+ * Created: 28th October 2013
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test component header file include(s)

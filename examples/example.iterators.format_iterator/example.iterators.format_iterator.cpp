@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.iterators.format_iterator/example.iterators.format_iterator.cpp
+ * File:    examples/example.iterators.format_iterator/example.iterators.format_iterator.cpp
  *
- * Purpose:     Implementation file for the example.iterators.format_iterator project.
+ * Purpose: Example for format_iterator.
  *
- * Created:     26th March 2010
- * Updated:     6th February 2024
+ * Created: 26th March 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* STLSoft header files */
 #include <stlsoft/stlsoft.h>
@@ -48,7 +47,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
   typedef std::wstring            string_t;
@@ -94,7 +93,7 @@ static int main_(int /* argc */, char** /*argv*/)
   return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
   try
   {

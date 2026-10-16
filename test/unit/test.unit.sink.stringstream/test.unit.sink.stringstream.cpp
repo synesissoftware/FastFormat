@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.sink.stringstream.cpp
+ * File:    test/unit/test.unit.sink.stringstream/test.unit.sink.stringstream.cpp
  *
- * Purpose:     Implementation file for the test.unit.sink.stringstream project.
+ * Purpose: Unit tests for sink.stringstream.
  *
- * Created:     31st August 2008
- * Updated:     6th February 2024
+ * Created: 31st August 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

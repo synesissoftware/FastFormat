@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.iterators.format_iterator.cpp
+ * File:    test/component/test.component.iterators.format_iterator/test.component.iterators.format_iterator.cpp
  *
- * Purpose:     Implementation file for the test.component.iterators.format_iterator project.
+ * Purpose: Component tests for iterators.format_iterator.
  *
- * Created:     26th April 2008
- * Updated:     6th February 2024
+ * Created: 26th April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

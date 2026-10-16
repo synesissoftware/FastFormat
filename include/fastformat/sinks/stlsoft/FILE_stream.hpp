@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/stlsoft/FILE_stream.hpp
+ * File:    fastformat/sinks/stlsoft/FILE_stream.hpp
  *
- * Purpose:     A FastFormat sink for STLSoft's stlsoft::FILE_stream.
+ * Purpose: A FastFormat sink for STLSoft's stlsoft::FILE_stream.
  *
- * Created:     19th July 2010
- * Updated:     6th February 2024
+ * Created: 19th July 2010
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -56,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     4
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -130,8 +130,9 @@ inline F& fmt_slices_(
 
         // TODO: translate the exceptions into ff::sink_output_exception
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER == 1400
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER == 1400
         // VC++ 8 erroneously (at least IMO) asserts on the validity of the
         // pointer given to write() even when count is 0. Other versions
         // (including 9) don't do this, so we won't bother to catch it
@@ -161,8 +162,9 @@ inline F& fmt_slices_(
 
 /** Writes an array of string slices into a <code>stlsoft::FILE_stream</code> sink.
  */
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER < 1310
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER < 1310
 
 inline stlsoft::FILE_stream& fmt_slices(
     stlsoft::FILE_stream&       sink

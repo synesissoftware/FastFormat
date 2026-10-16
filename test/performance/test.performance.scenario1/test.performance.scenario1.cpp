@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.scenario1.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.scenario1/test.performance.scenario1.cpp
  *
- * Purpose:     Implementation file for the test.performance.scenario1 project.
+ * Purpose: Performance tests for scenario1.
  *
- * Created:     19th September 2006
- * Updated:     16th October 2026
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
@@ -46,7 +45,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -128,8 +127,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -160,7 +160,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.scenar
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     // 0 - nothing
     // 1 - ratios only, in the form of "t:v; t:v; ..."
@@ -601,12 +601,16 @@ int main(int argc, char *argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
@@ -617,8 +621,9 @@ int main(int argc, char *argv[])
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
         puts("test.performance.scenario1: " STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -648,7 +653,9 @@ int main(int argc, char *argv[])
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */

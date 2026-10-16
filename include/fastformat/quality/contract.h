@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/quality/contract.h
+ * File:    fastformat/quality/contract.h
  *
- * Purpose:     Defines the contract enforcement constructs used in the
+ * Purpose: Defines the contract enforcement constructs used in the
  *              FastFormat core and API.
  *
- * Created:     12th April 2008
- * Updated:     4th September 2010
+ * Created: 12th April 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -57,7 +58,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_MINOR     3
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_EDIT      14
+# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_CONTRACT_EDIT      15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////

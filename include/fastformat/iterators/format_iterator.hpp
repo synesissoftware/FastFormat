@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/iterators/format_iterator.hpp
+ * File:    fastformat/iterators/format_iterator.hpp
  *
- * Purpose:     Definition of the fastformat::format_iterator output
+ * Purpose: Definition of the fastformat::format_iterator output
  *              iterator.
  *
- * Created:     20th May 2009
- * Updated:     19th January 2011
+ * Created: 20th May 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2011, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -56,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_REVISION   6
-# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       10
+# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -163,7 +164,8 @@ private:
     class deref_proxy;
     friend class deref_proxy;
 
-#if defined(STLSOFT_COMPILER_IS_MWERKS)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MWERKS)
 public:
 #else
 private:
@@ -311,7 +313,7 @@ private:
 };
 
 #ifdef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
-/** <a href="http://synesis.com.au/publishing/xstl/glossary.html#creator-function">Creator function</a> for 
+/** <a href="http://synesis.com.au/publishing/xstl/glossary.html#creator-function">Creator function</a> for
  * the fastformat::iterators::format_output_iterator output iterator class template.
  *
  * Used as follows

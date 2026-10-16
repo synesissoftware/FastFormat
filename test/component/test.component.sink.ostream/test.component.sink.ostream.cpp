@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.ostream.cpp
+ * File:    test/component/test.component.sink.ostream/test.component.sink.ostream.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.ostream project.
+ * Purpose: Component tests for sink.ostream.
  *
- * Created:     14th September 2010
- * Updated:     6th February 2024
+ * Created: 14th September 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -35,8 +34,9 @@
 /* Standard C header files */
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -59,7 +59,7 @@ static void test_1_8();
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;

@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.format_specification_defect_exceptions.cpp
+ * File:    test/component/test.component.format_specification_defect_exceptions/test.component.format_specification_defect_exceptions.cpp
  *
- * Purpose:     Implementation file for the test.component.format_specification_defect_exceptions project.
+ * Purpose: Component tests for format_specification_defect_exceptions.
  *
- * Created:     13th April 2010
- * Updated:     6th February 2024
+ * Created: 13th April 2010
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

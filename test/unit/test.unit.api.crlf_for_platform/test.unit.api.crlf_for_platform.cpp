@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.api.crlf_for_platform.cpp
+ * File:    test/unit/test.unit.api.crlf_for_platform/test.unit.api.crlf_for_platform.cpp
  *
- * Purpose:     Implementation file for the test.unit.api.crlf_for_platform project.
+ * Purpose: Unit tests for api.crlf_for_platform.
  *
- * Created:     27th May 2008
- * Updated:     6th February 2024
+ * Created: 27th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

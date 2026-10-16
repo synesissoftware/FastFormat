@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.FILE_stream.cpp
+ * File:    test/component/test.component.FILE_stream/test.component.FILE_stream.cpp
  *
- * Purpose:     Implementation file for the test.component.FILE_stream project.
+ * Purpose: Component tests for FILE_stream.
  *
- * Created:     3rd January 2008
- * Updated:     6th February 2024
+ * Created: 3rd January 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -36,8 +35,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -74,7 +74,7 @@ static void test_1_8();
 
 #include <iostream>
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;

@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/util/memory/auto_buffer_selector.hpp
+ * File:    fastformat/util/memory/auto_buffer_selector.hpp
  *
- * Purpose:     Type generator template for defining stlsoft::auto_buffer
+ * Purpose: Type generator template for defining stlsoft::auto_buffer
  *              specialisations.
  *
- * Created:     22nd April 2008
- * Updated:     5th February 2017
+ * Created: 22nd April 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -58,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      15
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -73,8 +74,9 @@
 # include <fastformat/internal/stlsoft.h>
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER >= 1400
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER >= 1400
 # define FASTFORMAT_COMPILER_CF_STD_ALLOCATOR_SYMBOLS_MULTIPLY_DEFINED
 #endif /* compiler */
 
@@ -120,8 +122,8 @@ namespace util
  * \ingroup group__utility
  *
  * There are two reasons for this:
- * - Some (older) compilers have to use the old (pre-1.9) form of 
- *   <code>stlsoft::auto_buffer</code>. Using 
+ * - Some (older) compilers have to use the old (pre-1.9) form of
+ *   <code>stlsoft::auto_buffer</code>. Using
  *   fastformat::auto_buffer_selector makes FastFormat code independent of
  *   such compilers' behavioural odities.
  * - Visual C++ 8 & 9 both have  bug that causes them to exhibit a linker

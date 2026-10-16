@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.overload.ex.1.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.overload.ex.1/test.performance.overload.ex.1.cpp
  *
- * Purpose:     Implementation file for the test.performance.overload.ex.1 project.
+ * Purpose: Performance tests for overload.ex.1.
  *
- * Created:     19th October 2008
- * Updated:     16th October 2026
+ * Created: 19th October 2008
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
@@ -46,7 +45,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -128,8 +127,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -150,7 +150,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.overlo
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     // 0 - nothing
     // 1 - ratios only, in the form of "t:v; t:v; ..."
@@ -348,13 +348,13 @@ static int main_(int argc, char** argv)
             stlsoft::auto_buffer<fastformat::ff_char_t, 8>  buff(total);
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-            int r = ::wsprintf(&buff[0], TX("My name is %s %s; I am %d years old; call me %s")
+            int r = ::wsnprintf(&buff[0], buff.size(), TX("My name is %s %s; I am %d years old; call me %s")
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
             int r = ::snprintf(&buff[0], buff.size(), "My name is %s %s; I am %d years old; call me %s"
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
                             , forename.c_str(), surname, age, forename.c_str());
 
-            // TODO: handle r < 0 
+            // TODO: handle r < 0
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
             std::wstring    s(buff.data(), size_t(r));
@@ -561,13 +561,15 @@ int main(int argc, char *argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -577,8 +579,9 @@ int main(int argc, char *argv[])
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
         puts("test.performance.overload.ex.1: " STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -608,8 +611,9 @@ int main(int argc, char *argv[])
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 

@@ -1,11 +1,11 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.performance.api.parse_format.cpp
+ * File:    test/performance/test.performance.api.parse_format/test.performance.api.parse_format.cpp
  *
- * Purpose:     Implementation file for the test.performance.api.parse_format project.
+ * Purpose: Performance tests for api.parse_format.
  *
- * Created:     17th November 2008
- * Updated:     6th February 2024
- * *
+ * Created: 17th November 2008
+ * Updated: 16th October 2026
+ *
  * ////////////////////////////////////////////////////////////////////// */
 
 //#define FF_PRSFMT_USE_SV_PARAM
@@ -30,8 +30,9 @@
 /* Standard C header files */
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -148,7 +149,7 @@ fastformat::mismatchedHandler_t prev = NULL;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     platformstl::performance_counter                counter;
     platformstl::performance_counter::interval_type tmManual;
@@ -156,7 +157,7 @@ static int main_(int /* argc */, char** /*argv*/)
     platformstl::performance_counter::interval_type tmStringView;
     platformstl::performance_counter::interval_type tmStdString;
 
-    char const* params[] = 
+    char const* params[] =
     {
             "{0}"
         ,   "{1}"
@@ -424,17 +425,19 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -455,8 +458,9 @@ int main(int argc, char** argv)
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -464,7 +468,7 @@ int main(int argc, char** argv)
 }
 
 /* /////////////////////////////////////////////////////////////////////////
- * Function definitions 
+ * Function definitions
  */
 
 int FASTFORMAT_CALLCONV ignore_unreferenced_params_handler(

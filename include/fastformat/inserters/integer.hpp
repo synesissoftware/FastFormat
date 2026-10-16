@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/inserters/integer.hpp
+ * File:    fastformat/inserters/integer.hpp
  *
- * Purpose:     Inserter functions for integral types
+ * Purpose: Inserter functions for integral types
  *
- * Created:     26th May 2009
- * Updated:     5th February 2017
+ * Created: 26th May 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   8
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       23
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       25
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -467,7 +468,8 @@ inline ff_to_i_r_t_ integer_helper_5(
             FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(16 == base);
 
 #ifdef STLSOFT_VER_STLSOFT_CONVERSION_INTEGER_TO_STRING_HPP_INTEGER_TO_HEXADECIMAL_STRING_MAJOR
-            ff_char_t           sz[17];
+            // 64-bit signed minimum is sign, 16 hex digits, and NUL.
+            ff_char_t           sz[18];
             size_t              n;
             ff_char_t const*    s = stlsoft::integer_to_hexadecimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
 
@@ -479,7 +481,7 @@ inline ff_to_i_r_t_ integer_helper_5(
             }
 
             return ff_to_i_r_t_(s, n);
-#else 
+#else
             return hex_integer_helper(value, uppercaseAlpha);
 #endif /* STLSOFT_VER_STLSOFT_CONVERSION_INTEGER_TO_STRING_HPP_INTEGER_TO_HEXADECIMAL_STRING_MAJOR */
         }

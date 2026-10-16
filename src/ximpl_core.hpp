@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/ximpl_core.hpp
+ * File:    src/ximpl_core.hpp
  *
- * Purpose:     Declarations of internal shared core functions.
+ * Purpose: Declarations of internal shared core functions.
  *
- * Created:     3rd February 2012
- * Updated:     16th August 2016
+ * Created: 3rd February 2012
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2012-2016, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2012-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

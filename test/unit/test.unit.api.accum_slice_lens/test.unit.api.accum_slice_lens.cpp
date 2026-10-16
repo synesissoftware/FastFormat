@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.api.accum_slice_lens.cpp
+ * File:    test/unit/test.unit.api.accum_slice_lens/test.unit.api.accum_slice_lens.cpp
  *
- * Purpose:     Implementation file for the test.unit.api.accum_slice_lens project.
+ * Purpose: Unit tests for api.accum_slice_lens.
  *
- * Created:     27th May 2008
- * Updated:     6th February 2024
+ * Created: 27th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

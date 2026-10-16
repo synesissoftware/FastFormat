@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        src/snprintf.cpp
+ * File:    src/snprintf.cpp
  *
- * Purpose:     Implementation file for snprintf() utility functions.
+ * Purpose: Implementation file for snprintf() utility functions.
  *
- * Created:     1st June 2008
- * Updated:     3rd February 2012
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2012, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -78,7 +79,8 @@ namespace util
  * fastformat_util_vsnprintf_(d, n, f, a)
  */
 
-#if defined(STLSOFT_COMPILER_IS_DMC) || \
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_DMC) ||\
     (   (   defined(WIN32) || \
             defined(WIN64)) && \
         (   defined(STLSOFT_COMPILER_IS_INTEL) || \

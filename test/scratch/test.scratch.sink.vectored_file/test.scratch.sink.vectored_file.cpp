@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sink.vectored_file.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/scratch/test.scratch.sink.vectored_file/test.scratch.sink.vectored_file.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sink.vectored_file project.
+ * Purpose: Scratch program for sink.vectored_file.
  *
- * Created:     28th October 2006
- * Updated:     6th February 2024
+ * Created: 28th October 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 /* UNIXem header files */
 #include <platformstl/platformstl.h>
@@ -46,7 +45,7 @@
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char ** /*argv*/)
+static int main_(int /*argc*/, char ** /*argv*/)
 {
     platformstl::file_path_buffer       path1;
     platformstl::file_path_buffer       path2;
@@ -68,7 +67,7 @@ static int main_(int /* argc */, char ** /*argv*/)
 
     fprintf(stdout, "writing to '%s' via raw API (writev())\n", path1.c_str());
     {
-        iovec   vecs[] = 
+        iovec   vecs[] =
         {
                 {   &fragment1[0],  STLSOFT_NUM_ELEMENTS(fragment1) - 1 }   // "FastFormat"
             ,   {   &fragment0[0],  STLSOFT_NUM_ELEMENTS(fragment0) - 1 }   // " "
@@ -124,13 +123,15 @@ int main(int argc, char *argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -162,8 +163,9 @@ int main(int argc, char *argv[])
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.scratch.sink.WindowsConsole.cpp
+ * File:    test/scratch/test.scratch.sink.WindowsConsole/test.scratch.sink.WindowsConsole.cpp
  *
- * Purpose:     Implementation file for the test.scratch.sink.WindowsConsole project.
+ * Purpose: Scratch program for sink.WindowsConsole.
  *
- * Created:     6th January 2011
- * Updated:     6th February 2024
+ * Created: 6th January 2011
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* FastFormat header files */
 #include <fastformat/ff.hpp>
@@ -27,12 +26,16 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     /* . */
     ff::writeln(std::cout, "a regular output line");
 
-    ff::writeln(ff::sinks::WindowsConsole(FOREGROUND_RED), "a regular output line");
+    {
+        ff::sinks::WindowsConsole_sink console(::GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
+
+        ff::writeln(console, "a regular output line");
+    }
 
     ff::writeln(std::cout, "another regular output line");
 
@@ -40,7 +43,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

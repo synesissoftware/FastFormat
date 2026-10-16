@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        example.overload.3.server_log.cpp
+ * File:    examples/example.overload.3.server_log/example.overload.3.server_log.cpp
  *
- * Purpose:     Implementation file for the example.overload.3.server_log
- *              project.
+ * Purpose: Example for server-log overload.
  *
- * Created:     29th April 2009
- * Updated:     6th February 2024
+ * Created: 29th April 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/fastformat.h>
 

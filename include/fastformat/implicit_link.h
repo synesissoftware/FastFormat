@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/implicit_link.h (formerly fastformat/fastformat_implicit_link.h)
+ * File:    fastformat/implicit_link.h (formerly fastformat/fastformat_implicit_link.h)
  *
- * Purpose:     Implicit linking for the FastFormat API
+ * Purpose: Implicit linking for the FastFormat API
  *
- * Created:     30th January 2007
- * Updated:     21st March 2021
+ * Created: 30th January 2007
+ * Updated: 16th October 2026
  *
- * Home:        http://fastformat.org/
+ * Home:    http://fastformat.org/
  *
- * Copyright (c) 2019-2021, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2007-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -54,7 +54,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_MINOR    6
 # define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_EDIT     21
+# define FASTFORMAT_VER_FASTFORMAT_H_IMPLICIT_LINK_EDIT     22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -71,8 +71,9 @@
  * Implicit linking
  */
 
-#if defined(_WIN32) || \
-    defined(_WIN64)
+#if 0
+#elif defined(_WIN32) || \
+      defined(_WIN64)
 
 # if defined(__BORLANDC__) || \
      /* defined(__DMC__) || */ \
@@ -101,7 +102,7 @@
 
   /* major version */
 
-#  define FASTFORMAT_IMPL_LINK_MAJOR_VERSION            "." STLSOFT_STRINGIZE(FASTFORMAT_VER_MAJOR) 
+#  define FASTFORMAT_IMPL_LINK_MAJOR_VERSION            "." STLSOFT_STRINGIZE(FASTFORMAT_VER_MAJOR)
 
   /* module name */
 
@@ -298,7 +299,7 @@
                                                         FASTFORMAT_IMPL_LINK_NOX_TYPE \
                                                         FASTFORMAT_IMPL_LINK_DEBUG_TAG \
                                                         FASTFORMAT_IMPL_LINK_SUFFIX
-                                                        
+
 
 #  pragma message("lib: " FASTFORMAT_IMPL_LINK_LIBRARY_NAME)
 

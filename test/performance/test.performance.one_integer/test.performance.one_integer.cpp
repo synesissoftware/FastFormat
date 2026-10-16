@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.one_integer.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.one_integer/test.performance.one_integer.cpp
  *
- * Purpose:     Implementation file for the test.performance.one_integer project.
+ * Purpose: Performance tests for one_integer.
  *
- * Created:     9th September 2006
- * Updated:     16th October 2026
+ * Created: 9th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
@@ -49,7 +48,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -164,7 +163,7 @@ static std::string  with_FF_Format(int value);
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
 #ifdef _DEBUG
     unsigned ITERATIONS =   3;
@@ -703,7 +702,7 @@ int main(int argc, char *argv[])
 
 static std::string with_Streams(int value)
 {
-    char    num[21];
+    char num[21];
 
     return std::string(num, size_t(::snprintf(&num[0], STLSOFT_NUM_ELEMENTS(num), "%d", value)));
 }
@@ -766,7 +765,7 @@ static std::string with_STLSoftI2S(int value)
 static CString with_MFC(int value)
 {
     CString str;
-    
+
     str.Format(TEXT("%d"), value);
 
     return str;

@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.auto_buffer.cpp
+ * File:    test/component/test.component.sink.auto_buffer/test.component.sink.auto_buffer.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.auto_buffer project.
+ * Purpose: Component tests for sink.auto_buffer.
  *
- * Created:     26th April 2008
- * Updated:     6th February 2024
+ * Created: 26th April 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes

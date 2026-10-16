@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.sink.c_string/example.sink.c_string.cpp
+ * File:    examples/example.sink.c_string/example.sink.c_string.cpp
  *
- * Purpose:     Implementation file for the example.sink.c_string project.
+ * Purpose: Example for the c_string sink.
  *
- * Created:     17th May 2009
- * Updated:     6th February 2024
+ * Created: 17th May 2009
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -41,7 +40,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /* argv */)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
 
@@ -99,7 +98,7 @@ static int main_(int /* argc */, char** /* argv */)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

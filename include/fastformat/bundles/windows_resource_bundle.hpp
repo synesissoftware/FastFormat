@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/bundles/windows_resource_bundle.hpp
+ * File:    fastformat/bundles/windows_resource_bundle.hpp
  *
- * Purpose:     Windows resource bundle.
+ * Purpose: Windows resource bundle.
  *
- * Created:     24th April 2009
- * Updated:     5th February 2017
+ * Created: 24th April 2009
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2009-2017, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2009-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 5
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     9
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 8
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -140,7 +141,7 @@ public:
         explicit missing_resource_id_exception(int id)
             : parent_class_type(create_message_(NULL, 0u, id, NULL).c_str())
             , id(id)
-            , code(-1)
+            , code(~static_cast<DWORD>(0))
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
@@ -156,8 +157,8 @@ public:
          *   loaded
          */
         missing_resource_id_exception(char const* msg, DWORD code, ff_char_t const* id, ff_char_t const* resourceType)
-            : parent_class_type(create_message_(msg, code, reinterpret_cast<int>(id), resourceType).c_str())
-            , id(reinterpret_cast<int>(id))
+            : parent_class_type(create_message_(msg, code, pointer_id_(id), resourceType).c_str())
+            , id(pointer_id_(id))
             , code(code)
         {
             FASTFORMAT_COVER_MARK_ENTRY();
@@ -180,10 +181,24 @@ public:
         {
             FASTFORMAT_COVER_MARK_ENTRY();
         }
+        /// Copy construction (public: required for portable throw/catch)
+        missing_resource_id_exception(class_type const& rhs)
+            : parent_class_type(rhs)
+            , id(rhs.id)
+            , code(rhs.code)
+        {
+            FASTFORMAT_COVER_MARK_ENTRY();
+        }
 
+#if 0
+#elif defined(__cplusplus) && \
+      __cplusplus >= 201103L
+        class_type& operator =(class_type const&) = delete;
+#else /* ? C++11 */
     private:
         /// Not assignment-copyable
         class_type& operator =(class_type const&);
+#endif /* C++11 */
 
     public: // Attributes
         /// The identifier of the resource that could not be loaded
@@ -192,7 +207,24 @@ public:
         const DWORD code;
 
     private:
-        static multibyte_string_type create_message_(char const* msg, DWORD code, int id, ff_char_t const* resourceType)
+        static int pointer_id_(ff_char_t const* p)
+        {
+#if defined(_MSC_VER)
+# pragma warning(push)
+# pragma warning(disable : 4244 4267)
+#endif /* _MSC_VER */
+
+            // Resource ids that are string pointers are stored in an int,
+            // as this exception's id member has always been int.
+            int const   id = static_cast<int>(reinterpret_cast<INT_PTR>(p));
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif /* _MSC_VER */
+
+            return id;
+        }
+        static multibyte_string_type create_message_(char const* /*msg*/, DWORD code, int id, ff_char_t const* /*resourceType*/)
         {
             static const char       string0[]   =   "could not load bundle resource corresponding to identifier ";
             static const char       string1[]   =   ": ";

@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/sinks/CString.hpp
+ * File:    fastformat/sinks/CString.hpp
  *
- * Purpose:     A FastFormat sink adaptor for MFC's CString.
+ * Purpose: A FastFormat sink adaptor for MFC's CString.
  *
- * Created:     2nd June 2008
- * Updated:     13th September 2010
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2010, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_REVISION   4
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       13
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -114,7 +115,7 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
             cchTotal += crlf.len;
         }
 
-        mfcstl::grab_cstring_buffer buff(sink, static_cast<int>(cchTotal) + sink.GetLength());
+        mfcstl::grab_CString_buffer buff(sink, static_cast<int>(cchTotal) + sink.GetLength());
         ff_char_t*                  base    =   buff;
         size_t                      n       =   concat_slices(cchTotal, base + buff.original_length(), numResults, results);
 

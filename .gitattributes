@@ -1,22 +1,126 @@
-*.c linguist-language=C
-*.h linguist-language=C
+# .gitattributes — C / C++ (GitHub-hosted)
+#
+# Sources: GitHub Docs (line endings), git-scm gitattributes (diff=cpp),
+# gitattributes/gitattributes C++.gitattributes + Common.gitattributes,
+# github-linguist overrides.
+#
+# Linguist language-bar policy (Synesis): classify public C API headers as C
+# and *.cmake as CMake scripts; keep helper scripts, IDE project files, and
+# CMakeLists.txt config out of the advertised language mix. Prefer
+# -linguist-detectable over linguist-detectable=false.
 
+# Default: detect text, normalize to LF in the repository
+* text=auto
+
+# --- Source ---
+*.c text diff=cpp
+*.c++ text diff=cpp
+*.cc text diff=cpp
+*.cpp text diff=cpp
+*.cxx text diff=cpp
+*.h text diff=cpp
+*.h++ text diff=cpp
+*.hh text diff=cpp
+*.hpp text diff=cpp
+*.hxx text diff=cpp
+*.inc text
+*.inl text
+*.ipp text
+*.tcc text
+*.tpp text
+
+# --- Build / config ---
+*.am text
+*.cmake text
+*.m4 text
+*.mak text
+*.mk text
+*akefile text
+CMakeLists.txt text
+configure text eol=lf
+configure.ac text
+
+# --- Scripts ---
+*.bash text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.sh text eol=lf
+*.zsh text eol=lf
+
+# --- Docs / meta ---
+*.adoc text
+*.markdown text diff=markdown
+*.md text diff=markdown
+*.txt text
+AUTHORS text
+CHANGELOG text
+CHANGES text
+CONTRIBUTING text
+COPYING text
+LICENSE text
+NEWS text
+README text
+TODO text
+.gitattributes text
+.gitignore text
+
+# --- Serialisation ---
+*.json text
+*.toml text
+*.xml text
+*.yaml text
+*.yml text
+
+# --- Compiled / binary artefacts ---
+*.a binary
+*.dll binary
+*.dylib binary
+*.exe binary
+*.gch binary
+*.la binary
+*.lai binary
+*.lib binary
+*.lo binary
+*.o binary
+*.obj binary
+*.out binary
+*.pch binary
+*.slo binary
+*.so binary
+
+# --- Archives / images (common) ---
+*.gif binary
+*.gz binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.tar binary
+*.zip binary
+
+# --- GitHub Linguist ---
+**/build/** linguist-generated
+**/cmake-build-*/** linguist-generated
+
+# Classification (C-primary / C API with C++ tests; *.cmake as CMake scripts)
+*.c linguist-language=C
+*.cmake linguist-language=CMake
 *.cpp linguist-language=C++
-*.hpp linguist-language=C++
 *.cxx linguist-language=C++
+*.h linguist-language=C
+*.hpp linguist-language=C++
 *.hxx linguist-language=C++
 
-*.cmake linguist-language=CMake
-
-*.cmd linguist-detectable=false
-*.html linguist-detectable=false
-*.sh linguist-detectable=false
-*.dsp linguist-detectable=false
-*.dsw linguist-detectable=false
-*.sln linguist-detectable=false
-*.vimrc linguist-detectable=false
-*.vcxproj linguist-detectable=false
-
-CMakeLists.txt linguist-language=CMake
-makefile linguist-detectable=false
-
+# Keep the bar on library languages (helpers / legacy IDE / docs /
+# CMakeLists.txt config; leave *.cmake detectable as CMake)
+*.cmd -linguist-detectable
+*.dsp -linguist-detectable
+*.dsw -linguist-detectable
+*.html -linguist-detectable
+*.sh -linguist-detectable
+*.sln -linguist-detectable
+*.vcxproj -linguist-detectable
+*.vimrc -linguist-detectable
+CMakeLists.txt -linguist-detectable
+makefile -linguist-detectable

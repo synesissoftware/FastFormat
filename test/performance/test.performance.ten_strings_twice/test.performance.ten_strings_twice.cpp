@@ -1,13 +1,12 @@
-/* /////////////////////////////////////////////////////////////////////////////
- * File:        test.performance.ten_strings_twice.cpp
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test/performance/test.performance.ten_strings_twice/test.performance.ten_strings_twice.cpp
  *
- * Purpose:     Implementation file for the test.performance.ten_strings_twice project.
+ * Purpose: Performance tests for ten_strings_twice.
  *
- * Created:     19th September 2006
- * Updated:     16th October 2026
+ * Created: 19th September 2006
+ * Updated: 16th October 2026
  *
- * ////////////////////////////////////////////////////////////////////////// */
-
+ * ////////////////////////////////////////////////////////////////////// */
 
 //#define FASTFORMAT_NO_USE_JIT_CACHE
 
@@ -46,7 +45,7 @@
 # include <stdio.h>
 # include <string.h>
 
-    namespace 
+    namespace
     {
         char    s_realBuffer[1001];
     }
@@ -128,7 +127,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
@@ -150,7 +151,7 @@ extern "C" const char PANTHEIOS_FE_PROCESS_IDENTITY[] = "test.performance.ten_st
 
 /* ////////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int argc, char* argv[])
 {
     // 0 - nothing
     // 1 - ratios only, in the form of "t:v; t:v; ..."
@@ -314,9 +315,9 @@ static int main_(int argc, char** argv)
         {
             CString s;
 
-            s.Format(TX("%s%s%s%s%s%s%s%.*s%s%.*s%s%s%s%s%s%s%s%.*s%s%.*s")
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, (int)arg7.size(), arg7.data(), arg8.c_str(), (int)arg9.size(), arg9.data()
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, (int)arg7.size(), arg7.data(), arg8.c_str(), (int)arg9.size(), arg9.data());
+            s.Format(TX("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%.*s%s%.*s")
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data()
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data());
 
 #ifdef SHOW_FIRST_RESULT
 (0 == i) && fprintf(stderr, "%.*s\n", int(s.GetLength()), static_cast<char const*>(s));
@@ -347,8 +348,8 @@ static int main_(int argc, char** argv)
         {
             char    sz[10001];
             int     cch = ::snprintf(&sz[0], STLSOFT_NUM_ELEMENTS(sz), TX("%s%s%s%s%s%s%s%.*s%s%.*s%s%s%s%s%s%s%s%.*s%s%.*s")
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, (int)arg7.size(), arg7.data(), arg8.c_str(), (int)arg9.size(), arg9.data()
-                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, (int)arg7.size(), arg7.data(), arg8.c_str(), (int)arg9.size(), arg9.data());
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data()
+                        ,   arg0.c_str(), arg1, arg2.c_str(), arg3.c_str(), arg4.c_str(), arg5.c_str(), arg6, int(arg7.size()), arg7.data(), arg8.c_str(), int(arg9.size()), arg9.data());
 
             std::string s(sz, size_t(cch));
 
@@ -551,12 +552,16 @@ int main(int argc, char *argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
@@ -567,8 +572,9 @@ int main(int argc, char *argv[])
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
         puts("test.performance.ten_strings_twice: " STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -598,7 +604,9 @@ int main(int argc, char *argv[])
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */

@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.bundle.util.cpp
+ * File:    test/unit/test.unit.bundle.util/test.unit.bundle.util.cpp
  *
- * Purpose:     Implementation file for the test.unit.bundle.util project.
+ * Purpose: Unit tests for bundle.util.
  *
- * Created:     30th November 2016
- * Updated:     6th February 2024
+ * Created: 30th November 2016
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * includes
@@ -31,8 +30,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 

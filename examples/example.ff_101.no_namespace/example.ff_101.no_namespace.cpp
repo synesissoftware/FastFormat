@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        examples/example.ff_101.no_namespace/example.ff_101.no_namespace.cpp
+ * File:    examples/example.ff_101.no_namespace/example.ff_101.no_namespace.cpp
  *
- * Purpose:     Implementation file for the example.ff_101.no_namespace project.
+ * Purpose: Example introducing FastFormat basics without the FastFormat namespace.
  *
- * Created:     2nd June 2008
- * Updated:     6th February 2024
+ * Created: 2nd June 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #ifndef FASTFORMAT_NO_NAMESPACE
 # define FASTFORMAT_NO_NAMESPACE
@@ -52,7 +51,7 @@ using std::endl;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     // Case 1:
     //
@@ -222,7 +221,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

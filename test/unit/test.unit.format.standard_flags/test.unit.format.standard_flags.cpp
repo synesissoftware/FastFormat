@@ -1,13 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.unit.format.standard_flags.cpp
+ * File:    test/unit/test.unit.format.standard_flags/test.unit.format.standard_flags.cpp
  *
- * Purpose:     Implementation file for the test.unit.format.standard_flags project.
+ * Purpose: Unit tests for format.standard_flags.
  *
- * Created:     27th May 2008
- * Updated:     6th February 2024
+ * Created: 27th May 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 

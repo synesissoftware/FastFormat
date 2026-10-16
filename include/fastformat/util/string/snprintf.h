@@ -1,14 +1,15 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        fastformat/util/string/snprintf.h (was fastformat/util/string/string.h)
+ * File:    fastformat/util/string/snprintf.h
  *
- * Purpose:     snprintf() utility functions.
+ * Purpose: snprintf() utility functions.
  *
- * Created:     1st June 2008
- * Updated:     1st December 2011
+ * Created: 1st June 2008
+ * Updated: 16th October 2026
  *
- * Home:        http://www.fastformat.org/
+ * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2008-2011, Matthew Wilson and Synesis Software
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -39,7 +40,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/** \file fastformat/util/string/string.h
+/** \file fastformat/util/string/snprintf.h
  *
  * [C, C++] snprintf() utility functions.
  */
@@ -55,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MINOR     3
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      12
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -104,7 +105,8 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
 ,   ...
 )
 /* TODO: Change this to properly discriminated feature */
-#if defined(STLSOFT_COMPILER_IS_GCC)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_GCC)
 __attribute__((format(printf,3,4)))
 #endif /* compiler */
 ;
@@ -136,7 +138,8 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf_a(
 ,   ...
 )
 /* TODO: Change this to properly discriminated feature */
-#if defined(STLSOFT_COMPILER_IS_GCC)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_GCC)
 __attribute__((format(printf,3,4)))
 #endif /* compiler */
 ;

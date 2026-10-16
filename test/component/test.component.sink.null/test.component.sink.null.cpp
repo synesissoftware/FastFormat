@@ -1,14 +1,12 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:        test.component.sink.null.cpp
+ * File:    test/component/test.component.sink.null/test.component.sink.null.cpp
  *
- * Purpose:     Implementation file for the test.component.sink.null project.
+ * Purpose: Component tests for sink.null.
  *
- * Created:     10th December 2008
- * Updated:     6th February 2024
+ * Created: 10th December 2008
+ * Updated: 16th October 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
-
-
 
 /* /////////////////////////////////////////////////////////////////////////
  * Includes
