@@ -18,6 +18,7 @@
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/ff.hpp>
+#include <fastformat/util/string/snprintf.h>
 
 /* STLSoft header files */
 #include <platformstl/platformstl.hpp>
@@ -59,7 +60,12 @@ namespace fastformat
         inline std::string filter_type(double t, double const*, char const volatile*)
         {
             char    num[100];
-            int     n = ::sprintf(&num[0], "%G", t);
+            int     n = fastformat::util::fastformat_util_snprintf(
+                            &num[0]
+                        ,   STLSOFT_NUM_ELEMENTS(num)
+                        ,   "%G"
+                        ,   t
+                        );
 
             if(n < 0)
             {

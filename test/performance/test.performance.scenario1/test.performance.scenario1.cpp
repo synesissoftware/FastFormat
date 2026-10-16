@@ -107,6 +107,7 @@
 
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
+#include <fastformat/util/string/snprintf.h>
 
 /* Boost header files */
 #ifdef FASTFORMAT_PERFTEST_USE_BOOST
@@ -371,7 +372,7 @@ static int main_(int argc, char* argv[])
 
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING */
-    // sprintf()
+    // fastformat_util_snprintf()
 
     { for(unsigned j = 0; j < WARMUPS; ++j)
     {
@@ -381,14 +382,35 @@ static int main_(int argc, char* argv[])
         {
             char    sz[1001];
 #if defined(PERF_TEST_USE_4_PARAMS_3_STR_1_INT)
-            int     cch =   ::sprintf(&sz[0], "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
-                                    , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0), stlsoft::c_str_ptr(arg2), arg3);
+            int     cch =   fastformat::util::fastformat_util_snprintf(
+                                    &sz[0]
+                                ,   STLSOFT_NUM_ELEMENTS(sz)
+                                ,   "The first param '%s', and the second '%s', and the first again '%s'. Then the third '%s'. Finally, the last '%d'"
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   arg1
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   stlsoft::c_str_ptr(arg2)
+                                ,   arg3
+                                );
 #elif defined(PERF_TEST_USE_3_PARAMS)
-            int     cch =   ::sprintf(&sz[0], "The first param '%s', and the second '%s', and the first again '%s'. Finally, the third '%s'"
-                                    , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0), stlsoft::c_str_ptr(arg2));
+            int     cch =   fastformat::util::fastformat_util_snprintf(
+                                    &sz[0]
+                                ,   STLSOFT_NUM_ELEMENTS(sz)
+                                ,   "The first param '%s', and the second '%s', and the first again '%s'. Finally, the third '%s'"
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   arg1
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   stlsoft::c_str_ptr(arg2)
+                                );
 #else /* ? PERF_TEST_USE_3_PARAMS */
-            int     cch =   ::sprintf(&sz[0], "The first param '%s', and the second '%s', and the first again '%s'"
-                                    , stlsoft::c_str_ptr(arg0), arg1, stlsoft::c_str_ptr(arg0));
+            int     cch =   fastformat::util::fastformat_util_snprintf(
+                                    &sz[0]
+                                ,   STLSOFT_NUM_ELEMENTS(sz)
+                                ,   "The first param '%s', and the second '%s', and the first again '%s'"
+                                ,   stlsoft::c_str_ptr(arg0)
+                                ,   arg1
+                                ,   stlsoft::c_str_ptr(arg0)
+                                );
 #endif /* !PERF_TEST_USE_3_PARAMS */
 
             std::string s(sz, size_t(cch));
@@ -406,7 +428,7 @@ static int main_(int argc, char* argv[])
         if( verbosity >= 3 &&
             j == WARMUPS - 1)
         {
-            ::fprintf(stdout, "sprintf():  %lu\t(%lu)\n", (unsigned long)tm_Streams, (unsigned long)length);
+            ::fprintf(stdout, "snprintf(): %lu\t(%lu)\n", (unsigned long)tm_Streams, (unsigned long)length);
         }
     }}
 
@@ -571,7 +593,7 @@ static int main_(int argc, char* argv[])
             break;
         case    3:
             ::puts("");
-            ::fprintf(stdout, "sprintf():FastFormat.Format:         \t%2.04g\n", double(tm_Streams) / double(tm_FF_Format));
+            ::fprintf(stdout, "snprintf():FastFormat.Format:        \t%2.04g\n", double(tm_Streams) / double(tm_FF_Format));
             ::fprintf(stdout, "IOStreams:FastFormat.Format:         \t%2.04g\n", double(tm_IOStreams) / double(tm_FF_Format));
 #ifdef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
             ::fprintf(stdout, "CString::Format():FastFormat.Format: \t%2.04g\n", double(tm_CString_Format) / double(tm_FF_Format));
@@ -583,7 +605,7 @@ static int main_(int argc, char* argv[])
             ::fprintf(stdout, "Loki.SafeFormat:FastFormat.Format:   \t%2.04g\n", double(tm_Loki) / double(tm_FF_Format));
 #endif /* FASTFORMAT_PERFTEST_USE_LOKI */
             ::puts("");
-            ::fprintf(stdout, "sprintf():FastFormat.Write:          \t%2.04g\n", double(tm_Streams) / double(tm_FF_Write));
+            ::fprintf(stdout, "snprintf():FastFormat.Write:         \t%2.04g\n", double(tm_Streams) / double(tm_FF_Write));
             ::fprintf(stdout, "IOStreams:FastFormat.Write:          \t%2.04g\n", double(tm_IOStreams) / double(tm_FF_Write));
 #ifdef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
             ::fprintf(stdout, "CString::Format():FastFormat.Write:  \t%2.04g\n", double(tm_CString_Format) / double(tm_FF_Write));

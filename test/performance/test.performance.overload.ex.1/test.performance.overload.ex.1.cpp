@@ -107,6 +107,7 @@
 
 #include <fastformat/sinks/ostream.hpp>
 #include <fastformat/fastformat.hpp>
+#include <fastformat/util/string/snprintf.h>
 
 /* Boost header files */
 #ifdef FASTFORMAT_PERFTEST_USE_BOOST
@@ -333,7 +334,7 @@ static int main_(int argc, char* argv[])
 
 
 #endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING */
-    // sprintf()
+    // fastformat_util_snprintf()
 
     { for(unsigned j = 0; j < WARMUPS; ++j)
     {
@@ -352,12 +353,15 @@ static int main_(int argc, char* argv[])
                                                 + 1; // for the nul-terminator
             stlsoft::auto_buffer<fastformat::ff_char_t, 8>  buff(total);
 
-#ifdef FASTFORMAT_USE_WIDE_STRINGS
-            int r = ::wsprintf(&buff[0], TX("My name is %s %s; I am %d years old; call me %s")
-#else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-            int r = ::sprintf(&buff[0], "My name is %s %s; I am %d years old; call me %s"
-#endif /* FASTFORMAT_USE_WIDE_STRINGS */
-                            , forename.c_str(), surname, age, forename.c_str());
+            int r = fastformat::util::fastformat_util_snprintf(
+                            &buff[0]
+                        ,   buff.size()
+                        ,   TX("My name is %s %s; I am %d years old; call me %s")
+                        ,   forename.c_str()
+                        ,   surname
+                        ,   age
+                        ,   forename.c_str()
+                        );
 
             // TODO: handle r < 0
 
@@ -380,7 +384,7 @@ static int main_(int argc, char* argv[])
         if( verbosity >= 3 &&
             j == WARMUPS - 1)
         {
-            ::fprintf(stdout, "sprintf():  %lu\t(%lu)\n", (unsigned long)tm_Streams, (unsigned long)length);
+            ::fprintf(stdout, "snprintf(): %lu\t(%lu)\n", (unsigned long)tm_Streams, (unsigned long)length);
         }
     }}
 
@@ -531,7 +535,7 @@ static int main_(int argc, char* argv[])
             break;
         case    3:
             ::puts("");
-            ::fprintf(stdout, "sprintf():FastFormat.Format:         \t%2.04g\n", double(tm_Streams) / double(tm_FF_Format));
+            ::fprintf(stdout, "snprintf():FastFormat.Format:        \t%2.04g\n", double(tm_Streams) / double(tm_FF_Format));
             ::fprintf(stdout, "IOStreams:FastFormat.Format:         \t%2.04g\n", double(tm_IOStreams) / double(tm_FF_Format));
 #ifdef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
             ::fprintf(stdout, "CString::Format():FastFormat.Format: \t%2.04g\n", double(tm_CString_Format) / double(tm_FF_Format));
@@ -543,7 +547,7 @@ static int main_(int argc, char* argv[])
             ::fprintf(stdout, "Loki.SafeFormat:FastFormat.Format:   \t%2.04g\n", double(tm_Loki) / double(tm_FF_Format));
 #endif /* FASTFORMAT_PERFTEST_USE_LOKI */
             ::puts("");
-            ::fprintf(stdout, "sprintf():FastFormat.Write:          \t%2.04g\n", double(tm_Streams) / double(tm_FF_Write));
+            ::fprintf(stdout, "snprintf():FastFormat.Write:         \t%2.04g\n", double(tm_Streams) / double(tm_FF_Write));
             ::fprintf(stdout, "IOStreams:FastFormat.Write:          \t%2.04g\n", double(tm_IOStreams) / double(tm_FF_Write));
 #ifdef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CSTRING
             ::fprintf(stdout, "CString::Format():FastFormat.Write:  \t%2.04g\n", double(tm_CString_Format) / double(tm_FF_Write));
