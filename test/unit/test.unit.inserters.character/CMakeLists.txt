@@ -17,4 +17,3 @@ target_compile_options(test.unit.inserters.character PRIVATE
 
 
 # ############################## end of file ############################# #
-

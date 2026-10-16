@@ -35,7 +35,7 @@ using std::endl;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** /*argv*/)
+static int main_(int argc, char* /*argv*/[])
 {
     const float     flt =   1.2345f;
     const double    dbl =   -123E-45;
@@ -81,7 +81,7 @@ static int main_(int argc, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

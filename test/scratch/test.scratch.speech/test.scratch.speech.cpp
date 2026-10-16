@@ -32,8 +32,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -80,7 +81,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     ff::sinks::speech_sink sink(SPF_IS_FILENAME);
 
@@ -111,17 +112,19 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -142,8 +145,9 @@ int main(int argc, char** argv)
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 

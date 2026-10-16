@@ -17,4 +17,3 @@ target_compile_options(test.unit.inserters.integer PRIVATE
 
 
 # ############################## end of file ############################# #
-

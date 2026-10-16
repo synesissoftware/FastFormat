@@ -67,7 +67,8 @@
 # undef FASTFORMAT_MT
 #endif /* FASTFORMAT_MT */
 
-#if defined(FASTFORMAT_FORCE_MT)
+#if 0
+#elif defined(FASTFORMAT_FORCE_MT)
 # define FASTFORMAT_MT
 #elif !defined(FASTFORMAT_NO_MT)
 # if defined(PLATFORMSTL_OS_IS_UNIX)

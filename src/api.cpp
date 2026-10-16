@@ -502,7 +502,8 @@ FASTFORMAT_CALL(void) fastformat_exitProcess(int code)
 {
     FASTFORMAT_COVER_MARK_ENTRY();
 
-#if defined(WIN32)
+#if 0
+#elif defined(WIN32)
 
     // By rights, Windows programs should use exit() to close down. However,
     // fastformat_exitProcess() is not a general substitute for exit(). It is
@@ -524,7 +525,8 @@ FASTFORMAT_CALL(ff_string_slice_t) fastformat_getNewlineForPlatform(void)
 
     static const ff_char_t crlf[] =
     {
-#if defined(PLATFORMSTL_OS_IS_UNIX)
+#if 0
+#elif defined(PLATFORMSTL_OS_IS_UNIX)
 # if defined(UNIXSTL_OS_IS_MACOSX)
             '\r'
 # else /* ? UNIXSTL_OS_IS_MACOSX */

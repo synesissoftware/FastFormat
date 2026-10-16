@@ -62,9 +62,10 @@
  * Compatibility
  */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER < 1300
- /* can't use shim string with some old compilers - not clear why - so 
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER < 1300
+ /* can't use shim string with some old compilers - not clear why - so
   * must use a string type. stlsoft::simple_string is used because it
   * guarantees contiguous storage, so can sprintf() into its buffer
   */

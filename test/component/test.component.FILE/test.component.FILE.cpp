@@ -25,6 +25,7 @@
 #endif
 #include <platformstl/filesystem/file_lines.hpp>
 #include <platformstl/system/system_traits.hpp>
+#include <stlsoft/smartptr/scoped_handle.hpp>
 
 /* Standard C++ header files */
 #include <exception>
@@ -35,8 +36,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -57,8 +59,9 @@ static void test_1_7();
 static void test_1_8();
 
 static FILE* fopen_or_throw(char const* fileName, char const* mode = "w");
-#if defined(__BORLANDC__) && \
-    __BORLANDC__ < 0x0610
+#if 0
+#elif defined(__BORLANDC__) &&\
+      __BORLANDC__ < 0x0610
 static int   fclose_(FILE* stm)
 {
     int r;
@@ -75,7 +78,7 @@ static int   fclose_(FILE* stm)
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity;

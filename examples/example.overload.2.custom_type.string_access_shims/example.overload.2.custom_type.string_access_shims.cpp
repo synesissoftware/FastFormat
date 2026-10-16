@@ -138,7 +138,7 @@ size_t c_str_len_a(superhero const& hero)
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     superhero   thing("The Thing", 200, 99, 100);
     superhero   batman("Batman", 100, 80, 95);
@@ -152,7 +152,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

@@ -25,7 +25,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
   { // LARGE_INTEGER
     LARGE_INTEGER li;
@@ -46,7 +46,7 @@ static int main_(int /* argc */, char** /*argv*/)
   return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
   try
   {

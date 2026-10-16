@@ -30,8 +30,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -58,11 +59,15 @@ void Display32bitFileSize_(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
 
         ff::ignore_unreferenced_arguments_scope scoper;
 
-        ff::fmt(ff::sinks::MessageBox(parent, FASTFORMAT_LITERAL_STRING("Problem"), MB_ICONWARNING)
-            ,   bundle[IDS_FMT_MISSING_FILE]
-            ,   fileName
-            ,   err
-            ,   winstl::error_desc(err));
+        {
+            ff::sinks::WindowsMessageBox_sink box(parent, FASTFORMAT_LITERAL_STRING("Problem"), MB_ICONWARNING);
+
+            ff::fmt(box
+                ,   bundle[IDS_FMT_MISSING_FILE]
+                ,   fileName
+                ,   err
+                ,   winstl::error_desc(err));
+        }
     }
     else
     {
@@ -71,16 +76,20 @@ void Display32bitFileSize_(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
 
         ff::ignore_unreferenced_arguments_scope scoper;
 
-        ff::fmt(ff::sinks::MessageBox(parent, NULL, MB_ICONWARNING)
-            ,   bundle[IDS_FMT_FOUND_FILE]
-            ,   fileName
-            ,   fd.nFileSizeLow);
+        {
+            ff::sinks::WindowsMessageBox_sink box(parent, NULL, MB_ICONWARNING);
+
+            ff::fmt(box
+                ,   bundle[IDS_FMT_FOUND_FILE]
+                ,   fileName
+                ,   fd.nFileSizeLow);
+        }
 
         ::FindClose(h);
     }
 }
 
-BOOL CALLBACK ParentProc(HWND hwnd, UINT code, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK ParentProc(HWND hwnd, UINT code, WPARAM /*wParam*/, LPARAM lParam)
 {
     if(WM_INITDIALOG == code)
     {
@@ -104,7 +113,7 @@ void Display32bitFileSize(HINSTANCE hinst, HWND parent, LPCTSTR fileName)
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int argc, char** argv)
+static int main_(int /*argc*/, char* argv[])
 {
     const HINSTANCE hinst = ::GetModuleHandleA(argv[0]);
 
@@ -115,24 +124,28 @@ static int main_(int argc, char** argv)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     int             res;
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
     try
     {
-#if defined(_DEBUG) || \
-    defined(__SYNSOFT_DBS_DEBUG)
+#if 0
+#elif defined(_DEBUG) ||\
+      defined(__SYNSOFT_DBS_DEBUG)
+
         puts("test.scratch.sink.WindowsMessageBox: " __STLSOFT_COMPILER_LABEL_STRING);
 #endif /* debug */
 
@@ -151,8 +164,9 @@ int main(int argc, char** argv)
         res = EXIT_FAILURE;
     }
 
-#if defined(_MSC_VER) && \
-    defined(_DEBUG)
+#if 0
+#elif defined(_MSC_VER) &&\
+      defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 

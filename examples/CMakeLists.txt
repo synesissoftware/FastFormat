@@ -15,11 +15,6 @@ if(_BUILD_AS_UNIX)
 	add_definitions(-Dunix)
 endif(_BUILD_AS_UNIX)
 
-if(_BUILD_AS_WIN32)
-
-	message(FATAL_ERROR "Use of CMake on Windows not currently supported")
-endif(_BUILD_AS_WIN32)
-
 
 add_subdirectory(example.arguments.boolean)
 add_subdirectory(example.arguments.character)

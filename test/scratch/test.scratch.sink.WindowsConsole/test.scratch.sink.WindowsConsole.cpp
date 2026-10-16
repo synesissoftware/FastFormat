@@ -26,12 +26,16 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     /* . */
     ff::writeln(std::cout, "a regular output line");
 
-    ff::writeln(ff::sinks::WindowsConsole(FOREGROUND_RED), "a regular output line");
+    {
+        ff::sinks::WindowsConsole_sink console(::GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED);
+
+        ff::writeln(console, "a regular output line");
+    }
 
     ff::writeln(std::cout, "another regular output line");
 
@@ -39,7 +43,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

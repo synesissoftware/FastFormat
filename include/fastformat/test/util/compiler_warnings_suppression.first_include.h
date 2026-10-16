@@ -81,7 +81,8 @@
 # endif /* compiler */
 #endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC)
 # if _MSC_VER >= 1400
 #  pragma warning(disable : 4996)
 # endif /* _MSC_VER >= 1400 */

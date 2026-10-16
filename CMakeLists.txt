@@ -74,6 +74,36 @@ if(MSVC)
 		add_compile_options("/wd4996")
 	endif()
 
+	# MSVC leaves __cplusplus at 199711L unless told otherwise, so
+	# STLSoft trim still calls removed std::bind1st / std::ptr_fun.
+	add_compile_options("/Zc:__cplusplus")
+
+	# Stock illformed/mismatched handlers throw C++ exceptions from code
+	# reached through the extern "C" API (fastformat_parseFormat, etc.).
+	# Default /EHsc assumes extern "C" never throws and omits unwind info
+	# for those frames, so catch clauses in callers never match (MSVC
+	# examples/scratch defect demos escape to the outer handler). Use /EHs
+	# so exceptions propagate through the C API correctly.
+	foreach(_ff_eh_var
+		CMAKE_C_FLAGS
+		CMAKE_C_FLAGS_DEBUG
+		CMAKE_C_FLAGS_MINSIZEREL
+		CMAKE_C_FLAGS_RELEASE
+		CMAKE_C_FLAGS_RELWITHDEBINFO
+		CMAKE_CXX_FLAGS
+		CMAKE_CXX_FLAGS_DEBUG
+		CMAKE_CXX_FLAGS_MINSIZEREL
+		CMAKE_CXX_FLAGS_RELEASE
+		CMAKE_CXX_FLAGS_RELWITHDEBINFO
+	)
+
+		if(DEFINED ${_ff_eh_var})
+
+			string(REGEX REPLACE "/EH[asc]+" "/EHs" ${_ff_eh_var} "${${_ff_eh_var}}")
+		endif()
+	endforeach()
+	add_compile_options("/EHs")
+
 	if(MSVC_VERSION LESS 1930)
 
 		set(CMAKE_C_STANDARD 90)
@@ -285,6 +315,22 @@ if(BUILD_TESTING)
 
 	message("-- CMake package xTests found (version ${xTests_VERSION}; ${xTests_REQUIRED_VERSION_} requested)")
 endif(BUILD_TESTING)
+
+
+# ############################
+# UNIXem
+#
+# Windows scratch programs include <unixem/unixem.h>. UNIXem configure
+# rejects every other host, so the package is required only on Windows.
+
+if(WIN32 AND BUILD_TESTING)
+
+	set(UNIXem_REQUIRED_VERSION_ 1.14.2)
+
+	find_package(UNIXem ${UNIXem_REQUIRED_VERSION_} REQUIRED)
+
+	message("-- CMake package UNIXem found (version ${UNIXem_VERSION}; ${UNIXem_REQUIRED_VERSION_} requested)")
+endif()
 
 
 # ################################################

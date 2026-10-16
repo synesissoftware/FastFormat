@@ -445,9 +445,12 @@ inline S& flush(
  * To force it for a DLL, define FASTFORMAT_FORCE_AUTO_INIT
  */
 
-#if defined(__DLL__) /* Borland, with -WD */ || \
-    defined(_WINDLL) /* VC++, defined by user/wizard */ || \
-    defined(_USRDLL) /* VC++, defined by user/wizard */
+#if 0
+#elif 0 ||\
+      defined(__DLL__) /* Borland, with -WD */ ||\
+      defined(_WINDLL) /* VC++, defined by user/wizard */ ||\
+      defined(_USRDLL) /* VC++, defined by user/wizard */ ||\
+      0
 # define FASTFORMAT_NO_AUTO_INIT
 #endif /* dynamic library */
 

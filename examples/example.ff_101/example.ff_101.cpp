@@ -48,7 +48,7 @@ using std::endl;
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /*argv*/)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     // Case 1:
     puts("Case 1");
@@ -224,7 +224,10 @@ static int main_(int /* argc */, char** /*argv*/)
     // Case 6: bad formats(s)
     puts("Case 6");
     //
-    // - 
+    // -
+    // Defect demos: report with iostreams/stdio only. Do not call FastFormat
+    // again from the catch handlers — the defective format strings (and the
+    // exception objects that carry them) can re-enter parsing and escape.
     puts("Case 6.1");
     try
     {
@@ -235,11 +238,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.2");
@@ -252,11 +255,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.3");
@@ -269,11 +272,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.4");
@@ -286,11 +289,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::illformed_format_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x, "; format=\"", x.format, "\"");
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.5");
@@ -305,11 +308,15 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::missing_argument_exception& x)
     {
-        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numberOfReplacements);
+        cerr
+            << "error: " << x.what()
+            << "; arg " << x.firstMismatchedReplacementIndex
+            << " out of " << x.numberOfReplacements
+            << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
 # ifdef FASTFORMAT_DETECT_UNREFERENCED_ARGUMENTS
@@ -323,11 +330,15 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::unreferenced_argument_exception& x)
     {
-        fastformat::fmtln(std::cerr, "error: {0}; arg {1} out of {2}", x, x.firstMismatchedReplacementIndex, x.numberOfReplacements);
+        cerr
+            << "error: " << x.what()
+            << "; arg " << x.firstMismatchedReplacementIndex
+            << " out of " << x.numberOfReplacements
+            << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 
     puts("Case 6.7");
@@ -340,11 +351,11 @@ static int main_(int /* argc */, char** /*argv*/)
     }
     catch(fastformat::unreferenced_argument_exception& x)
     {
-        fastformat::writeln(std::cerr, "error: ", x);
+        cerr << "error: " << x.what() << endl;
     }
     catch(std::exception&)
     {
-        fastformat::writeln(std::cerr, "Ooops!");
+        cerr << "Ooops!" << endl;
     }
 # endif /* FASTFORMAT_DETECT_UNREFERENCED_ARGUMENTS */
 #endif /* !FASTFORMAT_NO_FILTER_TYPE_CONVERSION_SHIM_SUPPORT */
@@ -352,7 +363,7 @@ static int main_(int /* argc */, char** /*argv*/)
     return EXIT_SUCCESS;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

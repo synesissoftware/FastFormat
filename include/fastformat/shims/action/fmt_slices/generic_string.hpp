@@ -6,7 +6,7 @@
  * Created: 19th September 2006
  * Updated: 16th October 2026
  *
- * Thanks:      To Ric Parkin for pointing out the ramifications of 
+ * Thanks:      To Ric Parkin for pointing out the ramifications of
  *              21.3.5.2/6 and 21.3.1/6 before I change the definition of
  *              c_str_data[_a|_w] to allow NULL to be returned.
  *
@@ -60,7 +60,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MAJOR     3
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      22
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      23
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -95,7 +95,7 @@ namespace sinks
  * Overloadable functions
  */
 
-/** Action shim for generic string types 
+/** Action shim for generic string types
  *
  * \remarks Users are encouraged to overload this function (which is an
  *   <i>Action Shim</i>; see "Breaking Up The Monolith") in order to make
@@ -130,9 +130,9 @@ inline S& fmt_slices(
 
     if(flags::ff_newLine & flags)
     {
-        const ff_string_slice_t crlf = fastformat_getNewlineForPlatform();
+        const ff_string_slice_t newline = fastformat_getNewlineForPlatform();
 
-        sink.append(crlf.ptr, crlf.len);
+        sink.append(newline.ptr, newline.len);
     }
 
     return sink;

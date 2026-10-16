@@ -55,8 +55,8 @@
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       21
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_REVISION   3
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       23
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -140,7 +140,7 @@ private:
         string_type
     ,   string_type
     >                                       map_type_;
-    typedef map_type_ const                 map_init_type_;
+    typedef map_type_                       map_init_type_;
 #endif /* FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE */
 /// @}
 
@@ -193,7 +193,7 @@ private:
         return open_(FASTFORMAT_INVOKE_c_str_ptr_(source));
     }
 
-    static map_init_type_ const open_(char const *name);
+    static map_init_type_ open_(char const *name);
 /// @}
 
 /// \name Members
@@ -216,7 +216,7 @@ private:
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 
-inline /* static */ properties_bundle::map_init_type_ const properties_bundle::open_(char const *name)
+inline /* static */ properties_bundle::map_init_type_ properties_bundle::open_(char const *name)
 {
 # ifdef FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE
 
@@ -237,17 +237,17 @@ inline /* static */ properties_bundle::map_init_type_ const properties_bundle::o
 
     for(; std::getline(stm, line); )
     {
-        std::string name;
+        std::string key;
         std::string value;
 
         stlsoft::trim_all(line);
 
-        if(stlsoft::split(line, '=', name, value))
+        if(stlsoft::split(line, '=', key, value))
         {
-            stlsoft::trim_all(name);
+            stlsoft::trim_all(key);
             stlsoft::trim_left(value);
 
-            map[name] = value;
+            map[key] = value;
         }
     }
 

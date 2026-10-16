@@ -56,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       22
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    10
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        110
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        111
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -71,9 +71,9 @@
  * The patch version number of FastFormat
  */
 
-/** \def FASTFORMAT_VER_ALPHABETA
- * The alpha/beta number of FastFormat, in the range 1-0xFE for
- * prerelease versions, and 0xFF for a released version
+/** \def FASTFORMAT_VER_RELSTATUS
+ * The release status of FastFormat, in the range 1-0xFE for prerelease
+ * versions, and 0xFF for a released version
  */
 
 /** \def FASTFORMAT_VER
@@ -109,17 +109,18 @@
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           7
 #define FASTFORMAT_VER_PATCH           4
-#define FASTFORMAT_VER_ALPHABETA       0x86
+#define FASTFORMAT_VER_RELSTATUS       0x86
 
 #define FASTFORMAT_VER \
     (0\
         |   (   FASTFORMAT_VER_MAJOR       << 24   ) \
         |   (   FASTFORMAT_VER_MINOR       << 16   ) \
         |   (   FASTFORMAT_VER_PATCH       <<  8   ) \
-        |   (   FASTFORMAT_VER_ALPHABETA   <<  0   ) \
+        |   (   FASTFORMAT_VER_RELSTATUS   <<  0   ) \
     )
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
+# define FASTFORMAT_VER_ALPHABETA                           FASTFORMAT_VER_RELSTATUS
 # define FASTFORMAT_VER_REVISION                            FASTFORMAT_VER_PATCH
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 

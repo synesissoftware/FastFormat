@@ -80,8 +80,9 @@ namespace inserters
  * Inserter functions
  */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER < 1310
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER < 1310
 
 inline
 ximpl_integer::ff_to_i_r_t_

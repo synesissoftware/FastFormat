@@ -73,13 +73,15 @@
  * Warning suppressions
  */
 
-#if defined(STLSOFT_COMPILER_IS_BORLAND)
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_BORLAND)
 # pragma warn -8008 /* Suppresses: "Condition is always %s" */
 # pragma warn -8080 /* Suppresses: "'%s' is declared but never used" */
 #endif /* compiler */
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER > 1100
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER > 1100
 # if !defined(STLSOFT_CF_EXCEPTION_SUPPORT)
 #  pragma warning(default : 4530)   /* Switch it back on here */
 # endif /* !STLSOFT_CF_EXCEPTION_SUPPORT */

@@ -135,8 +135,9 @@ inline std::basic_ostream<ff_char_t>& fmt_slices(
             buff.resize(buff.size() - 1);
         }
 
-#if defined(STLSOFT_COMPILER_IS_MSVC) && \
-    _MSC_VER == 1400
+#if 0
+#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
+      _MSC_VER == 1400
         // VC++ 8 erroneously (at least IMO) asserts on the validity of the
         // pointer given to write() even when count is 0. Other versions
         // (including 9) don't do this, so we won't bother to catch it

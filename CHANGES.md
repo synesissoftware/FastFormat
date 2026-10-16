@@ -1,6 +1,34 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.7.4-rc7 - 16th October 2026
+
+* Migrated the version low-byte macro to `FASTFORMAT_VER_RELSTATUS` (packed value remains **0x86**; header major/minor/patch unchanged), retaining `FASTFORMAT_VER_ALPHABETA` as a documentation-skip alias;
+* Re-synced tip **`run_all_examples.cmd`** and **`run_all_scratch_tests.cmd`** from **misc-dev-scripts** `cmake-helpers` `@0754c23`;
+* Added modular GitHub Actions CI (**`.github/workflows/ci.yml`**, **`ci-cell.yml`**, **`install-sis-deps`**): artifact split, execute-bit restore, Windows **`.cmd`** dogfood; dependencies **STLSoft**, **shwild**, **xTests**; README CI badge targets **`ci.yml`**;
+* Modernised **NEWS.md** to the three-column chronology;
+* Enlarged the hexadecimal inserter buffer in **integer.hpp** to 18 characters so the 64-bit signed-minimum form (`'-'`, 16 digits, NUL) fits under GCC `-Werror=array-bounds`;
+* **example.overload.2.custom_type.inserter** loads **test/data/bundles/superhero.properties** when that file is absent from the working directory;
+* Removed the CMake fatal gate that stopped Windows configures in **src/CMakeLists.txt**, **examples/CMakeLists.txt**, and **test/CMakeLists.txt**;
+* Corrected the format-cache map allocator in **fmt_cache.cpp** so its value type is `std::pair<const key, mapped>`, and compiled `lookup_pattern_1phase()` only when that cache path is selected;
+* Added `/Zc:__cplusplus` for MSVC so **STLSoft** trim takes the C++11 path rather than removed `std::bind1st` / `std::ptr_fun`;
+* Included `scoped_handle.hpp` from **test.component.FILE**, and parenthesised `std::numeric_limits::max` against the Windows `max` macro;
+* Obtained **UNIXem** with `find_package(UNIXem)` for Windows tests and appended it to the Windows CI dependency list, keeping the scratch `#include <unixem/unixem.h>` on the classic `_WIN32` guard;
+* Renamed locals that MSVC `/WX` treated as hiding (`newline`, properties `key`, record-insert loop index), and narrowed a string resource id to `int` in a helper so the constructor is not a pointer-truncation warning;
+* Switched the CString sink to `mfcstl::grab_CString_buffer` (the old typedef is under `STLSOFT_OBSOLETE`), built the MFC/ATL programs only with MSVC (`_AFXDLL` for the BSTR scratch), left the speech scratch out of the build, and skipped **test.scratch.sink.WindowsMessageBox** under `--skip-interactive`;
+* Expanded **README.md** with **Components**, **Examples** (via **EXAMPLES.md**), and a full **Dependencies** section;
+* Quieted MSVC `/WX` unused-parameter warnings in the BSTR and WindowsMessageBox scratch programs;
+* Bound WindowsConsole / WindowsMessageBox sinks to named locals so `fmt` / `writeln` can take non-const `S&` under MinGW;
+* Reported Case 6 format-defect demos in **example.ff_101** with iostreams only (no FastFormat re-entry from catch handlers);
+* Listed **test.scratch.sink.WindowsConsole** in **ci_scratch_tests_skip_interactive.txt** (needs a real console; fails under CI redirection);
+* Defined **`_AFXDLL`** for **test.unit.sink.CString** (MSVC Release `/MD` as well as Debug);
+* Hardened **example.overload.2.custom_type.inserter** (pass the properties bundle by reference, load it after the bundle-free overloads, fail if **superhero.properties** is missing, iostreams in catch) and normalised the sample properties line to `key=value`;
+* Gave every FastFormat exception type a **public** copy constructor (required for portable throw/catch) and closed assignment with C++11 `= delete` or a C++03 private declaration — no `-Wno-deprecated-copy` in client or library builds;
+* Built with MSVC **`/EHs`** (not **`/EHsc`**) so C++ exceptions from stock defect handlers can unwind through the **`extern "C"`** API and be caught by callers;
+* Stopped the handmade **`properties_bundle::open_`** path returning a `const` map-by-value (`map_init_type_` is now the non-`const` map type);
+* Skipped the **`properties_bundle`** / **edna_5** path in **example.overload.2.custom_type.inserter** under MinGW (access violation after the bundle-free overloads; tracked on **TODO.md**);
+
+
 ## 0.7.4-rc6 - 6th February 2024
 
 * CMake support;

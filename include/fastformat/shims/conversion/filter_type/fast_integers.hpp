@@ -188,8 +188,9 @@ namespace ximpl_fast_integers
  * short unsigned
  */
 
-#if defined(STLSOFT_CF_BUILTIN_long_long_SUPPORT) || \
-    defined(STLSOFT_CF_64BIT_INT_SUPPORT)
+#if 0
+#elif defined(STLSOFT_CF_BUILTIN_long_long_SUPPORT) ||\
+      defined(STLSOFT_CF_64BIT_INT_SUPPORT)
 
 /** Filtering conversion shim function for implicitly adapting signed
  *  64-bit/<code>long long</code> integers as format arguments.

@@ -68,7 +68,7 @@ version(
  * main()
  */
 
-int main(int /* argc */, char* /* argv */[])
+int main(int /*argc*/, char* /*argv*/[])
 {
     {
         unsigned const libver = FASTFORMAT_VER;
