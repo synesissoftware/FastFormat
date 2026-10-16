@@ -21,6 +21,7 @@ The fastest, most robust C++ formatting library
   - [Inserters](#inserters)
   - [Sinks](#sinks)
   - [Bundles](#bundles)
+  - [Utilities and string shims](#utilities-and-string-shims)
   - [Iterators and format-defect handling](#iterators-and-format-defect-handling)
 - [Examples](#examples)
 - [Project Information](#project-information)
@@ -103,17 +104,28 @@ handling. The usual include is **`fastformat/ff.hpp`** (or
 **`fastformat/fastformat.hpp`**), plus the sink header for the destination
 you use.
 
+Line badges mark the **MAJOR.MINOR** line that first shipped each component
+in the public API. Items that pre-date **0.7** are labelled **0.7**. The
+**0.9** badge is reserved for a future line and is unused below.
+
+![0.7](https://img.shields.io/badge/0.7-0A66C2)
+![0.8](https://img.shields.io/badge/0.8-C45C26)
+![0.9](https://img.shields.io/badge/0.9-6B4C9A)
+
 
 ### Core and application layer
 
-| Header | Role |
-| ------ | ---- |
-| [`fastformat/fastformat.h`](./include/fastformat/fastformat.h) | Core types, version macros (`FASTFORMAT_VER`, `FASTFORMAT_VER_RELSTATUS`), C API entry points, initialisation |
-| [`fastformat/fastformat.hpp`](./include/fastformat/fastformat.hpp) | C++ application layer: `fmt`, `fmtln`, `write`, `writeln`, `flush` |
-| [`fastformat/ff.hpp`](./include/fastformat/ff.hpp) | Convenience include that pulls in the application layer |
-| [`fastformat/exceptions.hpp`](./include/fastformat/exceptions.hpp) | Exception types |
-| [`fastformat/init_codes.h`](./include/fastformat/init_codes.h) | Initialisation result codes |
-| [`fastformat/implicit_link.h`](./include/fastformat/implicit_link.h) | Implicit-link helpers for selected toolchains |
+| Header / API | Role | Since |
+| ------------ | ---- | :---: |
+| [`fastformat/fastformat.h`](./include/fastformat/fastformat.h) | Core types, version macros (`FASTFORMAT_VER`, `FASTFORMAT_VER_RELSTATUS`), C API entry points, initialisation | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| `fastformat_getVersion()` | Runtime packed version query | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| `fastformat_getParseCodeString[Length]()` / `fastformat_getReplacementCodeString[Length]()` | Human-readable strings for parse and replacement codes | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| Ill-formed / mismatched handler model (`ff_handler_response_t`, `ff_parse_action_t`, `ff_replacement_action_t`, `ff_*Handler_info_t` setters) | Explicit continue / next-handler responses and recovery actions (blank, literal, or slice) | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| [`fastformat/fastformat.hpp`](./include/fastformat/fastformat.hpp) | C++ application layer: `fmt`, `fmtln`, `write`, `writeln`, `flush` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`fastformat/ff.hpp`](./include/fastformat/ff.hpp) | Convenience include that pulls in the application layer | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`fastformat/exceptions.hpp`](./include/fastformat/exceptions.hpp) | Exception types; argument-count field is `numArguments` (was `numberOfReplacements` on **0.7**) | ![0.7](https://img.shields.io/badge/0.7-0A66C2) ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| [`fastformat/init_codes.h`](./include/fastformat/init_codes.h) | Initialisation result codes | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`fastformat/implicit_link.h`](./include/fastformat/implicit_link.h) | Implicit-link helpers for selected toolchains | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
 
 Minimal use:
 
@@ -137,14 +149,16 @@ int main()
 Typed adapters under [`include/fastformat/inserters/`](./include/fastformat/inserters/)
 format values that are not already string-compatible. Common headers:
 
-| Header | Purpose |
-| ------ | ------- |
-| [`to_i.hpp`](./include/fastformat/inserters/to_i.hpp) / [`integer.hpp`](./include/fastformat/inserters/integer.hpp) | Integral types |
-| [`to_x.hpp`](./include/fastformat/inserters/to_x.hpp) | Integral types in hexadecimal |
-| [`to_e.hpp`](./include/fastformat/inserters/to_e.hpp) / [`to_f.hpp`](./include/fastformat/inserters/to_f.hpp) / [`to_g.hpp`](./include/fastformat/inserters/to_g.hpp) / [`real.hpp`](./include/fastformat/inserters/real.hpp) | Floating-point forms |
-| [`ch.hpp`](./include/fastformat/inserters/ch.hpp) / [`character.hpp`](./include/fastformat/inserters/character.hpp) | Character types |
-| [`to_i_null_if_zero.hpp`](./include/fastformat/inserters/to_i_null_if_zero.hpp) / [`to_i_null_if_not.hpp`](./include/fastformat/inserters/to_i_null_if_not.hpp) | Nullable integral forms |
-| [`WindowsLargeIntegers.hpp`](./include/fastformat/inserters/WindowsLargeIntegers.hpp) (and related) | Windows `LARGE_INTEGER` / `ULARGE_INTEGER` |
+| Header | Purpose | Since |
+| ------ | ------- | :---: |
+| [`to_i.hpp`](./include/fastformat/inserters/to_i.hpp) / [`integer.hpp`](./include/fastformat/inserters/integer.hpp) | Integral types | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`to_x.hpp`](./include/fastformat/inserters/to_x.hpp) | Integral types in hexadecimal | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`to_e.hpp`](./include/fastformat/inserters/to_e.hpp) / [`to_f.hpp`](./include/fastformat/inserters/to_f.hpp) / [`to_g.hpp`](./include/fastformat/inserters/to_g.hpp) / [`real.hpp`](./include/fastformat/inserters/real.hpp) | Floating-point forms | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`ch.hpp`](./include/fastformat/inserters/ch.hpp) / [`character.hpp`](./include/fastformat/inserters/character.hpp) | Character types | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`to_i_null_if_zero.hpp`](./include/fastformat/inserters/to_i_null_if_zero.hpp) / [`to_i_null_if_not.hpp`](./include/fastformat/inserters/to_i_null_if_not.hpp) | Nullable integral forms | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`WindowsLargeIntegers.hpp`](./include/fastformat/inserters/WindowsLargeIntegers.hpp) (and related) | Windows `LARGE_INTEGER` / `ULARGE_INTEGER` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`storage_size.hpp`](./include/fastformat/inserters/storage_size.hpp) | Unsigned byte counts as size-qualified text (`990B`, `12kB`, `1MB`, …) | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| [`lc_i.hpp`](./include/fastformat/inserters/lc_i.hpp) | Locale-aware integers (`localeconv` grouping / thousands separator) | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
 
 
 ### Sinks
@@ -152,20 +166,24 @@ format values that are not already string-compatible. Common headers:
 Sinks under [`include/fastformat/sinks/`](./include/fastformat/sinks/) receive
 the formatted slices. Common headers:
 
-| Header | Purpose |
-| ------ | ------- |
-| [`ostream.hpp`](./include/fastformat/sinks/ostream.hpp) | `std::ostream` |
-| [`stringstream.hpp`](./include/fastformat/sinks/stringstream.hpp) | `std::stringstream` |
-| [`FILE.hpp`](./include/fastformat/sinks/FILE.hpp) | `FILE*` |
-| [`c_string.hpp`](./include/fastformat/sinks/c_string.hpp) / [`char_buffer.hpp`](./include/fastformat/sinks/char_buffer.hpp) | Fixed character buffers |
-| [`auto_buffer.hpp`](./include/fastformat/sinks/auto_buffer.hpp) | **STLSoft** `auto_buffer` |
-| [`null.hpp`](./include/fastformat/sinks/null.hpp) | Bit-bucket sink |
-| [`CString.hpp`](./include/fastformat/sinks/CString.hpp) | MFC `CString` (Windows / MFC) |
-| [`CComBSTR.hpp`](./include/fastformat/sinks/CComBSTR.hpp) | ATL `CComBSTR` (Windows / ATL) |
-| [`OutputDebugString.hpp`](./include/fastformat/sinks/OutputDebugString.hpp) | Windows `OutputDebugString` |
-| [`WindowsConsole.hpp`](./include/fastformat/sinks/WindowsConsole.hpp) / [`WindowsMessageBox.hpp`](./include/fastformat/sinks/WindowsMessageBox.hpp) | Windows console / message-box |
-| [`speech.hpp`](./include/fastformat/sinks/speech.hpp) | Windows Speech API |
-| [`vectored_file.hpp`](./include/fastformat/sinks/vectored_file.hpp) | UNIX `writev()` |
+| Header | Purpose | Since |
+| ------ | ------- | :---: |
+| [`ostream.hpp`](./include/fastformat/sinks/ostream.hpp) | `std::ostream` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`iostream.hpp`](./include/fastformat/sinks/iostream.hpp) | Shorthand for the `std::ostream` sink plus `<iostream>` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`stringstream.hpp`](./include/fastformat/sinks/stringstream.hpp) | `std::stringstream` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`FILE.hpp`](./include/fastformat/sinks/FILE.hpp) | `FILE*` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`stlsoft/FILE_stream.hpp`](./include/fastformat/sinks/stlsoft/FILE_stream.hpp) | **STLSoft** `FILE_stream` / `thread_shareable_FILE_stream` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`c_string.hpp`](./include/fastformat/sinks/c_string.hpp) / [`char_buffer.hpp`](./include/fastformat/sinks/char_buffer.hpp) | Fixed character buffers | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`auto_buffer.hpp`](./include/fastformat/sinks/auto_buffer.hpp) | **STLSoft** `auto_buffer` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`null.hpp`](./include/fastformat/sinks/null.hpp) | Bit-bucket sink | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`CString.hpp`](./include/fastformat/sinks/CString.hpp) | MFC `CString` (Windows / MFC) | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`CComBSTR.hpp`](./include/fastformat/sinks/CComBSTR.hpp) | ATL `CComBSTR` (Windows / ATL) | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`OutputDebugString.hpp`](./include/fastformat/sinks/OutputDebugString.hpp) | Windows `OutputDebugString` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`WindowsConsole.hpp`](./include/fastformat/sinks/WindowsConsole.hpp) / [`WindowsMessageBox.hpp`](./include/fastformat/sinks/WindowsMessageBox.hpp) | Windows console / message-box | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`speech.hpp`](./include/fastformat/sinks/speech.hpp) | Windows Speech API | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`vectored_file.hpp`](./include/fastformat/sinks/vectored_file.hpp) | UNIX `writev()` | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`exception.hpp`](./include/fastformat/sinks/exception.hpp) | Format into a message, then `throw` a chosen exception type | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| [`ribbon.hpp`](./include/fastformat/sinks/ribbon.hpp) | Width-capped write to a string (truncate / truncate+ellipsis) | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
 
 
 ### Bundles
@@ -173,21 +191,31 @@ the formatted slices. Common headers:
 Localised format-string sources under
 [`include/fastformat/bundles/`](./include/fastformat/bundles/):
 
-| Header | Purpose |
-| ------ | ------- |
-| [`properties_bundle.hpp`](./include/fastformat/bundles/properties_bundle.hpp) | Java-style `.properties` files |
-| [`winini_bundle.hpp`](./include/fastformat/bundles/winini_bundle.hpp) | Windows INI files |
-| [`windows_resource_bundle.hpp`](./include/fastformat/bundles/windows_resource_bundle.hpp) | Windows resource strings |
-| [`openrj_bundle.hpp`](./include/fastformat/bundles/openrj_bundle.hpp) | Open-RJ records |
+| Header | Purpose | Since |
+| ------ | ------- | :---: |
+| [`properties_bundle.hpp`](./include/fastformat/bundles/properties_bundle.hpp) | Java-style `.properties` files | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`winini_bundle.hpp`](./include/fastformat/bundles/winini_bundle.hpp) | Windows INI files | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`windows_resource_bundle.hpp`](./include/fastformat/bundles/windows_resource_bundle.hpp) | Windows resource strings | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`openrj_bundle.hpp`](./include/fastformat/bundles/openrj_bundle.hpp) | Open-RJ records | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+
+
+### Utilities and string shims
+
+| Header / API | Purpose | Since |
+| ------------ | ------- | :---: |
+| [`util/filesystem/FILE_functions.hpp`](./include/fastformat/util/filesystem/FILE_functions.hpp) (`fopen_or_throw()`) | Open a `FILE*` or throw on failure | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| [`shims/access/string/parse_code.hpp`](./include/fastformat/shims/access/string/parse_code.hpp) | String access shims for `ff_parse_code_t` | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| [`shims/access/string/replacement_code.hpp`](./include/fastformat/shims/access/string/replacement_code.hpp) | String access shims for `ff_replacement_code_t` | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
+| [`shims/access/string/string_slice.hpp`](./include/fastformat/shims/access/string/string_slice.hpp) | String access shims for `ff_string_slice_t` | ![0.8](https://img.shields.io/badge/0.8-C45C26) |
 
 
 ### Iterators and format-defect handling
 
-| Header | Purpose |
-| ------ | ------- |
-| [`iterators/format_iterator.hpp`](./include/fastformat/iterators/format_iterator.hpp) | Output iterator that formats each assigned value |
-| [`format/standard_flags.hpp`](./include/fastformat/format/standard_flags.hpp) | Standard format flags (e.g. newline) |
-| [`format/specification_defect_handling/`](./include/fastformat/format/specification_defect_handling/) | Scopes / handlers for ill-formed formats and mismatched arguments |
+| Header | Purpose | Since |
+| ------ | ------- | :---: |
+| [`iterators/format_iterator.hpp`](./include/fastformat/iterators/format_iterator.hpp) | Output iterator that formats each assigned value | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`format/standard_flags.hpp`](./include/fastformat/format/standard_flags.hpp) | Standard format flags (e.g. newline) | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
+| [`format/specification_defect_handling/`](./include/fastformat/format/specification_defect_handling/) | Scopes / handlers for ill-formed formats and mismatched arguments (action model extended on **0.8**; see Core) | ![0.7](https://img.shields.io/badge/0.7-0A66C2) ![0.8](https://img.shields.io/badge/0.8-C45C26) |
 
 
 ## Examples
