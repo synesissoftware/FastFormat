@@ -23,8 +23,9 @@
 * Listed **test.scratch.sink.WindowsConsole** in **ci_scratch_tests_skip_interactive.txt** (needs a real console; fails under CI redirection);
 * Defined **`_AFXDLL`** for **test.unit.sink.CString** (MSVC Release `/MD` as well as Debug);
 * Hardened **example.overload.2.custom_type.inserter** (pass the properties bundle by reference, load it after the bundle-free overloads, fail if **superhero.properties** is missing, iostreams in catch) and normalised the sample properties line to `key=value`;
-* Gave every FastFormat exception type a **public** copy constructor (required for portable throw/catch; protected copies broke MSVC matching) and closed assignment with C++11 `= delete` or a C++03 private declaration — no `-Wno-deprecated-copy` in client or library builds;
-* Stopped **`properties_bundle::open_`** returning a `const` map-by-value (MinGW AV when constructing the handmade map path);
+* Gave every FastFormat exception type a **public** copy constructor (required for portable throw/catch) and closed assignment with C++11 `= delete` or a C++03 private declaration — no `-Wno-deprecated-copy` in client or library builds;
+* Built with MSVC **`/EHs`** (not **`/EHsc`**) so C++ exceptions from stock defect handlers can unwind through the **`extern "C"`** API and be caught by callers;
+* Stopped the handmade **`properties_bundle::open_`** path returning a `const` map-by-value (`map_init_type_` is now the non-`const` map type);
 
 
 ## 0.7.4-rc6 - 6th February 2024

@@ -224,6 +224,10 @@ static int main_(int argc, char* argv[])
     ff::fmtln(std::cout, "Bruce Wayne is {0}", edna_4(batman));
 #endif /* compiler */
 
+    // Flush before the properties load so a fault there cannot hide the
+    // bundle-free output under Windows process-kill (no atexit flush).
+    std::cout.flush();
+
     char const* bundlePath = select_bundle_path(argc, argv);
 
     if(NULL == bundlePath)
