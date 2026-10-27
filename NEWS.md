@@ -3,6 +3,7 @@
 
 | Date                | News Item                           | Details                                           |
 | ------------------- | ----------------------------------- | ------------------------------------------------- |
+| 27th October 2026   | Release of [FastFormat 0.7.4-rc8](https://github.com/synesissoftware/FastFormat/releases/tag/0.7.4-rc8) | `HAS_<Pkg>` / `HAS_<PKG>` for detected Synesis packages |
 | 6th February 2024   | Release of FastFormat 0.7.4-rc6     | CMake support                                     |
 | 21st March 2021     | Release of FastFormat 0.7.4-rc5     | **VC++** 15/16 compatibility                      |
 | 5th February 2017   | Release of FastFormat 0.7.5-rc4     | prerelease; no **CHANGES.md** section             |

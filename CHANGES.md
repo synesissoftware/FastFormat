@@ -1,6 +1,11 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.7.4-rc8 - 27th October 2026
+
+* Defined `HAS_<Pkg>` and `HAS_<PKG>` when a Synesis package other than **STLSoft** is detected;
+
+
 ## 0.7.4-rc7 - 16th October 2026
 
 * Migrated the version low-byte macro to `FASTFORMAT_VER_RELSTATUS` (packed value remains **0x86**; header major/minor/patch unchanged), retaining `FASTFORMAT_VER_ALPHABETA` as a documentation-skip alias;
