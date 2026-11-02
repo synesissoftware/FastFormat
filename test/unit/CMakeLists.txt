@@ -1,39 +1,13 @@
 
-add_subdirectory(test.unit.api.accum_slice_lens)
-add_subdirectory(test.unit.api.crlf_for_platform)
-add_subdirectory(test.unit.api.fill_replacements)
-add_subdirectory(test.unit.api.illformed_handlers)
-add_subdirectory(test.unit.api.initialisation)
-add_subdirectory(test.unit.api.lookup_pattern)
-add_subdirectory(test.unit.api.mismatched_handlers)
-add_subdirectory(test.unit.api.parse_format)
-add_subdirectory(test.unit.bundle.util)
-if(_BUILD_AS_WIN32)
-
-	add_subdirectory(test.unit.bundle.winini)
-endif(_BUILD_AS_WIN32)
+add_subdirectory(api)
+add_subdirectory(bundle)
 #[====[
-add_subdirectory(test.unit.failure.mismatched.arguments)
+add_subdirectory(failure)
 #]====]
-add_subdirectory(test.unit.format.standard_flags)
-add_subdirectory(test.unit.inserters.character)
-add_subdirectory(test.unit.inserters.integer)
-add_subdirectory(test.unit.shims.fast_integers)
-add_subdirectory(test.unit.sink.auto_buffer)
-add_subdirectory(test.unit.sink.c_string)
-add_subdirectory(test.unit.sink.char_buffer)
-if(MSVC)
-
-	add_subdirectory(test.unit.sink.CString)
-endif(MSVC)
-add_subdirectory(test.unit.sink.null)
-add_subdirectory(test.unit.sink.ostream)
-if(_BUILD_AS_WIN32)
-
-	add_subdirectory(test.unit.sink.OutputDebugString)
-endif(_BUILD_AS_WIN32)
-add_subdirectory(test.unit.sink.stringstream)
+add_subdirectory(format)
+add_subdirectory(inserters)
+add_subdirectory(shims)
+add_subdirectory(sink)
 
 
 # ############################## end of file ############################# #
-

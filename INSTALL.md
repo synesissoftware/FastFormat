@@ -67,6 +67,7 @@ Optional CMake cache entries:
 
 * FASTFORMAT_USE_WIDE_STRINGS — build with wide-string support;
 * BUILD_EXAMPLES / BUILD_TESTING — enable or disable examples and tests;
+* USE_WOAD — opt in to **woad** (also **prepare_cmake.sh --use-woad**) so **test.scratch.versions** prints in colour;
 
 
 =============================== End of file ================================

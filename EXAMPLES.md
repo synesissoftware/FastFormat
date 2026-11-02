@@ -17,53 +17,54 @@ Windows) exercises matching programs (see [INSTALL.md](./INSTALL.md)).
 
 Each example is a small C++ program that exercises one facet of
 **FastFormat** — arguments, inserters, sinks, iterators, or custom-type
-overloads. Names follow the `example.<area>.…` form used by the
-**CMake** targets.
+overloads. Programs live under **examples/**. **CMake** targets follow
+`example.cpp.<area>.…`.
 
 | Group | Purpose |
 | ----- | ------- |
-| **arguments.*** | Built-in argument types (boolean, character, reals, void pointers) |
-| **ff_101*** | First walkthrough of `fmt` / sinks |
+| **101** | First walkthrough of `fmt` / sinks (`normal`, `no_namespace`) |
+| **arguments** | Built-in argument types (boolean, character, reals, void pointers) |
 | **flush** | Explicit `flush()` |
-| **inserter.*** | Typed inserters (integers, hex, reals, Windows large integers) |
-| **iterators.*** | `format_iterator` |
-| **overload.*** | Custom-type and layout overloads |
-| **pad.*** | Padding / hash formatting |
-| **sink.*** | Specific sinks (`c_string`, `OutputDebugString`, …) |
+| **inserters** | Typed inserters (integers, hex, reals, Windows large integers) |
+| **iterators** | `format_iterator` |
+| **overload** | Custom-type and layout overloads |
+| **pad** | Padding / hash formatting |
+| **sink** | Specific sinks (`c_string`, `OutputDebugString`, …) |
 
-Two directories remain in the tree but are currently commented out of
-**examples/CMakeLists.txt**: **example.memory.1** and
-**example.overload.3.server_log**. Windows-only examples are gated on
-`_BUILD_AS_WIN32`.
+Two programs remain in the tree but are currently commented out of the
+build: **example.cpp.memory** (in **examples/CMakeLists.txt**) and
+**example.cpp.overload.3.server_log** (in
+**examples/overload/3/CMakeLists.txt**). Windows-only examples are
+gated on `_BUILD_AS_WIN32`.
 
 
 ## Catalogue
 
 | Name | Source | Platform | Summary |
 | ---- | ------ | -------- | ------- |
-| **example.arguments.boolean** | [example.arguments.boolean](./examples/example.arguments.boolean/) | * | Boolean arguments |
-| **example.arguments.character** | [example.arguments.character](./examples/example.arguments.character/) | * | Character arguments |
-| **example.arguments.reals** | [example.arguments.reals](./examples/example.arguments.reals/) | * | Floating-point arguments |
-| **example.arguments.void_pointers** | [example.arguments.void_pointers](./examples/example.arguments.void_pointers/) | * | Void-pointer arguments |
-| **example.ff_101** | [example.ff_101](./examples/example.ff_101/) | * | Introductory walkthrough of sinks and `fmt` |
-| **example.ff_101.no_namespace** | [example.ff_101.no_namespace](./examples/example.ff_101.no_namespace/) | * | Same walkthrough without the **FastFormat** namespace |
-| **example.flush** | [example.flush](./examples/example.flush/) | * | Explicit `flush()` |
-| **example.inserter.hex** | [example.inserter.hex](./examples/example.inserter.hex/) | * | Hexadecimal integer inserters |
-| **example.inserter.integers** | [example.inserter.integers](./examples/example.inserter.integers/) | * | Integer inserters |
-| **example.inserter.integers.WindowsLargeIntegers** | [example.inserter.integers.WindowsLargeIntegers](./examples/example.inserter.integers.WindowsLargeIntegers/) | Windows | Windows `LARGE_INTEGER` / `ULARGE_INTEGER` inserters |
-| **example.inserter.reals** | [example.inserter.reals](./examples/example.inserter.reals/) | * | Floating-point inserters |
-| **example.iterators.format_iterator** | [example.iterators.format_iterator](./examples/example.iterators.format_iterator/) | * | `format_iterator` |
-| **example.memory.1** | [example.memory.1](./examples/example.memory.1/) | * | Memory / allocation behaviour (not in the default **CMake** build) |
-| **example.overload.2.custom_type.filter_type** | [example.overload.2.custom_type.filter_type](./examples/example.overload.2.custom_type.filter_type/) | * | Custom type via `filter_type` |
-| **example.overload.2.custom_type.inserter** | [example.overload.2.custom_type.inserter](./examples/example.overload.2.custom_type.inserter/) | * | Custom type via an inserter (uses a `.properties` bundle) |
-| **example.overload.2.custom_type.string_access_shims** | [example.overload.2.custom_type.string_access_shims](./examples/example.overload.2.custom_type.string_access_shims/) | * | Custom type via string-access shims |
-| **example.overload.3.floatingpoint_columns** | [example.overload.3.floatingpoint_columns](./examples/example.overload.3.floatingpoint_columns/) | * | Floating-point column layout |
-| **example.overload.3.record_insert** | [example.overload.3.record_insert](./examples/example.overload.3.record_insert/) | * | Record-insert overload |
-| **example.overload.3.server_log** | [example.overload.3.server_log](./examples/example.overload.3.server_log/) | * | Server-log overload (not in the default **CMake** build) |
-| **example.overload.3.tabulations** | [example.overload.3.tabulations](./examples/example.overload.3.tabulations/) | * | Tabulation overload |
-| **example.pad.hash** | [example.pad.hash](./examples/example.pad.hash/) | * | Padding / hash formatting |
-| **example.sink.c_string** | [example.sink.c_string](./examples/example.sink.c_string/) | * | `c_string` sink |
-| **example.sink.OutputDebugString** | [example.sink.OutputDebugString](./examples/example.sink.OutputDebugString/) | Windows | Windows `OutputDebugString` sink |
+| **example.cpp.101.no_namespace** | [101/no_namespace](./examples/101/no_namespace/) | * | Same walkthrough without the **FastFormat** namespace |
+| **example.cpp.101.normal** | [101/normal](./examples/101/normal/) | * | Introductory walkthrough of sinks and `fmt` |
+| **example.cpp.arguments.boolean** | [arguments/boolean](./examples/arguments/boolean/) | * | Boolean arguments |
+| **example.cpp.arguments.character** | [arguments/character](./examples/arguments/character/) | * | Character arguments |
+| **example.cpp.arguments.reals** | [arguments/reals](./examples/arguments/reals/) | * | Floating-point arguments |
+| **example.cpp.arguments.void_pointers** | [arguments/void_pointers](./examples/arguments/void_pointers/) | * | Void-pointer arguments |
+| **example.cpp.flush** | [flush](./examples/flush/) | * | Explicit `flush()` |
+| **example.cpp.inserters.hex** | [inserters/hex](./examples/inserters/hex/) | * | Hexadecimal integer inserters |
+| **example.cpp.inserters.integers** | [inserters/integers](./examples/inserters/integers/) | * | Integer inserters |
+| **example.cpp.inserters.integers.WindowsLargeIntegers** | [inserters/integers/WindowsLargeIntegers](./examples/inserters/integers/WindowsLargeIntegers/) | Windows | Windows `LARGE_INTEGER` / `ULARGE_INTEGER` inserters |
+| **example.cpp.inserters.reals** | [inserters/reals](./examples/inserters/reals/) | * | Floating-point inserters |
+| **example.cpp.iterators.format_iterator** | [iterators/format_iterator](./examples/iterators/format_iterator/) | * | `format_iterator` |
+| **example.cpp.memory** | [memory](./examples/memory/) | * | Memory / allocation behaviour (not in the default **CMake** build) |
+| **example.cpp.overload.2.custom_type.filter_type** | [overload/2/custom_type/filter_type](./examples/overload/2/custom_type/filter_type/) | * | Custom type via `filter_type` |
+| **example.cpp.overload.2.custom_type.inserter** | [overload/2/custom_type/inserter](./examples/overload/2/custom_type/inserter/) | * | Custom type via an inserter (uses a `.properties` bundle) |
+| **example.cpp.overload.2.custom_type.string_access_shims** | [overload/2/custom_type/string_access_shims](./examples/overload/2/custom_type/string_access_shims/) | * | Custom type via string-access shims |
+| **example.cpp.overload.3.floatingpoint_columns** | [overload/3/floatingpoint_columns](./examples/overload/3/floatingpoint_columns/) | * | Floating-point column layout |
+| **example.cpp.overload.3.record_insert** | [overload/3/record_insert](./examples/overload/3/record_insert/) | * | Record-insert overload |
+| **example.cpp.overload.3.server_log** | [overload/3/server_log](./examples/overload/3/server_log/) | * | Server-log overload (not in the default **CMake** build) |
+| **example.cpp.overload.3.tabulations** | [overload/3/tabulations](./examples/overload/3/tabulations/) | * | Tabulation overload |
+| **example.cpp.pad.hash** | [pad/hash](./examples/pad/hash/) | * | Padding / hash formatting |
+| **example.cpp.sink.OutputDebugString** | [sink/OutputDebugString](./examples/sink/OutputDebugString/) | Windows | Windows `OutputDebugString` sink |
+| **example.cpp.sink.c_string** | [sink/c_string](./examples/sink/c_string/) | * | `c_string` sink |
 
 
 ## Building and running
