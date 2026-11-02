@@ -1,6 +1,15 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.7.4-rc9 - 2nd November 2026
+
+* version:
+  * added `FASTFORMAT_VER_0_7_4_RC_9`;
+
+* build:
+  * **STLSoft** minimum is **1.11.5**;
+  * **xTests** minimum is **0.28.2**;
+
 ## 0.7.4-rc8 - 27th October 2026
 
 * Defined `HAS_<Pkg>` and `HAS_<PKG>` when a Synesis package other than **STLSoft** is detected;
