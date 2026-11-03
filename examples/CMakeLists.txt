@@ -15,41 +15,17 @@ if(_BUILD_AS_UNIX)
 	add_definitions(-Dunix)
 endif(_BUILD_AS_UNIX)
 
-
-add_subdirectory(example.arguments.boolean)
-add_subdirectory(example.arguments.character)
-add_subdirectory(example.arguments.reals)
-add_subdirectory(example.arguments.void_pointers)
-add_subdirectory(example.ff_101)
-add_subdirectory(example.ff_101.no_namespace)
-add_subdirectory(example.flush)
-add_subdirectory(example.inserter.hex)
-add_subdirectory(example.inserter.integers)
-if(_BUILD_AS_WIN32)
-
-	add_subdirectory(example.inserter.integers.WindowsLargeIntegers)
-endif(_BUILD_AS_WIN32)
-add_subdirectory(example.inserter.reals)
-add_subdirectory(example.iterators.format_iterator)
+add_subdirectory(101)
+add_subdirectory(arguments)
+add_subdirectory(flush)
+add_subdirectory(inserters)
+add_subdirectory(iterators)
 #[====[
-add_subdirectory(example.memory.1)
+add_subdirectory(memory)
 #]====]
-add_subdirectory(example.overload.2.custom_type.filter_type)
-add_subdirectory(example.overload.2.custom_type.inserter)
-add_subdirectory(example.overload.2.custom_type.string_access_shims)
-add_subdirectory(example.overload.3.floatingpoint_columns)
-add_subdirectory(example.overload.3.record_insert)
-#[====[
-add_subdirectory(example.overload.3.server_log)
-#]====]
-add_subdirectory(example.overload.3.tabulations)
-add_subdirectory(example.pad.hash)
-if(_BUILD_AS_WIN32)
-
-	add_subdirectory(example.sink.OutputDebugString)
-endif(_BUILD_AS_WIN32)
-add_subdirectory(example.sink.c_string)
+add_subdirectory(overload)
+add_subdirectory(pad)
+add_subdirectory(sink)
 
 
 # ############################## end of file ############################# #
-

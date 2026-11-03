@@ -20,6 +20,14 @@ if(shwild_FOUND)
 	)
 endif()
 
+if(woad_FOUND)
+
+	target_link_libraries(test.scratch.versions
+		PRIVATE
+			woad::woad
+	)
+endif()
+
 if(UNIXem_FOUND)
 
 	target_link_libraries(test.scratch.versions

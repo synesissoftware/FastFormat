@@ -1,6 +1,15 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.7.4-rc10 - 4th November 2026
+
+* version:
+  * added `FASTFORMAT_VER_0_7_4_RC_10`;
+
+* Regrouped **examples/** and **test/** into short directories (`entry.cpp` for unit and component tests; `main.cpp` for examples, scratch, and performance);
+* Added optional **woad** colour for **test.scratch.versions** via **prepare_cmake.sh** `--use-woad`;
+
+
 ## 0.7.4-rc9 - 2nd November 2026
 
 * version:

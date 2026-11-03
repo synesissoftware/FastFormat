@@ -1,19 +1,15 @@
 
-
-add_subdirectory(test.performance.api.parse_format)
-#[====[
-add_subdirectory(test.performance.boost.karma)
-#]====]
-add_subdirectory(test.performance.decimal_integer)
-add_subdirectory(test.performance.hexadecimal_integer)
-add_subdirectory(test.performance.name_age_height)
-add_subdirectory(test.performance.one_integer)
-add_subdirectory(test.performance.one_pointer)
-add_subdirectory(test.performance.overload.ex.1)
-add_subdirectory(test.performance.scenario1)
-add_subdirectory(test.performance.ten_strings_twice)
-add_subdirectory(test.performance.three_strings_one_integer)
+add_subdirectory(api)
+add_subdirectory(boost)
+add_subdirectory(decimal_integer)
+add_subdirectory(hexadecimal_integer)
+add_subdirectory(name_age_height)
+add_subdirectory(one_integer)
+add_subdirectory(one_pointer)
+add_subdirectory(overload)
+add_subdirectory(scenario1)
+add_subdirectory(ten_strings_twice)
+add_subdirectory(three_strings_one_integer)
 
 
 # ############################## end of file ############################# #
-

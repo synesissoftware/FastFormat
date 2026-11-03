@@ -37,6 +37,7 @@ MSVC_MT=0
 RunMake=0
 SisUseColours=0
 TestingDisabled=0
+USE_woad=0
 VerboseMakefile=0
 
 # ##########################################################
@@ -171,6 +172,10 @@ while [[ $# -gt 0 ]]; do
 
       RunMake=1
       ;;
+    --use-woad)
+
+      USE_woad=1
+      ;;
     --help)
 
       [ -f "$Dir/.sis/script_info_lines.txt" ] && cat "$Dir/.sis/script_info_lines.txt"
@@ -217,6 +222,10 @@ Flags/options:
     --run-make
         executes a build via cmake --build after a successful configure
 
+    --use-woad
+        opts in to the woad library (USE_WOAD=ON), whose version is then
+        reported, in colour, by test.scratch.versions
+
 
     standard flags:
 
@@ -251,6 +260,7 @@ if [ $BuildSharedLibs -eq 0 ]; then CMakeBuildSharedLibsFlag="OFF" ; else CMakeB
 if [ $ExamplesDisabled -eq 0 ]; then CMakeBuildExamplesFlag="ON" ; else CMakeBuildExamplesFlag="OFF" ; fi
 if [ $MSVC_MT -eq 0 ]; then CMakeMsvcMtFlag="OFF" ; else CMakeMsvcMtFlag="ON" ; fi
 if [ $TestingDisabled -eq 0 ]; then CMakeBuildTestingFlag="ON" ; else CMakeBuildTestingFlag="OFF" ; fi
+if [ $USE_woad -ne 0 ]; then CMakeUSE_woad="ON" ; else CMakeUSE_woad="OFF" ; fi
 if [ $VerboseMakefile -eq 0 ]; then CMakeVerboseMakefileFlag="OFF" ; else CMakeVerboseMakefileFlag="ON" ; fi
 
 # NOTE: the generator is the *only* thing that may differ between the MinGW
@@ -276,6 +286,7 @@ cmake \
   -DCMAKE_BUILD_TYPE=$Configuration \
   -DCMAKE_VERBOSE_MAKEFILE:BOOL=$CMakeVerboseMakefileFlag \
   -DMSVC_USE_MT:BOOL=$CMakeMsvcMtFlag \
+  -DUSE_WOAD:BOOL=$CMakeUSE_woad \
   "${CMakeGeneratorArgs[@]}" \
   -B "$CMakeDir" \
   -S "$Dir" \

@@ -1,0 +1,23 @@
+
+add_executable(test.performance.name_age_height
+	main.cpp
+)
+
+target_link_libraries(test.performance.name_age_height
+	fastformat
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
+)
+
+target_compile_options(test.performance.name_age_height PRIVATE
+	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
+		-Werror -Wall -Wextra -pedantic
+
+		-Wno-string-plus-int
+		-Wno-unused-value
+	>
+	$<$<CXX_COMPILER_ID:MSVC>: /WX /W4>
+)
+
+
+# ############################## end of file ############################# #
+
