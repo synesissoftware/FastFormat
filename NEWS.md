@@ -3,6 +3,7 @@
 
 | Date                | News Item                           | Details                                           |
 | ------------------- | ----------------------------------- | ------------------------------------------------- |
+| 4th November 2026   | Release of [FastFormat 0.7.4-rc10](https://github.com/synesissoftware/FastFormat/releases/tag/0.7.4-rc10) | short directories for examples and tests; optional **woad** colour |
 | 2nd November 2026   | Release of [FastFormat 0.7.4-rc9](https://github.com/synesissoftware/FastFormat/releases/tag/0.7.4-rc9) | **STLSoft** **1.11.5**; **xTests** **0.28.2** |
 | 27th October 2026   | Release of [FastFormat 0.7.4-rc8](https://github.com/synesissoftware/FastFormat/releases/tag/0.7.4-rc8) | `HAS_<Pkg>` / `HAS_<PKG>` for detected Synesis packages |
 | 6th February 2024   | Release of FastFormat 0.7.4-rc6     | CMake support                                     |
