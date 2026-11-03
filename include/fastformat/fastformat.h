@@ -109,6 +109,7 @@
 # define FASTFORMAT_VER_0_7_4_RC_8          0x00070488  /* should have been 0x000704C8 */
 # define FASTFORMAT_VER_0_7_4_RC_9          0x00070489  /* should have been 0x000704C9 */
 # define FASTFORMAT_VER_0_7_4_RC_10         0x000704CA
+# define FASTFORMAT_VER_0_7_4               0x000704ff
 # define FASTFORMAT_VER_0_8_1_ALPHA_1       0x00080101
 # define FASTFORMAT_VER_0_8_1_ALPHA_2       0x00080102
 # define FASTFORMAT_VER_0_8_1_ALPHA_3       0x00080103

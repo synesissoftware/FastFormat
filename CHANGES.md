@@ -5,19 +5,11 @@
 
 
 
-## 0.8.1-alpha7 - 16th October 2026
+## 0.7.4 - 4th November 2026
 
-* Merged **master** (0.7.4-rc7 boilerplate / CI / CMake modernisation) into **dev-0.8**, retaining the 0.8 API line (`numArguments`, `enum_strings`, STLSoft 1.10+/1.12+ gates) while adopting packed `FASTFORMAT_VER_RELSTATUS`, exception copy/`=delete` hygiene, and `fastformat_util_snprintf` for real filter shims;
-
-## 0.8.1-alpha6 - 29th January 2017
-
-* Prerelease on the 0.8 line (tag **0.8.1-alpha6**);
-* Documentation / distribution catch-up relative to **0.8.1-alpha3**;
-
-## 0.8.1-alpha3 - 28th September 2015
-
-* Renamed `numberOfReplacements` to `numArguments` on `missing_argument_exception`, `mismatched_replacements_exception`, and `unreferenced_argument_exception`;
-* Depends on **STLSoft** 1.9.121 or later;
+* version:
+  * added `FASTFORMAT_VER_0_7_4`;
+  * set `FASTFORMAT_VER_RELSTATUS` to **0xFF**;
 
 
 ## 0.7.4-rc10 - 4th November 2026
@@ -40,6 +32,11 @@
 ## 0.7.4-rc8 - 27th October 2026
 
 * Defined `HAS_<Pkg>` and `HAS_<PKG>` when a Synesis package other than **STLSoft** is detected;
+
+
+## 0.8.1-alpha7 - 16th October 2026
+
+* Merged **master** (0.7.4-rc7 boilerplate / CI / CMake modernisation) into **dev-0.8**, retaining the 0.8 API line (`numArguments`, `enum_strings`, STLSoft 1.10+/1.12+ gates) while adopting packed `FASTFORMAT_VER_RELSTATUS`, exception copy/`=delete` hygiene, and `fastformat_util_snprintf` for real filter shims;
 
 
 ## 0.7.4-rc7 - 16th October 2026
@@ -90,6 +87,13 @@
 * Prerelease **0.7.4** RC3;
 
 
+## 0.8.1-alpha6 - 29th January 2017
+
+
+* Prerelease on the 0.8 line (tag **0.8.1-alpha6**);
+* Documentation / distribution catch-up relative to **0.8.1-alpha3**;
+
+
 ## 0.7.4-rc2 - 30th November 2016
 
 * Fixed defect in `change_windows_replacement_parameters_to_fastformat()` whereby a trailing `%N` was not translated;
@@ -112,6 +116,12 @@
 * More flexible makefiles (non-bundled **shwild** / **xTests** / **xCover** / **xContract**);
 * Allow `TEST_VERBOSITY` to be specified in the environment;
 * Removed redundant `fastformat_getNewlineForPlatform()` invocation;
+
+
+## 0.8.1-alpha3 - 28th September 2015
+
+* Renamed `numberOfReplacements` to `numArguments` on `missing_argument_exception`, `mismatched_replacements_exception`, and `unreferenced_argument_exception`;
+* Depends on **STLSoft** 1.9.121 or later;
 
 
 ## 0.7.2 - 26th September 2015
