@@ -4,7 +4,7 @@
  * Purpose: FastFormat Core API.
  *
  * Created: 18th September 2006
- * Updated: 16th October 2026
+ * Updated: 2nd November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -99,13 +99,16 @@
 # define FASTFORMAT_VER_0_7_1               0x000701ff
 # define FASTFORMAT_VER_0_7_2               0x000702ff
 # define FASTFORMAT_VER_0_7_3               0x000703ff
-# define FASTFORMAT_VER_0_7_4_RC_1          0x00070481
-# define FASTFORMAT_VER_0_7_4_RC_2          0x00070482
-# define FASTFORMAT_VER_0_7_4_RC_3          0x00070483
-# define FASTFORMAT_VER_0_7_4_RC_4          0x00070484
-# define FASTFORMAT_VER_0_7_4_RC_5          0x00070485
-# define FASTFORMAT_VER_0_7_4_RC_6          0x00070486
-# define FASTFORMAT_VER_0_7_4_RC_7          0x00070487
+# define FASTFORMAT_VER_0_7_4_RC_1          0x00070481  /* should have been 0x000704C1 */
+# define FASTFORMAT_VER_0_7_4_RC_2          0x00070482  /* should have been 0x000704C2 */
+# define FASTFORMAT_VER_0_7_4_RC_3          0x00070483  /* should have been 0x000704C3 */
+# define FASTFORMAT_VER_0_7_4_RC_4          0x00070484  /* should have been 0x000704C4 */
+# define FASTFORMAT_VER_0_7_4_RC_5          0x00070485  /* should have been 0x000704C5 */
+# define FASTFORMAT_VER_0_7_4_RC_6          0x00070486  /* should have been 0x000704C6 */
+# define FASTFORMAT_VER_0_7_4_RC_7          0x00070487  /* should have been 0x000704C7 */
+# define FASTFORMAT_VER_0_7_4_RC_8          0x00070488  /* should have been 0x000704C8 */
+# define FASTFORMAT_VER_0_7_4_RC_9          0x00070489  /* should have been 0x000704C9 */
+# define FASTFORMAT_VER_0_7_4_RC_10         0x000704CA
 # define FASTFORMAT_VER_0_8_1_ALPHA_1       0x00080101
 # define FASTFORMAT_VER_0_8_1_ALPHA_2       0x00080102
 # define FASTFORMAT_VER_0_8_1_ALPHA_3       0x00080103

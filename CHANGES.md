@@ -1,6 +1,10 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.8.1-alpha8 - 6th November 2026
+
+
+
 ## 0.8.1-alpha7 - 16th October 2026
 
 * Merged **master** (0.7.4-rc7 boilerplate / CI / CMake modernisation) into **dev-0.8**, retaining the 0.8 API line (`numArguments`, `enum_strings`, STLSoft 1.10+/1.12+ gates) while adopting packed `FASTFORMAT_VER_RELSTATUS`, exception copy/`=delete` hygiene, and `fastformat_util_snprintf` for real filter shims;
@@ -14,6 +18,24 @@
 
 * Renamed `numberOfReplacements` to `numArguments` on `missing_argument_exception`, `mismatched_replacements_exception`, and `unreferenced_argument_exception`;
 * Depends on **STLSoft** 1.9.121 or later;
+
+
+## 0.7.4-rc10 - 4th November 2026
+
+
+
+## 0.7.4-rc9 - 2nd November 2026
+
+* version:
+  * added `FASTFORMAT_VER_0_7_4_RC_9`;
+
+* build:
+  * **STLSoft** minimum is **1.11.5**;
+  * **xTests** minimum is **0.28.2**;
+
+## 0.7.4-rc8 - 27th October 2026
+
+* Defined `HAS_<Pkg>` and `HAS_<PKG>` when a Synesis package other than **STLSoft** is detected;
 
 
 ## 0.7.4-rc7 - 16th October 2026

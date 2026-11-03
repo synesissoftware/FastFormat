@@ -12,5 +12,29 @@ target_link_libraries(test.scratch.versions
 		fastformat
 )
 
+if(shwild_FOUND)
+
+	target_link_libraries(test.scratch.versions
+		PRIVATE
+			shwild::core
+	)
+endif()
+
+if(UNIXem_FOUND)
+
+	target_link_libraries(test.scratch.versions
+		PRIVATE
+			UNIXem::UNIXem
+	)
+endif()
+
+if(TARGET xTests::core)
+
+	target_link_libraries(test.scratch.versions
+		PRIVATE
+			xTests::core
+	)
+endif()
+
 
 # ############################## end of file ############################# #
