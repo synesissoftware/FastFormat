@@ -65,7 +65,7 @@ cmake --build _build
 ./run_all_unit_tests.sh
 ```
 
-Try **examples/example.ff_101** for a first walkthrough. A local **STLSoft**
+Try **examples/101/normal** for a first walkthrough. A local **STLSoft**
 tree can be passed with `./prepare_cmake.sh --stlsoft-root-dir <dir>`. Full
 options are in [**INSTALL.md**](./INSTALL.md); `./prepare_cmake.sh --help`.
 
@@ -225,7 +225,7 @@ catalogue is in [**EXAMPLES.md**](./EXAMPLES.md). After a **CMake** build,
 `./run_all_examples.sh` (or `run_all_examples.cmd` on Windows) exercises the
 matching programs (see [**INSTALL.md**](./INSTALL.md)).
 
-The shortest walkthrough is **example.ff_101**:
+The shortest walkthrough is **example.cpp.101.normal**:
 
 ```cpp
 #include <fastformat/ff.hpp>
@@ -300,6 +300,7 @@ Required when `BUILD_TESTING` is on (the default for a full tree):
 | ------- | ------- | ---- | --------- |
 | [**xTests**](https://github.com/synesissoftware/xTests) | **0.26** | Unit and component test harness | **Yes** when building tests |
 | [**shwild**](https://github.com/synesissoftware/shwild) | (any installable package) | Optional; enables richer pattern matches in **xTests** (`XTESTS_HAS_SHWILD`) | No — detected with `find_package(shwild QUIET)` unless `NO_SHWILD` is set |
+| [**woad**](https://github.com/synesissoftware/woad) | **0.2.1** | Optional; colours **test.scratch.versions** when `USE_WOAD` is on (`./prepare_cmake.sh --use-woad`) | No — omitted unless that flag is passed |
 
 Examples (`BUILD_EXAMPLES`) use the same **STLSoft** install as the library;
 they do not add a separate package beyond what the library already needs.

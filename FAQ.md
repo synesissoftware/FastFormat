@@ -121,7 +121,7 @@ Q6: "Is it possible to set the width, precision, alignment, etc. of
 A6:
   As of version 0.3.1 beta 4 (released 9th March 2009) it is. You can use
   the fastformat::real() inserter function(s) suite, as shown in the
-  test.component.inserter.real test program.
+  test.component.inserters.real test program.
 
 
 Q7: "Why have both "Write" and "Format" APIs?"

@@ -5,7 +5,7 @@
 # Purpose:  Top-level CMake lists file for FastFormat
 #
 # Created:  6th February 2024
-# Updated:  2nd November 2026
+# Updated:  3rd November 2026
 #
 # ######################################################################## #
 
@@ -314,24 +314,6 @@ endif(BUILD_TESTING)
 
 
 # ############################
-# xTests
-
-if(BUILD_TESTING)
-
-	set(xTests_REQUIRED_VERSION_ 0.28.2)
-
-	find_package(xTests ${xTests_REQUIRED_VERSION_} REQUIRED)
-
-	message("-- CMake package xTests found (version ${xTests_VERSION}; ${xTests_REQUIRED_VERSION_} requested)")
-
-	add_compile_definitions(
-		HAS_xTests
-		HAS_XTESTS
-	)
-endif(BUILD_TESTING)
-
-
-# ############################
 # UNIXem
 #
 # Windows scratch programs include <unixem/unixem.h>. UNIXem configure
@@ -350,6 +332,51 @@ if(WIN32 AND BUILD_TESTING)
 		HAS_UNIXEM
 	)
 endif()
+
+
+# ############################
+# woad
+#
+# Opt-in (USE_WOAD / --use-woad): used only by test.scratch.versions.
+
+set(HAS_woad OFF)
+
+if(USE_WOAD)
+
+	if(BUILD_TESTING)
+
+		set(woad_REQUIRED_VERSION_ 0.2.1)
+
+		find_package(woad ${woad_REQUIRED_VERSION_} REQUIRED)
+
+		message("-- CMake package woad found (version ${woad_VERSION}; ${woad_REQUIRED_VERSION_} requested)")
+
+		set(HAS_woad ON)
+
+		add_compile_definitions(
+			HAS_woad
+			HAS_WOAD
+		)
+	endif(BUILD_TESTING)
+endif()
+
+
+# ############################
+# xTests
+
+if(BUILD_TESTING)
+
+	set(xTests_REQUIRED_VERSION_ 0.28.2)
+
+	find_package(xTests ${xTests_REQUIRED_VERSION_} REQUIRED)
+
+	message("-- CMake package xTests found (version ${xTests_VERSION}; ${xTests_REQUIRED_VERSION_} requested)")
+
+	add_compile_definitions(
+		HAS_xTests
+		HAS_XTESTS
+	)
+endif(BUILD_TESTING)
 
 
 # ################################################

@@ -1,0 +1,21 @@
+
+add_executable(test.component.sink.string_array
+	entry.cpp
+)
+
+target_link_libraries(test.component.sink.string_array
+	fastformat
+	$<IF:$<VERSION_LESS:${xTests_VERSION},"0.23">,xTests::xTests.core,xTests::core>
+)
+
+target_compile_options(test.component.sink.string_array PRIVATE
+	$<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:
+		-Werror -Wall -Wextra -pedantic
+
+	>
+	$<$<CXX_COMPILER_ID:MSVC>: /WX /W4>
+)
+
+
+# ############################## end of file ############################# #
+
