@@ -1,6 +1,13 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.7.4 - 4th November 2026
+
+* version:
+  * added `FASTFORMAT_VER_0_7_4`;
+  * set `FASTFORMAT_VER_RELSTATUS` to **0xFF**;
+
+
 ## 0.7.4-rc10 - 4th November 2026
 
 * version:
