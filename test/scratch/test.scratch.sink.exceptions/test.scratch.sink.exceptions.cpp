@@ -39,7 +39,7 @@ public: // Construction
  */
 
 static
-int program_main(int , char** )
+int program_main(int /*argc*/, char* /*argv*/[])
 {
     ff::fmt(
         ff::sinks::x<application_exception>()
@@ -52,7 +52,7 @@ int program_main(int , char** )
     return EXIT_FAILURE;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     try
     {

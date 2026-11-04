@@ -53,7 +53,7 @@ namespace
  * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
 	int retCode = EXIT_SUCCESS;
 	int verbosity = 2;

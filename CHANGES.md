@@ -20,6 +20,7 @@
 * testing:
   * removed the empty `change_windows_replacement_parameters_to_fastformat_8`–`_10` cases from **test/unit/bundle/util/entry.cpp**;
   * canonicalised test-case names to the `TEST_` form: the construct keeps its spelling (`TEST_illformed_BY_MISSING_DIGIT_1`, `TEST_calculate_number_of_fastformat_replacement_parameters_1`) and the scenario is shouted;
+  * `main()` / `main_` / `program_main` in the touched test and scratch programs take `char* argv[]`;
 
 
 

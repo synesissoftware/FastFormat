@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.scratch.FILE project.
  *
  * Created: 24th September 2006
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -87,7 +87,7 @@
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /* argc */, char** /* argv */)
+static int main_(int /*argc*/, char* /*argv*/[])
 {
     {
 #if 1
