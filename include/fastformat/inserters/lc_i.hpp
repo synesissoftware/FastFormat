@@ -4,7 +4,7 @@
  * Purpose: Inserter function for integral types in locale format.
  *
  * Created: 1st September 2012
- * Updated: 16th July 2024
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -56,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LC_I_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LC_I_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LC_I_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LC_I_EDIT      4
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_LC_I_EDIT      5
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -87,7 +87,7 @@ namespace inserters
  * Inserter functions
  */
 
-/** .
+/** \brief Locale-aware decimal form of an integral value
  *
  * \ingroup group__inserters
  *

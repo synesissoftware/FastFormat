@@ -4,17 +4,7 @@
  * Purpose: Implementation file for the test.unit.sink.ribbon project.
  *
  * Created: 6th September 2014
- * Updated: 16th July 2024
- *
- * Status:  Wizard-generated
- *
- * License: (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
- *              Copyright (c) 2008-2019, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -76,14 +66,14 @@
 namespace
 {
 
-    static void test_types_exist(void);
-    static void test_string_ribbon_1(void);
-    static void test_string_ribbon_2(void);
-    static void test_string_ribbon_3(void);
-    static void test_string_ribbon_4(void);
-    static void test_string_ribbon_5(void);
-    static void test_string_ribbon_6(void);
-    static void test_1_10(void);
+    static void test_types_exist();
+    static void test_string_ribbon_1();
+    static void test_string_ribbon_2();
+    static void test_string_ribbon_3();
+    static void test_string_ribbon_4();
+    static void test_string_ribbon_5();
+    static void test_string_ribbon_6();
+    static void test_1_10();
 } // anonymous namespace
 
 

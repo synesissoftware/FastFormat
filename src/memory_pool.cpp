@@ -4,7 +4,7 @@
  * Purpose: Implementation file for FastFormat core API: memory pool.
  *
  * Created: 1st September 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -294,7 +294,7 @@ namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

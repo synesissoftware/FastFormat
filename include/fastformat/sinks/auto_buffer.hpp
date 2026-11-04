@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for STLSoft's auto_buffer class template.
  *
  * Created: 21st April 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       21
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -232,9 +232,16 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_AUTO_BUFFER */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_AUTO_BUFFER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

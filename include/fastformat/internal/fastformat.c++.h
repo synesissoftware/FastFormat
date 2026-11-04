@@ -4,11 +4,11 @@
  * Purpose: FastFormat Core API C++ utilities and overloads.
  *
  * Created: 18th September 2006
- * Updated: 16th July 2024
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -61,7 +61,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus_MAJOR    2
 # define FASTFORMAT_VER_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus_EDIT     106
+# define FASTFORMAT_VER_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus_EDIT     107
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -207,7 +207,7 @@ inline string_slice_t getNewlineForPlatform()
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FASTFORMAT_Cplusplus */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

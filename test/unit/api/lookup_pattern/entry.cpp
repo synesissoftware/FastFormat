@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.api.lookup_pattern project.
  *
  * Created: 27th May 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -70,10 +70,10 @@
 namespace
 {
 
-    static void test_1_0(void);
-    static void test_1_1(void);
-    static void test_1_2(void);
-    static void test_1_3(void);
+    static void test_1_0();
+    static void test_1_1();
+    static void test_1_2();
+    static void test_1_3();
 } // anonymous namespace
 
 

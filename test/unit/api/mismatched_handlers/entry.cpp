@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.api.mismatched_handlers project.
  *
  * Created: 27th May 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -100,12 +100,12 @@ inline int compare_function_pointers(param p1, param p2, XTESTS_NS_C_QUAL(xtests
 namespace
 {
 
-    static void test_call_to_getProcessMismatchedHandler(void);
-    static void test_call_to_getThreadMismatchedHandler(void);
-    static void test_return_from_getProcessMismatchedHandler(void);
-    static void test_return_from_getThreadMismatchedHandler(void);
-    static void test_setProcessMismatchedHandler(void);
-    static void test_setThreadMismatchedHandler(void);
+    static void test_call_to_getProcessMismatchedHandler();
+    static void test_call_to_getThreadMismatchedHandler();
+    static void test_return_from_getProcessMismatchedHandler();
+    static void test_return_from_getThreadMismatchedHandler();
+    static void test_setProcessMismatchedHandler();
+    static void test_setThreadMismatchedHandler();
 } // anonymous namespace
 
 

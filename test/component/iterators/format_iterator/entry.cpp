@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.component.iterators.format_iterator project.
  *
  * Created: 26th April 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -50,8 +50,8 @@ namespace
 namespace
 {
 
-    static void test_1_0(void);
-    static void test_1_1(void);
+    static void test_1_0();
+    static void test_1_1();
 } // anonymous namespace
 
 

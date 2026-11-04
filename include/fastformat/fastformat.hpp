@@ -4,7 +4,7 @@
  * Purpose: FastFormat C++ primary include.
  *
  * Created: 19th September 2006
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MINOR     4
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      54
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      55
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -501,7 +501,7 @@ inline S& flush(
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_HPP_FASTFORMAT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

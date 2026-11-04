@@ -4,7 +4,7 @@
  * Purpose: Implementation file for FastFormat core API: replacements.
  *
  * Created: 18th September 2006
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -1698,7 +1698,7 @@ ff_char_t const* ximpl_core::fastformat_impl_replacements_getHashes(void* token,
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

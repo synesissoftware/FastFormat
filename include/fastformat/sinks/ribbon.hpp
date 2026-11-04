@@ -1,14 +1,14 @@
 /* /////////////////////////////////////////////////////////////////////////
- * File:    fastformat/sinks/ostream.hpp
+ * File:    fastformat/sinks/ribbon.hpp
  *
  * Purpose: A FastFormat sink for writing width-limited output.
  *
  * Created: 21st February 2012
- * Updated: 16th July 2024
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2012-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -40,7 +40,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/** \file fastformat/sinks/ostream.hpp
+/** \file fastformat/sinks/ribbon.hpp
  *
  * [C++ only] A FastFormat sink for writing width-limited output.
  */
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_MINOR       0
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_EDIT        5
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_EDIT        6
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -253,9 +253,16 @@ using ::fastformat::sinks::ribbon;
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SINKS_HPP_RIBBON */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SINKS_HPP_RIBBON */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

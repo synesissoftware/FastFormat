@@ -4,7 +4,7 @@
  * Purpose: Implementation file for FastFormat core API: format cache.
  *
  * Created: 18th September 2006
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -717,7 +717,7 @@ pattern_t pattern_record_t::pattern() const
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

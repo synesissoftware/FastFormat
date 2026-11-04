@@ -50,37 +50,46 @@ at https://github.com/synesissoftware/FastFormat.
 
 ## Developer Experience
 
-**FastFormat** needs [**STLSoft**](https://github.com/synesissoftware/STLSoft)
-**1.11** or later for the library itself. Examples and automated tests also
-need [**xTests**](https://github.com/synesissoftware/xTests) **0.26** or
-later; [**shwild**](https://github.com/synesissoftware/shwild) is optional
-and enables richer **xTests** matches. On Windows, scratch programs that
-include `<unixem/unixem.h>` need
-[**UNIXem**](https://github.com/synesissoftware/UNIXem) **1.14.2** or later
-(see [Dependencies](#dependencies)).
+Install [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.5** or later) via **CMake**, then clone **FastFormat** and:
 
 ```bash
-./prepare_cmake.sh -v
-cmake --build _build
-./run_all_unit_tests.sh
+./prepare_cmake.sh --run-make # also use '--cmake-verbose-makefile' to see verbose output
+./run_all_automated_tests.sh --no-make
 ```
 
-Try **examples/101/normal** for a first walkthrough. A local **STLSoft**
-tree can be passed with `./prepare_cmake.sh --stlsoft-root-dir <dir>`. Full
-options are in [**INSTALL.md**](./INSTALL.md); `./prepare_cmake.sh --help`.
+Automated tests need [**xTests**](https://github.com/synesissoftware/xTests) **0.28.2** or later. [**shwild**](https://github.com/synesissoftware/shwild) is optional and enables richer **xTests** matches. Pass `--disable-testing` to **prepare_cmake.sh** when **xTests** is not installed. On Windows, scratch programs that include `<unixem/unixem.h>` need [**UNIXem**](https://github.com/synesissoftware/UNIXem) **1.14.2** or later (see [Dependencies](#dependencies)).
+
+A format statement names a sink, a format string whose replacement parameters are `{0}`, `{1}`, …, and the arguments. **fastformat/ff.hpp** is the application layer; **fastformat/sinks/ostream.hpp** writes those slices to `std::ostream`. The shortest program prints one line:
+
+```cpp
+#include <fastformat/ff.hpp>
+#include <fastformat/sinks/ostream.hpp>
+
+#include <iostream>
+
+int main()
+{
+    fastformat::fmtln(std::cout, "Hello, {0}!", "World");
+
+    return 0;
+}
+```
+
+```cmake
+find_package(FastFormat REQUIRED)
+
+target_link_libraries(hello
+    PRIVATE
+        FastFormat::fastformat
+)
+```
+
+Clone or a release archive, flags, and install: [INSTALL.md](./INSTALL.md). Generated API pages: `./generate_doxygen.sh`. The longer walkthrough is **examples/101/normal**.
 
 
 ## Installation
 
-Detailed instructions — via **CMake** — are provided in the accompanying
-[**INSTALL.md**](./INSTALL.md) file.
-
-Consumer projects may use:
-
-```cmake
-find_package(FastFormat REQUIRED)
-target_link_libraries(<your-target> PRIVATE FastFormat::fastformat)
-```
+Obtain, configure, and install steps are in [**INSTALL.md**](./INSTALL.md). The consumer link line is in [Developer Experience](#developer-experience).
 
 
 ### API documentation (Doxygen)
@@ -127,21 +136,7 @@ in the public API. Items that pre-date **0.7** are labelled **0.7**. The
 | [`fastformat/init_codes.h`](./include/fastformat/init_codes.h) | Initialisation result codes | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
 | [`fastformat/implicit_link.h`](./include/fastformat/implicit_link.h) | Implicit-link helpers for selected toolchains | ![0.7](https://img.shields.io/badge/0.7-0A66C2) |
 
-Minimal use:
-
-```cpp
-#include <fastformat/ff.hpp>
-#include <fastformat/sinks/ostream.hpp>
-
-#include <iostream>
-
-int main()
-{
-    fastformat::fmtln(std::cout, "Hello, {0}!", "World");
-
-    return 0;
-}
-```
+The shortest program is in [Developer Experience](#developer-experience).
 
 
 ### Inserters
@@ -282,14 +277,13 @@ programs pull in further packages as listed below.
 
 | Package | Minimum | Role | Required? |
 | ------- | ------- | ---- | --------- |
-| [**STLSoft**](https://github.com/synesissoftware/STLSoft) | **1.11** | Compiler/platform discrimination, string shims, containers, and related facilities used by the core library and the public C++ API | **Yes** — always |
+| [**STLSoft**](https://github.com/synesissoftware/STLSoft) | **1.11.5** | Compiler/platform discrimination, string shims, containers, and related facilities used by the core library and the public C++ API | **Yes** — always |
 
 **STLSoft** may be supplied as:
 
-* a **CMake** package (`find_package(STLSoft 1.11 REQUIRED)`); or
+* a **CMake** package (`find_package(STLSoft 1.11.5 REQUIRED)`); or
 * a tree pointed at by the **CMake** variable `STLSOFT` or the environment
-  variable `STLSOFT` (include directory `${STLSOFT}/include`), e.g.
-  `./prepare_cmake.sh --stlsoft-root-dir <dir>`.
+  variable `STLSOFT` (include directory `${STLSOFT}/include`).
 
 
 #### Development dependencies
@@ -298,7 +292,7 @@ Required when `BUILD_TESTING` is on (the default for a full tree):
 
 | Package | Minimum | Role | Required? |
 | ------- | ------- | ---- | --------- |
-| [**xTests**](https://github.com/synesissoftware/xTests) | **0.26** | Unit and component test harness | **Yes** when building tests |
+| [**xTests**](https://github.com/synesissoftware/xTests) | **0.28.2** | Unit and component test harness | **Yes** when building tests |
 | [**shwild**](https://github.com/synesissoftware/shwild) | (any installable package) | Optional; enables richer pattern matches in **xTests** (`XTESTS_HAS_SHWILD`) | No — detected with `find_package(shwild QUIET)` unless `NO_SHWILD` is set |
 | [**woad**](https://github.com/synesissoftware/woad) | **0.2.1** | Optional; colours **test.scratch.versions** when `USE_WOAD` is on (`./prepare_cmake.sh --use-woad`) | No — omitted unless that flag is passed |
 

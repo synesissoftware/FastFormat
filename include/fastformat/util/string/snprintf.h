@@ -4,7 +4,7 @@
  * Purpose: snprintf() utility functions.
  *
  * Created: 1st June 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -40,7 +40,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/** \file fastformat/util/string/string.h
+/** \file fastformat/util/string/snprintf.h
  *
  * [C, C++] snprintf() utility functions.
  */
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_MINOR     3
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      18
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_STRING_H_SNPRINTF_EDIT      19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 

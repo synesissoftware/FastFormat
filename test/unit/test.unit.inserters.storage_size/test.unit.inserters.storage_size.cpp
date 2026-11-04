@@ -4,17 +4,7 @@
  * Purpose: Implementation file for the test.unit.inserters.storage_size project.
  *
  * Created: 23rd July 2015
- * Updated: 16th July 2024
- *
- * Status:  Wizard-generated
- *
- * License: (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
- *              Copyright (c) 2015-2019, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -74,14 +64,14 @@
 namespace
 {
 
-    static void test_zero(void);
-    static void text_B(void);
-    static void text_KB(void);
-    static void text_MB(void);
-    static void text_GB(void);
-    static void text_TB(void);
-    static void text_PB(void);
-    static void text_ZB(void);
+    static void test_zero();
+    static void text_B();
+    static void text_KB();
+    static void text_MB();
+    static void text_GB();
+    static void text_TB();
+    static void text_PB();
+    static void text_ZB();
 } // anonymous namespace
 
 

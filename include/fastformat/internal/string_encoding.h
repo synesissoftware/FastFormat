@@ -5,7 +5,7 @@
  *              wide string
  *
  * Created: 12th September 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -98,7 +98,7 @@
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_STRING_ENCODING */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_STRING_ENCODING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

@@ -5,7 +5,7 @@
  *              components
  *
  * Created: 19th September 2006
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -198,7 +198,7 @@
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_SHIM_MACROS */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_SHIM_MACROS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

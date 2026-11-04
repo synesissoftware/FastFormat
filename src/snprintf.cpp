@@ -4,7 +4,7 @@
  * Purpose: Implementation file for snprintf() utility functions.
  *
  * Created: 1st June 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -188,8 +188,8 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace util */
-} /* namespace fastformat */
+} // namespace util
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

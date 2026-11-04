@@ -1,7 +1,22 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
-## 0.8.1-alpha8 - 6th November 2026
+## 0.8.1-beta1 - 5th November 2026
+
+* version:
+  * added `FASTFORMAT_VER_0_8_1_BETA_1`;
+  * set `FASTFORMAT_VER_RELSTATUS` to **0x81**, superseding the unreleased **0.8.1-alpha8** marker;
+* documentation:
+  * **INSTALL.md** is **CMake**-only: clone **dev-0.8**, or download a release archive, plus the root driver scripts;
+  * **README.md** and **doc/mainpage.md** lead with **Developer Experience** (`fastformat::fmtln`, `FastFormat::fastformat`, **STLSoft** **1.11.5**);
+  * Doxygen generation completes: corrected `\file` paths, replaced placeholder `.` briefs, and aligned `\param` names with the handler and scope signatures;
+* boilerplate, applied across public headers, sources, and tests:
+  * `#pragma once` inclusion-control close, and include-guard `#endif` comments;
+  * C++ namespace closers use `//`;
+  * empty parameter lists drop `(void)`;
+  * per-file `Updated:` dates and `*_EDIT` bumps;
+* TODO:
+  * recorded that the ribbon sink and its unit tests still need to be finished and wired into **CMake**;
 
 
 

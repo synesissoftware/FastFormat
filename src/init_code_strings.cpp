@@ -4,7 +4,7 @@
  * Purpose: Initialisation code strings for FastFormat API
  *
  * Created: 27th May 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -176,7 +176,7 @@ FASTFORMAT_CALL(size_t) fastformat_getInitCodeStringLength(int code)
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

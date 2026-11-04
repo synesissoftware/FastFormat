@@ -5,7 +5,7 @@
  *              unreferenced arguments.
  *
  * Created: 1st December 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -59,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_MINOR       2
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_REVISION    3
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_EDIT        13
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE_EDIT        14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -130,7 +130,9 @@ public: // Construction
      * passes all others to the previously-registered handler.
      *
      * \param lowestIndexToIgnore The index at/above which all unreferenced
-     *   argument indexes are ignored.
+     *   argument indexes are ignored;
+     * \param domain The handler domain (thread or process) to install
+     *   into;
      */
     explicit ignore_unreferenced_arguments_scope(unsigned lowestIndexToIgnore, ff_handler_domain_t domain = fastformat::FF_HANDLERDOMAIN_THREAD)
         : parent_class_type(domain)
@@ -184,9 +186,16 @@ private: // Fields
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_UNREFERENCED_ARGUMENTS_SCOPE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

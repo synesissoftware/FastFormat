@@ -4,16 +4,7 @@
  * Purpose: Implementation file for the test.component.inserter.plural project.
  *
  * Created: 15th November 2014
- * Updated: 10th January 2017
- *
- * Status:  Wizard-generated
- *
- * License: (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2014-2017, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -49,8 +40,8 @@
 namespace
 {
 
-	static void test_1_0(void);
-	static void test_item_1(void);
+	static void test_1_0();
+	static void test_item_1();
 	static int setup(void* param);
 	static int teardown(void* param);
 	static void* setupParam = NULL;
@@ -91,14 +82,14 @@ namespace
 
 static int setup(void* param)
 {
-	((void)param); /* TODO: Use the parameter, if you need to */
+	(()param); /* TODO: Use the parameter, if you need to */
 
 	return 0; /* Change to !0 to fail initialisation */
 }
 
 static int teardown(void* param)
 {
-	((void)param); /* TODO: Use the parameter, if you need to */
+	(()param); /* TODO: Use the parameter, if you need to */
 
 	return 0; /* Currently ignored by xTests */
 }

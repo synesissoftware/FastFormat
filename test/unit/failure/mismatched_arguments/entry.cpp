@@ -4,7 +4,7 @@
  * Purpose: Unit tests for failure.mismatched.arguments.
  *
  * Created: 28th October 2013
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -39,17 +39,17 @@
 namespace
 {
 
-    static void test_that_single_used_argument_succeeds(void);
-    static void test_that_single_unused_argument_fails(void);
-    static void test_that_single_unused_argument_succeeds_with_scoper(void);
-    static void test_that_single_unused_argument_succeeds_with_scoper_0(void);
-    static void test_that_single_unused_argument_fails_with_scoper_1(void);
-    static void test_that_single_unused_argument_fails_with_scoper_2(void);
-    static void test_that_single_unused_argument_fails_with_scoper_3(void);
-    static void test_that_single_unused_argument_fails_with_scoper_negative_1(void);
-    static void test_that_single_missing_argument_fails(void);
-    static void test_that_single_missing_argument_fails_when_told_to_ignore_unreferenced_arguments(void);
-    static void test_that_single_missing_argument_succeeds_with_scoper(void);
+    static void test_that_single_used_argument_succeeds();
+    static void test_that_single_unused_argument_fails();
+    static void test_that_single_unused_argument_succeeds_with_scoper();
+    static void test_that_single_unused_argument_succeeds_with_scoper_0();
+    static void test_that_single_unused_argument_fails_with_scoper_1();
+    static void test_that_single_unused_argument_fails_with_scoper_2();
+    static void test_that_single_unused_argument_fails_with_scoper_3();
+    static void test_that_single_unused_argument_fails_with_scoper_negative_1();
+    static void test_that_single_missing_argument_fails();
+    static void test_that_single_missing_argument_fails_when_told_to_ignore_unreferenced_arguments();
+    static void test_that_single_missing_argument_succeeds_with_scoper();
 } // anonymous namespace
 
 

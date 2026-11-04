@@ -4,11 +4,11 @@
  * Purpose: Parse code strings for FastFormat API
  *
  * Created: 11th November 2013
- * Updated: 16th July 2024
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2013-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -227,7 +227,7 @@ FASTFORMAT_CALL(size_t) fastformat_getReplacementCodeStringLength(ff_replacement
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

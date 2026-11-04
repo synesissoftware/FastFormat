@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the example.arguments.character project.
  *
  * Created: 2nd June 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -62,8 +62,8 @@ namespace filters
 #endif /* 0 */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace filters */
-} /* namespace fastformat */
+} // namespace filters
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 #include <fastformat/fastformat.hpp>

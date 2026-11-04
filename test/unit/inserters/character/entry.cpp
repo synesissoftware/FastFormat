@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.inserters.character project.
  *
  * Created: 11th December 2010
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -63,8 +63,8 @@
 namespace
 {
 
-    static void test_1_0(void);
-    static void test_1_1(void);
+    static void test_1_0();
+    static void test_1_1();
 } // anonymous namespace
 
 

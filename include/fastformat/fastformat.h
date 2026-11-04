@@ -4,7 +4,7 @@
  * Purpose: FastFormat Core API.
  *
  * Created: 18th September 2006
- * Updated: 4th November 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -55,9 +55,9 @@
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       26
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    5
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        119
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       27
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    1
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        121
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -118,12 +118,13 @@
 # define FASTFORMAT_VER_0_8_1_ALPHA_6       0x00080106
 # define FASTFORMAT_VER_0_8_1_ALPHA_7       0x00080107
 # define FASTFORMAT_VER_0_8_1_ALPHA_8       0x00080148
+# define FASTFORMAT_VER_0_8_1_BETA_1        0x00080181
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           8
 #define FASTFORMAT_VER_PATCH           1
-#define FASTFORMAT_VER_RELSTATUS       0x48
+#define FASTFORMAT_VER_RELSTATUS       0x81
 
 #define FASTFORMAT_VER \
     (0\
@@ -413,8 +414,8 @@ typedef ff_replacement_code_t           replacement_code_t;
  */
 enum ff_handler_response_t
 {
-        FF_HANDLERRESPONSE_CONTINUE_PROCESSING  =   0   /*!< . */
-    ,   FF_HANDLERRESPONSE_NEXT_HANDLER         =   1   /*!< . */
+        FF_HANDLERRESPONSE_CONTINUE_PROCESSING  =   0   /*!< Continue processing the statement. */
+    ,   FF_HANDLERRESPONSE_NEXT_HANDLER         =   1   /*!< Pass the defect to the next handler. */
 };
 #ifndef __cplusplus
 typedef enum ff_handler_response_t      ff_handler_response_t;
@@ -653,11 +654,8 @@ typedef ff_replacement_action_t         replacement_action_t;
  * \param mismatchedParameterIndex The index of the first mismatched
  *   parameter (which may exceed \c numArguments). May be negative to indicate
  *   that notification pertains to no parameter
- * \param action This parameter will point to a variable to receive an
- *   action that will determine what to do in the event of a missing argument
- *   (as indicated by \c code having the
- *   value \c FF_REPLACEMENTCODE_MISSING_ARGUMENT); it's value is ignored in
- *   other cases, and the implementer may ignore it.
+ * \param missingArgumentAction Receives the action to take when \c code
+ *   is \c FF_REPLACEMENTCODE_MISSING_ARGUMENT. Ignored otherwise;
  * \param slice A pointer to a slice to receive any replacement string for
  *   the bad parameter
  * \param reserved0 Reserved for future use. Must be <code>NULL</code>
@@ -869,10 +867,9 @@ fastformat_getProcessIllformedHandler(void);
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \param handler The new handler for the process
- * \param param The parameter associated with the handler
+ * \param handler_info The new handler for the process;
  *
- * \return The previous handler for the process
+ * \return The previous handler for the process.
  */
 FASTFORMAT_CALL(ff_illformedHandler_info_t)
 fastformat_setProcessIllformedHandler(ff_illformedHandler_info_t handler_info);
@@ -890,10 +887,9 @@ fastformat_getThreadIllformedHandler(void);
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \param handler The new handler for the thread
- * \param param The parameter associated with the handler
+ * \param handler_info The new handler for the thread;
  *
- * \return The previous handler for the thread
+ * \return The previous handler for the thread.
  */
 FASTFORMAT_CALL(ff_illformedHandler_info_t)
 fastformat_setThreadIllformedHandler(ff_illformedHandler_info_t handler_info);
@@ -921,10 +917,9 @@ fastformat_getProcessMismatchedHandler(void);
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \param handler The new handler for the process
- * \param param The parameter associated with the handler
+ * \param handler_info The new handler for the process;
  *
- * \return The previous handler for the process
+ * \return The previous handler for the process.
  */
 FASTFORMAT_CALL(ff_mismatchedHandler_info_t)
 fastformat_setProcessMismatchedHandler(ff_mismatchedHandler_info_t handler_info);
@@ -942,10 +937,9 @@ fastformat_getThreadMismatchedHandler(void);
  *
  * \ingroup group__format_specification_defect_handling
  *
- * \param handler The new handler for the thread
- * \param param The parameter associated with the handler
+ * \param handler_info The new handler for the thread;
  *
- * \return The previous handler for the thread
+ * \return The previous handler for the thread.
  */
 FASTFORMAT_CALL(ff_mismatchedHandler_info_t)
 fastformat_setThreadMismatchedHandler(ff_mismatchedHandler_info_t handler_info);
@@ -1252,7 +1246,7 @@ namespace internal
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

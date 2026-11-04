@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for Windows' OutputDebugString().
  *
  * Created: 24th February 2009
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -40,7 +40,7 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-/** \file fastformat/sinks/FILE.hpp
+/** \file fastformat/sinks/OutputDebugString.hpp
  *
  * [C++ only] A FastFormat sink for Windows' <code>OutputDebugString()</code>.
  */
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      12
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -195,7 +195,7 @@ inline OutputDebugString_sink& fmt_slices(OutputDebugString_sink& sink, int flag
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

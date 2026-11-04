@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.api.illformed_handlers project.
  *
  * Created: 27th May 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -119,12 +119,12 @@ inline int compare_function_pointers(param p1, param p2, XTESTS_NS_C_QUAL(xtests
 namespace
 {
 
-    static void test_0(void);
-    static void test_1(void);
-    static void test_2(void);
-    static void test_3(void);
-    static void test_4(void);
-    static void test_5(void);
+    static void test_0();
+    static void test_1();
+    static void test_2();
+    static void test_3();
+    static void test_4();
+    static void test_5();
 } // anonymous namespace
 
 

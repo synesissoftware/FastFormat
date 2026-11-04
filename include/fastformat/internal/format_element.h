@@ -5,7 +5,7 @@
  *              constants
  *
  * Created: 6th November 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -156,9 +156,16 @@ struct ff_format_element_t
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FORMAT_ELEMENT */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_FORMAT_ELEMENT */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

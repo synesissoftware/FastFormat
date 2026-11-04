@@ -4,7 +4,7 @@
  * Purpose: Implementation file for FastFormat core API: API init.
  *
  * Created: 20th November 2007
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -707,7 +707,7 @@ FASTFORMAT_CALL(ff_char_t const*) fastformat_getHashesSlice(size_t len)
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

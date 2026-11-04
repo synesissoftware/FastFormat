@@ -5,7 +5,7 @@
  *              IOStreams' std::ostream and the standard header <iostream>.
  *
  * Created: 17th January 2011
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -60,7 +60,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       6
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_IOSTREAM_EDIT       7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -82,9 +82,16 @@
 
 #include <iostream>
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_IOSTREAM */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_IOSTREAM */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

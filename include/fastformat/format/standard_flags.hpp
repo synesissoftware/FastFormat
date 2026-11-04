@@ -4,7 +4,7 @@
  * Purpose: FastFormat standard format flags.
  *
  * Created: 18th November 2007
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_REVISION  8
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_EDIT      17
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS_EDIT      18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -128,7 +128,7 @@ const ::stlsoft::sint16_t   ff_flush    =   0x0002;
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_FORMAT_HPP_STANDARD_FLAGS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

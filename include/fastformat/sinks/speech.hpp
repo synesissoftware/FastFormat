@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for the Windows Speech API.
  *
  * Created: 27th November 2007
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MINOR    3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     25
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     26
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -226,9 +226,16 @@ inline speech_sink& fmt_slices(speech_sink& sink, int flags, size_t cchTotal, si
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SPEECH */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_SPEECH */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

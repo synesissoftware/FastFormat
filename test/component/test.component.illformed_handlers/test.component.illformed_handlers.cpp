@@ -4,17 +4,7 @@
  * Purpose: Implementation file for the test.component.illformed_handlers project.
  *
  * Created: 11th November 2013
- * Updated: 16th July 2024
- *
- * Status:  Wizard-generated
- *
- * License: (Licensed under the Synesis Software Open License)
- *
- *              Copyright (c) 2019-2024, Synesis Information Systems Pty Ltd.
- *              Copyright (c) 2013-2019, Synesis Software Pty Ltd.
- *              All rights reserved.
- *
- *              www:        http://www.synesis.com.au/software
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -54,11 +44,11 @@
 namespace
 {
 
-    static void test_scenario_1_configuration_0(void);
-    static void test_scenario_1_configuration_1(void);
-    static void test_scenario_1_configuration_2(void);
-    static void test_scenario_1_configuration_3(void);
-    static void test_scenario_1_configuration_4(void);
+    static void test_scenario_1_configuration_0();
+    static void test_scenario_1_configuration_1();
+    static void test_scenario_1_configuration_2();
+    static void test_scenario_1_configuration_3();
+    static void test_scenario_1_configuration_4();
 } // anonymous namespace
 
 

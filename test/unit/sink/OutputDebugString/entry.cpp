@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.sink.OutputDebugString project.
  *
  * Created: 28th May 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -66,13 +66,13 @@ int OutputDebugString_setup(void* );
 namespace
 {
 
-    static void test_1_0(void);
-    static void test_1_1(void);
-    static void test_1_2(void);
-    static void test_1_3(void);
-    static void test_1_4(void);
-    static void test_1_5(void);
-    static void test_1_6(void);
+    static void test_1_0();
+    static void test_1_1();
+    static void test_1_2();
+    static void test_1_3();
+    static void test_1_4();
+    static void test_1_5();
+    static void test_1_6();
 } // anonymous namespace
 
 

@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for fixed length character buffers.
  *
  * Created: 14th April 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_MINOR       2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_REVISION    4
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_EDIT        20
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CHAR_BUFFER_EDIT        21
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -224,9 +224,16 @@ inline char_buffer_sink& fmt_slices(char_buffer_sink& sink, int flags, size_t cc
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CHAR_BUFFER */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_CHAR_BUFFER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

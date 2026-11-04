@@ -5,7 +5,7 @@
  *              types.
  *
  * Created: 30th November 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -58,7 +58,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS_EDIT      12
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS_EDIT      13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -171,7 +171,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(void* value, void* 
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS */
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_VOID_POINTERS */
 
 /* ///////////////////////////// end of file //////////////////////////// */
 

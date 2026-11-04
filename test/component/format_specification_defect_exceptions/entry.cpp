@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.component.format_specification_defect_exceptions project.
  *
  * Created: 13th April 2010
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -51,23 +51,23 @@ namespace
 namespace
 {
 
-    static void test_illformed_by_missing_closing_curly_brace_1(void);
-    static void test_illformed_by_missing_closing_curly_brace_2(void);
-    static void test_illformed_by_missing_digit_and_curly_brace_1(void);
-    static void test_illformed_by_missing_digit_1(void);
-    static void test_illformed_by_missing_digit_2(void);
-    static void test_illformed_by_missing_digit_3(void);
-    static void test_illformed_by_missing_digit_4(void);
-    static void test_illformed_by_missing_digit_5(void);
-    static void test_illformed_by_missing_digit_6(void);
-    static void test_2_0(void);
-    static void test_2_1(void);
-    static void test_2_2(void);
-    static void test_2_3(void);
-    static void test_2_4(void);
-    static void test_2_5(void);
-    static void test_3_0(void);
-    static void test_3_1(void);
+    static void test_illformed_by_missing_closing_curly_brace_1();
+    static void test_illformed_by_missing_closing_curly_brace_2();
+    static void test_illformed_by_missing_digit_and_curly_brace_1();
+    static void test_illformed_by_missing_digit_1();
+    static void test_illformed_by_missing_digit_2();
+    static void test_illformed_by_missing_digit_3();
+    static void test_illformed_by_missing_digit_4();
+    static void test_illformed_by_missing_digit_5();
+    static void test_illformed_by_missing_digit_6();
+    static void test_2_0();
+    static void test_2_1();
+    static void test_2_2();
+    static void test_2_3();
+    static void test_2_4();
+    static void test_2_5();
+    static void test_3_0();
+    static void test_3_1();
 } // anonymous namespace
 
 

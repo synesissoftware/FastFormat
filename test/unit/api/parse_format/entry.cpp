@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.api.parse_format project.
  *
  * Created: 27th May 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -73,64 +73,64 @@
 namespace
 {
 
-    static void test_good_0(void);
-    static void test_good_1(void);
-    static void test_good_2(void);
-    static void test_good_3(void);
-    static void test_good_4(void);
-    static void test_good_5(void);
-    static void test_good_6(void);
-    static void test_good_7(void);
-    static void test_good_8(void);
-    static void test_good_9(void);
-    static void test_good_10(void);
-    static void test_good_11(void);
+    static void test_good_0();
+    static void test_good_1();
+    static void test_good_2();
+    static void test_good_3();
+    static void test_good_4();
+    static void test_good_5();
+    static void test_good_6();
+    static void test_good_7();
+    static void test_good_8();
+    static void test_good_9();
+    static void test_good_10();
+    static void test_good_11();
 
-    static void test_good_with_qualifiers_0(void);
-    static void test_good_with_qualifiers_1(void);
-    static void test_good_with_qualifiers_2(void);
-    static void test_good_with_qualifiers_3(void);
-    static void test_good_with_qualifiers_4(void);
-    static void test_good_with_qualifiers_5(void);
-    static void test_good_with_qualifiers_6(void);
-    static void test_good_with_qualifiers_7(void);
-    static void test_good_with_qualifiers_8(void);
-    static void test_good_with_qualifiers_10(void);
-    static void test_good_with_qualifiers_11(void);
-    static void test_good_with_qualifiers_12(void);
-    static void test_good_with_qualifiers_13(void);
-    static void test_good_with_qualifiers_14(void);
-    static void test_good_with_qualifiers_15(void);
-    static void test_good_with_qualifiers_16(void);
-    static void test_good_with_qualifiers_17(void);
-    static void test_good_with_qualifiers_18(void);
-    static void test_illformed_defaulting_to_next_0(void);
-    static void test_illformed_defaulting_to_next_1(void);
-    static void test_illformed_defaulting_to_next_2(void);
-    static void test_illformed_defaulting_to_next_3(void);
-    static void test_illformed_defaulting_to_next_4(void);
-    static void test_illformed_defaulting_to_next_5(void);
-    static void test_illformed_defaulting_to_next_6(void);
-    static void test_illformed_defaulting_to_next_7(void);
-    static void test_illformed_defaulting_to_next_8(void);
-    static void test_illformed_defaulting_to_next_9(void);
+    static void test_good_with_qualifiers_0();
+    static void test_good_with_qualifiers_1();
+    static void test_good_with_qualifiers_2();
+    static void test_good_with_qualifiers_3();
+    static void test_good_with_qualifiers_4();
+    static void test_good_with_qualifiers_5();
+    static void test_good_with_qualifiers_6();
+    static void test_good_with_qualifiers_7();
+    static void test_good_with_qualifiers_8();
+    static void test_good_with_qualifiers_10();
+    static void test_good_with_qualifiers_11();
+    static void test_good_with_qualifiers_12();
+    static void test_good_with_qualifiers_13();
+    static void test_good_with_qualifiers_14();
+    static void test_good_with_qualifiers_15();
+    static void test_good_with_qualifiers_16();
+    static void test_good_with_qualifiers_17();
+    static void test_good_with_qualifiers_18();
+    static void test_illformed_defaulting_to_next_0();
+    static void test_illformed_defaulting_to_next_1();
+    static void test_illformed_defaulting_to_next_2();
+    static void test_illformed_defaulting_to_next_3();
+    static void test_illformed_defaulting_to_next_4();
+    static void test_illformed_defaulting_to_next_5();
+    static void test_illformed_defaulting_to_next_6();
+    static void test_illformed_defaulting_to_next_7();
+    static void test_illformed_defaulting_to_next_8();
+    static void test_illformed_defaulting_to_next_9();
 
-    static void test_illformed_continue_with_blank_0(void);
-    static void test_illformed_continue_with_blank_1(void);
-    static void test_illformed_continue_with_blank_2(void);
-    static void test_illformed_continue_with_blank_3(void);
-    static void test_illformed_continue_with_blank_4(void);
-    static void test_illformed_continue_with_blank_5(void);
-    static void test_illformed_continue_with_blank_6(void);
-    static void test_illformed_continue_with_blank_7(void);
-    static void test_illformed_continue_with_format_as_literal_0(void);
-    static void test_illformed_continue_with_format_as_literal_1(void);
-    static void test_illformed_continue_with_format_as_literal_2(void);
-    static void test_illformed_continue_with_format_as_literal_3(void);
-    static void test_illformed_continue_with_format_as_literal_4(void);
-    static void test_illformed_continue_with_format_as_literal_5(void);
-    static void test_illformed_continue_with_format_as_literal_6(void);
-    static void test_illformed_continue_with_format_as_literal_7(void);
+    static void test_illformed_continue_with_blank_0();
+    static void test_illformed_continue_with_blank_1();
+    static void test_illformed_continue_with_blank_2();
+    static void test_illformed_continue_with_blank_3();
+    static void test_illformed_continue_with_blank_4();
+    static void test_illformed_continue_with_blank_5();
+    static void test_illformed_continue_with_blank_6();
+    static void test_illformed_continue_with_blank_7();
+    static void test_illformed_continue_with_format_as_literal_0();
+    static void test_illformed_continue_with_format_as_literal_1();
+    static void test_illformed_continue_with_format_as_literal_2();
+    static void test_illformed_continue_with_format_as_literal_3();
+    static void test_illformed_continue_with_format_as_literal_4();
+    static void test_illformed_continue_with_format_as_literal_5();
+    static void test_illformed_continue_with_format_as_literal_6();
+    static void test_illformed_continue_with_format_as_literal_7();
 } // anonymous namespace
 
 
