@@ -18,7 +18,7 @@ or later) via **CMake**, then from a **FastFormat** tree:
 ```
 
 Automated tests need [xTests](https://github.com/synesissoftware/xTests)
-(**0.28.2** or later). [shwild](https://github.com/synesissoftware/shwild)
+(**0.29.0** or later). [shwild](https://github.com/synesissoftware/shwild)
 is optional.
 
 A format statement names a sink, a format string, and the arguments.

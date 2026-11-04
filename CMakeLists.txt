@@ -5,7 +5,7 @@
 # Purpose:  Top-level CMake lists file for FastFormat
 #
 # Created:  6th February 2024
-# Updated:  3rd November 2026
+# Updated:  5th November 2026
 #
 # ######################################################################## #
 
@@ -321,7 +321,7 @@ endif(BUILD_TESTING)
 
 if(WIN32 AND BUILD_TESTING)
 
-	set(UNIXem_REQUIRED_VERSION_ 1.14.2)
+	set(UNIXem_REQUIRED_VERSION_ 1.15)
 
 	find_package(UNIXem ${UNIXem_REQUIRED_VERSION_} REQUIRED)
 
@@ -345,7 +345,7 @@ if(USE_WOAD)
 
 	if(BUILD_TESTING)
 
-		set(woad_REQUIRED_VERSION_ 0.2.1)
+		set(woad_REQUIRED_VERSION_ 0.2.2)
 
 		find_package(woad ${woad_REQUIRED_VERSION_} REQUIRED)
 
@@ -366,7 +366,7 @@ endif()
 
 if(BUILD_TESTING)
 
-	set(xTests_REQUIRED_VERSION_ 0.28.2)
+	set(xTests_REQUIRED_VERSION_ 0.29)
 
 	find_package(xTests ${xTests_REQUIRED_VERSION_} REQUIRED)
 

@@ -57,7 +57,7 @@ Install [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.5** or
 ./run_all_automated_tests.sh --no-make
 ```
 
-Automated tests need [**xTests**](https://github.com/synesissoftware/xTests) **0.28.2** or later. [**shwild**](https://github.com/synesissoftware/shwild) is optional and enables richer **xTests** matches. Pass `--disable-testing` to **prepare_cmake.sh** when **xTests** is not installed. On Windows, scratch programs that include `<unixem/unixem.h>` need [**UNIXem**](https://github.com/synesissoftware/UNIXem) **1.14.2** or later (see [Dependencies](#dependencies)).
+Automated tests need [**xTests**](https://github.com/synesissoftware/xTests) **0.29.0** or later. [**shwild**](https://github.com/synesissoftware/shwild) is optional and enables richer **xTests** matches. Pass `--disable-testing` to **prepare_cmake.sh** when **xTests** is not installed. On Windows, scratch programs that include `<unixem/unixem.h>` need [**UNIXem**](https://github.com/synesissoftware/UNIXem) **1.15.0** or later (see [Dependencies](#dependencies)).
 
 A format statement names a sink, a format string whose replacement parameters are `{0}`, `{1}`, …, and the arguments. **fastformat/ff.hpp** is the application layer; **fastformat/sinks/ostream.hpp** writes those slices to `std::ostream`. The shortest program prints one line:
 

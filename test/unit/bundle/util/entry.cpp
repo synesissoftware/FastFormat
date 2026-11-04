@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.bundle.util project.
  *
  * Created: 30th November 2016
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -95,9 +95,6 @@ namespace
     static void change_windows_replacement_parameters_to_fastformat_5();
     static void change_windows_replacement_parameters_to_fastformat_6();
     static void change_windows_replacement_parameters_to_fastformat_7();
-    static void change_windows_replacement_parameters_to_fastformat_8();
-    static void change_windows_replacement_parameters_to_fastformat_9();
-    static void change_windows_replacement_parameters_to_fastformat_10();
 
     static void escape_fastformat_replacement_parameters_1();
     static void escape_fastformat_replacement_parameters_2();
@@ -153,9 +150,6 @@ int main(int argc, char* argv[])
         XTESTS_RUN_CASE(change_windows_replacement_parameters_to_fastformat_5);
         XTESTS_RUN_CASE(change_windows_replacement_parameters_to_fastformat_6);
         XTESTS_RUN_CASE(change_windows_replacement_parameters_to_fastformat_7);
-        XTESTS_RUN_CASE(change_windows_replacement_parameters_to_fastformat_8);
-        XTESTS_RUN_CASE(change_windows_replacement_parameters_to_fastformat_9);
-        XTESTS_RUN_CASE(change_windows_replacement_parameters_to_fastformat_10);
 
         XTESTS_RUN_CASE(escape_fastformat_replacement_parameters_1);
         XTESTS_RUN_CASE(escape_fastformat_replacement_parameters_2);
@@ -432,18 +426,6 @@ static void change_windows_replacement_parameters_to_fastformat_7()
     string_t const  actual      =   change_windows_replacement_parameters_to_fastformat(input);
 
     XTESTS_TEST_STRING_EQUAL(expected, actual);
-}
-
-static void change_windows_replacement_parameters_to_fastformat_8()
-{
-}
-
-static void change_windows_replacement_parameters_to_fastformat_9()
-{
-}
-
-static void change_windows_replacement_parameters_to_fastformat_10()
-{
 }
 
 
