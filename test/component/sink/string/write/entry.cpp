@@ -4,7 +4,7 @@
  * Purpose: Component tests for sink.string.write.
  *
  * Created: 19th December 2007
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -48,16 +48,16 @@
 namespace
 {
 
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_8();
-    static void test_1_9();
-    static void test_1_10();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
+    static void TEST_1_8();
+    static void TEST_1_9();
+    static void TEST_1_10();
 
 } // anonymous namespace
 
@@ -73,16 +73,16 @@ static int main_(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
+        XTESTS_RUN_CASE(TEST_1_9);
+        XTESTS_RUN_CASE(TEST_1_10);
 
         XTESTS_PRINT_RESULTS();
 
@@ -159,7 +159,7 @@ namespace
 #define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
-static void test_1_1()
+static void TEST_1_1()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -168,7 +168,7 @@ static void test_1_1()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -177,7 +177,7 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -186,7 +186,7 @@ static void test_1_3()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -195,7 +195,7 @@ static void test_1_4()
     XTESTS_TEST_STRING_EQUAL("acb", sink.c_str());
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -204,7 +204,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL("cba", sink.c_str());
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -213,7 +213,7 @@ static void test_1_6()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz012345", sink.c_str());
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -222,7 +222,7 @@ static void test_1_7()
     XTESTS_TEST_STRING_EQUAL("thecatsatonmat", sink.c_str());
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -231,7 +231,7 @@ static void test_1_8()
     XTESTS_TEST_STRING_EQUAL("aaaabbbbcccc", sink.c_str());
 }
 
-static void test_1_9()
+static void TEST_1_9()
 {
     std::basic_string<ff_char_t> sink;
 
@@ -251,7 +251,7 @@ static void test_1_9()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-static void test_1_10()
+static void TEST_1_10()
 {
     std::basic_string<ff_char_t> sink;
 

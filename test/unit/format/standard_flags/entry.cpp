@@ -65,9 +65,9 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
 } // anonymous namespace
 
 
@@ -84,9 +84,9 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -119,17 +119,17 @@ static const flag_descriptor_t flags[] =
 };
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     XTESTS_TEST_INTEGER_NOT_EQUAL(0, fastformat::flags::ff_newLine);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     XTESTS_TEST_INTEGER_NOT_EQUAL(0, fastformat::flags::ff_flush);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     typedef stlsoft::frequency_map<int> flags_map_t;
 

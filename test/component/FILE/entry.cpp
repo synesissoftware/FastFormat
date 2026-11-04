@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.component.FILE project.
  *
  * Created: 3rd January 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -54,10 +54,10 @@
  * forward declarations
  */
 
-static void test_1_1();
-static void test_1_2();
-static void test_1_3();
-static void test_1_4();
+static void TEST_1_1();
+static void TEST_1_2();
+static void TEST_1_3();
+static void TEST_1_4();
 
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -71,10 +71,10 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static void test_1_1()
+static void TEST_1_1()
 {
     using   fastformat::ff_char_t;
 
@@ -99,7 +99,7 @@ static void test_1_1()
 #define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
-    const char FILE_NAME[]  = "test_1_1.results";
+    const char FILE_NAME[]  = "TEST_1_1.results";
 
     try
     {
@@ -125,9 +125,9 @@ static void test_1_1()
     }
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
-    const char FILE_NAME[]  = "test_1_2.results";
+    const char FILE_NAME[]  = "TEST_1_2.results";
 
     try
     {
@@ -153,9 +153,9 @@ static void test_1_2()
     }
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
-    const char FILE_NAME[]  = "test_1_3.results";
+    const char FILE_NAME[]  = "TEST_1_3.results";
 
     try
     {
@@ -182,9 +182,9 @@ static void test_1_3()
     }
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
-    const char FILE_NAME[]  = "test_1_4.results";
+    const char FILE_NAME[]  = "TEST_1_4.results";
 
     try
     {

@@ -32,17 +32,17 @@ extern "C++"
 
     namespace with_fastformat_namespace
     {
-        void test_slice_empty_and_null();
-        void test_slice_empty_and_non_null();
-        void test_slice_short_full_string();
-        void test_slice_short_partial_string();
+        void TEST_slice_EMPTY_AND_NULL();
+        void TEST_slice_EMPTY_AND_NON_NULL();
+        void TEST_slice_SHORT_FULL_STRING();
+        void TEST_slice_SHORT_PARTIAL_STRING();
 
-        void test_parse_code_1();
-        void test_parse_code_2();
-        void test_parse_code_3();
-        void test_replacement_code_1();
-        void test_replacement_code_2();
-        void test_replacement_code_3();
+        void TEST_parse_code_1();
+        void TEST_parse_code_2();
+        void TEST_parse_code_3();
+        void TEST_replacement_code_1();
+        void TEST_replacement_code_2();
+        void TEST_replacement_code_3();
     } // namespace with_fastformat_namespace
 } // extern "C++"
 
@@ -86,7 +86,7 @@ namespace with_fastformat_namespace
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 
-void test_slice_empty_and_null()
+void TEST_slice_EMPTY_AND_NULL()
 {
     ff_string_slice_t   slice = { 0u, NULL };
 
@@ -94,7 +94,7 @@ void test_slice_empty_and_null()
     XTESTS_TEST_POINTER_EQUAL(NULL, stlsoft_ns_qual(c_str_data)(slice));
 }
 
-void test_slice_empty_and_non_null()
+void TEST_slice_EMPTY_AND_NON_NULL()
 {
     ff_string_slice_t   slice = { 0u, FF_STR("abc") };
 
@@ -102,7 +102,7 @@ void test_slice_empty_and_non_null()
     XTESTS_TEST_POINTER_EQUAL(slice.ptr, stlsoft_ns_qual(c_str_data)(slice));
 }
 
-void test_slice_short_full_string()
+void TEST_slice_SHORT_FULL_STRING()
 {
     ff_string_slice_t   slice = { 3u, FF_STR("abc") };
 
@@ -110,7 +110,7 @@ void test_slice_short_full_string()
     XTESTS_TEST_POINTER_EQUAL(slice.ptr, stlsoft_ns_qual(c_str_data)(slice));
 }
 
-void test_slice_short_partial_string()
+void TEST_slice_SHORT_PARTIAL_STRING()
 {
     ff_string_slice_t   slice = { 3u, FF_STR("abcdef") };
 
@@ -119,7 +119,7 @@ void test_slice_short_partial_string()
 }
 
 
-void test_parse_code_1()
+void TEST_parse_code_1()
 {
     static ff_parse_code_t const    parseCodes[]    =
     {
@@ -139,7 +139,7 @@ void test_parse_code_1()
     }}
 }
 
-void test_parse_code_2()
+void TEST_parse_code_2()
 {
     XTESTS_TEST_STRING_CONTAIN_APPROX_("success", fastformat_getParseCodeString(FF_PARSECODE_SUCCESS));
 
@@ -150,7 +150,7 @@ void test_parse_code_2()
     XTESTS_TEST_STRING_CONTAIN_APPROX_("index", fastformat_getParseCodeString(FF_PARSECODE_INVALIDINDEX));
 }
 
-void test_parse_code_3()
+void TEST_parse_code_3()
 {
     XTESTS_TEST_STRING_CONTAIN_APPROX_("success", FF_PARSECODE_SUCCESS);
 
@@ -161,7 +161,7 @@ void test_parse_code_3()
     XTESTS_TEST_STRING_CONTAIN_APPROX_("index", FF_PARSECODE_INVALIDINDEX);
 }
 
-void test_replacement_code_1()
+void TEST_replacement_code_1()
 {
     static ff_replacement_code_t const    replacementCodes[]    =
     {
@@ -181,7 +181,7 @@ void test_replacement_code_1()
     }}
 }
 
-void test_replacement_code_2()
+void TEST_replacement_code_2()
 {
     XTESTS_TEST_STRING_CONTAIN_APPROX_("success", fastformat_getReplacementCodeString(FF_REPLACEMENTCODE_SUCCESS));
 
@@ -192,7 +192,7 @@ void test_replacement_code_2()
     XTESTS_TEST_STRING_CONTAIN_APPROX_("not reference", fastformat_getReplacementCodeString(FF_REPLACEMENTCODE_UNREFERENCED_ARGUMENT));
 }
 
-void test_replacement_code_3()
+void TEST_replacement_code_3()
 {
     XTESTS_TEST_STRING_CONTAIN_APPROX_("success", FF_REPLACEMENTCODE_SUCCESS);
 

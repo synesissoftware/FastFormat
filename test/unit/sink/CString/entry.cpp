@@ -64,34 +64,34 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_10();
-    static void test_1_11();
-    static void test_1_12();
-    static void test_1_13();
-    static void test_1_14();
-    static void test_1_15();
-    static void test_1_16();
-    static void test_2_0();
-    static void test_2_1();
-    static void test_2_2();
-    static void test_2_3();
-    static void test_2_4();
-    static void test_2_5();
-    static void test_2_6();
-    static void test_2_10();
-    static void test_2_11();
-    static void test_2_12();
-    static void test_2_13();
-    static void test_2_14();
-    static void test_2_15();
-    static void test_2_16();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_10();
+    static void TEST_1_11();
+    static void TEST_1_12();
+    static void TEST_1_13();
+    static void TEST_1_14();
+    static void TEST_1_15();
+    static void TEST_1_16();
+    static void TEST_2_0();
+    static void TEST_2_1();
+    static void TEST_2_2();
+    static void TEST_2_3();
+    static void TEST_2_4();
+    static void TEST_2_5();
+    static void TEST_2_6();
+    static void TEST_2_10();
+    static void TEST_2_11();
+    static void TEST_2_12();
+    static void TEST_2_13();
+    static void TEST_2_14();
+    static void TEST_2_15();
+    static void TEST_2_16();
 } // anonymous namespace
 
 
@@ -108,34 +108,34 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_2_0);
-        XTESTS_RUN_CASE(test_2_1);
-        XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
-        XTESTS_RUN_CASE(test_2_4);
-        XTESTS_RUN_CASE(test_2_5);
-        XTESTS_RUN_CASE(test_2_6);
-        XTESTS_RUN_CASE(test_2_10);
-        XTESTS_RUN_CASE(test_2_11);
-        XTESTS_RUN_CASE(test_2_12);
-        XTESTS_RUN_CASE(test_2_13);
-        XTESTS_RUN_CASE(test_2_14);
-        XTESTS_RUN_CASE(test_2_15);
-        XTESTS_RUN_CASE(test_2_16);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_10);
+        XTESTS_RUN_CASE(TEST_1_11);
+        XTESTS_RUN_CASE(TEST_1_12);
+        XTESTS_RUN_CASE(TEST_1_13);
+        XTESTS_RUN_CASE(TEST_1_14);
+        XTESTS_RUN_CASE(TEST_1_15);
+        XTESTS_RUN_CASE(TEST_1_16);
+        XTESTS_RUN_CASE(TEST_2_0);
+        XTESTS_RUN_CASE(TEST_2_1);
+        XTESTS_RUN_CASE(TEST_2_2);
+        XTESTS_RUN_CASE(TEST_2_3);
+        XTESTS_RUN_CASE(TEST_2_4);
+        XTESTS_RUN_CASE(TEST_2_5);
+        XTESTS_RUN_CASE(TEST_2_6);
+        XTESTS_RUN_CASE(TEST_2_10);
+        XTESTS_RUN_CASE(TEST_2_11);
+        XTESTS_RUN_CASE(TEST_2_12);
+        XTESTS_RUN_CASE(TEST_2_13);
+        XTESTS_RUN_CASE(TEST_2_14);
+        XTESTS_RUN_CASE(TEST_2_15);
+        XTESTS_RUN_CASE(TEST_2_16);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -159,7 +159,7 @@ namespace
     const CString newLine(fastformat::getNewlineForPlatform().ptr, int(fastformat::getNewlineForPlatform().len));
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -175,7 +175,7 @@ static void test_1_0()
     XTESTS_TEST_STRING_EQUAL("", sink);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -191,7 +191,7 @@ static void test_1_1()
     XTESTS_TEST_STRING_EQUAL("a", sink);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -207,7 +207,7 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("a", sink);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -223,7 +223,7 @@ static void test_1_3()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -240,7 +240,7 @@ static void test_1_4()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -282,7 +282,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -342,7 +342,7 @@ static void test_1_6()
 }
 
 
-static void test_1_10()
+static void TEST_1_10()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -360,7 +360,7 @@ static void test_1_10()
     XTESTS_TEST_STRING_EQUAL("0123456789", sink);
 }
 
-static void test_1_11()
+static void TEST_1_11()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -378,7 +378,7 @@ static void test_1_11()
     XTESTS_TEST_STRING_EQUAL("0123456789a", sink);
 }
 
-static void test_1_12()
+static void TEST_1_12()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -396,7 +396,7 @@ static void test_1_12()
     XTESTS_TEST_STRING_EQUAL("0123456789a", sink);
 }
 
-static void test_1_13()
+static void TEST_1_13()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -414,7 +414,7 @@ static void test_1_13()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_14()
+static void TEST_1_14()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -433,7 +433,7 @@ static void test_1_14()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_15()
+static void TEST_1_15()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -477,7 +477,7 @@ static void test_1_15()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_16()
+static void TEST_1_16()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -539,7 +539,7 @@ static void test_1_16()
 }
 
 
-static void test_2_0()
+static void TEST_2_0()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -555,7 +555,7 @@ static void test_2_0()
     XTESTS_TEST_STRING_EQUAL("" + newLine, sink);
 }
 
-static void test_2_1()
+static void TEST_2_1()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -571,7 +571,7 @@ static void test_2_1()
     XTESTS_TEST_STRING_EQUAL("a" + newLine, sink);
 }
 
-static void test_2_2()
+static void TEST_2_2()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -587,7 +587,7 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL("a" + newLine, sink);
 }
 
-static void test_2_3()
+static void TEST_2_3()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -603,7 +603,7 @@ static void test_2_3()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_4()
+static void TEST_2_4()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -620,7 +620,7 @@ static void test_2_4()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_5()
+static void TEST_2_5()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -662,7 +662,7 @@ static void test_2_5()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_6()
+static void TEST_2_6()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -722,7 +722,7 @@ static void test_2_6()
 }
 
 
-static void test_2_10()
+static void TEST_2_10()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -740,7 +740,7 @@ static void test_2_10()
     XTESTS_TEST_STRING_EQUAL("0123456789" + newLine, sink);
 }
 
-static void test_2_11()
+static void TEST_2_11()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -758,7 +758,7 @@ static void test_2_11()
     XTESTS_TEST_STRING_EQUAL("0123456789a" + newLine, sink);
 }
 
-static void test_2_12()
+static void TEST_2_12()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -776,7 +776,7 @@ static void test_2_12()
     XTESTS_TEST_STRING_EQUAL("0123456789a" + newLine, sink);
 }
 
-static void test_2_13()
+static void TEST_2_13()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -794,7 +794,7 @@ static void test_2_13()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_14()
+static void TEST_2_14()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -813,7 +813,7 @@ static void test_2_14()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_15()
+static void TEST_2_15()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -857,7 +857,7 @@ static void test_2_15()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_16()
+static void TEST_2_16()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =

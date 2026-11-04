@@ -66,14 +66,14 @@
 namespace
 {
 
-    static void test_types_exist();
-    static void test_string_ribbon_1();
-    static void test_string_ribbon_2();
-    static void test_string_ribbon_3();
-    static void test_string_ribbon_4();
-    static void test_string_ribbon_5();
-    static void test_string_ribbon_6();
-    static void test_1_10();
+    static void TEST_TYPES_EXIST();
+    static void TEST_string_ribbon_1();
+    static void TEST_string_ribbon_2();
+    static void TEST_string_ribbon_3();
+    static void TEST_string_ribbon_4();
+    static void TEST_string_ribbon_5();
+    static void TEST_string_ribbon_6();
+    static void TEST_1_10();
 } // anonymous namespace
 
 
@@ -90,14 +90,14 @@ int main(int argc, char **argv)
 
     if(XTESTS_START_RUNNER("test.unit.sink.ribbon", verbosity))
     {
-        XTESTS_RUN_CASE(test_types_exist);
-        XTESTS_RUN_CASE(test_string_ribbon_1);
-        XTESTS_RUN_CASE(test_string_ribbon_2);
-        XTESTS_RUN_CASE(test_string_ribbon_3);
-        XTESTS_RUN_CASE(test_string_ribbon_4);
-        XTESTS_RUN_CASE(test_string_ribbon_5);
-        XTESTS_RUN_CASE(test_string_ribbon_6);
-        XTESTS_RUN_CASE(test_1_10);
+        XTESTS_RUN_CASE(TEST_TYPES_EXIST);
+        XTESTS_RUN_CASE(TEST_string_ribbon_1);
+        XTESTS_RUN_CASE(TEST_string_ribbon_2);
+        XTESTS_RUN_CASE(TEST_string_ribbon_3);
+        XTESTS_RUN_CASE(TEST_string_ribbon_4);
+        XTESTS_RUN_CASE(TEST_string_ribbon_5);
+        XTESTS_RUN_CASE(TEST_string_ribbon_6);
+        XTESTS_RUN_CASE(TEST_1_10);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -120,14 +120,14 @@ namespace
     typedef std::basic_string<char_t>       string_t;
 
 
-static void test_types_exist()
+static void TEST_TYPES_EXIST()
 {
     typeid(::fastformat::sinks::ribbon_string_adaptor<string_t>);
 
     XTESTS_TEST_PASSED();
 }
 
-static void test_string_ribbon_1()
+static void TEST_string_ribbon_1()
 {
     string_t s;
 
@@ -136,7 +136,7 @@ static void test_string_ribbon_1()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL("abc", s);
 }
 
-static void test_string_ribbon_2()
+static void TEST_string_ribbon_2()
 {
     string_t s;
 
@@ -153,7 +153,7 @@ static void test_string_ribbon_2()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL("ghi", s);
 }
 
-static void test_string_ribbon_3()
+static void TEST_string_ribbon_3()
 {
     string_t s;
 
@@ -177,7 +177,7 @@ static void test_string_ribbon_3()
     }}
 }
 
-static void test_string_ribbon_4()
+static void TEST_string_ribbon_4()
 {
     string_t s;
 
@@ -201,7 +201,7 @@ static void test_string_ribbon_4()
     }}
 }
 
-static void test_string_ribbon_5()
+static void TEST_string_ribbon_5()
 {
     string_t s;
 
@@ -224,7 +224,7 @@ static void test_string_ribbon_5()
     }}
 }
 
-static void test_string_ribbon_6()
+static void TEST_string_ribbon_6()
 {
     string_t const  t(100, '~');
     string_t        s;
@@ -251,7 +251,7 @@ static void test_string_ribbon_6()
 }
 
 
-static void test_1_10()
+static void TEST_1_10()
 {
     temp_file               tf(temp_file::DeleteOnClose);
 

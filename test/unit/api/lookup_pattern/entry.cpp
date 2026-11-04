@@ -70,10 +70,10 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
 } // anonymous namespace
 
 
@@ -90,10 +90,10 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -114,7 +114,7 @@ namespace
 
     typedef std::basic_string<ff_char_t>    string_t;
 
-static void test_1_0()
+static void TEST_1_0()
 {
     int res = fastformat::init();
 
@@ -145,7 +145,7 @@ static void test_1_0()
     }
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     int res = fastformat::init();
 
@@ -180,7 +180,7 @@ static void test_1_1()
     }
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     int res = fastformat::init();
 
@@ -235,7 +235,7 @@ static void test_1_2()
     }
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     int res = fastformat::init();
 

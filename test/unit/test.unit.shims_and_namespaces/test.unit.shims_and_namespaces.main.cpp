@@ -33,65 +33,65 @@
 extern "C++"
 {
 
-    namespace with_fastformat_namespace
+    namespace TEST_WITH_FASTFORMAT_NAMESPACE
     {
-        void test_slice_empty_and_null();
-        void test_slice_empty_and_non_null();
-        void test_slice_short_full_string();
-        void test_slice_short_partial_string();
+        void TEST_slice_EMPTY_AND_NULL();
+        void TEST_slice_EMPTY_AND_NON_NULL();
+        void TEST_slice_SHORT_FULL_STRING();
+        void TEST_slice_SHORT_PARTIAL_STRING();
 
-        void test_parse_code_1();
-        void test_parse_code_2();
-        void test_parse_code_3();
-        void test_replacement_code_1();
-        void test_replacement_code_2();
-        void test_replacement_code_3();
-    } // namespace with_fastformat_namespace */
+        void TEST_parse_code_1();
+        void TEST_parse_code_2();
+        void TEST_parse_code_3();
+        void TEST_replacement_code_1();
+        void TEST_replacement_code_2();
+        void TEST_replacement_code_3();
+    } // namespace TEST_WITH_FASTFORMAT_NAMESPACE */
 
-    namespace without_fastformat_namespace
+    namespace TEST_WITHOUT_FASTFORMAT_NAMESPACE
     {
-        void test_slice_empty_and_null();
-        void test_slice_empty_and_non_null();
-        void test_slice_short_full_string();
-        void test_slice_short_partial_string();
+        void TEST_slice_EMPTY_AND_NULL();
+        void TEST_slice_EMPTY_AND_NON_NULL();
+        void TEST_slice_SHORT_FULL_STRING();
+        void TEST_slice_SHORT_PARTIAL_STRING();
 
-        void test_parse_code_1();
-        void test_parse_code_2();
-        void test_parse_code_3();
-        void test_replacement_code_1();
-        void test_replacement_code_2();
-        void test_replacement_code_3();
-    } // namespace without_fastformat_namespace
+        void TEST_parse_code_1();
+        void TEST_parse_code_2();
+        void TEST_parse_code_3();
+        void TEST_replacement_code_1();
+        void TEST_replacement_code_2();
+        void TEST_replacement_code_3();
+    } // namespace TEST_WITHOUT_FASTFORMAT_NAMESPACE
 
-    namespace without_stlsoft_namespace
+    namespace TEST_WITHOUT_STLSOFT_NAMESPACE
     {
-        void test_slice_empty_and_null();
-        void test_slice_empty_and_non_null();
-        void test_slice_short_full_string();
-        void test_slice_short_partial_string();
+        void TEST_slice_EMPTY_AND_NULL();
+        void TEST_slice_EMPTY_AND_NON_NULL();
+        void TEST_slice_SHORT_FULL_STRING();
+        void TEST_slice_SHORT_PARTIAL_STRING();
 
-        void test_parse_code_1();
-        void test_parse_code_2();
-        void test_parse_code_3();
-        void test_replacement_code_1();
-        void test_replacement_code_2();
-        void test_replacement_code_3();
-    } // namespace without_stlsoft_namespace */
+        void TEST_parse_code_1();
+        void TEST_parse_code_2();
+        void TEST_parse_code_3();
+        void TEST_replacement_code_1();
+        void TEST_replacement_code_2();
+        void TEST_replacement_code_3();
+    } // namespace TEST_WITHOUT_STLSOFT_NAMESPACE */
 
-    namespace without_either_namespace
+    namespace TEST_WITHOUT_EITHER_NAMESPACE
     {
-        void test_slice_empty_and_null();
-        void test_slice_empty_and_non_null();
-        void test_slice_short_full_string();
-        void test_slice_short_partial_string();
+        void TEST_slice_EMPTY_AND_NULL();
+        void TEST_slice_EMPTY_AND_NON_NULL();
+        void TEST_slice_SHORT_FULL_STRING();
+        void TEST_slice_SHORT_PARTIAL_STRING();
 
-        void test_parse_code_1();
-        void test_parse_code_2();
-        void test_parse_code_3();
-        void test_replacement_code_1();
-        void test_replacement_code_2();
-        void test_replacement_code_3();
-    } // namespace without_either_namespace */
+        void TEST_parse_code_1();
+        void TEST_parse_code_2();
+        void TEST_parse_code_3();
+        void TEST_replacement_code_1();
+        void TEST_replacement_code_2();
+        void TEST_replacement_code_3();
+    } // namespace TEST_WITHOUT_EITHER_NAMESPACE */
 } // extern "C++"
 
 
@@ -112,61 +112,61 @@ int main(int argc, char **argv)
 
     if(XTESTS_START_RUNNER_WITH_FLAGS("test.unit.shims_and_namespaces", verbosity, executionFlags))
     {
-        // with_fastformat_namespace
+        // TEST_WITH_FASTFORMAT_NAMESPACE
 
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_slice_empty_and_null);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_slice_empty_and_non_null);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_slice_short_full_string);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_slice_short_partial_string);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_slice_EMPTY_AND_NULL);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_slice_EMPTY_AND_NON_NULL);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_slice_SHORT_FULL_STRING);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_slice_SHORT_PARTIAL_STRING);
 
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_parse_code_1);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_parse_code_2);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_parse_code_3);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_replacement_code_1);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_replacement_code_2);
-        XTESTS_RUN_CASE(with_fastformat_namespace::test_replacement_code_3);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_parse_code_1);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_parse_code_2);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_parse_code_3);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_replacement_code_1);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_replacement_code_2);
+        XTESTS_RUN_CASE(TEST_WITH_FASTFORMAT_NAMESPACE::TEST_replacement_code_3);
 
-        // without_fastformat_namespace
+        // TEST_WITHOUT_FASTFORMAT_NAMESPACE
 
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_slice_empty_and_null);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_slice_empty_and_non_null);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_slice_short_full_string);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_slice_short_partial_string);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_slice_EMPTY_AND_NULL);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_slice_EMPTY_AND_NON_NULL);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_slice_SHORT_FULL_STRING);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_slice_SHORT_PARTIAL_STRING);
 
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_parse_code_1);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_parse_code_2);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_parse_code_3);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_replacement_code_1);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_replacement_code_2);
-        XTESTS_RUN_CASE(without_fastformat_namespace::test_replacement_code_3);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_parse_code_1);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_parse_code_2);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_parse_code_3);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_replacement_code_1);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_replacement_code_2);
+        XTESTS_RUN_CASE(TEST_WITHOUT_FASTFORMAT_NAMESPACE::TEST_replacement_code_3);
 
-        // without_stlsoft_namespace
+        // TEST_WITHOUT_STLSOFT_NAMESPACE
 
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_slice_empty_and_null);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_slice_empty_and_non_null);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_slice_short_full_string);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_slice_short_partial_string);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_slice_EMPTY_AND_NULL);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_slice_EMPTY_AND_NON_NULL);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_slice_SHORT_FULL_STRING);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_slice_SHORT_PARTIAL_STRING);
 
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_parse_code_1);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_parse_code_2);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_parse_code_3);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_replacement_code_1);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_replacement_code_2);
-        XTESTS_RUN_CASE(without_stlsoft_namespace::test_replacement_code_3);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_parse_code_1);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_parse_code_2);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_parse_code_3);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_replacement_code_1);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_replacement_code_2);
+        XTESTS_RUN_CASE(TEST_WITHOUT_STLSOFT_NAMESPACE::TEST_replacement_code_3);
 
-        // without_either_namespace
+        // TEST_WITHOUT_EITHER_NAMESPACE
 
-        XTESTS_RUN_CASE(without_either_namespace::test_slice_empty_and_null);
-        XTESTS_RUN_CASE(without_either_namespace::test_slice_empty_and_non_null);
-        XTESTS_RUN_CASE(without_either_namespace::test_slice_short_full_string);
-        XTESTS_RUN_CASE(without_either_namespace::test_slice_short_partial_string);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_slice_EMPTY_AND_NULL);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_slice_EMPTY_AND_NON_NULL);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_slice_SHORT_FULL_STRING);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_slice_SHORT_PARTIAL_STRING);
 
-        XTESTS_RUN_CASE(without_either_namespace::test_parse_code_1);
-        XTESTS_RUN_CASE(without_either_namespace::test_parse_code_2);
-        XTESTS_RUN_CASE(without_either_namespace::test_parse_code_3);
-        XTESTS_RUN_CASE(without_either_namespace::test_replacement_code_1);
-        XTESTS_RUN_CASE(without_either_namespace::test_replacement_code_2);
-        XTESTS_RUN_CASE(without_either_namespace::test_replacement_code_3);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_parse_code_1);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_parse_code_2);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_parse_code_3);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_replacement_code_1);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_replacement_code_2);
+        XTESTS_RUN_CASE(TEST_WITHOUT_EITHER_NAMESPACE::TEST_replacement_code_3);
 
 
         XTESTS_PRINT_RESULTS();

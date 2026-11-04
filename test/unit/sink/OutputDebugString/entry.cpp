@@ -66,13 +66,13 @@ int OutputDebugString_setup(void* );
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
 } // anonymous namespace
 
 
@@ -117,13 +117,13 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER_WITH_SETUP_FNS(__FILE__, verbosity, OutputDebugString_setup, NULL, NULL))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -145,7 +145,7 @@ namespace
     typedef std::basic_string<ff_char_t>    string_t;
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     fastformat::sinks::OutputDebugString_sink   sink;
     const fastformat::string_slice_t            slices[] =
@@ -161,7 +161,7 @@ static void test_1_0()
     XTESTS_TEST_INTEGER_EQUAL(0u, ods_length);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     fastformat::sinks::OutputDebugString_sink   sink;
     const fastformat::string_slice_t            slices[] =
@@ -177,7 +177,7 @@ static void test_1_1()
     XTESTS_TEST_INTEGER_EQUAL(1u, ods_length);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     fastformat::sinks::OutputDebugString_sink   sink;
     const fastformat::string_slice_t            slices[] =
@@ -193,7 +193,7 @@ static void test_1_2()
     XTESTS_TEST_INTEGER_EQUAL(STLSOFT_NUM_ELEMENTS(slices), ods_length);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     fastformat::sinks::OutputDebugString_sink   sink;
     const fastformat::string_slice_t            slices[] =
@@ -209,7 +209,7 @@ static void test_1_3()
     XTESTS_TEST_INTEGER_EQUAL(26u, ods_length);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     fastformat::sinks::OutputDebugString_sink   sink;
     const fastformat::string_slice_t            slices[] =
@@ -226,7 +226,7 @@ static void test_1_4()
     XTESTS_TEST_INTEGER_EQUAL(26u, ods_length);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     fastformat::sinks::OutputDebugString_sink   sink;
     const fastformat::string_slice_t            slices[] =
@@ -268,7 +268,7 @@ static void test_1_5()
     XTESTS_TEST_INTEGER_EQUAL(26u, ods_length);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     fastformat::sinks::OutputDebugString_sink   sink;
     const fastformat::string_slice_t            slices[] =

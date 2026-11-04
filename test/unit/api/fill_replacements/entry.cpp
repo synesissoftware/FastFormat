@@ -43,14 +43,14 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
 } // anonymous namespace
 
 
@@ -94,14 +94,14 @@ int main(int argc, char* argv[])
         )
     )
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -155,7 +155,7 @@ namespace
 #define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     fastformat::format_element_t    patterns[] =
     {
@@ -173,7 +173,7 @@ static void test_1_0()
     XTESTS_TEST_INTEGER_EQUAL(0u, len);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     fastformat::format_element_t patterns[] =
     {
@@ -191,7 +191,7 @@ static void test_1_1()
     XTESTS_TEST_INTEGER_EQUAL(1u, len);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     fastformat::format_element_t   patterns[] =
     {
@@ -209,7 +209,7 @@ static void test_1_2()
     XTESTS_TEST_INTEGER_EQUAL(0u, len);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     fastformat::format_element_t   patterns[] =
     {
@@ -227,7 +227,7 @@ static void test_1_3()
     XTESTS_TEST_INTEGER_EQUAL(1u, len);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     fastformat::format_element_t   patterns[] =
     {
@@ -246,7 +246,7 @@ static void test_1_4()
     XTESTS_TEST_INTEGER_EQUAL(2u, len);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     fastformat::format_element_t   patterns[] =
     {
@@ -265,7 +265,7 @@ static void test_1_5()
     XTESTS_TEST_INTEGER_EQUAL(2u, len);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     fastformat::format_element_t   patterns[] =
     {
@@ -285,7 +285,7 @@ static void test_1_6()
     XTESTS_TEST_INTEGER_EQUAL(3u, len);
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     fastformat::format_element_t   patterns[] =
     {

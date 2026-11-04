@@ -63,8 +63,8 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
+    static void TEST_1_0();
+    static void TEST_1_1();
 } // anonymous namespace
 
 
@@ -81,8 +81,8 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -105,12 +105,12 @@ namespace
     typedef std::basic_string<ff_char_t>    string_t;
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     XTESTS_TEST_STRING_EQUAL("a", fastformat::character('a'));
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     { for(ff_char_t ch = 'a'; ch != 'z'; ++ch)
     {

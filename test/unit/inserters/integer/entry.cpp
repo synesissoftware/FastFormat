@@ -65,16 +65,16 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_8();
-    static void test_1_9();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
+    static void TEST_1_8();
+    static void TEST_1_9();
 } // anonymous namespace
 
 
@@ -91,16 +91,16 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
+        XTESTS_RUN_CASE(TEST_1_9);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -123,7 +123,7 @@ namespace
     typedef std::basic_string<ff_char_t>    string_t;
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
 #if 0
     XTESTS_TEST_STRING_EQUAL("", fastformat::integer(0, 0, 0));
@@ -143,7 +143,7 @@ static void test_1_0()
     XTESTS_TEST_STRING_EQUAL("-100", fastformat::integer(-100, 0, 1));
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     typedef signed char int_t;
 
@@ -167,7 +167,7 @@ static void test_1_1()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     typedef signed char int_t;
 
@@ -191,7 +191,7 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     typedef signed short int_t;
 
@@ -215,7 +215,7 @@ static void test_1_3()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     typedef unsigned short int_t;
 
@@ -236,7 +236,7 @@ static void test_1_4()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     typedef signed int int_t;
 
@@ -260,7 +260,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     typedef unsigned long int_t;
 
@@ -281,7 +281,7 @@ static void test_1_6()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     typedef signed long int_t;
 
@@ -305,7 +305,7 @@ static void test_1_7()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
     typedef ::stlsoft::uint32_t int_t;
 
@@ -326,7 +326,7 @@ static void test_1_8()
     XTESTS_TEST_STRING_EQUAL_(s, fastformat::integer(stlsoft::limit_traits<int_t>::maximum(), 0, 1));
 }
 
-static void test_1_9()
+static void TEST_1_9()
 {
     typedef ::stlsoft::sint32_t int_t;
 

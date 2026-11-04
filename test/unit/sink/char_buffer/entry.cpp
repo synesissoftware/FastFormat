@@ -70,23 +70,23 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_10();
-    static void test_2_0();
-    static void test_2_1();
-    static void test_2_2();
-    static void test_2_3();
-    static void test_2_4();
-    static void test_2_5();
-    static void test_2_6();
-    static void test_2_10();
-    static void test_2_11();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_10();
+    static void TEST_2_0();
+    static void TEST_2_1();
+    static void TEST_2_2();
+    static void TEST_2_3();
+    static void TEST_2_4();
+    static void TEST_2_5();
+    static void TEST_2_6();
+    static void TEST_2_10();
+    static void TEST_2_11();
 } // anonymous namespace
 
 
@@ -103,24 +103,24 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_2_0);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_10);
+        XTESTS_RUN_CASE(TEST_2_0);
 #if 1
-        XTESTS_RUN_CASE(test_2_1);
-        XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
-        XTESTS_RUN_CASE(test_2_4);
-        XTESTS_RUN_CASE(test_2_5);
-        XTESTS_RUN_CASE(test_2_6);
-        XTESTS_RUN_CASE(test_2_10);
-        XTESTS_RUN_CASE_THAT_THROWS(test_2_11, std::out_of_range);
+        XTESTS_RUN_CASE(TEST_2_1);
+        XTESTS_RUN_CASE(TEST_2_2);
+        XTESTS_RUN_CASE(TEST_2_3);
+        XTESTS_RUN_CASE(TEST_2_4);
+        XTESTS_RUN_CASE(TEST_2_5);
+        XTESTS_RUN_CASE(TEST_2_6);
+        XTESTS_RUN_CASE(TEST_2_10);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_2_11, std::out_of_range);
 #endif
 
         XTESTS_PRINT_RESULTS();
@@ -168,7 +168,7 @@ namespace
     static const ff_char_t           s_source[] = FF_STR("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     ff_char_t                           buff[1] = { '~' };
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -191,7 +191,7 @@ static void test_1_0()
     XTESTS_TEST_STRING_EQUAL("", result);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     ff_char_t                           buff[1] = { '~' };
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -214,7 +214,7 @@ static void test_1_1()
     XTESTS_TEST_STRING_EQUAL("a", result);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     ff_char_t                           buff[1] = { '~' };
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -237,7 +237,7 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("a", result);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     ff_char_t                           buff[26];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -261,7 +261,7 @@ static void test_1_3()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", result);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     ff_char_t                           buff[26];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -286,7 +286,7 @@ static void test_1_4()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", result);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     ff_char_t                           buff[26];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -336,7 +336,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", result);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     ff_char_t                           buff[26];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -404,7 +404,7 @@ static void test_1_6()
 }
 
 
-static void test_1_10()
+static void TEST_1_10()
 {
     // Both Borland and CodeWarrior seem to think that there's a conversion
     // from size_t to long somewhere in the invocation of accumulate.
@@ -457,7 +457,7 @@ static void test_1_10()
 }
 
 
-static void test_2_0()
+static void TEST_2_0()
 {
     ff_char_t                           buff[3] = { '~', '~', '~' };
 #ifdef STLSOFT_CF_STATIC_ARRAY_SIZE_DETERMINATION_SUPPORT
@@ -488,7 +488,7 @@ static void test_2_0()
     XTESTS_TEST_STRING_EQUAL_(getNewlineForPlatform().ptr, result);
 }
 
-static void test_2_1()
+static void TEST_2_1()
 {
     ff_char_t                           buff[4] = { '~', '~', '~', '~' };
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -516,7 +516,7 @@ static void test_2_1()
     XTESTS_TEST_STRING_EQUAL_(string_t(FASTFORMAT_LITERAL_STRING("a")) + getNewlineForPlatform().ptr, result);
 }
 
-static void test_2_2()
+static void TEST_2_2()
 {
     ff_char_t                           buff[4] = { '~', '~', '~', '~' };
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -543,7 +543,7 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL_(string_t(FASTFORMAT_LITERAL_STRING("a")) + getNewlineForPlatform().ptr, result);
 }
 
-static void test_2_3()
+static void TEST_2_3()
 {
     ff_char_t                           buff[28];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -567,7 +567,7 @@ static void test_2_3()
     XTESTS_TEST_STRING_EQUAL_(string_t(FASTFORMAT_LITERAL_STRING("abcdefghijklmnopqrstuvwxyz")) + getNewlineForPlatform().ptr, result);
 }
 
-static void test_2_4()
+static void TEST_2_4()
 {
     ff_char_t                           buff[28];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -592,7 +592,7 @@ static void test_2_4()
     XTESTS_TEST_STRING_EQUAL_(string_t(FASTFORMAT_LITERAL_STRING("abcdefghijklmnopqrstuvwxyz")) + getNewlineForPlatform().ptr, result);
 }
 
-static void test_2_5()
+static void TEST_2_5()
 {
     ff_char_t                           buff[28];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -642,7 +642,7 @@ static void test_2_5()
     XTESTS_TEST_STRING_EQUAL_(string_t(FASTFORMAT_LITERAL_STRING("abcdefghijklmnopqrstuvwxyz")) + getNewlineForPlatform().ptr, result);
 }
 
-static void test_2_6()
+static void TEST_2_6()
 {
     ff_char_t                           buff[28];
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);
@@ -710,7 +710,7 @@ static void test_2_6()
 }
 
 
-static void test_2_10()
+static void TEST_2_10()
 {
     // Both Borland and CodeWarrior seem to think that there's a conversion
     // from size_t to long somewhere in the invocation of accumulate.
@@ -762,7 +762,7 @@ static void test_2_10()
 #endif /* compiler */
 }
 
-static void test_2_11()
+static void TEST_2_11()
 {
     ff_char_t                           buff[1] = { '~' };
     char_buffer_sink                    sink(STLSOFT_NUM_ELEMENTS(buff), &buff[0]);

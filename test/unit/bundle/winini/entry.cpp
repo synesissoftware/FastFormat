@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.unit.bundle.winini project.
  *
  * Created: 12th April 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -74,13 +74,13 @@ namespace
 #define WININI_UNITTEST_FILE_NAME_                          "./test.unit.bundle.winini.ini"
     static const ff_char_t   WININI_UNITTEST_FILE_NAME[] = FF_STR(WININI_UNITTEST_FILE_NAME_);
 
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
 } // anonymous namespace
 
 
@@ -113,13 +113,13 @@ int main(int argc, char* argv[])
             ::fclose(stm);
         }
 
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE_THAT_THROWS(test_1_5, std::out_of_range);
-        XTESTS_RUN_CASE_THAT_THROWS(test_1_6, std::out_of_range);
-        XTESTS_RUN_CASE_THAT_THROWS(test_1_7, std::out_of_range);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_1_5, std::out_of_range);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_1_6, std::out_of_range);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_1_7, std::out_of_range);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -138,12 +138,12 @@ namespace
     typedef std::basic_string<ff_char_t>    string_t;
 
 
-static void test_1_1()
+static void TEST_1_1()
 {
     fastformat::winini_bundle   bundle(WININI_UNITTEST_FILE_NAME, FF_STR("section-1"));
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     fastformat::winini_bundle   bundle(WININI_UNITTEST_FILE_NAME, FF_STR("section-1"));
 
@@ -152,7 +152,7 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("abc", val1);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     fastformat::winini_bundle   bundle(WININI_UNITTEST_FILE_NAME, FF_STR("section-1"));
 
@@ -161,7 +161,7 @@ static void test_1_3()
     XTESTS_TEST_STRING_EQUAL("def", val2);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     fastformat::winini_bundle   bundle(WININI_UNITTEST_FILE_NAME, FF_STR("section-1"));
 
@@ -170,7 +170,7 @@ static void test_1_4()
     XTESTS_TEST_STRING_EQUAL("", val3);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     fastformat::winini_bundle   bundle(WININI_UNITTEST_FILE_NAME, FF_STR("section-1"));
 
@@ -179,7 +179,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL("", val4);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     fastformat::winini_bundle   bundle(WININI_UNITTEST_FILE_NAME, FF_STR("section-2"));
 
@@ -188,7 +188,7 @@ static void test_1_6()
     XTESTS_TEST_STRING_EQUAL("", val1);
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     fastformat::winini_bundle   bundle(WININI_UNITTEST_FILE_NAME, FF_STR("section-3"));
 

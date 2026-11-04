@@ -119,12 +119,12 @@ inline int compare_function_pointers(param p1, param p2, XTESTS_NS_C_QUAL(xtests
 namespace
 {
 
-    static void test_0();
-    static void test_1();
-    static void test_2();
-    static void test_3();
-    static void test_4();
-    static void test_5();
+    static void TEST_0();
+    static void TEST_1();
+    static void TEST_2();
+    static void TEST_3();
+    static void TEST_4();
+    static void TEST_5();
 } // anonymous namespace
 
 
@@ -168,12 +168,12 @@ int main(int argc, char* argv[])
         )
     )
     {
-        XTESTS_RUN_CASE(test_0);
-        XTESTS_RUN_CASE(test_1);
-        XTESTS_RUN_CASE(test_2);
-        XTESTS_RUN_CASE(test_3);
-        XTESTS_RUN_CASE(test_4);
-        XTESTS_RUN_CASE(test_5);
+        XTESTS_RUN_CASE(TEST_0);
+        XTESTS_RUN_CASE(TEST_1);
+        XTESTS_RUN_CASE(TEST_2);
+        XTESTS_RUN_CASE(TEST_3);
+        XTESTS_RUN_CASE(TEST_4);
+        XTESTS_RUN_CASE(TEST_5);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -238,21 +238,21 @@ namespace
 #endif
 
 
-static void test_0()
+static void TEST_0()
 {
     fastformat_getProcessIllformedHandler();
 
     XTESTS_TEST_PASSED();
 }
 
-static void test_1()
+static void TEST_1()
 {
     fastformat_getThreadIllformedHandler();
 
     XTESTS_TEST_PASSED();
 }
 
-static void test_2()
+static void TEST_2()
 {
     ff_illformedHandler_info_t info = fastformat_getProcessIllformedHandler();
 
@@ -260,7 +260,7 @@ static void test_2()
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
 }
 
-static void test_3()
+static void TEST_3()
 {
     ff_illformedHandler_info_t info = fastformat_getThreadIllformedHandler();
 
@@ -268,7 +268,7 @@ static void test_3()
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
 }
 
-static void test_4()
+static void TEST_4()
 {
     void*   param = &param;
 
@@ -288,7 +288,7 @@ static void test_4()
     XTESTS_TEST_POINTER_EQUAL(param, replaced.param);
 }
 
-static void test_5()
+static void TEST_5()
 {
     void*   param = &param;
 

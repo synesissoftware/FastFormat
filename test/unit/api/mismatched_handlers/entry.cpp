@@ -100,12 +100,12 @@ inline int compare_function_pointers(param p1, param p2, XTESTS_NS_C_QUAL(xtests
 namespace
 {
 
-    static void test_call_to_getProcessMismatchedHandler();
-    static void test_call_to_getThreadMismatchedHandler();
-    static void test_return_from_getProcessMismatchedHandler();
-    static void test_return_from_getThreadMismatchedHandler();
-    static void test_setProcessMismatchedHandler();
-    static void test_setThreadMismatchedHandler();
+    static void TEST_CALL_TO_getProcessMismatchedHandler();
+    static void TEST_CALL_TO_getThreadMismatchedHandler();
+    static void TEST_RETURN_FROM_getProcessMismatchedHandler();
+    static void TEST_RETURN_FROM_getThreadMismatchedHandler();
+    static void TEST_setProcessMismatchedHandler();
+    static void TEST_setThreadMismatchedHandler();
 } // anonymous namespace
 
 
@@ -149,12 +149,12 @@ int main(int argc, char* argv[])
         )
     )
     {
-        XTESTS_RUN_CASE(test_call_to_getProcessMismatchedHandler);
-        XTESTS_RUN_CASE(test_call_to_getThreadMismatchedHandler);
-        XTESTS_RUN_CASE(test_return_from_getProcessMismatchedHandler);
-        XTESTS_RUN_CASE(test_return_from_getThreadMismatchedHandler);
-        XTESTS_RUN_CASE(test_setProcessMismatchedHandler);
-        XTESTS_RUN_CASE(test_setThreadMismatchedHandler);
+        XTESTS_RUN_CASE(TEST_CALL_TO_getProcessMismatchedHandler);
+        XTESTS_RUN_CASE(TEST_CALL_TO_getThreadMismatchedHandler);
+        XTESTS_RUN_CASE(TEST_RETURN_FROM_getProcessMismatchedHandler);
+        XTESTS_RUN_CASE(TEST_RETURN_FROM_getThreadMismatchedHandler);
+        XTESTS_RUN_CASE(TEST_setProcessMismatchedHandler);
+        XTESTS_RUN_CASE(TEST_setThreadMismatchedHandler);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -221,21 +221,21 @@ namespace
 #endif /* 0 */
 
 
-static void test_call_to_getProcessMismatchedHandler()
+static void TEST_CALL_TO_getProcessMismatchedHandler()
 {
     fastformat_getProcessMismatchedHandler();
 
     XTESTS_TEST_PASSED();
 }
 
-static void test_call_to_getThreadMismatchedHandler()
+static void TEST_CALL_TO_getThreadMismatchedHandler()
 {
     fastformat_getThreadMismatchedHandler();
 
     XTESTS_TEST_PASSED();
 }
 
-static void test_return_from_getProcessMismatchedHandler()
+static void TEST_RETURN_FROM_getProcessMismatchedHandler()
 {
     ff_mismatchedHandler_info_t    info = fastformat_getProcessMismatchedHandler();
 
@@ -243,7 +243,7 @@ static void test_return_from_getProcessMismatchedHandler()
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
 }
 
-static void test_return_from_getThreadMismatchedHandler()
+static void TEST_RETURN_FROM_getThreadMismatchedHandler()
 {
     ff_mismatchedHandler_info_t    info = fastformat_getThreadMismatchedHandler();
 
@@ -251,7 +251,7 @@ static void test_return_from_getThreadMismatchedHandler()
     XTESTS_TEST_POINTER_EQUAL(NULL, info.param);
 }
 
-static void test_setProcessMismatchedHandler()
+static void TEST_setProcessMismatchedHandler()
 {
     int i;
     void* const param = &i;
@@ -272,7 +272,7 @@ static void test_setProcessMismatchedHandler()
     XTESTS_TEST_POINTER_EQUAL(param, replaced.param);
 }
 
-static void test_setThreadMismatchedHandler()
+static void TEST_setThreadMismatchedHandler()
 {
     int i;
     void* const param = &i;

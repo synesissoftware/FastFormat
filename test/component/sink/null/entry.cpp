@@ -38,20 +38,20 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_10();
-    static void test_1_11();
-    static void test_1_12();
-    static void test_1_15();
-    static void test_1_16();
-    static void test_1_17();
-    static void test_1_18();
-    static void test_1_19();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
+    static void TEST_1_10();
+    static void TEST_1_11();
+    static void TEST_1_12();
+    static void TEST_1_15();
+    static void TEST_1_16();
+    static void TEST_1_17();
+    static void TEST_1_18();
+    static void TEST_1_19();
 
 } // anonymous namespace
 
@@ -69,20 +69,20 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_10);
+        XTESTS_RUN_CASE(TEST_1_11);
+        XTESTS_RUN_CASE(TEST_1_12);
+        XTESTS_RUN_CASE(TEST_1_15);
+        XTESTS_RUN_CASE(TEST_1_16);
+        XTESTS_RUN_CASE(TEST_1_17);
+        XTESTS_RUN_CASE(TEST_1_18);
+        XTESTS_RUN_CASE(TEST_1_19);
 
         XTESTS_PRINT_RESULTS();
 
@@ -117,7 +117,7 @@ namespace
     static string_t crlf(ff::getNewlineForPlatform().ptr, ff::getNewlineForPlatform().len);
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     fastformat::sinks::null_sink sink;
 
@@ -126,7 +126,7 @@ static void test_1_0()
     XTESTS_TEST_INTEGER_EQUAL(1u, sink.numWrites);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     fastformat::sinks::null_sink sink;
 
@@ -136,7 +136,7 @@ static void test_1_1()
     XTESTS_TEST_INTEGER_EQUAL(2u, sink.numWrites);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     fastformat::sinks::null_sink sink;
 
@@ -156,7 +156,7 @@ static void test_1_2()
 }
 
 
-static void test_1_5()
+static void TEST_1_5()
 {
     fastformat::sinks::null_sink sink;
 
@@ -165,7 +165,7 @@ static void test_1_5()
     XTESTS_TEST_INTEGER_EQUAL(1u, sink.numWrites);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     fastformat::sinks::null_sink sink;
 
@@ -175,7 +175,7 @@ static void test_1_6()
     XTESTS_TEST_INTEGER_EQUAL(2u, sink.numWrites);
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     fastformat::sinks::null_sink sink;
 
@@ -195,7 +195,7 @@ static void test_1_7()
 }
 
 
-static void test_1_10()
+static void TEST_1_10()
 {
     fastformat::sinks::null_sink sink;
 
@@ -204,7 +204,7 @@ static void test_1_10()
     XTESTS_TEST_INTEGER_EQUAL(1u, sink.numWrites);
 }
 
-static void test_1_11()
+static void TEST_1_11()
 {
     fastformat::sinks::null_sink sink;
 
@@ -214,7 +214,7 @@ static void test_1_11()
     XTESTS_TEST_INTEGER_EQUAL(2u, sink.numWrites);
 }
 
-static void test_1_12()
+static void TEST_1_12()
 {
     fastformat::sinks::null_sink sink;
     ff_char_t                    sz[2] = { '?', '\0' };
@@ -236,7 +236,7 @@ static void test_1_12()
 }
 
 
-static void test_1_15()
+static void TEST_1_15()
 {
     fastformat::sinks::null_sink sink;
 
@@ -246,7 +246,7 @@ static void test_1_15()
     XTESTS_TEST_INTEGER_EQUAL(3u, sink.cchTotal);
 }
 
-static void test_1_16()
+static void TEST_1_16()
 {
     fastformat::sinks::null_sink sink;
 
@@ -257,7 +257,7 @@ static void test_1_16()
     XTESTS_TEST_INTEGER_EQUAL(6u, sink.cchTotal);
 }
 
-static void test_1_17()
+static void TEST_1_17()
 {
     fastformat::sinks::null_sink sink;
 
@@ -276,7 +276,7 @@ static void test_1_17()
     XTESTS_TEST_INTEGER_EQUAL(26u, sink.numWrites);
 }
 
-static void test_1_18()
+static void TEST_1_18()
 {
     fastformat::sinks::null_sink sink;
 
@@ -296,7 +296,7 @@ static void test_1_18()
     XTESTS_TEST_INTEGER_EQUAL(3u, sink.cchTotal);
 }
 
-static void test_1_19()
+static void TEST_1_19()
 {
     fastformat::sinks::null_sink sink;
 

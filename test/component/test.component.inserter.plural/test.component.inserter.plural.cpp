@@ -40,8 +40,8 @@
 namespace
 {
 
-	static void test_1_0();
-	static void test_item_1();
+	static void TEST_1_0();
+	static void TEST_ITEM_1();
 	static int setup(void* param);
 	static int teardown(void* param);
 	static void* setupParam = NULL;
@@ -62,8 +62,8 @@ int main(int argc, char **argv)
 
 	if(XTESTS_START_RUNNER_WITH_SETUP_FNS("test.component.inserter.plural", verbosity, setup, teardown, setupParam))
 	{
-		XTESTS_RUN_CASE(test_1_0);
-		XTESTS_RUN_CASE(test_item_1);
+		XTESTS_RUN_CASE(TEST_1_0);
+		XTESTS_RUN_CASE(TEST_ITEM_1);
 		XTESTS_PRINT_RESULTS();
 
 		XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -94,7 +94,7 @@ static int teardown(void* param)
 	return 0; /* Currently ignored by xTests */
 }
 
-static void test_1_0()
+static void TEST_1_0()
 {
 #if 0
 	fastformat::plural instance;
@@ -105,7 +105,7 @@ static void test_1_0()
 #endif /* 0 */
 }
 
-static void test_item_1()
+static void TEST_ITEM_1()
 {
 	XTESTS_TEST_MULTIBYTE_STRING_EQUAL("0 items", ff::plural(0, "item"));
 	XTESTS_TEST_MULTIBYTE_STRING_EQUAL("1 item",  ff::plural(1, "item"));

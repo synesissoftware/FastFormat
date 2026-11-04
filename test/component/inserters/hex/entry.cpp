@@ -41,40 +41,40 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_8();
-    static void test_1_9();
-    static void test_1_10();
-    static void test_1_11();
-    static void test_1_12();
-    static void test_1_13();
-    static void test_1_14();
-    static void test_1_15();
-    static void test_1_16();
-    static void test_2_0();
-    static void test_2_1();
-    static void test_2_2();
-    static void test_2_3();
-    static void test_2_4();
-    static void test_2_5();
-    static void test_2_6();
-    static void test_2_7();
-    static void test_2_8();
-    static void test_2_9();
-    static void test_2_10();
-    static void test_2_11();
-    static void test_2_12();
-    static void test_2_13();
-    static void test_2_14();
-    static void test_2_15();
-    static void test_2_16();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
+    static void TEST_1_8();
+    static void TEST_1_9();
+    static void TEST_1_10();
+    static void TEST_1_11();
+    static void TEST_1_12();
+    static void TEST_1_13();
+    static void TEST_1_14();
+    static void TEST_1_15();
+    static void TEST_1_16();
+    static void TEST_2_0();
+    static void TEST_2_1();
+    static void TEST_2_2();
+    static void TEST_2_3();
+    static void TEST_2_4();
+    static void TEST_2_5();
+    static void TEST_2_6();
+    static void TEST_2_7();
+    static void TEST_2_8();
+    static void TEST_2_9();
+    static void TEST_2_10();
+    static void TEST_2_11();
+    static void TEST_2_12();
+    static void TEST_2_13();
+    static void TEST_2_14();
+    static void TEST_2_15();
+    static void TEST_2_16();
 } // anonymous namespace
 
 
@@ -91,40 +91,40 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_2_0);
-        XTESTS_RUN_CASE(test_2_1);
-        XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
-        XTESTS_RUN_CASE(test_2_4);
-        XTESTS_RUN_CASE(test_2_5);
-        XTESTS_RUN_CASE(test_2_6);
-        XTESTS_RUN_CASE(test_2_7);
-        XTESTS_RUN_CASE(test_2_8);
-        XTESTS_RUN_CASE(test_2_9);
-        XTESTS_RUN_CASE(test_2_10);
-        XTESTS_RUN_CASE(test_2_11);
-        XTESTS_RUN_CASE(test_2_12);
-        XTESTS_RUN_CASE(test_2_13);
-        XTESTS_RUN_CASE(test_2_14);
-        XTESTS_RUN_CASE(test_2_15);
-        XTESTS_RUN_CASE(test_2_16);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
+        XTESTS_RUN_CASE(TEST_1_9);
+        XTESTS_RUN_CASE(TEST_1_10);
+        XTESTS_RUN_CASE(TEST_1_11);
+        XTESTS_RUN_CASE(TEST_1_12);
+        XTESTS_RUN_CASE(TEST_1_13);
+        XTESTS_RUN_CASE(TEST_1_14);
+        XTESTS_RUN_CASE(TEST_1_15);
+        XTESTS_RUN_CASE(TEST_1_16);
+        XTESTS_RUN_CASE(TEST_2_0);
+        XTESTS_RUN_CASE(TEST_2_1);
+        XTESTS_RUN_CASE(TEST_2_2);
+        XTESTS_RUN_CASE(TEST_2_3);
+        XTESTS_RUN_CASE(TEST_2_4);
+        XTESTS_RUN_CASE(TEST_2_5);
+        XTESTS_RUN_CASE(TEST_2_6);
+        XTESTS_RUN_CASE(TEST_2_7);
+        XTESTS_RUN_CASE(TEST_2_8);
+        XTESTS_RUN_CASE(TEST_2_9);
+        XTESTS_RUN_CASE(TEST_2_10);
+        XTESTS_RUN_CASE(TEST_2_11);
+        XTESTS_RUN_CASE(TEST_2_12);
+        XTESTS_RUN_CASE(TEST_2_13);
+        XTESTS_RUN_CASE(TEST_2_14);
+        XTESTS_RUN_CASE(TEST_2_15);
+        XTESTS_RUN_CASE(TEST_2_16);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -160,7 +160,7 @@ namespace
 
     static string_t crlf(ff::getNewlineForPlatform().ptr, ff::getNewlineForPlatform().len);
 
-static void test_1_0()
+static void TEST_1_0()
 {
     string_t    sink;
 
@@ -169,7 +169,7 @@ static void test_1_0()
     XTESTS_TEST_STRING_EQUAL("0", sink);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     string_t    sink;
 
@@ -178,7 +178,7 @@ static void test_1_1()
     XTESTS_TEST_STRING_EQUAL("1", sink);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     string_t    sink;
 
@@ -187,7 +187,7 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("1234", sink);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     string_t    sink;
 
@@ -196,7 +196,7 @@ static void test_1_3()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     string_t    sink;
 
@@ -205,7 +205,7 @@ static void test_1_4()
     XTESTS_TEST_STRING_EQUAL("    1234", sink);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     string_t    sink;
 
@@ -214,7 +214,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     string_t    sink;
 
@@ -223,7 +223,7 @@ static void test_1_6()
     XTESTS_TEST_STRING_EQUAL("1234    ", sink);
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     string_t    sink;
 
@@ -232,7 +232,7 @@ static void test_1_7()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
     string_t    sink;
 
@@ -241,7 +241,7 @@ static void test_1_8()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_1_9()
+static void TEST_1_9()
 {
     string_t    sink;
 
@@ -250,7 +250,7 @@ static void test_1_9()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_1_10()
+static void TEST_1_10()
 {
     string_t    sink;
 
@@ -259,7 +259,7 @@ static void test_1_10()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_1_11()
+static void TEST_1_11()
 {
     string_t    sink;
 
@@ -268,7 +268,7 @@ static void test_1_11()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_1_12()
+static void TEST_1_12()
 {
     string_t    sink;
 
@@ -277,7 +277,7 @@ static void test_1_12()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_1_13()
+static void TEST_1_13()
 {
     string_t    sink;
 
@@ -286,7 +286,7 @@ static void test_1_13()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_1_14()
+static void TEST_1_14()
 {
     string_t    sink;
 
@@ -295,7 +295,7 @@ static void test_1_14()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_1_15()
+static void TEST_1_15()
 {
     string_t    sink;
 
@@ -304,7 +304,7 @@ static void test_1_15()
     XTESTS_TEST_STRING_EQUAL("123456789abc", sink);
 }
 
-static void test_1_16()
+static void TEST_1_16()
 {
     string_t    sink;
 
@@ -314,7 +314,7 @@ static void test_1_16()
 }
 
 
-static void test_2_0()
+static void TEST_2_0()
 {
     string_t    sink;
 
@@ -323,7 +323,7 @@ static void test_2_0()
     XTESTS_TEST_STRING_EQUAL("0", sink);
 }
 
-static void test_2_1()
+static void TEST_2_1()
 {
     string_t    sink;
 
@@ -332,7 +332,7 @@ static void test_2_1()
     XTESTS_TEST_STRING_EQUAL("1", sink);
 }
 
-static void test_2_2()
+static void TEST_2_2()
 {
     string_t    sink;
 
@@ -341,7 +341,7 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL("1234", sink);
 }
 
-static void test_2_3()
+static void TEST_2_3()
 {
     string_t    sink;
 
@@ -350,7 +350,7 @@ static void test_2_3()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_2_4()
+static void TEST_2_4()
 {
     string_t    sink;
 
@@ -359,7 +359,7 @@ static void test_2_4()
     XTESTS_TEST_STRING_EQUAL("    1234", sink);
 }
 
-static void test_2_5()
+static void TEST_2_5()
 {
     string_t    sink;
 
@@ -368,7 +368,7 @@ static void test_2_5()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_2_6()
+static void TEST_2_6()
 {
     string_t    sink;
 
@@ -377,7 +377,7 @@ static void test_2_6()
     XTESTS_TEST_STRING_EQUAL("1234    ", sink);
 }
 
-static void test_2_7()
+static void TEST_2_7()
 {
     string_t    sink;
 
@@ -386,7 +386,7 @@ static void test_2_7()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_2_8()
+static void TEST_2_8()
 {
     string_t    sink;
 
@@ -395,7 +395,7 @@ static void test_2_8()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_2_9()
+static void TEST_2_9()
 {
     string_t    sink;
 
@@ -404,7 +404,7 @@ static void test_2_9()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_2_10()
+static void TEST_2_10()
 {
     string_t    sink;
 
@@ -413,7 +413,7 @@ static void test_2_10()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_2_11()
+static void TEST_2_11()
 {
     string_t    sink;
 
@@ -422,7 +422,7 @@ static void test_2_11()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_2_12()
+static void TEST_2_12()
 {
     string_t    sink;
 
@@ -431,7 +431,7 @@ static void test_2_12()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_2_13()
+static void TEST_2_13()
 {
     string_t    sink;
 
@@ -440,7 +440,7 @@ static void test_2_13()
     XTESTS_TEST_STRING_EQUAL("00001234", sink);
 }
 
-static void test_2_14()
+static void TEST_2_14()
 {
     string_t    sink;
 
@@ -449,7 +449,7 @@ static void test_2_14()
     XTESTS_TEST_STRING_EQUAL("12345678", sink);
 }
 
-static void test_2_15()
+static void TEST_2_15()
 {
     string_t    sink;
 
@@ -458,7 +458,7 @@ static void test_2_15()
     XTESTS_TEST_STRING_EQUAL("123456789ABC", sink);
 }
 
-static void test_2_16()
+static void TEST_2_16()
 {
     string_t    sink;
 

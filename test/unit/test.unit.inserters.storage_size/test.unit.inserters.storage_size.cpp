@@ -64,14 +64,14 @@
 namespace
 {
 
-    static void test_zero();
-    static void text_B();
-    static void text_KB();
-    static void text_MB();
-    static void text_GB();
-    static void text_TB();
-    static void text_PB();
-    static void text_ZB();
+    static void TEST_ZERO();
+    static void TEST_TEXT_B();
+    static void TEST_TEXT_KB();
+    static void TEST_TEXT_MB();
+    static void TEST_TEXT_GB();
+    static void TEST_TEXT_TB();
+    static void TEST_TEXT_PB();
+    static void TEST_TEXT_ZB();
 } // anonymous namespace
 
 
@@ -88,14 +88,14 @@ int main(int argc, char **argv)
 
     if(XTESTS_START_RUNNER("test.unit.inserters.storage_size", verbosity))
     {
-        XTESTS_RUN_CASE(test_zero);
-        XTESTS_RUN_CASE(text_B);
-        XTESTS_RUN_CASE(text_KB);
-        XTESTS_RUN_CASE(text_MB);
-        XTESTS_RUN_CASE(text_GB);
-        XTESTS_RUN_CASE(text_TB);
-        XTESTS_RUN_CASE(text_PB);
-        XTESTS_RUN_CASE(text_ZB);
+        XTESTS_RUN_CASE(TEST_ZERO);
+        XTESTS_RUN_CASE(TEST_TEXT_B);
+        XTESTS_RUN_CASE(TEST_TEXT_KB);
+        XTESTS_RUN_CASE(TEST_TEXT_MB);
+        XTESTS_RUN_CASE(TEST_TEXT_GB);
+        XTESTS_RUN_CASE(TEST_TEXT_TB);
+        XTESTS_RUN_CASE(TEST_TEXT_PB);
+        XTESTS_RUN_CASE(TEST_TEXT_ZB);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -137,12 +137,12 @@ namespace
     }
 
 
-static void test_zero()
+static void TEST_ZERO()
 {
     XTESTS_TEST_STRING_EQUAL("0B", fastformat::storage_size(0u));
 }
 
-static void text_B()
+static void TEST_TEXT_B()
 {
     { for(unsigned i = 0; i <= 255; ++i)
     {
@@ -165,7 +165,7 @@ static void text_B()
     }}
 }
 
-static void text_KB()
+static void TEST_TEXT_KB()
 {
     { for(uint32_t i = 1000; i != 1000000; ++i)
     {
@@ -178,7 +178,7 @@ static void text_KB()
     }}
 }
 
-static void text_MB()
+static void TEST_TEXT_MB()
 {
     { for(uint32_t i = 1000000; i != 1000000000; i += 1000)
     {
@@ -191,7 +191,7 @@ static void text_MB()
     }}
 }
 
-static void text_GB()
+static void TEST_TEXT_GB()
 {
     { for(uint64_t i = 1000000000; i != STLSOFT_GEN_UINT64_SUFFIX(1000000000000); i += 1000000)
     {
@@ -199,7 +199,7 @@ static void text_GB()
     }}
 }
 
-static void text_TB()
+static void TEST_TEXT_TB()
 {
     { for(uint64_t i = STLSOFT_GEN_UINT64_SUFFIX(1000000000000); i != STLSOFT_GEN_UINT64_SUFFIX(1000000000000000); i += 1000000000)
     {
@@ -207,7 +207,7 @@ static void text_TB()
     }}
 }
 
-static void text_PB()
+static void TEST_TEXT_PB()
 {
     { for(uint64_t i = STLSOFT_GEN_UINT64_SUFFIX(1000000000000000); i != STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000); i += STLSOFT_GEN_UINT64_SUFFIX(1000000000000))
     {
@@ -215,7 +215,7 @@ static void text_PB()
     }}
 }
 
-static void text_ZB()
+static void TEST_TEXT_ZB()
 {
     { for(uint64_t i = STLSOFT_GEN_UINT64_SUFFIX(1000000000000000000); i != STLSOFT_GEN_UINT64_SUFFIX(10000000000000000000); i += STLSOFT_GEN_UINT64_SUFFIX(1000000000000000))
     {

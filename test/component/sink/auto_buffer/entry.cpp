@@ -54,20 +54,20 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_10();
-    static void test_1_11();
-    static void test_1_12();
-    static void test_1_15();
-    static void test_1_16();
-    static void test_1_17();
-    static void test_1_18();
-    static void test_1_19();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
+    static void TEST_1_10();
+    static void TEST_1_11();
+    static void TEST_1_12();
+    static void TEST_1_15();
+    static void TEST_1_16();
+    static void TEST_1_17();
+    static void TEST_1_18();
+    static void TEST_1_19();
 
 } // anonymous namespace
 
@@ -85,20 +85,20 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_10);
+        XTESTS_RUN_CASE(TEST_1_11);
+        XTESTS_RUN_CASE(TEST_1_12);
+        XTESTS_RUN_CASE(TEST_1_15);
+        XTESTS_RUN_CASE(TEST_1_16);
+        XTESTS_RUN_CASE(TEST_1_17);
+        XTESTS_RUN_CASE(TEST_1_18);
+        XTESTS_RUN_CASE(TEST_1_19);
 
         XTESTS_PRINT_RESULTS();
 
@@ -123,7 +123,7 @@ namespace
     static string_t crlf(ff::getNewlineForPlatform().ptr, ff::getNewlineForPlatform().len);
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -133,7 +133,7 @@ static void test_1_0()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -144,7 +144,7 @@ static void test_1_1()
     XTESTS_TEST_STRING_EQUAL("abcdef", sink.data());
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -165,7 +165,7 @@ static void test_1_2()
 }
 
 
-static void test_1_5()
+static void TEST_1_5()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -175,7 +175,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL("abc" + crlf, sink.data());
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -186,7 +186,7 @@ static void test_1_6()
     XTESTS_TEST_STRING_EQUAL("abc" + crlf + FF_STR("def") + crlf, sink.data());
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -207,7 +207,7 @@ static void test_1_7()
 }
 
 
-static void test_1_10()
+static void TEST_1_10()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -217,7 +217,7 @@ static void test_1_10()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-static void test_1_11()
+static void TEST_1_11()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -228,7 +228,7 @@ static void test_1_11()
     XTESTS_TEST_STRING_EQUAL("abcdef", sink.data());
 }
 
-static void test_1_12()
+static void TEST_1_12()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
     ff_char_t                        sz[2] = { '?', '\0' };
@@ -251,7 +251,7 @@ static void test_1_12()
 }
 
 
-static void test_1_15()
+static void TEST_1_15()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -261,7 +261,7 @@ static void test_1_15()
     XTESTS_TEST_STRING_EQUAL("abc" + crlf, sink.data());
 }
 
-static void test_1_16()
+static void TEST_1_16()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -272,7 +272,7 @@ static void test_1_16()
     XTESTS_TEST_STRING_EQUAL("abc" + crlf + FF_STR("def") + crlf, sink.data());
 }
 
-static void test_1_17()
+static void TEST_1_17()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -292,7 +292,7 @@ static void test_1_17()
     XTESTS_TEST_STRING_EQUAL("a" + crlf + FF_STR("b") + crlf + FF_STR("c") + crlf + FF_STR("d") + crlf + FF_STR("e") + crlf + FF_STR("f") + crlf + FF_STR("g") + crlf + FF_STR("h") + crlf + FF_STR("i") + crlf + FF_STR("j") + crlf + FF_STR("k") + crlf + FF_STR("l") + crlf + FF_STR("m") + crlf + FF_STR("n") + crlf + FF_STR("o") + crlf + FF_STR("p") + crlf + FF_STR("q") + crlf + FF_STR("r") + crlf + FF_STR("s") + crlf + FF_STR("t") + crlf + FF_STR("u") + crlf + FF_STR("v") + crlf + FF_STR("w") + crlf + FF_STR("x") + crlf + FF_STR("y") + crlf + FF_STR("z") + crlf, sink.data());
 }
 
-static void test_1_18()
+static void TEST_1_18()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 
@@ -312,7 +312,7 @@ static void test_1_18()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-static void test_1_19()
+static void TEST_1_19()
 {
     stlsoft::auto_buffer<ff_char_t>  sink(0);
 

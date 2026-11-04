@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.component.sink.ostream project.
  *
  * Created: 14th September 2010
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -51,14 +51,14 @@
  * forward declarations
  */
 
-static void test_1_1();
-static void test_1_2();
-static void test_1_3();
-static void test_1_4();
-static void test_1_5();
-static void test_1_6();
-static void test_1_7();
-static void test_1_8();
+static void TEST_1_1();
+static void TEST_1_2();
+static void TEST_1_3();
+static void TEST_1_4();
+static void TEST_1_5();
+static void TEST_1_6();
+static void TEST_1_7();
+static void TEST_1_8();
 
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -72,14 +72,14 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
 
         XTESTS_PRINT_RESULTS();
 
@@ -112,9 +112,9 @@ static void open_or_throw(
 );
 
 
-static void test_1_1()
+static void TEST_1_1()
 {
-    const char FILE_NAME[]  = "test_1_1.results";
+    const char FILE_NAME[]  = "TEST_1_1.results";
 
     try
     {
@@ -142,9 +142,9 @@ static void test_1_1()
     }
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
-    const char FILE_NAME[]  = "test_1_2.results";
+    const char FILE_NAME[]  = "TEST_1_2.results";
 
     try
     {
@@ -172,9 +172,9 @@ static void test_1_2()
     }
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
-    const char FILE_NAME[]  = "test_1_3.results";
+    const char FILE_NAME[]  = "TEST_1_3.results";
 
     try
     {
@@ -203,9 +203,9 @@ static void test_1_3()
     }
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
-    const char FILE_NAME[]  = "test_1_4.results";
+    const char FILE_NAME[]  = "TEST_1_4.results";
 
     try
     {
@@ -235,9 +235,9 @@ static void test_1_4()
     }
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
-    const char FILE_NAME[]  = "test_1_1.results";
+    const char FILE_NAME[]  = "TEST_1_1.results";
 
     try
     {
@@ -265,9 +265,9 @@ static void test_1_5()
     }
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
-    const char FILE_NAME[]  = "test_1_2.results";
+    const char FILE_NAME[]  = "TEST_1_2.results";
 
     try
     {
@@ -295,9 +295,9 @@ static void test_1_6()
     }
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
-    const char FILE_NAME[]  = "test_1_3.results";
+    const char FILE_NAME[]  = "TEST_1_3.results";
 
     try
     {
@@ -326,9 +326,9 @@ static void test_1_7()
     }
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
-    const char FILE_NAME[]  = "test_1_4.results";
+    const char FILE_NAME[]  = "TEST_1_4.results";
 
     try
     {

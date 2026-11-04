@@ -50,8 +50,8 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
+    static void TEST_1_0();
+    static void TEST_1_1();
 } // anonymous namespace
 
 
@@ -68,8 +68,8 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -93,7 +93,7 @@ namespace
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     int res = fastformat::init();
 
@@ -111,7 +111,7 @@ static void test_1_0()
     }
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     { for(size_t i = 0u; i != 100000u; ++i)
     {

@@ -47,10 +47,10 @@
 namespace
 {
 
-    static void test_scenario_2_configuration_1();
-    static void test_scenario_2_configuration_2();
-    static void test_scenario_2_configuration_3();
-    static void test_scenario_2_configuration_4();
+    static void TEST_SCENARIO_2_CONFIGURATION_1();
+    static void TEST_SCENARIO_2_CONFIGURATION_2();
+    static void TEST_SCENARIO_2_CONFIGURATION_3();
+    static void TEST_SCENARIO_2_CONFIGURATION_4();
 } // anonymous namespace
 
 
@@ -181,10 +181,10 @@ int main(int argc, char **argv)
         ,   ff_setup, ff_teardown, NULL
         ))
     {
-        XTESTS_RUN_CASE_THAT_THROWS(test_scenario_2_configuration_1, fastformat::missing_argument_exception);
-        XTESTS_RUN_CASE(test_scenario_2_configuration_2);
-        XTESTS_RUN_CASE(test_scenario_2_configuration_3);
-        XTESTS_RUN_CASE(test_scenario_2_configuration_4);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_SCENARIO_2_CONFIGURATION_1, fastformat::missing_argument_exception);
+        XTESTS_RUN_CASE(TEST_SCENARIO_2_CONFIGURATION_2);
+        XTESTS_RUN_CASE(TEST_SCENARIO_2_CONFIGURATION_3);
+        XTESTS_RUN_CASE(TEST_SCENARIO_2_CONFIGURATION_4);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -203,7 +203,7 @@ namespace
     namespace ff = ::fastformat;
 
 
-static void test_scenario_2_configuration_1()
+static void TEST_SCENARIO_2_CONFIGURATION_1()
 {
     std::string sink;
 
@@ -212,7 +212,7 @@ static void test_scenario_2_configuration_1()
     XTESTS_TEST_FAIL("should not get here");
 }
 
-static void test_scenario_2_configuration_2()
+static void TEST_SCENARIO_2_CONFIGURATION_2()
 {
     trace_mismatched_handler_scope   scoper1(fastformat::FF_HANDLERDOMAIN_PROCESS);
 
@@ -230,7 +230,7 @@ static void test_scenario_2_configuration_2()
     }
 }
 
-static void test_scenario_2_configuration_3()
+static void TEST_SCENARIO_2_CONFIGURATION_3()
 {
     trace_mismatched_handler_scope   scoper1(fastformat::FF_HANDLERDOMAIN_PROCESS);
     ignore_mismatched_handler_scope  scoper2;
@@ -244,7 +244,7 @@ static void test_scenario_2_configuration_3()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL("x=x, y=", sink);
 }
 
-static void test_scenario_2_configuration_4()
+static void TEST_SCENARIO_2_CONFIGURATION_4()
 {
     trace_mismatched_handler_scope   scoper1(fastformat::FF_HANDLERDOMAIN_PROCESS);
     ignore_mismatched_handler_scope  scoper2;

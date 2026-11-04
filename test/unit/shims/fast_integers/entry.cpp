@@ -98,19 +98,19 @@
 namespace
 {
 
-    static void test_1_0();
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_8();
-    static void test_1_9();
-    static void test_1_10();
-    static void test_1_11();
-    static void test_1_12();
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
+    static void TEST_1_8();
+    static void TEST_1_9();
+    static void TEST_1_10();
+    static void TEST_1_11();
+    static void TEST_1_12();
 } // anonymous namespace
 
 
@@ -127,19 +127,19 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
+        XTESTS_RUN_CASE(TEST_1_9);
+        XTESTS_RUN_CASE(TEST_1_10);
+        XTESTS_RUN_CASE(TEST_1_11);
+        XTESTS_RUN_CASE(TEST_1_12);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -238,7 +238,7 @@ namespace
     }
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     XTESTS_TEST_FIIS_EQUAL( "0",  0);
     XTESTS_TEST_FIIS_EQUAL( "1",  1);
@@ -251,7 +251,7 @@ static void test_1_0()
     XTESTS_TEST_FIIS_EQUAL("-100", -100);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     typedef signed char int_t;
 
@@ -275,7 +275,7 @@ static void test_1_1()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     typedef unsigned short int_t;
 
@@ -296,7 +296,7 @@ static void test_1_2()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     typedef signed short int_t;
 
@@ -320,7 +320,7 @@ static void test_1_3()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     typedef unsigned int int_t;
 
@@ -341,7 +341,7 @@ static void test_1_4()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     typedef signed int int_t;
 
@@ -365,7 +365,7 @@ static void test_1_5()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     typedef unsigned long int_t;
 
@@ -386,7 +386,7 @@ static void test_1_6()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     typedef signed long int_t;
 
@@ -410,7 +410,7 @@ static void test_1_7()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
     typedef ::stlsoft::uint32_t int_t;
 
@@ -431,7 +431,7 @@ static void test_1_8()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_9()
+static void TEST_1_9()
 {
     typedef ::stlsoft::sint32_t int_t;
 
@@ -455,7 +455,7 @@ static void test_1_9()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_10()
+static void TEST_1_10()
 {
 # if defined(STLSOFT_CF_BUILTIN_long_long_SUPPORT)
     typedef unsigned long long  int_t;
@@ -482,7 +482,7 @@ static void test_1_10()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_11()
+static void TEST_1_11()
 {
 # if defined(STLSOFT_CF_BUILTIN_long_long_SUPPORT)
     typedef signed long long    int_t;
@@ -512,7 +512,7 @@ static void test_1_11()
     XTESTS_TEST_FIIS_EQUAL_(s, stlsoft::limit_traits<int_t>::maximum());
 }
 
-static void test_1_12()
+static void TEST_1_12()
 {
 #if 0
     { for(ff_char_t ch = 'a'; ch != 'z'; ++ch)

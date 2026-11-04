@@ -4,7 +4,7 @@
  * Purpose: Implementation file for the test.component.FILE_stream project.
  *
  * Created: 3rd January 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -63,10 +63,10 @@
  * forward declarations
  */
 
-static void test_1_1();
-static void test_1_2();
-static void test_1_3();
-static void test_1_4();
+static void TEST_1_1();
+static void TEST_1_2();
+static void TEST_1_3();
+static void TEST_1_4();
 
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -83,10 +83,10 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -135,7 +135,7 @@ char const                              write_mode[] = "w";
  * forward implementations
  */
 
-static void test_1_1()
+static void TEST_1_1()
 {
     temp_file       t(temp_file::EmptyOnOpen | temp_file::CloseOnOpen | temp_file::DeleteOnClose);
 
@@ -151,7 +151,7 @@ static void test_1_1()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     temp_file       t(temp_file::EmptyOnOpen | temp_file::CloseOnOpen | temp_file::DeleteOnClose);
 
@@ -167,7 +167,7 @@ static void test_1_2()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abc"), lines[0]);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     temp_file       t(temp_file::EmptyOnOpen | temp_file::CloseOnOpen | temp_file::DeleteOnClose);
 
@@ -184,7 +184,7 @@ static void test_1_3()
     XTESTS_TEST_MULTIBYTE_STRING_EQUAL(("abcdef"), lines[0]);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     temp_file       t(temp_file::EmptyOnOpen | temp_file::CloseOnOpen | temp_file::DeleteOnClose);
 

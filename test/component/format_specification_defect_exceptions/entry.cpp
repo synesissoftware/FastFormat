@@ -51,23 +51,23 @@ namespace
 namespace
 {
 
-    static void test_illformed_by_missing_closing_curly_brace_1();
-    static void test_illformed_by_missing_closing_curly_brace_2();
-    static void test_illformed_by_missing_digit_and_curly_brace_1();
-    static void test_illformed_by_missing_digit_1();
-    static void test_illformed_by_missing_digit_2();
-    static void test_illformed_by_missing_digit_3();
-    static void test_illformed_by_missing_digit_4();
-    static void test_illformed_by_missing_digit_5();
-    static void test_illformed_by_missing_digit_6();
-    static void test_2_0();
-    static void test_2_1();
-    static void test_2_2();
-    static void test_2_3();
-    static void test_2_4();
-    static void test_2_5();
-    static void test_3_0();
-    static void test_3_1();
+    static void TEST_illformed_BY_MISSING_CLOSING_CURLY_BRACE_1();
+    static void TEST_illformed_BY_MISSING_CLOSING_CURLY_BRACE_2();
+    static void TEST_illformed_BY_MISSING_DIGIT_AND_CURLY_BRACE_1();
+    static void TEST_illformed_BY_MISSING_DIGIT_1();
+    static void TEST_illformed_BY_MISSING_DIGIT_2();
+    static void TEST_illformed_BY_MISSING_DIGIT_3();
+    static void TEST_illformed_BY_MISSING_DIGIT_4();
+    static void TEST_illformed_BY_MISSING_DIGIT_5();
+    static void TEST_illformed_BY_MISSING_DIGIT_6();
+    static void TEST_2_0();
+    static void TEST_2_1();
+    static void TEST_2_2();
+    static void TEST_2_3();
+    static void TEST_2_4();
+    static void TEST_2_5();
+    static void TEST_3_0();
+    static void TEST_3_1();
 } // anonymous namespace
 
 
@@ -84,23 +84,23 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_closing_curly_brace_1, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_closing_curly_brace_2, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_digit_and_curly_brace_1, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_digit_1, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_digit_2, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_digit_3, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_digit_4, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_digit_5, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_illformed_by_missing_digit_6, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE(test_2_0);
-        XTESTS_RUN_CASE(test_2_1);
-        XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
-        XTESTS_RUN_CASE(test_2_4);
-        XTESTS_RUN_CASE_THAT_THROWS(test_2_5, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_3_0, fastformat::illformed_format_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_3_1, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_CLOSING_CURLY_BRACE_1, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_CLOSING_CURLY_BRACE_2, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_DIGIT_AND_CURLY_BRACE_1, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_DIGIT_1, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_DIGIT_2, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_DIGIT_3, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_DIGIT_4, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_DIGIT_5, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_illformed_BY_MISSING_DIGIT_6, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE(TEST_2_0);
+        XTESTS_RUN_CASE(TEST_2_1);
+        XTESTS_RUN_CASE(TEST_2_2);
+        XTESTS_RUN_CASE(TEST_2_3);
+        XTESTS_RUN_CASE(TEST_2_4);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_2_5, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_3_0, fastformat::illformed_format_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_3_1, fastformat::illformed_format_exception);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -135,63 +135,63 @@ namespace
 #define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
-static void test_illformed_by_missing_closing_curly_brace_1()
+static void TEST_illformed_BY_MISSING_CLOSING_CURLY_BRACE_1()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0,"), FASTFORMAT_LITERAL_STRING("")); // }
 }
 
-static void test_illformed_by_missing_closing_curly_brace_2()
+static void TEST_illformed_BY_MISSING_CLOSING_CURLY_BRACE_2()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0"), FASTFORMAT_LITERAL_STRING("")); // }
 }
 
-static void test_illformed_by_missing_digit_and_curly_brace_1()
+static void TEST_illformed_BY_MISSING_DIGIT_AND_CURLY_BRACE_1()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{,"), FASTFORMAT_LITERAL_STRING("")); // }
 }
 
-static void test_illformed_by_missing_digit_1()
+static void TEST_illformed_BY_MISSING_DIGIT_1()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_illformed_by_missing_digit_2()
+static void TEST_illformed_BY_MISSING_DIGIT_2()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_illformed_by_missing_digit_3()
+static void TEST_illformed_BY_MISSING_DIGIT_3()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{,,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_illformed_by_missing_digit_4()
+static void TEST_illformed_BY_MISSING_DIGIT_4()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{,,,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_illformed_by_missing_digit_5()
+static void TEST_illformed_BY_MISSING_DIGIT_5()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{,,,,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_illformed_by_missing_digit_6()
+static void TEST_illformed_BY_MISSING_DIGIT_6()
 {
     string_t    sink;
 
@@ -199,42 +199,42 @@ static void test_illformed_by_missing_digit_6()
 }
 
 
-static void test_2_0()
+static void TEST_2_0()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_2_1()
+static void TEST_2_1()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_2_2()
+static void TEST_2_2()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0,,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_2_3()
+static void TEST_2_3()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0,,,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_2_4()
+static void TEST_2_4()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0,,,,}"), FASTFORMAT_LITERAL_STRING(""));
 }
 
-static void test_2_5()
+static void TEST_2_5()
 {
     string_t    sink;
 
@@ -242,14 +242,14 @@ static void test_2_5()
 }
 
 
-static void test_3_0()
+static void TEST_3_0()
 {
     string_t    sink;
 
     ff::fmtln(sink, FASTFORMAT_LITERAL_STRING("{0,-1,8}"), 2);
 }
 
-static void test_3_1()
+static void TEST_3_1()
 {
     string_t    sink;
 
