@@ -4,9 +4,10 @@
  * Purpose: Unit tests for failure.mismatched.arguments.
  *
  * Created: 28th October 2013
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test component header file include(s)
@@ -16,8 +17,9 @@
 #include <fastformat/format/specification_defect_handling/ignore_missing_arguments_scope.hpp>
 #include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* xTests header files */
@@ -31,41 +33,31 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
 {
 
-    static void test_that_single_used_argument_succeeds(void);
-    static void test_that_single_unused_argument_fails(void);
-    static void test_that_single_unused_argument_succeeds_with_scoper(void);
-    static void test_that_single_unused_argument_succeeds_with_scoper_0(void);
-    static void test_that_single_unused_argument_fails_with_scoper_1(void);
-    static void test_that_single_unused_argument_fails_with_scoper_2(void);
-    static void test_that_single_unused_argument_fails_with_scoper_3(void);
-    static void test_that_single_unused_argument_fails_with_scoper_negative_1(void);
-    static void test_1_8(void);
-    static void test_1_9(void);
-    static void test_that_single_missing_argument_fails(void);
-    static void test_that_single_missing_argument_fails_when_told_to_ignore_unreferenced_arguments(void);
-    static void test_that_single_missing_argument_succeeds_with_scoper(void);
-    static void test_1_13(void);
-    static void test_1_14(void);
-    static void test_1_15(void);
-    static void test_1_16(void);
-    static void test_1_17(void);
-    static void test_1_18(void);
-    static void test_1_19(void);
-
+    static void TEST_THAT_SINGLE_USED_ARGUMENT_SUCCEEDS();
+    static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS();
+    static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_SUCCEEDS_WITH_SCOPER();
+    static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_SUCCEEDS_WITH_SCOPER_0();
+    static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_1();
+    static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_2();
+    static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_3();
+    static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_NEGATIVE_1();
+    static void TEST_THAT_SINGLE_MISSING_ARGUMENT_FAILS();
+    static void TEST_THAT_SINGLE_MISSING_ARGUMENT_FAILS_WHEN_TOLD_TO_IGNORE_UNREFERENCED_ARGUMENTS();
+    static void TEST_THAT_SINGLE_MISSING_ARGUMENT_SUCCEEDS_WITH_SCOPER();
 } // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -74,27 +66,17 @@ int main(int argc, char **argv)
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_that_single_used_argument_succeeds);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_unused_argument_fails, ff::unreferenced_argument_exception);
-        XTESTS_RUN_CASE(test_that_single_unused_argument_succeeds_with_scoper);
-        XTESTS_RUN_CASE(test_that_single_unused_argument_succeeds_with_scoper_0);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_unused_argument_fails_with_scoper_1, ff::unreferenced_argument_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_unused_argument_fails_with_scoper_2, ff::unreferenced_argument_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_unused_argument_fails_with_scoper_3, ff::unreferenced_argument_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_unused_argument_fails_with_scoper_negative_1, ff::unreferenced_argument_exception);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_missing_argument_fails, ff::missing_argument_exception);
-        XTESTS_RUN_CASE_THAT_THROWS(test_that_single_missing_argument_fails_when_told_to_ignore_unreferenced_arguments, ff::unreferenced_argument_exception);
-        XTESTS_RUN_CASE(test_that_single_missing_argument_succeeds_with_scoper);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
-
+        XTESTS_RUN_CASE(TEST_THAT_SINGLE_USED_ARGUMENT_SUCCEEDS);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS, ff::unreferenced_argument_exception);
+        XTESTS_RUN_CASE(TEST_THAT_SINGLE_UNUSED_ARGUMENT_SUCCEEDS_WITH_SCOPER);
+        XTESTS_RUN_CASE(TEST_THAT_SINGLE_UNUSED_ARGUMENT_SUCCEEDS_WITH_SCOPER_0);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_1, ff::unreferenced_argument_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_2, ff::unreferenced_argument_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_3, ff::unreferenced_argument_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_NEGATIVE_1, ff::unreferenced_argument_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_THAT_SINGLE_MISSING_ARGUMENT_FAILS, ff::missing_argument_exception);
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_THAT_SINGLE_MISSING_ARGUMENT_FAILS_WHEN_TOLD_TO_IGNORE_UNREFERENCED_ARGUMENTS, ff::missing_argument_exception);
+        XTESTS_RUN_CASE(TEST_THAT_SINGLE_MISSING_ARGUMENT_SUCCEEDS_WITH_SCOPER);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -105,13 +87,13 @@ int main(int argc, char **argv)
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
 {
 
-static void test_that_single_used_argument_succeeds()
+static void TEST_THAT_SINGLE_USED_ARGUMENT_SUCCEEDS()
 {
     std::string sink;
 
@@ -120,7 +102,7 @@ static void test_that_single_used_argument_succeeds()
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_unused_argument_fails()
+static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS()
 {
     std::string sink;
 
@@ -129,18 +111,7 @@ static void test_that_single_unused_argument_fails()
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_unused_argument_succeeds_with_scoper()
-{
-    std::string sink;
-
-    ff::ignore_unreferenced_arguments_scope scoper;
-
-    ff::fmt(sink, "", "");
-
-    XTESTS_TEST_PASSED();
-}
-
-static void test_that_single_unused_argument_succeeds_with_scoper_0()
+static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_SUCCEEDS_WITH_SCOPER()
 {
     std::string sink;
 
@@ -151,7 +122,18 @@ static void test_that_single_unused_argument_succeeds_with_scoper_0()
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_unused_argument_fails_with_scoper_1()
+static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_SUCCEEDS_WITH_SCOPER_0()
+{
+    std::string sink;
+
+    ff::ignore_unreferenced_arguments_scope scoper;
+
+    ff::fmt(sink, "", "");
+
+    XTESTS_TEST_PASSED();
+}
+
+static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_1()
 {
     std::string sink;
 
@@ -162,7 +144,7 @@ static void test_that_single_unused_argument_fails_with_scoper_1()
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_unused_argument_fails_with_scoper_2()
+static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_2()
 {
     std::string sink;
 
@@ -173,7 +155,7 @@ static void test_that_single_unused_argument_fails_with_scoper_2()
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_unused_argument_fails_with_scoper_3()
+static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_3()
 {
     std::string sink;
 
@@ -184,7 +166,7 @@ static void test_that_single_unused_argument_fails_with_scoper_3()
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_unused_argument_fails_with_scoper_negative_1()
+static void TEST_THAT_SINGLE_UNUSED_ARGUMENT_FAILS_WITH_SCOPER_NEGATIVE_1()
 {
     std::string sink;
 
@@ -195,15 +177,8 @@ static void test_that_single_unused_argument_fails_with_scoper_negative_1()
     XTESTS_TEST_PASSED();
 }
 
-static void test_1_8()
-{
-}
 
-static void test_1_9()
-{
-}
-
-static void test_that_single_missing_argument_fails()
+static void TEST_THAT_SINGLE_MISSING_ARGUMENT_FAILS()
 {
     std::string sink;
 
@@ -212,7 +187,7 @@ static void test_that_single_missing_argument_fails()
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_missing_argument_fails_when_told_to_ignore_unreferenced_arguments()
+static void TEST_THAT_SINGLE_MISSING_ARGUMENT_FAILS_WHEN_TOLD_TO_IGNORE_UNREFERENCED_ARGUMENTS()
 {
     std::string sink;
 
@@ -223,7 +198,7 @@ static void test_that_single_missing_argument_fails_when_told_to_ignore_unrefere
     XTESTS_TEST_PASSED();
 }
 
-static void test_that_single_missing_argument_succeeds_with_scoper()
+static void TEST_THAT_SINGLE_MISSING_ARGUMENT_SUCCEEDS_WITH_SCOPER()
 {
     std::string sink;
 
@@ -234,37 +209,9 @@ static void test_that_single_missing_argument_succeeds_with_scoper()
     XTESTS_TEST_PASSED();
 }
 
-static void test_1_13()
-{
-}
-
-static void test_1_14()
-{
-}
-
-static void test_1_15()
-{
-}
-
-static void test_1_16()
-{
-}
-
-static void test_1_17()
-{
-}
-
-static void test_1_18()
-{
-}
-
-static void test_1_19()
-{
-}
-
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

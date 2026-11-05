@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_MINOR    0
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_EDIT     5
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_REVISION 3
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO_EDIT     11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -70,8 +72,9 @@
 
 #include <fastformat/inserters/to_i.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -81,8 +84,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of an integral value, or an empty string in the
@@ -90,7 +94,8 @@ namespace inserters
  *
  * \ingroup group__inserters
  *
- * \param i The integral value to be converted to string form
+ * \param i The integral value to be converted to string form.
+ * \param sentinel The value to which \c i will be compared for exclusion.
  *
  * \return An instance of an insertable type containing the string form of the integer
  *
@@ -99,9 +104,10 @@ namespace inserters
 template <typename I>
 fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
     I const& i
+,   I const& sentinel
 )
 {
-    if(i == 0)
+    if(i == sentinel)
     {
         return fastformat::inserters::ximpl_integer::ff_to_i_r_t_(static_cast<ff_char_t const*>(NULL), 0);
     }
@@ -117,8 +123,9 @@ fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
  *
  * \ingroup group__inserters
  *
- * \param i The integral value to be converted to string form
- * \param nullIfZero Causes a <code>"0"</code> to be replaced by the empty string
+ * \param i The integral value to be converted to string form.
+ * \param sentinel The value to which \c i will be compared for exclusion.
+ * \param nullIfSame Causes a <code>"0"</code> to be replaced by the empty string
  *
  * \return An instance of an insertable type containing the string form of the integer
  *
@@ -127,11 +134,12 @@ fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
 template <typename I>
 fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_zero(
     I const&    i
-,   int         nullIfZero
+,   I const&    sentinel
+,   int         nullIfSame
 )
 {
     if( nullIfZero &&
-        i == 0)
+        i == sentinel)
     {
         return fastformat::inserters::ximpl_integer::ff_to_i_r_t_(static_cast<ff_char_t const*>(NULL), 0);
     }
@@ -166,8 +174,9 @@ fastformat::inserters::ximpl_integer::ff_to_i_r_t_ to_i_null_if_0(
     return to_i_null_if_zero(i, nullIfZero);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -177,16 +186,17 @@ using ::fastformat::inserters::to_i_null_if_0;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I_NULL_IF_ZERO */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

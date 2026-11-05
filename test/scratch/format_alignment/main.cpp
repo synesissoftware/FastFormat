@@ -11,6 +11,10 @@
 #define FASTFORMAT_NO_USE_JIT_CACHE
 
 
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
 /* FastFormat header files */
@@ -38,7 +42,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Typedefs
+ * types
  */
 
 #if 0
@@ -132,6 +136,6 @@ int main(int argc, char* argv[])
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -10,6 +10,11 @@
 
 #define FASTFORMAT_NO_USE_JIT_CACHE
 
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 /* FastFormat header files */
 #include <fastformat/sinks/c_string.hpp>
 #include <fastformat/sinks/char_buffer.hpp>
@@ -41,7 +46,7 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Memory functions
+ * memory functions
  */
 
 platformstl::atomic_int_t   scalar_count;
@@ -71,8 +76,9 @@ void operator delete[](void* pv)
     ::free(pv);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Test functions
+ * test functions
  */
 
 static void test_1()
@@ -271,6 +277,6 @@ int main(int argc, char* argv[])
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

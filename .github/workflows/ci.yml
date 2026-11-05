@@ -114,14 +114,15 @@ jobs:
             mingw-w64-x86_64-make
 
       # Dependency order is deliberate (not lexicographic): each package
-      # configures against those already installed. shwild precedes xTests.
-      - name: Install runtime dependencies (STLSoft + shwild + xTests)
+      # configures against those already installed. woad precedes xTests
+      # (xTests requires it); shwild precedes xTests.
+      - name: Install runtime dependencies (STLSoft + shwild + woad + xTests)
         uses: ./.github/actions/install-sis-deps
         with:
           build-type: ${{ env.BUILD_TYPE }}
           c-compiler: ${{ matrix.c_compiler }}
           cpp-compiler: ${{ matrix.cpp_compiler }}
-          dependencies: STLSoft shwild xTests
+          dependencies: STLSoft shwild woad xTests
           toolchain: ${{ matrix.toolchain }}
 
       - name: Configure

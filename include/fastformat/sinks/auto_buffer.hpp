@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for STLSoft's auto_buffer class template.
  *
  * Created: 21st April 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -48,27 +48,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_AUTO_BUFFER
 #define FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_AUTO_BUFFER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       18
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -78,20 +81,21 @@
 
 #include <fastformat/util/memory/auto_buffer_selector.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Compatibility
+ * compatibility
  */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER < 1310
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER < 1310
 # ifndef FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS
 #  define FASTFORMAT_AUTO_BUFFER_SINK_ONLY_SIMPLE_FORM_SUPPORT
 # endif /* !FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS */
 #endif /* compiler */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -101,12 +105,14 @@ namespace sinks
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* /////////////////////////////////////////////////////////////////////////
- * Classes
- */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Action Shims
+ * classes
+ */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * action shims
  */
 
 #ifndef STLSOFT_AUTO_BUFFER_NEW_FORM
@@ -216,8 +222,9 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
     return sink;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -225,8 +232,17 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
 } /* namespace fastformat */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_AUTO_BUFFER */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_SINK_HPP_AUTO_BUFFER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

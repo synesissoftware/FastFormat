@@ -5,7 +5,7 @@
  *              multi-threaded.
  *
  * Created: 20th November 2007
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -50,8 +50,9 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_THREADING
 #define FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_THREADING
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -59,8 +60,9 @@
 #include <platformstl/platformstl.h>
 #include <platformstl/synch/util/features.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifdef FASTFORMAT_MT
@@ -86,8 +88,17 @@
 # endif /* OS */
 #endif /* FASTFORMAT_FORCE_MT || FASTFORMAT_NO_MT */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_THREADING */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_H_THREADING */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

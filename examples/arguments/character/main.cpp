@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    examples/arguments/character/main.cpp
  *
- * Purpose: Example for character arguments.
+ * Purpose: Implementation file for the example.arguments.character project.
  *
  * Created: 2nd June 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/fastformat.h>
@@ -29,7 +34,7 @@ using std::endl;
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -57,8 +62,8 @@ namespace filters
 #endif /* 0 */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace filters */
-} /* namespace fastformat */
+} // namespace filters
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 #include <fastformat/fastformat.hpp>
@@ -70,12 +75,12 @@ namespace filters
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static int main_(int /*argc*/, char* /*argv*/[])
+static int main_(int /* argc */, char* /*argv*/[])
 {
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define    stm     std::wcout
+# define    stm                                             std::wcout
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define    stm     std::cout
+# define    stm                                             std::cout
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
     const char      c1  =   '~';
@@ -111,6 +116,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

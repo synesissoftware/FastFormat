@@ -50,27 +50,30 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_ERROR_CODES
 #define FASTFORMAT_INCL_FASTFORMAT_H_ERROR_CODES
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_EDIT       6
+# define FASTFORMAT_VER_FASTFORMAT_H_ERROR_CODES_EDIT       10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT
 # include <include/include.h>
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_H_FASTFORMAT */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Documentation
+ * documentation
  */
 
 /** \defgroup group__status_codes FastFormat Low-level Status Codes
@@ -80,8 +83,9 @@
  * Status codes for use by the implementors of the various sub-systems.
  */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Status codes
+ * status codes
  */
 
 /** \def FASTFORMAT_INIT_RC_SUCCESS
@@ -90,7 +94,7 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_SUCCESS                       (0)
+#define FASTFORMAT_INIT_RC_SUCCESS                          (0)
 
 /** \def FASTFORMAT_INIT_RC_OUT_OF_MEMORY
  *
@@ -98,7 +102,7 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_OUT_OF_MEMORY                 (-1)
+#define FASTFORMAT_INIT_RC_OUT_OF_MEMORY                    (-1)
 
 /** \def FASTFORMAT_INIT_RC_UNSPECIFIED_EXCEPTION
  *
@@ -106,7 +110,7 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_UNSPECIFIED_EXCEPTION         (-2)
+#define FASTFORMAT_INIT_RC_UNSPECIFIED_EXCEPTION            (-2)
 
 /** \def FASTFORMAT_INIT_RC_UNKNOWN_ERROR
  *
@@ -114,7 +118,7 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_UNKNOWN_ERROR                 (-3)
+#define FASTFORMAT_INIT_RC_UNKNOWN_ERROR                    (-3)
 
 /** \def FASTFORMAT_INIT_RC_UNSPECIFIED_ERROR
  *
@@ -122,7 +126,7 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_UNSPECIFIED_ERROR             (-4)
+#define FASTFORMAT_INIT_RC_UNSPECIFIED_ERROR                (-4)
 
 /** \def FASTFORMAT_INIT_RC_NOT_IMPLEMENTED
  *
@@ -130,7 +134,7 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_NOT_IMPLEMENTED               (-5)
+#define FASTFORMAT_INIT_RC_NOT_IMPLEMENTED                  (-5)
 
 /** \def FASTFORMAT_INIT_RC_CANNOT_CREATE_TSS_INDEX
  *
@@ -139,7 +143,7 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_CANNOT_CREATE_TSS_INDEX       (-6)
+#define FASTFORMAT_INIT_RC_CANNOT_CREATE_TSS_INDEX          (-6)
 
 /** \def FASTFORMAT_INIT_RC_CANNOT_CREATE_THREAD
  *
@@ -148,10 +152,12 @@
  *
  * \ingroup group__status_codes
  */
-#define FASTFORMAT_INIT_RC_CANNOT_CREATE_THREAD          (-7)
+#define FASTFORMAT_INIT_RC_CANNOT_CREATE_THREAD             (-7)
 
 /* ////////////////////////////////////////////////////////////////////// */
 
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_H_ERROR_CODES */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

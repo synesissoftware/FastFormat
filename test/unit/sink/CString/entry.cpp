@@ -1,21 +1,23 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    test/unit/sink/CString/entry.cpp
  *
- * Purpose: Unit tests for sink.CString.
+ * Purpose: Implementation file for the test.unit.sink.CString project.
  *
  * Created: 28th May 2008
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
-#if 0
-#elif defined(_MSC_VER)
+
+#if defined(_MSC_VER) && \
+    defined(_DLL)
 # ifndef _AFXDLL
 #  define _AFXDLL
-# endif /* !_AFXDLL */
-#endif /* _MSC_VER */
+# endif /* _AFXDLL */
+#endif /* _MSC_VER && _DLL */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Test component header file include(s)
@@ -23,8 +25,9 @@
 
 #include <fastformat/sinks/CString.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 /* xTests header files */
@@ -40,75 +43,63 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL(x, a)     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
+
+# define XTESTS_TEST_STRING_EQUAL(x, a)                     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
 {
 
-    static void test_1_0(void);
-    static void test_1_1(void);
-    static void test_1_2(void);
-    static void test_1_3(void);
-    static void test_1_4(void);
-    static void test_1_5(void);
-    static void test_1_6(void);
-    static void test_1_7(void);
-    static void test_1_8(void);
-    static void test_1_9(void);
-    static void test_1_10(void);
-    static void test_1_11(void);
-    static void test_1_12(void);
-    static void test_1_13(void);
-    static void test_1_14(void);
-    static void test_1_15(void);
-    static void test_1_16(void);
-    static void test_1_17(void);
-    static void test_1_18(void);
-    static void test_1_19(void);
-
-    static void test_2_0(void);
-    static void test_2_1(void);
-    static void test_2_2(void);
-    static void test_2_3(void);
-    static void test_2_4(void);
-    static void test_2_5(void);
-    static void test_2_6(void);
-    static void test_2_7(void);
-    static void test_2_8(void);
-    static void test_2_9(void);
-    static void test_2_10(void);
-    static void test_2_11(void);
-    static void test_2_12(void);
-    static void test_2_13(void);
-    static void test_2_14(void);
-    static void test_2_15(void);
-    static void test_2_16(void);
-    static void test_2_17(void);
-    static void test_2_18(void);
-    static void test_2_19(void);
-
+    static void TEST_1_0();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_10();
+    static void TEST_1_11();
+    static void TEST_1_12();
+    static void TEST_1_13();
+    static void TEST_1_14();
+    static void TEST_1_15();
+    static void TEST_1_16();
+    static void TEST_2_0();
+    static void TEST_2_1();
+    static void TEST_2_2();
+    static void TEST_2_3();
+    static void TEST_2_4();
+    static void TEST_2_5();
+    static void TEST_2_6();
+    static void TEST_2_10();
+    static void TEST_2_11();
+    static void TEST_2_12();
+    static void TEST_2_13();
+    static void TEST_2_14();
+    static void TEST_2_15();
+    static void TEST_2_16();
 } // anonymous namespace
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Main
+ * main()
  */
 
-int main(int argc, char **argv)
+int main(int argc, char* argv[])
 {
     int retCode = EXIT_SUCCESS;
     int verbosity = 2;
@@ -117,48 +108,34 @@ int main(int argc, char **argv)
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0);
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
-        XTESTS_RUN_CASE(test_1_11);
-        XTESTS_RUN_CASE(test_1_12);
-        XTESTS_RUN_CASE(test_1_13);
-        XTESTS_RUN_CASE(test_1_14);
-        XTESTS_RUN_CASE(test_1_15);
-        XTESTS_RUN_CASE(test_1_16);
-        XTESTS_RUN_CASE(test_1_17);
-        XTESTS_RUN_CASE(test_1_18);
-        XTESTS_RUN_CASE(test_1_19);
-
-        XTESTS_RUN_CASE(test_2_0);
-        XTESTS_RUN_CASE(test_2_1);
-        XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
-        XTESTS_RUN_CASE(test_2_4);
-        XTESTS_RUN_CASE(test_2_5);
-        XTESTS_RUN_CASE(test_2_6);
-        XTESTS_RUN_CASE(test_2_7);
-        XTESTS_RUN_CASE(test_2_8);
-        XTESTS_RUN_CASE(test_2_9);
-        XTESTS_RUN_CASE(test_2_10);
-        XTESTS_RUN_CASE(test_2_11);
-        XTESTS_RUN_CASE(test_2_12);
-        XTESTS_RUN_CASE(test_2_13);
-        XTESTS_RUN_CASE(test_2_14);
-        XTESTS_RUN_CASE(test_2_15);
-        XTESTS_RUN_CASE(test_2_16);
-        XTESTS_RUN_CASE(test_2_17);
-        XTESTS_RUN_CASE(test_2_18);
-        XTESTS_RUN_CASE(test_2_19);
-
+        XTESTS_RUN_CASE(TEST_1_0);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_10);
+        XTESTS_RUN_CASE(TEST_1_11);
+        XTESTS_RUN_CASE(TEST_1_12);
+        XTESTS_RUN_CASE(TEST_1_13);
+        XTESTS_RUN_CASE(TEST_1_14);
+        XTESTS_RUN_CASE(TEST_1_15);
+        XTESTS_RUN_CASE(TEST_1_16);
+        XTESTS_RUN_CASE(TEST_2_0);
+        XTESTS_RUN_CASE(TEST_2_1);
+        XTESTS_RUN_CASE(TEST_2_2);
+        XTESTS_RUN_CASE(TEST_2_3);
+        XTESTS_RUN_CASE(TEST_2_4);
+        XTESTS_RUN_CASE(TEST_2_5);
+        XTESTS_RUN_CASE(TEST_2_6);
+        XTESTS_RUN_CASE(TEST_2_10);
+        XTESTS_RUN_CASE(TEST_2_11);
+        XTESTS_RUN_CASE(TEST_2_12);
+        XTESTS_RUN_CASE(TEST_2_13);
+        XTESTS_RUN_CASE(TEST_2_14);
+        XTESTS_RUN_CASE(TEST_2_15);
+        XTESTS_RUN_CASE(TEST_2_16);
         XTESTS_PRINT_RESULTS();
 
         XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
@@ -169,7 +146,7 @@ int main(int argc, char **argv)
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Test function implementations
+ * test function implementations
  */
 
 namespace
@@ -182,7 +159,7 @@ namespace
     const CString newLine(fastformat::getNewlineForPlatform().ptr, int(fastformat::getNewlineForPlatform().len));
 
 
-static void test_1_0()
+static void TEST_1_0()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -198,7 +175,7 @@ static void test_1_0()
     XTESTS_TEST_STRING_EQUAL("", sink);
 }
 
-static void test_1_1()
+static void TEST_1_1()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -214,7 +191,7 @@ static void test_1_1()
     XTESTS_TEST_STRING_EQUAL("a", sink);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -230,7 +207,7 @@ static void test_1_2()
     XTESTS_TEST_STRING_EQUAL("a", sink);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -246,7 +223,7 @@ static void test_1_3()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -263,7 +240,7 @@ static void test_1_4()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -305,7 +282,7 @@ static void test_1_5()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -364,19 +341,8 @@ static void test_1_6()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_7()
-{
-}
 
-static void test_1_8()
-{
-}
-
-static void test_1_9()
-{
-}
-
-static void test_1_10()
+static void TEST_1_10()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -394,7 +360,7 @@ static void test_1_10()
     XTESTS_TEST_STRING_EQUAL("0123456789", sink);
 }
 
-static void test_1_11()
+static void TEST_1_11()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -412,7 +378,7 @@ static void test_1_11()
     XTESTS_TEST_STRING_EQUAL("0123456789a", sink);
 }
 
-static void test_1_12()
+static void TEST_1_12()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -430,7 +396,7 @@ static void test_1_12()
     XTESTS_TEST_STRING_EQUAL("0123456789a", sink);
 }
 
-static void test_1_13()
+static void TEST_1_13()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -448,7 +414,7 @@ static void test_1_13()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_14()
+static void TEST_1_14()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -467,7 +433,7 @@ static void test_1_14()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_15()
+static void TEST_1_15()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -511,7 +477,7 @@ static void test_1_15()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_16()
+static void TEST_1_16()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -572,20 +538,8 @@ static void test_1_16()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz", sink);
 }
 
-static void test_1_17()
-{
-}
 
-static void test_1_18()
-{
-}
-
-static void test_1_19()
-{
-}
-
-
-static void test_2_0()
+static void TEST_2_0()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -601,7 +555,7 @@ static void test_2_0()
     XTESTS_TEST_STRING_EQUAL("" + newLine, sink);
 }
 
-static void test_2_1()
+static void TEST_2_1()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -617,7 +571,7 @@ static void test_2_1()
     XTESTS_TEST_STRING_EQUAL("a" + newLine, sink);
 }
 
-static void test_2_2()
+static void TEST_2_2()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -633,7 +587,7 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL("a" + newLine, sink);
 }
 
-static void test_2_3()
+static void TEST_2_3()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -649,7 +603,7 @@ static void test_2_3()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_4()
+static void TEST_2_4()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -666,7 +620,7 @@ static void test_2_4()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_5()
+static void TEST_2_5()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -708,7 +662,7 @@ static void test_2_5()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_6()
+static void TEST_2_6()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -767,19 +721,8 @@ static void test_2_6()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_7()
-{
-}
 
-static void test_2_8()
-{
-}
-
-static void test_2_9()
-{
-}
-
-static void test_2_10()
+static void TEST_2_10()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -797,7 +740,7 @@ static void test_2_10()
     XTESTS_TEST_STRING_EQUAL("0123456789" + newLine, sink);
 }
 
-static void test_2_11()
+static void TEST_2_11()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -815,7 +758,7 @@ static void test_2_11()
     XTESTS_TEST_STRING_EQUAL("0123456789a" + newLine, sink);
 }
 
-static void test_2_12()
+static void TEST_2_12()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -833,7 +776,7 @@ static void test_2_12()
     XTESTS_TEST_STRING_EQUAL("0123456789a" + newLine, sink);
 }
 
-static void test_2_13()
+static void TEST_2_13()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -851,7 +794,7 @@ static void test_2_13()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_14()
+static void TEST_2_14()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -870,7 +813,7 @@ static void test_2_14()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_15()
+static void TEST_2_15()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -914,7 +857,7 @@ static void test_2_15()
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz" + newLine, sink);
 }
 
-static void test_2_16()
+static void TEST_2_16()
 {
     CString                             sink;
     const fastformat::string_slice_t    slices[] =
@@ -973,23 +916,11 @@ static void test_2_16()
 
     XTESTS_TEST_INTEGER_EQUAL(newLine.GetLength() + 10 + 26, sink.GetLength());
     XTESTS_TEST_STRING_EQUAL("0123456789abcdefghijklmnopqrstuvwxyz" + newLine, sink);
-}
-
-static void test_2_17()
-{
-}
-
-static void test_2_18()
-{
-}
-
-static void test_2_19()
-{
 }
 
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

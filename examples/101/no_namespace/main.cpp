@@ -16,6 +16,11 @@
 # include <afx.h>
 #endif /* _AFXDLL */
 
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
 #ifdef __AFX_H__
@@ -243,6 +248,7 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
+
 /* ////////////////////////////////////////////////////////////////////// */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -276,6 +282,6 @@ int main(int argc, char* argv[])
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

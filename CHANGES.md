@@ -1,6 +1,29 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.8.1-beta1 - 5th November 2026
+
+* version:
+  * added `FASTFORMAT_VER_0_8_1_BETA_1`;
+  * set `FASTFORMAT_VER_RELSTATUS` to **0x81**, superseding the unreleased **0.8.1-alpha8** marker;
+* documentation:
+  * **INSTALL.md** is **CMake**-only: clone **dev-0.8**, or download a release archive, plus the root driver scripts;
+  * **README.md** and **doc/mainpage.md** lead with **Developer Experience** (`fastformat::fmtln`, `FastFormat::fastformat`, **STLSoft** **1.11.5**);
+  * Doxygen generation completes: corrected `\file` paths, replaced placeholder `.` briefs, and aligned `\param` names with the handler and scope signatures;
+* boilerplate, applied across public headers, sources, and tests:
+  * `#pragma once` inclusion-control close, and include-guard `#endif` comments;
+  * C++ namespace closers use `//`;
+  * empty parameter lists drop `(void)`;
+  * per-file `Updated:` dates and `*_EDIT` bumps;
+* TODO:
+  * recorded that the ribbon sink and its unit tests still need to be finished and wired into **CMake**;
+* testing:
+  * removed the empty `change_windows_replacement_parameters_to_fastformat_8`–`_10` cases from **test/unit/bundle/util/entry.cpp**;
+  * canonicalised test-case names to the `TEST_` form: the construct keeps its spelling (`TEST_illformed_BY_MISSING_DIGIT_1`, `TEST_calculate_number_of_fastformat_replacement_parameters_1`) and the scenario is shouted;
+  * `main()` / `main_` / `program_main` in the touched test and scratch programs take `char* argv[]`;
+
+
+
 ## 0.7.4 - 4th November 2026
 
 * version:
@@ -12,7 +35,6 @@
 
 * version:
   * added `FASTFORMAT_VER_0_7_4_RC_10`;
-
 * Regrouped **examples/** and **test/** into short directories (`entry.cpp` for unit and component tests; `main.cpp` for examples, scratch, and performance);
 * Added optional **woad** colour for **test.scratch.versions** via **prepare_cmake.sh** `--use-woad`;
 
@@ -29,6 +51,11 @@
 ## 0.7.4-rc8 - 27th October 2026
 
 * Defined `HAS_<Pkg>` and `HAS_<PKG>` when a Synesis package other than **STLSoft** is detected;
+
+
+## 0.8.1-alpha7 - 16th October 2026
+
+* Merged **master** (0.7.4-rc7 boilerplate / CI / CMake modernisation) into **dev-0.8**, retaining the 0.8 API line (`numArguments`, `enum_strings`, STLSoft 1.10+/1.12+ gates) while adopting packed `FASTFORMAT_VER_RELSTATUS`, exception copy/`=delete` hygiene, and `fastformat_util_snprintf` for real filter shims;
 
 
 ## 0.7.4-rc7 - 16th October 2026
@@ -69,10 +96,68 @@
 * **VC++** 15/16 compatibility;
 
 
+## 0.7.4-rc4 - 5th February 2017
+
+* **STLSoft** 1.10 compatibility;
+
+
+## 0.7.4-rc3 - 5th February 2017
+
+* Prerelease **0.7.4** RC3;
+
+
+## 0.8.1-alpha6 - 29th January 2017
+
+
+* Prerelease on the 0.8 line (tag **0.8.1-alpha6**);
+* Documentation / distribution catch-up relative to **0.8.1-alpha3**;
+
+
+## 0.7.4-rc2 - 30th November 2016
+
+* Fixed defect in `change_windows_replacement_parameters_to_fastformat()` whereby a trailing `%N` was not translated;
+
+
+## 0.7.4-rc1 - 16th August 2016
+
+* Added `CC_CUSTOM_DEFS_DEBUG` / `CC_CUSTOM_DEFS_RELEASE` / `CPPC_CUSTOM_DEFS_DEBUG` / `CPPC_CUSTOM_DEFS_RELEASE`;
+* Made PDB filenames unique across compiler/configurations;
+* Implicit-link support for **VC++** 11/12/14;
+* Changed `throw()` to `ss_noexcept_k` where applicable;
+
+
+## 0.7.3 - 15th August 2016
+
+* **VC++** compatibility fixes;
+* Makefiles for **VC++** 11/12/14;
+* **Clang** compatibility;
+* **STLSoft** 1.10 compatibility fix;
+* More flexible makefiles (non-bundled **shwild** / **xTests** / **xCover** / **xContract**);
+* Allow `TEST_VERBOSITY` to be specified in the environment;
+* Removed redundant `fastformat_getNewlineForPlatform()` invocation;
+
+
+## 0.8.1-alpha3 - 28th September 2015
+
+* Renamed `numberOfReplacements` to `numArguments` on `missing_argument_exception`, `mismatched_replacements_exception`, and `unreferenced_argument_exception`;
+* Depends on **STLSoft** 1.9.121 or later;
+
+
+## 0.7.2 - 26th September 2015
+
+* Added missing implicit-link directives for **VC++** 11/12/14;
+
+
 ## 0.7.1 - 26th September 2015
 
 * **Clang** compatibility;
 * **VC++** 11/12/14 compatibility;
+
+
+## 0.7.1-alpha10 - 25th September 2015
+
+* Makefiles for **VC++** 11/12/14;
+* Makefile / distribution updates ahead of **0.7.1**;
 
 
 ## 0.7.1-alpha9 - 17th August 2012

@@ -212,3 +212,23 @@ yarn-error.log*
 *.vcxproj*.user
 *.vcxproj*user
 
+# From dev-0.8 (retained)
+.bzrignore
+bzr-branching-notes.txt
+handler-design-notes.txt
+include/b64/
+include/fastformat/internal/dos2unix.has.been.performed
+include/shwild/
+include/xcontract/
+include/xcover/
+include/xtests/
+src/b64/
+src/shwild/
+src/xcontract/
+src/xcover/
+src/xtests/
+update
+vc71/
+vc8/
+vc9/
+

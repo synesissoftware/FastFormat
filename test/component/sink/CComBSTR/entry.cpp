@@ -1,15 +1,16 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    test/component/sink/CComBSTR/entry.cpp
  *
- * Purpose: Component tests for sink.CComBSTR.
+ * Purpose: Implementation file for the test.component.sink.CComBSTR project.
  *
  * Created: 14th September 2010
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
@@ -32,9 +33,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -42,22 +42,22 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
 {
 
-    static void test_1_1();
-    static void test_1_2();
-    static void test_1_3();
-    static void test_1_4();
-    static void test_1_5();
-    static void test_1_6();
-    static void test_1_7();
-    static void test_1_8();
-    static void test_1_9();
-    static void test_1_10();
+    static void TEST_1_1();
+    static void TEST_1_2();
+    static void TEST_1_3();
+    static void TEST_1_4();
+    static void TEST_1_5();
+    static void TEST_1_6();
+    static void TEST_1_7();
+    static void TEST_1_8();
+    static void TEST_1_9();
+    static void TEST_1_10();
 
 } // anonymous namespace
 
@@ -73,16 +73,16 @@ static int main_(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
+        XTESTS_RUN_CASE(TEST_1_9);
+        XTESTS_RUN_CASE(TEST_1_10);
 
         XTESTS_PRINT_RESULTS();
 
@@ -96,15 +96,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -129,9 +127,8 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -148,10 +145,10 @@ namespace
 
     typedef CComBSTR    string_t;
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
-static void test_1_1()
+static void TEST_1_1()
 {
     CComBSTR sink;
 
@@ -160,7 +157,7 @@ static void test_1_1()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"abc", sink);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     CComBSTR sink;
 
@@ -169,7 +166,7 @@ static void test_1_2()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"abc", sink);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     CComBSTR sink;
 
@@ -178,7 +175,7 @@ static void test_1_3()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"abc", sink);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     CComBSTR sink;
 
@@ -187,7 +184,7 @@ static void test_1_4()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"acb", sink);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     CComBSTR sink;
 
@@ -196,7 +193,7 @@ static void test_1_5()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"cba", sink);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     CComBSTR sink;
 
@@ -205,7 +202,7 @@ static void test_1_6()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"abcdefghijklmnopqrstuvwxyz012345", sink);
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     CComBSTR sink;
 
@@ -214,7 +211,7 @@ static void test_1_7()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"thecatsatonmat", sink);
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
     CComBSTR sink;
 
@@ -223,7 +220,7 @@ static void test_1_8()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"aaaabbbbcccc", sink);
 }
 
-static void test_1_9()
+static void TEST_1_9()
 {
     CComBSTR sink;
 
@@ -243,7 +240,7 @@ static void test_1_9()
     XTESTS_TEST_WIDE_STRING_EQUAL(L"abc", sink);
 }
 
-static void test_1_10()
+static void TEST_1_10()
 {
     CComBSTR sink;
 
@@ -265,6 +262,6 @@ static void test_1_10()
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    examples/arguments/reals/main.cpp
  *
- * Purpose: Example for real (floating-point) arguments.
+ * Purpose: Implementation file for the example.arguments.reals project.
  *
  * Created: 2nd June 2008
  * Updated: 3rd November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/sinks/ostream.hpp>
@@ -99,6 +104,6 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

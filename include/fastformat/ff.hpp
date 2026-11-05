@@ -6,7 +6,7 @@
  *              namespace to ff.
  *
  * Created: 22nd December 2007
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -51,41 +51,52 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_HPP_FF
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_FF
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FF_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FF_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FF_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FF_EDIT      7
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FF_EDIT      11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Language
+ * language
  */
 
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 namespace ff = ::fastformat;
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_HPP_FF */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_HPP_FF */
 
 /* ///////////////////////////// end of file //////////////////////////// */

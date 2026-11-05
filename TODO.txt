@@ -1,0 +1,34 @@
+FastFormat - TODO lists
+=======================
+
+Updated:    26th September 2015
+
+
+FastFormat 0.8+ TODOs:
+---------------------
+
+ + full distribution of makefiles, project files, workspace files, etc.
+
+ ~ decent docs
+
+ ~ decent website
+
+ + GNU Autotools : "./configure; make; make install"
+
+ + Debian package
+
+ + RPM package
+
+ ~ ensure that platform-specific EOL is only emitted in file output
+
+ ~ inserters :
+    +
+
+ ~ shims :
+    + 
+
+ ~ sinks :
+    + include/fastformat/sinks/WindowsFileHANDLE.hpp
+    ~ synchronisation of ostream sink : spin / thread_mutex
+
+=============================== End of file ================================

@@ -50,25 +50,28 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE
 #define FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_EDIT     4
+# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE_EDIT     7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <stlsoft/stlsoft.h> /* This will be reported not found if STLSoft version < 1.9 */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Warning suppressions
+ * warning suppressions
  */
 
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT
@@ -81,8 +84,7 @@
 # endif /* compiler */
 #endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC)
+#if defined(STLSOFT_COMPILER_IS_MSVC)
 # if _MSC_VER >= 1400
 #  pragma warning(disable : 4996)
 # endif /* _MSC_VER >= 1400 */
@@ -93,3 +95,5 @@
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_FIRST_INCLUDE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

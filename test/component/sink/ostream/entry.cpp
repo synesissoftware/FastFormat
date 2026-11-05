@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    test/component/sink/ostream/entry.cpp
  *
- * Purpose: Component tests for sink.ostream.
+ * Purpose: Implementation file for the test.component.sink.ostream project.
  *
  * Created: 14th September 2010
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
@@ -34,9 +39,8 @@
 /* Standard C header files */
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -44,17 +48,17 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
-static void test_1_1();
-static void test_1_2();
-static void test_1_3();
-static void test_1_4();
-static void test_1_5();
-static void test_1_6();
-static void test_1_7();
-static void test_1_8();
+static void TEST_1_1();
+static void TEST_1_2();
+static void TEST_1_3();
+static void TEST_1_4();
+static void TEST_1_5();
+static void TEST_1_6();
+static void TEST_1_7();
+static void TEST_1_8();
 
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -68,14 +72,14 @@ int main(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
 
         XTESTS_PRINT_RESULTS();
 
@@ -95,12 +99,12 @@ typedef std::basic_ostream<ff_char_t>   ostream_t;
 typedef std::basic_ofstream<ff_char_t>  ofstream_t;
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_WIDE_STRING_EQUAL
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_WIDE_STRING_EQUAL
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 static void open_or_throw(
     char const* fileName
@@ -108,9 +112,9 @@ static void open_or_throw(
 );
 
 
-static void test_1_1()
+static void TEST_1_1()
 {
-    const char FILE_NAME[]  = "test_1_1.results";
+    const char FILE_NAME[]  = "TEST_1_1.results";
 
     try
     {
@@ -138,9 +142,9 @@ static void test_1_1()
     }
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
-    const char FILE_NAME[]  = "test_1_2.results";
+    const char FILE_NAME[]  = "TEST_1_2.results";
 
     try
     {
@@ -168,9 +172,9 @@ static void test_1_2()
     }
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
-    const char FILE_NAME[]  = "test_1_3.results";
+    const char FILE_NAME[]  = "TEST_1_3.results";
 
     try
     {
@@ -199,9 +203,9 @@ static void test_1_3()
     }
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
-    const char FILE_NAME[]  = "test_1_4.results";
+    const char FILE_NAME[]  = "TEST_1_4.results";
 
     try
     {
@@ -231,9 +235,9 @@ static void test_1_4()
     }
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
-    const char FILE_NAME[]  = "test_1_1.results";
+    const char FILE_NAME[]  = "TEST_1_1.results";
 
     try
     {
@@ -261,9 +265,9 @@ static void test_1_5()
     }
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
-    const char FILE_NAME[]  = "test_1_2.results";
+    const char FILE_NAME[]  = "TEST_1_2.results";
 
     try
     {
@@ -291,9 +295,9 @@ static void test_1_6()
     }
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
-    const char FILE_NAME[]  = "test_1_3.results";
+    const char FILE_NAME[]  = "TEST_1_3.results";
 
     try
     {
@@ -322,9 +326,9 @@ static void test_1_7()
     }
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
-    const char FILE_NAME[]  = "test_1_4.results";
+    const char FILE_NAME[]  = "TEST_1_4.results";
 
     try
     {
@@ -364,6 +368,6 @@ static void open_or_throw(
     stm.open(fileName);
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

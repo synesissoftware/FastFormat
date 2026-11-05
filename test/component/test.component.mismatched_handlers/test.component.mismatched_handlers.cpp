@@ -1,0 +1,268 @@
+/* /////////////////////////////////////////////////////////////////////////
+ * File:    test.component.mismatched_handlers.cpp
+ *
+ * Purpose: Implementation file for the test.component.mismatched_handlers project.
+ *
+ * Created: 11th November 2013
+ * Updated: 5th November 2026
+ *
+ * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * preprocessor control
+ */
+
+#define FASTFORMAT_NO_AUTO_INIT
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
+#include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
+
+/* xTests header files */
+#include <xtests/xtests.h>
+
+/* FastFormat header files */
+#include <fastformat/fastformat.hpp>
+//#include <fastformat/format/specification_defect_handling/ignore_unreferenced_arguments_scope.hpp>
+#include <fastformat/format/specification_defect_handling/mismatched_arguments_scope_base.hpp>
+
+
+/* STLSoft header files */
+#include <stlsoft/stlsoft.h>
+
+/* Standard C header files */
+#include <stdlib.h>
+
+#include <fastformat/test/util/compiler_warnings_suppression.last_include.h>
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * forward declarations
+ */
+
+namespace
+{
+
+    static void TEST_SCENARIO_2_CONFIGURATION_1();
+    static void TEST_SCENARIO_2_CONFIGURATION_2();
+    static void TEST_SCENARIO_2_CONFIGURATION_3();
+    static void TEST_SCENARIO_2_CONFIGURATION_4();
+} // anonymous namespace
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * classes
+ */
+
+using fastformat::mismatched_arguments_scope_base;
+using fastformat::ff_replacement_action_t;
+using fastformat::ff_replacement_code_t;
+using fastformat::ff_string_slice_t;
+using fastformat::ff_handler_domain_t;
+
+class ignore_mismatched_handler_scope
+    : protected mismatched_arguments_scope_base
+{
+protected: // Types
+    typedef mismatched_arguments_scope_base parent_class_type;
+
+public: // Construction
+    explicit ignore_mismatched_handler_scope(ff_handler_domain_t domain = fastformat::FF_HANDLERDOMAIN_THREAD)
+        : parent_class_type(domain)
+        , m_numCalls(0)
+    {}
+
+public: // Accessors
+    unsigned get_num_calls() const
+    {
+        return m_numCalls;
+    }
+
+protected: // Overrides
+    virtual handler_response_type handle(
+        ff_replacement_code_t       code
+    ,   size_t                      numArguments
+    ,   int                         mismatchedParameterIndex
+    ,   ff_replacement_action_t*    missingArgumentAction
+    ,   ff_string_slice_t*          slice
+    )
+    {
+        ++m_numCalls;
+
+        return fastformat::FF_HANDLERRESPONSE_CONTINUE_PROCESSING;
+    }
+
+private: // Fields
+    unsigned    m_numCalls;
+};
+
+class trace_mismatched_handler_scope
+    : protected mismatched_arguments_scope_base
+{
+protected: // Types
+    typedef mismatched_arguments_scope_base parent_class_type;
+
+public: // Construction
+    trace_mismatched_handler_scope(ff_handler_domain_t domain = fastformat::FF_HANDLERDOMAIN_THREAD)
+        : parent_class_type(domain)
+        , m_numCalls(0)
+    {}
+
+public: // Accessors
+    unsigned get_num_calls() const
+    {
+        return m_numCalls;
+    }
+
+protected: // Overrides
+    virtual handler_response_type handle(
+        ff_replacement_code_t       code
+    ,   size_t                      numArguments
+    ,   int                         mismatchedParameterIndex
+    ,   ff_replacement_action_t*    missingArgumentAction
+    ,   ff_string_slice_t*          slice
+    )
+    {
+#ifdef _DEBUG
+        fprintf(stderr, "mismatched replacement: first mismatched replacement index %d with %d arguments\n", mismatchedParameterIndex, int(numArguments));
+#endif /* _DEBUG */
+
+        ++m_numCalls;
+
+        return fastformat::FF_HANDLERRESPONSE_NEXT_HANDLER;
+    }
+
+private: // Fields
+    unsigned    m_numCalls;
+};
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * helper functions
+ */
+
+int ff_setup(void*);
+int ff_teardown(void*);
+
+int ff_setup(void*)
+{
+    return fastformat::fastformat_init();
+}
+
+int ff_teardown(void*)
+{
+    fastformat::fastformat_uninit();
+
+    return 0;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * main()
+ */
+
+int main(int argc, char* argv[])
+{
+    int retCode = EXIT_SUCCESS;
+    int verbosity = 2;
+
+    XTESTS_COMMANDLINE_PARSEVERBOSITY(argc, argv, &verbosity);
+
+    if( XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM_AND_FLAGS_AND_SETUP_FNS(
+            "test.component.mismatched_handlers"
+        ,   verbosity
+        ,   NULL, NULL
+        ,   NULL
+        ,   xtests::c::xtestsReportOnlyNonEmptyCases
+        ,   ff_setup, ff_teardown, NULL
+        ))
+    {
+        XTESTS_RUN_CASE_THAT_THROWS(TEST_SCENARIO_2_CONFIGURATION_1, fastformat::missing_argument_exception);
+        XTESTS_RUN_CASE(TEST_SCENARIO_2_CONFIGURATION_2);
+        XTESTS_RUN_CASE(TEST_SCENARIO_2_CONFIGURATION_3);
+        XTESTS_RUN_CASE(TEST_SCENARIO_2_CONFIGURATION_4);
+        XTESTS_PRINT_RESULTS();
+
+        XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
+    }
+
+    return retCode;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * test function implementations
+ */
+
+namespace
+{
+    namespace ff = ::fastformat;
+
+
+static void TEST_SCENARIO_2_CONFIGURATION_1()
+{
+    std::string sink;
+
+    ff::fmt(sink, "x={0}, y={1}", "x");
+
+    XTESTS_TEST_FAIL("should not get here");
+}
+
+static void TEST_SCENARIO_2_CONFIGURATION_2()
+{
+    trace_mismatched_handler_scope   scoper1(fastformat::FF_HANDLERDOMAIN_PROCESS);
+
+    std::string sink;
+
+    try
+    {
+        ff::fmt(sink, "x={0}, y={1}", "x");
+
+        XTESTS_TEST_FAIL("should not get here");
+    }
+    catch(fastformat::missing_argument_exception& /* x */)
+    {
+        XTESTS_TEST_INTEGER_EQUAL(1u, scoper1.get_num_calls());
+    }
+}
+
+static void TEST_SCENARIO_2_CONFIGURATION_3()
+{
+    trace_mismatched_handler_scope   scoper1(fastformat::FF_HANDLERDOMAIN_PROCESS);
+    ignore_mismatched_handler_scope  scoper2;
+
+    std::string sink;
+
+    ff::fmt(sink, "x={0}, y={1}", "x");
+
+    XTESTS_TEST_INTEGER_EQUAL(0u, scoper1.get_num_calls());
+    XTESTS_TEST_INTEGER_EQUAL(1u, scoper2.get_num_calls());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL("x=x, y=", sink);
+}
+
+static void TEST_SCENARIO_2_CONFIGURATION_4()
+{
+    trace_mismatched_handler_scope   scoper1(fastformat::FF_HANDLERDOMAIN_PROCESS);
+    ignore_mismatched_handler_scope  scoper2;
+    trace_mismatched_handler_scope   scoper3;
+
+    std::string sink;
+
+    ff::fmt(sink, "x={0}, y={1}", "x");
+
+    XTESTS_TEST_INTEGER_EQUAL(0u, scoper1.get_num_calls());
+    XTESTS_TEST_INTEGER_EQUAL(1u, scoper2.get_num_calls());
+    XTESTS_TEST_INTEGER_EQUAL(1u, scoper3.get_num_calls());
+    XTESTS_TEST_MULTIBYTE_STRING_EQUAL("x=x, y=", sink);
+}
+
+
+} // anonymous namespace
+
+/* ///////////////////////////// end of file //////////////////////////// */
+
+

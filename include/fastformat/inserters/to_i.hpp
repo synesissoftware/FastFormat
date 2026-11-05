@@ -48,25 +48,28 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_EDIT      7
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_TO_I_EDIT      13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/inserters/integer.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -76,8 +79,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of an integral value
@@ -98,7 +102,7 @@ inline ximpl_integer::ff_to_i_r_t_ to_i(
 {
     STLSOFT_STATIC_ASSERT(stlsoft::is_integral_type<I>::value);
 
-    return 
+    return
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
@@ -127,7 +131,7 @@ inline ximpl_integer::ff_to_i_r_t_ to_i(
 {
     STLSOFT_STATIC_ASSERT(stlsoft::is_integral_type<I>::value);
 
-    return 
+    return
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
@@ -160,15 +164,16 @@ inline ximpl_integer::ff_to_i_r_t_ to_i(
 {
     STLSOFT_STATIC_ASSERT(stlsoft::is_integral_type<I>::value);
 
-    return 
+    return
 #if !defined(FASTFORMAT_NO_NAMESPACE)
       ::fastformat::inserters::
 #endif /* !FASTFORMAT_NO_NAMESPACE */
         ximpl_integer::integer_helper_3(value, minimumWidth, precision);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -177,16 +182,17 @@ using ::fastformat::inserters::to_i;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_TO_I */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

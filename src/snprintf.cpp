@@ -4,7 +4,7 @@
  * Purpose: Implementation file for snprintf() utility functions.
  *
  * Created: 1st June 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -40,15 +40,11 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/util/string/snprintf.h>
 #include <fastformat/init_codes.h>
@@ -59,8 +55,9 @@
 
 #include <stdio.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -69,6 +66,7 @@ namespace fastformat
 namespace util
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Compiler / feature discrimination
@@ -79,8 +77,7 @@ namespace util
  * fastformat_util_vsnprintf_(d, n, f, a)
  */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_DMC) ||\
+#if defined(STLSOFT_COMPILER_IS_DMC) || \
     (   (   defined(WIN32) || \
             defined(WIN64)) && \
         (   defined(STLSOFT_COMPILER_IS_INTEL) || \
@@ -105,8 +102,9 @@ namespace util
 # define fastformat_util_vsnprintf_(d, n, f, a)         fastformat_util_vsnprintf_a_(d, n, f, a)
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Private API
+ * private API
  */
 
 FASTFORMAT_CALL(int) fastformat_util_vsnprintf_a(
@@ -143,6 +141,7 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf_a(
 
     return ret;
 }
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * API
@@ -183,13 +182,16 @@ FASTFORMAT_CALL(int) fastformat_util_snprintf(
     return ret;
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace util */
-} /* namespace fastformat */
+} // namespace util
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

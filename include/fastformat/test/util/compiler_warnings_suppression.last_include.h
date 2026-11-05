@@ -50,38 +50,39 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE
 #define FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_EDIT      5
+# define FASTFORMAT_VER_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE_EDIT      8
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #ifndef STLSOFT_INCL_STLSOFT_H_STLSOFT
 # error This file cannot be included unless fastformat/test/util/compiler_warnings_suppression.first_include.h has already been included
 #endif /* !STLSOFT_INCL_STLSOFT_H_STLSOFT */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Warning suppressions
+ * warning suppressions
  */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_BORLAND)
+#if defined(STLSOFT_COMPILER_IS_BORLAND)
 # pragma warn -8008 /* Suppresses: "Condition is always %s" */
 # pragma warn -8080 /* Suppresses: "'%s' is declared but never used" */
 #endif /* compiler */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER > 1100
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER > 1100
 # if !defined(STLSOFT_CF_EXCEPTION_SUPPORT)
 #  pragma warning(default : 4530)   /* Switch it back on here */
 # endif /* !STLSOFT_CF_EXCEPTION_SUPPORT */
@@ -92,3 +93,5 @@
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_TEST_UTIL_H_COMPILER_WARNINGS_SUPPRESSION_LAST_INCLUDE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

@@ -1,12 +1,17 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    test/component/sink/string_array/entry.cpp
  *
- * Purpose: Component tests for sink.string_array.
+ * Purpose: Implementation file for the test.component.string_array project.
  *
  * Created: 24th December 2007
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
 
 /* FastFormat header files */
 #include <fastformat/sinks/string_array.hpp>
@@ -26,27 +31,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
-static void test_1_1();
-static void test_1_2();
-static void test_1_3();
-static void test_1_4();
-static void test_1_5();
-static void test_1_6();
-static void test_1_7();
-static void test_1_8();
-static void test_1_9();
-static void test_1_10();
+static void TEST_1_1();
+static void TEST_1_2();
+static void TEST_1_3();
+static void TEST_1_4();
+static void TEST_1_5();
+static void TEST_1_6();
+static void TEST_1_7();
+static void TEST_1_8();
+static void TEST_1_9();
+static void TEST_1_10();
 
 
 /* ////////////////////////////////////////////////////////////////////// */
@@ -60,16 +64,16 @@ static int main_(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_1);
-        XTESTS_RUN_CASE(test_1_2);
-        XTESTS_RUN_CASE(test_1_3);
-        XTESTS_RUN_CASE(test_1_4);
-        XTESTS_RUN_CASE(test_1_5);
-        XTESTS_RUN_CASE(test_1_6);
-        XTESTS_RUN_CASE(test_1_7);
-        XTESTS_RUN_CASE(test_1_8);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
+        XTESTS_RUN_CASE(TEST_1_1);
+        XTESTS_RUN_CASE(TEST_1_2);
+        XTESTS_RUN_CASE(TEST_1_3);
+        XTESTS_RUN_CASE(TEST_1_4);
+        XTESTS_RUN_CASE(TEST_1_5);
+        XTESTS_RUN_CASE(TEST_1_6);
+        XTESTS_RUN_CASE(TEST_1_7);
+        XTESTS_RUN_CASE(TEST_1_8);
+        XTESTS_RUN_CASE(TEST_1_9);
+        XTESTS_RUN_CASE(TEST_1_10);
 
         XTESTS_PRINT_RESULTS();
 
@@ -83,15 +87,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -116,9 +118,8 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -128,7 +129,7 @@ int main(int argc, char* argv[])
 
 /* ////////////////////////////////////////////////////////////////////// */
 
-static void test_1_1()
+static void TEST_1_1()
 {
     std::string sink;
 
@@ -137,7 +138,7 @@ static void test_1_1()
     XTESTS_TEST("abc" == sink);
 }
 
-static void test_1_2()
+static void TEST_1_2()
 {
     std::string sink;
 
@@ -146,7 +147,7 @@ static void test_1_2()
     XTESTS_TEST("abc" == sink);
 }
 
-static void test_1_3()
+static void TEST_1_3()
 {
     std::string sink;
 
@@ -155,7 +156,7 @@ static void test_1_3()
     XTESTS_TEST("abc" == sink);
 }
 
-static void test_1_4()
+static void TEST_1_4()
 {
     std::string sink;
 
@@ -164,7 +165,7 @@ static void test_1_4()
     XTESTS_TEST("abc" == sink);
 }
 
-static void test_1_5()
+static void TEST_1_5()
 {
     std::string sink;
 
@@ -173,7 +174,7 @@ static void test_1_5()
     XTESTS_TEST("abc" == sink);
 }
 
-static void test_1_6()
+static void TEST_1_6()
 {
     std::string sink;
 
@@ -182,7 +183,7 @@ static void test_1_6()
     XTESTS_TEST("abcdefghijklmnopqrstuvwxyz012345" == sink);
 }
 
-static void test_1_7()
+static void TEST_1_7()
 {
     std::string sink;
 
@@ -191,7 +192,7 @@ static void test_1_7()
     XTESTS_TEST("the cat sat on the mat" == sink);
 }
 
-static void test_1_8()
+static void TEST_1_8()
 {
     std::string sink;
 
@@ -200,7 +201,7 @@ static void test_1_8()
     XTESTS_TEST("aaaaaaaaaa bbbbbbbbbb" == sink);
 }
 
-static void test_1_9()
+static void TEST_1_9()
 {
     std::string sink;
 
@@ -220,7 +221,7 @@ static void test_1_9()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-static void test_1_10()
+static void TEST_1_10()
 {
     std::string sink;
 
@@ -240,6 +241,6 @@ static void test_1_10()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

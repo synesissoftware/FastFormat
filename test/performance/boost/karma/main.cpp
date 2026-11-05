@@ -10,7 +10,7 @@
 
 //   Copyright (c) 2002-2009 Joel Hartmut Kaiser
 //   Copyright (c) 2002-2009 Joel de Guzman
-// 
+//
 //   Distributed under the Boost Software License, Version 1.0. (See accompanying
 //   file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -66,17 +66,17 @@ namespace util
 #endif
 
 ////////////////////////////////////////////////////////////////////////////
-//  policy for real_generator, which forces to output trailing zeros in the 
+//  policy for real_generator, which forces to output trailing zeros in the
 //  fractional part
 //[karma_format_performance_definitions
 template <typename T>
-struct double3_policy : boost::spirit::karma::real_policies<T>   
+struct double3_policy : boost::spirit::karma::real_policies<T>
 {
     //  we want to generate up to 3 fractional digits
     static unsigned int precision(T) { return 3; }
 };
 
-typedef boost::spirit::karma::real_generator<double, double3_policy<double> > 
+typedef boost::spirit::karma::real_generator<double, double3_policy<double> >
     double3_type;
 double3_type const double3 = double3_type();
 //]
@@ -158,7 +158,7 @@ void format_performance_string()
 #endif
 }
 
-// Boost.Format  
+// Boost.Format
 void format_performance_boost_format()
 {
     //[karma_format_performance_format
@@ -203,7 +203,7 @@ void format_performance_iostreams()
     //->
     for (int i = 0; i < NUMITERATIONS; ++i) {
         strm.str("");
-        strm << '[' 
+        strm << '['
           << std::setiosflags(std::ios::fixed)
           << std::left
           << std::setprecision(3)
@@ -265,3 +265,5 @@ int main()
 }
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

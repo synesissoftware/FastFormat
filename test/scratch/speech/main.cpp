@@ -11,6 +11,11 @@
 //#include <sapi.h>
 //#define COMSTL_SPEECH_SAPI_UTIL_USE_MS_SAPI_HEADERS
 
+
+/* /////////////////////////////////////////////////////////////////////////
+ * includes
+ */
+
 /* FastFormat header files */
 #include <fastformat/sinks/speech.hpp>
 #include <fastformat/ff.hpp>
@@ -39,8 +44,8 @@
 #endif /* _MSC_VER) && _DEBUG */
 
 
-/* /////////////////////////////////////////////////////////////////////////////
- * Macros and definitions
+/* /////////////////////////////////////////////////////////////////////////
+ * macros and definitions
  */
 
 #define FF_STR          FASTFORMAT_LITERAL_STRING
@@ -154,6 +159,6 @@ int main(int argc, char* argv[])
     return res;
 }
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

@@ -5,7 +5,7 @@
  *              FastFormat core.
  *
  * Created: 22nd April 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -50,19 +50,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER
 #define FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_REVISION 2
-# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_EDIT     6
+# define FASTFORMAT_VER_FASTFORMAT_QUALITY_H_COVER_EDIT     10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -75,22 +77,30 @@
 # endif /* !FASTFORMAT_INCL_FASTFORMAT_INTERNAL_HPP_STLSOFT */
 #endif /* FASTFORMAT_USE_XCOVER */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Macros
+ * macros
  */
 
 #ifdef FASTFORMAT_USE_XCOVER
 
 # error FastFormat does not currently work with xCover
-
 #else /* ? FASTFORMAT_USE_XCOVER */
 
-# define FASTFORMAT_COVER_MARK_ENTRY()           ((void)0)
-
+# define FASTFORMAT_COVER_MARK_ENTRY()                      ((void)0)
 #endif /* FASTFORMAT_USE_XCOVER */
 
-/* ////////////////////////////////////////////////////////////////////// */
 
-#endif /* FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER */
+/* /////////////////////////////////////////////////////////////////////////
+ * inclusion control
+ */
+
+#ifdef STLSOFT_PPF_pragma_once_SUPPORT
+# pragma once
+#endif /* STLSOFT_PPF_pragma_once_SUPPORT */
+
+#endif /* !FASTFORMAT_INCL_FASTFORMAT_QUALITY_H_COVER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

@@ -19,6 +19,7 @@
   * [ ] include/fastformat/sinks/WindowsFileHANDLE.hpp;
   * [ ] include/fastformat/sinks/to_sink.hpp;
   * [ ] re-enable speech output;
+  * [ ] ribbon: complete the sink (the string adaptor is partial, including the `ribbon_truncate_with_ellispsis` spelling) and bring its tests into the CMake build — the six cases in **test/unit/sinks/test.unit.sink.ribbon/** are not compiled;
   * [ ] synchronisation of ostream sink : spin / thread_mutex;
 
 

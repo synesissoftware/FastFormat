@@ -1,21 +1,22 @@
 /* /////////////////////////////////////////////////////////////////////////
  * File:    test/component/sink/string/fmt/entry.cpp
  *
- * Purpose: Component tests for sink.string.fmt.
+ * Purpose: Implementation file for the test.component.sink.string.fmt project.
  *
  * Created: 19th December 2007
- * Updated: 3rd November 2026
+ * Updated: 5th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/test/util/compiler_warnings_suppression.first_include.h>
 
 #if 1
-# include <stlsoft/string/simple_string.hpp>
+# include <stlsoft/string/simple_string.hpp> // hack (for now) for GCC phase
 #endif
 
 /* FastFormat header files */
@@ -36,9 +37,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
 # include <crtdbg.h>
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -46,52 +46,50 @@
 
 
 /* /////////////////////////////////////////////////////////////////////////
- * Forward declarations
+ * forward declarations
  */
 
 namespace
 {
 
-    static void test_1_0_a();
-    static void test_1_1_a();
-    static void test_1_1_b();
-    static void test_1_1_c();
-    static void test_1_2_a();
-    static void test_1_2_b();
-    static void test_1_2_c();
-    static void test_1_3_a();
-    static void test_1_3_b();
-    static void test_1_3_c();
-    static void test_1_4_a();
-    static void test_1_4_b();
-    static void test_1_4_c();
-    static void test_1_5_a();
-    static void test_1_5_b();
-    static void test_1_5_c();
-    static void test_1_6_a();
-    static void test_1_6_b();
-    static void test_1_6_c();
-    static void test_1_7_a();
-    static void test_1_7_b();
-    static void test_1_7_c();
-    static void test_1_8_a();
-    static void test_1_8_b();
-    static void test_1_8_c();
-    static void test_1_9();
-    static void test_1_10();
+    static void TEST_1_0_A();
+    static void TEST_1_1_A();
+    static void TEST_1_1_B();
+    static void TEST_1_1_C();
+    static void TEST_1_2_A();
+    static void TEST_1_2_B();
+    static void TEST_1_2_C();
+    static void TEST_1_3_A();
+    static void TEST_1_3_B();
+    static void TEST_1_3_C();
+    static void TEST_1_4_A();
+    static void TEST_1_4_B();
+    static void TEST_1_4_C();
+    static void TEST_1_5_A();
+    static void TEST_1_5_B();
+    static void TEST_1_5_C();
+    static void TEST_1_6_A();
+    static void TEST_1_6_B();
+    static void TEST_1_6_C();
+    static void TEST_1_7_A();
+    static void TEST_1_7_B();
+    static void TEST_1_7_C();
+    static void TEST_1_8_A();
+    static void TEST_1_8_B();
+    static void TEST_1_8_C();
+    static void TEST_1_9();
+    static void TEST_1_10();
 
-    static void test_2_0();
-    static void test_2_1();
-    static void test_2_2();
-    static void test_2_3();
-    static void test_2_4();
-    static void test_2_5();
-    static void test_2_6();
-    static void test_2_7();
-    static void test_2_8();
-    static void test_2_9();
-    static void test_2_10();
-    static void test_2_11();
+    static void TEST_2_0();
+    static void TEST_2_1();
+    static void TEST_2_2();
+    static void TEST_2_4();
+    static void TEST_2_5();
+    static void TEST_2_6();
+    static void TEST_2_8();
+    static void TEST_2_9();
+    static void TEST_2_10();
+    static void TEST_2_11();
 
 } // anonymous namespace
 
@@ -107,46 +105,44 @@ static int main_(int argc, char* argv[])
 
     if(XTESTS_START_RUNNER(__FILE__, verbosity))
     {
-        XTESTS_RUN_CASE(test_1_0_a);
-        XTESTS_RUN_CASE(test_1_1_a);
-        XTESTS_RUN_CASE(test_1_1_b);
-        XTESTS_RUN_CASE(test_1_1_c);
-        XTESTS_RUN_CASE(test_1_2_a);
-        XTESTS_RUN_CASE(test_1_2_b);
-        XTESTS_RUN_CASE(test_1_2_c);
-        XTESTS_RUN_CASE(test_1_3_a);
-        XTESTS_RUN_CASE(test_1_3_b);
-        XTESTS_RUN_CASE(test_1_3_c);
-        XTESTS_RUN_CASE(test_1_4_a);
-        XTESTS_RUN_CASE(test_1_4_b);
-        XTESTS_RUN_CASE(test_1_4_c);
-        XTESTS_RUN_CASE(test_1_5_a);
-        XTESTS_RUN_CASE(test_1_5_b);
-        XTESTS_RUN_CASE(test_1_5_c);
-        XTESTS_RUN_CASE(test_1_6_a);
-        XTESTS_RUN_CASE(test_1_6_b);
-        XTESTS_RUN_CASE(test_1_6_c);
-        XTESTS_RUN_CASE(test_1_7_a);
-        XTESTS_RUN_CASE(test_1_7_b);
-        XTESTS_RUN_CASE(test_1_7_c);
-        XTESTS_RUN_CASE(test_1_8_a);
-        XTESTS_RUN_CASE(test_1_8_b);
-        XTESTS_RUN_CASE(test_1_8_c);
-        XTESTS_RUN_CASE(test_1_9);
-        XTESTS_RUN_CASE(test_1_10);
+        XTESTS_RUN_CASE(TEST_1_0_A);
+        XTESTS_RUN_CASE(TEST_1_1_A);
+        XTESTS_RUN_CASE(TEST_1_1_B);
+        XTESTS_RUN_CASE(TEST_1_1_C);
+        XTESTS_RUN_CASE(TEST_1_2_A);
+        XTESTS_RUN_CASE(TEST_1_2_B);
+        XTESTS_RUN_CASE(TEST_1_2_C);
+        XTESTS_RUN_CASE(TEST_1_3_A);
+        XTESTS_RUN_CASE(TEST_1_3_B);
+        XTESTS_RUN_CASE(TEST_1_3_C);
+        XTESTS_RUN_CASE(TEST_1_4_A);
+        XTESTS_RUN_CASE(TEST_1_4_B);
+        XTESTS_RUN_CASE(TEST_1_4_C);
+        XTESTS_RUN_CASE(TEST_1_5_A);
+        XTESTS_RUN_CASE(TEST_1_5_B);
+        XTESTS_RUN_CASE(TEST_1_5_C);
+        XTESTS_RUN_CASE(TEST_1_6_A);
+        XTESTS_RUN_CASE(TEST_1_6_B);
+        XTESTS_RUN_CASE(TEST_1_6_C);
+        XTESTS_RUN_CASE(TEST_1_7_A);
+        XTESTS_RUN_CASE(TEST_1_7_B);
+        XTESTS_RUN_CASE(TEST_1_7_C);
+        XTESTS_RUN_CASE(TEST_1_8_A);
+        XTESTS_RUN_CASE(TEST_1_8_B);
+        XTESTS_RUN_CASE(TEST_1_8_C);
+        XTESTS_RUN_CASE(TEST_1_9);
+        XTESTS_RUN_CASE(TEST_1_10);
 
-        XTESTS_RUN_CASE(test_2_0);
-        XTESTS_RUN_CASE(test_2_1);
-        XTESTS_RUN_CASE(test_2_2);
-        XTESTS_RUN_CASE(test_2_3);
-        XTESTS_RUN_CASE(test_2_4);
-        XTESTS_RUN_CASE(test_2_5);
-        XTESTS_RUN_CASE(test_2_6);
-        XTESTS_RUN_CASE(test_2_7);
-        XTESTS_RUN_CASE(test_2_8);
-        XTESTS_RUN_CASE(test_2_9);
-        XTESTS_RUN_CASE(test_2_10);
-        XTESTS_RUN_CASE(test_2_11);
+        XTESTS_RUN_CASE(TEST_2_0);
+        XTESTS_RUN_CASE(TEST_2_1);
+        XTESTS_RUN_CASE(TEST_2_2);
+        XTESTS_RUN_CASE(TEST_2_4);
+        XTESTS_RUN_CASE(TEST_2_5);
+        XTESTS_RUN_CASE(TEST_2_6);
+        XTESTS_RUN_CASE(TEST_2_8);
+        XTESTS_RUN_CASE(TEST_2_9);
+        XTESTS_RUN_CASE(TEST_2_10);
+        XTESTS_RUN_CASE(TEST_2_11);
 
         XTESTS_PRINT_RESULTS();
 
@@ -160,15 +156,13 @@ int main(int argc, char* argv[])
 {
     int             res;
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemState    memState;
 #endif /* _MSC_VER && _MSC_VER */
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemCheckpoint(&memState);
 #endif /* _MSC_VER && _MSC_VER */
 
@@ -193,9 +187,8 @@ int main(int argc, char* argv[])
         res = EXIT_FAILURE;
     }
 
-#if 0
-#elif defined(_MSC_VER) &&\
-      defined(_DEBUG)
+#if defined(_MSC_VER) && \
+    defined(_DEBUG)
     _CrtMemDumpAllObjectsSince(&memState);
 #endif /* _MSC_VER) && _DEBUG */
 
@@ -213,15 +206,17 @@ namespace
     typedef std::basic_string<ff_char_t>    string_t;
 
 #ifdef FASTFORMAT_USE_WIDE_STRINGS
-# define XTESTS_TEST_STRING_EQUAL(x, a)     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
+
+# define XTESTS_TEST_STRING_EQUAL(x, a)                     XTESTS_TEST_WIDE_STRING_EQUAL(FASTFORMAT_LITERAL_STRING(x), a)
 #else /* ? FASTFORMAT_USE_WIDE_STRINGS */
-# define XTESTS_TEST_STRING_EQUAL           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+
+# define XTESTS_TEST_STRING_EQUAL                           XTESTS_TEST_MULTIBYTE_STRING_EQUAL
 #endif /* FASTFORMAT_USE_WIDE_STRINGS */
 
-#define FF_STR                              FASTFORMAT_LITERAL_STRING
+#define FF_STR                                              FASTFORMAT_LITERAL_STRING
 
 
-static void test_1_0_a()
+static void TEST_1_0_A()
 {
     string_t sink;
 
@@ -230,7 +225,7 @@ static void test_1_0_a()
     XTESTS_TEST_STRING_EQUAL("", sink);
 }
 
-static void test_1_1_a()
+static void TEST_1_1_A()
 {
     string_t sink;
 
@@ -239,7 +234,7 @@ static void test_1_1_a()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_1_b()
+static void TEST_1_1_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -248,7 +243,7 @@ static void test_1_1_b()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_1_c()
+static void TEST_1_1_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -257,7 +252,7 @@ static void test_1_1_c()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_2_a()
+static void TEST_1_2_A()
 {
     string_t sink;
 
@@ -266,7 +261,7 @@ static void test_1_2_a()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_2_b()
+static void TEST_1_2_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -275,7 +270,7 @@ static void test_1_2_b()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_2_c()
+static void TEST_1_2_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -284,7 +279,7 @@ static void test_1_2_c()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_3_a()
+static void TEST_1_3_A()
 {
     string_t sink;
 
@@ -293,7 +288,7 @@ static void test_1_3_a()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_3_b()
+static void TEST_1_3_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -302,7 +297,7 @@ static void test_1_3_b()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_3_c()
+static void TEST_1_3_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -311,7 +306,7 @@ static void test_1_3_c()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_4_a()
+static void TEST_1_4_A()
 {
     string_t sink;
 
@@ -320,7 +315,7 @@ static void test_1_4_a()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_4_b()
+static void TEST_1_4_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -329,7 +324,7 @@ static void test_1_4_b()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_4_c()
+static void TEST_1_4_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -338,7 +333,7 @@ static void test_1_4_c()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_5_a()
+static void TEST_1_5_A()
 {
     string_t sink;
 
@@ -347,7 +342,7 @@ static void test_1_5_a()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_5_b()
+static void TEST_1_5_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -356,7 +351,7 @@ static void test_1_5_b()
     XTESTS_TEST_STRING_EQUAL("abc", sink);
 }
 
-static void test_1_5_c()
+static void TEST_1_5_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -365,7 +360,7 @@ static void test_1_5_c()
     XTESTS_TEST_STRING_EQUAL("abc", sink.c_str());
 }
 
-static void test_1_6_a()
+static void TEST_1_6_A()
 {
     string_t sink;
 
@@ -374,7 +369,7 @@ static void test_1_6_a()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz012345", sink);
 }
 
-static void test_1_6_b()
+static void TEST_1_6_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -383,7 +378,7 @@ static void test_1_6_b()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz012345", sink);
 }
 
-static void test_1_6_c()
+static void TEST_1_6_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -392,7 +387,7 @@ static void test_1_6_c()
     XTESTS_TEST_STRING_EQUAL("abcdefghijklmnopqrstuvwxyz012345", sink.c_str());
 }
 
-static void test_1_7_a()
+static void TEST_1_7_A()
 {
     string_t sink;
 
@@ -401,7 +396,7 @@ static void test_1_7_a()
     XTESTS_TEST_STRING_EQUAL("the cat sat on the mat", sink);
 }
 
-static void test_1_7_b()
+static void TEST_1_7_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -410,7 +405,7 @@ static void test_1_7_b()
     XTESTS_TEST_STRING_EQUAL("the cat sat on the mat", sink);
 }
 
-static void test_1_7_c()
+static void TEST_1_7_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -419,7 +414,7 @@ static void test_1_7_c()
     XTESTS_TEST_STRING_EQUAL("the cat sat on the mat", sink.c_str());
 }
 
-static void test_1_8_a()
+static void TEST_1_8_A()
 {
     string_t sink;
 
@@ -428,7 +423,7 @@ static void test_1_8_a()
     XTESTS_TEST_STRING_EQUAL("aaaaaaaaaa bbbbbbbbbb", sink);
 }
 
-static void test_1_8_b()
+static void TEST_1_8_B()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -437,7 +432,7 @@ static void test_1_8_b()
     XTESTS_TEST_STRING_EQUAL("aaaaaaaaaa bbbbbbbbbb", sink);
 }
 
-static void test_1_8_c()
+static void TEST_1_8_C()
 {
     stlsoft::basic_static_string<ff_char_t, 100> sink;
 
@@ -446,7 +441,7 @@ static void test_1_8_c()
     XTESTS_TEST_STRING_EQUAL("aaaaaaaaaa bbbbbbbbbb", sink.c_str());
 }
 
-static void test_1_9()
+static void TEST_1_9()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -466,7 +461,7 @@ static void test_1_9()
     XTESTS_TEST_STRING_EQUAL("abc", sink.data());
 }
 
-static void test_1_10()
+static void TEST_1_10()
 {
     stlsoft::basic_simple_string<ff_char_t> sink;
 
@@ -487,9 +482,7 @@ static void test_1_10()
 }
 
 
-
-
-static void test_2_0()
+static void TEST_2_0()
 {
     string_t    sink;
 
@@ -500,7 +493,7 @@ static void test_2_0()
     XTESTS_TEST_STRING_EQUAL("abcdef|    abcdef|cdef", sink.c_str());
 }
 
-static void test_2_1()
+static void TEST_2_1()
 {
     string_t    sink;
 
@@ -511,7 +504,7 @@ static void test_2_1()
     XTESTS_TEST_STRING_EQUAL("abcdef|abcdef    |abcd", sink.c_str());
 }
 
-static void test_2_2()
+static void TEST_2_2()
 {
     string_t    sink;
 
@@ -522,11 +515,8 @@ static void test_2_2()
     XTESTS_TEST_STRING_EQUAL("abcdef|  abcdef  |bcde", sink.c_str());
 }
 
-static void test_2_3()
-{
-}
 
-static void test_2_4()
+static void TEST_2_4()
 {
     string_t    sink;
 
@@ -537,7 +527,7 @@ static void test_2_4()
     XTESTS_TEST_STRING_EQUAL("abcdef|    abcdef|cdef", sink.c_str());
 }
 
-static void test_2_5()
+static void TEST_2_5()
 {
     string_t    sink;
 
@@ -548,7 +538,7 @@ static void test_2_5()
     XTESTS_TEST_STRING_EQUAL("abcdef|abcdef    |abcd", sink.c_str());
 }
 
-static void test_2_6()
+static void TEST_2_6()
 {
     string_t    sink;
 
@@ -559,11 +549,8 @@ static void test_2_6()
     XTESTS_TEST_STRING_EQUAL("abcdef|  abcdef  |bcde", sink.c_str());
 }
 
-static void test_2_7()
-{
-}
 
-static void test_2_8()
+static void TEST_2_8()
 {
     string_t    sink;
 
@@ -574,7 +561,7 @@ static void test_2_8()
     XTESTS_TEST_STRING_EQUAL("abcdef|####abcdef|cdef", sink.c_str());
 }
 
-static void test_2_9()
+static void TEST_2_9()
 {
     string_t    sink;
 
@@ -585,7 +572,7 @@ static void test_2_9()
     XTESTS_TEST_STRING_EQUAL("abcdef|abcdef####|abcd", sink.c_str());
 }
 
-static void test_2_10()
+static void TEST_2_10()
 {
     string_t    sink;
 
@@ -596,7 +583,7 @@ static void test_2_10()
     XTESTS_TEST_STRING_EQUAL("abcdef|##abcdef##|bcde", sink.c_str());
 }
 
-static void test_2_11()
+static void TEST_2_11()
 {
     string_t    sink;
 
@@ -610,6 +597,6 @@ static void test_2_11()
 
 } // anonymous namespace
 
-
 /* ///////////////////////////// end of file //////////////////////////// */
+
 

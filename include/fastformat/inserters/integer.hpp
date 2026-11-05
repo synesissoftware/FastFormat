@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_INTEGER
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_INTEGER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      2
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   8
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       25
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      3
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   1
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       31
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -92,8 +94,9 @@
 #include <ctype.h>      /* for ::toupper */
 #include <stdlib.h>     /* for abs() */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -103,8 +106,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -158,7 +162,7 @@ inline ff_to_i_r_t_ integer_helper_2(
 
     typedef ff_to_i_r_t_   result_t;
 
-    enum { maxRepeats = 3 };
+    int const maxRepeats = 3;
 
 #ifdef FASTFORMAT_INSERTER_INTEGER_NO_USE_SHIM_STRING_
 
@@ -455,11 +459,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         {
             ff_char_t           sz[21];
             size_t              n;
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
             ff_char_t const*    s = stlsoft::integer_to_decimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
-#else
+#else /* ? STLSoft version */
             ff_char_t const*    s = stlsoft::integer_to_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
-#endif
+#endif /* STLSoft version */
 
             return ff_to_i_r_t_(s, n);
         }
@@ -468,7 +472,7 @@ inline ff_to_i_r_t_ integer_helper_5(
             FASTFORMAT_CONTRACT_ENFORCE_ASSUMPTION(16 == base);
 
 #ifdef STLSOFT_VER_STLSOFT_CONVERSION_INTEGER_TO_STRING_HPP_INTEGER_TO_HEXADECIMAL_STRING_MAJOR
-            // 64-bit signed minimum is sign, 16 hex digits, and NUL.
+            // 18: '-' + 16 hex digits + NUL for 64-bit signed minimum
             ff_char_t           sz[18];
             size_t              n;
             ff_char_t const*    s = stlsoft::integer_to_hexadecimal_string(&sz[0], STLSOFT_NUM_ELEMENTS(sz), value, &n);
@@ -547,11 +551,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         // a nul terminator, we need to do this is a strange order
 
         // 4. precision
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - (21 + typeLen), 21, precision, &n1);
-#else
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - (21 + typeLen), 21, precision, &n1);
-#endif
+#endif /* STLSoft version */
 
         // 5. type
         ::memcpy(end - (typeLen + 1), type, sizeof(ff_char_t) * typeLen);
@@ -568,11 +572,11 @@ inline ff_to_i_r_t_ integer_helper_5(
         end -= n1;
 
         // 2. width
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
-#else
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
-#endif
+#endif /* STLSoft version */
 
         // 3. .
         *--end = '.';
@@ -611,8 +615,9 @@ inline ff_to_i_r_t_ integer_helper_hex_3(
 } /* namespace ximpl_integer */
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** Inserts the string form of an integral value
@@ -646,8 +651,9 @@ inline ximpl_integer::ff_to_i_r_t_ integer(
     return ximpl_integer::integer_helper_3(value, minimumWidth, precision);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -656,16 +662,17 @@ using ::fastformat::inserters::integer;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_INTEGER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

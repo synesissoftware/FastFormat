@@ -48,19 +48,21 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_REAL
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_REAL
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MAJOR     1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MINOR     1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  7
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      12
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MINOR     2
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  1
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/fastformat.h>
@@ -79,8 +81,9 @@
 
 #include <stdlib.h> /* for abs() */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -90,8 +93,9 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Implementation
+ * implementation
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
@@ -119,7 +123,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_2(
 {
     typedef stlsoft::basic_shim_string<ff_char_t, 64>   result_t;
 
-    enum { maxRepeats = 4 };
+    int const maxRepeats = 4;
 
 #if _STLSOFT_VER < 0x010a0000 && \
     defined(_STLSOFT_1_10_VER) && \
@@ -333,18 +337,18 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_4(
         size_t          n1;
         size_t          n2;
 
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - 21, 21, precision, &n1);
-#else
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - 21, 21, precision, &n1);
-#endif
+#endif /* STLSoft version */
         *--end = type;
         end -= n1;
-#if _STLSOFT_VER >= 0x010a0182
+#ifdef FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
         stlsoft::integer_to_decimal_string(end - 21, 21, minimumWidth, &n2);
-#else
+#else /* ? STLSoft version */
         stlsoft::integer_to_string(end - 21, 21, minimumWidth, &n2);
-#endif
+#endif /* STLSoft version */
         *--end = '.';
         end -= n2;
         *--end = '%';
@@ -359,8 +363,9 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_4(
 } /* namespace ximpl_real */
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
 /** [DEPRECATED] Inserts the string form of a floating-point value
@@ -434,8 +439,9 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real(
     return ximpl_real::real_helper_4(value, minimumWidth, decimalPlaces, &type);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -444,16 +450,17 @@ using ::fastformat::inserters::real;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_REAL */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

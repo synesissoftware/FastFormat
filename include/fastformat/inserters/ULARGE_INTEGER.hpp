@@ -48,25 +48,28 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER
 #define FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Version information
+ * version information
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER_EDIT      5
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER_EDIT      10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include <fastformat/inserters/to_i.hpp>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -76,13 +79,13 @@ namespace inserters
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inserter functions
+ * inserter functions
  */
 
-#if 0
-#elif defined(STLSOFT_COMPILER_IS_MSVC) &&\
-      _MSC_VER < 1310
+#if defined(STLSOFT_COMPILER_IS_MSVC) && \
+    _MSC_VER < 1310
 
 inline
 ximpl_integer::ff_to_i_r_t_
@@ -143,8 +146,9 @@ to_i(
 
 #endif /* compiler */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
@@ -153,16 +157,17 @@ using ::fastformat::inserters::to_i;
 } // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Inclusion
+ * inclusion control
  */
 
 #ifdef STLSOFT_PPF_pragma_once_SUPPORT
 # pragma once
 #endif /* STLSOFT_PPF_pragma_once_SUPPORT */
 
-/* ////////////////////////////////////////////////////////////////////// */
-
 #endif /* !FASTFORMAT_INCL_FASTFORMAT_INSERTERS_HPP_ULARGE_INTEGER */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+

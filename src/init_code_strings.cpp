@@ -4,7 +4,7 @@
  * Purpose: Initialisation code strings for FastFormat API
  *
  * Created: 27th May 2008
- * Updated: 16th October 2026
+ * Updated: 5th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -40,28 +40,26 @@
  * ////////////////////////////////////////////////////////////////////// */
 
 
-
 /* /////////////////////////////////////////////////////////////////////////
- * Includes
+ * includes
  */
 
 #include "ximpl_core.hpp"
-#ifndef UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-# define UNIXSTL_NO_ATOMIC_INTEGER_OPERATIONS_ON_WINDOWS
-#endif
 #include <fastformat/internal/threading.h>
 #include <fastformat/init_codes.h>
 #include <fastformat/quality/contract.h>
 #include <fastformat/quality/cover.h>
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
 namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * API
@@ -70,7 +68,7 @@ namespace fastformat
 #ifdef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
 struct InitCodeString
 #else /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
-# define InitCodeString        fastformat_src_util_InitCodeString
+# define InitCodeString                                     fastformat_src_util_InitCodeString
 typedef struct InitCodeString  InitCodeString;
 struct InitCodeString
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
@@ -172,12 +170,15 @@ FASTFORMAT_CALL(size_t) fastformat_getInitCodeStringLength(int code)
     return (fastformat_LookupInitCodeStringA_((int)code, &len), len);
 }
 
+
 /* /////////////////////////////////////////////////////////////////////////
- * Namespace
+ * namespace
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */
+
+
