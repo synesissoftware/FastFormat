@@ -4,7 +4,7 @@
  * Purpose: Declarations of internal shared core functions.
  *
  * Created: 3rd February 2012
- * Updated: 16th October 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -133,7 +133,7 @@ public: // Defect handlers - in fmt_spec_defect_handlers.cpp
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* ///////////////////////////// end of file //////////////////////////// */

@@ -4,7 +4,7 @@
  * Purpose: Inserter functions for floating-point types
  *
  * Created: 1st March 2009
- * Updated: 16th October 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      19
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_REAL_EDIT      20
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -359,8 +359,7 @@ inline stlsoft::basic_shim_string<ff_char_t, 64> real_helper_4(
 
     return real_helper_2(value, fmt);
 }
-
-} /* namespace ximpl_real */
+} // namespace ximpl_real
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 

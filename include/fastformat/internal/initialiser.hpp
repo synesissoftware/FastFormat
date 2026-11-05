@@ -4,7 +4,7 @@
  * Purpose: Automatic initialisation of FastFormat library
  *
  * Created: 21st June 2005
- * Updated: 16th October 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -89,7 +89,7 @@
 
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 #ifdef FASTFORMAT_INIT_FAILURE_REPORT_VIA_PANTHEIOS
  // Nothing to include

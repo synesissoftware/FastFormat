@@ -5,7 +5,7 @@
  *              conversion of integral types.
  *
  * Created: 1st June 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -59,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_MINOR     3
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      30
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_FAST_INTEGERS_EDIT      31
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -174,10 +174,7 @@ namespace ximpl_fast_integers
 # else /* ? 64-bit / long long */
 #  error Bad discrimination
 # endif /* 64-bit / long long */
-
-
-} /* namespace ximpl_fast_integers */
-
+} // namespace ximpl_fast_integers
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -575,8 +572,8 @@ c_str_len(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace filters */
-} /* namespace fastformat */
+} // namespace filters
+} // namespace fastformat
 
 # ifndef _STLSOFT_NO_NAMESPACE
 namespace stlsoft
@@ -594,7 +591,7 @@ namespace stlsoft
     using ::fastformat::filters::c_str_len;
 
 # ifndef _STLSOFT_NO_NAMESPACE
-} /* namespace stlsoft */
+} // namespace stlsoft
 # endif /* !_STLSOFT_NO_NAMESPACE */
 
 #else /* ? !FASTFORMAT_NO_NAMESPACE */
@@ -687,7 +684,7 @@ c_str_len(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 }
 
-} /* namespace stlsoft */
+} // namespace stlsoft
 # endif /* !_STLSOFT_NO_NAMESPACE */
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 

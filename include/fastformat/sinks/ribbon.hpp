@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for writing width-limited output.
  *
  * Created: 21st February 2012
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_MINOR       0
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_EDIT        6
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_HPP_RIBBON_EDIT        7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -246,11 +246,11 @@ ribbon(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
+} // namespace sinks
 
 using ::fastformat::sinks::ribbon;
 
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

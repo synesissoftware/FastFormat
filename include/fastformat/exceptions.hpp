@@ -4,7 +4,7 @@
  * Purpose: FastFormat API exception classes.
  *
  * Created: 23rd October 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -56,7 +56,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  7
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      19
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      20
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -642,7 +642,7 @@ inline /* virtual */ sink_exception::~sink_exception() STLSOFT_NOEXCEPT /* = 0 *
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

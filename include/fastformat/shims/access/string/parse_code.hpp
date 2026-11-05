@@ -4,11 +4,11 @@
  * Purpose: Defines string access shims for ff_parse_code_t
  *
  * Created: 11th November 2013
- * Updated: 16th July 2024
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2006-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_PARSE_CODE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_PARSE_CODE_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_PARSE_CODE_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_PARSE_CODE_EDIT      10
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACCESS_STRING_HPP_PARSE_CODE_EDIT      11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -204,10 +204,10 @@ c_str_ptr(
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
-} /* namespace ximpl_SAS_parse_code_ */
+} // namespace ximpl_SAS_parse_code_
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 # if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 
@@ -266,11 +266,11 @@ namespace stlsoft
  /* F- */
 # else /* ? FASTFORMAT_NO_NAMESPACE */
  /* F+ */
-} /* namespace fastformat */
+} // namespace fastformat
 # endif /* FASTFORMAT_NO_NAMESPACE */
 #else /* ? _STLSOFT_NO_NAMESPACE */
  /* S+ */
-} /* namespace stlsoft */
+} // namespace stlsoft
 #endif /* _STLSOFT_NO_NAMESPACE */
 
 /* /////////////////////////////////////

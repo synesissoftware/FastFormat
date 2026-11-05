@@ -4,7 +4,7 @@
  * Purpose: Inserter functions for character types.
  *
  * Created: 25th November 2010
- * Updated: 16th October 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_EDIT     11
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_CHARACTER_EDIT     12
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -228,7 +228,7 @@ namespace stlsoft
 //    using ::fastformat::inserters::c_str_len;
 
 # ifndef _STLSOFT_NO_NAMESPACE
-} /* namespace stlsoft */
+} // namespace stlsoft
 # endif /* !_STLSOFT_NO_NAMESPACE */
 
 #else /* ? !FASTFORMAT_NO_NAMESPACE */
@@ -341,7 +341,7 @@ c_str_len(
 #endif /* !FASTFORMAT_USE_WIDE_STRINGS */
 }
 
-} /* namespace stlsoft */
+} // namespace stlsoft
 # endif /* !_STLSOFT_NO_NAMESPACE */
 
 #endif /* !FASTFORMAT_NO_NAMESPACE */

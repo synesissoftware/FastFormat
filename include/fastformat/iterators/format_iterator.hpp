@@ -5,7 +5,7 @@
  *              iterator.
  *
  * Created: 20th May 2009
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -58,7 +58,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_REVISION   6
-# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       18
+# define FASTFORMAT_VER_FASTFORMAT_ITERATORS_HPP_FORMAT_ITERATOR_EDIT       19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -126,8 +126,7 @@ namespace ximpl_format_iterator
             return s_empty;
         }
     };
-
-} /* namespace ximpl_format_iterator */
+} // namespace ximpl_format_iterator
 
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
@@ -542,9 +541,9 @@ inline format_output_iterator<S, F, A1, A2, A3, A4, A5, A6, A7, A8> format_itera
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace iterators */
+} // namespace iterators
 using ::fastformat::iterators::format_iterator;
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

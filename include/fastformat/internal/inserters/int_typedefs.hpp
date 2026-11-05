@@ -4,7 +4,7 @@
  * Purpose: Common typedefs for integral inserters
  *
  * Created: 26th May 2009
- * Updated: 16th October 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -101,7 +101,7 @@ typedef stlsoft::basic_simple_string<ff_char_t>         ff_to_i_r_t_;
 typedef stlsoft::basic_shim_string<ff_char_t, 20>       ff_to_i_r_t_;
 # endif /* FASTFORMAT_INSERTER_INTEGER_NO_USE_SHIM_STRING_ */
 
-} /* namespace ximpl_integer */
+} // namespace ximpl_integer
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 

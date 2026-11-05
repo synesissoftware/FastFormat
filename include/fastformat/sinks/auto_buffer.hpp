@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for STLSoft's auto_buffer class template.
  *
  * Created: 21st April 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       22
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_AUTO_BUFFER_SINK_EDIT       23
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -228,8 +228,8 @@ inline stlsoft::auto_buffer<ff_char_t>& fmt_slices(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

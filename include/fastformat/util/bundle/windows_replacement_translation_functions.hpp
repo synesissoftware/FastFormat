@@ -5,7 +5,7 @@
  *              FastFormat replacement parameters.
  *
  * Created: 24th April 2009
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -59,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       11
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_BUNDLE_HPP_WINDOWS_REPLACEMENT_TRANSLATION_FUNCTIONS_EDIT       12
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -365,8 +365,8 @@ escape_fastformat_replacement_parameters(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace util */
-} /* namespace fastformat */
+} // namespace util
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

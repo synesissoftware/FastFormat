@@ -4,11 +4,11 @@
  * Purpose: Inserter functions for storage sizes.
  *
  * Created: 16th August 2010
- * Updated: 16th July 2024
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2010-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_REVISION  7
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_EDIT      15
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_STORAGE_SIZE_EDIT      16
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -411,8 +411,7 @@ storage_size_(
 
     return storage_size_with_suffix_(i, suffix, cchSuffix);
 }
-
-} /* namespace ximpl_storage_size */
+} // namespace ximpl_storage_size
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 

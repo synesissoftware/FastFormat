@@ -5,7 +5,7 @@
  *              specialisations.
  *
  * Created: 22nd April 2008
- * Updated: 16th October 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -60,7 +60,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_REVISION  4
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      23
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_MEMORY_HPP_AUTO_BUFFER_SELECTOR_EDIT      24
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -159,8 +159,8 @@ struct auto_buffer_selector
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace util */
-} /* namespace fastformat */
+} // namespace util
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

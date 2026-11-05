@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for IOStreams' std::ostream.
  *
  * Created: 19th January 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_MINOR       2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_REVISION    2
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_EDIT        31
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OSTREAM_EDIT        32
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -175,8 +175,8 @@ inline std::basic_ostream<ff_char_t>& fmt_slices(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

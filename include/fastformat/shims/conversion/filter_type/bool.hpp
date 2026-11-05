@@ -4,7 +4,7 @@
  * Purpose: FastFormat argument conversion shim for bool type.
  *
  * Created: 2nd June 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_EDIT       13
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_BOOL_EDIT       14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -99,7 +99,7 @@ namespace filters
 namespace ximpl_bool
 {
 
-} /* namespace ximpl_bool */
+} // namespace ximpl_bool
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -145,8 +145,8 @@ namespace ximpl_bool
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace filters */
-} /* namespace fastformat */
+} // namespace filters
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

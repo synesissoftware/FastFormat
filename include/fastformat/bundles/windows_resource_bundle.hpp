@@ -4,7 +4,7 @@
  * Purpose: Windows resource bundle.
  *
  * Created: 24th April 2009
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 5
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     13
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -382,7 +382,7 @@ windows_resource_bundle::operator [](
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 
