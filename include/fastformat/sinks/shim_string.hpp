@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for STLSoft's shim_string class template.
  *
  * Created: 12th November 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_REVISION   5
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       17
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -333,8 +333,8 @@ c_str_len(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

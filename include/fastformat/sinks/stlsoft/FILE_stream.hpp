@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for STLSoft's stlsoft::FILE_stream.
  *
  * Created: 19th July 2010
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     8
+# define FASTFORMAT_VER_FASTFORMAT_SINKS_STLSOFT_HPP_FILE_STREAM_EDIT     9
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -171,7 +171,7 @@ inline F& fmt_slices_(
     return sink;
 }
 
-} /* namespace ximpl_FILE_stream */
+} // namespace ximpl_FILE_stream
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -236,8 +236,8 @@ fmt_slices(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

@@ -4,7 +4,7 @@
  * Purpose: FastFormat formatting action shim for generic string types.
  *
  * Created: 19th September 2006
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Thanks:  To Ric Parkin for pointing out the ramifications of
  *              21.3.5.2/6 and 21.3.1/6 before I change the definition of
@@ -61,7 +61,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MAJOR     3
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      30
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_ACTION_FMT_SLICES_HPP_GENERIC_STRING_EDIT      31
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -151,8 +151,8 @@ fmt_slices(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

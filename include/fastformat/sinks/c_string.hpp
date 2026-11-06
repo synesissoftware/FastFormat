@@ -5,7 +5,7 @@
  *              filled as C-style strings.
  *
  * Created: 14th April 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -59,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_REVISION   4
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_EDIT       21
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_C_STRING_EDIT       22
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -234,8 +234,8 @@ fmt_slices(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

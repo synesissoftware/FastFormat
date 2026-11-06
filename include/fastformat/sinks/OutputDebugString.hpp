@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for Windows' OutputDebugString().
  *
  * Created: 24th February 2009
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      13
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_OUTPUTDEBUGSTRING_EDIT      14
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -182,8 +182,8 @@ inline OutputDebugString_sink& fmt_slices(OutputDebugString_sink& sink, int flag
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

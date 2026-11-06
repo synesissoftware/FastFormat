@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for FILE*.
  *
  * Created: 3rd January 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_REVISION   7
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       37
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_FILE_EDIT       38
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -289,9 +289,9 @@ fmt_slices(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
+} // namespace sinks
 using sinks::to_sink;
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

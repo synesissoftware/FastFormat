@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink adaptor for ACE's ACE_CString.
  *
  * Created: 2nd January 2009
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_ACE_CSTRING_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_ACE_CSTRING_MINOR       1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_ACE_CSTRING_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_ACE_CSTRING_EDIT        10
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_ACE_CSTRING_EDIT        11
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -154,8 +154,8 @@ inline ACE_CString& fmt_slices(ACE_CString& sink, int flags, size_t cchTotal, si
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

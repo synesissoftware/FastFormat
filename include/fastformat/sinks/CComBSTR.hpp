@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink adaptor for ATL's CComBSTR.
  *
  * Created: 21st November 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_EDIT       20
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CCOMBSTR_EDIT       21
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -182,8 +182,8 @@ inline CComBSTR& fmt_slices(CComBSTR& sink, int flags, size_t cchTotal, size_t n
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

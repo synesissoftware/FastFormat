@@ -4,11 +4,11 @@
  * Purpose: Utility functions for using <code>FILE*</code>.
  *
  * Created: 3rd January 2008
- * Updated: 16th July 2024
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
- * Copyright (c) 2019-2024, Matthew Wilson and Synesis Information Systems
+ * Copyright (c) 2019-2026, Matthew Wilson and Synesis Information Systems
  * Copyright (c) 2008-2019, Matthew Wilson and Synesis Software
  * All rights reserved.
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_FILESYSTEM_HPP_FILE_FUNCTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_FILESYSTEM_HPP_FILE_FUNCTIONS_MINOR     0
 # define FASTFORMAT_VER_FASTFORMAT_UTIL_FILESYSTEM_HPP_FILE_FUNCTIONS_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_UTIL_FILESYSTEM_HPP_FILE_FUNCTIONS_EDIT      6
+# define FASTFORMAT_VER_FASTFORMAT_UTIL_FILESYSTEM_HPP_FILE_FUNCTIONS_EDIT      7
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -148,8 +148,8 @@ fopen_or_throw(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace util */
-} /* namespace fastformat */
+} // namespace util
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

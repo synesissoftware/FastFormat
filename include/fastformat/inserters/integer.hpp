@@ -4,7 +4,7 @@
  * Purpose: Inserter functions for integral types
  *
  * Created: 26th May 2009
- * Updated: 16th October 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       31
+# define FASTFORMAT_VER_FASTFORMAT_INSERTERS_HPP_INTEGER_EDIT       32
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -611,8 +611,7 @@ inline ff_to_i_r_t_ integer_helper_hex_3(
 {
     return integer_helper_5(value, minimumWidth, precision, 16, uppercaseX);
 }
-
-} /* namespace ximpl_integer */
+} // namespace ximpl_integer
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 

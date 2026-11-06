@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for exceptions.
  *
  * Created: 12th November 2012
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_MAJOR     0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_EDIT      9
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_EXCEPTION_EDIT      10
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -238,8 +238,8 @@ namespace sinks
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

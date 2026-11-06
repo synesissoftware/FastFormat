@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for IOStreams' std::stringstream.
  *
  * Created: 19th January 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_MINOR      3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_REVISION   1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_EDIT       16
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRINGSTREAM_EDIT       17
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -157,8 +157,8 @@ fmt_slices(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

@@ -4,7 +4,7 @@
  * Purpose: FastFormat C++ primary include.
  *
  * Created: 19th September 2006
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MAJOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_MINOR     4
 # define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      55
+# define FASTFORMAT_VER_FASTFORMAT_HPP_FASTFORMAT_EDIT      56
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -206,7 +206,7 @@ to_sink(T& sink)
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 #if !defined(FASTFORMAT_NO_IMPLICIT_ACTION_SHIMS)
@@ -269,7 +269,7 @@ inline T const& filter_type(T const& t, T const*, C const volatile*)
 }
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace filters */
+} // namespace filters
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 
@@ -278,7 +278,7 @@ inline T const& filter_type(T const& t, T const*, C const volatile*)
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 #if !defined(FASTFORMAT_NO_DEFAULT_CONVERSION_SHIMS)
@@ -338,8 +338,8 @@ namespace helpers
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace helpers */
-} /* namespace internal */
+} // namespace helpers
+} // namespace internal
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 
@@ -480,7 +480,7 @@ inline S& flush(
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace fastformat */
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

@@ -5,7 +5,7 @@
  *              types.
  *
  * Created: 1st June 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -58,7 +58,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_REVISION  2
-# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_EDIT      16
+# define FASTFORMAT_VER_FASTFORMAT_SHIMS_CONVERSION_FILTER_TYPE_HPP_REALS_EDIT      17
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -138,8 +138,8 @@ inline stlsoft::basic_shim_string<ff_char_t, 32> filter_type(float value, float 
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace filters */
-} /* namespace fastformat */
+} // namespace filters
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

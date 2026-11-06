@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink adaptor for MFC's CString.
  *
  * Created: 2nd June 2008
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_REVISION   4
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       18
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_CSTRING_EDIT       19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -149,8 +149,8 @@ inline CString& fmt_slices(CString& sink, int flags, size_t cchTotal, size_t num
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 

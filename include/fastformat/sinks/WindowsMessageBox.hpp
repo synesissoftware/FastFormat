@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for Windows message boxes.
  *
  * Created: 4th January 2009
- * Updated: 5th November 2026
+ * Updated: 6th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      16
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      17
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -247,8 +247,8 @@ inline WindowsMessageBox_sink& fmt_slices(WindowsMessageBox_sink& sink, int flag
  */
 
 #if !defined(FASTFORMAT_NO_NAMESPACE)
-} /* namespace sinks */
-} /* namespace fastformat */
+} // namespace sinks
+} // namespace fastformat
 #endif /* !FASTFORMAT_NO_NAMESPACE */
 
 
