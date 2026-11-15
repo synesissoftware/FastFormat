@@ -50,7 +50,7 @@ at https://github.com/synesissoftware/FastFormat.
 
 ## Developer Experience
 
-Install [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.5** or later) via **CMake**, then clone **FastFormat** and:
+Install [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.9** or later) via **CMake**, then clone **FastFormat** and:
 
 ```bash
 ./prepare_cmake.sh --run-make # also use '--cmake-verbose-makefile' to see verbose output
@@ -277,11 +277,11 @@ programs pull in further packages as listed below.
 
 | Package | Minimum | Role | Required? |
 | ------- | ------- | ---- | --------- |
-| [**STLSoft**](https://github.com/synesissoftware/STLSoft) | **1.11.5** | Compiler/platform discrimination, string shims, containers, and related facilities used by the core library and the public C++ API | **Yes** — always |
+| [**STLSoft**](https://github.com/synesissoftware/STLSoft) | **1.11.9** | Compiler/platform discrimination, string shims, containers, and related facilities used by the core library and the public C++ API | **Yes** — always |
 
 **STLSoft** may be supplied as:
 
-* a **CMake** package (`find_package(STLSoft 1.11.5 REQUIRED)`); or
+* a **CMake** package (`find_package(STLSoft 1.11.9 REQUIRED)`); or
 * a tree pointed at by the **CMake** variable `STLSOFT` or the environment
   variable `STLSOFT` (include directory `${STLSOFT}/include`).
 
@@ -292,7 +292,7 @@ Required when `BUILD_TESTING` is on (the default for a full tree):
 
 | Package | Minimum | Role | Required? |
 | ------- | ------- | ---- | --------- |
-| [**xTests**](https://github.com/synesissoftware/xTests) | **0.28.2** | Unit and component test harness | **Yes** when building tests |
+| [**xTests**](https://github.com/synesissoftware/xTests) | **0.29.0** | Unit and component test harness | **Yes** when building tests |
 | [**shwild**](https://github.com/synesissoftware/shwild) | (any installable package) | Optional; enables richer pattern matches in **xTests** (`XTESTS_HAS_SHWILD`) | No — detected with `find_package(shwild QUIET)` unless `NO_SHWILD` is set |
 | [**woad**](https://github.com/synesissoftware/woad) | **0.2.1** | Optional; colours **test.scratch.versions** when `USE_WOAD` is on (`./prepare_cmake.sh --use-woad`) | No — omitted unless that flag is passed |
 
@@ -304,7 +304,7 @@ they do not add a separate package beyond what the library already needs.
 
 | Package | Minimum | Role | Required? |
 | ------- | ------- | ---- | --------- |
-| [**UNIXem**](https://github.com/synesissoftware/UNIXem) | **1.14.2** | Supplies `<unixem/unixem.h>` for Windows scratch programs that include that header | **Yes** when `WIN32` and `BUILD_TESTING` |
+| [**UNIXem**](https://github.com/synesissoftware/UNIXem) | **1.15.0** | Supplies `<unixem/unixem.h>` for Windows scratch programs that include that header | **Yes** when `WIN32` and `BUILD_TESTING` |
 
 **UNIXem**'s own configure rejects non-Windows hosts. The modular CI
 dependency list therefore appends **UNIXem** on Windows only

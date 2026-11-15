@@ -3,6 +3,7 @@
 
 | Date                | News Item                           | Details                                           |
 | ------------------- | ----------------------------------- | ------------------------------------------------- |
+| 15th November 2026  | Release of [FastFormat 0.8.1](https://github.com/synesissoftware/FastFormat/releases/tag/0.8.1) | release-status byte **0xFF**; **STLSoft** **1.11.9** |
 | 5th November 2026   | Release of [FastFormat 0.8.1-beta1](https://github.com/synesissoftware/FastFormat/releases/tag/0.8.1-beta1) | first **0.8** beta; **Developer Experience** and **CMake** install |
 | 4th November 2026   | Release of [FastFormat 0.7.4](https://github.com/synesissoftware/FastFormat/releases/tag/0.7.4) | release-status byte **0xFF** |
 | 4th November 2026   | Release of [FastFormat 0.7.4-rc10](https://github.com/synesissoftware/FastFormat/releases/tag/0.7.4-rc10) | short directories for examples and tests; optional **woad** colour |
