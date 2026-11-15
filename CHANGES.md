@@ -1,6 +1,23 @@
 # FastFormat - Changes <!-- omit in toc -->
 
 
+## 0.8.1 - 15th November 2026
+
+* version:
+  * added `FASTFORMAT_VER_0_8_1`;
+  * set `FASTFORMAT_VER_RELSTATUS` to **0xFF**;
+* build:
+  * **STLSoft** minimum is **1.11.9** (**CMake** `find_package` and the compile-time gate in **include/fastformat/internal/stlsoft.h**);
+* documentation:
+  * **doc/mainpage.md** describes the **Write** and **Format** APIs;
+  * **INSTALL.md** download steps name the **0.8.1** archive;
+  * documented **xTests** and **UNIXem** minima match **CMake** (**0.29.0** and **1.15.0**);
+* boilerplate:
+  * aligned the per-file version-macro columns in **ch.hpp**, **standard_flags.hpp**, **ULARGE_INTEGER.hpp**, **CString.hpp**, **FILE_stream.hpp**, and **auto_buffer_selector.hpp**;
+* testing:
+  * **test.scratch.versions** colours with **woad** 0.3 `WOAD_*_FOR(stm)` when **prepare_cmake.sh** `--use-woad` is passed;
+
+
 ## 0.8.1-beta1 - 5th November 2026
 
 * version:

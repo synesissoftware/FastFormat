@@ -18,7 +18,7 @@ There are two supported ways to obtain and install **FastFormat**, and both use 
 
 ### Cloning project, installing via CMake (recommended)
 
-0. First, ensure that [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.5** or later) has been cloned and then built and installed via CMake, as per the instructions in that project. To build and run the tests, install [**xTests**](https://github.com/synesissoftware/xTests) (**0.28.2** or later) the same way; pass **`--disable-testing`** to **prepare_cmake.sh** when **xTests** is not installed. Optionally, install [**shwild**](https://github.com/synesissoftware/shwild) (richer **xTests** matches) and [**woad**](https://github.com/synesissoftware/woad) (colour for **test.scratch.versions**, via **`--use-woad`**). On Windows, when tests are enabled, also install [**UNIXem**](https://github.com/synesissoftware/UNIXem) (**1.14.2** or later) so scratch programs that include `<unixem/unixem.h>` can build.
+0. First, ensure that [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.9** or later) has been cloned and then built and installed via CMake, as per the instructions in that project. To build and run the tests, install [**xTests**](https://github.com/synesissoftware/xTests) (**0.29.0** or later) the same way; pass **`--disable-testing`** to **prepare_cmake.sh** when **xTests** is not installed. Optionally, install [**shwild**](https://github.com/synesissoftware/shwild) (richer **xTests** matches) and [**woad**](https://github.com/synesissoftware/woad) **0.3** or later (colour for **test.scratch.versions**, via **`--use-woad`**). On Windows, when tests are enabled, also install [**UNIXem**](https://github.com/synesissoftware/UNIXem) (**1.15.0** or later) so scratch programs that include `<unixem/unixem.h>` can build.
 
 
 1. Clone **FastFormat** from GitHub, as in;
@@ -143,25 +143,25 @@ The shortest program that uses that target is in [**README.md**](./README.md) un
 
 ### Downloading a release archive, installing via CMake
 
-0. Install the same prerequisites as in the clone section: [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.5** or later), built and installed with **CMake**. [**xTests**](https://github.com/synesissoftware/xTests) (**0.28.2** or later) is required when tests are built. Optional [**shwild**](https://github.com/synesissoftware/shwild), [**woad**](https://github.com/synesissoftware/woad), and (on Windows) [**UNIXem**](https://github.com/synesissoftware/UNIXem) are the same as there. Release archives for the Synesis libraries are on each project's GitHub tags page.
+0. Install the same prerequisites as in the clone section: [**STLSoft**](https://github.com/synesissoftware/STLSoft) (**1.11.9** or later), built and installed with **CMake**. [**xTests**](https://github.com/synesissoftware/xTests) (**0.29.0** or later) is required when tests are built. Optional [**shwild**](https://github.com/synesissoftware/shwild), [**woad**](https://github.com/synesissoftware/woad), and (on Windows) [**UNIXem**](https://github.com/synesissoftware/UNIXem) are the same as there. Release archives for the Synesis libraries are on each project's GitHub tags page.
 
 
-1. Download the **FastFormat** **0.8.1-beta1** archive (or a later tag) and unpack it, as in:
+1. Download the **FastFormat** **0.8.1** archive (or a later tag) and unpack it, as in:
 
 ```bash
 $ mkdir -p ~/open-source
 $ cd ~/open-source
-$ curl -L -o FastFormat-0.8.1-beta1.zip https://github.com/synesissoftware/FastFormat/archive/refs/tags/0.8.1-beta1.zip
-$ unzip FastFormat-0.8.1-beta1.zip
+$ curl -L -o FastFormat-0.8.1.zip https://github.com/synesissoftware/FastFormat/archive/refs/tags/0.8.1.zip
+$ unzip FastFormat-0.8.1.zip
 ```
 
-The archive unpacks to **FastFormat-0.8.1-beta1**.
+The archive unpacks to **FastFormat-0.8.1**.
 
 
 2. Prepare, build, and install from that directory. The flags are the same as [step 2 of the clone section](#cloning-project-installing-via-cmake-recommended):
 
 ```bash
-$ cd ~/open-source/FastFormat-0.8.1-beta1
+$ cd ~/open-source/FastFormat-0.8.1
 $ ./prepare_cmake.sh
 $ sudo cmake --install ${SIS_CMAKE_BUILD_DIR:-./_build} --config Release
 ```

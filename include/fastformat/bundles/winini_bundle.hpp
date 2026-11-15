@@ -4,7 +4,7 @@
  * Purpose: Windows INI file bundle.
  *
  * Created: 19th September 2006
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_MINOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_REVISION   5
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_EDIT       22
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WININI_BUNDLE_EDIT       23
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -112,18 +112,24 @@ class winini_bundle
 /// \name Member Types
 /// @{
 public:
-    typedef ff_char_t                       char_type;
-    typedef std::basic_string<char_type>    string_type;
-    typedef winini_bundle                   class_type;
+    typedef ff_char_t                                       char_type;
+    typedef std::basic_string<char_type>                    string_type;
+    typedef winini_bundle                                   class_type;
 /// @}
 
 /// \name Construction
 /// @{
 public:
-    explicit winini_bundle(char_type const *source, char_type const *section);
+    winini_bundle(
+        char_type const*    source
+    ,   char_type const*    section
+    );
 
     template <typename S0, typename S1>
-    explicit winini_bundle(S0 const& source, S1 const& section)
+    winini_bundle(
+        S0 const& source
+    ,   S1 const& section
+    )
         : m_iniFileName(::stlsoft::c_str_data(source), ::stlsoft::c_str_len(source))
         , m_iniSection(::stlsoft::c_str_data(section), ::stlsoft::c_str_len(section))
     {}
@@ -219,7 +225,6 @@ winini_bundle::operator [](
 
     return string_type(result, dw);
 }
-
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 

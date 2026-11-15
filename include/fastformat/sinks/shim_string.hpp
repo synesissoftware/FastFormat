@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for STLSoft's shim_string class template.
  *
  * Created: 12th November 2008
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_REVISION   5
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       18
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SHIM_STRING_SINK_EDIT       19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -141,11 +141,11 @@ class shim_string_sink
 {
 public: // Member Types
     /// This type
-    typedef shim_string_sink                        class_type;
+    typedef shim_string_sink                                class_type;
     /// The parent type
-    typedef stlsoft::basic_shim_string<ff_char_t>   parent_class_type;
+    typedef stlsoft::basic_shim_string<ff_char_t>           parent_class_type;
     /// The size type
-    typedef parent_class_type::size_type            size_type;
+    typedef parent_class_type::size_type                    size_type;
 private:
 
 public: // Construction

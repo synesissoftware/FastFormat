@@ -4,7 +4,7 @@
  * Purpose: .properties file bundle.
  *
  * Created: 19th September 2006
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_MINOR      2
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_REVISION   2
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       27
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_PROPERTIES_BUNDLE_EDIT       28
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -136,18 +136,18 @@ class properties_bundle
 /// \name Member Types
 /// @{
 public:
-    typedef std::string                     string_type;
-    typedef properties_bundle               class_type;
+    typedef std::string                                     string_type;
+    typedef properties_bundle                               class_type;
 private:
 #ifdef FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE
-    typedef platformstl::properties_file    map_type_;
-    typedef char const*                     map_init_type_;
+    typedef platformstl::properties_file                    map_type_;
+    typedef char const*                                     map_init_type_;
 #else /* ? FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE */
     typedef std::map<
         string_type
     ,   string_type
-    >                                       map_type_;
-    typedef map_type_ const                 map_init_type_;
+    >                                                       map_type_;
+    typedef map_type_ const                                 map_init_type_;
 #endif /* FASTFORMAT_PROPERTIES_BUNDLE_USE_STLSOFT_1_10_PROPERTIES_FILE */
 /// @}
 

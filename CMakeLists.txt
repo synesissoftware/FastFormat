@@ -5,7 +5,7 @@
 # Purpose:  Top-level CMake lists file for FastFormat
 #
 # Created:  6th February 2024
-# Updated:  5th November 2026
+# Updated:  15th November 2026
 #
 # ######################################################################## #
 
@@ -169,7 +169,7 @@ endif(FASTFORMAT_USE_WIDE_STRINGS)
 #    otherwise
 # 4. we abort
 
-set(STLSoft_REQUIRED_VERSION_ 1.11.5)
+set(STLSoft_REQUIRED_VERSION_ 1.11.9)
 
 if(NOT DEFINED STLSOFT AND NOT DEFINED ENV{STLSOFT})
 
@@ -271,7 +271,7 @@ if(BUILD_TESTING)
 		set(STLSOFT_INCLUDE_DIR $ENV{STLSOFT}/include)
 	else()
 
-		set(STLSoft_REQUIRED_VERSION_ 1.11.5)
+		set(STLSoft_REQUIRED_VERSION_ 1.11.9)
 
 		find_package(STLSoft ${STLSoft_REQUIRED_VERSION_} REQUIRED)
 
@@ -345,7 +345,7 @@ if(USE_WOAD)
 
 	if(BUILD_TESTING)
 
-		set(woad_REQUIRED_VERSION_ 0.2.2)
+		set(woad_REQUIRED_VERSION_ 0.3)
 
 		find_package(woad ${woad_REQUIRED_VERSION_} REQUIRED)
 

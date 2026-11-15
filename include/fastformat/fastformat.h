@@ -4,7 +4,7 @@
  * Purpose: FastFormat Core API.
  *
  * Created: 18th September 2006
- * Updated: 5th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_MINOR       27
 # define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_REVISION    2
-# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        121
+# define FASTFORMAT_VER_FASTFORMAT_H_FASTFORMAT_EDIT        122
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 /** \def FASTFORMAT_VER_MAJOR
@@ -119,12 +119,13 @@
 # define FASTFORMAT_VER_0_8_1_ALPHA_7       0x00080107
 # define FASTFORMAT_VER_0_8_1_ALPHA_8       0x00080148
 # define FASTFORMAT_VER_0_8_1_BETA_1        0x00080181
+# define FASTFORMAT_VER_0_8_1               0x000801ff
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 #define FASTFORMAT_VER_MAJOR           0
 #define FASTFORMAT_VER_MINOR           8
 #define FASTFORMAT_VER_PATCH           1
-#define FASTFORMAT_VER_RELSTATUS       0x81
+#define FASTFORMAT_VER_RELSTATUS       0xff
 
 #define FASTFORMAT_VER \
     (0\

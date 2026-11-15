@@ -4,7 +4,7 @@
  * Purpose: Windows resource bundle.
  *
  * Created: 24th April 2009
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_MINOR    0
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_REVISION 5
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     14
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_WINDOWS_RESOURCE_BUNDLE_EDIT     15
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -121,22 +121,22 @@ class windows_resource_bundle
 /// @{
 public:
     /// The character type
-    typedef ff_char_t                       char_type;
+    typedef ff_char_t                                       char_type;
     /// The string type
-    typedef std::basic_string<char_type>    string_type;
+    typedef std::basic_string<char_type>                    string_type;
     /// This type
-    typedef windows_resource_bundle         class_type;
+    typedef windows_resource_bundle                         class_type;
     /// The exception type
     class missing_resource_id_exception
         : public bundle_exception
     {
     public: // Member Types
         /// The parent exception class type
-        typedef bundle_exception                    parent_class_type;
+        typedef bundle_exception                                parent_class_type;
         /// This type
-        typedef missing_resource_id_exception       class_type;
+        typedef missing_resource_id_exception                   class_type;
         ///  The string type
-        typedef parent_class_type::string_type      string_type;
+        typedef parent_class_type::string_type                  string_type;
 
     public: // Construction
         /** Constructs an exception with the given message
@@ -373,7 +373,6 @@ windows_resource_bundle::operator [](
 
     return s2;
 }
-
 #endif /* FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
