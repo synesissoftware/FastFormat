@@ -4,7 +4,7 @@
  * Purpose: "Entry point" include into the STLSoft libraries.
  *
  * Created: 18th November 2007
- * Updated: 5th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -64,17 +64,16 @@
 #elif defined(_STLSOFT_VER) && \
       _STLSOFT_VER >= 0x010a0181
 # define FASTFORMAT_STLSOFT_1_10_B01_OR_LATER
-#else /* ? STLSoft 1.10+/1.12+ */
-# if !defined(_STLSOFT_VER) || \
-     _STLSOFT_VER < 0x010981ff
-#  error Requires STLSoft 1.9.129, or later. (www.stlsoft.org)
-# endif /* STLSoft version */
-# if _STLSOFT_VER < 0x010a0000 && \
-     defined(_STLSOFT_1_10_VER) && \
-     _STLSOFT_1_10_VER < 0x010a0109
-#  error Not all aspects of FastFormat work with STLSoft 1.10 versions between 1.10.1 alpha 1 and 1.10.1 alpha 8. If you wish to use STLSoft 1.10 alpha with FastFormat, please download the latest version from www.stlsoft.org
-# endif /* STLSoft 1.10.1 alpha 1 - alpha 8 */
 #endif /* STLSoft 1.12+ */
+
+#if defined(STLSOFT_VER)
+# if STLSOFT_VER < 0x010B09FF
+#  error Requires STLSoft 1.11.9, or later. (www.stlsoft.org)
+# endif /* STLSoft 1.11.9+ */
+#elif !defined(_STLSOFT_VER) || \
+      _STLSOFT_VER < 0x010B09FF
+# error Requires STLSoft 1.11.9, or later. (www.stlsoft.org)
+#endif /* STLSoft 1.11.9+ */
 
 #ifdef _STLSOFT_NO_NAMESPACE
 # error FastFormat requires that STLSoft`s namespace has not been disabled
