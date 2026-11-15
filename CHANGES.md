@@ -14,6 +14,8 @@
   * documented **xTests** and **UNIXem** minima match **CMake** (**0.29.0** and **1.15.0**);
 * boilerplate:
   * aligned the per-file version-macro columns in **ch.hpp**, **standard_flags.hpp**, **ULARGE_INTEGER.hpp**, **CString.hpp**, **FILE_stream.hpp**, and **auto_buffer_selector.hpp**;
+* testing:
+  * **test.scratch.versions** colours with **woad** 0.3 `WOAD_*_FOR(stm)` when **prepare_cmake.sh** `--use-woad` is passed;
 
 
 ## 0.8.1-beta1 - 5th November 2026

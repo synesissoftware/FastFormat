@@ -294,7 +294,7 @@ Required when `BUILD_TESTING` is on (the default for a full tree):
 | ------- | ------- | ---- | --------- |
 | [**xTests**](https://github.com/synesissoftware/xTests) | **0.29.0** | Unit and component test harness | **Yes** when building tests |
 | [**shwild**](https://github.com/synesissoftware/shwild) | (any installable package) | Optional; enables richer pattern matches in **xTests** (`XTESTS_HAS_SHWILD`) | No — detected with `find_package(shwild QUIET)` unless `NO_SHWILD` is set |
-| [**woad**](https://github.com/synesissoftware/woad) | **0.2.1** | Optional; colours **test.scratch.versions** when `USE_WOAD` is on (`./prepare_cmake.sh --use-woad`) | No — omitted unless that flag is passed |
+| [**woad**](https://github.com/synesissoftware/woad) | **0.3** | Optional; colours **test.scratch.versions** when `USE_WOAD` is on (`./prepare_cmake.sh --use-woad`) | No — omitted unless that flag is passed |
 
 Examples (`BUILD_EXAMPLES`) use the same **STLSoft** install as the library;
 they do not add a separate package beyond what the library already needs.

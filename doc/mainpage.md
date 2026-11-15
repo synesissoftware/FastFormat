@@ -90,7 +90,7 @@ target_link_libraries(hello
 ```
 
 Clone or a release archive:
-[INSTALL.md](https://github.com/synesissoftware/FastFormat/blob/dev-0.8/INSTALL.md).
+[INSTALL.md](https://github.com/synesissoftware/FastFormat/blob/0.8.1/INSTALL.md).
 The longer walkthrough is **examples/101/normal**.
 
 
@@ -107,7 +107,7 @@ high to very high on several of them:
 | **Correctness/reliability/robustness** | Very High | Using the **Write** API it is impossible to write defective code. Using the **Format** API the only possible error is to supply the wrong number of parameters (and that will be resolved in a forthcoming version using `constexpr` processing). |
 | **Efficiency**                         | Very High | Even now, after 20 years since its first release, FastFormat is on par with or faster than other popular C++ formatting libraries. In coming releases there will be a refreshed set of comparisons provided in the distribution. |
 | **Discoverability and transparency**   | Moderate  | Like most sophisticated C++ template libraries, compiler error messages can be challenging to interpret. |
-| **Modularity**                         | Moderate  | Depends on the STLSoft libraries. Although 100% header-only, this dependency nonetheless represents additional effort (see INSTALL.md for instructions). |
+| **Modularity**                         | Moderate  | Depends on the STLSoft libraries. That dependency represents additional effort (see INSTALL.md for instructions). |
 | **Expressiveness**                     | Very High | Supporting both the concatenation-based **Write** API and the replacement-parameter **Format** API, the latter of which has a small set of simple rules. |
 | **Flexibility**                        | Very High | FastFormat is infinitely extensible, and any type that is expressible in string form may be adapted. It supports I18N/L10N via dynamic format strings. Integers, `std::string`, and `std::ostream` are accepted by default; further standard and operating-system types (`FILE*`, `struct iovec`, and others) are available from an explicit sink or inserter header. |
 | **Portability**                        | High      | Tested on Linux, macOS, Windows |

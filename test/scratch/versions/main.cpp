@@ -5,7 +5,7 @@
  *          dependencies.
  *
  * Created: 17th September 2026
- * Updated: 3rd November 2026
+ * Updated: 15th November 2026
  *
  * ////////////////////////////////////////////////////////////////////// */
 
@@ -28,6 +28,7 @@
 
 #ifdef HAS_woad
 # include <woad/woad.h>
+# include <woad/iostreams.hpp>
 #endif
 
 #ifdef HAS_xTests
@@ -37,22 +38,25 @@
 #include <iomanip>
 #include <iostream>
 
-#include <stdio.h>
 #include <stdlib.h>
 
 
+/* /////////////////////////////////////////////////////////////////////////
+ * macros
+ */
+
 #ifdef HAS_woad
 
-# define VERSIONS_CLR_NAME_                                 WOAD_FG_BLUE_FOR(file)
-# define VERSIONS_CLR_VERSION_                              WOAD_FG_GREEN_FOR(file)
-# define VERSIONS_CLR_MACRO_                                WOAD_FG_CYAN_FOR(file)
-# define VERSIONS_CLR_RESET_                                WOAD_RESET_FOR(file)
+# define VERSIONS_CLR_NAME_(stm)                            WOAD_FG_BLUE_FOR(stm)
+# define VERSIONS_CLR_VERSION_(stm)                         WOAD_FG_GREEN_FOR(stm)
+# define VERSIONS_CLR_MACRO_(stm)                           WOAD_FG_CYAN_FOR(stm)
+# define VERSIONS_CLR_RESET_(stm)                           WOAD_RESET_FOR(stm)
 #else /* ? HAS_woad */
 
-# define VERSIONS_CLR_NAME_                                 ""
-# define VERSIONS_CLR_VERSION_                              ""
-# define VERSIONS_CLR_MACRO_                                ""
-# define VERSIONS_CLR_RESET_                                ""
+# define VERSIONS_CLR_NAME_(stm)                            ""
+# define VERSIONS_CLR_VERSION_(stm)                         ""
+# define VERSIONS_CLR_MACRO_(stm)                           ""
+# define VERSIONS_CLR_RESET_(stm)                           ""
 #endif /* HAS_woad */
 
 
@@ -67,7 +71,6 @@ template<
 void
 version(
     T_stream&   stm
-,   FILE*       file
 ,   char const* prefix
 ,   char const* libname
 ,   char const* macroname
@@ -75,18 +78,13 @@ version(
 ,   char const* version_string = nullptr
 )
 {
-#ifndef HAS_woad
-
-    (void)file;
-#endif /* !HAS_woad */
-
     stm
         << prefix
-        << VERSIONS_CLR_NAME_
+        << VERSIONS_CLR_NAME_(stm)
         << libname
-        << VERSIONS_CLR_RESET_
+        << VERSIONS_CLR_RESET_(stm)
         << ": "
-        << VERSIONS_CLR_VERSION_
+        << VERSIONS_CLR_VERSION_(stm)
         << 'v'
         ;
 
@@ -108,18 +106,18 @@ version(
     }
 
     stm
-        << VERSIONS_CLR_RESET_
+        << VERSIONS_CLR_RESET_(stm)
         << " ("
-        << VERSIONS_CLR_MACRO_
+        << VERSIONS_CLR_MACRO_(stm)
         << macroname
-        << VERSIONS_CLR_RESET_
+        << VERSIONS_CLR_RESET_(stm)
         << " = "
-        << VERSIONS_CLR_VERSION_
+        << VERSIONS_CLR_VERSION_(stm)
         << "0x"
         << std::hex << std::setfill('0') << std::setw(8)
         << static_cast<unsigned>(libver)
         << std::dec
-        << VERSIONS_CLR_RESET_
+        << VERSIONS_CLR_RESET_(stm)
         << ")"
         << std::endl
         ;
@@ -136,7 +134,7 @@ int main(int /*argc*/, char* /*argv*/[])
     {
         unsigned const libver = FASTFORMAT_VER;
 
-        version(std::cout, stdout, "", "FastFormat", "FASTFORMAT_VER", libver);
+        version(std::cout, "", "FastFormat", "FASTFORMAT_VER", libver);
     }
 
 #ifdef HAS_shwild
@@ -149,7 +147,7 @@ int main(int /*argc*/, char* /*argv*/[])
     {
         unsigned const libver = SHWILD_VER;
 
-        version(std::cout, stdout, "\t", "shwild", "SHWILD_VER", libver);
+        version(std::cout, "\t", "shwild", "SHWILD_VER", libver);
     }
 #endif
 
@@ -161,7 +159,7 @@ int main(int /*argc*/, char* /*argv*/[])
     {
         unsigned const libver = _STLSOFT_VER;
 
-        version(std::cout, stdout, "\t", "STLSoft", "_STLSOFT_VER", libver);
+        version(std::cout, "\t", "STLSoft", "_STLSOFT_VER", libver);
     }
 
 #ifdef HAS_UNIXem
@@ -174,7 +172,7 @@ int main(int /*argc*/, char* /*argv*/[])
     {
         unsigned const libver = UNIXEM_VER;
 
-        version(std::cout, stdout, "\t", "UNIXem", "UNIXEM_VER", libver);
+        version(std::cout, "\t", "UNIXem", "UNIXEM_VER", libver);
     }
 #endif
 
@@ -188,7 +186,7 @@ int main(int /*argc*/, char* /*argv*/[])
     {
         unsigned const libver = WOAD_VER;
 
-        version(std::cout, stdout, "\t", "woad", "WOAD_VER", libver, woad::version_string());
+        version(std::cout, "\t", "woad", "WOAD_VER", libver, woad::version_string());
     }
 #endif
 
@@ -202,7 +200,7 @@ int main(int /*argc*/, char* /*argv*/[])
     {
         unsigned const libver = _XTESTS_VER;
 
-        version(std::cout, stdout, "\t", "xTests", "_XTESTS_VER", libver);
+        version(std::cout, "\t", "xTests", "_XTESTS_VER", libver);
     }
 #endif
 
