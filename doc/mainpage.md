@@ -46,7 +46,7 @@ int main()
 {
     std::string const world("World");
 
-    fastformat::fmtln(std::cout, "Hello, {0}!", world);
+    ff::fmtln(std::cout, "Hello, {0}!", world);
 
     return 0;
 }
@@ -71,7 +71,7 @@ int main()
 {
     std::string const world("World");
 
-    fastformat::writeln(std::cout, "Hello, ", world, "!");
+    ff::writeln(std::cout, "Hello, ", world, "!");
 
     return 0;
 }
