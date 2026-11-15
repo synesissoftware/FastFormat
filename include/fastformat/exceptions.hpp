@@ -4,7 +4,7 @@
  * Purpose: FastFormat API exception classes.
  *
  * Created: 23rd October 2008
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -48,6 +48,7 @@
 #ifndef FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS
 #define FASTFORMAT_INCL_FASTFORMAT_HPP_EXCEPTIONS
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * version information
  */
@@ -56,8 +57,9 @@
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_MINOR     2
 # define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_REVISION  7
-# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      20
+# define FASTFORMAT_VER_FASTFORMAT_HPP_EXCEPTIONS_EDIT      21
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * language
@@ -66,6 +68,7 @@
 #ifndef __cplusplus
 # error This file can only be included in C++ compilation units
 #endif /* !__cplusplus */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Compatibility
@@ -86,6 +89,7 @@
             class_type& operator =(class_type const&)
 #endif /* C++11 */
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * includes
  */
@@ -102,6 +106,7 @@
 #include <stdexcept>
 #include <string>
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * namespace
  */
@@ -110,6 +115,7 @@
 namespace fastformat
 {
 #endif /* !FASTFORMAT_NO_NAMESPACE */
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * Classes
@@ -156,12 +162,12 @@ namespace fastformat
 class status_code
 {
 public:
-    typedef status_code     class_type;
-    typedef int             standard_status_code_type;
+    typedef status_code                                     class_type;
+    typedef int                                             standard_status_code_type;
 #if defined(PLATFORMSTL_OS_IS_UNIX)
-    typedef int             os_status_code_type;
+    typedef int                                             os_status_code_type;
 #elif defined(PLATFORMSTL_OS_IS_WINDOWS)
-    typedef DWORD           os_status_code_type;
+    typedef DWORD                                           os_status_code_type;
 #else /* ? OS */
 # error Operating system not discriminated
 #endif /* OS */
@@ -179,13 +185,13 @@ class fastformat_exception
 {
 public: // Member Types
     /// The parent exception class type
-    typedef std::runtime_error              parent_class_type;
+    typedef std::runtime_error                              parent_class_type;
     /// This type
-    typedef fastformat_exception            class_type;
+    typedef fastformat_exception                            class_type;
     /// The multibyte string type
-    typedef std::string                     multibyte_string_type;
+    typedef std::string                                     multibyte_string_type;
     /// The string type
-    typedef std::basic_string<ff_char_t>    string_type;
+    typedef std::basic_string<ff_char_t>                    string_type;
 
 public: // Construction
     /** Constructs an exception with the given message.
@@ -248,13 +254,13 @@ protected: // Implementation
     {
     public: // Member Types
         /// The parent exception class type
-        typedef fastformat_exception                        parent_class_type;
+        typedef fastformat_exception                            parent_class_type;
         /// This type
-        typedef format_parsing_exception                    class_type;
+        typedef format_parsing_exception                        class_type;
         ///  The multibyte string type
-        typedef parent_class_type::multibyte_string_type    message_string_type;
+        typedef parent_class_type::multibyte_string_type        message_string_type;
         ///  The string type
-        typedef parent_class_type::string_type              string_type;
+        typedef parent_class_type::string_type                  string_type;
 
     public: // Construction
         /** Constructs an exception with the given message, code and format.
@@ -312,11 +318,11 @@ protected: // Implementation
         {
         public: // Member Types
             /// The parent exception class type
-            typedef format_parsing_exception        parent_class_type;
+            typedef format_parsing_exception                        parent_class_type;
             /// This type
-            typedef illformed_format_exception      class_type;
+            typedef illformed_format_exception                      class_type;
             ///  The string type
-            typedef parent_class_type::string_type  string_type;
+            typedef parent_class_type::string_type                  string_type;
 
         public: // Construction
             /** Constructs an exception with the given message.
@@ -422,11 +428,11 @@ protected: // Implementation
         {
         public: // Member Types
             /// The parent exception class type
-            typedef mismatched_replacements_exception   parent_class_type;
+            typedef mismatched_replacements_exception               parent_class_type;
             /// This type
-            typedef missing_argument_exception          class_type;
+            typedef missing_argument_exception                      class_type;
             ///  The string type
-            typedef parent_class_type::string_type      string_type;
+            typedef parent_class_type::string_type                  string_type;
 
         public: // Construction
             /** Constructs an exception with the given message.
@@ -465,11 +471,11 @@ protected: // Implementation
         {
         public: // Member Types
             /// The parent exception class type
-            typedef mismatched_replacements_exception   parent_class_type;
+            typedef mismatched_replacements_exception               parent_class_type;
             /// This type
-            typedef unreferenced_argument_exception     class_type;
+            typedef unreferenced_argument_exception                 class_type;
             ///  The string type
-            typedef parent_class_type::string_type      string_type;
+            typedef parent_class_type::string_type                  string_type;
 
         public: // Construction
             /** Constructs an exception with the given message.
@@ -509,11 +515,11 @@ protected: // Implementation
     {
     public: // Member Types
         /// The parent exception class type
-        typedef fastformat_exception                parent_class_type;
+        typedef fastformat_exception                            parent_class_type;
         /// This type
-        typedef bundle_exception                    class_type;
+        typedef bundle_exception                                class_type;
         ///  The string type
-        typedef parent_class_type::string_type      string_type;
+        typedef parent_class_type::string_type                  string_type;
 
     public: // Construction
         /** Constructs an exception with the given message.
@@ -547,11 +553,11 @@ protected: // Implementation
     {
     public: // Member Types
         /// The parent exception class type
-        typedef fastformat_exception                parent_class_type;
+        typedef fastformat_exception                            parent_class_type;
         /// This type
-        typedef sink_exception                      class_type;
+        typedef sink_exception                                  class_type;
         ///  The string type
-        typedef parent_class_type::string_type      string_type;
+        typedef parent_class_type::string_type                  string_type;
 
     public: // Construction
         /** Constructs an exception with the given message.
@@ -586,11 +592,11 @@ protected: // Implementation
         {
         public: // Member Types
             /// The parent exception class type
-            typedef sink_exception                      parent_class_type;
+            typedef sink_exception                                  parent_class_type;
             /// This type
-            typedef sink_output_exception               class_type;
+            typedef sink_output_exception                           class_type;
             ///  The string type
-            typedef parent_class_type::string_type      string_type;
+            typedef parent_class_type::string_type                  string_type;
 
         public: // Construction
             /** Constructs an exception with the given message.
@@ -612,6 +618,7 @@ protected: // Implementation
             FASTFORMAT_EXCEPTION_NO_ASSIGN_();
         };
 
+
 /* /////////////////////////////////////////////////////////////////////////
  * implementation
  */
@@ -632,10 +639,9 @@ inline /* virtual */ bundle_exception::~bundle_exception() STLSOFT_NOEXCEPT /* =
 
 inline /* virtual */ sink_exception::~sink_exception() STLSOFT_NOEXCEPT /* = 0 */
 {}
-
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
-
 #undef FASTFORMAT_EXCEPTION_NO_ASSIGN_
+
 
 /* /////////////////////////////////////////////////////////////////////////
  * namespace

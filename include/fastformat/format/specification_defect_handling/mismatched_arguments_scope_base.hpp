@@ -5,7 +5,7 @@
  *              in response to mismatched arguments.
  *
  * Created: 1st December 2008
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -59,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MAJOR       1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_MINOR       2
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_REVISION    1
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        18
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_MISMATCHED_ARGUMENTS_SCOPE_BASE_EDIT        19
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -95,6 +95,7 @@ namespace fastformat
  */
 
 #ifndef FASTFORMAT_DOCUMENTATION_SKIP_SECTION
+
 namespace ximpl_mismatched_arguments_scope_base
 {
 
@@ -127,7 +128,6 @@ private:
 protected:
     handler_specifier_function_type const   m_specifier;
 };
-
 }/* namespace ximpl_mismatched_arguments_scope_base */
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
@@ -150,9 +150,9 @@ protected:
                                                         parent_class_type;
 public:
     /// This type
-    typedef mismatched_arguments_scope_base             class_type;
+    typedef mismatched_arguments_scope_base                 class_type;
 protected:
-    typedef fastformat::ff_handler_response_t           handler_response_type;
+    typedef fastformat::ff_handler_response_t               handler_response_type;
 
 protected: // Construction
     /** Causes the thread/process mismatched handler to be set to a function

@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for Windows message boxes.
  *
  * Created: 4th January 2009
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_REVISION  1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      17
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_WINDOWSMESSAGEBOX_EDIT      18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -108,9 +108,9 @@ class WindowsMessageBox_sink
 {
 public: // Member Types
     /// This type
-    typedef WindowsMessageBox_sink          class_type;
+    typedef WindowsMessageBox_sink                          class_type;
 private:
-    typedef std::basic_string<ff_char_t>    string_type_;
+    typedef std::basic_string<ff_char_t>                    string_type_;
 
 public: // Construction
     /// Constructs an instance of the sink

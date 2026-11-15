@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for the Windows Speech API.
  *
  * Created: 27th November 2007
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_MINOR    3
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_REVISION 1
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     27
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_SPEECH_EDIT     28
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -119,9 +119,9 @@ class speech_sink
 {
 public: // Member Types
     /// This type
-    typedef speech_sink                     class_type;
+    typedef speech_sink                                     class_type;
     /// The underlying voice type
-    typedef stlsoft::ref_ptr<ISpVoice>      voice_type;
+    typedef stlsoft::ref_ptr<ISpVoice>                      voice_type;
 
 public: // Construction
     /// Constructs an instance

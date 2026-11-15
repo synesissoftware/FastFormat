@@ -5,7 +5,7 @@
  *              unreferenced arguments.
  *
  * Created: 25th April 2009
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -59,7 +59,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MAJOR    1
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_MINOR    2
 # define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_REVISION 3
-# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     17
+# define FASTFORMAT_VER_FASTFORMAT_FORMAT_SPECIFICATION_DEFECT_HANDLING_HPP_IGNORE_MISSING_ARGUMENTS_SCOPE_EDIT     18
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -108,9 +108,9 @@ class ignore_missing_arguments_scope
 {
 public: // Member Types
     /// The parent type
-    typedef mismatched_arguments_scope_base     parent_class_type;
+    typedef mismatched_arguments_scope_base                 parent_class_type;
     /// This type
-    typedef ignore_missing_arguments_scope      class_type;
+    typedef ignore_missing_arguments_scope                  class_type;
 
 public: // Construction
     /** Causes the thread/process mismatched handler to be set to a function

@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for the UNIX writev() vector I/O function.
  *
  * Created: 24th November 2007
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_MAJOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_MINOR     1
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_REVISION  3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_EDIT      29
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_VECTORED_FILE_EDIT      30
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -114,7 +114,7 @@ class vectored_file_sink
 {
 public:
     /// This type
-    typedef vectored_file_sink     class_type;
+    typedef vectored_file_sink                              class_type;
 
 public:
     /// Constructs from a file handle

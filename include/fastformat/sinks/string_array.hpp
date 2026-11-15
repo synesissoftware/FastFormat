@@ -4,7 +4,7 @@
  * Purpose: A FastFormat sink for string sequences.
  *
  * Created: 24th December 2007
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -60,7 +60,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MAJOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_REVISION   3
-# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       12
+# define FASTFORMAT_VER_FASTFORMAT_SINK_HPP_STRING_ARRAY_EDIT       13
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -116,7 +116,7 @@ class string_array_sink
 {
 public:
     /// This type
-    typedef string_array_sink     class_type;
+    typedef string_array_sink                               class_type;
 
 public:
     /// Constructs from a string array

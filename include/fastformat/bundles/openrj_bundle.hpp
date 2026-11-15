@@ -4,7 +4,7 @@
  * Purpose: Open-RJ bundle.
  *
  * Created: 19th September 2006
- * Updated: 6th November 2026
+ * Updated: 15th November 2026
  *
  * Home:    http://www.fastformat.org/
  *
@@ -57,7 +57,7 @@
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_MAJOR      1
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_MINOR      0
 # define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_REVISION   10
-# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_EDIT       24
+# define FASTFORMAT_VER_FASTFORMAT_BUNDLES_HPP_OPENRJ_BUNDLE_EDIT       25
 #endif /* !FASTFORMAT_DOCUMENTATION_SKIP_SECTION */
 
 
@@ -112,8 +112,8 @@ class openrj_bundle
 /// \name Member Types
 /// @{
 public:
-    typedef ::openrj::ORJString     string_type;
-    typedef openrj_bundle           class_type;
+    typedef ::openrj::ORJString                             string_type;
+    typedef openrj_bundle                                   class_type;
 /// @}
 
 /// \name Constants
